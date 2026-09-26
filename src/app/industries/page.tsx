@@ -16,7 +16,7 @@ import styles from './page.module.css';
 const heroSlides = [
   {
     id: 'slide-1',
-    src: '/images/Industries_slide1.png',
+    src: '/images/industries image 1st slide.png',
     alt: 'Specialized digital marketing architectures for real estate, builders, and urban construction in Bhubaneswar',
     caption: 'Real Estate & Infrastructure',
   },
@@ -28,7 +28,7 @@ const heroSlides = [
   },
   {
     id: 'slide-3',
-    src: '/images/Industries_slide3.png',
+    src: '/images/industries image 3rd slide.png',
     alt: 'Retail brands, D2C e-commerce, luxury resorts, and hospitality marketing in Odisha',
     caption: 'Retail, E-Commerce & Hospitality',
   },
@@ -366,6 +366,7 @@ export default function IndustriesPage() {
                         alt={slide.alt}
                         fill
                         priority={idx === 0}
+                        unoptimized={true}
                         sizes="(max-width: 900px) 100vw, 680px"
                         quality={95}
                         className={styles.slideImage}

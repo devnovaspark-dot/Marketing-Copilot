@@ -586,21 +586,9 @@ const aboutFaqs = [
 const heroSlides = [
   {
     id: 'slide-1',
-    src: '/images/ns_about_us_graphic.png',
+    src: '/images/About us page.png',
     alt: 'Marketing Copilot digital marketing company strategy and campaigns in Bhubaneswar',
     caption: 'Strategic Growth & Execution',
-  },
-  {
-    id: 'slide-2',
-    src: '/images/ns_about us_graphic_slide2.png',
-    alt: 'Marketing Copilot marketing performance data and digital solutions',
-    caption: 'Performance & 10x ROI',
-  },
-  {
-    id: 'slide-3',
-    src: '/images/ns_about us_graphic_slide3.png',
-    alt: 'Creative marketing professionals planning growth strategies and digital solutions',
-    caption: 'Creative & Performance Marketing',
   },
 ];
 
@@ -614,6 +602,7 @@ export default function AboutPage() {
   const heroSlideTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
+    if (heroSlides.length <= 1) return;
     heroSlideTimerRef.current = setInterval(() => {
       setCurrentHeroSlide((prev) => (prev + 1) % heroSlides.length);
     }, 3500);
@@ -792,6 +781,7 @@ export default function AboutPage() {
                         alt={slide.alt}
                         fill
                         priority={idx === 0}
+                        unoptimized={true}
                         sizes="(max-width: 900px) 100vw, 680px"
                         quality={95}
                         className={styles.slideImage}
@@ -807,17 +797,19 @@ export default function AboutPage() {
                   </div>
 
                   {/* Minimalist Tactile Dot Indicators */}
-                  <div className={styles.dotsWrap}>
-                    {heroSlides.map((_, idx) => (
-                      <button
-                        key={idx}
-                        type="button"
-                        className={`${styles.dot} ${idx === currentHeroSlide ? styles.dotActive : ''}`}
-                        onClick={() => setCurrentHeroSlide(idx)}
-                        aria-label={`Switch to slide ${idx + 1}`}
-                      />
-                    ))}
-                  </div>
+                  {heroSlides.length > 1 && (
+                    <div className={styles.dotsWrap}>
+                      {heroSlides.map((_, idx) => (
+                        <button
+                          key={idx}
+                          type="button"
+                          className={`${styles.dot} ${idx === currentHeroSlide ? styles.dotActive : ''}`}
+                          onClick={() => setCurrentHeroSlide(idx)}
+                          aria-label={`Switch to slide ${idx + 1}`}
+                        />
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

@@ -27,21 +27,21 @@ const filterCategories = ['All', 'SEO', 'Paid Ads', 'Web Development', 'E-commer
 const heroPortfolioSlides = [
   {
     id: 'portfolio-hero-1',
-    src: '/images/Portfolio_page_slide1.png',
+    src: '/images/portfolio image 1.png',
     alt: 'Marketing Copilot Verified Client Campaign Showcase - Slide 1',
     metric: '+320% Inbound Leads',
     sub: 'Verified Commercial Return • 6.2X ROAS',
   },
   {
     id: 'portfolio-hero-2',
-    src: '/images/Portfolio_page_slide2.png',
+    src: '/images/portfolio image 2.png',
     alt: 'Marketing Copilot Verified Client Campaign Showcase - Slide 2',
     metric: '₹65Cr+ Attributed Revenue',
     sub: 'Full-Funnel Paid & Organic Scaling',
   },
   {
     id: 'portfolio-hero-3',
-    src: '/images/Portfolio_page_slide3.png',
+    src: '/images/portfolio image 3.png',
     alt: 'Marketing Copilot Verified Client Campaign Showcase - Slide 3',
     metric: '85+ #1 Google Rankings',
     sub: 'Dominant High-Intent Search Visibility',
@@ -204,6 +204,7 @@ export default function PortfolioPage() {
                       alt={slide.alt}
                       fill
                       priority={idx === 0}
+                      unoptimized={true}
                       sizes="(max-width: 900px) 100vw, 680px"
                       className={styles.heroVisualImg}
                     />
