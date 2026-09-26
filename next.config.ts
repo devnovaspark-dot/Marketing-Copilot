@@ -56,14 +56,7 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
-        // Automatically attach noindex, follow whenever accessed via any *.vercel.app domain
         source: '/:path*',
-        has: [
-          {
-            type: 'host',
-            value: '(?<subdomain>.*)\\.vercel\\.app',
-          },
-        ],
         headers: [
           {
             key: 'X-Robots-Tag',

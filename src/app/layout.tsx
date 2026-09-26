@@ -6,6 +6,14 @@ import WhatsAppFloatingButton from "@/components/WhatsAppFloatingButton";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://marketingcopilot.in"),
+  robots: {
+    index: false,
+    follow: true,
+    googleBot: {
+      index: false,
+      follow: true,
+    },
+  },
   title: {
     default: "Digital Marketing Company in Bhubaneswar | Marketing Copilot",
     template: "%s | Marketing Copilot"
