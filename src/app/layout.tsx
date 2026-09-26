@@ -8,10 +8,10 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://marketingcopilot.in"),
   robots: {
     index: false,
-    follow: true,
+    follow: false,
     googleBot: {
       index: false,
-      follow: true,
+      follow: false,
     },
   },
   title: {
