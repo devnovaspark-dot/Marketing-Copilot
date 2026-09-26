@@ -20,13 +20,14 @@ export default function Footer() {
     { label: 'Contact Us', href: '/contact' },
   ];
 
+  // Point to main /services overview while individual sub-pages are finalized for Phase 2
   const ourServices = [
-    { label: 'SEO & Search', href: '/services/seo' },
-    { label: 'Google & Meta Ads', href: '/services/performance-marketing' },
-    { label: 'Social Media', href: '/services/social-media' },
-    { label: 'Creative & Branding', href: '/services/creative-branding' },
-    { label: 'Web Development', href: '/services/web-development' },
-    { label: 'AI Automation', href: '/services/ai-automation' },
+    { label: 'SEO & Search', href: '/services' },
+    { label: 'Google & Meta Ads', href: '/services' },
+    { label: 'Social Media', href: '/services' },
+    { label: 'Creative & Branding', href: '/services' },
+    { label: 'Web Development', href: '/services' },
+    { label: 'AI Automation', href: '/services' },
   ];
 
   return (
