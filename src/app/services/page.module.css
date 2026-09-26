@@ -6586,45 +6586,203 @@
     font-size: 12.5px !important;
   }
 
-  /* Section 6: The Copilot Standard Single Card Responsive */
-  .copilotSingleCard {
-    padding: 16px 12px !important;
-    border-radius: 16px !important;
-  }
-  .copilotCardHeader {
-    grid-template-columns: 1fr;
-    gap: 10px;
-    text-align: center;
-  }
-  .headerColCopilot,
-  .headerColTraditional {
-    align-items: center;
-  }
-  .headerColVs {
-    margin: 2px auto;
-  }
-  .rowComparisonGrid {
-    grid-template-columns: 1fr;
-    gap: 6px;
-  }
-  .comparisonRowCard {
-    padding: 10px 10px !important;
-    border-radius: 12px !important;
-  }
-  .cellCopilot {
-    padding: 8px 10px !important;
-  }
-  .copilotFooterActions {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
-  }
-  .copilotBlueCtaBtn {
+  /* Section 6: THE COPILOT STANDARD Table Card Responsive (Zero Bleed, Centered) */
+  .comparisonSection {
+    padding: 50px 0 !important;
+    overflow: hidden !important;
     width: 100% !important;
+  }
+  .compareTitle {
+    font-size: 24px !important;
+    line-height: 1.25 !important;
+    margin-top: 8px !important;
+    margin-bottom: 10px !important;
+  }
+  .compareSub {
+    font-size: 13px !important;
+    line-height: 1.55 !important;
+    margin-bottom: 22px !important;
+    padding: 0 6px !important;
+  }
+  .copilotTableCard {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    border-radius: 14px !important;
+    clip-path: none !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+    box-shadow: 0 4px 18px -4px rgba(11, 32, 147, 0.12) !important;
+  }
+  .tableHeaderRow {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.95fr) minmax(0, 1.05fr) !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .tableHeaderFeature {
+    padding: 10px 6px !important;
+    background: #F8FAFC !important;
+    border-right: 1px solid #DDE3EE !important;
+  }
+  .tableHeaderTraditional {
+    padding: 12px 4px !important;
+    gap: 3px !important;
+    min-width: 0 !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.18) !important;
+  }
+  .tableHeaderTraditional .tableHeaderLabel {
+    font-size: 8px !important;
+    letter-spacing: 0.03em !important;
+    line-height: 1.2 !important;
+    word-break: break-word !important;
+  }
+  .tableHeaderTraditional .tableHeaderSub {
+    font-size: 7.5px !important;
+    line-height: 1.15 !important;
+  }
+  .tableHeaderCopilot {
+    padding: 12px 4px !important;
+    gap: 3px !important;
+    min-width: 0 !important;
+  }
+  .copilotRecommendedBadge {
+    font-size: 6.5px !important;
+    padding: 2.5px 5.5px !important;
+    letter-spacing: 0.04em !important;
+    margin-bottom: 2px !important;
+    border-radius: 4px !important;
+  }
+  .recommendedStar {
+    font-size: 8px !important;
+  }
+  .tableHeaderCopilot .tableHeaderLabel {
+    font-size: 8px !important;
+    letter-spacing: 0.03em !important;
+    line-height: 1.2 !important;
+    word-break: break-word !important;
+  }
+  .tableHeaderCopilot .tableHeaderSub {
+    font-size: 7.5px !important;
+    line-height: 1.15 !important;
+  }
+  .tableBody {
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .tableRow {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.95fr) minmax(0, 1.05fr) !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    align-items: center !important;
+    border-bottom: 1px solid #E8ECF4 !important;
+  }
+  .tableFeatureCell {
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    padding: 12px 6px !important;
+    border-right: 1px solid #DDE3EE !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .tableFeatureIcon {
+    font-size: 15px !important;
+    width: 20px !important;
+    flex-shrink: 0 !important;
+  }
+  .tableFeatureText {
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+  .tableFeatureName {
+    font-size: 10px !important;
+    font-weight: 750 !important;
+    line-height: 1.25 !important;
+    word-break: break-word !important;
+    display: block !important;
+  }
+  .tableFeatureDesc {
+    display: none !important;
+  }
+  .tableCellTraditional {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
     justify-content: center !important;
-    min-height: 40px !important;
-    padding: 8px 14px !important;
-    font-size: 12.5px !important;
+    gap: 4px !important;
+    padding: 10px 4px !important;
+    border-right: 1px solid #DDE3EE !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .icon3DCross {
+    width: 24px !important;
+    height: 24px !important;
+    min-width: 24px !important;
+  }
+  .icon3DCross svg {
+    width: 10px !important;
+    height: 10px !important;
+  }
+  .tableCellTag {
+    font-size: 7px !important;
+    padding: 2px 4px !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+  }
+  .tableCellCopilot {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 4px !important;
+    padding: 10px 4px !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .icon3DCheck {
+    width: 24px !important;
+    height: 24px !important;
+    min-width: 24px !important;
+  }
+  .icon3DCheck svg {
+    width: 11px !important;
+    height: 11px !important;
+  }
+  .tableCellTagGreen {
+    font-size: 7px !important;
+    padding: 2px 4px !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+  }
+  .copilotCardFooter {
+    padding: 18px 12px 20px !important;
+    gap: 10px !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+  }
+  .blueBtnWrapper {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+  .copilotFooterNotice {
+    font-size: 9.5px !important;
+    line-height: 1.4 !important;
+    text-align: center !important;
+    padding: 0 4px !important;
   }
 
   /* Section 7: Hyperlocal Regional Intelligence Ladder Responsive */

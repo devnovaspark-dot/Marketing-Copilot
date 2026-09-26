@@ -1588,6 +1588,8 @@ export default function AboutPage() {
                   src={leader.image}
                   alt={leader.name}
                   fill
+                  priority={true}
+                  unoptimized={true}
                   className={styles.leaderPhoto}
                   style={{ objectPosition: leader.imagePosition }}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 20vw"

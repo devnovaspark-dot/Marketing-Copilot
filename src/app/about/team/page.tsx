@@ -142,7 +142,8 @@ export default function TeamPage() {
                         src={leader.image}
                         alt={leader.name}
                         fill
-                        priority={i < 2}
+                        priority={true}
+                        unoptimized={true}
                         className={styles.execImg}
                         style={{ objectPosition: leader.imagePosition || '50% 15%' }}
                         sizes="(max-width: 900px) 100vw, 50vw"
@@ -182,6 +183,8 @@ export default function TeamPage() {
                         src={leader.image}
                         alt={leader.name}
                         fill
+                        priority={true}
+                        unoptimized={true}
                         className={styles.execImg}
                         style={{ objectPosition: leader.imagePosition || '50% 15%' }}
                         sizes="(max-width: 900px) 100vw, (max-width: 1200px) 50vw, 33vw"
