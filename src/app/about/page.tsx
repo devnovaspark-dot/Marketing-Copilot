@@ -825,7 +825,116 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* ══════════════════════════════════════════════════════
+          SECTION 2: MEET US · EXECUTIVE ARCHITECTS & LEADERSHIP TEAM
+          (Positioned directly below the hero section for immediate human connection & trust)
+         ══════════════════════════════════════════════════════ */}
+      <section className={styles.leadershipSection} id="leadership-team">
+        <div className="container">
+          <ScrollReveal className="text-center">
+            <div className="eyebrow" style={{ margin: '0 auto 12px' }}>
+              <span className="eyebrow-dot" />
+              <span>MEET US · LEADERSHIP TEAM</span>
+            </div>
+            <h2 className={`display-lg ${styles.sectionHeadline}`}>
+              Your Growth Is{' '}
+              <span className="accent-gradient">Our Shared Goal</span>
+            </h2>
+            <p className={`body-lg ${styles.sectionSub}`}>
+              Get direct support from experienced digital marketing professionals who understand your goals and turn them into clear, practical marketing strategies.
+            </p>
+          </ScrollReveal>
 
+          {/* 5 Real Executive Cards */}
+          <div className={styles.leadershipGrid}>
+            {executiveArchitects.map((leader, idx) => (
+              <ScrollReveal key={leader.name} delay={idx * 80} className={styles.leaderRevealWrap}>
+                <div
+                  className={styles.leaderCard}
+                  style={{ '--leader-accent': leader.color } as React.CSSProperties}
+                >
+                  <div className={styles.leaderPhotoWrap}>
+                    <Image
+                      src={leader.image}
+                      alt={leader.name}
+                      fill
+                      priority={true}
+                      unoptimized={true}
+                      className={styles.leaderPhoto}
+                      style={{ objectPosition: leader.imagePosition }}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 20vw"
+                    />
+                    <div className={styles.leaderOverlay} />
+                    <span
+                      className={styles.leaderDeptBadge}
+                      style={{ color: leader.color, borderColor: `${leader.color}40` }}
+                    >
+                      {leader.dept}
+                    </span>
+                  </div>
+
+                  <div className={styles.leaderInfo}>
+                    <div className={styles.leaderHeaderRow}>
+                      <div>
+                        <h3 className={styles.leaderName}>{leader.name}</h3>
+                        <p className={styles.leaderRole} style={{ color: leader.color }}>
+                          {leader.role}
+                        </p>
+                      </div>
+                      <a
+                        href={leader.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.leaderSocial}
+                        aria-label={`${leader.name} LinkedIn Profile`}
+                      >
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.6a1.66 1.66 0 1 0 0 3.32 1.66 1.66 0 0 0 0-3.32z" />
+                        </svg>
+                      </a>
+                    </div>
+
+                    <p className={styles.leaderBio}>{leader.bio}</p>
+
+                    <blockquote className={styles.leaderQuote}>
+                      &ldquo;{leader.quote}&rdquo;
+                    </blockquote>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          {/* Executive Leadership CTA Card down the cards */}
+          <ScrollReveal delay={120}>
+            <div className={styles.leadershipCtaCard}>
+              <div className={styles.leaderCtaGlow} />
+              <div className={styles.leaderCtaMesh} />
+
+              <div className={styles.leaderCtaLeft}>
+                <span className={styles.leaderCtaBadge}>⚡ WORK DIRECTLY WITH OUR TEAM</span>
+                <h3 className={styles.leaderCtaTitle}>
+                  Get Experienced Digital Marketers Working on Your Growth
+                </h3>
+                <p className={styles.leaderCtaSub}>
+                  We keep our client list focused so our senior team stays involved in your strategy, campaigns, and marketing decisions from start to finish.
+                </p>
+              </div>
+
+              <div className={styles.leaderCtaRight}>
+                <div className={styles.leaderCtaBtnGroup}>
+                  <BeamButton href="/contact" label="Book a Strategy Call →" size="md" />
+                  <BeamButton href="/about/team" label="Meet Our Team →" size="md" variant="outline" />
+                </div>
+                <div className={styles.leaderCtaMeta}>
+                  <span className={styles.leaderCtaBeacon} />
+                  <span>Direct Strategic Partnership &amp; Focused Execution</span>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
 
       {/* ══════════════════════════════════════════════════════
           SECTION 3: HOME MAP SECTION (YOUR TRUSTED DIGITAL MARKETING COMPANY IN BHUBANESWAR)
@@ -1556,117 +1665,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-{/* ══════════════════════════════════════════════════════
-          SECTION 11: EXECUTIVE ARCHITECTS (REAL LEADERSHIP TEAM)
-         ══════════════════════════════════════════════════════ */}
-  < section className = { styles.leadershipSection } id = "leadership-team" >
-    <div className="container">
-      <ScrollReveal className="text-center">
-        <div className="eyebrow" style={{ margin: '0 auto 12px' }}>
-          <span className="eyebrow-dot" />
-          <span>MEET THE TEAM</span>
-        </div>
-        <h2 className={`display-lg ${styles.sectionHeadline}`}>
-          Your Growth Is{' '}
-          <span className="accent-gradient">Our Shared Goal</span>
-        </h2>
-        <p className={`body-lg ${styles.sectionSub}`}>
-          Get direct support from experienced digital marketing professionals who understand your goals and turn them into clear, practical marketing strategies.
-        </p>
-      </ScrollReveal>
-
-      {/* 5 Real Executive Cards */}
-      <div className={styles.leadershipGrid}>
-        {executiveArchitects.map((leader, idx) => (
-          <ScrollReveal key={leader.name} delay={idx * 80} className={styles.leaderRevealWrap}>
-            <div
-              className={styles.leaderCard}
-              style={{ '--leader-accent': leader.color } as React.CSSProperties}
-            >
-              <div className={styles.leaderPhotoWrap}>
-                <Image
-                  src={leader.image}
-                  alt={leader.name}
-                  fill
-                  priority={true}
-                  unoptimized={true}
-                  className={styles.leaderPhoto}
-                  style={{ objectPosition: leader.imagePosition }}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 20vw"
-                />
-                <div className={styles.leaderOverlay} />
-                <span
-                  className={styles.leaderDeptBadge}
-                  style={{ color: leader.color, borderColor: `${leader.color}40` }}
-                >
-                  {leader.dept}
-                </span>
-              </div>
-
-              <div className={styles.leaderInfo}>
-                <div className={styles.leaderHeaderRow}>
-                  <div>
-                    <h3 className={styles.leaderName}>{leader.name}</h3>
-                    <p className={styles.leaderRole} style={{ color: leader.color }}>
-                      {leader.role}
-                    </p>
-                  </div>
-                  <a
-                    href={leader.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.leaderSocial}
-                    aria-label={`${leader.name} LinkedIn Profile`}
-                  >
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.6a1.66 1.66 0 1 0 0 3.32 1.66 1.66 0 0 0 0-3.32z" />
-                    </svg>
-                  </a>
-                </div>
-
-                <p className={styles.leaderBio}>{leader.bio}</p>
-
-                <blockquote className={styles.leaderQuote}>
-                  &ldquo;{leader.quote}&rdquo;
-                </blockquote>
-              </div>
-            </div>
-          </ScrollReveal>
-        ))}
-      </div>
-
-      {/* Executive Leadership CTA Card down the cards */}
-      <ScrollReveal delay={120}>
-        <div className={styles.leadershipCtaCard}>
-          <div className={styles.leaderCtaGlow} />
-          <div className={styles.leaderCtaMesh} />
-
-          <div className={styles.leaderCtaLeft}>
-            <span className={styles.leaderCtaBadge}>⚡ WORK DIRECTLY WITH OUR TEAM</span>
-            <h3 className={styles.leaderCtaTitle}>
-              Get Experienced Digital Marketers Working on Your Growth
-            </h3>
-            <p className={styles.leaderCtaSub}>
-              We keep our client list focused so our senior team stays involved in your strategy, campaigns, and marketing decisions from start to finish.
-            </p>
-          </div>
-
-          <div className={styles.leaderCtaRight}>
-            <div className={styles.leaderCtaBtnGroup}>
-              <BeamButton href="/contact" label="Book a Strategy Call →" size="md" />
-              <BeamButton href="/about/team" label="Meet Our Team →" size="md" variant="outline" />
-            </div>
-            <div className={styles.leaderCtaMeta}>
-              <span className={styles.leaderCtaBeacon} />
-              <span>Direct Strategic Partnership &amp; Focused Execution</span>
-            </div>
-          </div>
-        </div>
-      </ScrollReveal>
-    </div>
-      </section >
-
-        {/* ══════════════════════════════════════════════════════
+      {/* ══════════════════════════════════════════════════════
           SECTION 12: FREQUENTLY ASKED QUESTIONS (MATCHES HOME PAGE LUXURY ACCORDION)
          ══════════════════════════════════════════════════════ */}
         <section className={`section ${styles.faqSection}`} id="faq-section">

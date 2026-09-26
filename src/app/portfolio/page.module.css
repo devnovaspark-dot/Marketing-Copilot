@@ -2665,12 +2665,16 @@
   }
   .heroActions {
     width: 100%;
+    display: flex;
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
+    gap: 10px;
   }
   .heroActions > * {
-    width: 100%;
-    justify-content: center;
+    width: 100% !important;
+    max-width: 290px !important;
+    margin: 0 auto !important;
+    justify-content: center !important;
   }
   /* Featured Commercial Milestone (Compact & Better Mobile View) */
   .spotlightCard {
@@ -2760,14 +2764,17 @@
   .sliderTrackContainer {
     scroll-snap-type: x mandatory !important;
     -webkit-overflow-scrolling: touch !important;
+    scroll-behavior: smooth !important;
+    overscroll-behavior-x: contain !important;
     padding-bottom: 16px !important;
   }
   .slidingCard {
-    width: 270px !important;
-    max-width: 82vw !important;
+    width: 280px !important;
+    max-width: 84vw !important;
     padding: 12px !important;
     border-radius: 14px !important;
-    scroll-snap-align: center !important;
+    scroll-snap-align: start !important;
+    scroll-snap-stop: normal !important;
   }
   .cardImgWrap {
     height: 150px !important;

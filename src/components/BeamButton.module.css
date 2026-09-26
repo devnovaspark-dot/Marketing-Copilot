@@ -286,25 +286,27 @@
     max-width: 100% !important;
     box-sizing: border-box !important;
     padding: 1.5px !important;
+    overflow: hidden !important;
+    border-radius: 9999px !important;
+    clip-path: inset(0 round 9999px) !important;
+    -webkit-clip-path: inset(0 round 9999px) !important;
+    contain: paint !important;
     box-shadow:
       0 3px 12px -2px rgba(11, 32, 147, 0.35),
       0 1px 4px rgba(0, 0, 0, 0.05) !important;
   }
   .glowAmbient {
-    width: 260px !important;
-    height: 260px !important;
-    min-width: 260px !important;
-    min-height: 260px !important;
-    filter: blur(4px) !important;
-    opacity: 0.75 !important;
+    display: none !important; /* Eliminate excessive blurred ambient spread on mobile/tablets */
   }
   .beamSpin {
-    width: 260px !important;
-    height: 260px !important;
-    min-width: 260px !important;
-    min-height: 260px !important;
+    width: 220px !important;
+    height: 220px !important;
+    min-width: 220px !important;
+    min-height: 220px !important;
   }
   .innerBtn {
+    width: 100% !important;
+    justify-content: center !important;
     padding: 8px 16px !important;
     font-size: 12.5px !important;
     gap: 5px !important;
@@ -329,24 +331,26 @@
 @media (max-width: 480px) {
   .beamWrapper {
     padding: 1.4px !important;
+    overflow: hidden !important;
+    border-radius: 9999px !important;
+    clip-path: inset(0 round 9999px) !important;
+    -webkit-clip-path: inset(0 round 9999px) !important;
+    contain: paint !important;
   }
   .glowAmbient {
-    width: 220px !important;
-    height: 220px !important;
-    min-width: 220px !important;
-    min-height: 220px !important;
-    filter: blur(3.5px) !important;
-    opacity: 0.7 !important;
+    display: none !important; /* Eliminate excessive blurred ambient spread on mobile */
   }
   .beamSpin {
-    width: 220px !important;
-    height: 220px !important;
-    min-width: 220px !important;
-    min-height: 220px !important;
+    width: 200px !important;
+    height: 200px !important;
+    min-width: 200px !important;
+    min-height: 200px !important;
   }
   .innerBtn {
-    padding: 7px 14px !important;
-    font-size: 12px !important;
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 8px 16px !important;
+    font-size: 12.5px !important;
   }
   .lg .innerBtn {
     padding: 8px 16px !important;

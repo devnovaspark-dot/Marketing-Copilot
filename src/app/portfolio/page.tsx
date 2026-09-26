@@ -60,6 +60,16 @@ export default function PortfolioPage() {
   const [isPaused, setIsPaused] = useState(false);
 
   const sliderRef = useRef<HTMLDivElement>(null);
+  const touchTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Pause auto-sliding on touch or scroll so manual 2-card swipe is never interrupted
+  const handleUserInteraction = () => {
+    setIsPaused(true);
+    if (touchTimeoutRef.current) clearTimeout(touchTimeoutRef.current);
+    touchTimeoutRef.current = setTimeout(() => {
+      setIsPaused(false);
+    }, 8000);
+  };
 
   // Auto-cycling portfolio hero slides (every 3.8s, pauses on hover)
   useEffect(() => {
@@ -75,20 +85,22 @@ export default function PortfolioPage() {
     return activeFilter === 'All' || item.category === activeFilter;
   });
 
-  // Auto-sliding cards mechanism
+  // Auto-sliding cards mechanism with dynamic card width and gentle 5.5s interval
   useEffect(() => {
     const el = sliderRef.current;
     if (!el) return;
 
     const interval = setInterval(() => {
       if (!isPaused && el) {
-        if (el.scrollLeft + el.clientWidth >= el.scrollWidth - 10) {
+        const firstCard = el.querySelector<HTMLElement>(`.${styles.slidingCard}`);
+        const step = firstCard ? firstCard.offsetWidth + 24 : 320;
+        if (el.scrollLeft + el.clientWidth >= el.scrollWidth - 15) {
           el.scrollTo({ left: 0, behavior: 'smooth' });
         } else {
-          el.scrollBy({ left: 380, behavior: 'smooth' });
+          el.scrollBy({ left: step, behavior: 'smooth' });
         }
       }
-    }, 2800);
+    }, 5500);
 
     return () => clearInterval(interval);
   }, [isPaused]);
@@ -103,9 +115,13 @@ export default function PortfolioPage() {
   }, [isHudPaused]);
 
   const slideManual = (direction: 'left' | 'right') => {
-    if (!sliderRef.current) return;
-    const offset = direction === 'left' ? -380 : 380;
-    sliderRef.current.scrollBy({ left: offset, behavior: 'smooth' });
+    const el = sliderRef.current;
+    if (!el) return;
+    handleUserInteraction();
+    const firstCard = el.querySelector<HTMLElement>(`.${styles.slidingCard}`);
+    const step = firstCard ? firstCard.offsetWidth + 24 : 320;
+    const offset = direction === 'left' ? -step : step;
+    el.scrollBy({ left: offset, behavior: 'smooth' });
   };
 
   const currentHud = transformationData[activeHudIndex] || transformationData[0];
@@ -163,7 +179,7 @@ export default function PortfolioPage() {
 
               {/* Action Buttons */}
               <div className={styles.heroActions}>
-                <BeamButton href="#showcase" label="Explore Case Studies ↓" size="md" />
+                <BeamButton href="#showcase" label="Explore Case Studies ↓" size="md" fullWidth={true} />
                 <Link href="/contact" className={styles.secondaryBtn}>
                   <span>Request Custom Audit</span>
                   <span>→</span>
@@ -368,12 +384,15 @@ export default function PortfolioPage() {
             </div>
           </div>
 
-          {/* Auto-Sliding Track Container */}
+          {/* Auto-Sliding Track Container with Touch Interaction Guard */}
           <div
             className={styles.sliderTrackContainer}
             ref={sliderRef}
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
+            onTouchStart={handleUserInteraction}
+            onTouchMove={handleUserInteraction}
+            onScroll={handleUserInteraction}
           >
             <div className={styles.sliderTrack}>
               {filteredCases.map((c) => (
