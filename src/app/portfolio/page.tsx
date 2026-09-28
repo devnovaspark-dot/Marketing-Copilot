@@ -62,13 +62,24 @@ export default function PortfolioPage() {
   const sliderRef = useRef<HTMLDivElement>(null);
   const touchTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Pause auto-sliding on touch or scroll so manual 2-card swipe is never interrupted
-  const handleUserInteraction = () => {
+  // Pause auto-sliding on active touch gesture; resume smoothly after 3s inactivity
+  const handleTouchStart = () => {
     setIsPaused(true);
+    if (touchTimeoutRef.current) clearTimeout(touchTimeoutRef.current);
+  };
+
+  const handleTouchEnd = () => {
     if (touchTimeoutRef.current) clearTimeout(touchTimeoutRef.current);
     touchTimeoutRef.current = setTimeout(() => {
       setIsPaused(false);
-    }, 8000);
+    }, 3000);
+  };
+
+  const handleFilterClick = (category: string) => {
+    setActiveFilter(category);
+    if (sliderRef.current) {
+      sliderRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+    }
   };
 
   // Auto-cycling portfolio hero slides (every 3.8s, pauses on hover)
@@ -85,7 +96,7 @@ export default function PortfolioPage() {
     return activeFilter === 'All' || item.category === activeFilter;
   });
 
-  // Auto-sliding cards mechanism with dynamic card width and gentle 5.5s interval
+  // Auto-sliding cards mechanism with dynamic card width and gentle 3.8s cadence
   useEffect(() => {
     const el = sliderRef.current;
     if (!el) return;
@@ -93,17 +104,26 @@ export default function PortfolioPage() {
     const interval = setInterval(() => {
       if (!isPaused && el) {
         const firstCard = el.querySelector<HTMLElement>(`.${styles.slidingCard}`);
-        const step = firstCard ? firstCard.offsetWidth + 24 : 320;
-        if (el.scrollLeft + el.clientWidth >= el.scrollWidth - 15) {
+        if (!firstCard) return;
+        const isMobile = window.innerWidth <= 768;
+        const gap = isMobile ? 14 : 24;
+        const step = firstCard.offsetWidth + gap;
+        const maxScroll = el.scrollWidth - el.clientWidth;
+
+        if (maxScroll <= 5) return;
+
+        if (el.scrollLeft >= maxScroll - 15) {
           el.scrollTo({ left: 0, behavior: 'smooth' });
         } else {
-          el.scrollBy({ left: step, behavior: 'smooth' });
+          const nextIndex = Math.floor((el.scrollLeft + 15) / step) + 1;
+          const target = Math.min(nextIndex * step, maxScroll);
+          el.scrollTo({ left: target, behavior: 'smooth' });
         }
       }
-    }, 5500);
+    }, 3800);
 
     return () => clearInterval(interval);
-  }, [isPaused]);
+  }, [isPaused, filteredCases.length]);
 
   // Auto-cycling Audited Commercial Deltas (every 3.5s)
   useEffect(() => {
@@ -117,11 +137,26 @@ export default function PortfolioPage() {
   const slideManual = (direction: 'left' | 'right') => {
     const el = sliderRef.current;
     if (!el) return;
-    handleUserInteraction();
+    handleTouchStart();
+    handleTouchEnd();
     const firstCard = el.querySelector<HTMLElement>(`.${styles.slidingCard}`);
-    const step = firstCard ? firstCard.offsetWidth + 24 : 320;
-    const offset = direction === 'left' ? -step : step;
-    el.scrollBy({ left: offset, behavior: 'smooth' });
+    if (!firstCard) return;
+    const isMobile = window.innerWidth <= 768;
+    const gap = isMobile ? 14 : 24;
+    const step = firstCard.offsetWidth + gap;
+    const maxScroll = el.scrollWidth - el.clientWidth;
+
+    if (direction === 'left') {
+      const prevIndex = Math.ceil((el.scrollLeft - 15) / step) - 1;
+      el.scrollTo({ left: Math.max(0, prevIndex * step), behavior: 'smooth' });
+    } else {
+      if (el.scrollLeft >= maxScroll - 15) {
+        el.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        const nextIndex = Math.floor((el.scrollLeft + 15) / step) + 1;
+        el.scrollTo({ left: Math.min(nextIndex * step, maxScroll), behavior: 'smooth' });
+      }
+    }
   };
 
   const currentHud = transformationData[activeHudIndex] || transformationData[0];
@@ -359,7 +394,7 @@ export default function PortfolioPage() {
               {filterCategories.map((f) => (
                 <button
                   key={f}
-                  onClick={() => setActiveFilter(f)}
+                  onClick={() => handleFilterClick(f)}
                   className={`${styles.filterBtn} ${activeFilter === f ? styles.filterBtnActive : ''}`}
                 >
                   {f}
@@ -391,9 +426,8 @@ export default function PortfolioPage() {
             ref={sliderRef}
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
-            onTouchStart={handleUserInteraction}
-            onTouchMove={handleUserInteraction}
-            onScroll={handleUserInteraction}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
           >
             <div className={styles.sliderTrack}>
               {filteredCases.map((c) => (
