@@ -878,7 +878,7 @@ export default function FAQPage() {
       {/* ══════════════════════════════════════════════════════════
           DRIVING BUSINESS GROWTH WITH DIGITAL MARKETING IN BHUBANESWAR
          ══════════════════════════════════════════════════════════ */}
-      <QuickConnectMapSection />
+      <QuickConnectMapSection headingTag="h2" />
 
       {/* ══════════════════════════════════════════════════════════
           SECTION 2: STORYTELLING ARCHITECTURE (WITHOUT ANY CARD)

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'FAQ – Digital Marketing Questions Answered | Bhubaneswar',
+  title: 'FAQ – Digital Marketing Questions Answered | Bhubaneswar | Marketing Copilot',
   description:
     'FAQ covering digital marketing, SEO, social media, paid ads, web development, branding, AI automation, and other services for businesses in Bhubaneswar.',
   keywords: [
@@ -13,20 +13,20 @@ export const metadata: Metadata = {
     'social media marketing questions Odisha',
   ],
   alternates: {
-    canonical: 'https://marketingcopilot.in/faq-digital-marketing-bhubaneswar',
+    canonical: 'https://marketingcopilot.in/faq',
   },
   openGraph: {
-    title: 'FAQ – Digital Marketing Questions Answered | Bhubaneswar',
+    title: 'FAQ – Digital Marketing Questions Answered | Bhubaneswar | Marketing Copilot',
     description:
       'FAQ covering digital marketing, SEO, social media, paid ads, web development, branding, AI automation, and other services for businesses in Bhubaneswar.',
-    url: 'https://marketingcopilot.in/faq-digital-marketing-bhubaneswar',
+    url: 'https://marketingcopilot.in/faq',
     siteName: 'Marketing Copilot',
     locale: 'en_IN',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'FAQ – Digital Marketing Questions Answered | Bhubaneswar',
+    title: 'FAQ – Digital Marketing Questions Answered | Bhubaneswar | Marketing Copilot',
     description:
       'FAQ covering digital marketing, SEO, social media, paid ads, web development, branding, AI automation, and other services for businesses in Bhubaneswar.',
   },

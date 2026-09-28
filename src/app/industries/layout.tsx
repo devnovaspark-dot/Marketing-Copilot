@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Digital Marketing Services for Industries in Bhubaneswar',
+  title: 'Digital Marketing Services for Industries in Bhubaneswar | Marketing Copilot',
   description:
     'Explore industry-specific digital marketing solutions in Bhubaneswar, from SEO and paid ads to social media, branding, web development, and AI automation.',
   keywords: [
@@ -14,20 +14,20 @@ export const metadata: Metadata = {
     'e-commerce marketing Odisha',
   ],
   alternates: {
-    canonical: 'https://marketingcopilot.in/digital-marketing-services-industries-bhubaneswar',
+    canonical: 'https://marketingcopilot.in/industries',
   },
   openGraph: {
-    title: 'Digital Marketing Services for Industries in Bhubaneswar',
+    title: 'Digital Marketing Services for Industries in Bhubaneswar | Marketing Copilot',
     description:
       'Explore industry-specific digital marketing solutions in Bhubaneswar, from SEO and paid ads to social media, branding, web development, and AI automation.',
-    url: 'https://marketingcopilot.in/digital-marketing-services-industries-bhubaneswar',
+    url: 'https://marketingcopilot.in/industries',
     siteName: 'Marketing Copilot',
     locale: 'en_IN',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Digital Marketing Services for Industries in Bhubaneswar',
+    title: 'Digital Marketing Services for Industries in Bhubaneswar | Marketing Copilot',
     description:
       'Explore industry-specific digital marketing solutions in Bhubaneswar, from SEO and paid ads to social media, branding, web development, and AI automation.',
   },

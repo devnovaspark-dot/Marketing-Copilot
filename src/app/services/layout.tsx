@@ -16,13 +16,13 @@ export const metadata: Metadata = {
     'AI marketing automation Bhubaneswar',
   ],
   alternates: {
-    canonical: 'https://marketingcopilot.in/digital-marketing-company-services-bhubaneswar',
+    canonical: 'https://marketingcopilot.in/services',
   },
   openGraph: {
     title: 'Digital Marketing Company Services in Bhubaneswar | Marketing Copilot',
     description:
       'Explore digital marketing company services in Bhubaneswar, including SEO, Google Ads, Meta Ads, social media, web development, branding, and AI automation.',
-    url: 'https://marketingcopilot.in/digital-marketing-company-services-bhubaneswar',
+    url: 'https://marketingcopilot.in/services',
     siteName: 'Marketing Copilot',
     locale: 'en_IN',
     type: 'website',

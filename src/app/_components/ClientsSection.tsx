@@ -65,9 +65,9 @@ export default function ClientsSection() {
             </div>
             
             {/* Centered Typography (Concise & Punchy) */}
-            <h3 className={styles.ctaTitle}>
+            <h2 className={styles.ctaTitle}>
               Your Business Deserves a <span className="accent-gradient">Smarter Digital Strategy</span>
-            </h3>
+            </h2>
             
             <p className={styles.ctaSubtitle}>
               Partner with a trusted Digital Marketing Company in Bhubaneswar for SEO, Google Ads, online marketing services, and tailored Digital Marketing Solutions that drive visibility, leads, and growth.

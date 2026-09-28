@@ -10,6 +10,7 @@ interface QuickConnectMapSectionProps {
   eyebrow?: string;
   title?: React.ReactNode;
   subtitle?: string;
+  headingTag?: 'h2' | 'h3';
 }
 
 export default function QuickConnectMapSection({
@@ -22,6 +23,7 @@ export default function QuickConnectMapSection({
     </>
   ),
   subtitle = 'As a digital marketing company in Bhubaneswar, we combine SEO, social media, content, and performance marketing to help brands grow online.',
+  headingTag = 'h3',
 }: QuickConnectMapSectionProps = {}) {
   const [copiedField, setCopiedField] = useState<string | null>(null);
 
@@ -59,7 +61,11 @@ export default function QuickConnectMapSection({
               <span className={styles.eyebrowText}>{eyebrow}</span>
             </div>
 
-            <h3 className={styles.title}>{title}</h3>
+            {headingTag === 'h2' ? (
+              <h2 className={styles.title}>{title}</h2>
+            ) : (
+              <h3 className={styles.title}>{title}</h3>
+            )}
 
             <p className={styles.subtitle}>{subtitle}</p>
           </div>

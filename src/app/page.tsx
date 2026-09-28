@@ -21,7 +21,20 @@ export const metadata: Metadata = {
     google: '79f0bLLJO5DmUzDFyrPHZ1vouQGfmYsHB5NZ594DHww',
   },
   alternates: {
-    canonical: 'https://marketingcopilot.in/digital-marketing-company-in-bhubaneswar',
+    canonical: 'https://marketingcopilot.in/',
+  },
+  openGraph: {
+    title: 'Digital Marketing Company in Bhubaneswar | Marketing Copilot',
+    description: 'Top-rated digital marketing agency in Bhubaneswar. SEO, Google Ads, Meta Ads, web development and compounding revenue growth for Bhubaneswar businesses.',
+    url: 'https://marketingcopilot.in/',
+    siteName: 'Marketing Copilot',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Digital Marketing Company in Bhubaneswar | Marketing Copilot',
+    description: 'Top-rated digital marketing agency in Bhubaneswar. SEO, Google Ads, Meta Ads, web development and compounding revenue growth for Bhubaneswar businesses.',
   },
 };
 
