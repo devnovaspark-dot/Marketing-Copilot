@@ -656,7 +656,7 @@ export default function ServicesPage() {
         <section className={styles.heroSection}>
           <div className="container">
             <div className={styles.heroCenter}>
-              <ScrollReveal>
+              <ScrollReveal className={styles.heroReveal}>
                 <div className={styles.heroEyebrowPill}>
                   <span className={styles.emeraldPulseDot} />
                   <span>INTEGRATED REVENUE ENGINE • BHUBANESWAR GROWTH ARCHITECTURE</span>
@@ -903,7 +903,7 @@ export default function ServicesPage() {
                   {/* Clean Executive Telemetry Medallion Hub (Zero Clock Hands/Needles) */}
                   <div className={styles.orbitCenterHub}>
                     <div className={styles.hubInner}>
-                      <span className={styles.hubPhaseTag}>PHASE 0{currentPhase.num} OF 04</span>
+                      <span className={styles.hubPhaseTag}>PHASE {currentPhase.num} OF 04</span>
                       <span className={styles.hubMetricValue}>{currentPhase.metricValue}</span>
                       <span className={styles.hubMetricLabel}>{currentPhase.metricLabel}</span>
                       <div className={styles.hubLiveBadge}>

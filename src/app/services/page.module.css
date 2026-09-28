@@ -47,6 +47,15 @@
   align-items: center;
   position: relative;
   z-index: 2;
+  width: 100%;
+}
+
+.heroReveal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
 }
 
 .heroEyebrowPill {
@@ -288,23 +297,29 @@
 }
 
 .heroSub {
-  max-width: 630px;
-  margin: 0 0 28px;
+  max-width: 680px;
+  margin: 0 auto 28px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .heroSub p {
   font-size: clamp(15px, 1.05vw, 16.5px);
   color: #475569;
   line-height: 1.62;
-  margin: 0;
+  margin: 0 auto;
+  text-align: center;
 }
 
 /* Hero CTA Row */
 .heroCtaWrapper {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 14px;
-  margin-bottom: 30px;
+  margin: 0 auto 30px;
   flex-wrap: wrap;
 }
 
@@ -6296,7 +6311,8 @@
   .heroSub {
     font-size: 13.5px;
     line-height: 1.5;
-    margin-bottom: 20px;
+    margin: 0 auto 20px;
+    text-align: center;
   }
   .heroCtaWrapper {
     flex-direction: column;
@@ -6510,21 +6526,86 @@
     height: 280px;
   }
   .revolvingOrbBall {
-    top: -95px;
+    top: -99px;
   }
   .orbitCenterHub {
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 140px;
+  }
+  .hubInner {
+    padding: 6px 10px;
+    gap: 1.5px;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+  }
+  .hubPhaseTag {
+    font-size: 8.5px;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    line-height: 1.1;
   }
   .hubMetricValue {
-    font-size: 19px;
+    font-size: 20px;
+    line-height: 1.1;
+    margin: 1px 0;
+  }
+  .hubMetricLabel {
+    font-size: 9px;
+    line-height: 1.2;
+    max-width: 110px;
+    text-align: center;
+  }
+  .hubLiveBadge {
+    font-size: 8px;
+    padding: 2px 7px;
+    margin-top: 2px;
+    gap: 3px;
+  }
+  .hubLiveDot {
+    width: 4px;
+    height: 4px;
   }
   .orbitNode {
-    width: 44px;
-    height: 44px;
+    width: 42px;
+    height: 42px;
+  }
+  .orbitNodeTop {
+    top: 19px;
+  }
+  .orbitNodeRight {
+    right: 19px;
+  }
+  .orbitNodeBottom {
+    bottom: 19px;
+  }
+  .orbitNodeLeft {
+    left: 19px;
+  }
+  .orbitNodeTop.orbitNodeActive {
+    transform: translateX(-50%) scale(1.06) !important;
+  }
+  .orbitNodeRight.orbitNodeActive {
+    transform: translateY(-50%) scale(1.06) !important;
+  }
+  .orbitNodeBottom.orbitNodeActive {
+    transform: translateX(-50%) scale(1.06) !important;
+  }
+  .orbitNodeLeft.orbitNodeActive {
+    transform: translateY(-50%) scale(1.06) !important;
   }
   .nodeNum {
     font-size: 12px;
+  }
+  .nodeTooltip {
+    font-size: 9px;
+    padding: 1.5px 6px;
+  }
+  .orbitNodeRight .nodeTooltip {
+    right: -52px;
+  }
+  .orbitNodeLeft .nodeTooltip {
+    left: -52px;
   }
 
   /* Compact Clean Phase Cards */
