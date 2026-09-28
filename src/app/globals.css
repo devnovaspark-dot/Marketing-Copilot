@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
-
 /* ═══════════════════════════════════════════════════════════
    MARKETING COPILOT — ULTRA-CLEAN WHITE & SKEUOMORPHIC DESIGN SYSTEM
 ═══════════════════════════════════════════════════════════ */
@@ -79,8 +77,8 @@
                      0 1px 0 rgba(255, 255, 255, 1);
 
   /* Typography */
-  --font-display: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-display), 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-body: var(--font-body), 'Inter', system-ui, -apple-system, sans-serif;
 
   /* Spacing */
   --space-1: 8px;

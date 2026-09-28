@@ -148,9 +148,9 @@ const articles: Record<string, ArticleData> = {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const a = articles[slug];
-  if (!a) return { title: 'Article Not Found — Marketing Copilot' };
+  if (!a) return { title: 'Article Not Found' };
   return {
-    title: `${a.title} — Marketing Copilot Insights`,
+    title: `${a.title} — Insights`,
     description: a.summary,
   };
 }

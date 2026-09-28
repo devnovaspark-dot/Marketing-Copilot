@@ -115,7 +115,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const p = projects[slug];
   if (!p) return { title: 'Case Study Not Found' };
   return {
-    title: `${p.client} Case Study — ${p.category} | Marketing Copilot`,
+    title: `${p.client} Case Study — ${p.category}`,
     description: p.headline,
   };
 }

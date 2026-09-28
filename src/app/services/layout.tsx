@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Digital Marketing Company Services in Bhubaneswar | Marketing Copilot',
+  title: 'Digital Marketing Company Services in Bhubaneswar',
   description:
     'Explore digital marketing company services in Bhubaneswar, including SEO, Google Ads, Meta Ads, social media, web development, branding, and AI automation.',
   keywords: [

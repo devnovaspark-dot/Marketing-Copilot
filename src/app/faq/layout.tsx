@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'FAQ – Digital Marketing Questions Answered | Bhubaneswar | Marketing Copilot',
+  title: 'FAQ – Digital Marketing Questions Answered | Bhubaneswar',
   description:
     'FAQ covering digital marketing, SEO, social media, paid ads, web development, branding, AI automation, and other services for businesses in Bhubaneswar.',
   keywords: [

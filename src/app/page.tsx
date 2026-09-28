@@ -1,18 +1,20 @@
 import type { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import HeroSection from './_components/HeroSection';
 import ClientsSection from './_components/ClientsSection';
 import StoryVideoSection from './_components/StoryVideoSection';
-import QuickConnectMapSection from './_components/QuickConnectMapSection';
 import MetricsSection from './_components/MetricsSection';
-import BrandSpotlightSection from './_components/BrandSpotlightSection';
 import ServicesSection from './_components/ServicesSection';
 import StrategySection from './_components/StrategySection';
-import QuotesSection from './_components/QuotesSection';
 import TeamPreview from './_components/TeamPreview';
-import WhyChooseSection from './_components/WhyChooseSection';
-import RealGrowthSection from './_components/RealGrowthSection';
-import FAQSection from './_components/FAQSection';
 import CTASection from './_components/CTASection';
+
+const QuickConnectMapSection = dynamic(() => import('./_components/QuickConnectMapSection'));
+const BrandSpotlightSection = dynamic(() => import('./_components/BrandSpotlightSection'));
+const QuotesSection = dynamic(() => import('./_components/QuotesSection'));
+const WhyChooseSection = dynamic(() => import('./_components/WhyChooseSection'));
+const RealGrowthSection = dynamic(() => import('./_components/RealGrowthSection'));
+const FAQSection = dynamic(() => import('./_components/FAQSection'));
 
 export const metadata: Metadata = {
   title: 'Digital Marketing Company in Bhubaneswar | Marketing Copilot',
