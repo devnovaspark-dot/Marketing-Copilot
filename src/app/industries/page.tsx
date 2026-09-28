@@ -923,8 +923,8 @@ export default function IndustriesPage() {
               {/* Left Column: Full-Bleed Imagery with HUD Corner Accents */}
               <div className={styles.editorialImagePane}>
                 <Image
-                  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
-                  alt="Real Estate Case Study Bhubaneswar"
+                  src="/images/image bbsr.png"
+                  alt="Real Estate Case Study Bhubaneswar - Utkal Heights"
                   fill
                   className={styles.editorialImg}
                 />
