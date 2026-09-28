@@ -6,6 +6,9 @@ import WhatsAppFloatingButton from "@/components/WhatsAppFloatingButton";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://marketingcopilot.in"),
+  verification: {
+    google: "79f0bLLJO5DmUzDFyrPHZ1vouQGfmYsHB5NZ594DHww",
+  },
   robots: {
     index: false,
     follow: false,
@@ -72,34 +75,191 @@ export const metadata: Metadata = {
   }
 };
 
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://marketingcopilot.in/#website",
+  "url": "https://marketingcopilot.in/",
+  "name": "Marketing Copilot",
+  "description": "Digital Marketing Company in Bhubaneswar offering SEO, Google Ads, Meta Ads, social media marketing and digital marketing solutions.",
+  "publisher": {
+    "@id": "https://marketingcopilot.in/#organization"
+  },
+  "inLanguage": "en-IN"
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://marketingcopilot.in/#organization",
+      "name": "Marketing Copilot",
+      "url": "https://marketingcopilot.in/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://marketingcopilot.in/images/marketing-copilot-logo.png"
+      },
+      "description": "Marketing Copilot is a digital marketing company in Bhubaneswar providing SEO, Google Ads, Meta Ads, social media marketing, web solutions, creative services and AI-powered digital marketing solutions.",
+      "telephone": "+91 8280788689",
+      "email": "connect@novasparkdigitalmarketingagency.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Mallick Complex, Unit 3, Kharvela Nagar",
+        "addressLocality": "Bhubaneswar",
+        "addressRegion": "Odisha",
+        "postalCode": "751001",
+        "addressCountry": "IN"
+      }
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://marketingcopilot.in/#localbusiness",
+      "name": "Marketing Copilot",
+      "url": "https://marketingcopilot.in/",
+      "image": "https://marketingcopilot.in/images/marketing-copilot-brand.png",
+      "logo": "https://marketingcopilot.in/images/marketing-copilot-logo.png",
+      "description": "Digital marketing company in Bhubaneswar offering SEO, Google Ads, Meta Ads, social media marketing, web solutions, creative services and AI-powered marketing solutions.",
+      "telephone": "+91 8280788689",
+      "email": "connect@novasparkdigitalmarketingagency.com",
+      "parentOrganization": {
+        "@id": "https://marketingcopilot.in/#organization"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Mallick Complex, Unit 3, Kharvela Nagar",
+        "addressLocality": "Bhubaneswar",
+        "addressRegion": "Odisha",
+        "postalCode": "751001",
+        "addressCountry": "IN"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ],
+          "opens": "09:30",
+          "closes": "19:30"
+        }
+      ],
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Bhubaneswar"
+        },
+        {
+          "@type": "State",
+          "name": "Odisha"
+        },
+        {
+          "@type": "Country",
+          "name": "India"
+        }
+      ],
+      "knowsAbout": [
+        "Digital Marketing",
+        "Search Engine Optimization",
+        "Local SEO",
+        "Google Ads",
+        "Meta Ads",
+        "Social Media Marketing",
+        "Content Marketing",
+        "Web Development",
+        "AI Marketing",
+        "Digital Advertising"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://marketingcopilot.in/#website",
+      "url": "https://marketingcopilot.in/",
+      "name": "Marketing Copilot",
+      "description": "Digital Marketing Company in Bhubaneswar",
+      "publisher": {
+        "@id": "https://marketingcopilot.in/#organization"
+      },
+      "inLanguage": "en-IN"
+    }
+  ]
+};
+
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "name": "Marketing Copilot — Digital Marketing Agency",
-  "image": "/images/marketing-copilot-logo.png",
-  "@id": "https://marketingcopilot.in",
+  "@id": "https://marketingcopilot.in/#localbusiness",
+  "name": "Marketing Copilot",
   "url": "https://marketingcopilot.in/",
-  "telephone": "+91 82807 88689",
+  "logo": "https://marketingcopilot.in/images/marketing-copilot-logo.png",
+  "image": "https://marketingcopilot.in/images/marketing-copilot-brand.png",
+  "description": "Marketing Copilot is a digital marketing company in Bhubaneswar providing SEO, Google Ads, Meta Ads, social media marketing, web solutions, creative services and AI-powered digital marketing solutions.",
+  "telephone": "+91 8280788689",
+  "email": "connect@novasparkdigitalmarketingagency.com",
+  "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Growth Lab: Mallick Complex, Unit 3, Kharvela Nagar,",
+    "streetAddress": "Mallick Complex, Unit 3, Kharvela Nagar",
     "addressLocality": "Bhubaneswar",
+    "addressRegion": "Odisha",
     "postalCode": "751001",
     "addressCountry": "IN"
   },
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday"
-    ],
-    "opens": "09:30",
-    "closes": "18:30"
-  }
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "20.2961",
+    "longitude": "85.8245"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "09:30",
+      "closes": "19:30"
+    }
+  ],
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Bhubaneswar"
+    },
+    {
+      "@type": "State",
+      "name": "Odisha"
+    },
+    {
+      "@type": "Country",
+      "name": "India"
+    }
+  ],
+  "sameAs": [
+    "https://www.facebook.com/share/19cD1qU1cV/",
+    "https://www.instagram.com/nsdigitalmarketing.agency?stkn=aWZpOWwzZWdzcG1j",
+    "https://www.linkedin.com/company/nova-spark-digital-marketing-agency/"
+  ],
+  "knowsAbout": [
+    "Digital Marketing",
+    "Search Engine Optimization",
+    "Local SEO",
+    "Google Ads",
+    "Meta Ads",
+    "Social Media Marketing",
+    "Content Marketing",
+    "Web Development",
+    "AI Marketing",
+    "Digital Advertising"
+  ]
 };
 
 export default function RootLayout({
@@ -110,6 +270,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta name="google-site-verification" content="79f0bLLJO5DmUzDFyrPHZ1vouQGfmYsHB5NZ594DHww" />
         <link rel="canonical" href="https://marketingcopilot.in/digital-marketing-company-in-bhubaneswar" />
         <link rel="icon" href="/icon.png" type="image/png" />
         <link rel="shortcut icon" href="/icon.png" />
@@ -117,6 +278,14 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}

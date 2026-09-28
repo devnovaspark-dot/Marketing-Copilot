@@ -17,6 +17,9 @@ import CTASection from './_components/CTASection';
 export const metadata: Metadata = {
   title: 'Digital Marketing Company in Bhubaneswar | Marketing Copilot',
   description: 'Top-rated digital marketing agency in Bhubaneswar. SEO, Google Ads, Meta Ads, web development and compounding revenue growth for Bhubaneswar businesses.',
+  verification: {
+    google: '79f0bLLJO5DmUzDFyrPHZ1vouQGfmYsHB5NZ594DHww',
+  },
   alternates: {
     canonical: 'https://marketingcopilot.in/digital-marketing-company-in-bhubaneswar',
   },
