@@ -274,7 +274,6 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="google-site-verification" content="79f0bLLJO5DmUzDFyrPHZ1vouQGfmYsHB5NZ594DHww" />
-        <link rel="canonical" href="https://marketingcopilot.in/digital-marketing-company-in-bhubaneswar" />
         <link rel="icon" href="/icon.png" type="image/png" />
         <link rel="shortcut icon" href="/icon.png" />
         <link rel="apple-touch-icon" href="/icon.png" />
