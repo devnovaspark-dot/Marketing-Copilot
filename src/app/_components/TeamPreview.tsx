@@ -13,7 +13,7 @@ const founders = [
     imagePosition: '50% 10%',
     bio: 'Founder of Marketing Copilot, driving innovation, digital transformation, and sustainable business growth through strategy, creativity, and measurable results.',
     quote: 'We drive innovation, digital transformation, and sustainable business growth through strategy, creativity, and measurable results.',
-    color: '#0B2093',
+    color: '#38BDF8',
     linkedin: 'https://linkedin.com',
   },
   {

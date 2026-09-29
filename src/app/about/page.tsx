@@ -370,7 +370,7 @@ const executiveArchitects = [
     quote: 'We drive innovation, digital transformation, and sustainable business growth through strategy, creativity, and measurable results.',
     image: '/images/team/exec_1.png',
     imagePosition: '50% 10%',
-    color: '#0B2093',
+    color: '#38BDF8',
     linkedin: 'https://linkedin.com',
   },
   {
