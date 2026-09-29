@@ -265,7 +265,7 @@ export default function QuickConnectMapSection({
                   <span className={styles.footerDot} />
                   <span>In-person consultations available by appointment</span>
                 </div>
-                <BeamButton href="/contact" label="Claim Free Growth Audit" size="md" />
+                <BeamButton href="/contact" label="Grow Your Business With Us" size="md" />
               </div>
             </div>
           </ScrollReveal>

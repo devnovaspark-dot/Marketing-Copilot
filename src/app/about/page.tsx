@@ -1108,7 +1108,7 @@ export default function AboutPage() {
 
           <div className={styles.transCtaRight}>
             <div className={styles.transCtaButtons}>
-              <BeamButton href="/contact" label="Claim Free Growth Audit" size="md" />
+              <BeamButton href="/contact" label="Grow Your Business With Us" size="md" />
               <BeamButton href="#principles-section" label="Our Marketing Principles" size="md" variant="outline" />
             </div>
             <div className={styles.transCtaTrust}>
@@ -1262,7 +1262,7 @@ export default function AboutPage() {
               </div>
 
               <div className={styles.evalCtaRight}>
-                <BeamButton href="/contact" label="Claim Free Growth Audit" size="md" />
+                <BeamButton href="/contact" label="Grow Your Business With Us" size="md" />
                 <div className={styles.evalCtaTrust}>
                   <span>✓ 100% Free</span>
                   <span>•</span>
@@ -1740,7 +1740,7 @@ export default function AboutPage() {
           </p>
 
           <div className={styles.finaleActions}>
-            <BeamButton href="/contact" label="Claim Free Growth Audit" size="lg" />
+            <BeamButton href="/contact" label="Grow Your Business With Us" size="lg" />
             <BeamButton href="/portfolio" label="View Client Case Studies" size="lg" variant="outline" />
           </div>
         </div>

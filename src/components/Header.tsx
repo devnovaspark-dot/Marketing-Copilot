@@ -78,10 +78,13 @@ export default function Header() {
   const pathname = usePathname();
 
   useEffect(() => {
-    setMounted(true);
+    const frameId = requestAnimationFrame(() => setMounted(true));
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    return () => {
+      cancelAnimationFrame(frameId);
+      window.removeEventListener('scroll', onScroll);
+    };
   }, []);
 
   // Close dropdown on outside click or Escape key
@@ -322,7 +325,7 @@ export default function Header() {
                         }}
                         tabIndex={servicesOpen ? 0 : -1}
                       >
-                        <span>Claim Free Growth Audit</span>
+                        <span>Grow Your Business With Us</span>
                         <span>→</span>
                       </Link>
 
@@ -537,7 +540,7 @@ export default function Header() {
             <div className={styles.mobileCTA}>
               <BeamButton
                 href="/contact"
-                label="Let's Talk — Free Audit"
+                label="Grow Your Business With Us"
                 size="sm"
                 fullWidth
                 onClick={() => setMenuOpen(false)}

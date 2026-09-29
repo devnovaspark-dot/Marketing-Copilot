@@ -50,7 +50,7 @@ const spotlightBrands: BrandSpotlightData[] = [
     category: 'Luxury Bridal & Ethnic Fashion',
     logo: '/images/clients/ekatraa.png',
     hasVideo: true,
-    videoSrc: '/videos/VID20260910130432_9.mp4',
+    videoSrc: '/videos/ekatraa_reel_optimized.mp4',
     videoPoster: '/images/ekatraa_poster.jpg',
     videoTitle: 'Ekatraa Wedding & Event Reel',
     videoTag: '9:16 CINEMA REEL',
@@ -121,7 +121,7 @@ const spotlightBrands: BrandSpotlightData[] = [
     category: 'Creative Studio & Production',
     logo: '/images/clients/Zue-Studio-Logo-color (1).png',
     hasVideo: true,
-    videoSrc: '/videos/zue_studio_reel.mp4',
+    videoSrc: '/videos/zue_reel_optimized.mp4',
     videoPoster: '/images/zue_poster.jpg',
     videoTitle: 'Zue Studio Visual Production Reel',
     videoTag: '9:16 CINEMA REEL',
@@ -170,7 +170,11 @@ const spotlightBrands: BrandSpotlightData[] = [
     shortName: 'Heed',
     category: 'Health, Wellness & Lifestyle',
     logo: '/images/clients/heed.png',
-    hasVideo: false,
+    hasVideo: true,
+    videoSrc: '/videos/heed_reel_optimized.mp4',
+    videoPoster: '/images/heed_1.png',
+    videoTitle: 'Heed Wellness & Lifestyle Reel',
+    videoTag: '9:16 CINEMA REEL',
     headlineHighlight: 'Heed',
     narrative:
       'Transforming health & wellness discovery into compounding patient consultations and retail footfall through technical local search dominance, Google Maps 3-pack engineering, and high-intent CRO funnels.',
@@ -255,7 +259,7 @@ const spotlightBrands: BrandSpotlightData[] = [
     category: 'Organic Agrotech & Fresh Groceries',
     logo: '/images/clients/sri-pandurangan-divine-fresh.png',
     hasVideo: true,
-    videoSrc: '/videos/Comp 2.mp4',
+    videoSrc: '/videos/panduranga_reel_optimized.mp4',
     videoPoster: '/images/panduranga_video_poster.jpg',
     videoTitle: 'Sree Panduranga Fresh Produce Reel',
     videoTag: '9:16 CINEMA REEL',
@@ -636,7 +640,7 @@ export default function BrandSpotlightSection() {
                       loop
                       muted={!isPlaying}
                       playsInline
-                      preload="auto"
+                      preload="metadata"
                       onPlay={() => setIsPlaying(true)}
                       onPause={() => setIsPlaying(false)}
                     />

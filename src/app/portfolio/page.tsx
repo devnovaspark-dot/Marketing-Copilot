@@ -1242,7 +1242,7 @@ export default function PortfolioPage() {
 
             {/* Centered Action Buttons */}
             <div className={styles.ctaCenteredActions}>
-              <BeamButton href="/contact" label="Claim Free 30-Min Audit" size="lg" />
+              <BeamButton href="/contact" label="Grow Your Business With Us" size="lg" />
               <a
                 href="https://wa.me/918260709689?text=Hi%20Marketing%20Copilot,%20I%20would%20like%20to%20audit%20my%20business%20growth."
                 target="_blank"

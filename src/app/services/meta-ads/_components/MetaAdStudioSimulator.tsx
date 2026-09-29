@@ -132,7 +132,7 @@ export default function MetaAdStudioSimulator() {
                       </p>
                       
                       <Link href="/contact" className={styles.reelCtaButton}>
-                        <span>Claim Free Growth Audit</span>
+                        <span>Grow Your Business With Us</span>
                         <span>→</span>
                       </Link>
                     </div>

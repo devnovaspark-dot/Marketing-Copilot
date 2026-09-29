@@ -21,7 +21,7 @@ export default function CTASection() {
               Understand where your business stands online and find chances to grow.
             </p>
             <div className={styles.actions}>
-              <BeamButton href="/contact" label="Claim Free Growth Audit" size="lg" />
+              <BeamButton href="/contact" label="Grow Your Business With Us" size="lg" />
               <BeamButton href="/portfolio" label="View Our Work" size="lg" variant="outline" />
             </div>
           </ScrollReveal>

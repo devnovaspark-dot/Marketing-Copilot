@@ -369,7 +369,7 @@ export default function ServicePageTemplate({
               <p className={styles.heroSub}>{description}</p>
 
               <div className={styles.heroActions}>
-                <BeamButton href="/contact" label="Claim Free Growth Audit" size="lg" />
+                <BeamButton href="/contact" label="Grow Your Business With Us" size="lg" />
                 <a href="#deliverables" className={styles.heroSecondaryBtn}>
                   <span>Explore Deliverables &amp; Roadmap</span>
                   <span>↓</span>
@@ -968,7 +968,7 @@ export default function ServicePageTemplate({
 
               <div className={styles.termActions}>
                 <Link href="/contact" className={styles.termAuditBtn}>
-                  <span>Claim Free Growth Audit</span>
+                  <span>Grow Your Business With Us</span>
                   <span>→</span>
                 </Link>
 

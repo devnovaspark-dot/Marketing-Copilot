@@ -195,7 +195,7 @@ export default function MetricsSection() {
             </p>
 
             <div className={styles.ctaActionWrap}>
-                <BeamButton href="/contact" label="Claim Free Growth Audit" size="md" />
+                <BeamButton href="/contact" label="Grow Your Business With Us" size="md" />
               <span className={styles.ctaSubtext}>⚡ Average response time: &lt; 2 hours</span>
             </div>
 

@@ -3,25 +3,71 @@ import { useState } from 'react';
 import styles from './WhatsAppFloatingButton.module.css';
 
 export default function WhatsAppFloatingButton() {
-  const [isClicked, setIsClicked] = useState(false);
+  const [isWaClicked, setIsWaClicked] = useState(false);
+  const [isPhoneClicked, setIsPhoneClicked] = useState(false);
 
   const whatsappUrl = 'https://wa.me/918280788689?text=Hi%20Marketing%20Copilot%2C%20I%20would%20like%20to%20know%20more%20about%20your%20digital%20marketing%20services.';
+  const phoneUrl = 'tel:+918280788689';
 
-  const handleClick = () => {
-    setIsClicked(true);
+  const handleWaClick = () => {
+    setIsWaClicked(true);
     setTimeout(() => {
-      setIsClicked(false);
+      setIsWaClicked(false);
+    }, 600);
+  };
+
+  const handlePhoneClick = () => {
+    setIsPhoneClicked(true);
+    setTimeout(() => {
+      setIsPhoneClicked(false);
     }, 600);
   };
 
   return (
-    <aside className={styles.floatingContainer} aria-label="WhatsApp Quick Contact">
+    <aside className={styles.floatingContainer} aria-label="Quick Contact Actions">
+      {/* Phone Call Floating Button (Stacked above WhatsApp on Mobile) */}
+      <a
+        href={phoneUrl}
+        onClick={handlePhoneClick}
+        className={`${styles.actionBtn} ${styles.phoneBtn} ${isPhoneClicked ? styles.btnClicked : ''}`}
+        aria-label="Call Marketing Copilot directly (+91 82807 88689)"
+      >
+        {/* Ambient Pulsing Radar Ring for Phone */}
+        <span className={styles.pulseRadarPhone} />
+        <span className={styles.pulseRadarPhoneSecondary} />
+
+        {/* Tactile Skeuomorphic Button Body */}
+        <div className={`${styles.btnBody} ${styles.phoneBtnBody}`}>
+          <span className={styles.btnShimmer} />
+
+          {/* Phone Vector Icon */}
+          <svg
+            className={styles.phoneIcon}
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+          </svg>
+
+          {isPhoneClicked && <span className={styles.clickRippleBurst} />}
+        </div>
+
+        {/* Floating Tooltip Label */}
+        <div className={styles.tooltipPill}>
+          <span className={styles.phoneDot} />
+          <span className={styles.tooltipText}>Call +91 82807 88689</span>
+        </div>
+      </a>
+
+      {/* WhatsApp Floating Button */}
       <a
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        onClick={handleClick}
-        className={`${styles.whatsappBtn} ${isClicked ? styles.btnClicked : ''}`}
+        onClick={handleWaClick}
+        className={`${styles.actionBtn} ${styles.whatsappBtn} ${isWaClicked ? styles.btnClicked : ''}`}
         aria-label="Chat with Marketing Copilot on WhatsApp (+91 82807 88689)"
       >
         {/* Ambient Pulsing Radar Ring */}
@@ -29,7 +75,7 @@ export default function WhatsAppFloatingButton() {
         <span className={styles.pulseRadarSecondary} />
 
         {/* Tactile Skeuomorphic Button Body */}
-        <div className={styles.btnBody}>
+        <div className={`${styles.btnBody} ${styles.whatsappBtnBody}`}>
           {/* Ambient Glow Beam */}
           <span className={styles.btnShimmer} />
 
@@ -45,7 +91,7 @@ export default function WhatsAppFloatingButton() {
           </svg>
 
           {/* Crack / Ripple Particle Burst on Click */}
-          {isClicked && (
+          {isWaClicked && (
             <span className={styles.clickRippleBurst} />
           )}
         </div>

@@ -231,7 +231,7 @@ export default function WhyChooseSection() {
               </div>
 
               <div className={styles.playbookRight}>
-                <BeamButton href="/contact" label="Claim Free Growth Audit" size="md" />
+                <BeamButton href="/contact" label="Grow Your Business With Us" size="md" />
               </div>
             </div>
           </ScrollReveal>

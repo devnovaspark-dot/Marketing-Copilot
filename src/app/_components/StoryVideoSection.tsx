@@ -173,12 +173,12 @@ export default function StoryVideoSection() {
                   <video
                     ref={videoRef}
                     className={styles.videoPlayer}
-                    src="/videos/NS REEL 22 AUG.mp4"
+                    src="/videos/ns_reel_optimized.mp4"
                     autoPlay
                     loop
                     muted={isMuted}
                     playsInline
-                    preload="auto"
+                    preload="metadata"
                     onPlay={() => setIsPlaying(true)}
                     onPause={() => setIsPlaying(false)}
                   />

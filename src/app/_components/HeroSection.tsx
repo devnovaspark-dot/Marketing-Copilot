@@ -72,7 +72,7 @@ export default function HeroSection() {
           </div>
 
           <div className={styles.actions}>
-            <BeamButton href="/contact" label="Claim Free Growth Audit" size="lg" />
+            <BeamButton href="/contact" label="Grow Your Business With Us" size="lg" />
             <BeamButton
               href="/services"
               label="Explore Our Services"

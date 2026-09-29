@@ -376,7 +376,7 @@ export default function ServicesSection() {
 
               {/* Centered Skeuomorphic Button & Trust Verification (At the Bottom of Card) */}
               <div className={styles.ctaBottomCenter}>
-                <BeamButton href="/contact" label="Claim Free Growth Audit" size="md" />
+                <BeamButton href="/contact" label="Grow Your Business With Us" size="md" />
               </div>
 
                 <div className={styles.ctaTrustStrip}>
