@@ -8,6 +8,9 @@ import styles from './page.module.css';
 export const metadata: Metadata = {
   title: 'Our Work — Case Studies & Portfolio',
   description: 'Selected case studies showing how we\'ve helped brands achieve measurable growth through strategy, creative, and performance marketing.',
+  alternates: {
+    canonical: 'https://marketingcopilot.in/work',
+  },
 };
 
 const projects = [

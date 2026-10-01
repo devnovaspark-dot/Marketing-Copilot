@@ -6,6 +6,10 @@ import styles from './page.module.css';
 export const metadata: Metadata = {
   title: 'Thank You — Digital Marketing Agency',
   description: 'Thank you for reaching out to Marketing Copilot. We have received your inquiry and will be in touch with your custom roadmap.',
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function ThankYouPage() {

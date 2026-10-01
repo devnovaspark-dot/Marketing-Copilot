@@ -145,13 +145,25 @@ const articles: Record<string, ArticleData> = {
   }
 };
 
+export function generateStaticParams() {
+  return Object.keys(articles).map((slug) => ({ slug }));
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const a = articles[slug];
   if (!a) return { title: 'Article Not Found' };
   return {
-    title: `${a.title} — Insights`,
+    title: `${a.title} | Marketing Copilot`,
     description: a.summary,
+    alternates: {
+      canonical: `https://marketingcopilot.in/insights/${slug}`,
+    },
+    openGraph: {
+      title: `${a.title} | Marketing Copilot`,
+      description: a.summary,
+      url: `https://marketingcopilot.in/insights/${slug}`,
+    },
   };
 }
 

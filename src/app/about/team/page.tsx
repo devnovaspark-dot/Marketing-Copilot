@@ -7,6 +7,9 @@ import styles from './page.module.css';
 export const metadata: Metadata = {
   title: 'Executive Leadership & Team — Marketing Copilot',
   description: 'Meet the executive leadership, growth strategists, operations leads, and engineers building scalable brands at Marketing Copilot in Bhubaneswar.',
+  alternates: {
+    canonical: 'https://marketingcopilot.in/about/team',
+  },
 };
 
 const founders = [

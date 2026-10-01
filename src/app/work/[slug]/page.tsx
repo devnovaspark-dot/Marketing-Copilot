@@ -110,13 +110,25 @@ const projects: Record<string, {
   },
 };
 
+export function generateStaticParams() {
+  return Object.keys(projects).map((slug) => ({ slug }));
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const p = projects[slug];
   if (!p) return { title: 'Case Study Not Found' };
   return {
-    title: `${p.client} Case Study — ${p.category}`,
+    title: `${p.client} Case Study — ${p.category} | Marketing Copilot`,
     description: p.headline,
+    alternates: {
+      canonical: `https://marketingcopilot.in/work/${slug}`,
+    },
+    openGraph: {
+      title: `${p.client} Case Study — ${p.category}`,
+      description: p.headline,
+      url: `https://marketingcopilot.in/work/${slug}`,
+    },
   };
 }
 

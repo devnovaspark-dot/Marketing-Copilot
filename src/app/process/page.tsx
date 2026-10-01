@@ -6,6 +6,9 @@ import styles from './page.module.css';
 export const metadata: Metadata = {
   title: 'Our Process — From Idea to Impact',
   description: 'A proven 5-step growth framework: Discover, Strategize, Create, Launch, and Optimize. See how we turn ambition into results.',
+  alternates: {
+    canonical: 'https://marketingcopilot.in/process',
+  },
 };
 
 const steps = [
