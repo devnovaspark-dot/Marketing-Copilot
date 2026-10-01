@@ -477,21 +477,27 @@ export default function BrandSpotlightSection() {
     }
   };
 
-  // Pause video when out of viewport
+  const [isSectionVisible, setIsSectionVisible] = useState(false);
+
+  // Pause video when out of viewport & load poster when near viewport
   useEffect(() => {
     const el = sectionRef.current;
-    const video = videoRef.current;
-    if (!el || !video) return;
+    if (!el) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (!entry.isIntersecting && !video.paused) {
-          video.pause();
-          setIsPlaying(false);
-          setIsControlsVisible(true);
+        if (entry.isIntersecting) {
+          setIsSectionVisible(true);
+        } else {
+          const video = videoRef.current;
+          if (video && !video.paused) {
+            video.pause();
+            setIsPlaying(false);
+            setIsControlsVisible(true);
+          }
         }
       },
-      { threshold: 0.15 }
+      { threshold: 0.1, rootMargin: '350px' }
     );
 
     observer.observe(el);
@@ -665,7 +671,7 @@ export default function BrandSpotlightSection() {
                         activeBrand.id === 'ekatraa' ? styles.videoPlayerEkatraa : ''
                       }`}
                       src={hasActivatedVideo ? activeBrand.videoSrc : undefined}
-                      poster={activeBrand.videoPoster}
+                      poster={isSectionVisible ? activeBrand.videoPoster : undefined}
                       loop
                       muted={!isPlaying}
                       playsInline

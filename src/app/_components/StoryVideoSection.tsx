@@ -27,6 +27,7 @@ export default function StoryVideoSection() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
+  const [isSectionVisible, setIsSectionVisible] = useState(false);
 
   // 3D Play/Pause & Audio Toggle Handler
   const handlePlayToggle = useCallback(() => {
@@ -60,26 +61,27 @@ export default function StoryVideoSection() {
     }
   }, [isMuted]);
 
-  // Scroll into view detection: Only stream video when user scrolls to this section
+  // Scroll into view detection: Only stream video & load poster when user scrolls near this section
   useEffect(() => {
     const el = sectionRef.current;
     const video = videoRef.current;
-    if (!el || !video) return;
+    if (!el) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          if (video.paused && !isPlaying) {
+          setIsSectionVisible(true);
+          if (video && video.paused && !isPlaying) {
             video.play().then(() => setIsPlaying(true)).catch(() => {});
           }
         } else {
-          if (!video.paused) {
+          if (video && !video.paused) {
             video.pause();
             setIsPlaying(false);
           }
         }
       },
-      { threshold: 0.25 }
+      { rootMargin: '350px', threshold: 0.15 }
     );
 
     observer.observe(el);
@@ -182,7 +184,7 @@ export default function StoryVideoSection() {
                     muted={isMuted}
                     playsInline
                     preload="none"
-                    poster="/images/hero_performance_scale.webp"
+                    poster={isSectionVisible ? '/images/hero_performance_scale.webp' : undefined}
                     onPlay={() => setIsPlaying(true)}
                     onPause={() => setIsPlaying(false)}
                   >
