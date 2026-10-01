@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Digital Marketing Insights, Guides & Growth Strategies | Marketing Copilot',
+  title: 'Digital Marketing Insights, Guides & Growth Strategies',
   description: 'Actionable performance marketing breakdowns, SEO research, branding frameworks, and algorithmic updates from the operators at Marketing Copilot in Bhubaneswar.',
   alternates: {
     canonical: 'https://marketingcopilot.in/insights',

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Contact Us | Marketing Copilot Bhubaneswar',
+  title: 'Contact Us — Strategy Session & Inquiries',
   description: 'Get in touch with Marketing Copilot, the leading digital marketing agency in Bhubaneswar. Schedule a strategy session and get your custom growth roadmap.',
   alternates: {
     canonical: 'https://marketingcopilot.in/contact',

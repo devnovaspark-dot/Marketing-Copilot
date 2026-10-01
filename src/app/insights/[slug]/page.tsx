@@ -154,7 +154,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const a = articles[slug];
   if (!a) return { title: 'Article Not Found' };
   return {
-    title: `${a.title} | Marketing Copilot`,
+    title: a.title,
     description: a.summary,
     alternates: {
       canonical: `https://marketingcopilot.in/insights/${slug}`,
