@@ -974,33 +974,32 @@ export default function IndustriesPage() {
             <div className={styles.bespokeBannerCard}>
               <div className={styles.bannerGlow} />
               <div className={styles.bannerBadge}>
-                CONFIDENTIAL SECTOR STRATEGY SESSION
+                THE NOVA SPARK GROWTH SESSION
               </div>
               <h2 className={styles.bannerTitle}>
-                Ready to Monopolize Your Industry<br />
-                in Bhubaneswar & Odisha?
+                Know Where Your Business Can Grow Next
               </h2>
               <p className={styles.bannerSub}>
-                Book a 45-minute growth diagnostic session with our senior revenue engineers. We will audit your current market visibility, benchmark your competitors, and deliver a custom 90-day acquisition roadmap.
+                Let&apos;s identify what’s working, what’s holding your digital growth back, and where your biggest opportunities are. Nova Spark will assess your current marketing, competitors, audience, and channels before mapping out your next 90 days.
               </p>
 
               <div className={styles.bannerButtonsRow}>
                 <BeamButton
                   href="/contact"
-                  label="Claim Free Sector Growth Blueprint →"
+                  label="Claim Your Free Growth Blueprint →"
                   size="lg"
                 />
-                <a href="tel:+918763570630" className={styles.bannerCallBtn}>
-                  📞 Call +91 8763570630
+                <a href="tel:+918280788689" className={styles.bannerCallBtn}>
+                  📞 Call +91 8280788689
                 </a>
               </div>
 
               <div className={styles.bannerFooterTrust}>
-                <span>📍 DLF Cybercity & Patia, Bhubaneswar</span>
+                <span>🔒 Confidential Consultation</span>
                 <span>•</span>
-                <span>🔒 Strict NDA & Non-Compete Guarantee</span>
+                <span>📈 Industry-Specific Growth Strategy</span>
                 <span>•</span>
-                <span>⚡ First Leads in 72 Hours</span>
+                <span>⚡ 90-Day Action Roadmap</span>
               </div>
             </div>
           </ScrollReveal>
