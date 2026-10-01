@@ -550,15 +550,13 @@
   inset: 0;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.8s ease-in-out, transform 8s ease-out;
-  transform: scale(1.04);
-  will-change: opacity, transform;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .slideActive {
   opacity: 1;
   pointer-events: auto;
-  transform: scale(1);
+  z-index: 1;
 }
 
 .slideImage {
@@ -920,6 +918,14 @@
 }
 
 @media (max-width: 767px) {
+  .splashCyan,
+  .splashViolet,
+  .splashAmber {
+    animation: none !important;
+    filter: blur(40px) !important;
+    opacity: 0.35 !important;
+  }
+
   .hero {
     padding-top: calc(var(--nav-height) + 16px);
     padding-bottom: 44px;

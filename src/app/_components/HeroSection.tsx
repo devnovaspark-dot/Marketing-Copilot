@@ -28,10 +28,12 @@ const heroSlides = [
 
 export default function HeroSection() {
   const [current, setCurrent] = useState(0);
+  const [isMounted, setIsMounted] = useState(false);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   // Smooth auto-slide interval (3.5 seconds per slide for faster transition)
   useEffect(() => {
+    setIsMounted(true);
     timerRef.current = setInterval(() => {
       setCurrent((prev) => (prev + 1) % heroSlides.length);
     }, 3500);
@@ -100,24 +102,27 @@ export default function HeroSection() {
         <div className={styles.visual}>
           <div className={styles.imageCard}>
             <div className={styles.imageViewport}>
-              {heroSlides.map((slide, idx) => (
-                <div
-                  key={slide.id}
-                  className={`${styles.slideItem} ${idx === current ? styles.slideActive : ''}`}
-                >
-                  <Image
-                    src={slide.src}
-                    alt={slide.alt}
-                    fill
-                    priority={idx === 0}
-                    fetchPriority={idx === 0 ? 'high' : 'auto'}
-                    loading={idx === 0 ? 'eager' : 'lazy'}
-                    sizes="(max-width: 640px) 92vw, (max-width: 1024px) 48vw, 680px"
-                    className={styles.slideImage}
-                  />
-                  <div className={styles.slideOverlay} />
-                </div>
-              ))}
+              {heroSlides.map((slide, idx) => {
+                if (!isMounted && idx !== 0) return null;
+                return (
+                  <div
+                    key={slide.id}
+                    className={`${styles.slideItem} ${idx === current ? styles.slideActive : ''}`}
+                  >
+                    <Image
+                      src={slide.src}
+                      alt={slide.alt}
+                      fill
+                      priority={idx === 0}
+                      fetchPriority={idx === 0 ? 'high' : 'auto'}
+                      loading={idx === 0 ? 'eager' : 'lazy'}
+                      sizes="(max-width: 640px) 92vw, (max-width: 1024px) 48vw, 680px"
+                      className={styles.slideImage}
+                    />
+                    <div className={styles.slideOverlay} />
+                  </div>
+                );
+              })}
 
               {/* Minimalist Floating Status Badge */}
               <div className={styles.floatingBadge}>

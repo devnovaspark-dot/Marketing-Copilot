@@ -92,7 +92,7 @@ export default function TeamPreview() {
                     src={exec.image}
                     alt={exec.name}
                     fill
-                    priority
+                    loading="lazy"
                     className={styles.photo}
                     style={{ objectPosition: exec.imagePosition || '50% 15%' }}
                     sizes="(max-width: 768px) 100vw, 50vw"

@@ -825,8 +825,8 @@ export default function BrandSpotlightSection() {
                           alt={`${activeBrand.name} showcase creative`}
                           fill
                           sizes="(max-width: 960px) 100vw, 680px"
-                          quality={100}
-                          priority
+                          quality={75}
+                          loading="lazy"
                           className={styles.carouselImage}
                           onError={() => {
                             setImgErrors((prev) => ({ ...prev, [slide.id]: true }));

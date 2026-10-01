@@ -131,7 +131,7 @@ export default function RealGrowthSection() {
                     fill
                     className={styles.cardImg}
                     sizes="(max-width: 900px) 100vw, 600px"
-                    priority={idx < 2}
+                    loading="lazy"
                   />
                 </div>
 

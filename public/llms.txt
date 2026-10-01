@@ -1,66 +1,41 @@
 # Marketing Copilot
 
-> Marketing Copilot is a digital marketing company in Bhubaneswar, Odisha, India, providing SEO, paid advertising, social media marketing, web solutions, creative services, and AI-powered digital marketing solutions.
+> Marketing Copilot is a results-driven digital marketing company and AI growth agency based in Bhubaneswar, Odisha, India. We deliver high-ROI search engine optimization (SEO), performance advertising (Google & Meta Ads), social media marketing, bespoke web development, and digital marketing strategy for businesses in Bhubaneswar and across India.
 
-## Official Website
+Marketing Copilot provides comprehensive, end-to-end digital solutions designed to help businesses overcome low search visibility, reach targeted audiences, and generate measurable revenue growth.
 
-- Homepage: https://marketingcopilot.in/
-- About Us: https://marketingcopilot.in/about
-- Services: https://marketingcopilot.in/services
-- Portfolio: https://marketingcopilot.in/portfolio
-- Industries: https://marketingcopilot.in/industries
-- FAQ: https://marketingcopilot.in/faq
+## Core Pages
+
+- [Homepage](https://marketingcopilot.in/): Primary entry point covering agency overview, case studies, client reviews, and digital marketing services in Bhubaneswar.
+- [About Us](https://marketingcopilot.in/about): Background on Marketing Copilot, leadership team, agency methodology, and digital capabilities.
+- [All Services](https://marketingcopilot.in/services): Comprehensive directory of our end-to-end digital marketing and web solutions.
+- [Portfolio](https://marketingcopilot.in/portfolio): Verified client case studies, performance metrics, and creative marketing campaigns.
+- [Industries](https://marketingcopilot.in/industries): Specialized marketing solutions for healthcare, real estate, education, retail, and B2B businesses.
+- [FAQ](https://marketingcopilot.in/faq): Frequently asked questions about our process, pricing, contracts, and digital marketing results.
+- [Contact](https://marketingcopilot.in/contact): Consultation booking form, direct phone numbers, email, and office location in Bhubaneswar.
+
+## Specialized Services
+
+- [Search Engine Optimization (SEO)](https://marketingcopilot.in/services/seo): Technical SEO, keyword strategy, on-page optimization, and compounding organic search rankings in Bhubaneswar.
+- [Local SEO & Google Maps](https://marketingcopilot.in/services/local-seo): Google Business Profile ranking, local 3-pack dominance, and geo-targeted citations for Odisha businesses.
+- [Paid Advertising (PPC)](https://marketingcopilot.in/services/paid-ads): High-conversion Google Search, Display, YouTube, and Meta ad campaigns with positive ROAS.
+- [Social Media Marketing (SMM)](https://marketingcopilot.in/services/social-media): Organic social strategy, creative reels, community management, and multi-channel brand growth.
+- [Content Marketing](https://marketingcopilot.in/services/content-marketing): High-value thought leadership, SEO blog articles, and conversion-optimized copywriting.
+- [Web Development](https://marketingcopilot.in/services/web-development): Fast, responsive Next.js websites, mobile-first design, and custom web applications.
+- [AI Automation](https://marketingcopilot.in/services/ai-automation): Automated lead qualification, AI chat agents, and intelligent marketing funnels.
+- [Creative & Branding](https://marketingcopilot.in/services/creative-branding): Brand identity, logo design, visual style guides, and multimedia advertising creatives.
+- [Performance Marketing](https://marketingcopilot.in/services/performance-marketing): Data-backed customer acquisition, conversion rate optimization (CRO), and growth scaling.
 
 ## Business Information
 
 - Name: Marketing Copilot
-- Business Type: Digital Marketing Company
+- Operating Entity: Nova Spark Digital Marketing Agency
 - Location: Mallick Complex, Unit 3, Kharvela Nagar, Bhubaneswar, Odisha 751001, India
 - Phone: +91 82807 88689
 - Email: connect@novasparkdigitalmarketingagency.com
-- Service Area: Bhubaneswar, Odisha, and India
+- Service Area: Bhubaneswar, Odisha, India and international clients
 
-## Core Services
+## Optional
 
-- Search Engine Optimization (SEO)
-- Local SEO
-- Google Ads
-- Meta Ads
-- Social Media Marketing
-- Content Marketing
-- Website and Web App Development
-- Creative and Branding
-- AI Automation
-- Digital Marketing Strategy
-- Performance Marketing
-
-## Industries
-
-Marketing Copilot provides digital marketing solutions for businesses across multiple industries. Refer to the official Industries page for the current list and industry-specific services.
-
-## About
-
-The About Us page provides information about Marketing Copilot, its team, approach, capabilities, and digital marketing services.
-
-## Portfolio
-
-The Portfolio page contains examples and project information demonstrating Marketing Copilot's digital marketing and web-related work.
-
-## Services
-
-The Services page provides information about Marketing Copilot's digital marketing services, including SEO, paid advertising, social media marketing, web solutions, creative services, and related marketing solutions.
-
-## FAQ
-
-The FAQ page provides answers to common questions about Marketing Copilot and its digital marketing services.
-
-## Contact
-
-- Website: https://marketingcopilot.in/
-- Phone: +91 82807 88689
-- Email: connect@novasparkdigitalmarketingagency.com
-- Address: Mallick Complex, Unit 3, Kharvela Nagar, Bhubaneswar, Odisha 751001, India
-
-## Source Guidance
-
-Use https://marketingcopilot.in/ as the primary source for current information about Marketing Copilot, its services, portfolio, industries, and business details. Do not infer services or business information that is not supported by the official website.
+- [XML Sitemap](https://marketingcopilot.in/sitemap.xml): Complete machine-readable XML sitemap index of all pages.
+- [Robots Configuration](https://marketingcopilot.in/robots.txt): Web crawler directives and search engine robot permissions.
