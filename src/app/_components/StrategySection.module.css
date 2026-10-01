@@ -792,31 +792,36 @@
   .mobStepDots {
     display: flex;
     align-items: center;
-    gap: 6px;
+    justify-content: center;
+    gap: 4px;
   }
 
   .mobStepDot {
-    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    min-height: 36px;
+    width: 36px;
+    height: 36px;
+    background: transparent !important;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .mobStepDotPill {
+    display: block;
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    padding: 0;
+    transition: all 0.25s ease;
+    pointer-events: none;
   }
 
-  .mobStepDot::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 32px;
-    height: 32px;
-  }
-
-  .mobStepDotActive {
+  .mobStepDotActive .mobStepDotPill {
     width: 22px;
     border-radius: 6px;
   }

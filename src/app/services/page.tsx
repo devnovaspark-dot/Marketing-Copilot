@@ -831,7 +831,11 @@ export default function ServicesPage() {
                       <span className={styles.practiceMetricVal} style={{ color: service.color }}>{service.metric}</span>
                       <span className={styles.practiceMetricLabel}>{service.metricLabel}</span>
                     </div>
-                    <Link href={service.href} className={styles.practiceExploreLink}>
+                    <Link
+                      href={service.href}
+                      className={styles.practiceExploreLink}
+                      aria-label={`Explore ${service.title} Practice`}
+                    >
                       <span>Explore Practice</span>
                       <span className={styles.practiceExploreCaret}>→</span>
                     </Link>

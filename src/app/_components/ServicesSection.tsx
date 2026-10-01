@@ -305,7 +305,12 @@ export default function ServicesSection() {
                       <div className={styles.statLabel}>{service.statLabel}</div>
                     </div>
 
-                    <BeamButton href={service.href} label="Explore Practice" size="sm" />
+                    <BeamButton
+                      href={service.href}
+                      label="Explore Practice"
+                      size="sm"
+                      ariaLabel={`Explore ${service.title} Practice`}
+                    />
                   </div>
                 </div>
 

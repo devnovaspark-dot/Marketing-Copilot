@@ -456,11 +456,15 @@ export default function StrategySection() {
                       pauseTemporarily(7000);
                     }}
                     className={`${styles.mobStepDot} ${mobileStep === idx ? styles.mobStepDotActive : ''}`}
-                    style={{
-                      background: mobileStep === idx ? st.color : 'rgba(203, 213, 225, 0.8)',
-                    }}
-                    aria-label={`Jump to stage ${idx + 1}`}
-                  />
+                    aria-label={`Jump to stage ${idx + 1}: ${st.name}`}
+                  >
+                    <span
+                      className={styles.mobStepDotPill}
+                      style={{
+                        background: mobileStep === idx ? st.color : 'rgba(203, 213, 225, 0.8)',
+                      }}
+                    />
+                  </button>
                 ))}
               </div>
 
