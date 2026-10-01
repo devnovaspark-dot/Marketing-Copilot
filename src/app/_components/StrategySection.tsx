@@ -44,7 +44,7 @@ const stages: StrategyStage[] = [
     tagline: 'Omnichannel campaign activation & automated bidding.',
     timeframe: 'Days 22–30',
     focus: 'Live Deployment',
-    color: '#F59E0B',
+    color: '#B45309',
   },
   {
     num: '05',
@@ -52,7 +52,7 @@ const stages: StrategyStage[] = [
     tagline: 'Winning creative scaling & secondary channel expansion.',
     timeframe: 'Month 2+',
     focus: 'Compounding Scale',
-    color: '#10B981',
+    color: '#047857',
   },
 ];
 

@@ -51,7 +51,7 @@ const spotlightBrands: BrandSpotlightData[] = [
     logo: '/images/clients/ekatraa.png',
     hasVideo: true,
     videoSrc: '/videos/ekatraa_reel_optimized.mp4',
-    videoPoster: '/images/ekatraa_poster.jpg',
+    videoPoster: '/images/ekatraa_poster.webp',
     videoTitle: 'Ekatraa Wedding & Event Reel',
     videoTag: '9:16 CINEMA REEL',
     headlineHighlight: 'Ekatraa',
@@ -122,7 +122,7 @@ const spotlightBrands: BrandSpotlightData[] = [
     logo: '/images/clients/Zue-Studio-Logo-color (1).png',
     hasVideo: true,
     videoSrc: '/videos/zue_reel_optimized.mp4',
-    videoPoster: '/images/zue_poster.jpg',
+    videoPoster: '/images/zue_poster.webp',
     videoTitle: 'Zue Studio Visual Production Reel',
     videoTag: '9:16 CINEMA REEL',
     headlineHighlight: 'Zue Studio',
@@ -260,7 +260,7 @@ const spotlightBrands: BrandSpotlightData[] = [
     logo: '/images/clients/sri-pandurangan-divine-fresh.png',
     hasVideo: true,
     videoSrc: '/videos/panduranga_reel_optimized.mp4',
-    videoPoster: '/images/panduranga_video_poster.jpg',
+    videoPoster: '/images/panduranga_video_poster.webp',
     videoTitle: 'Sree Panduranga Fresh Produce Reel',
     videoTag: '9:16 CINEMA REEL',
     headlineHighlight: 'Sree Panduranga Divine',
@@ -381,18 +381,47 @@ export default function BrandSpotlightSection() {
 
   // Brands with video always display their vertical video reel; others display their strategic case study
   const showVideo = activeBrand.hasVideo;
+  const isInitialMount = useRef(true);
+  const [hasActivatedVideo, setHasActivatedVideo] = useState(false);
 
-  // Video reload when brand changes
+  // Video reload when brand changes (skip initial mount to prevent background video streaming)
   useEffect(() => {
-    if (showVideo && videoRef.current) {
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      return;
+    }
+    if (showVideo && videoRef.current && hasActivatedVideo) {
       videoRef.current.load();
       setIsPlaying(false);
       setIsControlsVisible(true);
     }
-  }, [activeBrandId, showVideo]);
+  }, [activeBrandId, showVideo, hasActivatedVideo]);
 
-  // Video play/pause toggle
+  // Video play/pause toggle - streams video strictly on-demand
   const handlePlayToggle = useCallback(() => {
+    if (!hasActivatedVideo) {
+      setHasActivatedVideo(true);
+      setTimeout(() => {
+        const video = videoRef.current;
+        if (!video) return;
+        video.muted = false;
+        video.volume = 0.9;
+        video
+          .play()
+          .then(() => {
+            setIsPlaying(true);
+            setIsControlsVisible(false);
+          })
+          .catch(() => {
+            video.muted = true;
+            video.play().catch(() => {});
+            setIsPlaying(true);
+            setIsControlsVisible(false);
+          });
+      }, 60);
+      return;
+    }
+
     const video = videoRef.current;
     if (!video) return;
 
@@ -419,7 +448,7 @@ export default function BrandSpotlightSection() {
       setIsPlaying(false);
       setIsControlsVisible(true);
     }
-  }, []);
+  }, [hasActivatedVideo]);
 
   const handleVideoMouseMove = () => {
     if (!isPlaying) {
@@ -635,7 +664,7 @@ export default function BrandSpotlightSection() {
                       className={`${styles.videoPlayer} ${
                         activeBrand.id === 'ekatraa' ? styles.videoPlayerEkatraa : ''
                       }`}
-                      src={activeBrand.videoSrc}
+                      src={hasActivatedVideo ? activeBrand.videoSrc : undefined}
                       poster={activeBrand.videoPoster}
                       loop
                       muted={!isPlaying}
@@ -702,7 +731,7 @@ export default function BrandSpotlightSection() {
                   <div className={styles.deviceFooter}>
                     <div className={styles.deviceFooterText}>
                       <span className={styles.deviceTag}>{activeBrand.videoTag}</span>
-                      <h4 className={styles.deviceTitle}>{activeBrand.videoTitle}</h4>
+                      <h3 className={styles.deviceTitle}>{activeBrand.videoTitle}</h3>
                     </div>
 
                     <button

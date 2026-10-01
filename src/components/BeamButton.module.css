@@ -203,7 +203,7 @@
 .shimmer {
   position: absolute;
   top: 0;
-  left: -100%;
+  left: 0;
   width: 60%;
   height: 100%;
   background: linear-gradient(
@@ -212,15 +212,15 @@
     rgba(255, 255, 255, 0.38) 50%,
     transparent 100%
   );
-  transform: skewX(-22deg);
+  transform: translateX(-150%) skewX(-22deg);
   animation: shimmerPass 3.5s ease-in-out infinite;
   pointer-events: none;
   z-index: 3;
 }
 
 @keyframes shimmerPass {
-  0%      { left: -100%; }
-  35%, 100% { left: 160%; }
+  0%        { transform: translateX(-150%) skewX(-22deg); }
+  35%, 100% { transform: translateX(350%) skewX(-22deg); }
 }
 
 /* ── Glass gloss highlight ── */
@@ -255,7 +255,7 @@
 .shimmerOutline {
   position: absolute;
   top: 0;
-  left: -100%;
+  left: 0;
   width: 60%;
   height: 100%;
   background: linear-gradient(
@@ -264,7 +264,7 @@
     rgba(11, 32, 147, 0.06) 50%,
     transparent 100%
   );
-  transform: skewX(-22deg);
+  transform: translateX(-150%) skewX(-22deg);
   animation: shimmerPass 3.5s ease-in-out infinite;
   pointer-events: none;
   z-index: 3;

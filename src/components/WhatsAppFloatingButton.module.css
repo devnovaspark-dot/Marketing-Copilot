@@ -159,19 +159,19 @@
 .btnShimmer {
   position: absolute;
   top: 0;
-  left: -100%;
+  left: 0;
   width: 60%;
   height: 100%;
   background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.4) 50%, transparent 100%);
-  transform: skewX(-25deg);
+  transform: translateX(-150%) skewX(-25deg);
   animation: btnShimmerAnim 4.5s ease-in-out infinite;
   pointer-events: none;
   z-index: 3;
 }
 
 @keyframes btnShimmerAnim {
-  0%, 70% { left: -100%; }
-  100% { left: 200%; }
+  0%, 70% { transform: translateX(-150%) skewX(-25deg); }
+  100%    { transform: translateX(350%) skewX(-25deg); }
 }
 
 /* ══════════════════════════════════════════════════

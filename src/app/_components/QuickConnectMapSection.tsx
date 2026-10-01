@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import BeamButton from '@/components/BeamButton';
 import ScrollReveal from '@/components/ScrollReveal';
@@ -26,15 +26,23 @@ export default function QuickConnectMapSection({
   headingTag = 'h2',
 }: QuickConnectMapSectionProps = {}) {
   const [copiedField, setCopiedField] = useState<string | null>(null);
-  const mapContainerRef = useState<HTMLDivElement | null>(null);
+  const sectionRef = useRef<HTMLElement | null>(null);
   const [showMap, setShowMap] = useState(false);
 
   useEffect(() => {
-    // Only mount heavy Google Maps iframe when scrolled near it
-    const timer = setTimeout(() => {
-      setShowMap(true);
-    }, 2500); // fallback or load after 2.5s idle
-    return () => clearTimeout(timer);
+    const el = sectionRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShowMap(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '300px' }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
   }, []);
 
   const phone = '+91 82807 88689';
@@ -56,7 +64,7 @@ export default function QuickConnectMapSection({
   };
 
   return (
-    <section className={styles.section} id={id}>
+    <section className={styles.section} id={id} ref={sectionRef}>
       <div id="war-room-section" style={{ position: 'relative', top: '-100px', visibility: 'hidden' }} />
       {/* Ambient background glows for 3D depth */}
       <div className={styles.ambientGlowLeft} />
@@ -111,7 +119,7 @@ export default function QuickConnectMapSection({
                       <span className={styles.rowTag}>Direct Phone</span>
                       <span className={styles.rowTiming}>Mon – Sat · 9:30 AM – 7:30 PM</span>
                     </div>
-                    <a href={`tel:${rawPhone}`} className={styles.rowPrimaryVal}>
+                    <a href={`tel:${rawPhone}`} className={styles.rowPrimaryVal} aria-label={`Call direct phone number ${phone}`}>
                       {phone}
                     </a>
                   </div>
@@ -153,7 +161,7 @@ export default function QuickConnectMapSection({
                       <span className={styles.rowTag}>WhatsApp Chat</span>
                       <span className={styles.replyChip}>🟢 ~10 min reply</span>
                     </div>
-                    <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className={styles.rowPrimaryVal}>
+                    <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className={styles.rowPrimaryVal} aria-label={`Chat on WhatsApp with ${phone}`}>
                       {phone}
                     </a>
                   </div>

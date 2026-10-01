@@ -182,7 +182,7 @@ export default function StoryVideoSection() {
                     muted={isMuted}
                     playsInline
                     preload="none"
-                    poster="/images/hero_performance_scale.jpg"
+                    poster="/images/hero_performance_scale.webp"
                     onPlay={() => setIsPlaying(true)}
                     onPause={() => setIsPlaying(false)}
                   >
