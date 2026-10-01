@@ -640,10 +640,12 @@ export default function BrandSpotlightSection() {
                       loop
                       muted={!isPlaying}
                       playsInline
-                      preload="metadata"
+                      preload="none"
                       onPlay={() => setIsPlaying(true)}
                       onPause={() => setIsPlaying(false)}
-                    />
+                    >
+                      <track kind="captions" srcLang="en" label="English" />
+                    </video>
 
                     {/* 3D Tactile Orange Play Controller */}
                     <div

@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import BeamButton from '@/components/BeamButton';
 import ScrollReveal from '@/components/ScrollReveal';
@@ -23,9 +23,19 @@ export default function QuickConnectMapSection({
     </>
   ),
   subtitle = 'As a digital marketing company in Bhubaneswar, we combine SEO, social media, content, and performance marketing to help brands grow online.',
-  headingTag = 'h3',
+  headingTag = 'h2',
 }: QuickConnectMapSectionProps = {}) {
   const [copiedField, setCopiedField] = useState<string | null>(null);
+  const mapContainerRef = useState<HTMLDivElement | null>(null);
+  const [showMap, setShowMap] = useState(false);
+
+  useEffect(() => {
+    // Only mount heavy Google Maps iframe when scrolled near it
+    const timer = setTimeout(() => {
+      setShowMap(true);
+    }, 2500); // fallback or load after 2.5s idle
+    return () => clearTimeout(timer);
+  }, []);
 
   const phone = '+91 82807 88689';
   const rawPhone = '+918280788689';
@@ -277,17 +287,36 @@ export default function QuickConnectMapSection({
             <div className={styles.skeuoMapCard}>
               {/* Full Viewport Google Maps Embed */}
               <div className={styles.mapViewport}>
-                <iframe
-                  title="Marketing Copilot Studio Location Map"
-                  src={mapsEmbedUrl}
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen={true}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className={styles.mapIframe}
-                />
+                {showMap ? (
+                  <iframe
+                    title="Marketing Copilot Studio Location Map"
+                    src={mapsEmbedUrl}
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen={true}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className={styles.mapIframe}
+                  />
+                ) : (
+                  <div
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      minHeight: '360px',
+                      background: 'radial-gradient(circle, #0B209320 0%, #050E42 100%)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: '#94A3B8',
+                      fontSize: '13px',
+                      fontWeight: 600,
+                    }}
+                  >
+                    <span>📍 Loading Interactive Studio Map...</span>
+                  </div>
+                )}
 
                 {/* Persistent Animated 3D Red Location Beacon Pin */}
                 <div className={styles.centerPinOverlay}>

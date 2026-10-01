@@ -40,7 +40,8 @@ export default function ClientsSection() {
                   width={160}
                   height={52}
                   className={styles.logoImage}
-                  priority={i < 7}
+                  priority={i < 4}
+                  loading={i < 4 ? 'eager' : 'lazy'}
                 />
               </div>
             </div>

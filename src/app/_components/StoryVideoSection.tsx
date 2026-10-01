@@ -25,7 +25,7 @@ const storyPillars = [
 export default function StoryVideoSection() {
   const sectionRef = useRef<HTMLElement | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
 
   // 3D Play/Pause & Audio Toggle Handler
@@ -60,7 +60,7 @@ export default function StoryVideoSection() {
     }
   }, [isMuted]);
 
-  // Scroll into view detection: Pause video when scrolled far away to save resources
+  // Scroll into view detection: Only stream video when user scrolls to this section
   useEffect(() => {
     const el = sectionRef.current;
     const video = videoRef.current;
@@ -68,19 +68,23 @@ export default function StoryVideoSection() {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (!entry.isIntersecting) {
+        if (entry.isIntersecting) {
+          if (video.paused && !isPlaying) {
+            video.play().then(() => setIsPlaying(true)).catch(() => {});
+          }
+        } else {
           if (!video.paused) {
             video.pause();
             setIsPlaying(false);
           }
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.25 }
     );
 
     observer.observe(el);
     return () => observer.disconnect();
-  }, []);
+  }, [isPlaying]);
 
   return (
     <section className={styles.section} id="company-story" ref={sectionRef}>
@@ -174,14 +178,16 @@ export default function StoryVideoSection() {
                     ref={videoRef}
                     className={styles.videoPlayer}
                     src="/videos/ns_reel_optimized.mp4"
-                    autoPlay
                     loop
                     muted={isMuted}
                     playsInline
-                    preload="metadata"
+                    preload="none"
+                    poster="/images/hero_performance_scale.jpg"
                     onPlay={() => setIsPlaying(true)}
                     onPause={() => setIsPlaying(false)}
-                  />
+                  >
+                    <track kind="captions" srcLang="en" label="English" />
+                  </video>
 
                   {/* 3D Tactile Play / Pause Controller (Neo-Skeuomorphic Glassmorphic Center Stage) */}
                   <div

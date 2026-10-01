@@ -236,7 +236,7 @@ export default function SocialMediaPage() {
               <div className={styles.editorialVisual}>
                 <div className={styles.editorialImgWrapper}>
                   <Image
-                    src="/images/portfolio/zue-fashion.png"
+                    src="/images/zue_fashion_shoot.jpg"
                     alt="Zue Studio Fashion Brand Bhubaneswar"
                     fill
                     sizes="(max-width: 900px) 100vw, 480px"

@@ -8,19 +8,19 @@ import styles from './HeroSection.module.css';
 const heroSlides = [
   {
     id: 'slide-1',
-    src: '/images/Slide 1.jpg',
+    src: '/images/Slide 1.webp',
     alt: 'Marketing Copilot digital marketing company strategy and campaigns in Bhubaneswar',
     caption: 'Strategic Growth & Execution',
   },
   {
     id: 'slide-2',
-    src: '/images/slide 3.webp',
+    src: '/images/slide 3_opt.webp',
     alt: 'Marketing Copilot marketing performance data and digital solutions',
     caption: 'Performance & 10x ROI',
   },
   {
     id: 'slide-3',
-    src: '/images/Slide 2.jpg',
+    src: '/images/Slide 2.webp',
     alt: 'Creative marketing professionals planning growth strategies and digital solutions',
     caption: 'Creative & Performance Marketing',
   },
@@ -110,7 +110,9 @@ export default function HeroSection() {
                     alt={slide.alt}
                     fill
                     priority={idx === 0}
-                    sizes="(max-width: 900px) 100vw, 680px"
+                    fetchPriority={idx === 0 ? 'high' : 'auto'}
+                    loading={idx === 0 ? 'eager' : 'lazy'}
+                    sizes="(max-width: 640px) 92vw, (max-width: 1024px) 48vw, 680px"
                     className={styles.slideImage}
                   />
                   <div className={styles.slideOverlay} />
