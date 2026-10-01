@@ -8,19 +8,19 @@ import styles from './HeroSection.module.css';
 const heroSlides = [
   {
     id: 'slide-1',
-    src: '/images/Slide 1.webp',
+    src: '/images/hero_slide_1.webp',
     alt: 'Marketing Copilot digital marketing company strategy and campaigns in Bhubaneswar',
     caption: 'Strategic Growth & Execution',
   },
   {
     id: 'slide-2',
-    src: '/images/slide 3_opt.webp',
+    src: '/images/hero_slide_2.webp',
     alt: 'Marketing Copilot marketing performance data and digital solutions',
     caption: 'Performance & 10x ROI',
   },
   {
     id: 'slide-3',
-    src: '/images/Slide 2.webp',
+    src: '/images/hero_slide_3.webp',
     alt: 'Creative marketing professionals planning growth strategies and digital solutions',
     caption: 'Creative & Performance Marketing',
   },
