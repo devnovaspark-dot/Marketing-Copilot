@@ -147,7 +147,7 @@ export default function Footer() {
                 </a>
 
                 {/* Email */}
-                <a href="mailto:novasparkdmagency@gmail.com" className={styles.contactItem} title="Email proposals & inquiries">
+                <a href="mailto:novasdmagency@gmail.com" className={styles.contactItem} title="Email proposals & inquiries">
                   <div className={`${styles.contactIconBox} ${styles.iconEmail}`}>
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
@@ -156,7 +156,7 @@ export default function Footer() {
                   </div>
                   <div className={styles.contactVal}>
                     <span className={styles.contactLabel}>Official Email</span>
-                    <span className={styles.contactText}>novasparkdmagency@gmail.com</span>
+                    <span className={styles.contactText}>novasdmagency@gmail.com</span>
                   </div>
                 </a>
 

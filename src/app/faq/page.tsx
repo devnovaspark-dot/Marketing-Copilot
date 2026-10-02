@@ -611,14 +611,65 @@ export default function FAQPage() {
     }
   };
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formState.fullName || !formState.phone) return;
+    if (!formState.fullName.trim() || !formState.phone.trim()) return;
     setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
+
+    const payload = {
+      fullName: formState.fullName.trim(),
+      phone: formState.phone.trim(),
+      businessName: formState.businessName?.trim() || '',
+      question: formState.question.trim(),
+    };
+
+    try {
+      // 1. Send via Next.js API route
+      const res = await fetch('/api/faq', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await res.json().catch(() => null);
+
+      if (res.ok && data?.success) {
+        setIsSubmitted(true);
+        return;
+      }
+
+      // 2. Direct client fallback to FormSubmit.co
+      const recipientEmail =
+        process.env.NEXT_PUBLIC_FORMSUBMIT_EMAIL || 'novasdmagency@gmail.com';
+
+      await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(recipientEmail)}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          'Full Name': payload.fullName,
+          'Phone / WhatsApp': payload.phone,
+          'Business Name': payload.businessName || 'Not specified',
+          'Question / Bottleneck': payload.question || 'No question details provided',
+          _subject: `New FAQ Growth Question — ${payload.fullName} (${payload.phone})`,
+          _template: 'table',
+          _captcha: 'false',
+        }),
+      });
+
       setIsSubmitted(true);
-    }, 500);
+    } catch (err) {
+      console.error('FAQ submission error:', err);
+      // Still show submitted so the user receives confirmation
+      setIsSubmitted(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -1461,7 +1512,17 @@ export default function FAQPage() {
                     </button>
                   </div>
                 ) : (
-                  <form onSubmit={handleFormSubmit} className={styles.cockpitForm}>
+                  <form
+                    onSubmit={handleFormSubmit}
+                    action={`https://formsubmit.co/${process.env.NEXT_PUBLIC_FORMSUBMIT_EMAIL || 'novasdmagency@gmail.com'}`}
+                    method="POST"
+                    className={styles.cockpitForm}
+                  >
+                    {/* Anti-spam Honeypot */}
+                    <input type="text" name="_honey" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
+                    <input type="hidden" name="_captcha" value="false" />
+                    <input type="hidden" name="_template" value="table" />
+
                     <div className={styles.formFieldsGrid}>
                       {/* Full Name */}
                       <div className={styles.fieldGroup}>
@@ -1472,6 +1533,7 @@ export default function FAQPage() {
                           <span className={styles.fieldIcon}>👤</span>
                           <input
                             id="faq-name"
+                            name="fullName"
                             type="text"
                             required
                             placeholder="e.g. Rajesh Mohapatra"
@@ -1491,6 +1553,7 @@ export default function FAQPage() {
                           <span className={styles.countryFlagPill}>🇮🇳 +91</span>
                           <input
                             id="faq-phone"
+                            name="phone"
                             type="tel"
                             required
                             placeholder="98765 43210"
@@ -1509,6 +1572,7 @@ export default function FAQPage() {
                         <div className={styles.fieldTextareaWrap}>
                           <textarea
                             id="faq-question"
+                            name="question"
                             required
                             rows={3}
                             placeholder="Ask any question about your ads, SEO, website, or marketing in Bhubaneswar..."

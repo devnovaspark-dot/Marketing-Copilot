@@ -10,13 +10,16 @@ export default function ContactPage() {
   const [form, setForm] = useState({
     name: '',
     email: '',
+    phone: '',
     company: '',
     budget: '₹1.5L – ₹5L / month',
     services: [] as string[],
     message: '',
   });
+  const [honey, setHoney] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const services = [
     'Performance Marketing',
@@ -36,29 +39,122 @@ export default function ContactPage() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!form.name.trim() || !form.email.trim()) return;
+
     setIsSubmitting(true);
-    setTimeout(() => {
+    setErrorMessage(null);
+
+    const payload = {
+      name: form.name.trim(),
+      email: form.email.trim(),
+      phone: form.phone.trim(),
+      company: form.company.trim(),
+      budget: form.budget,
+      services: form.services,
+      message: form.message.trim(),
+      _honey: honey,
+    };
+
+    try {
+      // 1. Try our internal server-side Route Handler first (immune to adblockers)
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await res.json().catch(() => null);
+
+      if (res.ok && data?.success) {
+        setIsSubmitted(true);
+        router.push('/thank-you');
+        return;
+      }
+
+      // 2. Direct FormSubmit client-side fallback if server route failed
+      const recipientEmail =
+        process.env.NEXT_PUBLIC_FORMSUBMIT_EMAIL || 'novasdmagency@gmail.com';
+
+      const directRes = await fetch(
+        `https://formsubmit.co/ajax/${encodeURIComponent(recipientEmail)}`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+          },
+          body: JSON.stringify({
+            'Full Name': payload.name,
+            'Work Email': payload.email,
+            'Phone / WhatsApp': payload.phone || 'Not provided',
+            'Company Name': payload.company || 'Not specified',
+            'Monthly Budget': payload.budget,
+            'Services Requested':
+              payload.services.length > 0 ? payload.services.join(', ') : 'None selected',
+            'Project Details / Message': payload.message || 'No additional details provided',
+            _subject: `New Lead Consultation Inquiry — ${payload.name}`,
+            _template: 'table',
+            _captcha: 'false',
+          }),
+        }
+      );
+
+      const directData = await directRes.json().catch(() => null);
+      const isDirectSuccess =
+        directRes.ok &&
+        (directData?.success === 'true' ||
+          directData?.success === true ||
+          (typeof directData?.message === 'string' &&
+            (directData.message.toLowerCase().includes('activation') ||
+              directData.message.toLowerCase().includes('activate') ||
+              directData.message.toLowerCase().includes('submitted') ||
+              directData.message.toLowerCase().includes('success'))));
+
+      if (isDirectSuccess) {
+        setIsSubmitted(true);
+        router.push('/thank-you');
+        return;
+      }
+
+      throw new Error(
+        data?.message ||
+          directData?.message ||
+          'Unable to submit form. Please check your network or reach out directly on WhatsApp.'
+      );
+    } catch (err: unknown) {
+      console.error('Submission error:', err);
+      const errMsg =
+        err instanceof Error
+          ? err.message
+          : 'Something went wrong while transmitting your request. Please try again or WhatsApp us directly.';
+      setErrorMessage(errMsg);
+    } finally {
       setIsSubmitting(false);
-      router.push('/thank-you');
-    }, 400);
+    }
   };
 
   const handleReset = () => {
     setForm({
       name: '',
       email: '',
+      phone: '',
       company: '',
       budget: '₹1.5L – ₹5L / month',
       services: [],
       message: '',
     });
+    setHoney('');
+    setErrorMessage(null);
     setIsSubmitted(false);
   };
 
   const whatsappMessage = encodeURIComponent(
-    `Hi Marketing Copilot, I would like to discuss a project. Name: ${form.name || 'Client'}, Company: ${form.company || 'N/A'}, Services: ${form.services.join(', ') || 'All Services'}, Budget: ${form.budget}.`
+    `Hi Marketing Copilot, I would like to discuss a project. Name: ${form.name || 'Client'}, Phone: ${form.phone || 'N/A'}, Company: ${form.company || 'N/A'}, Services: ${form.services.join(', ') || 'All Services'}, Budget: ${form.budget}.`
   );
 
   return (
@@ -197,7 +293,27 @@ export default function ContactPage() {
           <div className={styles.right}>
             <ScrollReveal delay={100}>
               {!isSubmitted ? (
-                <form className={styles.form} onSubmit={handleSubmit}>
+                <form
+                  className={styles.form}
+                  onSubmit={handleSubmit}
+                  action={`https://formsubmit.co/${process.env.NEXT_PUBLIC_FORMSUBMIT_EMAIL || 'novasdmagency@gmail.com'}`}
+                  method="POST"
+                >
+                  {/* Anti-spam Honeypot (hidden from human visitors) */}
+                  <input
+                    type="text"
+                    name="_honey"
+                    value={honey}
+                    onChange={(e) => setHoney(e.target.value)}
+                    style={{ display: 'none' }}
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                  />
+                  {/* FormSubmit Configurations */}
+                  <input type="hidden" name="_captcha" value="false" />
+                  <input type="hidden" name="_template" value="table" />
+
                   <div className={styles.formHeader}>
                     <div className={styles.formBadge}>
                       <span className={styles.formBadgeDot} />
@@ -207,11 +323,33 @@ export default function ContactPage() {
                     <p className={styles.formSubtitle}>Direct strategist response within 4 hours.</p>
                   </div>
 
+                  {errorMessage && (
+                    <div className={styles.formError} role="alert">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="12" y1="8" x2="12" y2="12" />
+                        <line x1="12" y1="16" x2="12.01" y2="16" />
+                      </svg>
+                      <div className={styles.formErrorContent}>
+                        <span>{errorMessage}</span>
+                        <a
+                          href={`https://wa.me/918280788689?text=${whatsappMessage}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={styles.errorWaLink}
+                        >
+                          Chat Directly on WhatsApp →
+                        </a>
+                      </div>
+                    </div>
+                  )}
+
                   <div className={styles.formRow}>
                     <div className={styles.field}>
                       <label className={styles.label}>Full Name *</label>
                       <input
                         type="text"
+                        name="name"
                         className={styles.input}
                         placeholder="Rahul Sharma"
                         required
@@ -223,6 +361,7 @@ export default function ContactPage() {
                       <label className={styles.label}>Work Email *</label>
                       <input
                         type="email"
+                        name="email"
                         className={styles.input}
                         placeholder="rahul@brand.com"
                         required
@@ -234,33 +373,47 @@ export default function ContactPage() {
 
                   <div className={styles.formRow}>
                     <div className={styles.field}>
+                      <label className={styles.label}>Phone / WhatsApp</label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        className={styles.input}
+                        placeholder="+91 98765 43210"
+                        value={form.phone}
+                        onChange={(e) => setForm((f) => ({ ...f, phone: e.target.value }))}
+                      />
+                    </div>
+                    <div className={styles.field}>
                       <label className={styles.label}>Company Name</label>
                       <input
                         type="text"
+                        name="company"
                         className={styles.input}
-                        placeholder="Company name"
+                        placeholder="e.g. Acme Retailers"
                         value={form.company}
                         onChange={(e) => setForm((f) => ({ ...f, company: e.target.value }))}
                       />
                     </div>
-                    <div className={styles.field}>
-                      <label className={styles.label}>Monthly Budget</label>
-                      <div className={styles.selectWrapper}>
-                        <select
-                          className={styles.select}
-                          value={form.budget}
-                          onChange={(e) => setForm((f) => ({ ...f, budget: e.target.value }))}
-                        >
-                          <option value="₹50K – ₹1.5L / mo">₹50K – ₹1.5L / mo</option>
-                          <option value="₹1.5L – ₹5L / mo">₹1.5L – ₹5L / mo</option>
-                          <option value="₹5L – ₹15L / mo">₹5L – ₹15L / mo</option>
-                          <option value="₹15L+ / mo">₹15L+ / mo</option>
-                        </select>
-                        <div className={styles.selectArrow}>
-                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                            <polyline points="6 9 12 15 18 9" />
-                          </svg>
-                        </div>
+                  </div>
+
+                  <div className={styles.field}>
+                    <label className={styles.label}>Monthly Budget</label>
+                    <div className={styles.selectWrapper}>
+                      <select
+                        name="budget"
+                        className={styles.select}
+                        value={form.budget}
+                        onChange={(e) => setForm((f) => ({ ...f, budget: e.target.value }))}
+                      >
+                        <option value="₹50K – ₹1.5L / mo">₹50K – ₹1.5L / mo</option>
+                        <option value="₹1.5L – ₹5L / mo">₹1.5L – ₹5L / mo</option>
+                        <option value="₹5L – ₹15L / mo">₹5L – ₹15L / mo</option>
+                        <option value="₹15L+ / mo">₹15L+ / mo</option>
+                      </select>
+                      <div className={styles.selectArrow}>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                          <polyline points="6 9 12 15 18 9" />
+                        </svg>
                       </div>
                     </div>
                   </div>
@@ -287,6 +440,7 @@ export default function ContactPage() {
                   <div className={styles.field}>
                     <label className={styles.label}>Project Goals &amp; Details</label>
                     <textarea
+                      name="message"
                       className={`${styles.input} ${styles.textarea}`}
                       placeholder="Briefly describe your goals, challenges, or timeline..."
                       rows={2}

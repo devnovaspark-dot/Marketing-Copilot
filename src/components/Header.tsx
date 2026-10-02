@@ -23,7 +23,7 @@ export interface HeaderServiceCluster {
 }
 
 // Feature flag: set to true when individual service landing pages are finalized and ready to launch
-const ENABLE_SERVICES_DROPDOWN = false;
+const ENABLE_SERVICES_DROPDOWN = true;
 
 const serviceClusters: HeaderServiceCluster[] = [
   {
