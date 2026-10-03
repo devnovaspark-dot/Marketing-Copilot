@@ -21,7 +21,7 @@ export default function StudioLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div style={{ position: 'fixed', inset: 0, zIndex: 99999, overflow: 'auto', background: '#FFFFFF' }}>
+    <div style={{ height: '100vh', width: '100%', minHeight: '100vh', margin: 0, padding: 0 }}>
       {children}
     </div>
   );

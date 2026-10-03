@@ -4,4 +4,4 @@ import { faqItem } from './faqItem';
 import { blockContent } from './blockContent';
 import { post } from './post';
 
-export const schemaTypes = [post, author, category, faqItem, blockContent];
+export const schemaTypes = [faqItem, blockContent, author, category, post];

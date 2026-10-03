@@ -1,4 +1,4 @@
-import { defineField, defineType } from 'sanity';
+import { defineArrayMember, defineField, defineType } from 'sanity';
 
 export const post = defineType({
   name: 'post',
@@ -39,12 +39,9 @@ export const post = defineType({
       name: 'metaKeywords',
       title: 'Meta Keywords',
       type: 'array',
-      of: [{ type: 'string' }],
-      options: {
-        layout: 'tags',
-      },
+      of: [defineArrayMember({ type: 'string' })],
       description:
-        'Comma-separated keywords for internal reference. Note: not used by Google for ranking since 2009, included per SEO team request.',
+        'Keywords for internal reference and SEO tracking.',
     }),
     defineField({
       name: 'noIndex',
@@ -92,7 +89,7 @@ export const post = defineType({
       name: 'keyTakeaways',
       title: 'Key Takeaways',
       type: 'array',
-      of: [{ type: 'string' }],
+      of: [defineArrayMember({ type: 'string' })],
       description:
         'Executive bullet points summarizing the core value points of this article for readers and featured snippets.',
     }),
@@ -105,7 +102,7 @@ export const post = defineType({
       name: 'faqItems',
       title: 'FAQ Items',
       type: 'array',
-      of: [{ type: 'faqItem' }],
+      of: [defineArrayMember({ type: 'faqItem' })],
       description:
         'Interactive Q&A items rendered as an accordion and automatically injected into Google FAQPage Schema.',
     }),
