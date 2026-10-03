@@ -44,11 +44,11 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <ClientsSection />
       <QuickConnectMapSection />
+      <BrandSpotlightSection />
+      <ClientsSection />
       <StoryVideoSection />
       <MetricsSection />
-      <BrandSpotlightSection />
       <ServicesSection />
       <StrategySection />
       <QuotesSection />
