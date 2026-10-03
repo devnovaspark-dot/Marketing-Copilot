@@ -1,10 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import ScrollReveal from '@/components/ScrollReveal';
 import CTASection from '@/app/_components/CTASection';
+import BlogSidebarCta from '@/components/BlogSidebarCta';
 import styles from './page.module.css';
 
 export interface Article {
@@ -20,123 +21,308 @@ export interface Article {
   featured?: boolean;
 }
 
-const cats = ['All', 'Marketing', 'SEO', 'Social', 'Branding', 'Technology'];
+const categories = ['All Stories', 'Marketing', 'SEO', 'Social', 'Branding', 'Technology'];
 
 export default function InsightsClient({ articles }: { articles: Article[] }) {
-  const [active, setActive] = useState('All');
-  const filtered = active === 'All' ? articles : articles.filter((a) => a.category === active);
-  const featured = articles.find((a) => a.featured) || articles[0];
+  const [activeCategory, setActiveCategory] = useState('All Stories');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [email, setEmail] = useState('');
+  const [subscribed, setSubscribed] = useState(false);
+
+  // Filter articles based on active category and search query
+  const filteredArticles = useMemo(() => {
+    return articles.filter((article) => {
+      const matchesCategory =
+        activeCategory === 'All Stories' ||
+        article.category.toLowerCase() === activeCategory.toLowerCase();
+
+      const q = searchQuery.toLowerCase().trim();
+      const matchesSearch =
+        !q ||
+        article.title.toLowerCase().includes(q) ||
+        article.excerpt.toLowerCase().includes(q) ||
+        article.category.toLowerCase().includes(q) ||
+        article.author.toLowerCase().includes(q);
+
+      return matchesCategory && matchesSearch;
+    });
+  }, [articles, activeCategory, searchQuery]);
+
+  // Designate featured article (first one matching filter, or fallback)
+  const featuredArticle = filteredArticles[0];
+  const remainingArticles = filteredArticles.slice(1);
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email) {
+      setSubscribed(true);
+      setTimeout(() => {
+        setEmail('');
+        setSubscribed(false);
+      }, 4000);
+    }
+  };
 
   return (
     <>
       <div className={styles.page}>
+        {/* Hero Section matching Ekatraa Journal structure in Marketing Copilot styling */}
         <section className={styles.hero}>
-          <div className={styles.heroBg} />
           <div className="container">
-            <ScrollReveal className="text-center">
-              <div className="eyebrow">
-                <span className="eyebrow-dot" />
-                Growth Intelligence & Research
+            <ScrollReveal className={styles.heroInner}>
+              <div className={styles.heroEyebrow}>
+                <span>✦</span>
+                <span>The Marketing Copilot Journal</span>
               </div>
-              <h1 className={`display-xl ${styles.title}`}>
+              <h1 className={styles.heroTitle}>
                 Ideas worth<br />
-                <span className="accent-gradient">thinking about.</span>
+                <span className={styles.heroTitleAccent}>thinking about.</span>
               </h1>
-              <p className={`body-lg ${styles.sub}`}>
-                Strategic playbooks, campaign breakdowns, and practical research from our senior operators.
+              <p className={styles.heroSub}>
+                Strategic growth playbooks, performance benchmarks, and practical field research from our senior operators in Bhubaneswar.
               </p>
             </ScrollReveal>
           </div>
         </section>
 
         <div className="container">
-          {/* Featured Article Card */}
-          {active === 'All' && featured && (
-            <ScrollReveal>
-              <Link href={`/insights/${featured.slug}`} className={styles.featuredCard}>
-                <div className={styles.featuredVisual}>
-                  <Image
-                    src={featured.image}
-                    alt={featured.title}
-                    fill
-                    priority
-                    className={styles.featuredImg}
-                    sizes="(max-width: 900px) 100vw, 55vw"
-                  />
-                  <div className={styles.featuredOverlay} />
-                  <span className={styles.featuredTag}>Featured Article</span>
-                </div>
-                <div className={styles.featuredInfo}>
-                  <div className={styles.metaTop}>
-                    <span className={styles.categoryChip}>{featured.category}</span>
-                    <span className={styles.dot}>•</span>
-                    <span className={styles.readTime}>{featured.readTime}</span>
-                  </div>
-                  <h2 className={styles.featuredTitle}>{featured.title}</h2>
-                  <p className={styles.featuredExcerpt}>{featured.excerpt}</p>
-
-                  <div className={styles.authorRow}>
-                    <div className={styles.authorInfo}>
-                      <span className={styles.authorName}>{featured.author}</span>
-                      <span className={styles.authorRole}>{featured.authorRole}</span>
-                    </div>
-                    <span className={styles.readMoreBtn}>
-                      Read Article <span>→</span>
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            </ScrollReveal>
-          )}
-
-          {/* Filter Pills */}
+          {/* Category Filter & Search Bar */}
           <div className={styles.filterBar}>
-            {cats.map((cat) => (
-              <button
-                key={cat}
-                type="button"
-                className={`${styles.filterBtn} ${active === cat ? styles.filterActive : ''}`}
-                onClick={() => setActive(cat)}
+            <div className={styles.filterPills}>
+              {categories.map((cat) => (
+                <button
+                  key={cat}
+                  type="button"
+                  className={`${styles.filterPill} ${
+                    activeCategory === cat ? styles.filterPillActive : ''
+                  }`}
+                  onClick={() => setActiveCategory(cat)}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+
+            <div className={styles.searchWrap}>
+              <svg
+                className={styles.searchIcon}
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
               >
-                {cat}
-              </button>
-            ))}
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.3-4.3" />
+              </svg>
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search playbooks..."
+                className={styles.searchInput}
+                aria-label="Search articles"
+              />
+            </div>
           </div>
 
-          {/* Articles Grid */}
-          <div className={styles.grid}>
-            {filtered.map((article, idx) => (
-              <ScrollReveal key={article.slug} delay={idx * 60}>
-                <Link href={`/insights/${article.slug}`} className={styles.articleCard}>
-                  <div className={styles.cardVisual}>
-                    <Image
-                      src={article.image}
-                      alt={article.title}
-                      fill
-                      className={styles.cardImg}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          {/* 12-Column Grid Layout */}
+          <div className={styles.layoutGrid}>
+            {/* Main Stories Column (8 Columns) */}
+            <main className={styles.mainCol}>
+              {filteredArticles.length === 0 ? (
+                <div className={styles.emptyState}>
+                  <h3 className={styles.emptyTitle}>No playbooks found</h3>
+                  <p className={styles.emptyText}>
+                    We could not find any articles matching &ldquo;{searchQuery}&rdquo;. Try another search term or reset filters.
+                  </p>
+                  <button
+                    type="button"
+                    className={styles.resetBtn}
+                    onClick={() => {
+                      setActiveCategory('All Stories');
+                      setSearchQuery('');
+                    }}
+                  >
+                    Clear All Filters
+                  </button>
+                </div>
+              ) : (
+                <>
+                  {/* Featured Hero Story Card (Horizontal Layout) */}
+                  {featuredArticle && (
+                    <ScrollReveal>
+                      <Link
+                        href={`/insights/${featuredArticle.slug}`}
+                        className={styles.featuredCard}
+                      >
+                        <div className={styles.featuredVisual}>
+                          <Image
+                            src={featuredArticle.image}
+                            alt={featuredArticle.title}
+                            fill
+                            priority
+                            className={styles.featuredImg}
+                            sizes="(max-width: 768px) 100vw, 45vw"
+                          />
+                        </div>
+
+                        <div className={styles.featuredContent}>
+                          <span className={styles.cardCategory}>
+                            {featuredArticle.category}
+                          </span>
+                          <h2 className={styles.featuredTitle}>
+                            {featuredArticle.title}
+                          </h2>
+                          <p className={styles.featuredExcerpt}>
+                            {featuredArticle.excerpt}
+                          </p>
+
+                          <div className={styles.cardFooter}>
+                            <div className={styles.authorMeta}>
+                              <div className={styles.authorAvatar}>
+                                {featuredArticle.author.charAt(0)}
+                              </div>
+                              <div className={styles.authorText}>
+                                <span className={styles.authorName}>
+                                  {featuredArticle.author}
+                                </span>
+                                <span className={styles.cardDate}>
+                                  {featuredArticle.date} • {featuredArticle.readTime}
+                                </span>
+                              </div>
+                            </div>
+
+                            <span className={styles.readMoreLink}>
+                              <span>Read Story</span>
+                              <span aria-hidden="true">→</span>
+                            </span>
+                          </div>
+                        </div>
+                      </Link>
+                    </ScrollReveal>
+                  )}
+
+                  {/* Secondary Stories Grid (2-Column Grid) */}
+                  {remainingArticles.length > 0 && (
+                    <div className={styles.subGrid}>
+                      {remainingArticles.map((article, idx) => (
+                        <ScrollReveal key={article.slug} delay={idx * 50}>
+                          <Link
+                            href={`/insights/${article.slug}`}
+                            className={styles.storyCard}
+                          >
+                            <div className={styles.storyVisual}>
+                              <Image
+                                src={article.image}
+                                alt={article.title}
+                                fill
+                                className={styles.storyImg}
+                                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                              />
+                            </div>
+
+                            <div className={styles.storyBody}>
+                              <span className={styles.cardCategory}>
+                                {article.category}
+                              </span>
+                              <h3 className={styles.storyTitle}>
+                                {article.title}
+                              </h3>
+                              <p className={styles.storyExcerpt}>
+                                {article.excerpt}
+                              </p>
+
+                              <div className={styles.cardFooter}>
+                                <div className={styles.authorMeta}>
+                                  <div className={styles.authorAvatar}>
+                                    {article.author.charAt(0)}
+                                  </div>
+                                  <div className={styles.authorText}>
+                                    <span className={styles.authorName}>
+                                      {article.author}
+                                    </span>
+                                    <span className={styles.cardDate}>
+                                      {article.date} • {article.readTime}
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </Link>
+                        </ScrollReveal>
+                      ))}
+                    </div>
+                  )}
+                </>
+              )}
+            </main>
+
+            {/* Sticky Sidebar Column (4 Columns) */}
+            <aside className={styles.sidebarCol}>
+              {/* Category Directory Card */}
+              <div className={styles.sidebarCard}>
+                <h4 className={styles.sidebarTitle}>Categories</h4>
+                <div className={styles.categoryList}>
+                  {categories.slice(1).map((cat) => {
+                    const count = articles.filter(
+                      (a) => a.category.toLowerCase() === cat.toLowerCase()
+                    ).length;
+                    return (
+                      <button
+                        key={cat}
+                        type="button"
+                        className={styles.categoryItem}
+                        onClick={() => setActiveCategory(cat)}
+                      >
+                        <div>
+                          <span className={styles.categoryIcon}>✦</span>
+                          <span>{cat}</span>
+                        </div>
+                        <span style={{ fontSize: '0.75rem', opacity: 0.6 }}>
+                          ({count})
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Newsletter Subscription Widget */}
+              <div className={styles.newsletterCard}>
+                <h4 className={styles.newsletterTitle}>Stay Ahead Every Week</h4>
+                <p className={styles.newsletterDesc}>
+                  Get the latest performance marketing playbooks, technical SEO benchmarks, and growth tactics delivered straight to your inbox.
+                </p>
+                {subscribed ? (
+                  <div style={{ color: '#16A34A', fontSize: '0.875rem', fontWeight: 700, padding: '0.5rem 0' }}>
+                    ✓ Subscribed! Welcome to the Growth Journal.
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubscribe}>
+                    <input
+                      type="email"
+                      required
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Enter your work email"
+                      className={styles.newsletterInput}
                     />
-                    <span className={styles.cardCategory}>{article.category}</span>
-                  </div>
-                  <div className={styles.cardContent}>
-                    <div className={styles.cardMeta}>
-                      <span>{article.date}</span>
-                      <span className={styles.dot}>•</span>
-                      <span>{article.readTime}</span>
-                    </div>
-                    <h3 className={styles.cardTitle}>{article.title}</h3>
-                    <p className={styles.cardExcerpt}>{article.excerpt}</p>
-                    <div className={styles.cardFooter}>
-                      <span className={styles.cardAuthor}>{article.author}</span>
-                      <span className={styles.cardArrow}>→</span>
-                    </div>
-                  </div>
-                </Link>
-              </ScrollReveal>
-            ))}
+                    <button type="submit" className={styles.newsletterBtn}>
+                      Subscribe to Journal
+                    </button>
+                  </form>
+                )}
+              </div>
+
+              {/* Consultation & Growth Action Box */}
+              <BlogSidebarCta />
+            </aside>
           </div>
         </div>
       </div>
+
       <CTASection />
     </>
   );
