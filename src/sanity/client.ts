@@ -2,8 +2,7 @@ import { createClient } from 'next-sanity';
 import { apiVersion, dataset, projectId } from './env';
 
 export const isSanityConfigured = Boolean(
-  process.env.NEXT_PUBLIC_SANITY_PROJECT_ID &&
-  process.env.NEXT_PUBLIC_SANITY_PROJECT_ID !== 'demo-project-id'
+  projectId && projectId !== 'demo-project-id'
 );
 
 export const client = createClient({
