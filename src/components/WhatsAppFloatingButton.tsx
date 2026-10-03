@@ -1,8 +1,14 @@
 'use client';
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 import styles from './WhatsAppFloatingButton.module.css';
 
 export default function WhatsAppFloatingButton() {
+  const pathname = usePathname();
+  if (pathname?.startsWith('/studio')) {
+    return null;
+  }
+
   const [isWaClicked, setIsWaClicked] = useState(false);
   const [isPhoneClicked, setIsPhoneClicked] = useState(false);
 

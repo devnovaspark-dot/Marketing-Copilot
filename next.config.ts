@@ -14,10 +14,22 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'images.unsplash.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'cdn.sanity.io',
+      },
     ],
   },
   async rewrites() {
     return [
+      {
+        source: '/blog',
+        destination: '/insights',
+      },
+      {
+        source: '/blog/:slug',
+        destination: '/insights/:slug',
+      },
       {
         source: '/llm.txt',
         destination: '/llms.txt',

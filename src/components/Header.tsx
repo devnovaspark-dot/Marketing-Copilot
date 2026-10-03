@@ -64,6 +64,7 @@ const mobileLinks = [
   { href: '/about', label: 'About Us' },
   { href: '/portfolio', label: 'Portfolio' },
   { href: '/industries', label: 'Industries' },
+  { href: '/blog', label: 'Blog' },
   { href: '/faq', label: 'FAQ' },
 ];
 
@@ -139,6 +140,10 @@ export default function Header() {
       setServicesOpen(false);
     }, 200);
   };
+
+  if (pathname?.startsWith('/studio')) {
+    return null;
+  }
 
   return (
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
@@ -391,6 +396,14 @@ export default function Header() {
             className={`${styles.navLink} ${pathname.startsWith('/industries') || pathname.toLowerCase().includes('digital-marketing-services-industries') ? styles.engravedActive : ''}`}
           >
             Industries
+          </Link>
+
+          {/* Blog */}
+          <Link
+            href="/blog"
+            className={`${styles.navLink} ${pathname.startsWith('/blog') || pathname.startsWith('/insights') ? styles.engravedActive : ''}`}
+          >
+            Blog
           </Link>
 
           {/* FAQ */}

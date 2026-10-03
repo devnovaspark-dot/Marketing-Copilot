@@ -1,0 +1,59 @@
+.tocCard {
+  background: var(--bg-card, #FFFFFF);
+  border: 1px solid var(--border, #E2E8F0);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm, 0 2px 8px rgba(0, 0, 0, 0.04));
+  margin-bottom: 1.5rem;
+}
+
+.tocTitle {
+  font-family: var(--font-display), sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-primary, #000000);
+  margin: 0 0 1rem 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-subtle, #EDF2F7);
+}
+
+.tocList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.tocItem {
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+
+.tocItemH3 {
+  padding-left: 1rem;
+}
+
+.tocLink {
+  color: var(--text-secondary, #334155);
+  text-decoration: none;
+  display: block;
+  padding: 0.25rem 0.5rem;
+  border-left: 2px solid transparent;
+  transition: all 0.2s ease;
+  border-radius: 0 6px 6px 0;
+}
+
+.tocLink:hover {
+  color: var(--accent-gold-dark, #D97706);
+  border-left-color: var(--accent-gold, #F59E0B);
+  background: var(--accent-gold-dim, rgba(245, 158, 11, 0.05));
+}
+
+.tocLinkActive {
+  color: var(--accent-gold-dark, #D97706);
+  border-left-color: var(--accent-gold, #F59E0B);
+  background: var(--accent-gold-dim, rgba(245, 158, 11, 0.08));
+  font-weight: 600;
+}

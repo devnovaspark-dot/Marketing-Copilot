@@ -1,0 +1,214 @@
+.heroSection {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+  border-bottom: 1px solid var(--border-subtle, #EDF2F7);
+  overflow: hidden;
+  padding: 2.5rem 0 3.5rem;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .heroSection {
+    padding: 3.5rem 0 4.5rem;
+  }
+  .inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+  }
+}
+
+.leftCol {
+  flex: 1;
+  max-width: 680px;
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  color: var(--text-muted, #64748B);
+  margin-bottom: 1.25rem;
+}
+
+.breadcrumbLink {
+  color: var(--text-secondary, #334155);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.breadcrumbLink:hover {
+  color: var(--accent-gold-dark, #D97706);
+}
+
+.breadcrumbCurrent {
+  color: var(--text-primary, #000000);
+  font-weight: 600;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.categoryPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-gold-dark, #D97706);
+  background: var(--accent-gold-dim, rgba(245, 158, 11, 0.1));
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  margin-bottom: 1.25rem;
+}
+
+.title {
+  font-family: var(--font-display), sans-serif;
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--text-primary, #000000);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  margin: 0 0 1.25rem 0;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .title {
+    font-size: 3.25rem;
+  }
+}
+
+.excerpt {
+  font-family: var(--font-body), sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--text-secondary, #334155);
+  margin: 0 0 1.75rem 0;
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-subtle, #EDF2F7);
+}
+
+.authorBlock {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+}
+
+.avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid var(--border, #E2E8F0);
+  background: #FFFFFF;
+  position: relative;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.avatarImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatarInitials {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-gold-dim, rgba(245, 158, 11, 0.12));
+  color: var(--accent-gold-dark, #D97706);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.authorText {
+  display: flex;
+  flex-direction: column;
+}
+
+.authorName {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary, #000000);
+}
+
+.dateReadTime {
+  font-size: 0.8125rem;
+  color: var(--text-muted, #64748B);
+  font-weight: 400;
+}
+
+.shareBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #FFFFFF;
+  border: 1px solid var(--border, #E2E8F0);
+  padding: 0.5rem 0.9rem;
+  border-radius: 9999px;
+  color: var(--text-secondary, #334155);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-xs, 0 1px 3px rgba(0, 0, 0, 0.04));
+}
+
+.shareBtn:hover {
+  border-color: var(--accent-gold, #F59E0B);
+  color: var(--accent-gold-dark, #D97706);
+  transform: translateY(-1px);
+}
+
+.rightCol {
+  flex: 1;
+  max-width: 580px;
+  width: 100%;
+}
+
+.bannerWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.bannerImage {
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.bannerWrap:hover .bannerImage {
+  transform: scale(1.02);
+}

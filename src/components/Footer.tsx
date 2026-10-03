@@ -1,9 +1,15 @@
 'use client';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import styles from './Footer.module.css';
 
 export default function Footer() {
+  const pathname = usePathname();
+  if (pathname?.startsWith('/studio')) {
+    return null;
+  }
+
   const currentYear = new Date().getFullYear();
 
   const scrollToTop = () => {
@@ -17,6 +23,7 @@ export default function Footer() {
     { label: 'About Us', href: '/about' },
     { label: 'Services', href: '/services' },
     { label: 'Portfolio', href: '/portfolio' },
+    { label: 'Blog', href: '/blog' },
     { label: 'Contact Us', href: '/contact' },
   ];
 

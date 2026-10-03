@@ -1,0 +1,76 @@
+.pillarCard {
+  margin: 3rem 0;
+  padding: 1.75rem 2rem;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.05) 0%, rgba(11, 32, 147, 0.04) 100%);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  box-shadow: var(--shadow-sm, 0 2px 8px rgba(0, 0, 0, 0.04));
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.pillarCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: var(--accent-gradient, linear-gradient(135deg, #FFB800 0%, #F59E0B 45%, #D97706 100%));
+}
+
+.pillarHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pillarIcon {
+  color: var(--accent-gold-dark, #D97706);
+  font-size: 1.1rem;
+}
+
+.pillarLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-gold-dark, #D97706);
+}
+
+.pillarTitle {
+  font-family: var(--font-display), sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary, #000000);
+  line-height: 1.35;
+  margin: 0;
+}
+
+.pillarExcerpt {
+  font-size: 0.95rem;
+  color: var(--text-secondary, #334155);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.pillarLink {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--accent-cyan, #0B2093);
+  text-decoration: none;
+  margin-top: 0.5rem;
+  transition: gap 0.2s ease, color 0.2s ease;
+}
+
+.pillarLink:hover {
+  color: var(--accent-gold-dark, #D97706);
+  gap: 0.75rem;
+}
