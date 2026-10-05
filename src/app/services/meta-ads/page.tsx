@@ -101,31 +101,37 @@ const whyChoosePillars = [
     step: 'PILLAR 01',
     title: 'Strategy Before Spending',
     desc: 'We first understand what you want to achieve instead of immediately launching advertisements.',
+    featureTag: '🎯 Objective-First Roadmap',
   },
   {
     step: 'PILLAR 02',
     title: 'Creative + Performance',
     desc: 'Our approach combines creative development with campaign data. This allows advertising decisions to consider both the message and its performance.',
+    featureTag: '📊 Creative & Signal Telemetry',
   },
   {
     step: 'PILLAR 03',
     title: 'Business-Focused Campaigns',
     desc: 'Campaign objectives are aligned with business requirements such as enquiries, sales, registrations, bookings, or awareness.',
+    featureTag: '💼 Qualified Inquiries & Sales',
   },
   {
     step: 'PILLAR 04',
     title: 'Continuous Optimization',
     desc: 'Campaigns are reviewed regularly so that learnings from the data can inform future changes.',
+    featureTag: '⚡ Weekly Algorithmic Sprints',
   },
   {
     step: 'PILLAR 05',
     title: 'Transparent Communication',
     desc: 'We aim to provide clear information about campaign activity, performance, and areas that require improvement.',
+    featureTag: '🛡️ Clear Regular Reporting',
   },
   {
     step: 'PILLAR 06',
     title: 'Multi-Industry Experience',
     desc: 'Nova Spark has publicly described experience across industries, including real estate, interior design, architecture, EdTech, travel, D2C, jewelry, and manufacturing.',
+    featureTag: '🏢 8+ Industry Frameworks',
     industries: ['Real Estate', 'Interior Design', 'Architecture', 'EdTech', 'Travel', 'D2C', 'Jewelry', 'Manufacturing'],
   },
 ];
@@ -457,17 +463,25 @@ export default function MetaAdsPage() {
 
           <div className={styles.servicesGrid}>
             {metaServices.map((svc, i) => (
-              <ScrollReveal key={svc.title} delay={i * 60} style={{ height: '100%' }}>
+              <ScrollReveal key={svc.title} delay={i * 60} className={styles.cardCol}>
                 <div className={styles.serviceSkeuoCard}>
-                  <div className={styles.serviceTopHeader}>
-                    <span className={styles.serviceNumberEmbossed}>{svc.num}</span>
-                    <div className={styles.serviceIconBowl}>{svc.icon}</div>
+                  <div>
+                    <div className={styles.serviceTopHeader}>
+                      <span className={styles.serviceNumberEmbossed}>{svc.num}</span>
+                      <div className={styles.serviceIconBowl}>{svc.icon}</div>
+                    </div>
+                    <span className={styles.serviceTagPill}>{svc.tag}</span>
+                    <h3 className={styles.serviceCardTitle}>
+                      {svc.title}
+                    </h3>
                   </div>
-                  <span className={styles.serviceTagPill}>{svc.tag}</span>
-                  <h3 className={styles.serviceCardTitle} style={{ marginTop: 12 }}>
-                    {svc.title}
-                  </h3>
                   <p className={styles.serviceCardDesc}>{svc.desc}</p>
+                  <div className={styles.serviceCardFooter}>
+                    <span style={{ fontSize: '12px', fontWeight: 700, color: '#0B2093' }}>
+                      ✓ Managed Campaign Delivery
+                    </span>
+                    <span className={styles.serviceArrow}>→</span>
+                  </div>
                 </div>
               </ScrollReveal>
             ))}
@@ -554,20 +568,28 @@ export default function MetaAdsPage() {
 
           <div className={styles.whyChooseGrid}>
             {whyChoosePillars.map((p, i) => (
-              <ScrollReveal key={p.title} delay={i * 70} style={{ height: '100%' }}>
+              <ScrollReveal key={p.title} delay={i * 70} className={styles.cardCol}>
                 <div className={styles.whyChooseCard}>
-                  <span className={styles.whyChooseStepNum}>{p.step}</span>
-                  <h3 className={styles.whyChooseTitle}>{p.title}</h3>
+                  <div className={styles.whyChooseTop}>
+                    <span className={styles.whyChooseStepNum}>{p.step}</span>
+                    <h3 className={styles.whyChooseTitle}>{p.title}</h3>
+                  </div>
                   <p className={styles.whyChooseDesc}>{p.desc}</p>
-                  {p.industries && (
-                    <div className={styles.industryBadgeList}>
-                      {p.industries.map((ind) => (
-                        <span key={ind} className={styles.industryTag}>
-                          {ind}
-                        </span>
-                      ))}
-                    </div>
-                  )}
+                  <div className={styles.whyChooseFooter}>
+                    {p.industries ? (
+                      <div className={styles.industryBadgeList}>
+                        {p.industries.map((ind) => (
+                          <span key={ind} className={styles.industryTag}>
+                            {ind}
+                          </span>
+                        ))}
+                      </div>
+                    ) : (
+                      <span className={styles.pillarFeatureTag}>
+                        {p.featureTag}
+                      </span>
+                    )}
+                  </div>
                 </div>
               </ScrollReveal>
             ))}
