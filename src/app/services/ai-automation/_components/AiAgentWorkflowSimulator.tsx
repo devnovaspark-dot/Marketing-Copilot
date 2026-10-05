@@ -53,8 +53,52 @@ const CHANNEL_PRESETS: Record<Channel, ChannelData> = {
 
 export default function AiAgentWorkflowSimulator() {
   const [selectedChannel, setSelectedChannel] = useState<Channel>('whatsapp');
+  const [simStage, setSimStage] = useState<'inbound' | 'typing' | 'reply'>('reply');
+  const [checkStatus, setCheckStatus] = useState<'sent' | 'delivered' | 'read'>('read');
+  const [activeNode, setActiveNode] = useState<number>(3);
+  const [toastMessage, setToastMessage] = useState<string | null>(null);
+  const [clickedAction, setClickedAction] = useState<string | null>(null);
 
   const current = CHANNEL_PRESETS[selectedChannel];
+
+  const triggerSequence = (channelKey: Channel) => {
+    setSelectedChannel(channelKey);
+    setClickedAction(null);
+    setToastMessage(null);
+    setSimStage('inbound');
+    setCheckStatus('sent');
+    setActiveNode(1);
+
+    const t1 = setTimeout(() => {
+      setSimStage('typing');
+      setActiveNode(2);
+    }, 400);
+
+    const t2 = setTimeout(() => {
+      setSimStage('reply');
+      setCheckStatus('delivered');
+      setActiveNode(3);
+
+      const t3 = setTimeout(() => {
+        setCheckStatus('read');
+      }, 350);
+
+      return () => clearTimeout(t3);
+    }, 1350);
+
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+    };
+  };
+
+  const handleActionClick = (btnText: string) => {
+    setClickedAction(btnText);
+    setToastMessage(`⚡ Auto-Dispatched: "${btnText}" sent via Meta Webhook`);
+    setTimeout(() => {
+      setToastMessage(null);
+    }, 2800);
+  };
 
   return (
     <div className={styles.simulatorContainer}>
@@ -75,7 +119,7 @@ export default function AiAgentWorkflowSimulator() {
       <div className={styles.channelSelector}>
         <button
           className={`${styles.channelBtn} ${selectedChannel === 'whatsapp' ? styles.activeChannel : ''}`}
-          onClick={() => setSelectedChannel('whatsapp')}
+          onClick={() => triggerSequence('whatsapp')}
           type="button"
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -85,7 +129,7 @@ export default function AiAgentWorkflowSimulator() {
         </button>
         <button
           className={`${styles.channelBtn} ${selectedChannel === 'instagram' ? styles.activeChannel : ''}`}
-          onClick={() => setSelectedChannel('instagram')}
+          onClick={() => triggerSequence('instagram')}
           type="button"
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -95,7 +139,7 @@ export default function AiAgentWorkflowSimulator() {
         </button>
         <button
           className={`${styles.channelBtn} ${selectedChannel === 'website' ? styles.activeChannel : ''}`}
-          onClick={() => setSelectedChannel('website')}
+          onClick={() => triggerSequence('website')}
           type="button"
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -104,6 +148,20 @@ export default function AiAgentWorkflowSimulator() {
             <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
           </svg>
           Website Concierge
+        </button>
+
+        {/* Live Replay Trigger Button */}
+        <button
+          type="button"
+          onClick={() => triggerSequence(selectedChannel)}
+          className={styles.replayBtn}
+          title="Replay live sub-2s autonomous sequence"
+        >
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+            <path d="M23 4v6h-6" />
+            <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10" />
+          </svg>
+          Replay Flow
         </button>
       </div>
 
@@ -122,9 +180,17 @@ export default function AiAgentWorkflowSimulator() {
               {/* Dynamic Island & iOS Status Bar */}
               <div className={styles.phoneTopBar}>
                 <span className={styles.phoneTime}>9:41</span>
-                <div className={styles.phoneDynamicIsland}>
+                <div className={`${styles.phoneDynamicIsland} ${simStage === 'typing' ? styles.islandThinking : ''}`}>
                   <div className={styles.islandCameraLens} />
-                  <div className={styles.islandPrivacyDot} />
+                  {simStage === 'typing' ? (
+                    <div className={styles.islandWaveBox}>
+                      <span className={styles.waveBar} />
+                      <span className={styles.waveBar} />
+                      <span className={styles.waveBar} />
+                    </div>
+                  ) : (
+                    <div className={styles.islandPrivacyDot} />
+                  )}
                 </div>
                 <div className={styles.phoneStatusIcons}>
                   <div className={styles.signalBars}>
@@ -159,17 +225,25 @@ export default function AiAgentWorkflowSimulator() {
                         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                       </svg>
                     </div>
-                    <span className={styles.onlineStatus}>Online &middot; {current.timeTaken} latency</span>
+                    <span className={styles.onlineStatus}>
+                      {simStage === 'typing' ? (
+                        <span className={styles.typingIndicatorText}>
+                          typing<span className={styles.typingDot1}>.</span><span className={styles.typingDot2}>.</span><span className={styles.typingDot3}>.</span>
+                        </span>
+                      ) : (
+                        <>Online &middot; {current.timeTaken} latency</>
+                      )}
+                    </span>
                   </div>
                 </div>
 
                 <div className={styles.headerRightActions}>
                   {/* WhatsApp Video Call Icon */}
-                  <svg className={styles.headerIcon} width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <svg className={styles.headerIcon} width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/>
                   </svg>
                   {/* WhatsApp Voice Phone Icon */}
-                  <svg className={styles.headerIcon} width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                  <svg className={styles.headerIcon} width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-2.2 2.2a15.045 15.045 0 0 1-6.59-6.59l2.2-2.21a.96.96 0 0 0 .25-1.01A11.36 11.36 0 0 1 8.5 3.92c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.54c0-.55-.45-1-1-1z"/>
                   </svg>
                   {/* Overflow Dots */}
@@ -177,14 +251,22 @@ export default function AiAgentWorkflowSimulator() {
                 </div>
               </div>
 
+              {/* Instant WhatsApp In-App Toast Notification */}
+              {toastMessage && (
+                <div className={styles.phoneToast}>
+                  <span className={styles.toastDot} />
+                  <span>{toastMessage}</span>
+                </div>
+              )}
+
               {/* WhatsApp Messages Stream with Authentic Speech Tails */}
               <div className={styles.chatMessages}>
                 <div className={styles.chatDateDivider}>
                   <span>TODAY</span>
                 </div>
 
-                {/* Inbound Customer Inquiry Bubble */}
-                <div className={styles.msgInboundWrap}>
+                {/* Inbound Customer Inquiry Bubble (Realistic Pop-in Animation) */}
+                <div className={`${styles.msgInboundWrap} ${styles.animateBubble}`}>
                   <div className={styles.msgInbound}>
                     <div className={styles.msgSenderLabel}>Inbound Customer</div>
                     <p>{current.userQuery}</p>
@@ -194,30 +276,53 @@ export default function AiAgentWorkflowSimulator() {
                   </div>
                 </div>
 
-                {/* Autonomous AI Response Bubble with Checkmarks */}
-                <div className={styles.msgOutboundWrap}>
-                  <div className={styles.msgOutbound}>
-                    <div className={styles.msgAiLabel}>
-                      <span>🤖 Copilot Autonomous Agent</span>
-                      <span className={styles.instantBadge}>{current.timeTaken}</span>
-                    </div>
-                    <p>{current.aiReply}</p>
-                    
-                    {/* Interactive Action Buttons */}
-                    <div className={styles.chatActionsRow}>
-                      {current.actionButtons.map((btn, idx) => (
-                        <button key={idx} type="button" className={styles.chatActionBtn}>
-                          {btn}
-                        </button>
-                      ))}
-                    </div>
-
-                    <div className={styles.msgMetaRowOut}>
-                      <span className={styles.msgTimestampOut}>10:14 AM</span>
-                      <span className={styles.msgCheckmarks}>✓✓</span>
+                {/* WhatsApp Realistic Typing Indicator Bubble */}
+                {simStage === 'typing' && (
+                  <div className={`${styles.msgOutboundWrap} ${styles.typingBubbleWrap}`}>
+                    <div className={styles.whatsappTypingBubble}>
+                      <span className={styles.bouncingDot} />
+                      <span className={styles.bouncingDot} />
+                      <span className={styles.bouncingDot} />
                     </div>
                   </div>
-                </div>
+                )}
+
+                {/* Autonomous AI Response Bubble with Checkmarks */}
+                {simStage === 'reply' && (
+                  <div className={`${styles.msgOutboundWrap} ${styles.animateBubble}`}>
+                    <div className={styles.msgOutbound}>
+                      <div className={styles.msgAiLabel}>
+                        <span>🤖 Copilot Autonomous Agent</span>
+                        <span className={styles.instantBadge}>{current.timeTaken}</span>
+                      </div>
+                      <p>{current.aiReply}</p>
+                      
+                      {/* Interactive Action Buttons */}
+                      <div className={styles.chatActionsRow}>
+                        {current.actionButtons.map((btn, idx) => {
+                          const isClicked = clickedAction === btn;
+                          return (
+                            <button
+                              key={idx}
+                              type="button"
+                              className={`${styles.chatActionBtn} ${isClicked ? styles.chatActionBtnActive : ''}`}
+                              onClick={() => handleActionClick(btn)}
+                            >
+                              {isClicked ? `✓ Sent` : btn}
+                            </button>
+                          );
+                        })}
+                      </div>
+
+                      <div className={styles.msgMetaRowOut}>
+                        <span className={styles.msgTimestampOut}>10:14 AM</span>
+                        <span className={`${styles.msgCheckmarks} ${checkStatus === 'read' ? styles.checksRead : styles.checksSent}`}>
+                          {checkStatus === 'sent' ? '✓' : '✓✓'}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* WhatsApp Bottom Input Dock with Emoji, Paperclip, Camera & Send */}
@@ -226,10 +331,11 @@ export default function AiAgentWorkflowSimulator() {
                   <span className={styles.inputSmile}>😊</span>
                   <div className={styles.chatFakeInput}>
                     <span>Type a message...</span>
+                    <span className={styles.blinkingCursor}>|</span>
                   </div>
                   <span className={styles.inputClip}>📎</span>
                   <span className={styles.inputCamera}>📷</span>
-                  <div className={styles.micCircleBtn}>
+                  <div className={`${styles.micCircleBtn} ${simStage === 'inbound' ? styles.micActivePulse : ''}`}>
                     <span>➤</span>
                   </div>
                 </div>
@@ -255,7 +361,7 @@ export default function AiAgentWorkflowSimulator() {
 
           <div className={styles.agentNodesGraph}>
             {/* AGENT NODE 1: Lead Triage & Parser Agent */}
-            <div className={`${styles.agentNodeCard} ${styles.agentNodeActive}`}>
+            <div className={`${styles.agentNodeCard} ${styles.agentNodeActive} ${activeNode === 1 ? styles.agentNodeHighlight : ''}`}>
               <div className={styles.agentNodeHeader}>
                 <div className={styles.agentNodeAvatar}>
                   <span>🤖</span>
@@ -291,7 +397,7 @@ export default function AiAgentWorkflowSimulator() {
             </div>
 
             {/* AGENT NODE 2: Vector RAG & Knowledge Synthesizer */}
-            <div className={`${styles.agentNodeCard} ${styles.agentNodeActive}`}>
+            <div className={`${styles.agentNodeCard} ${styles.agentNodeActive} ${activeNode === 2 ? styles.agentNodeHighlight : ''}`}>
               <div className={styles.agentNodeHeader}>
                 <div className={styles.agentNodeAvatar}>
                   <span>🧠</span>
@@ -318,7 +424,7 @@ export default function AiAgentWorkflowSimulator() {
             </div>
 
             {/* AGENT NODE 3: CRM Webhook & Omnichannel Dispatcher */}
-            <div className={`${styles.agentNodeCard} ${styles.agentNodeActive}`}>
+            <div className={`${styles.agentNodeCard} ${styles.agentNodeActive} ${activeNode === 3 ? styles.agentNodeHighlight : ''}`}>
               <div className={styles.agentNodeHeader}>
                 <div className={styles.agentNodeAvatar}>
                   <span>⚡</span>

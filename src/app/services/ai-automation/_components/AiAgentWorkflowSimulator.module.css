@@ -107,6 +107,37 @@
     0 4px 14px rgba(11, 32, 147, 0.3) !important;
 }
 
+.replayBtn {
+  background: linear-gradient(180deg, #FFFFFF 0%, #F1F5F9 100%);
+  border: 1.5px solid #008069;
+  color: #008069;
+  border-radius: 999px;
+  padding: 0.5rem 1.1rem;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.84rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  box-shadow: 
+    inset 0 1px 0 #FFFFFF,
+    0 2px 6px rgba(0, 128, 105, 0.15);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-left: 4px;
+}
+
+.replayBtn:hover {
+  background: #008069;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0, 128, 105, 0.35);
+}
+
+.replayBtn:active {
+  transform: translateY(0);
+}
+
 /* 2-Column Responsive Layout */
 .layoutGrid {
   display: grid;
@@ -245,6 +276,36 @@
   background: #10B981;
 }
 
+/* Dynamic Island Active Thinking Soundwave State */
+.islandThinking {
+  width: 78px !important;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.45), inset 0 0 0 1px rgba(16, 185, 129, 0.5) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.islandWaveBox {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 10px;
+}
+
+.waveBar {
+  width: 2.5px;
+  height: 8px;
+  border-radius: 2px;
+  background: #10B981;
+  animation: soundWaveBar 0.75s infinite ease-in-out alternate;
+}
+.waveBar:nth-child(1) { animation-delay: 0.1s; }
+.waveBar:nth-child(2) { animation-delay: 0.35s; }
+.waveBar:nth-child(3) { animation-delay: 0.2s; }
+
+@keyframes soundWaveBar {
+  0% { height: 3px; opacity: 0.6; }
+  100% { height: 10px; opacity: 1; }
+}
+
 .phoneStatusIcons {
   display: flex;
   align-items: center;
@@ -355,6 +416,16 @@
   border-radius: 50%;
   background: #25D366;
   border: 2px solid #008069;
+  animation: onlineBreathe 2s infinite ease-in-out;
+}
+
+@keyframes onlineBreathe {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 4px rgba(37, 211, 102, 0);
+  }
 }
 
 .agentMetaTitleRow {
@@ -380,6 +451,57 @@
   font-size: 0.65rem;
   color: rgba(255, 255, 255, 0.88);
   display: block;
+}
+
+.typingIndicatorText {
+  color: #25D366;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.typingDot1 { animation: typingDotFade 1.2s infinite ease-in-out; animation-delay: 0s; }
+.typingDot2 { animation: typingDotFade 1.2s infinite ease-in-out; animation-delay: 0.25s; }
+.typingDot3 { animation: typingDotFade 1.2s infinite ease-in-out; animation-delay: 0.5s; }
+
+@keyframes typingDotFade {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+/* In-Phone Floating Toast Notification */
+.phoneToast {
+  position: absolute;
+  top: 76px;
+  left: 12px;
+  right: 12px;
+  z-index: 30;
+  background: rgba(15, 23, 42, 0.94);
+  backdrop-filter: blur(10px);
+  color: #FFFFFF;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  animation: toastDrop 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes toastDrop {
+  0% { opacity: 0; transform: translateY(-8px) scale(0.95); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.toastDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 6px #10B981;
+  flex-shrink: 0;
 }
 
 .headerRightActions {
@@ -435,6 +557,73 @@
   align-self: flex-start;
   max-width: 86%;
   position: relative;
+}
+
+/* Realistic Spring Pop-In Animation for Bubbles */
+.animateBubble {
+  animation: popInBubble 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes popInBubble {
+  0% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* WhatsApp Typing Bubble Indicator */
+.typingBubbleWrap {
+  align-self: flex-start;
+  animation: popInBubble 0.25s ease-out forwards;
+}
+
+.whatsappTypingBubble {
+  background: #FFFFFF;
+  border-radius: 14px 14px 14px 3px;
+  padding: 8px 14px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: inline-flex;
+  align-items: center;
+  gap: 4.5px;
+  position: relative;
+}
+
+.whatsappTypingBubble::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -5px;
+  width: 0;
+  height: 0;
+  border-right: 6px solid #FFFFFF;
+  border-top: 6px solid transparent;
+}
+
+.bouncingDot {
+  width: 5.5px;
+  height: 5.5px;
+  border-radius: 50%;
+  background: #008069;
+  animation: typingDotJump 1.3s infinite ease-in-out;
+}
+
+.bouncingDot:nth-child(1) { animation-delay: 0s; }
+.bouncingDot:nth-child(2) { animation-delay: 0.2s; }
+.bouncingDot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typingDotJump {
+  0%, 60%, 100% {
+    transform: translateY(0);
+    opacity: 0.35;
+  }
+  30% {
+    transform: translateY(-5px);
+    opacity: 1;
+  }
 }
 
 .msgInbound {
@@ -532,12 +721,21 @@
   border-radius: 6px;
   cursor: pointer;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
-  transition: all 0.15s ease;
+  transition: all 0.18s ease;
 }
 
 .chatActionBtn:hover {
   background: #008069;
   color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+.chatActionBtnActive {
+  background: #008069 !important;
+  color: #FFFFFF !important;
+  border-color: #008069 !important;
+  transform: scale(0.97);
+  box-shadow: 0 2px 6px rgba(0, 128, 105, 0.4) !important;
 }
 
 .msgMetaRowOut {
@@ -554,8 +752,24 @@
 
 .msgCheckmarks {
   font-size: 0.7rem;
+  transition: all 0.25s ease;
+}
+
+.checksSent {
+  color: #94A3B8;
+  font-weight: 700;
+}
+
+.checksRead {
   color: #34B7F1;
-  font-weight: 800;
+  font-weight: 900;
+  animation: checkmarkBlueFlash 0.35s ease-out;
+}
+
+@keyframes checkmarkBlueFlash {
+  0% { transform: scale(0.85); color: #94A3B8; }
+  50% { transform: scale(1.3); color: #34B7F1; text-shadow: 0 0 4px rgba(52, 183, 241, 0.6); }
+  100% { transform: scale(1); color: #34B7F1; }
 }
 
 /* WhatsApp Bottom Input Dock */
@@ -587,6 +801,20 @@
   padding: 6px 12px;
   font-size: 0.76rem;
   color: #94A3B8;
+  display: flex;
+  align-items: center;
+}
+
+.blinkingCursor {
+  font-weight: 400;
+  color: #008069;
+  margin-left: 2px;
+  animation: blinkTextCursor 1s infinite;
+}
+
+@keyframes blinkTextCursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 .micCircleBtn {
@@ -602,6 +830,17 @@
   box-shadow: 0 2px 5px rgba(0, 128, 105, 0.35);
   cursor: pointer;
   flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.micActivePulse {
+  animation: micPulseRipple 0.5s ease-out;
+}
+
+@keyframes micPulseRipple {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 128, 105, 0.7); }
+  50% { transform: scale(1.18); box-shadow: 0 0 0 7px rgba(0, 128, 105, 0); }
+  100% { transform: scale(1); }
 }
 
 .iosHomeIndicator {
@@ -702,6 +941,16 @@
   box-shadow: 
     inset 0 1px 0 #FFFFFF,
     0 4px 12px rgba(11, 32, 147, 0.08);
+}
+
+.agentNodeHighlight {
+  border-color: #0B2093 !important;
+  background: linear-gradient(160deg, #FFFFFF 0%, #EFF6FF 60%, #DBEAFE 100%) !important;
+  box-shadow: 
+    inset 0 2px 0 #FFFFFF,
+    0 0 0 2px rgba(11, 32, 147, 0.25),
+    0 10px 24px -4px rgba(11, 32, 147, 0.16) !important;
+  transform: translateY(-2px);
 }
 
 .agentNodeHeader {
