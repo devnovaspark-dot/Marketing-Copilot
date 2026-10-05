@@ -242,8 +242,34 @@ export default async function ArticlePage({
 
             {/* Right Column: Sticky Sidebar */}
             <aside className={styles.sidebarCol}>
+              {/* Strategic Factsheet Card */}
+              <div className={styles.factsheetCard} aria-label="Article Strategic Overview">
+                <div className={styles.factsheetHeader}>
+                  <span className={styles.factsheetBadge}>✦ Strategic Factsheet</span>
+                  <h4 className={styles.factsheetTitle}>Executive Overview</h4>
+                </div>
+                <div className={styles.factsheetList}>
+                  <div className={styles.factsheetRow}>
+                    <span className={styles.factsheetLabel}>Category</span>
+                    <span className={styles.factsheetVal}>{article.category}</span>
+                  </div>
+                  <div className={styles.factsheetRow}>
+                    <span className={styles.factsheetLabel}>Read Time</span>
+                    <span className={styles.factsheetVal}>{article.readTime}</span>
+                  </div>
+                  <div className={styles.factsheetRow}>
+                    <span className={styles.factsheetLabel}>Target Audience</span>
+                    <span className={styles.factsheetVal}>Founders &amp; Operators</span>
+                  </div>
+                  <div className={styles.factsheetRow}>
+                    <span className={styles.factsheetLabel}>Market Geography</span>
+                    <span className={styles.factsheetVal}>Bhubaneswar • Odisha</span>
+                  </div>
+                </div>
+              </div>
+
               {/* Table of Contents ("On This Page") */}
-              {article.headings && article.headings.length > 0 && (
+              {article.headings && article.headings.length >= 2 && (
                 <TableOfContents headings={article.headings} />
               )}
 

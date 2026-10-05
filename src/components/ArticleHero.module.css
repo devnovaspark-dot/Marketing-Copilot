@@ -1,21 +1,32 @@
 .heroSection {
   position: relative;
   width: 100%;
-  background: #FFFFFF;
+  background: radial-gradient(130% 120% at 50% 0%, #FFFFFF 50%, #F8FAFC 100%);
   border-bottom: 1px solid var(--border, #E2E8F0);
   overflow: hidden;
-  padding-top: calc(var(--nav-height, 78px) + 36px);
-  padding-bottom: 48px;
+  padding-top: calc(var(--nav-height, 78px) + 32px);
+  padding-bottom: 52px;
+}
+
+.heroAmbientGlow {
+  position: absolute;
+  top: -80px;
+  right: -60px;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(11, 32, 147, 0.06) 0%, rgba(37, 99, 235, 0.02) 50%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
 }
 
 .heroAmbientAmber {
   position: absolute;
-  top: 10%;
-  right: 6%;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(245, 158, 11, 0.08) 0%, rgba(251, 191, 36, 0.02) 50%, transparent 70%);
-  filter: blur(80px);
+  bottom: 0%;
+  left: 5%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.05) 0%, transparent 70%);
+  filter: blur(90px);
   pointer-events: none;
 }
 
@@ -43,38 +54,39 @@
   max-width: 660px;
 }
 
-.breadcrumbs {
+/* Unified Breadcrumb Navigation & Category Pill Bar */
+.topNavigation {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 0.8125rem;
-  color: var(--text-muted, #64748B);
-  margin-bottom: 1.25rem;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.breadcrumbs {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #64748B;
 }
 
 .breadcrumbLink {
-  color: var(--text-secondary, #334155);
+  color: #64748B;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s ease;
 }
 
 .breadcrumbLink:hover {
-  color: var(--accent-gold-dark, #D97706);
+  color: #0B2093;
 }
 
 .breadcrumbSeparator {
   color: #CBD5E1;
-  font-size: 0.75rem;
-}
-
-.breadcrumbCurrent {
-  color: #000000;
+  font-size: 13px;
   font-weight: 700;
-  max-width: 220px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  line-height: 1;
 }
 
 .categoryPill {
@@ -88,9 +100,8 @@
   color: #0B2093;
   background: #EFF6FF;
   border: 1px solid #BFDBFE;
-  padding: 5px 14px;
+  padding: 4px 12px;
   border-radius: 9999px;
-  margin-bottom: 16px;
   box-shadow: inset 0 1px 0 #FFFFFF;
 }
 
@@ -172,40 +183,29 @@
   flex-direction: column;
 }
 
+.authorNameWrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
 .authorName {
   font-size: 0.95rem;
   font-weight: 750;
   color: #000000;
 }
 
+.verifiedIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
 .dateReadTime {
   font-size: 0.8125rem;
   color: #64748B;
   font-weight: 500;
-}
-
-.shareBtn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  background: #FFFFFF;
-  border: 1.5px solid #E2E8F0;
-  padding: 0.5rem 1rem;
-  border-radius: 9999px;
-  color: #334155;
-  font-size: 0.8125rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: inset 0 1px 0 #FFFFFF, 0 1px 3px rgba(0, 0, 0, 0.04);
-}
-
-.shareBtn:hover {
-  border-color: #F59E0B;
-  color: #B45309;
-  background: #FFFBEB;
-  transform: translateY(-1px);
-  box-shadow: 0 3px 8px rgba(245, 158, 11, 0.15);
 }
 
 .rightCol {
@@ -222,7 +222,7 @@
   overflow: hidden;
   box-shadow: 
     inset 0 2px 0 #FFFFFF,
-    0 16px 40px -10px rgba(0, 0, 0, 0.09),
+    0 20px 48px -12px rgba(11, 32, 147, 0.12),
     0 2px 6px rgba(0, 0, 0, 0.03);
   border: 1.5px solid #E2E8F0;
   background: #F8FAFC;
@@ -235,4 +235,33 @@
 
 .bannerWrap:hover .bannerImage {
   transform: scale(1.04);
+}
+
+.bannerBadge {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(15, 23, 42, 0.78);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 5px 12px;
+  border-radius: 9999px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  z-index: 3;
+}
+
+.bannerBadgeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #38BDF8;
+  box-shadow: 0 0 8px #38BDF8;
 }

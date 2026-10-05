@@ -62,27 +62,28 @@ export default function ArticleHero({
 
   return (
     <section className={styles.heroSection}>
+      <div className={styles.heroAmbientGlow} />
       <div className={styles.heroAmbientAmber} />
       <div className={`container ${styles.inner}`}>
         {/* Left Column: Metadata & Title */}
         <div className={styles.leftCol}>
-          {/* Breadcrumbs */}
-          <nav className={styles.breadcrumbs} aria-label="Breadcrumb">
-            <Link href="/" className={styles.breadcrumbLink}>
-              Home
-            </Link>
-            <span className={styles.breadcrumbSeparator}>/</span>
-            <Link href="/insights" className={styles.breadcrumbLink}>
-              Blog
-            </Link>
-            <span className={styles.breadcrumbSeparator}>/</span>
-            <span className={styles.breadcrumbCurrent}>{category}</span>
-          </nav>
+          {/* Unified Breadcrumbs & Category Bar - Category is NOT duplicated */}
+          <div className={styles.topNavigation}>
+            <nav className={styles.breadcrumbs} aria-label="Breadcrumb">
+              <Link href="/" className={styles.breadcrumbLink}>
+                Home
+              </Link>
+              <span className={styles.breadcrumbSeparator}>›</span>
+              <Link href="/insights" className={styles.breadcrumbLink}>
+                Blog
+              </Link>
+              <span className={styles.breadcrumbSeparator}>›</span>
+            </nav>
 
-          {/* Category Pill */}
-          <div className={styles.categoryPill}>
-            <span className={styles.pillDot} />
-            <span>{category}</span>
+            <div className={styles.categoryPill}>
+              <span className={styles.pillDot} />
+              <span>{category}</span>
+            </div>
           </div>
 
           {/* Title */}
@@ -108,7 +109,14 @@ export default function ArticleHero({
                 )}
               </div>
               <div className={styles.authorText}>
-                <span className={styles.authorName}>By {author}</span>
+                <div className={styles.authorNameWrap}>
+                  <span className={styles.authorName}>By {author}</span>
+                  <span className={styles.verifiedIcon} title="Verified Author">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="#0B2093">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                    </svg>
+                  </span>
+                </div>
                 <span className={styles.dateReadTime}>
                   {date} • {readTime}
                 </span>
@@ -146,6 +154,11 @@ export default function ArticleHero({
               className={styles.bannerImage}
               sizes="(max-width: 1024px) 100vw, 580px"
             />
+            {/* Editorial Guide Badge Overlay */}
+            <div className={styles.bannerBadge}>
+              <span className={styles.bannerBadgeDot} />
+              <span>Verified Strategic Guide</span>
+            </div>
           </div>
         </div>
       </div>
