@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import ScrollReveal from '@/components/ScrollReveal';
+import BeamButton from '@/components/BeamButton';
 import SERPSimulator from './_components/SERPSimulator';
 import QuickConnectMapSection from '@/app/_components/QuickConnectMapSection';
 import styles from './seo-page.module.css';
@@ -700,48 +701,39 @@ export default function SEOPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          10. CONVERSION TERMINAL (READY TO RANK HIGHER)
+          10. CONVERSION SECTION (MAIN HOME PAGE STYLE)
          ══════════════════════════════════════════════════ */}
-      <section className={styles.conversionSection}>
+      <section className={styles.homeStyleCtaSection}>
         <div className="container">
-          <ScrollReveal>
-            <div className={styles.executiveTerminal}>
-              <div className={styles.termGlow} />
-              <div>
-                <span className={styles.termPill}>Make Google Work for You</span>
-                <div style={{ fontSize: 13, fontWeight: 800, letterSpacing: '0.04em', color: '#FCD34D', textTransform: 'uppercase', marginBottom: 8 }}>
-                  Ready to Rank Higher?
-                </div>
-                <h2 className={styles.termTitle}>
-                  Get Found Faster with SEO Marketing Service in Bhubaneswar
-                </h2>
-                <p className={styles.termSub}>
-                  Get in touch with Nova Spark Digital and start building a stronger organic presence in Bhubaneswar and beyond.
-                </p>
-                <div className={styles.termBrandPunch}>
-                  Nova Spark Digital — Strategy. Search. Growth.
-                </div>
-                <div className={styles.termContact}>
-                  <span>📞 Call Directly:</span>
-                  <a href="tel:+918280788689" className={styles.termPhone}>
-                    +91 8280788689
-                  </a>
-                  <span>·</span>
-                  <span>HQ: Kharvela Nagar, Unit 3, Bhubaneswar</span>
-                </div>
+          <div className={styles.homeStyleCtaBox}>
+            <ScrollReveal className="text-center">
+              <div className={styles.ctaEyebrowBadge}>
+                <span className={styles.ctaPulseDot} />
+                <span>Make Google Work for You</span>
               </div>
 
-              <div className={styles.termActions}>
-                <Link href="/contact" className={styles.termAuditBtn}>
-                  <span>Book Your Free SEO Audit</span>
-                  <span>→</span>
-                </Link>
-                <div className={styles.termTaglinePill}>
-                  <span>⚡ Make Google Work for You</span>
-                </div>
+              <div className={styles.ctaSubtitlePill}>
+                Ready to Rank Higher?
               </div>
-            </div>
-          </ScrollReveal>
+
+              <h2 className={styles.ctaHeadline}>
+                Get Found Faster with{' '}
+                <span className="accent-gradient">SEO Marketing Service in Bhubaneswar</span>
+              </h2>
+
+              <p className={styles.ctaDescription}>
+                Get in touch with Nova Spark Digital and start building a stronger organic presence in Bhubaneswar and beyond.
+              </p>
+
+              <div className={styles.ctaBrandPunchline}>
+                Nova Spark Digital — Strategy. Search. Growth.
+              </div>
+
+              <div className={styles.ctaActions}>
+                <BeamButton href="/contact" label="Book Your Free SEO Audit" size="lg" />
+              </div>
+            </ScrollReveal>
+          </div>
         </div>
       </section>
     </div>
