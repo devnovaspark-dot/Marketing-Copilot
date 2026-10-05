@@ -78,13 +78,15 @@ export default function InsightsClient({ articles = [] }: { articles: Article[] 
       <div className={styles.page}>
         {/* Hero Section */}
         <section className={styles.hero}>
+          <div className={styles.heroAmbientAmber} />
+          <div className={styles.heroAmbientBlue} />
           <div className="container">
-            <ScrollReveal className={styles.heroInner}>
+            <div className={styles.heroInner}>
               <div className={styles.heroEyebrow}>
-                <span className={styles.eyebrowSparkle}>✦</span>
+                <span className={styles.heroEyebrowDot} />
                 <span>The Marketing Copilot Journal</span>
                 <span className={styles.liveIndicator}>
-                  <span className={styles.liveDot}></span> Live Notes
+                  <span className={styles.liveDot} /> Verified Playbooks
                 </span>
               </div>
               <h1 className={styles.heroTitle}>
@@ -94,7 +96,7 @@ export default function InsightsClient({ articles = [] }: { articles: Article[] 
               <p className={styles.heroSub}>
                 Strategic growth playbooks, performance benchmarks, and practical field research from our senior operators in Bhubaneswar.
               </p>
-            </ScrollReveal>
+            </div>
           </div>
         </section>
 
