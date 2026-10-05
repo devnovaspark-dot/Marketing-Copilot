@@ -18,22 +18,32 @@ export interface Article {
   image: string;
   author: string;
   authorRole: string;
+  authorImage?: string;
   featured?: boolean;
 }
 
-const categories = ['All Stories', 'Marketing', 'SEO', 'Social', 'Branding', 'Technology'];
-
-export default function InsightsClient({ articles }: { articles: Article[] }) {
-  const [activeCategory, setActiveCategory] = useState('All Stories');
+export default function InsightsClient({ articles = [] }: { articles: Article[] }) {
+  const [activeCategory, setActiveCategory] = useState('All Articles');
   const [searchQuery, setSearchQuery] = useState('');
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
+
+  // Dynamically extract actual categories from real published articles
+  const categories = useMemo(() => {
+    const set = new Set<string>();
+    articles.forEach((a) => {
+      if (a.category && a.category.trim()) {
+        set.add(a.category.trim());
+      }
+    });
+    return ['All Articles', ...Array.from(set)];
+  }, [articles]);
 
   // Filter articles based on active category and search query
   const filteredArticles = useMemo(() => {
     return articles.filter((article) => {
       const matchesCategory =
-        activeCategory === 'All Stories' ||
+        activeCategory === 'All Articles' ||
         article.category.toLowerCase() === activeCategory.toLowerCase();
 
       const q = searchQuery.toLowerCase().trim();
@@ -48,7 +58,7 @@ export default function InsightsClient({ articles }: { articles: Article[] }) {
     });
   }, [articles, activeCategory, searchQuery]);
 
-  // Designate featured article (first one matching filter, or fallback)
+  // Featured article is the first one matching filter
   const featuredArticle = filteredArticles[0];
   const remainingArticles = filteredArticles.slice(1);
 
@@ -66,13 +76,16 @@ export default function InsightsClient({ articles }: { articles: Article[] }) {
   return (
     <>
       <div className={styles.page}>
-        {/* Hero Section matching Ekatraa Journal structure in Marketing Copilot styling */}
+        {/* Hero Section */}
         <section className={styles.hero}>
           <div className="container">
             <ScrollReveal className={styles.heroInner}>
               <div className={styles.heroEyebrow}>
-                <span>✦</span>
+                <span className={styles.eyebrowSparkle}>✦</span>
                 <span>The Marketing Copilot Journal</span>
+                <span className={styles.liveIndicator}>
+                  <span className={styles.liveDot}></span> Live Notes
+                </span>
               </div>
               <h1 className={styles.heroTitle}>
                 Ideas worth<br />
@@ -124,6 +137,16 @@ export default function InsightsClient({ articles }: { articles: Article[] }) {
                 className={styles.searchInput}
                 aria-label="Search articles"
               />
+              {searchQuery && (
+                <button
+                  type="button"
+                  className={styles.clearSearchBtn}
+                  onClick={() => setSearchQuery('')}
+                  aria-label="Clear search"
+                >
+                  ✕
+                </button>
+              )}
             </div>
           </div>
 
@@ -133,24 +156,31 @@ export default function InsightsClient({ articles }: { articles: Article[] }) {
             <main className={styles.mainCol}>
               {filteredArticles.length === 0 ? (
                 <div className={styles.emptyState}>
-                  <h3 className={styles.emptyTitle}>No playbooks found</h3>
+                  <div className={styles.emptyIconWrap}>✦</div>
+                  <h3 className={styles.emptyTitle}>
+                    {articles.length === 0 ? 'No Articles Published Yet' : 'No matching playbooks found'}
+                  </h3>
                   <p className={styles.emptyText}>
-                    We could not find any articles matching &ldquo;{searchQuery}&rdquo;. Try another search term or reset filters.
+                    {articles.length === 0
+                      ? 'Our editorial team is preparing deep-dive growth research. Please check back shortly!'
+                      : `We could not find any articles matching "${searchQuery}". Try another keyword or reset your filter.`}
                   </p>
-                  <button
-                    type="button"
-                    className={styles.resetBtn}
-                    onClick={() => {
-                      setActiveCategory('All Stories');
-                      setSearchQuery('');
-                    }}
-                  >
-                    Clear All Filters
-                  </button>
+                  {articles.length > 0 && (
+                    <button
+                      type="button"
+                      className={styles.resetBtn}
+                      onClick={() => {
+                        setActiveCategory('All Articles');
+                        setSearchQuery('');
+                      }}
+                    >
+                      Clear All Filters
+                    </button>
+                  )}
                 </div>
               ) : (
                 <>
-                  {/* Featured Hero Story Card (Horizontal Layout) */}
+                  {/* Featured Hero Story Card */}
                   {featuredArticle && (
                     <ScrollReveal>
                       <Link
@@ -166,12 +196,18 @@ export default function InsightsClient({ articles }: { articles: Article[] }) {
                             className={styles.featuredImg}
                             sizes="(max-width: 768px) 100vw, 45vw"
                           />
+                          <div className={styles.visualOverlay} />
+                          <span className={styles.visualBadge}>Featured Analysis</span>
                         </div>
 
                         <div className={styles.featuredContent}>
-                          <span className={styles.cardCategory}>
-                            {featuredArticle.category}
-                          </span>
+                          <div className={styles.cardCategoryWrap}>
+                            <span className={styles.categoryDot} />
+                            <span className={styles.cardCategory}>
+                              {featuredArticle.category}
+                            </span>
+                          </div>
+
                           <h2 className={styles.featuredTitle}>
                             {featuredArticle.title}
                           </h2>
@@ -182,7 +218,17 @@ export default function InsightsClient({ articles }: { articles: Article[] }) {
                           <div className={styles.cardFooter}>
                             <div className={styles.authorMeta}>
                               <div className={styles.authorAvatar}>
-                                {featuredArticle.author.charAt(0)}
+                                {featuredArticle.authorImage ? (
+                                  <Image
+                                    src={featuredArticle.authorImage}
+                                    alt={featuredArticle.author}
+                                    width={38}
+                                    height={38}
+                                    className={styles.authorAvatarImg}
+                                  />
+                                ) : (
+                                  featuredArticle.author.charAt(0)
+                                )}
                               </div>
                               <div className={styles.authorText}>
                                 <span className={styles.authorName}>
@@ -194,17 +240,17 @@ export default function InsightsClient({ articles }: { articles: Article[] }) {
                               </div>
                             </div>
 
-                            <span className={styles.readMoreLink}>
+                            <div className={styles.readMorePill}>
                               <span>Read Story</span>
-                              <span aria-hidden="true">→</span>
-                            </span>
+                              <span className={styles.readMoreArrow}>→</span>
+                            </div>
                           </div>
                         </div>
                       </Link>
                     </ScrollReveal>
                   )}
 
-                  {/* Secondary Stories Grid (2-Column Grid) */}
+                  {/* Secondary Stories Grid (when more articles exist) */}
                   {remainingArticles.length > 0 && (
                     <div className={styles.subGrid}>
                       {remainingArticles.map((article, idx) => (
@@ -221,12 +267,16 @@ export default function InsightsClient({ articles }: { articles: Article[] }) {
                                 className={styles.storyImg}
                                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                               />
+                              <div className={styles.visualOverlay} />
                             </div>
 
                             <div className={styles.storyBody}>
-                              <span className={styles.cardCategory}>
-                                {article.category}
-                              </span>
+                              <div className={styles.cardCategoryWrap}>
+                                <span className={styles.categoryDot} />
+                                <span className={styles.cardCategory}>
+                                  {article.category}
+                                </span>
+                              </div>
                               <h3 className={styles.storyTitle}>
                                 {article.title}
                               </h3>
@@ -237,7 +287,17 @@ export default function InsightsClient({ articles }: { articles: Article[] }) {
                               <div className={styles.cardFooter}>
                                 <div className={styles.authorMeta}>
                                   <div className={styles.authorAvatar}>
-                                    {article.author.charAt(0)}
+                                    {article.authorImage ? (
+                                      <Image
+                                        src={article.authorImage}
+                                        alt={article.author}
+                                        width={34}
+                                        height={34}
+                                        className={styles.authorAvatarImg}
+                                      />
+                                    ) : (
+                                      article.author.charAt(0)
+                                    )}
                                   </div>
                                   <div className={styles.authorText}>
                                     <span className={styles.authorName}>
@@ -255,16 +315,86 @@ export default function InsightsClient({ articles }: { articles: Article[] }) {
                       ))}
                     </div>
                   )}
+
+                  {/* If only 1 article is published, provide a helpful Topic Exploration Section */}
+                  {filteredArticles.length === 1 && (
+                    <ScrollReveal>
+                      <div className={styles.topicsBox}>
+                        <div className={styles.topicsHeader}>
+                          <span className={styles.topicsEyebrow}>✦ Strategic Focus Areas</span>
+                          <h3 className={styles.topicsTitle}>Explore Specialized Growth Services</h3>
+                          <p className={styles.topicsSub}>
+                            Deep domain expertise across digital marketing, performance ads, enterprise SEO, and automated conversion funnels.
+                          </p>
+                        </div>
+                        <div className={styles.topicsGrid}>
+                          <Link href="/services/performance-marketing" className={styles.topicCard}>
+                            <div className={styles.topicIcon}>📈</div>
+                            <div className={styles.topicInfo}>
+                              <h4>Performance Marketing</h4>
+                              <p>Google Ads & Meta Ads with strict ROAS governance</p>
+                            </div>
+                            <span className={styles.topicArrow}>→</span>
+                          </Link>
+                          <Link href="/services/seo" className={styles.topicCard}>
+                            <div className={styles.topicIcon}>🔍</div>
+                            <div className={styles.topicInfo}>
+                              <h4>SEO & Organic Growth</h4>
+                              <p>Technical architecture, AI entity search & Local 3-Pack</p>
+                            </div>
+                            <span className={styles.topicArrow}>→</span>
+                          </Link>
+                          <Link href="/services/social-media" className={styles.topicCard}>
+                            <div className={styles.topicIcon}>📱</div>
+                            <div className={styles.topicInfo}>
+                              <h4>Social Media Marketing</h4>
+                              <p>Short-form video hooks & organic community scaling</p>
+                            </div>
+                            <span className={styles.topicArrow}>→</span>
+                          </Link>
+                          <Link href="/services/ai-automation" className={styles.topicCard}>
+                            <div className={styles.topicIcon}>⚡</div>
+                            <div className={styles.topicInfo}>
+                              <h4>AI & Growth Automation</h4>
+                              <p>Autonomous CRM pipelines, workflows & lead nurture</p>
+                            </div>
+                            <span className={styles.topicArrow}>→</span>
+                          </Link>
+                        </div>
+                      </div>
+                    </ScrollReveal>
+                  )}
                 </>
               )}
             </main>
 
             {/* Sticky Sidebar Column (4 Columns) */}
             <aside className={styles.sidebarCol}>
-              {/* Category Directory Card */}
+              {/* Dynamic Category Directory Card */}
               <div className={styles.sidebarCard}>
-                <h4 className={styles.sidebarTitle}>Categories</h4>
+                <div className={styles.sidebarCardHeader}>
+                  <h4 className={styles.sidebarTitle}>Categories</h4>
+                  <span className={styles.sidebarTotalBadge}>{articles.length} Playbooks</span>
+                </div>
                 <div className={styles.categoryList}>
+                  {/* All Articles Option */}
+                  <button
+                    type="button"
+                    className={`${styles.categoryItem} ${
+                      activeCategory === 'All Articles' ? styles.categoryItemActive : ''
+                    }`}
+                    onClick={() => setActiveCategory('All Articles')}
+                  >
+                    <div className={styles.categoryLabelWrap}>
+                      <span className={styles.categoryBullet}>●</span>
+                      <span>All Articles</span>
+                    </div>
+                    <span className={styles.categoryCountBadge}>
+                      {articles.length}
+                    </span>
+                  </button>
+
+                  {/* Individual Categories from Real Posts */}
                   {categories.slice(1).map((cat) => {
                     const count = articles.filter(
                       (a) => a.category.toLowerCase() === cat.toLowerCase()
@@ -273,15 +403,17 @@ export default function InsightsClient({ articles }: { articles: Article[] }) {
                       <button
                         key={cat}
                         type="button"
-                        className={styles.categoryItem}
+                        className={`${styles.categoryItem} ${
+                          activeCategory === cat ? styles.categoryItemActive : ''
+                        }`}
                         onClick={() => setActiveCategory(cat)}
                       >
-                        <div>
-                          <span className={styles.categoryIcon}>✦</span>
+                        <div className={styles.categoryLabelWrap}>
+                          <span className={styles.categoryBullet}>●</span>
                           <span>{cat}</span>
                         </div>
-                        <span style={{ fontSize: '0.75rem', opacity: 0.6 }}>
-                          ({count})
+                        <span className={styles.categoryCountBadge}>
+                          {count}
                         </span>
                       </button>
                     );
@@ -291,26 +423,28 @@ export default function InsightsClient({ articles }: { articles: Article[] }) {
 
               {/* Newsletter Subscription Widget */}
               <div className={styles.newsletterCard}>
+                <div className={styles.newsletterBadge}>✦ Weekly Digest</div>
                 <h4 className={styles.newsletterTitle}>Stay Ahead Every Week</h4>
                 <p className={styles.newsletterDesc}>
-                  Get the latest performance marketing playbooks, technical SEO benchmarks, and growth tactics delivered straight to your inbox.
+                  Receive proprietary performance marketing benchmarks, local SEO updates, and proven growth tactics straight to your inbox.
                 </p>
                 {subscribed ? (
-                  <div style={{ color: '#16A34A', fontSize: '0.875rem', fontWeight: 700, padding: '0.5rem 0' }}>
+                  <div className={styles.subscribedAlert}>
                     ✓ Subscribed! Welcome to the Growth Journal.
                   </div>
                 ) : (
-                  <form onSubmit={handleSubscribe}>
+                  <form onSubmit={handleSubscribe} className={styles.newsletterForm}>
                     <input
                       type="email"
                       required
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      placeholder="Enter your work email"
+                      placeholder="Enter your work email..."
                       className={styles.newsletterInput}
                     />
                     <button type="submit" className={styles.newsletterBtn}>
-                      Subscribe to Journal
+                      <span>Subscribe to Journal</span>
+                      <span aria-hidden="true">→</span>
                     </button>
                   </form>
                 )}

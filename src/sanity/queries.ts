@@ -2,13 +2,14 @@ import { groq } from 'next-sanity';
 
 // Query to fetch all published posts for the blog / insights listing
 export const postsQuery = groq`
-  *[_type == "post" && defined(slug.current)] | order(publishedAt desc) {
+  *[_type == "post" && defined(slug.current)] | order(coalesce(publishedAt, _createdAt) desc) {
     _id,
     title,
     "slug": slug.current,
     metaTitle,
     excerpt,
     publishedAt,
+    _createdAt,
     bannerImage,
     "category": category->title,
     "author": {

@@ -9,13 +9,13 @@ export const client = createClient({
   projectId,
   dataset,
   apiVersion,
-  useCdn: process.env.NODE_ENV === 'production',
+  useCdn: false, // Set to false to ensure newly published posts appear immediately without CDN caching lag
 });
 
 export async function sanityFetch<QueryResponse>({
   query,
   params = {},
-  revalidate = 60,
+  revalidate = 0,
   tags = [],
 }: {
   query: string;
@@ -28,12 +28,17 @@ export async function sanityFetch<QueryResponse>({
   }
 
   try {
-    return await client.fetch<QueryResponse>(query, params, {
-      next: {
+    const fetchOptions: any = {};
+    if (revalidate === 0) {
+      fetchOptions.cache = 'no-store';
+    } else {
+      fetchOptions.next = {
         revalidate: tags.length ? false : revalidate,
         tags,
-      },
-    });
+      };
+    }
+
+    return await client.fetch<QueryResponse>(query, params, fetchOptions);
   } catch (error) {
     console.warn('Failed to fetch from Sanity:', error);
     return null;
