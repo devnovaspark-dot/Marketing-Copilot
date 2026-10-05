@@ -1,23 +1,26 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Social Media Marketing Agency in Bhubaneswar | SMM & Content Strategy',
-  description: 'Build organic community and viral short-form brand authority. Bhubaneswar’s premier social media agency for Instagram Reels, YouTube Shorts, and brand storytelling.',
+  title: 'Strategic Social Media Marketing for Business Growth | Nova Spark Digital',
+  description:
+    'From planning and content creation to advertising and daily management, we handle your social media presence with a clear focus on growth and engagement in Bhubaneswar & Odisha.',
   alternates: {
     canonical: 'https://marketingcopilot.in/services/social-media',
   },
   openGraph: {
-    title: 'Social Media Marketing Agency in Bhubaneswar | SMM & Content Strategy',
-    description: 'Build organic community and viral short-form brand authority. Premier social media agency for Instagram Reels and brand storytelling.',
+    title: 'Strategic Social Media Marketing for Business Growth | Nova Spark Digital',
+    description:
+      'From planning and content creation to advertising and daily management, we handle your social media presence with a clear focus on growth and engagement in Bhubaneswar & Odisha.',
     url: 'https://marketingcopilot.in/services/social-media',
-    siteName: 'Marketing Copilot',
+    siteName: 'Nova Spark Digital',
     locale: 'en_IN',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Social Media Marketing Agency in Bhubaneswar | SMM & Content Strategy',
-    description: 'Build organic community and viral short-form brand authority.',
+    title: 'Strategic Social Media Marketing for Business Growth | Nova Spark Digital',
+    description:
+      'From planning and content creation to advertising and daily management, we handle your social media presence with a clear focus on growth and engagement in Bhubaneswar & Odisha.',
   },
 };
 
