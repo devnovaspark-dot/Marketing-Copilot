@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import BeamButton from '@/components/BeamButton';
 import styles from './BlogSidebarCta.module.css';
 
 export default function BlogSidebarCta() {
@@ -11,10 +12,7 @@ export default function BlogSidebarCta() {
       </p>
 
       <div className={styles.btnGroup}>
-        <Link href="/contact" className={styles.primaryBtn}>
-          <span>Book Free Consultation</span>
-          <span aria-hidden="true">→</span>
-        </Link>
+        <BeamButton href="/contact" label="Book Free Consultation" size="md" fullWidth />
         <a
           href="https://wa.me/918280788689?text=Hi%20Marketing%20Copilot%2C%20I%20am%20reading%20your%20blog%20and%20would%20like%20to%20discuss%20a%20growth%20strategy."
           target="_blank"

@@ -6,6 +6,7 @@ import Image from 'next/image';
 import ScrollReveal from '@/components/ScrollReveal';
 import CTASection from '@/app/_components/CTASection';
 import BlogSidebarCta from '@/components/BlogSidebarCta';
+import BeamButton from '@/components/BeamButton';
 import styles from './page.module.css';
 
 export interface Article {
@@ -76,7 +77,7 @@ export default function InsightsClient({ articles = [] }: { articles: Article[] 
   return (
     <>
       <div className={styles.page}>
-        {/* Hero Section */}
+        {/* Hero Section with Ambient Aura */}
         <section className={styles.hero}>
           <div className={styles.heroAmbientAmber} />
           <div className={styles.heroAmbientBlue} />
@@ -152,7 +153,7 @@ export default function InsightsClient({ articles = [] }: { articles: Article[] 
             </div>
           </div>
 
-          {/* 12-Column Grid Layout */}
+          {/* 12-Column Responsive Layout Grid */}
           <div className={styles.layoutGrid}>
             {/* Main Stories Column (8 Columns) */}
             <main className={styles.mainCol}>
@@ -182,14 +183,15 @@ export default function InsightsClient({ articles = [] }: { articles: Article[] 
                 </div>
               ) : (
                 <>
-                  {/* Featured Hero Story Card */}
+                  {/* Featured Hero Story Card (Skeuomorphic Masterpiece) */}
                   {featuredArticle && (
                     <ScrollReveal>
-                      <Link
-                        href={`/insights/${featuredArticle.slug}`}
-                        className={styles.featuredCard}
-                      >
-                        <div className={styles.featuredVisual}>
+                      <article className={styles.featuredCard}>
+                        <Link
+                          href={`/insights/${featuredArticle.slug}`}
+                          className={styles.featuredVisual}
+                          aria-label={featuredArticle.title}
+                        >
                           <Image
                             src={featuredArticle.image}
                             alt={featuredArticle.title}
@@ -200,18 +202,20 @@ export default function InsightsClient({ articles = [] }: { articles: Article[] 
                           />
                           <div className={styles.visualOverlay} />
                           <span className={styles.visualBadge}>Featured Analysis</span>
-                        </div>
+                        </Link>
 
                         <div className={styles.featuredContent}>
                           <div className={styles.cardCategoryWrap}>
-                            <span className={styles.categoryDot} />
                             <span className={styles.cardCategory}>
+                              <span className={styles.categoryDot} />
                               {featuredArticle.category}
                             </span>
                           </div>
 
                           <h2 className={styles.featuredTitle}>
-                            {featuredArticle.title}
+                            <Link href={`/insights/${featuredArticle.slug}`} className={styles.titleLink}>
+                              {featuredArticle.title}
+                            </Link>
                           </h2>
                           <p className={styles.featuredExcerpt}>
                             {featuredArticle.excerpt}
@@ -224,8 +228,8 @@ export default function InsightsClient({ articles = [] }: { articles: Article[] 
                                   <Image
                                     src={featuredArticle.authorImage}
                                     alt={featuredArticle.author}
-                                    width={38}
-                                    height={38}
+                                    width={40}
+                                    height={40}
                                     className={styles.authorAvatarImg}
                                   />
                                 ) : (
@@ -242,13 +246,14 @@ export default function InsightsClient({ articles = [] }: { articles: Article[] 
                               </div>
                             </div>
 
-                            <div className={styles.readMorePill}>
-                              <span>Read Story</span>
-                              <span className={styles.readMoreArrow}>→</span>
-                            </div>
+                            <BeamButton
+                              href={`/insights/${featuredArticle.slug}`}
+                              label="Read Story"
+                              size="sm"
+                            />
                           </div>
                         </div>
-                      </Link>
+                      </article>
                     </ScrollReveal>
                   )}
 
@@ -257,11 +262,12 @@ export default function InsightsClient({ articles = [] }: { articles: Article[] 
                     <div className={styles.subGrid}>
                       {remainingArticles.map((article, idx) => (
                         <ScrollReveal key={article.slug} delay={idx * 50}>
-                          <Link
-                            href={`/insights/${article.slug}`}
-                            className={styles.storyCard}
-                          >
-                            <div className={styles.storyVisual}>
+                          <article className={styles.storyCard}>
+                            <Link
+                              href={`/insights/${article.slug}`}
+                              className={styles.storyVisual}
+                              aria-label={article.title}
+                            >
                               <Image
                                 src={article.image}
                                 alt={article.title}
@@ -270,17 +276,19 @@ export default function InsightsClient({ articles = [] }: { articles: Article[] 
                                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                               />
                               <div className={styles.visualOverlay} />
-                            </div>
+                            </Link>
 
                             <div className={styles.storyBody}>
                               <div className={styles.cardCategoryWrap}>
-                                <span className={styles.categoryDot} />
                                 <span className={styles.cardCategory}>
+                                  <span className={styles.categoryDot} />
                                   {article.category}
                                 </span>
                               </div>
                               <h3 className={styles.storyTitle}>
-                                {article.title}
+                                <Link href={`/insights/${article.slug}`} className={styles.titleLink}>
+                                  {article.title}
+                                </Link>
                               </h3>
                               <p className={styles.storyExcerpt}>
                                 {article.excerpt}
@@ -310,15 +318,21 @@ export default function InsightsClient({ articles = [] }: { articles: Article[] 
                                     </span>
                                   </div>
                                 </div>
+
+                                <BeamButton
+                                  href={`/insights/${article.slug}`}
+                                  label="Read Story"
+                                  size="sm"
+                                />
                               </div>
                             </div>
-                          </Link>
+                          </article>
                         </ScrollReveal>
                       ))}
                     </div>
                   )}
 
-                  {/* When only 1 article exists, show a clean editorial production note instead of artificial fillers */}
+                  {/* Clean Editorial Dispatch Note */}
                   {filteredArticles.length === 1 && (
                     <div className={styles.editorialNote}>
                       <div className={styles.editorialNoteHeader}>
@@ -339,7 +353,7 @@ export default function InsightsClient({ articles = [] }: { articles: Article[] 
 
             {/* Sticky Sidebar Column (4 Columns) */}
             <aside className={styles.sidebarCol}>
-              {/* Dynamic Category Directory Card - Displayed when 2+ categories exist */}
+              {/* Dynamic Category Directory Card - Only when 2+ categories exist */}
               {categories.length > 2 && (
                 <div className={styles.sidebarCard}>
                   <div className={styles.sidebarCardHeader}>
@@ -392,7 +406,7 @@ export default function InsightsClient({ articles = [] }: { articles: Article[] 
                 </div>
               )}
 
-              {/* Newsletter Subscription Widget */}
+              {/* Newsletter Subscription Widget (Clean Skeuomorphic) */}
               <div className={styles.newsletterCard}>
                 <div className={styles.newsletterBadge}>✦ Weekly Digest</div>
                 <h4 className={styles.newsletterTitle}>Stay Ahead Every Week</h4>
@@ -413,10 +427,7 @@ export default function InsightsClient({ articles = [] }: { articles: Article[] 
                       placeholder="Enter your work email..."
                       className={styles.newsletterInput}
                     />
-                    <button type="submit" className={styles.newsletterBtn}>
-                      <span>Subscribe to Journal</span>
-                      <span aria-hidden="true">→</span>
-                    </button>
+                    <BeamButton type="submit" label="Subscribe to Journal" size="md" fullWidth />
                   </form>
                 )}
               </div>
