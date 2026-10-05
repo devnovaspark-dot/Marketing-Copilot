@@ -1,7 +1,7 @@
-'use client';
 import { useState } from 'react';
 import Link from 'next/link';
 import ScrollReveal from '@/components/ScrollReveal';
+import BeamButton from '@/components/BeamButton';
 import styles from './SocialReelsStudioSimulator.module.css';
 
 type ReelFormat = 'cinematic' | 'founder' | 'bts';
@@ -230,10 +230,11 @@ export default function SocialReelsStudioSimulator() {
             </div>
 
             <div className={styles.actionRow}>
-              <Link href="/contact" className={styles.studioAuditBtn}>
-                <span>Book a Commercial Shoot Consultation</span>
-                <span>→</span>
-              </Link>
+              <BeamButton
+                href="/contact"
+                label="Book a Commercial Shoot Consultation"
+                size="lg"
+              />
             </div>
           </div>
         </div>
