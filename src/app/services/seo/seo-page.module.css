@@ -21,7 +21,7 @@
     radial-gradient(circle at 12% 25%, rgba(16, 185, 129, 0.06) 0%, transparent 45%),
     radial-gradient(circle at 88% 30%, rgba(245, 158, 11, 0.06) 0%, transparent 45%),
     linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
-  border-bottom: 1px solid #E2E8F0;
+  border-bottom: none;
   overflow: hidden;
 }
 

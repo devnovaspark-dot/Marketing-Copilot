@@ -250,7 +250,13 @@ export default function MetaAdsPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          2. TURN META ADS INTO BUSINESS GROWTH
+          2. DRIVING BUSINESS GROWTH WITH DIGITAL MARKETING IN BHUBANESWAR
+          (Positioned directly below the hero section as requested)
+         ══════════════════════════════════════════════════ */}
+      <QuickConnectMapSection />
+
+      {/* ══════════════════════════════════════════════════
+          3. TURN META ADS INTO BUSINESS GROWTH
          ══════════════════════════════════════════════════ */}
       <section id="overview" className={styles.smartCampaignSection}>
         <div className="container">
@@ -272,7 +278,7 @@ export default function MetaAdsPage() {
           {/* 3 Skeuomorphic Pillar Cards */}
           <div className={styles.pillarsGrid}>
             {smartPillars.map((pillar, i) => (
-              <ScrollReveal key={pillar.title} delay={i * 80}>
+              <ScrollReveal key={pillar.title} delay={i * 80} style={{ height: '100%' }}>
                 <div className={styles.pillarCard}>
                   <div className={styles.pillarIconBowl}>{pillar.icon}</div>
                   <span className={styles.pillarPill}>{pillar.tag}</span>
@@ -416,7 +422,7 @@ export default function MetaAdsPage() {
 
           <div className={styles.whyMatterCardsGrid}>
             {whyMatterFeatures.map((feat, i) => (
-              <ScrollReveal key={feat.title} delay={i * 80}>
+              <ScrollReveal key={feat.title} delay={i * 80} style={{ height: '100%' }}>
                 <div className={styles.whyMatterCard}>
                   <div className={styles.whyIconWrap}>{feat.icon}</div>
                   <h3 className={styles.whyCardTitle}>{feat.title}</h3>
@@ -451,7 +457,7 @@ export default function MetaAdsPage() {
 
           <div className={styles.servicesGrid}>
             {metaServices.map((svc, i) => (
-              <ScrollReveal key={svc.title} delay={i * 60}>
+              <ScrollReveal key={svc.title} delay={i * 60} style={{ height: '100%' }}>
                 <div className={styles.serviceSkeuoCard}>
                   <div className={styles.serviceTopHeader}>
                     <span className={styles.serviceNumberEmbossed}>{svc.num}</span>
@@ -548,7 +554,7 @@ export default function MetaAdsPage() {
 
           <div className={styles.whyChooseGrid}>
             {whyChoosePillars.map((p, i) => (
-              <ScrollReveal key={p.title} delay={i * 70}>
+              <ScrollReveal key={p.title} delay={i * 70} style={{ height: '100%' }}>
                 <div className={styles.whyChooseCard}>
                   <span className={styles.whyChooseStepNum}>{p.step}</span>
                   <h3 className={styles.whyChooseTitle}>{p.title}</h3>
@@ -568,11 +574,6 @@ export default function MetaAdsPage() {
           </div>
         </div>
       </section>
-
-      {/* ══════════════════════════════════════════════════
-          REGIONAL BHUBANESWAR MAP SECTION
-         ══════════════════════════════════════════════════ */}
-      <QuickConnectMapSection />
 
       {/* ══════════════════════════════════════════════════
           8. EVERYTHING YOU NEED TO KNOW ABOUT META ADS (FAQ)

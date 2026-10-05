@@ -1,7 +1,7 @@
 .section {
   position: relative;
-  padding: 52px 0 60px;
-  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 50%, #FFFFFF 100%);
+  padding: 48px 0 60px;
+  background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 40%, #F8FAFC 100%);
   overflow: hidden;
 }
 
@@ -122,11 +122,19 @@
   box-sizing: border-box;
 }
 
+.gridCol {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 /* ══════════════════════════════════════════════════
    LEFT PANEL: Tactile Skeuomorphic Card
 ══════════════════════════════════════════════════ */
 .skeuoCard {
   height: 100%;
+  min-height: 480px;
   width: 100%;
   max-width: 100%;
   min-width: 0;
@@ -134,6 +142,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   background: linear-gradient(175deg, #FFFFFF 0%, #FAFCFE 50%, #F1F5F9 100%);
   border: 1px solid rgba(218, 226, 237, 0.95);
   border-radius: var(--radius-2xl);
