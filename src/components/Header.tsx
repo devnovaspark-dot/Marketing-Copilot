@@ -43,7 +43,7 @@ const serviceClusters: HeaderServiceCluster[] = [
       { href: '/services/web-development', label: 'Website Development', shortLabel: 'Web Platform', icon: '💻', desc: 'Sub-second speed Next.js websites', badge: 'Next.js 15' },
       { href: '/services/creative-branding', label: 'Creative & Branding', shortLabel: 'Creative Brand', icon: '🎨', desc: 'Distinct visual identities & guidelines', badge: 'Identity' },
       { href: '/services/social-media', label: 'Social Media Marketing', shortLabel: 'Social Media', icon: '📱', desc: 'Thumb-stopping Reels & community', badge: 'Reels' },
-      { href: '/services/ai-automation', label: 'Content Marketing', shortLabel: 'Content Copy', icon: '✍️', desc: 'Authoritative content that converts', badge: 'Authority' },
+      { href: '/services/ai-automation', label: 'AI & Automation', shortLabel: 'AI Automation', icon: '🤖', desc: 'Autonomous bots, WhatsApp & CRM workflows', badge: 'AI Agents' },
     ],
   },
   {

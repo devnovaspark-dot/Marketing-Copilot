@@ -2,6 +2,8 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
+import BeamButton from '@/components/BeamButton';
 import styles from './AiAutomationWorkstation.module.css';
 
 interface Module {
@@ -74,37 +76,61 @@ export default function AiAutomationWorkstation() {
       <div className={styles.grid}>
         {MODULES.map((mod) => (
           <div key={mod.number} className={styles.card}>
-            <div className={styles.cardHeader}>
-              <div className={styles.iconWrapper}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
-                </svg>
+            <div>
+              <div className={styles.cardHeader}>
+                <div className={styles.iconWrapper}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                  </svg>
+                </div>
+                <span className={styles.moduleNumber}>{mod.number}</span>
               </div>
-              <span className={styles.moduleNumber}>{mod.number}</span>
+
+              <h3 className={styles.cardTitle}>{mod.title}</h3>
+              <p className={styles.cardSummary}>{mod.summary}</p>
+
+              <ul className={styles.featureList}>
+                {mod.points.map((pt, i) => (
+                  <li key={i}>
+                    <span className={styles.checkIcon}>✓</span>
+                    <span>{pt}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            <h3 className={styles.cardTitle}>{mod.title}</h3>
-            <p className={styles.cardSummary}>{mod.summary}</p>
-
-            <ul className={styles.featureList}>
-              {mod.points.map((pt, i) => (
-                <li key={i} className={styles.featureItem}>
-                  <svg className={styles.featureIcon} width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
-                  </svg>
-                  <span>{pt}</span>
-                </li>
-              ))}
-            </ul>
-
-            <div className={styles.badgeHighlight}>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-              </svg>
+            <div className={styles.badge}>
               {mod.badge}
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Visual Image Architecture Banner */}
+      <div className={styles.workstationBanner}>
+        <div className={styles.bannerImgWrap}>
+          <Image
+            src="/images/Google ads & Meta ads.png"
+            alt="Omnichannel WhatsApp Cloud API & CRM Automation Architecture"
+            fill
+            sizes="(max-width: 1024px) 100vw, 550px"
+            className={styles.bannerImg}
+          />
+        </div>
+        <div className={styles.bannerContent}>
+          <div className={styles.bannerBadge}>
+            <span>⚡ ZERO-LATENCY PIPELINE DISPATCH</span>
+          </div>
+          <h3 className={styles.bannerTitle}>
+            Unified Inbound Capture Across WhatsApp, Meta Ads &amp; CRM
+          </h3>
+          <p className={styles.bannerDesc}>
+            Eliminate human drop-offs between click, inquiry, and closed revenue. Our microservices connect Meta Click-to-WhatsApp ads directly to autonomous LLM qualifiers and HubSpot / Zoho CRM.
+          </p>
+          <div style={{ marginTop: '8px' }}>
+            <BeamButton href="/contact" label="Audit Your Lead Workflow →" size="md" />
+          </div>
+        </div>
       </div>
     </section>
   );

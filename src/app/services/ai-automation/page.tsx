@@ -1,9 +1,10 @@
-'use strict';
+'use client';
 
-import React from 'react';
-import type { Metadata } from 'next';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import BeamButton from '@/components/BeamButton';
+import QuickConnectMapSection from '@/app/_components/QuickConnectMapSection';
 import styles from './ai-automation-page.module.css';
 
 import AiAgentWorkflowSimulator from './_components/AiAgentWorkflowSimulator';
@@ -11,19 +12,6 @@ import AiAutomationWorkstation from './_components/AiAutomationWorkstation';
 import AiSavingsCalculator from './_components/AiSavingsCalculator';
 import AiAutomationComparisonMatrix from './_components/AiAutomationComparisonMatrix';
 import AiAutomationRoadmap from './_components/AiAutomationRoadmap';
-
-export const metadata: Metadata = {
-  title: 'AI & Workflow Automation Services in Bhubaneswar | WhatsApp Bots & CRM Pipelines',
-  description: 'Deploy enterprise multi-agent AI systems, official WhatsApp Cloud API conversational bots, and zero-latency CRM pipelines. Turn inbound inquiries into booked revenue in < 2 seconds.',
-  keywords: [
-    'AI automation Bhubaneswar',
-    'WhatsApp Cloud API automation',
-    'CRM workflow integration Odisha',
-    'Conversational AI chatbots',
-    'Lead qualification bots India',
-    'Voice AI phone agents'
-  ]
-};
 
 const FAQ_ITEMS = [
   {
@@ -54,10 +42,17 @@ const FAQ_ITEMS = [
 ];
 
 export default function AiAutomationPage() {
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+
+  const toggleFaq = (index: number) => {
+    setOpenFaqIndex((prev) => (prev === index ? null : index));
+  };
+
   return (
     <div className={styles.pageWrapper}>
       {/* ══════════════════════════════════════════════════
-         SECTION 1: HERO
+         SECTION 1: HERO (FULL WINDOW VIEWPORT COVERAGE)
+         Clean and focused without intrusive hero images
       ══════════════════════════════════════════════════ */}
       <section className={styles.hero}>
         <div className={styles.heroMeshGrid} />
@@ -67,22 +62,24 @@ export default function AiAutomationPage() {
               <div className={styles.emeraldPulseDot} />
               Enterprise AI &amp; Workflow Infrastructure &middot; Bhubaneswar
             </div>
+
             <h1 className={styles.heroTitle}>
               Turn Inbound Inquiries Into Booked Revenue in &lt; 2 Seconds.
             </h1>
+
             <p className={styles.heroSub}>
               We architect autonomous WhatsApp conversational agents, self-healing CRM pipelines, and voice dispatchers
               that qualify leads 24/7, eliminate sales friction, and 3.8x your close rates.
             </p>
+
             <div className={styles.heroActions}>
-              <Link href="/contact" className={styles.primaryCta}>
-                Deploy AI Automation Stack
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </Link>
-              <a href="#simulator" className={styles.secondaryCta}>
-                Test Live Simulator &darr;
+              <BeamButton
+                href="/contact"
+                label="Deploy AI Automation Stack →"
+                size="lg"
+              />
+              <a href="#simulator" className={styles.heroSecondaryBtn}>
+                Test Live Simulator ↓
               </a>
             </div>
 
@@ -106,35 +103,34 @@ export default function AiAutomationPage() {
                 HubSpot &amp; Zoho Certified
               </div>
             </div>
+
+            {/* Skeuomorphic Telemetry Stats Ribbon */}
+            <div className={styles.telemetryRibbon}>
+              <div className={styles.telemetryCell}>
+                <div className={styles.tVal}>&lt; 1.8s</div>
+                <div className={styles.tLabel}>Avg. First Response Time</div>
+              </div>
+              <div className={styles.telemetryCell}>
+                <div className={styles.tVal}>3.8x</div>
+                <div className={styles.tLabel}>Lead-to-Booking Lift</div>
+              </div>
+              <div className={styles.telemetryCell}>
+                <div className={styles.tVal}>100%</div>
+                <div className={styles.tLabel}>24/7/365 Coverage</div>
+              </div>
+              <div className={styles.telemetryCell}>
+                <div className={styles.tVal}>240+ hrs</div>
+                <div className={styles.tLabel}>Human Rep Time Saved / Mo</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* ══════════════════════════════════════════════════
-         SECTION 2: TELEMETRY STATS RIBBON
+         SECTION 2: MAP SECTION (DIRECTLY BELOW HERO)
       ══════════════════════════════════════════════════ */}
-      <section className={styles.telemetryRibbon}>
-        <div className="container">
-          <div className={styles.telemetryGrid}>
-            <div className={styles.telemetryCard}>
-              <div className={styles.telemetryVal}>&lt; 1.8s</div>
-              <div className={styles.telemetryLabel}>Avg. First Response Time</div>
-            </div>
-            <div className={styles.telemetryCard}>
-              <div className={styles.telemetryVal}>3.8x</div>
-              <div className={styles.telemetryLabel}>Lead-to-Booking Lift</div>
-            </div>
-            <div className={styles.telemetryCard}>
-              <div className={styles.telemetryVal}>100%</div>
-              <div className={styles.telemetryLabel}>24/7/365 After-Hours Coverage</div>
-            </div>
-            <div className={styles.telemetryCard}>
-              <div className={styles.telemetryVal}>240+ hrs</div>
-              <div className={styles.telemetryLabel}>Human Rep Time Saved / Mo</div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <QuickConnectMapSection />
 
       {/* ══════════════════════════════════════════════════
          SECTION 3: INTERACTIVE AGENT WORKFLOW SIMULATOR
@@ -181,8 +177,9 @@ export default function AiAutomationPage() {
               <Image
                 src="/images/Weekend Bhraman Tour Planner.jpg"
                 alt="Weekend Bhraman Tour Planner automated booking engine"
-                width={800}
-                height={600}
+                fill
+                sizes="(max-width: 1024px) 100vw, 600px"
+                className={styles.caseStudyImg}
               />
               <div className={styles.clientBadgeOverlay}>
                 Client Spotlight &middot; Experiential Travel
@@ -225,65 +222,100 @@ export default function AiAutomationPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-         SECTION 9: TECH ARSENAL
+         SECTION 9: TECH ARSENAL & INFRASTRUCTURE GRAPHIC
       ══════════════════════════════════════════════════ */}
       <section className={styles.arsenalSection}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: 720, margin: '0 auto 3rem' }}>
-            <div style={{ color: '#0B2093', fontWeight: 700, fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+          <div className={styles.arsenalHeader}>
+            <div className={styles.arsenalKicker}>
               Enterprise Infrastructure Stack
             </div>
-            <h2 style={{ fontSize: '2.4rem', fontWeight: 800, color: '#0F172A', marginTop: '0.5rem' }}>
+            <h2 className={styles.arsenalTitle}>
               Built on Industrial-Grade AI Platforms
             </h2>
           </div>
 
           <div className={styles.arsenalGrid}>
             <div className={styles.arsenalCard}>
-              <div className={styles.arsenalIconBox}>
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9v-2h2v2zm0-4H9V7h2v5zm4 4h-2v-2h2v2zm0-4h-2V7h2v5z"/>
-                </svg>
+              <div>
+                <div className={styles.arsenalIconBox}>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9v-2h2v2zm0-4H9V7h2v5zm4 4h-2v-2h2v2zm0-4h-2V7h2v5z"/>
+                  </svg>
+                </div>
+                <h4>Meta Cloud API</h4>
+                <p>Direct official Meta Business Platform webhooks for 100% deliverability &amp; green checkmark security.</p>
               </div>
-              <h4>Meta Cloud API</h4>
-              <p>Direct official Meta Business Platform webhooks for 100% deliverability &amp; green checkmark security.</p>
             </div>
 
             <div className={styles.arsenalCard}>
-              <div className={styles.arsenalIconBox}>
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
-                </svg>
+              <div>
+                <div className={styles.arsenalIconBox}>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                  </svg>
+                </div>
+                <h4>OpenAI &amp; Anthropic</h4>
+                <p>GPT-4o &amp; Claude 3.5 Sonnet reasoning engines fine-tuned with domain-specific few-shot prompting.</p>
               </div>
-              <h4>OpenAI &amp; Anthropic</h4>
-              <p>GPT-4o &amp; Claude 3.5 Sonnet reasoning engines fine-tuned with domain-specific few-shot prompting.</p>
             </div>
 
             <div className={styles.arsenalCard}>
-              <div className={styles.arsenalIconBox}>
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"/>
-                </svg>
+              <div>
+                <div className={styles.arsenalIconBox}>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"/>
+                  </svg>
+                </div>
+                <h4>Pinecone &amp; Chroma</h4>
+                <p>High-density vector databases delivering zero-hallucination document search in under 120ms.</p>
               </div>
-              <h4>Pinecone &amp; Chroma</h4>
-              <p>High-density vector databases delivering zero-hallucination document search in under 120ms.</p>
             </div>
 
             <div className={styles.arsenalCard}>
-              <div className={styles.arsenalIconBox}>
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99zM11 16h2v2h-2zm0-6h2v4h-2z"/>
-                </svg>
+              <div>
+                <div className={styles.arsenalIconBox}>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99zM11 16h2v2h-2zm0-6h2v4h-2z"/>
+                  </svg>
+                </div>
+                <h4>HubSpot &amp; Make.com</h4>
+                <p>Enterprise orchestration connecting real-time leads to SMS, WhatsApp, Slack, and Google Sheets.</p>
               </div>
-              <h4>HubSpot &amp; Make.com</h4>
-              <p>Enterprise orchestration connecting real-time leads to SMS, WhatsApp, Slack, and Google Sheets.</p>
+            </div>
+          </div>
+
+          {/* Infrastructure Visual Proof Banner */}
+          <div className={styles.arsenalBanner}>
+            <div className={styles.arsenalBannerContent}>
+              <div className={styles.arsenalBannerBadge}>
+                <span>🛡️ ENTERPRISE ARCHITECTURE INTEGRITY</span>
+              </div>
+              <h3 className={styles.arsenalBannerTitle}>
+                High-Availability Multi-Agent Infrastructure
+              </h3>
+              <p className={styles.arsenalBannerDesc}>
+                Engineered with auto-scaling microservices, failover fallbacks, and encrypted SOC2-ready data pipelines so your sales engine never drops a lead.
+              </p>
+              <div style={{ marginTop: '8px' }}>
+                <BeamButton href="/contact" label="Request Architecture Blueprint →" size="md" />
+              </div>
+            </div>
+            <div className={styles.arsenalBannerImgWrap}>
+              <Image
+                src="/images/ns_services_graphic_slide_2.png"
+                alt="Nova Spark Enterprise AI Architecture Infrastructure Bhubaneswar"
+                fill
+                sizes="(max-width: 1024px) 100vw, 550px"
+                className={styles.bannerImg}
+              />
             </div>
           </div>
         </div>
       </section>
 
       {/* ══════════════════════════════════════════════════
-         SECTION 10: FAQ SECTION
+         SECTION 10: FAQ SECTION (CLOSED BY DEFAULT)
       ══════════════════════════════════════════════════ */}
       <section className={styles.faqSection}>
         <div className="container">
@@ -293,43 +325,66 @@ export default function AiAutomationPage() {
           </div>
 
           <div className={styles.faqList}>
-            {FAQ_ITEMS.map((item, i) => (
-              <details key={i} className={styles.faqItem}>
-                <summary className={styles.faqQuestion}>
-                  <span>{item.q}</span>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
-                  </svg>
-                </summary>
-                <div className={styles.faqAnswer}>
-                  <p>{item.a}</p>
-                  <div className={styles.faqTakeaway}>{item.takeaway}</div>
+            {FAQ_ITEMS.map((item, i) => {
+              const isOpen = openFaqIndex === i;
+              return (
+                <div
+                  key={i}
+                  className={`${styles.faqRow} ${isOpen ? styles.faqRowOpen : ''}`}
+                >
+                  <button
+                    type="button"
+                    className={styles.faqBtn}
+                    onClick={() => toggleFaq(i)}
+                    aria-expanded={isOpen}
+                  >
+                    <span className={styles.faqQuestion}>{item.q}</span>
+                    <span className={styles.faqIcon}>
+                      {isOpen ? '−' : '+'}
+                    </span>
+                  </button>
+
+                  {isOpen && (
+                    <div className={styles.faqPane}>
+                      <p className={styles.faqAnswer}>{item.a}</p>
+                      <div className={styles.faqTakeaway}>{item.takeaway}</div>
+                    </div>
+                  )}
                 </div>
-              </details>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* ══════════════════════════════════════════════════
-         SECTION 11 & 12: EXECUTIVE CONVERSION TERMINAL
+         SECTION 11: PRE-FOOTER CTA (MATCHING HOMEPAGE STYLE)
+         Light skeuomorphic innerbox with revolving beam button
       ══════════════════════════════════════════════════ */}
-      <section id="audit-form" className={styles.terminalSection}>
+      <section className={styles.homeCtaSection}>
         <div className="container">
-          <div className={styles.terminalCard}>
-            <div className={styles.terminalKicker}>Stop Leaking Inbound Revenue</div>
-            <h2 className={styles.terminalTitle}>
+          <div className={styles.homeCtaInnerBox}>
+            <div className={styles.homeCtaEyebrow}>
+              <span className={styles.homeCtaDot} />
+              <span>Stop Leaking Inbound Revenue</span>
+            </div>
+
+            <h2 className={styles.homeCtaHeadline}>
               Ready to Automate Your Inbound Sales Workflow in 30 Days?
             </h2>
-            <p className={styles.terminalDesc}>
+
+            <p className={styles.homeCtaSub}>
               Schedule an executive AI architecture audit. We will evaluate your current response latency,
               demo a live prototype with your product catalog, and present an exact deployment plan.
             </p>
-            <div className={styles.terminalCtaGroup}>
-              <Link href="/contact" className={styles.terminalPrimaryBtn}>
-                Schedule AI Architecture Audit &rarr;
-              </Link>
-              <Link href="/services" className={styles.terminalSecondaryBtn}>
+
+            <div className={styles.homeCtaActions}>
+              <BeamButton
+                href="/contact"
+                label="Schedule AI Architecture Audit →"
+                size="lg"
+              />
+              <Link href="/services" className={styles.heroSecondaryBtn}>
                 Explore Other Services
               </Link>
             </div>

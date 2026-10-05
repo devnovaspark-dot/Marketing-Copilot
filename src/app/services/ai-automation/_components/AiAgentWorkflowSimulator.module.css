@@ -1,108 +1,132 @@
+/* ══════════════════════════════════════════════════
+   AI AGENT WORKFLOW SIMULATOR — LIGHT SKEUOMORPHIC STYLING
+   No harsh dark backgrounds; clean tactile bevels, subtle satin gradient,
+   realistic drop shadows, and executive clarity.
+══════════════════════════════════════════════════ */
+
 .simulatorContainer {
-  background: linear-gradient(135deg, #0D007F 0%, #0B2093 50%, #0F172A 100%);
+  background: linear-gradient(160deg, #FFFFFF 0%, #F8FAFD 55%, #EEF4FA 100%);
   border-radius: 24px;
-  padding: 3rem;
-  color: #FFFFFF;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 25px 50px -12px rgba(11, 32, 147, 0.35);
-  margin: 3rem 0;
+  padding: clamp(28px, 4vw, 44px);
+  color: #0F172A;
+  border: 1.5px solid rgba(203, 213, 225, 0.9);
+  box-shadow: 
+    inset 0 2px 0 #FFFFFF,
+    inset 1.5px 0 0 rgba(255, 255, 255, 0.9),
+    inset 0 -2px 0 rgba(15, 23, 42, 0.04),
+    0 4px 6px -1px rgba(11, 32, 147, 0.04),
+    0 16px 36px -6px rgba(11, 32, 147, 0.08);
+  margin: clamp(32px, 4vw, 56px) 0;
 }
 
 .simulatorHeader {
   text-align: center;
   max-width: 780px;
-  margin: 0 auto 2.5rem;
+  margin: 0 auto clamp(24px, 3vw, 36px);
 }
 
 .badge {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(245, 158, 11, 0.15);
-  color: #F59E0B;
-  padding: 0.4rem 1rem;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F1F5F9 100%);
+  color: #0B2093;
+  padding: 0.4rem 1.1rem;
   border-radius: 9999px;
-  font-size: 0.85rem;
-  font-weight: 700;
+  font-size: 0.8rem;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 1rem;
-  border: 1px solid rgba(245, 158, 11, 0.3);
+  letter-spacing: 0.06em;
+  margin-bottom: 0.85rem;
+  border: 1.5px solid #CBD5E1;
+  box-shadow: inset 0 1px 0 #FFFFFF, 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 .simulatorTitle {
-  font-size: 2.25rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 3.2vw, 2.4rem);
   font-weight: 800;
   letter-spacing: -0.02em;
   margin-bottom: 0.75rem;
-  color: #FFFFFF;
+  color: #0F172A;
+  line-height: 1.2;
 }
 
 .simulatorSubtitle {
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 1.05rem;
-  line-height: 1.6;
+  font-family: var(--font-body);
+  color: #475569;
+  font-size: clamp(14px, 1.1vw, 16px);
+  line-height: 1.65;
 }
 
 .channelSelector {
   display: flex;
   justify-content: center;
   gap: 0.75rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
   flex-wrap: wrap;
 }
 
 .channelBtn {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: rgba(255, 255, 255, 0.8);
-  padding: 0.75rem 1.4rem;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F1F5F9 100%);
+  border: 1.5px solid #CBD5E1;
+  color: #334155;
+  padding: 0.7rem 1.3rem;
   border-radius: 12px;
-  font-weight: 600;
-  font-size: 0.95rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.9rem;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  transition: all 0.2s ease;
+  gap: 0.55rem;
+  box-shadow: inset 0 1px 0 #FFFFFF, 0 2px 4px rgba(0, 0, 0, 0.04);
+  transition: all 0.22s ease;
 }
 
 .channelBtn:hover {
-  background: rgba(255, 255, 255, 0.12);
-  color: #FFFFFF;
+  border-color: #0B2093;
+  color: #0B2093;
+  transform: translateY(-2px);
+  box-shadow: inset 0 1px 0 #FFFFFF, 0 4px 10px rgba(11, 32, 147, 0.08);
 }
 
 .activeChannel {
-  background: #F59E0B !important;
-  color: #0F172A !important;
-  border-color: #F59E0B !important;
-  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
+  background: #0B2093 !important;
+  color: #FFFFFF !important;
+  border-color: #0B2093 !important;
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    0 4px 14px rgba(11, 32, 147, 0.3) !important;
 }
 
 .layoutGrid {
   display: grid;
-  grid-template-columns: 1.1fr 1.3fr;
-  gap: 2rem;
+  grid-template-columns: 1.05fr 1.2fr;
+  gap: clamp(20px, 2.5vw, 32px);
   align-items: stretch;
 }
 
+/* Left: Skeuomorphic Chat Device */
 .chatDevice {
-  background: #080E24;
+  background: #FFFFFF;
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1.5px solid #CBD5E1;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+  box-shadow: 
+    inset 0 2px 0 #FFFFFF,
+    0 8px 24px -4px rgba(11, 32, 147, 0.06);
 }
 
 .chatDeviceHeader {
-  background: rgba(255, 255, 255, 0.05);
+  background: linear-gradient(180deg, #F8FAFD 0%, #F1F5F9 100%);
   padding: 1rem 1.25rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1.5px solid #E2E8F0;
 }
 
 .agentInfo {
@@ -112,31 +136,34 @@
 }
 
 .agentAvatar {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #F59E0B, #0B2093);
+  background: linear-gradient(135deg, #0B2093, #0D007F);
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 800;
   font-size: 0.9rem;
   color: #FFFFFF;
+  box-shadow: 0 2px 6px rgba(11, 32, 147, 0.25);
 }
 
 .agentMeta h4 {
+  font-family: var(--font-display);
   font-size: 0.95rem;
-  font-weight: 700;
+  font-weight: 800;
   margin: 0;
-  color: #FFFFFF;
+  color: #0F172A;
 }
 
 .agentMeta span {
   font-size: 0.75rem;
-  color: #10B981;
+  color: #059669;
   display: flex;
   align-items: center;
   gap: 0.35rem;
+  font-weight: 600;
 }
 
 .pulseDot {
@@ -144,226 +171,260 @@
   height: 6px;
   background: #10B981;
   border-radius: 50%;
-  box-shadow: 0 0 8px #10B981;
+  box-shadow: 0 0 6px #10B981;
 }
 
 .channelBadge {
+  font-family: var(--font-display);
   font-size: 0.75rem;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.6);
-  background: rgba(255, 255, 255, 0.08);
-  padding: 0.25rem 0.6rem;
-  border-radius: 6px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(11, 32, 147, 0.08);
+  color: #0B2093;
+  border: 1px solid rgba(11, 32, 147, 0.15);
 }
 
-.chatMessages {
-  padding: 1.5rem;
+.chatBody {
+  padding: 1.25rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   flex: 1;
+  background: #FAFCFF;
 }
 
-.msgInbound {
-  align-self: flex-start;
-  background: rgba(255, 255, 255, 0.08);
-  color: #F8FAFC;
-  padding: 0.85rem 1.15rem;
-  border-radius: 16px 16px 16px 4px;
-  max-width: 85%;
-  font-size: 0.92rem;
-  line-height: 1.5;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+.userBubbleWrap {
+  display: flex;
+  justify-content: flex-end;
 }
 
-.msgOutbound {
-  align-self: flex-end;
-  background: linear-gradient(135deg, #0B2093, #0D007F);
-  color: #FFFFFF;
-  padding: 0.85rem 1.15rem;
+.userBubble {
+  background: #F1F5F9;
+  color: #1E293B;
+  border: 1px solid #CBD5E1;
   border-radius: 16px 16px 4px 16px;
+  padding: 0.85rem 1.1rem;
   max-width: 88%;
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   line-height: 1.5;
-  border: 1px solid rgba(245, 158, 11, 0.3);
-  box-shadow: 0 4px 12px rgba(11, 32, 147, 0.3);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
-.msgTimestamp {
-  font-size: 0.7rem;
-  color: rgba(255, 255, 255, 0.5);
-  margin-top: 0.35rem;
-  display: block;
+.aiBubbleWrap {
+  display: flex;
+  justify-content: flex-start;
 }
 
-.chatInputSimulation {
-  padding: 1rem 1.25rem;
-  background: rgba(255, 255, 255, 0.03);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+.aiBubble {
+  background: linear-gradient(145deg, #0B2093 0%, #0D007F 100%);
+  color: #FFFFFF;
+  border-radius: 16px 16px 16px 4px;
+  padding: 0.95rem 1.15rem;
+  max-width: 90%;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  box-shadow: 0 4px 12px rgba(11, 32, 147, 0.2);
+}
+
+.botSignature {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.statusText {
-  font-size: 0.82rem;
-  color: #10B981;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.replayBtn {
-  background: rgba(255, 255, 255, 0.1);
-  border: none;
-  color: #FFFFFF;
-  padding: 0.4rem 0.85rem;
-  border-radius: 6px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.replayBtn:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.pipelinePanel {
-  background: rgba(15, 23, 42, 0.7);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 1.75rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-
-.pipelineHeader {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  padding-bottom: 0.75rem;
-}
-
-.pipelineHeader h3 {
-  font-size: 1.15rem;
-  font-weight: 700;
-  margin: 0;
-  color: #FFFFFF;
+  margin-top: 0.5rem;
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: var(--font-display);
 }
 
 .latencyTag {
-  background: rgba(16, 185, 129, 0.15);
-  color: #10B981;
-  border: 1px solid rgba(16, 185, 129, 0.3);
-  padding: 0.25rem 0.65rem;
-  border-radius: 6px;
-  font-size: 0.78rem;
+  color: #F59E0B;
   font-weight: 700;
 }
 
-.stepList {
+.chatFooter {
+  padding: 0.75rem 1.25rem;
+  background: #FFFFFF;
+  border-top: 1px solid #E2E8F0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: #64748B;
+}
+
+.systemOnlineStatus {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #059669;
+  font-weight: 700;
+}
+
+/* Right: Multi-Agent Workflow Stepper & Telemetry */
+.workflowConsole {
+  background: #FFFFFF;
+  border-radius: 20px;
+  border: 1.5px solid #CBD5E1;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  box-shadow: 
+    inset 0 2px 0 #FFFFFF,
+    0 8px 24px -4px rgba(11, 32, 147, 0.06);
+}
+
+.consoleHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1.5px solid #E2E8F0;
+  padding-bottom: 0.85rem;
+}
+
+.consoleHeader h3 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0;
+}
+
+.pipelineStatus {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #0B2093;
+  background: rgba(11, 32, 147, 0.06);
+  border: 1px solid rgba(11, 32, 147, 0.12);
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+}
+
+.stepsTimeline {
   display: flex;
   flex-direction: column;
   gap: 0.85rem;
 }
 
-.stepItem {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  padding: 1rem;
+.stepRow {
   display: flex;
-  gap: 1rem;
+  gap: 0.85rem;
   align-items: flex-start;
+  padding: 0.75rem 0.9rem;
+  border-radius: 12px;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
   transition: all 0.2s ease;
 }
 
-.stepItemActive {
-  background: rgba(11, 32, 147, 0.35);
-  border-color: rgba(245, 158, 11, 0.4);
+.stepActive {
+  background: rgba(11, 32, 147, 0.04);
+  border-color: #0B2093;
+  box-shadow: inset 0 1px 0 #FFFFFF;
 }
 
-.stepNumber {
-  width: 28px;
-  height: 28px;
+.stepIndex {
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
-  background: #F59E0B;
-  color: #0F172A;
+  background: linear-gradient(180deg, #FFFFFF 0%, #EEF2F6 100%);
+  border: 1.5px solid #CBD5E1;
+  color: #0B2093;
   font-weight: 800;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
 }
 
-.stepContent h4 {
-  font-size: 0.95rem;
-  font-weight: 700;
-  margin: 0 0 0.25rem;
+.stepActive .stepIndex {
+  background: #0B2093;
   color: #FFFFFF;
+  border-color: #0B2093;
 }
 
-.stepContent p {
-  font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.7);
-  margin: 0;
-  line-height: 1.4;
+.stepContent {
+  flex: 1;
 }
 
-.payloadBox {
-  margin-top: 0.5rem;
-  background: rgba(0, 0, 0, 0.35);
-  padding: 0.5rem 0.75rem;
-  border-radius: 6px;
-  font-family: monospace;
-  font-size: 0.75rem;
-  color: #F59E0B;
-}
-
-.statsFooter {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.statCard {
-  text-align: center;
-  background: rgba(255, 255, 255, 0.03);
-  padding: 0.75rem;
-  border-radius: 10px;
-}
-
-.statVal {
-  display: block;
-  font-size: 1.35rem;
+.stepTitle {
+  font-family: var(--font-display);
+  font-size: 0.88rem;
   font-weight: 800;
-  color: #F59E0B;
+  color: #0F172A;
+  margin: 0 0 0.15rem;
 }
 
-.statDesc {
+.stepDesc {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: #64748B;
+  margin: 0;
+}
+
+/* CRM Webhook Dispatch Code Block */
+.payloadCard {
+  background: #0F172A;
+  border-radius: 12px;
+  padding: 0.9rem 1.1rem;
+  border: 1px solid #334155;
+}
+
+.payloadHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+  font-family: var(--font-display);
   font-size: 0.72rem;
-  color: rgba(255, 255, 255, 0.6);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #94A3B8;
+}
+
+.payloadCode {
+  font-family: monospace;
+  font-size: 0.78rem;
+  color: #38BDF8;
+  word-break: break-all;
+  line-height: 1.45;
+}
+
+/* Telemetry Mini Card */
+.leadScoreCard {
+  background: linear-gradient(160deg, #FFFFFF 0%, #F8FAFD 100%);
+  border: 1.5px solid #CBD5E1;
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: inset 0 1px 0 #FFFFFF;
+}
+
+.leadScoreLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #64748B;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
+.leadScoreVal {
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #0B2093;
+}
+
 @media (max-width: 900px) {
-  .simulatorContainer {
-    padding: 2rem 1.25rem;
-  }
   .layoutGrid {
-    grid-template-columns: 1fr;
-  }
-  .simulatorTitle {
-    font-size: 1.75rem;
-  }
-  .statsFooter {
     grid-template-columns: 1fr;
   }
 }
