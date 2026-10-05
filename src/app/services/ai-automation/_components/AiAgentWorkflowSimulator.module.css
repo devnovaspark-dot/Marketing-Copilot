@@ -110,22 +110,22 @@
 /* 2-Column Responsive Layout */
 .layoutGrid {
   display: grid;
-  grid-template-columns: 1.02fr 1.18fr;
-  gap: clamp(20px, 2.8vw, 32px);
-  align-items: stretch;
+  grid-template-columns: 320px 1fr;
+  gap: clamp(24px, 3.5vw, 42px);
+  align-items: start;
   margin-bottom: 24px;
 }
 
 /* ══════════════════════════════════════════════════
-   AUTHENTIC REAL SMARTPHONE HARDWARE CHASSIS
+   AUTHENTIC REAL SMARTPHONE HARDWARE CHASSIS (SLENDER 19.5:9 PROPORTIONS)
 ══════════════════════════════════════════════════ */
 .phoneOuterFrame {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  max-width: 440px;
+  width: 320px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -133,9 +133,9 @@
 .sideButtonAction {
   position: absolute;
   left: -4px;
-  top: 90px;
+  top: 80px;
   width: 4px;
-  height: 24px;
+  height: 22px;
   background: #475569;
   border-radius: 3px 0 0 3px;
   box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.3);
@@ -144,9 +144,9 @@
 .sideButtonVolUp {
   position: absolute;
   left: -4px;
-  top: 130px;
+  top: 114px;
   width: 4px;
-  height: 44px;
+  height: 40px;
   background: #475569;
   border-radius: 3px 0 0 3px;
   box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.3);
@@ -155,9 +155,9 @@
 .sideButtonVolDown {
   position: absolute;
   left: -4px;
-  top: 186px;
+  top: 164px;
   width: 4px;
-  height: 44px;
+  height: 40px;
   background: #475569;
   border-radius: 3px 0 0 3px;
   box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.3);
@@ -166,49 +166,50 @@
 .sideButtonPower {
   position: absolute;
   right: -4px;
-  top: 136px;
+  top: 124px;
   width: 4px;
-  height: 64px;
+  height: 56px;
   background: #475569;
   border-radius: 0 3px 3px 0;
   box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.3);
 }
 
-/* Smartphone Titanium Rim */
+/* Smartphone Titanium Rim (Sleek Slender Handheld Frame) */
 .phoneChassis {
-  width: 100%;
-  background: linear-gradient(145deg, #334155 0%, #0F172A 100%);
-  border-radius: 46px;
-  padding: 10px;
+  width: 320px;
+  max-width: 100%;
+  background: linear-gradient(145deg, #1E293B 0%, #0F172A 100%);
+  border-radius: 44px;
+  padding: 8px;
   box-shadow: 
     0 24px 60px -12px rgba(15, 23, 42, 0.35),
     0 8px 20px rgba(15, 23, 42, 0.15),
-    inset 0 1px 2px rgba(255, 255, 255, 0.4),
-    inset 0 -1px 2px rgba(0, 0, 0, 0.8);
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.4),
+    inset 0 -1.5px 2px rgba(0, 0, 0, 0.85);
   box-sizing: border-box;
 }
 
 /* Screen Glass Bezel */
 .phoneScreen {
   background: #000000;
-  border-radius: 38px;
+  border-radius: 36px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-  height: 100%;
+  min-height: 580px;
 }
 
 /* iOS Status Bar with Dynamic Island */
 .phoneTopBar {
   background: #008069;
   color: #FFFFFF;
-  padding: 8px 18px 4px;
+  padding: 8px 14px 4px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 700;
 }
 
@@ -217,20 +218,20 @@
 }
 
 .phoneDynamicIsland {
-  width: 76px;
-  height: 18px;
+  width: 68px;
+  height: 16px;
   background: #000000;
   border-radius: 999px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 7px;
+  padding: 0 6px;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15);
 }
 
 .islandCameraLens {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   background: #111827;
   border-radius: 50%;
   border: 1.5px solid #1F2937;
@@ -589,25 +590,26 @@
 }
 
 .micCircleBtn {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   background: #008069;
   color: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   box-shadow: 0 2px 5px rgba(0, 128, 105, 0.35);
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .iosHomeIndicator {
-  width: 120px;
-  height: 4px;
+  width: 90px;
+  height: 3.5px;
   background: #0F172A;
   border-radius: 999px;
-  margin: 6px auto 2px;
+  margin: 5px auto 3px;
 }
 
 /* ══════════════════════════════════════════════════
@@ -916,5 +918,28 @@
 @media (max-width: 960px) {
   .layoutGrid {
     grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .phoneOuterFrame {
+    width: 320px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .phoneOuterFrame {
+    width: 100%;
+    max-width: 308px;
+  }
+  .phoneChassis {
+    width: 100%;
+    max-width: 308px;
+    padding: 6px;
+    border-radius: 40px;
+  }
+  .phoneScreen {
+    border-radius: 34px;
+    min-height: 540px;
   }
 }
