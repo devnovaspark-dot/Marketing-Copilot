@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Top SEO Agency in Bhubaneswar | Search Engine Optimization Services',
-  description: 'Rank #1 on Google with the leading SEO agency in Bhubaneswar. Technical SEO, Google Map Pack dominance, high-intent topic authority, and compounding organic traffic.',
+  title: 'SEO Marketing Agency in Bhubaneswar | Nova Spark Digital',
+  description: 'Make Google your growth channel. Build stronger search visibility with SEO strategies designed to attract relevant customers, improve rankings and generate sustainable organic traffic.',
   alternates: {
     canonical: 'https://marketingcopilot.in/services/seo',
   },
   openGraph: {
-    title: 'Top SEO Agency in Bhubaneswar | Search Engine Optimization Services',
-    description: 'Rank #1 on Google with the leading SEO agency in Bhubaneswar. Technical SEO, Google Map Pack dominance, and compounding organic traffic.',
+    title: 'SEO Marketing Agency in Bhubaneswar | Nova Spark Digital',
+    description: 'Make Google your growth channel. Build stronger search visibility with SEO strategies designed to attract relevant customers, improve rankings and generate sustainable organic traffic.',
     url: 'https://marketingcopilot.in/services/seo',
     siteName: 'Marketing Copilot',
     locale: 'en_IN',
@@ -16,8 +16,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Top SEO Agency in Bhubaneswar | Search Engine Optimization Services',
-    description: 'Rank #1 on Google with the leading SEO agency in Bhubaneswar. Technical SEO, Google Map Pack dominance, and compounding organic traffic.',
+    title: 'SEO Marketing Agency in Bhubaneswar | Nova Spark Digital',
+    description: 'Make Google your growth channel. Build stronger search visibility with SEO strategies designed to attract relevant customers, improve rankings and generate sustainable organic traffic.',
   },
 };
 
