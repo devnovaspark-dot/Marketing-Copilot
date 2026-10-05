@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import ScrollReveal from '@/components/ScrollReveal';
 import BeamButton from '@/components/BeamButton';
 import QuickConnectMapSection from '@/app/_components/QuickConnectMapSection';
@@ -116,7 +115,6 @@ const socialFaqs = [
 ];
 
 export default function SocialMediaPage() {
-  // FAQs closed by default
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
   const toggleFaq = (index: number) => {
@@ -126,7 +124,7 @@ export default function SocialMediaPage() {
   return (
     <div className={styles.pageWrapper}>
       {/* ══════════════════════════════════════════════════
-          1. CENTERED HERO (SEAMLESS - NO HARSH DIVIDER LINE)
+          1. CENTERED HERO (COMPACT & SEAMLESS)
          ══════════════════════════════════════════════════ */}
       <section className={styles.hero}>
         <div className={styles.heroMeshGrid} />
@@ -202,7 +200,7 @@ export default function SocialMediaPage() {
             </p>
           </ScrollReveal>
 
-          {/* 2x2 Symmetrical Grid of Core Cards */}
+          {/* 2x2 Grid of Core Cards */}
           <div className={styles.servicesGrid}>
             {coreServices.map((service, index) => (
               <ScrollReveal key={service.title} delay={index * 0.08} className={styles.cardCol}>
@@ -337,7 +335,7 @@ export default function SocialMediaPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          5. SMALL BUSINESS SOCIAL GROWTH (6 SKEUOMORPHIC CARDS)
+          5. SMALL BUSINESS SOCIAL GROWTH (6 CARDS)
          ══════════════════════════════════════════════════ */}
       <section className={styles.smallBizSection}>
         <div className="container">
@@ -429,44 +427,44 @@ export default function SocialMediaPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          8. PRE-FOOTER CTA CARD (HOMEPAGE-STYLE .homeStyleCtaBox)
+          8. PRE-FOOTER CTA CARD (EXACT HOMEPAGE-STYLE .innerBox)
          ══════════════════════════════════════════════════ */}
-      <section className={styles.homeStyleCtaSection}>
+      <section className={styles.homeCtaSection}>
         <div className="container">
-          <ScrollReveal>
-            <div className={styles.homeStyleCtaBox}>
-              <div className={styles.homeStyleCtaGlowTop} />
-              <div className={styles.homeStyleCtaGlowBottom} />
-              <div className={styles.homeStyleCtaMesh} />
-
-              <div className={styles.homeStyleCtaBadge}>
-                SCALE YOUR BRAND ON SOCIAL MEDIA
+          <div className={styles.homeCtaInnerBox}>
+            <ScrollReveal className="text-center">
+              <div className={styles.homeCtaEyebrow}>
+                <span className={styles.homeCtaDot} />
+                <span>SCALE YOUR BRAND ON SOCIAL MEDIA</span>
               </div>
 
-              <h2 className={styles.homeStyleCtaTitle}>
-                YOUR SOCIAL MEDIA NEEDS MORE THAN JUST REGULAR POSTS
+              <h2 className={styles.homeCtaHeadline}>
+                YOUR SOCIAL MEDIA NEEDS MORE THAN JUST{' '}
+                <span className="accent-gradient">REGULAR POSTS</span>
               </h2>
 
-              <p className={styles.homeStyleCtaDesc}>
+              <p className={styles.homeCtaSub}>
                 Get a free 30-minute social media strategy audit. We’ll review your current content, identify what’s holding back engagement, and map out a clear 30-day strategy to improve reach, engagement, and brand visibility in Bhubaneswar.
               </p>
 
-              <div className={styles.homeStyleCtaActions}>
+              <div className={styles.homeCtaActions}>
                 <BeamButton
                   href="https://wa.me/919437168434?text=Hi%20Marketing%20Copilot%2C%20I%20want%20to%20audit%20my%20business%20social%20media"
                   label="Get Your Free Social Media Audit →"
                   size="lg"
                 />
-                <Link href="/contact" className={styles.homeSecondaryBtn}>
-                  <span>Talk to Our Social Media Team</span>
-                  <span>→</span>
-                </Link>
+                <BeamButton
+                  href="/contact"
+                  label="Talk to Our Social Media Team"
+                  size="lg"
+                  variant="outline"
+                />
               </div>
 
               {/* Direct Contact Chips */}
-              <div className={styles.homeStyleCtaContacts}>
+              <div className={styles.homeCtaContacts}>
                 <a href="tel:+918280788689" className={styles.homeCtaChip}>
-                  <span className={styles.homeCtaDot} />
+                  <span className={styles.homeCtaLiveDot} />
                   <span>📞 Call Directly: +91 8280788689</span>
                 </a>
                 <span className={styles.homeCtaChip}>
@@ -476,8 +474,8 @@ export default function SocialMediaPage() {
                   <span>⚡ &lt; 15-Minute Response</span>
                 </span>
               </div>
-            </div>
-          </ScrollReveal>
+            </ScrollReveal>
+          </div>
         </div>
       </section>
     </div>
