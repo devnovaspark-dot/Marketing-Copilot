@@ -11,6 +11,7 @@ import BlogSidebarCta from '@/components/BlogSidebarCta';
 import { sanityFetch } from '@/sanity/client';
 import { postBySlugQuery, postPathsQuery } from '@/sanity/queries';
 import { urlForImage } from '@/sanity/image';
+import ReadingProgressBar from '@/components/ReadingProgressBar';
 import styles from './page.module.css';
 
 export const dynamicParams = true;
@@ -164,6 +165,9 @@ export default async function ArticlePage({
 
   return (
     <>
+      {/* Scroll Reading Progress Indicator */}
+      <ReadingProgressBar />
+
       {faqSchema && (
         <script
           type="application/ld+json"
@@ -200,16 +204,19 @@ export default async function ArticlePage({
                     <ul className={styles.takeawaysList}>
                       {article.takeaways
                         .filter((item: string) => typeof item === 'string' && item.trim().length > 0)
-                        .map((item: string, idx: number) => (
-                          <li key={idx} className={styles.takeawayItem}>
-                            <span className={styles.takeawayIconWrap} aria-hidden="true">
-                              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-                                <polyline points="20 6 9 17 4 12" />
-                              </svg>
-                            </span>
-                            <span>{item}</span>
-                          </li>
-                        ))}
+                        .map((rawItem: string, idx: number) => {
+                          const item = rawItem.replace(/^\d+[\.\)]\s*/, '').trim();
+                          return (
+                            <li key={idx} className={styles.takeawayItem}>
+                              <span className={styles.takeawayIconWrap} aria-hidden="true">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                                  <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                              </span>
+                              <span>{item}</span>
+                            </li>
+                          );
+                        })}
                     </ul>
                   </div>
                 )}

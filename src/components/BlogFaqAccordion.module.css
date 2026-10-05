@@ -29,6 +29,14 @@
   font-weight: 800;
   color: var(--text-primary, #000000);
   letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.faqSubtitle {
+  font-size: 0.95rem;
+  color: #64748B;
+  margin: 0.45rem 0 1.5rem 0;
+  line-height: 1.6;
 }
 
 .faqList {
@@ -58,6 +66,7 @@
 
 .faqItemOpen {
   border-color: #0B2093;
+  background: #FAFCFF;
   box-shadow: 
     inset 0 1px 0 #FFFFFF,
     0 8px 24px rgba(11, 32, 147, 0.08);
