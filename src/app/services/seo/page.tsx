@@ -252,14 +252,19 @@ export default function SEOPage() {
               </p>
 
               <div className={styles.heroActions}>
-                <Link href="/contact" className={styles.heroPrimaryBtn}>
-                  <span>Start My SEO Audit</span>
-                  <span>→</span>
-                </Link>
-                <a href="#industries" className={styles.heroSecondaryBtn}>
-                  <span>Grow on Google</span>
-                  <span>↓</span>
-                </a>
+                <BeamButton
+                  href="/contact"
+                  label="Start My SEO Audit"
+                  size="lg"
+                />
+                <BeamButton
+                  href="#industries"
+                  label="Grow on Google"
+                  variant="outline"
+                  size="lg"
+                  arrow={false}
+                  icon={<span style={{ display: 'inline-block', transform: 'rotate(90deg)', fontSize: 15 }}>→</span>}
+                />
               </div>
 
               <div className={styles.trustStrip}>
