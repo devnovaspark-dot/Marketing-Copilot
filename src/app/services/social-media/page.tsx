@@ -460,20 +460,6 @@ export default function SocialMediaPage() {
                   variant="outline"
                 />
               </div>
-
-              {/* Direct Contact Chips */}
-              <div className={styles.homeCtaContacts}>
-                <a href="tel:+918280788689" className={styles.homeCtaChip}>
-                  <span className={styles.homeCtaLiveDot} />
-                  <span>📞 Call Directly: +91 8280788689</span>
-                </a>
-                <span className={styles.homeCtaChip}>
-                  <span>📍 Office: Mallick Complex, Unit 3, Kharvela Nagar, Bhubaneswar</span>
-                </span>
-                <span className={styles.homeCtaChip}>
-                  <span>⚡ &lt; 15-Minute Response</span>
-                </span>
-              </div>
             </ScrollReveal>
           </div>
         </div>
