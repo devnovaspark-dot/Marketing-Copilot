@@ -135,7 +135,7 @@ export default function AiAutomationPage() {
       {/* ══════════════════════════════════════════════════
          SECTION 3: INTERACTIVE AGENT WORKFLOW SIMULATOR
       ══════════════════════════════════════════════════ */}
-      <section id="simulator" className="container">
+      <section id="simulator" className={`container ${styles.simulatorSection}`}>
         <AiAgentWorkflowSimulator />
       </section>
 
@@ -164,6 +164,13 @@ export default function AiAutomationPage() {
          SECTION 7: 30-DAY IMPLEMENTATION ROADMAP
       ══════════════════════════════════════════════════ */}
       <section className="container">
+        <div className={styles.preRoadmapCta}>
+          <BeamButton
+            href="/contact"
+            label="Start Your 30-Day AI Implementation Sprint →"
+            size="lg"
+          />
+        </div>
         <AiAutomationRoadmap />
       </section>
 
@@ -233,6 +240,15 @@ export default function AiAutomationPage() {
                 <span className={styles.quoteAuthor}>— Debashis M., Operations Director, Weekend Bhraman</span>
               </div>
             </div>
+          </div>
+
+          {/* Centered CTA Button Down Odisha Travel & Hospitality Automation */}
+          <div className={styles.caseStudyCtaRow}>
+            <BeamButton
+              href="/contact"
+              label="Automate Your Sales Pipeline Like Weekend Bhraman →"
+              size="lg"
+            />
           </div>
         </div>
       </section>
@@ -313,7 +329,7 @@ export default function AiAutomationPage() {
               <p className={styles.arsenalBannerDesc}>
                 Engineered with auto-scaling microservices, failover fallbacks, and encrypted SOC2-ready data pipelines so your sales engine never drops a lead.
               </p>
-              <div style={{ marginTop: '8px' }}>
+              <div className={styles.arsenalBannerBtnWrap}>
                 <BeamButton href="/contact" label="Request Architecture Blueprint →" size="md" />
               </div>
             </div>

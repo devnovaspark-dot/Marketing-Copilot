@@ -2,6 +2,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import BeamButton from '@/components/BeamButton';
 import styles from './AiAgentWorkflowSimulator.module.css';
 
 type Channel = 'whatsapp' | 'instagram' | 'website';
@@ -107,170 +108,236 @@ export default function AiAgentWorkflowSimulator() {
       </div>
 
       <div className={styles.layoutGrid}>
-        {/* Left: Compact Authentic Smartphone Chassis with WhatsApp Business UI */}
+        {/* Left: Authentic Smartphone Chassis with Hardware Bezel, Dynamic Island & WhatsApp UI */}
         <div className={styles.phoneOuterFrame}>
+          {/* Physical Side Buttons */}
+          <div className={styles.sideButtonAction} />
+          <div className={styles.sideButtonVolUp} />
+          <div className={styles.sideButtonVolDown} />
+          <div className={styles.sideButtonPower} />
+
           <div className={styles.phoneChassis}>
-            {/* Dynamic Island Speaker */}
-            <div className={styles.phoneTopBar}>
-              <span className={styles.phoneTime}>9:41</span>
-              <div className={styles.phoneDynamicIsland}>
-                <div className={styles.phoneCamera} />
-              </div>
-              <div className={styles.phoneStatusIcons}>
-                <span>5G</span>
-              </div>
-            </div>
-
-            {/* Chat App Header */}
-            <div className={styles.chatDeviceHeader}>
-              <div className={styles.agentInfo}>
-                <span className={styles.backBtn}>←</span>
-                <div className={styles.agentAvatar}>
-                  <span>AI</span>
-                  <div className={styles.avatarOnlineDot} />
+            {/* Screen Glass Inner Bezel */}
+            <div className={styles.phoneScreen}>
+              {/* Dynamic Island & iOS Status Bar */}
+              <div className={styles.phoneTopBar}>
+                <span className={styles.phoneTime}>9:41</span>
+                <div className={styles.phoneDynamicIsland}>
+                  <div className={styles.islandCameraLens} />
+                  <div className={styles.islandPrivacyDot} />
                 </div>
-                <div className={styles.agentMeta}>
-                  <div className={styles.agentMetaTitleRow}>
-                    <h4>Copilot AI Assistant</h4>
-                    <svg className={styles.verifiedCheck} width="13" height="13" viewBox="0 0 24 24" fill="#10B981">
-                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                    </svg>
+                <div className={styles.phoneStatusIcons}>
+                  <div className={styles.signalBars}>
+                    <span className={styles.bar1} />
+                    <span className={styles.bar2} />
+                    <span className={styles.bar3} />
+                    <span className={styles.bar4} />
                   </div>
-                  <span className={styles.onlineStatus}>Online &middot; {current.timeTaken} latency</span>
+                  <span className={styles.wifiIcon}>
+                    <svg width="13" height="10" viewBox="0 0 24 18" fill="currentColor">
+                      <path d="M12 4C7.31 4 3.07 5.9 0 8.98L12 21 24 8.98A16.88 16.88 0 0 0 12 4z"/>
+                    </svg>
+                  </span>
+                  <div className={styles.batteryPill}>
+                    <div className={styles.batteryLevel} />
+                  </div>
                 </div>
               </div>
 
-              <div className={styles.headerRightActions}>
-                <span className={styles.channelBadge}>{current.name}</span>
-              </div>
-            </div>
+              {/* WhatsApp App Header Bar */}
+              <div className={styles.chatDeviceHeader}>
+                <div className={styles.agentInfo}>
+                  <span className={styles.backChevron}>‹</span>
+                  <div className={styles.agentAvatar}>
+                    <span>AI</span>
+                    <div className={styles.avatarOnlineDot} />
+                  </div>
+                  <div className={styles.agentMeta}>
+                    <div className={styles.agentMetaTitleRow}>
+                      <h4>Copilot AI Concierge</h4>
+                      <svg className={styles.verifiedCheck} width="13" height="13" viewBox="0 0 24 24" fill="#25D366">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                      </svg>
+                    </div>
+                    <span className={styles.onlineStatus}>Online &middot; {current.timeTaken} latency</span>
+                  </div>
+                </div>
 
-            {/* Realistic Chat Messages Stream */}
-            <div className={styles.chatMessages}>
-              <div className={styles.chatDateDivider}>
-                <span>TODAY</span>
-              </div>
-
-              {/* Inbound Customer Inquiry */}
-              <div className={styles.msgInbound}>
-                <div className={styles.msgSenderLabel}>Inbound Customer</div>
-                <p>{current.userQuery}</p>
-                <div className={styles.msgMetaRow}>
-                  <span className={styles.msgTimestamp}>10:14 AM</span>
+                <div className={styles.headerRightActions}>
+                  {/* WhatsApp Video Call Icon */}
+                  <svg className={styles.headerIcon} width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/>
+                  </svg>
+                  {/* WhatsApp Voice Phone Icon */}
+                  <svg className={styles.headerIcon} width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-2.2 2.2a15.045 15.045 0 0 1-6.59-6.59l2.2-2.21a.96.96 0 0 0 .25-1.01A11.36 11.36 0 0 1 8.5 3.92c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.54c0-.55-.45-1-1-1z"/>
+                  </svg>
+                  {/* Overflow Dots */}
+                  <span className={styles.moreDots}>⋮</span>
                 </div>
               </div>
 
-              {/* Autonomous AI Response */}
-              <div className={styles.msgOutbound}>
-                <div className={styles.msgAiLabel}>
-                  <span>🤖 Copilot Agent</span>
-                  <span className={styles.instantBadge}>{current.timeTaken}</span>
-                </div>
-                <p>{current.aiReply}</p>
-                
-                {/* Interactive Action Buttons */}
-                <div className={styles.chatActionsRow}>
-                  {current.actionButtons.map((btn, idx) => (
-                    <button key={idx} type="button" className={styles.chatActionBtn}>
-                      {btn}
-                    </button>
-                  ))}
+              {/* WhatsApp Messages Stream with Authentic Speech Tails */}
+              <div className={styles.chatMessages}>
+                <div className={styles.chatDateDivider}>
+                  <span>TODAY</span>
                 </div>
 
-                <div className={styles.msgMetaRowOut}>
-                  <span className={styles.msgTimestampOut}>10:14 AM</span>
-                  <span className={styles.msgCheckmarks}>✓✓</span>
+                {/* Inbound Customer Inquiry Bubble */}
+                <div className={styles.msgInboundWrap}>
+                  <div className={styles.msgInbound}>
+                    <div className={styles.msgSenderLabel}>Inbound Customer</div>
+                    <p>{current.userQuery}</p>
+                    <div className={styles.msgMetaRow}>
+                      <span className={styles.msgTimestamp}>10:14 AM</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Autonomous AI Response Bubble with Checkmarks */}
+                <div className={styles.msgOutboundWrap}>
+                  <div className={styles.msgOutbound}>
+                    <div className={styles.msgAiLabel}>
+                      <span>🤖 Copilot Autonomous Agent</span>
+                      <span className={styles.instantBadge}>{current.timeTaken}</span>
+                    </div>
+                    <p>{current.aiReply}</p>
+                    
+                    {/* Interactive Action Buttons */}
+                    <div className={styles.chatActionsRow}>
+                      {current.actionButtons.map((btn, idx) => (
+                        <button key={idx} type="button" className={styles.chatActionBtn}>
+                          {btn}
+                        </button>
+                      ))}
+                    </div>
+
+                    <div className={styles.msgMetaRowOut}>
+                      <span className={styles.msgTimestampOut}>10:14 AM</span>
+                      <span className={styles.msgCheckmarks}>✓✓</span>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Phone Bottom Input Dock */}
-            <div className={styles.chatInputDock}>
-              <div className={styles.chatFakeInput}>
-                <span>Message Copilot AI...</span>
-                <span className={styles.inputSendIcon}>➤</span>
-              </div>
-              <div className={styles.dockStatus}>
-                <span className={styles.dockStatusDot} />
-                <span>Synced with CRM &amp; Meta Cloud Webhooks</span>
+              {/* WhatsApp Bottom Input Dock with Emoji, Paperclip, Camera & Send */}
+              <div className={styles.chatInputDock}>
+                <div className={styles.dockInputRow}>
+                  <span className={styles.inputSmile}>😊</span>
+                  <div className={styles.chatFakeInput}>
+                    <span>Type a message...</span>
+                  </div>
+                  <span className={styles.inputClip}>📎</span>
+                  <span className={styles.inputCamera}>📷</span>
+                  <div className={styles.micCircleBtn}>
+                    <span>➤</span>
+                  </div>
+                </div>
+                {/* iOS Home Indicator Bar */}
+                <div className={styles.iosHomeIndicator} />
               </div>
             </div>
           </div>
         </div>
 
-        {/* Right: Compact Real-Time Pipeline Telemetry View */}
+        {/* Right: Advanced Multi-Agent Autonomous Pipeline Trace */}
         <div className={styles.pipelinePanel}>
           <div className={styles.pipelineHeader}>
             <div>
-              <div className={styles.pipelineKicker}>Multi-Agent Pipeline</div>
+              <div className={styles.pipelineKicker}>Multi-Agent AI Pipeline</div>
               <h3 className={styles.pipelineTitle}>Autonomous Execution Telemetry</h3>
             </div>
             <div className={styles.latencyTag}>
               <span className={styles.pulseDot} />
-              Latency: {current.timeTaken}
+              Total Latency: {current.timeTaken}
             </div>
           </div>
 
-          <div className={styles.stepList}>
-            {/* Step 1 */}
-            <div className={`${styles.stepItem} ${styles.stepItemActive}`}>
-              <div className={styles.stepRail}>
-                <div className={styles.stepNumber}>01</div>
-                <div className={styles.stepLine} />
-              </div>
-              <div className={styles.stepContent}>
-                <div className={styles.stepHeaderRow}>
-                  <h4>Intent &amp; Entity Parser</h4>
-                  <span className={styles.statusPill}>Completed 180ms</span>
+          <div className={styles.agentNodesGraph}>
+            {/* AGENT NODE 1: Lead Triage & Parser Agent */}
+            <div className={`${styles.agentNodeCard} ${styles.agentNodeActive}`}>
+              <div className={styles.agentNodeHeader}>
+                <div className={styles.agentNodeAvatar}>
+                  <span>🤖</span>
                 </div>
-                <p>Natural Language processing extracts budget, dates, headcounts, and priority scoring in real-time.</p>
-                <div className={styles.payloadBox}>
-                  <div className={styles.payloadHeader}>
-                    <span>PARSED ATTRIBUTES</span>
-                    <span className={styles.payloadLang}>JSON</span>
+                <div className={styles.agentNodeInfo}>
+                  <div className={styles.agentNodeTitleRow}>
+                    <h4>Agent 01: Lead Triage &amp; Parser</h4>
+                    <span className={styles.agentStatusBadge}>PARSED 180ms</span>
                   </div>
-                  <code>{current.leadScore}</code>
+                  <span className={styles.agentNodeSub}>Natural Language Extraction &middot; Intent Classifier</span>
                 </div>
+              </div>
+
+              <div className={styles.nodePills}>
+                <span className={styles.dataPill}>👤 High Intent</span>
+                <span className={styles.dataPill}>📍 Regional Query</span>
+                <span className={styles.dataPill}>⚡ Confidence 98%</span>
+              </div>
+
+              <div className={styles.payloadBox}>
+                <div className={styles.payloadHeader}>
+                  <span>PARSED ENTITIES (JSON)</span>
+                  <span className={styles.payloadLang}>AGENT_OUTPUT</span>
+                </div>
+                <code>{current.leadScore}</code>
+              </div>
+
+              {/* Data Flow Connector to Node 2 */}
+              <div className={styles.flowConnector}>
+                <div className={styles.flowPulseDot} />
+                <span className={styles.flowLabel}>↓ Streaming Validated Entity Stream to Vector Index</span>
               </div>
             </div>
 
-            {/* Step 2 */}
-            <div className={`${styles.stepItem} ${styles.stepItemActive}`}>
-              <div className={styles.stepRail}>
-                <div className={styles.stepNumber}>02</div>
-                <div className={styles.stepLine} />
+            {/* AGENT NODE 2: Vector RAG & Knowledge Synthesizer */}
+            <div className={`${styles.agentNodeCard} ${styles.agentNodeActive}`}>
+              <div className={styles.agentNodeHeader}>
+                <div className={styles.agentNodeAvatar}>
+                  <span>🧠</span>
+                </div>
+                <div className={styles.agentNodeInfo}>
+                  <div className={styles.agentNodeTitleRow}>
+                    <h4>Agent 02: Knowledge Retrieval &amp; RAG</h4>
+                    <span className={styles.agentStatusBadge}>PINECONE 110ms</span>
+                  </div>
+                  <span className={styles.agentNodeSub}>Vector Embedding Match &middot; Pricing &amp; Inventory Gate</span>
+                </div>
               </div>
-              <div className={styles.stepContent}>
-                <div className={styles.stepHeaderRow}>
-                  <h4>Knowledge Retrieval &amp; Context Synthesis</h4>
-                  <span className={styles.statusPill}>Pinecone 110ms</span>
-                </div>
-                <p>Vector database queries active room inventory, pricing tiers, and cancellation terms.</p>
-                <div className={styles.ragPillRow}>
-                  <span className={styles.ragPill}>🛡️ Zero-Hallucination Gate</span>
-                  <span className={styles.ragPill}>📚 Real-Time Sync</span>
-                </div>
+
+              <div className={styles.nodePills}>
+                <span className={styles.ragGuardPill}>🛡️ Zero-Hallucination Guardrail</span>
+                <span className={styles.ragGuardPill}>📚 Real-Time Availability Match</span>
+              </div>
+
+              {/* Data Flow Connector to Node 3 */}
+              <div className={styles.flowConnector}>
+                <div className={styles.flowPulseDot} />
+                <span className={styles.flowLabel}>↓ Dispatching Synthesized Payload to Webhook Gateway</span>
               </div>
             </div>
 
-            {/* Step 3 */}
-            <div className={`${styles.stepItem} ${styles.stepItemActive}`}>
-              <div className={styles.stepRail}>
-                <div className={styles.stepNumber}>03</div>
-              </div>
-              <div className={styles.stepContent}>
-                <div className={styles.stepHeaderRow}>
-                  <h4>CRM Webhook &amp; Live Agent Hand-off</h4>
-                  <span className={styles.statusPill}>Dispatched</span>
+            {/* AGENT NODE 3: CRM Webhook & Omnichannel Dispatcher */}
+            <div className={`${styles.agentNodeCard} ${styles.agentNodeActive}`}>
+              <div className={styles.agentNodeHeader}>
+                <div className={styles.agentNodeAvatar}>
+                  <span>⚡</span>
                 </div>
-                <p>Synchronous dispatch to HubSpot/Zoho with pre-filled deal size and follow-up timeline.</p>
-                <div className={styles.payloadBox}>
-                  <div className={styles.payloadHeader}>
-                    <span>REST WEBHOOK</span>
-                    <span className={styles.payloadLang}>API</span>
+                <div className={styles.agentNodeInfo}>
+                  <div className={styles.agentNodeTitleRow}>
+                    <h4>Agent 03: CRM Webhook &amp; Dispatcher</h4>
+                    <span className={styles.agentStatusBadge}>DISPATCHED 40ms</span>
                   </div>
-                  <code>{current.crmPayload}</code>
+                  <span className={styles.agentNodeSub}>HubSpot / Zoho 2-Way Synchronization &middot; WhatsApp API</span>
                 </div>
+              </div>
+
+              <div className={styles.payloadBox}>
+                <div className={styles.payloadHeader}>
+                  <span>OUTBOUND REST WEBHOOK</span>
+                  <span className={styles.payloadLang}>HTTP 200 OK</span>
+                </div>
+                <code>{current.crmPayload}</code>
               </div>
             </div>
           </div>
@@ -278,7 +345,7 @@ export default function AiAgentWorkflowSimulator() {
           <div className={styles.statsFooter}>
             <div className={styles.statCard}>
               <span className={styles.statVal}>&lt; 2s</span>
-              <span className={styles.statDesc}>First Response</span>
+              <span className={styles.statDesc}>First Response SLA</span>
             </div>
             <div className={styles.statCard}>
               <span className={styles.statVal}>24/7/365</span>
@@ -286,9 +353,22 @@ export default function AiAgentWorkflowSimulator() {
             </div>
             <div className={styles.statCard}>
               <span className={styles.statVal}>+42%</span>
-              <span className={styles.statDesc}>Lead Capture</span>
+              <span className={styles.statDesc}>Lead Recovery</span>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Prominent Centered CTA Button Down Real-Time Execution Simulator */}
+      <div className={styles.simBottomCta}>
+        <BeamButton
+          href="/contact"
+          label="Deploy This AI Automation Stack For Your Business →"
+          size="lg"
+        />
+        <div className={styles.simCtaGuarantee}>
+          <span className={styles.guaranteeDot} />
+          <span>Meta Cloud API Official BSP &middot; Sub-2s SLA &middot; 30-Day Turnkey Deployment</span>
         </div>
       </div>
     </div>
