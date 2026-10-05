@@ -5,7 +5,6 @@ import Image from 'next/image';
 import ScrollReveal from '@/components/ScrollReveal';
 import BeamButton from '@/components/BeamButton';
 import QuickConnectMapSection from '@/app/_components/QuickConnectMapSection';
-import PerformanceOmnichannelSimulator from './_components/PerformanceOmnichannelSimulator';
 import styles from './performance-marketing-page.module.css';
 
 // 4 Full-Funnel Stages
@@ -241,6 +240,7 @@ export default function PerformanceMarketingPage() {
             </p>
           </ScrollReveal>
 
+          {/* 4 Skeuomorphic Funnel Cards */}
           <div className={styles.funnelGrid}>
             {funnelStages.map((stage, idx) => (
               <ScrollReveal key={stage.num} delay={idx * 0.08} className={styles.cardCol}>
@@ -257,6 +257,35 @@ export default function PerformanceMarketingPage() {
               </ScrollReveal>
             ))}
           </div>
+
+          {/* Funnel Visual Architecture Banner with Image */}
+          <ScrollReveal>
+            <div className={styles.funnelImageBanner}>
+              <div className={styles.funnelBannerImgWrap}>
+                <Image
+                  src="/images/services_performance.jpg"
+                  alt="Nova Spark Full-Funnel Performance Architecture"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 550px"
+                  className={styles.bannerImg}
+                />
+              </div>
+              <div className={styles.funnelBannerContent}>
+                <div className={styles.bannerBadge}>
+                  <span>⚡ INTEGRATED REVENUE PIPELINE</span>
+                </div>
+                <h3 className={styles.bannerTitle}>
+                  Full-Lifecycle Growth From Impression to Retention
+                </h3>
+                <p className={styles.bannerDesc}>
+                  Every rupee of ad spend is tracked through Google Search, Meta creatives, custom landing pages, and direct WhatsApp CRM conversion workflows.
+                </p>
+                <div style={{ marginTop: '8px' }}>
+                  <BeamButton href="/contact" label="Audit Your Funnel Architecture →" size="md" />
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -377,6 +406,35 @@ export default function PerformanceMarketingPage() {
               </ScrollReveal>
             ))}
           </div>
+
+          {/* Why Choose Visual Proof Banner */}
+          <ScrollReveal>
+            <div className={styles.whyImageBanner}>
+              <div className={styles.whyBannerContent}>
+                <div className={styles.whyBannerBadge}>
+                  <span>🏛️ BHUBANESWAR PERFORMANCE GROWTH LAB</span>
+                </div>
+                <h3 className={styles.whyBannerTitle}>
+                  Local Market Mastery Backed by Quantitative Ad Intelligence
+                </h3>
+                <p className={styles.whyBannerDesc}>
+                  From Saheed Nagar and Patia to high-growth regional hubs across Odisha, we test, refine, and scale conversion funnels with complete transparency and zero wasted ad spend.
+                </p>
+                <div style={{ marginTop: '8px' }}>
+                  <BeamButton href="/contact" label="Schedule a Strategy Consultation →" size="md" />
+                </div>
+              </div>
+              <div className={styles.whyBannerImgWrap}>
+                <Image
+                  src="/images/hero_growth_mastery.jpg"
+                  alt="Nova Spark Performance Marketing Agency Bhubaneswar Growth Mastery"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 550px"
+                  className={styles.bannerImg}
+                />
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -483,9 +541,145 @@ export default function PerformanceMarketingPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          8. INTERACTIVE OMNICHANNEL PERFORMANCE SIMULATOR
+          8. VISUAL DASHBOARD SHOWCASE (REPLACING THE CALCULATOR)
          ══════════════════════════════════════════════════ */}
-      <PerformanceOmnichannelSimulator />
+      <section className={styles.visualDashboardSection}>
+        <div className="container">
+          <ScrollReveal className={styles.sectionHeader}>
+            <div className={styles.eyebrow}>
+              <span>Predictable Revenue Telemetry</span>
+            </div>
+            <h2 className={styles.sectionTitle}>
+              Omnichannel Attribution &amp;{' '}
+              <span className="accent-gradient">Scale Architecture</span>
+            </h2>
+            <p className={styles.sectionDesc}>
+              Real-time campaign telemetry tracking blended ROAS, customer acquisition costs, and qualified conversions across Odisha.
+            </p>
+          </ScrollReveal>
+
+          {/* DUAL IMAGE VISUAL SHOWCASE */}
+          <div className={styles.visualDualImageGrid}>
+            {/* Image Card 1: Live Campaign Telemetry Command Center */}
+            <ScrollReveal className={styles.cardCol}>
+              <div className={styles.dashboardImgCard}>
+                <div className={styles.dashboardImgWrap}>
+                  <Image
+                    src="/images/dashboard_hero.jpg"
+                    alt="Nova Spark Performance Marketing Live Dashboard Telemetry"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 650px"
+                    className={styles.dashboardImg}
+                  />
+                  <div className={styles.dashboardImgOverlay}>
+                    <div className={styles.dashboardOverlayBadge}>
+                      <span className={styles.liveDot} />
+                      <span>LIVE CAMPAIGN TELEMETRY</span>
+                    </div>
+                    <h3 className={styles.dashboardOverlayTitle}>Multi-Touch Attribution Center</h3>
+                    <p className={styles.dashboardOverlaySub}>
+                      Real-time ROAS guardrails &amp; server-side conversion dispatch across Meta &amp; Google
+                    </p>
+                    <div className={styles.overlayPillRow}>
+                      <span className={styles.overlayStatChip}>⚡ 4.8X Blended ROAS</span>
+                      <span className={styles.overlayStatChip}>🎯 ₹1,240 Target CAC</span>
+                      <span className={styles.overlayStatChip}>🛡️ 99.4% CAPI Match</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* Image Card 2: Predictable Performance Scale Engine */}
+            <ScrollReveal className={styles.cardCol}>
+              <div className={styles.scaleImgCard}>
+                <div className={styles.dashboardImgWrap}>
+                  <Image
+                    src="/images/hero_performance_scale.jpg"
+                    alt="Nova Spark Performance Marketing Scaling Architecture Bhubaneswar"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 650px"
+                    className={styles.dashboardImg}
+                  />
+                  <div className={styles.dashboardImgOverlay}>
+                    <div className={styles.scaleOverlayBadge}>
+                      <span>📈 SYSTEMATIC SCALE ENGINE</span>
+                    </div>
+                    <h3 className={styles.dashboardOverlayTitle}>Predictable Revenue Architecture</h3>
+                    <p className={styles.dashboardOverlaySub}>
+                      From regional pilot to aggressive market domination without conversion rate fatigue
+                    </p>
+                    <div className={styles.overlayPillRow}>
+                      <span className={styles.overlayStatChip}>🚀 Sub-Second CRO LPs</span>
+                      <span className={styles.overlayStatChip}>📊 Zero-Leak Pipelines</span>
+                      <span className={styles.overlayStatChip}>🔄 WhatsApp CRM Sync</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+
+          {/* 4 Tactile Skeuomorphic Telemetry Pillars */}
+          <div className={styles.dashboardPillarsRow}>
+            <ScrollReveal delay={0.05} className={styles.cardCol}>
+              <div className={styles.dashboardPillarCard}>
+                <div className={styles.pillarHeader}>
+                  <div className={styles.pillarIconBowl}>🎯</div>
+                  <h4 className={styles.pillarTitle}>Multi-Touch Attribution</h4>
+                </div>
+                <p className={styles.pillarDesc}>
+                  Single source of truth tracking across Google Search, Shopping, Meta Reels, and WhatsApp inquiries without cookie degradation.
+                </p>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.1} className={styles.cardCol}>
+              <div className={styles.dashboardPillarCard}>
+                <div className={styles.pillarHeader}>
+                  <div className={styles.pillarIconBowl}>⚡</div>
+                  <h4 className={styles.pillarTitle}>Dynamic Landing Page Split Testing</h4>
+                </div>
+                <p className={styles.pillarDesc}>
+                  Sub-second page speeds with custom CRO variants engineered to convert paid traffic up to 3.8X higher.
+                </p>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.15} className={styles.cardCol}>
+              <div className={styles.dashboardPillarCard}>
+                <div className={styles.pillarHeader}>
+                  <div className={styles.pillarIconBowl}>🛡️</div>
+                  <h4 className={styles.pillarTitle}>Server-Side Conversions API (CAPI)</h4>
+                </div>
+                <p className={styles.pillarDesc}>
+                  Direct server-to-server event dispatch achieving 99.4% event match quality and accurate revenue attribution.
+                </p>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.2} className={styles.cardCol}>
+              <div className={styles.dashboardPillarCard}>
+                <div className={styles.pillarHeader}>
+                  <div className={styles.pillarIconBowl}>📈</div>
+                  <h4 className={styles.pillarTitle}>Automated Bid Optimization</h4>
+                </div>
+                <p className={styles.pillarDesc}>
+                  Continuous algorithmic budget allocation scaling high-performing ad sets while protecting minimum target ROAS.
+                </p>
+              </div>
+            </ScrollReveal>
+          </div>
+
+          <div style={{ textAlign: 'center', marginTop: '36px' }}>
+            <BeamButton
+              href="/contact"
+              label="Claim Your Custom Performance Roadmap →"
+              size="lg"
+            />
+          </div>
+        </div>
+      </section>
 
       {/* ══════════════════════════════════════════════════
           9. FREQUENTLY ASKED QUESTIONS (CLOSED BY DEFAULT)
