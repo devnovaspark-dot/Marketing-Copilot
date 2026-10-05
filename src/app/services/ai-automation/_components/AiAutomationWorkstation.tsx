@@ -12,6 +12,7 @@ interface Module {
   summary: string;
   badge: string;
   points: string[];
+  icon: React.ReactNode;
 }
 
 const MODULES: Module[] = [
@@ -24,7 +25,12 @@ const MODULES: Module[] = [
       'Green-tick verified business channel with zero risk of phone number blocking',
       'Dynamic interactive CTA message buttons & rich media catalog carousels',
       'Natural conversational handoff to human specialists with full chat transcripts'
-    ]
+    ],
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z" />
+      </svg>
+    )
   },
   {
     number: '02',
@@ -35,7 +41,16 @@ const MODULES: Module[] = [
       'Automated intent scoring: classifies leads into Hot, Warm, or Cold instantly',
       'Multi-territory round-robin assignment ensuring fair salesperson distribution',
       'Automated follow-up drips triggered at 2hr, 24hr, and 72hr milestone intervals'
-    ]
+    ],
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="18" cy="5" r="3" />
+        <circle cx="6" cy="12" r="3" />
+        <circle cx="18" cy="19" r="3" />
+        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
+        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+      </svg>
+    )
   },
   {
     number: '03',
@@ -46,7 +61,14 @@ const MODULES: Module[] = [
       'Multi-lingual speech recognition supporting Indian accents, Odia, Hindi, and English',
       'Direct Google Calendar, Cal.com, and Calendly real-time appointment booking',
       'Detailed post-call audio transcription, sentiment tagging, and summary memos'
-    ]
+    ],
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
+        <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" />
+        <path d="M12 18v3M9 21h6" />
+      </svg>
+    )
   },
   {
     number: '04',
@@ -57,7 +79,13 @@ const MODULES: Module[] = [
       'Strict guardrails preventing made-up prices, invalid promises, or competitor mentions',
       'Instant real-time ingestion when your pricing tiers or seasonal inventories change',
       'Enterprise role-based access control protecting confidential operational documents'
-    ]
+    ],
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        <path d="m9 12 2 2 4-4" />
+      </svg>
+    )
   }
 ];
 
@@ -79,9 +107,7 @@ export default function AiAutomationWorkstation() {
             <div>
               <div className={styles.cardHeader}>
                 <div className={styles.iconWrapper}>
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
-                    <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
-                  </svg>
+                  {mod.icon}
                 </div>
                 <span className={styles.moduleNumber}>{mod.number}</span>
               </div>

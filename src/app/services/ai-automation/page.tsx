@@ -179,11 +179,25 @@ export default function AiAutomationPage() {
                   src="/images/Weekend Bhraman Tour Planner.jpg"
                   alt="Weekend Bhraman Tour Planner automated booking engine"
                   fill
-                  sizes="(max-width: 1024px) 100vw, 480px"
+                  sizes="(max-width: 1024px) 100vw, 550px"
                   className={styles.caseStudyImg}
                 />
                 <div className={styles.clientBadgeOverlay}>
                   Client Spotlight &middot; Experiential Travel
+                </div>
+              </div>
+              <div className={styles.clientProofStrip}>
+                <div className={styles.proofItem}>
+                  <span className={styles.proofVal}>₹42 Lakhs</span>
+                  <span className={styles.proofLabel}>Pipeline Booked</span>
+                </div>
+                <div className={styles.proofItem}>
+                  <span className={styles.proofVal}>1.4s</span>
+                  <span className={styles.proofLabel}>Avg Bot Latency</span>
+                </div>
+                <div className={styles.proofItem}>
+                  <span className={styles.proofVal}>82%</span>
+                  <span className={styles.proofLabel}>Auto-Booked</span>
                 </div>
               </div>
             </div>
