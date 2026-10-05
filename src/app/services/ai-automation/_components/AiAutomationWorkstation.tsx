@@ -79,7 +79,7 @@ export default function AiAutomationWorkstation() {
             <div>
               <div className={styles.cardHeader}>
                 <div className={styles.iconWrapper}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
                     <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
                   </svg>
                 </div>
@@ -99,8 +99,11 @@ export default function AiAutomationWorkstation() {
               </ul>
             </div>
 
-            <div className={styles.badge}>
-              {mod.badge}
+            <div className={styles.cardFooter}>
+              <span className={styles.badge}>{mod.badge}</span>
+              <span className={styles.liveIndicator}>
+                <span className={styles.liveDot} /> Active Engine
+              </span>
             </div>
           </div>
         ))}
@@ -110,12 +113,22 @@ export default function AiAutomationWorkstation() {
       <div className={styles.workstationBanner}>
         <div className={styles.bannerImgWrap}>
           <Image
-            src="/images/Google ads & Meta ads.png"
-            alt="Omnichannel WhatsApp Cloud API & CRM Automation Architecture"
+            src="/images/hero_growth_mastery.jpg"
+            alt="Omnichannel WhatsApp Cloud API & CRM Automation Architecture Command Center"
             fill
             sizes="(max-width: 1024px) 100vw, 550px"
             className={styles.bannerImg}
           />
+          <div className={styles.bannerImgOverlay}>
+            <div className={styles.bannerFloatingTag}>
+              <span className={styles.liveDot} />
+              <span>LIVE PIPELINE DISPATCH</span>
+            </div>
+            <div className={styles.bannerStatPills}>
+              <span>⚡ &lt; 2s Latency</span>
+              <span>🛡️ Meta BSP Verified</span>
+            </div>
+          </div>
         </div>
         <div className={styles.bannerContent}>
           <div className={styles.bannerBadge}>

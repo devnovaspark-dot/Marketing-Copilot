@@ -174,15 +174,17 @@ export default function AiAutomationPage() {
         <div className="container">
           <div className={styles.caseStudyCard}>
             <div className={styles.caseStudyMedia}>
-              <Image
-                src="/images/Weekend Bhraman Tour Planner.jpg"
-                alt="Weekend Bhraman Tour Planner automated booking engine"
-                fill
-                sizes="(max-width: 1024px) 100vw, 600px"
-                className={styles.caseStudyImg}
-              />
-              <div className={styles.clientBadgeOverlay}>
-                Client Spotlight &middot; Experiential Travel
+              <div className={styles.caseStudyImgFrame}>
+                <Image
+                  src="/images/Weekend Bhraman Tour Planner.jpg"
+                  alt="Weekend Bhraman Tour Planner automated booking engine"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 480px"
+                  className={styles.caseStudyImg}
+                />
+                <div className={styles.clientBadgeOverlay}>
+                  Client Spotlight &middot; Experiential Travel
+                </div>
               </div>
             </div>
 
@@ -303,12 +305,16 @@ export default function AiAutomationPage() {
             </div>
             <div className={styles.arsenalBannerImgWrap}>
               <Image
-                src="/images/ns_services_graphic_slide_2.png"
+                src="/images/hero_performance_scale.jpg"
                 alt="Nova Spark Enterprise AI Architecture Infrastructure Bhubaneswar"
                 fill
                 sizes="(max-width: 1024px) 100vw, 550px"
                 className={styles.bannerImg}
               />
+              <div className={styles.bannerOverlayBadge}>
+                <span className={styles.liveDot} />
+                <span>99.99% SYSTEM AVAILABILITY</span>
+              </div>
             </div>
           </div>
         </div>
