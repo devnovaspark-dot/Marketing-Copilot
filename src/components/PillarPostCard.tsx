@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import BeamButton from '@/components/BeamButton';
 import styles from './PillarPostCard.module.css';
 
 interface PillarPostCardProps {
@@ -20,10 +21,9 @@ export default function PillarPostCard({ pillar }: PillarPostCardProps) {
       </div>
       <h4 className={styles.pillarTitle}>{pillar.title}</h4>
       {pillar.excerpt && <p className={styles.pillarExcerpt}>{pillar.excerpt}</p>}
-      <Link href={`/insights/${pillar.slug}`} className={styles.pillarLink}>
-        <span>Read Core Pillar Guide</span>
-        <span aria-hidden="true">→</span>
-      </Link>
+      <div style={{ marginTop: '0.5rem' }}>
+        <BeamButton href={`/insights/${pillar.slug}`} label="Read Core Pillar Guide" size="sm" />
+      </div>
     </aside>
   );
 }

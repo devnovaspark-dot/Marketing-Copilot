@@ -34,7 +34,7 @@ export default function TableOfContents({ headings }: { headings: HeadingItem[] 
     return () => observer.disconnect();
   }, [headings]);
 
-  if (!headings || headings.length === 0) return null;
+  if (!headings || headings.length < 2) return null;
 
   return (
     <nav className={styles.tocCard} aria-label="Table of Contents">

@@ -6,14 +6,14 @@
 .contentWrapper {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 3rem 1.5rem 0;
+  padding: 2.25rem 1.5rem 0;
   width: 100%;
   box-sizing: border-box;
 }
 
 @media (min-width: 1024px) {
   .contentWrapper {
-    padding: 3.5rem 2rem 0;
+    padding: 2.5rem 2rem 0;
   }
 }
 
@@ -56,12 +56,12 @@
   }
 }
 
-/* Key Takeaways Box (Clean Skeuomorphic) */
+/* Key Takeaways Box (Clean Editorial Skeuomorphic) */
 .takeawaysBox {
-  background: #FFFFFF;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
   border: 1.5px solid #E2E8F0;
-  border-radius: 18px;
-  padding: 1.75rem 2rem;
+  border-radius: 20px;
+  padding: 24px 28px;
   margin-bottom: 2.75rem;
   box-shadow: 
     inset 0 2px 0 #FFFFFF,
@@ -72,23 +72,35 @@
 
 .takeawaysHeader {
   display: flex;
-  align-items: center;
-  gap: 0.625rem;
-  margin-bottom: 1.125rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #EDF2F7;
 }
 
-.takeawaysIcon {
-  color: var(--accent-gold-dark, #D97706);
-  font-size: 1.125rem;
+.takeawaysBadge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 10.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #0B2093;
+  background: #EFF6FF;
+  border: 1px solid #BFDBFE;
+  padding: 4px 11px;
+  border-radius: 9999px;
+  box-shadow: inset 0 1px 0 #FFFFFF;
 }
 
 .takeawaysTitle {
   font-family: var(--font-display), sans-serif;
-  font-size: 0.95rem;
+  font-size: 1.125rem;
   font-weight: 800;
-  color: #B45309;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  color: #000000;
+  letter-spacing: -0.015em;
   margin: 0;
 }
 
@@ -98,26 +110,32 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.875rem;
+  gap: 12px;
 }
 
 .takeawayItem {
   display: flex;
   align-items: flex-start;
-  gap: 0.75rem;
-  font-size: 0.975rem;
+  gap: 12px;
+  font-size: 15.5px;
   color: #1E293B;
   line-height: 1.6;
-  font-weight: 500;
+  font-weight: 550;
 }
 
-.takeawayDot {
-  width: 7px;
-  height: 7px;
+.takeawayIconWrap {
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
-  background: var(--accent-gold, #F59E0B);
-  margin-top: 0.5rem;
+  background: #EFF6FF;
+  border: 1px solid #BFDBFE;
+  color: #0B2093;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
+  margin-top: 2px;
+  box-shadow: inset 0 1px 0 #FFFFFF;
 }
 
 /* Article Body Typography & Spacing */

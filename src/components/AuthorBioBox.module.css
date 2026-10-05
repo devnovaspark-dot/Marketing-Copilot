@@ -41,8 +41,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--accent-gold-dim, rgba(245, 158, 11, 0.12));
-  color: var(--accent-gold-dark, #D97706);
+  background: #EFF6FF;
+  color: #0B2093;
   font-weight: 800;
   font-size: 1.5rem;
 }
@@ -54,10 +54,10 @@
 
 .label {
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--text-muted, #64748B);
+  color: #0B2093;
   margin-bottom: 0.2rem;
 }
 
@@ -73,7 +73,7 @@
 .role {
   font-size: 0.8125rem;
   font-weight: 700;
-  color: var(--accent-gold-dark, #D97706);
+  color: #475569;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   margin-top: 0.25rem;

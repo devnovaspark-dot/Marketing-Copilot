@@ -18,6 +18,20 @@ export default function AuthorBioBox({
 }: AuthorBioBoxProps) {
   const initial = name ? name.charAt(0).toUpperCase() : 'M';
 
+  const resolvedRole =
+    role && role.trim().toLowerCase() !== name.trim().toLowerCase()
+      ? role
+      : 'Senior Growth Strategist & Digital Operator';
+
+  const isDuplicateOrShortBio =
+    !bio ||
+    bio.trim().toLowerCase() === name.trim().toLowerCase() ||
+    bio.trim().length < 15;
+
+  const resolvedBio = isDuplicateOrShortBio
+    ? 'Senior digital growth strategist and campaign operator at Marketing Copilot. Specializing in high-ROI search optimization, performance customer acquisition, and technical conversion engines for ambitious Indian businesses.'
+    : bio;
+
   return (
     <div className={styles.authorCard} aria-label="About the Author">
       <div className={styles.topRow}>
@@ -38,16 +52,11 @@ export default function AuthorBioBox({
         <div className={styles.authorMeta}>
           <span className={styles.label}>About the Author</span>
           <h4 className={styles.name}>{name}</h4>
-          {role && role.trim().toLowerCase() !== name.trim().toLowerCase() && (
-            <span className={styles.role}>{role}</span>
-          )}
+          <span className={styles.role}>{resolvedRole}</span>
         </div>
       </div>
 
-      <p className={styles.bio}>
-        {bio ||
-          `Senior growth strategist and digital operator at Marketing Copilot. Specializing in high-ROI SEO, performance advertising, and technical conversion architectures for growth-focused brands across India.`}
-      </p>
+      <p className={styles.bio}>{resolvedBio}</p>
 
       <div className={styles.footerActions}>
         <div className={styles.socialList}>

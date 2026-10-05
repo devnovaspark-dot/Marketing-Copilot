@@ -190,22 +190,29 @@ export default async function ArticlePage({
             {/* Left Column: Core Article Content */}
             <main className={styles.mainCol}>
               {/* Executive Key Takeaways Box */}
-              {article.takeaways && article.takeaways.length > 0 && (
-                <div className={styles.takeawaysBox}>
-                  <div className={styles.takeawaysHeader}>
-                    <span className={styles.takeawaysIcon}>✦</span>
-                    <h3 className={styles.takeawaysTitle}>Executive Key Takeaways</h3>
+              {article.takeaways &&
+                article.takeaways.filter((item: string) => typeof item === 'string' && item.trim().length > 0).length > 0 && (
+                  <div className={styles.takeawaysBox} aria-label="Executive Key Takeaways">
+                    <div className={styles.takeawaysHeader}>
+                      <span className={styles.takeawaysBadge}>✦ Executive Summary</span>
+                      <h3 className={styles.takeawaysTitle}>Key Takeaways &amp; Strategic Action Points</h3>
+                    </div>
+                    <ul className={styles.takeawaysList}>
+                      {article.takeaways
+                        .filter((item: string) => typeof item === 'string' && item.trim().length > 0)
+                        .map((item: string, idx: number) => (
+                          <li key={idx} className={styles.takeawayItem}>
+                            <span className={styles.takeawayIconWrap} aria-hidden="true">
+                              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                                <polyline points="20 6 9 17 4 12" />
+                              </svg>
+                            </span>
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                    </ul>
                   </div>
-                  <ul className={styles.takeawaysList}>
-                    {article.takeaways.map((item: string, idx: number) => (
-                      <li key={idx} className={styles.takeawayItem}>
-                        <span className={styles.takeawayDot} />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
+                )}
 
               {/* Main Article Body */}
               {article.body && (
