@@ -1,23 +1,23 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Meta & Facebook Ads Agency in Bhubaneswar | Instagram Ads Growth',
-  description: 'Scale direct-response sales with Bhubaneswar’s top Meta Ads agency. High-velocity creative sprints, Advantage+ AI targeting, and first-party data tracking.',
+  title: 'Meta Ads Agency in Bhubaneswar | Facebook & Instagram Ads Growth',
+  description: 'Make every Meta ad work harder. Targeted Facebook and Instagram ad campaigns in Bhubaneswar and Odisha that generate qualified leads and measurable growth.',
   alternates: {
     canonical: 'https://marketingcopilot.in/services/meta-ads',
   },
   openGraph: {
-    title: 'Meta & Facebook Ads Agency in Bhubaneswar | Instagram Ads Growth',
-    description: 'Scale direct-response sales with Bhubaneswar’s top Meta Ads agency. High-velocity creative sprints and Advantage+ AI targeting.',
+    title: 'Meta Ads Agency in Bhubaneswar | Facebook & Instagram Ads Growth',
+    description: 'Make every Meta ad work harder. Targeted Facebook and Instagram ad campaigns in Bhubaneswar and Odisha.',
     url: 'https://marketingcopilot.in/services/meta-ads',
-    siteName: 'Marketing Copilot',
+    siteName: 'Nova Spark Digital',
     locale: 'en_IN',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Meta & Facebook Ads Agency in Bhubaneswar | Instagram Ads Growth',
-    description: 'Scale direct-response sales with Bhubaneswar’s top Meta Ads agency. High-velocity creative sprints and Advantage+ AI targeting.',
+    title: 'Meta Ads Agency in Bhubaneswar | Facebook & Instagram Ads Growth',
+    description: 'Make every Meta ad work harder. Targeted Facebook and Instagram ad campaigns in Bhubaneswar and Odisha.',
   },
 };
 
