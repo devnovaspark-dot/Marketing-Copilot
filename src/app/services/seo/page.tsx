@@ -8,20 +8,102 @@ import SERPSimulator from './_components/SERPSimulator';
 import QuickConnectMapSection from '@/app/_components/QuickConnectMapSection';
 import styles from './seo-page.module.css';
 
-// 12 Target Industries
+// 12 Target Industries with tailored strategies
 const industriesList = [
-  { name: 'Healthcare & Clinics', icon: '🏥', example: 'Dental clinics, private hospitals & specialized treatments' },
-  { name: 'Education & Coaching', icon: '🎓', example: 'Coaching centers, CBSE/ICSE schools & universities' },
-  { name: 'Real Estate & Builders', icon: '🏢', example: 'Luxury apartments, commercial properties & plots' },
-  { name: 'Hospitality & Hotels', icon: '🏨', example: 'Direct room bookings, banquet halls & venue searches' },
-  { name: 'E-commerce Brands', icon: '🛍️', example: 'High-intent product queries & direct transactions' },
-  { name: 'Technology & SaaS', icon: '💻', example: 'B2B search intent, software demos & product trials' },
-  { name: 'Professional Services', icon: '⚖️', example: 'Legal advocates, chartered accountants & consultants' },
-  { name: 'Startups & Scaleups', icon: '🚀', example: 'Category discovery & rapid search engine indexing' },
-  { name: 'Financial Services', icon: '💳', example: 'Wealth management, home loans & tax advisory' },
-  { name: 'Beauty & Wellness', icon: '🌿', example: 'Salons, dermatology clinics & wellness spas' },
-  { name: 'Food & Restaurants', icon: '🍽️', example: 'Local dining reservations, cafes & food catering' },
-  { name: 'Local Businesses', icon: '📍', example: 'Google Maps 3-Pack & high-converting nearby queries' },
+  { 
+    name: 'Healthcare & Clinics', 
+    icon: '🏥', 
+    example: 'Dental clinics, private hospitals & specialized treatments',
+    focus: 'Google Maps 3-Pack, doctor schema & patient appointment intent queries'
+  },
+  { 
+    name: 'Education & Coaching', 
+    icon: '🎓', 
+    example: 'Coaching centers, CBSE/ICSE schools & universities',
+    focus: 'Admission keyword clusters, local school directories & parent review profiles'
+  },
+  { 
+    name: 'Real Estate & Builders', 
+    icon: '🏢', 
+    example: 'Luxury apartments, commercial properties & plots',
+    focus: 'High-intent buyer searches, project landing page SEO & location geo-grids'
+  },
+  { 
+    name: 'Hospitality & Hotels', 
+    icon: '🏨', 
+    example: 'Direct room bookings, banquet halls & venue searches',
+    focus: 'Commission-free direct booking SEO, wedding hall queries & tourist maps'
+  },
+  { 
+    name: 'E-commerce Brands', 
+    icon: '🛍️', 
+    example: 'High-intent product queries & direct transactions',
+    focus: 'Product schema markup, category page SEO & transaction intent keywords'
+  },
+  { 
+    name: 'Technology & SaaS', 
+    icon: '💻', 
+    example: 'B2B search intent, software demos & product trials',
+    focus: 'Comparison content, software feature clusters & high-ticket B2B keywords'
+  },
+  { 
+    name: 'Professional Services', 
+    icon: '⚖️', 
+    example: 'Legal advocates, chartered accountants & consultants',
+    focus: 'Authority building, local Bhubaneswar trust signals & verified client lead forms'
+  },
+  { 
+    name: 'Startups & Scaleups', 
+    icon: '🚀', 
+    example: 'Category discovery & rapid search engine indexing',
+    focus: 'Rapid technical indexing, founding team topical authority & investor keywords'
+  },
+  { 
+    name: 'Financial Services', 
+    icon: '💳', 
+    example: 'Wealth management, home loans & tax advisory',
+    focus: 'High-trust compliance content, local financial intent & commercial lead generation'
+  },
+  { 
+    name: 'Beauty & Wellness', 
+    icon: '🌿', 
+    example: 'Salons, dermatology clinics & wellness spas',
+    focus: 'Localized neighborhood searches, bridal package keywords & Google 3-Pack'
+  },
+  { 
+    name: 'Food & Restaurants', 
+    icon: '🍽️', 
+    example: 'Local dining reservations, cafes & food catering',
+    focus: 'Menu schema, food search intent, catering inquiries & map ratings'
+  },
+  { 
+    name: 'Local Businesses', 
+    icon: '📍', 
+    example: 'Google Maps 3-Pack & high-converting nearby queries',
+    focus: 'Near me geo-targeting, citation cleanup, and neighborhood review compounding'
+  },
+];
+
+// Interactive Suggested Keywords for Opportunities section
+const searchPresets = [
+  {
+    query: 'seo agency in bhubaneswar',
+    title: 'Top SEO Marketing Agency in Bhubaneswar | Make Google Your Growth Channel',
+    ctr: '38.4% CTR',
+    intent: 'Transactional · High Inquiries',
+  },
+  {
+    query: 'digital marketing company in bhubaneswar',
+    title: 'Digital Marketing Company in Bhubaneswar | Strategy. Search. Growth.',
+    ctr: '34.8% CTR',
+    intent: 'Commercial · Enterprise Inquiries',
+  },
+  {
+    query: 'best web development company in bhubaneswar',
+    title: 'High-Performance Web Development & Next.js Agency in Bhubaneswar',
+    ctr: '31.2% CTR',
+    intent: 'Commercial · Direct Call Intent',
+  },
 ];
 
 // What Can SEO Do for Your Business
@@ -129,11 +211,21 @@ const seoFaqs = [
 ];
 
 export default function SEOPage() {
-  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
+  // FAQs CLOSED by default so users can open whichever they want
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+
+  // Active industry selection
+  const [selectedIndustry, setSelectedIndustry] = useState<number>(0);
+
+  // Active SERP query preview
+  const [activePresetIndex, setActivePresetIndex] = useState<number>(0);
 
   const toggleFaq = (idx: number) => {
     setOpenFaqIndex(openFaqIndex === idx ? null : idx);
   };
+
+  const currentPreset = searchPresets[activePresetIndex];
+  const activeInd = industriesList[selectedIndustry];
 
   return (
     <div className={styles.pageWrapper}>
@@ -183,7 +275,7 @@ export default function SEOPage() {
               </div>
             </ScrollReveal>
 
-            {/* Horizontal Telemetry Ribbon */}
+            {/* Skeuomorphic Telemetry Ribbon */}
             <div className={styles.telemetryRibbon}>
               <div className={styles.telemetryCell}>
                 <span className={styles.tVal}>#1 Rank</span>
@@ -202,36 +294,18 @@ export default function SEOPage() {
                 <span className={styles.tLabel}>Compounding Growth</span>
               </div>
             </div>
-
-            {/* Hero Dashboard Showcase Visual */}
-            <div className={styles.heroVisualContainer}>
-              <div className={styles.heroVisualFrame}>
-                <Image
-                  src="/images/dashboard_hero.jpg"
-                  alt="Google Search Console & SEO Growth Analytics Dashboard"
-                  fill
-                  priority
-                  sizes="(max-width: 1100px) 100vw, 1060px"
-                  className={styles.heroVisualImg}
-                />
-                <div className={styles.heroFloatingBadgeLeft}>
-                  <span style={{ fontSize: 20 }}>📊</span>
-                  <div style={{ textAlign: 'left' }}>
-                    <div style={{ fontSize: 13, fontWeight: 800 }}>#1 on Google Search</div>
-                    <div style={{ fontSize: 11, color: '#94A3B8' }}>Live Bhubaneswar Telemetry</div>
-                  </div>
-                </div>
-                <div className={styles.heroFloatingBadgeRight}>
-                  <span>⚡ Core Web Vitals 99/100 · Mobile Ready</span>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
       {/* ══════════════════════════════════════════════════
-          2. INDUSTRIES SECTION
+          2. DRIVING BUSINESS GROWTH WITH DIGITAL MARKETING IN BHUBANESWAR
+          (Replaces the image down the hero as requested)
+         ══════════════════════════════════════════════════ */}
+      <QuickConnectMapSection />
+
+      {/* ══════════════════════════════════════════════════
+          3. INDUSTRIES SECTION (SKEUOMORPHIC CARDS)
          ══════════════════════════════════════════════════ */}
       <section id="industries" className={styles.industrySection}>
         <div className="container">
@@ -252,28 +326,85 @@ export default function SEOPage() {
               <p className={styles.sectionSub}>
                 For each industry, we study how customers search, what competitors are ranking for and which keywords can bring valuable traffic. We then build a strategy around your specific goals, whether that means increasing local visibility, generating leads, improving rankings or attracting more relevant website visitors.
               </p>
-              <p style={{ fontWeight: 700, color: '#0B2093', marginTop: 14, fontSize: '16.5px' }}>
+              <p style={{ fontWeight: 800, color: '#0B2093', marginTop: 14, fontSize: '16.5px' }}>
                 Different businesses need different SEO strategies. We build yours accordingly.
               </p>
             </div>
 
+            {/* Skeuomorphic 12-Industry Grid */}
             <div className={styles.industryGrid}>
-              {industriesList.map((ind) => (
-                <div key={ind.name} className={styles.industryCard}>
-                  <div className={styles.industryIconBox}>
-                    <span>{ind.icon}</span>
+              {industriesList.map((ind, idx) => {
+                const isSelected = selectedIndustry === idx;
+                return (
+                  <div
+                    key={ind.name}
+                    className={styles.industryCard}
+                    onClick={() => setSelectedIndustry(idx)}
+                    style={{
+                      borderColor: isSelected ? '#0B2093' : undefined,
+                      background: isSelected ? 'linear-gradient(180deg, #FFFFFF 0%, #EFF6FF 100%)' : undefined,
+                    }}
+                  >
+                    <div className={styles.industryIconBox}>
+                      <span>{ind.icon}</span>
+                    </div>
+                    <h3 className={styles.industryName}>{ind.name}</h3>
+                    <span className={styles.industryExample}>{ind.example}</span>
                   </div>
-                  <h3 className={styles.industryName}>{ind.name}</h3>
-                  <span className={styles.industryExample}>{ind.example}</span>
+                );
+              })}
+            </div>
+
+            {/* Interactive Strategy Takeaway Display */}
+            <div
+              style={{
+                marginTop: 24,
+                background: 'linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%)',
+                border: '1.5px solid #CBD5E1',
+                borderRadius: 14,
+                padding: '16px 22px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                flexWrap: 'wrap',
+                gap: 12,
+                boxShadow: 'inset 0 1.5px 0 #FFFFFF, 0 4px 12px rgba(11, 32, 147, 0.06)',
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                <span style={{ fontSize: 24 }}>{activeInd.icon}</span>
+                <div>
+                  <span style={{ fontSize: 11.5, fontWeight: 800, color: '#0B2093', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                    Active Blueprint: {activeInd.name}
+                  </span>
+                  <div style={{ fontSize: 13.5, color: '#334155', fontWeight: 600 }}>
+                    {activeInd.focus}
+                  </div>
                 </div>
-              ))}
+              </div>
+              <Link
+                href="/contact"
+                style={{
+                  fontSize: 12.5,
+                  fontWeight: 800,
+                  color: '#0B2093',
+                  background: '#EFF6FF',
+                  border: '1px solid #BFDBFE',
+                  padding: '8px 16px',
+                  borderRadius: 8,
+                  textDecoration: 'none',
+                  boxShadow: 'inset 0 1px 0 #FFFFFF',
+                }}
+              >
+                Request {activeInd.name.split('&')[0]} SEO Plan →
+              </Link>
             </div>
           </ScrollReveal>
         </div>
       </section>
 
       {/* ══════════════════════════════════════════════════
-          3. OPPORTUNITIES SECTION
+          4. OPPORTUNITIES SECTION
          ══════════════════════════════════════════════════ */}
       <section className={styles.opportunitiesSection}>
         <div className="container">
@@ -319,7 +450,7 @@ export default function SEOPage() {
                 </div>
               </div>
 
-              {/* Opportunities Visual Stack with Graphic & SERP Mockup */}
+              {/* Opportunities Visual Stack with Graphic & Interactive SERP Mockup */}
               <div className={styles.oppVisualStack}>
                 <div className={styles.oppImageFrame}>
                   <Image
@@ -331,10 +462,35 @@ export default function SEOPage() {
                   />
                 </div>
 
+                {/* Interactive Simulated SERP Card */}
                 <div className={styles.serpMockupCard}>
+                  {/* Preset Pills */}
+                  <div style={{ display: 'flex', gap: 6, marginBottom: 14, flexWrap: 'wrap' }}>
+                    {searchPresets.map((preset, pIdx) => (
+                      <button
+                        key={preset.query}
+                        type="button"
+                        onClick={() => setActivePresetIndex(pIdx)}
+                        style={{
+                          fontSize: 11,
+                          fontWeight: 700,
+                          padding: '4px 10px',
+                          borderRadius: 6,
+                          border: activePresetIndex === pIdx ? '1px solid #0B2093' : '1px solid #CBD5E1',
+                          background: activePresetIndex === pIdx ? '#0B2093' : '#FFFFFF',
+                          color: activePresetIndex === pIdx ? '#FFFFFF' : '#475569',
+                          cursor: 'pointer',
+                          transition: 'all 0.2s',
+                        }}
+                      >
+                        {preset.query}
+                      </button>
+                    ))}
+                  </div>
+
                   <div className={styles.serpSearchInput}>
                     <span>🔍</span>
-                    <span>best seo marketing company in bhubaneswar</span>
+                    <span>{currentPreset.query}</span>
                   </div>
 
                   <div className={styles.serpSnippet}>
@@ -343,7 +499,7 @@ export default function SEOPage() {
                       <span>https://marketingcopilot.in &gt; services &gt; seo</span>
                     </div>
                     <h4 className={styles.serpResultTitle}>
-                      SEO Marketing Agency in Bhubaneswar | Make Google Your Growth Channel
+                      {currentPreset.title}
                     </h4>
                     <p className={styles.serpResultDesc}>
                       Top-ranked SEO marketing agency in Bhubaneswar. Technical SEO, Google Maps 3-Pack optimization, and high-intent organic traffic that converts visitors into paying customers.
@@ -353,11 +509,11 @@ export default function SEOPage() {
                   <div className={styles.serpStatsPills}>
                     <div className={styles.serpPillItem}>
                       <span className={styles.serpPillVal}>#1 Position</span>
-                      <span className={styles.serpPillLbl}>Organic Search</span>
+                      <span className={styles.serpPillLbl}>{currentPreset.intent}</span>
                     </div>
                     <div className={styles.serpPillItem}>
-                      <span className={styles.serpPillVal}>34.8% CTR</span>
-                      <span className={styles.serpPillLbl}>High Intent Clicks</span>
+                      <span className={styles.serpPillVal}>{currentPreset.ctr}</span>
+                      <span className={styles.serpPillLbl}>Organic Search Velocity</span>
                     </div>
                   </div>
                 </div>
@@ -368,7 +524,7 @@ export default function SEOPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          4. BENEFITS SECTION (WHAT CAN SEO DO)
+          5. BENEFITS SECTION (WHAT CAN SEO DO)
          ══════════════════════════════════════════════════ */}
       <section className={styles.benefitsSection}>
         <div className="container">
@@ -404,7 +560,7 @@ export default function SEOPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          5. DIFFERENT SECTION (WHAT MAKES SEO DIFFERENT)
+          6. DIFFERENT SECTION (WHAT MAKES SEO DIFFERENT)
          ══════════════════════════════════════════════════ */}
       <section className={styles.differentSection}>
         <div className="container">
@@ -435,7 +591,7 @@ export default function SEOPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          6. SPECIAL SECTION (WHAT MAKES NOVA SPARK SPECIAL)
+          7. SPECIAL SECTION (WHAT MAKES NOVA SPARK SPECIAL)
          ══════════════════════════════════════════════════ */}
       <section className={styles.specialSection}>
         <div className="container">
@@ -472,7 +628,7 @@ export default function SEOPage() {
                 </div>
               </div>
 
-              {/* 4 Core Philosophy Cards */}
+              {/* 4 Skeuomorphic Core Philosophy Cards */}
               <div className={styles.specialGrid}>
                 {specialCards.map((c) => (
                   <div key={c.title} className={styles.specialCard}>
@@ -488,14 +644,14 @@ export default function SEOPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          7. INTERACTIVE SERP SIMULATOR
+          8. INTERACTIVE SERP SIMULATOR
          ══════════════════════════════════════════════════ */}
       <div id="audit">
         <SERPSimulator />
       </div>
 
       {/* ══════════════════════════════════════════════════
-          8. FAQ SECTION (THE 6 EXACT QUESTIONS)
+          9. FAQ SECTION (THE 6 EXACT QUESTIONS - CLOSED BY DEFAULT)
          ══════════════════════════════════════════════════ */}
       <section className={styles.faqSection}>
         <div className="container">
@@ -544,7 +700,7 @@ export default function SEOPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          9. CONVERSION TERMINAL (READY TO RANK HIGHER)
+          10. CONVERSION TERMINAL (READY TO RANK HIGHER)
          ══════════════════════════════════════════════════ */}
       <section className={styles.conversionSection}>
         <div className="container">
@@ -553,7 +709,7 @@ export default function SEOPage() {
               <div className={styles.termGlow} />
               <div>
                 <span className={styles.termPill}>Make Google Work for You</span>
-                <div style={{ fontSize: 13, fontWeight: 700, letterSpacing: '0.04em', color: '#FCD34D', textTransform: 'uppercase', marginBottom: 8 }}>
+                <div style={{ fontSize: 13, fontWeight: 800, letterSpacing: '0.04em', color: '#FCD34D', textTransform: 'uppercase', marginBottom: 8 }}>
                   Ready to Rank Higher?
                 </div>
                 <h2 className={styles.termTitle}>
@@ -588,11 +744,6 @@ export default function SEOPage() {
           </ScrollReveal>
         </div>
       </section>
-
-      {/* ══════════════════════════════════════════════════
-          10. LOCAL BHUBANESWAR OFFICE CONNECT
-         ══════════════════════════════════════════════════ */}
-      <QuickConnectMapSection />
     </div>
   );
 }
