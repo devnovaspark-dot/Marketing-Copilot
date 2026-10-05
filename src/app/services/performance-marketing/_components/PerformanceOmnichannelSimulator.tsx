@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import BeamButton from '@/components/BeamButton';
 import styles from './PerformanceOmnichannelSimulator.module.css';
 
 interface Stage {
@@ -133,6 +134,14 @@ export default function PerformanceOmnichannelSimulator() {
                 <div className={styles.metricTileVal} style={{ color: '#FCD34D' }}>{formatINR(pipelineGenerated)}</div>
               </div>
             </div>
+          </div>
+
+          <div style={{ marginTop: '28px', display: 'flex', justifyContent: 'center' }}>
+            <BeamButton
+              href="/contact"
+              label="Model Your Custom Growth Architecture →"
+              size="lg"
+            />
           </div>
         </div>
       </div>
