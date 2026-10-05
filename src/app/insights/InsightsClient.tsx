@@ -318,53 +318,20 @@ export default function InsightsClient({ articles = [] }: { articles: Article[] 
                     </div>
                   )}
 
-                  {/* If only 1 article is published, provide a helpful Topic Exploration Section */}
+                  {/* When only 1 article exists, show a clean editorial production note instead of artificial fillers */}
                   {filteredArticles.length === 1 && (
-                    <ScrollReveal>
-                      <div className={styles.topicsBox}>
-                        <div className={styles.topicsHeader}>
-                          <span className={styles.topicsEyebrow}>✦ Strategic Focus Areas</span>
-                          <h3 className={styles.topicsTitle}>Explore Specialized Growth Services</h3>
-                          <p className={styles.topicsSub}>
-                            Deep domain expertise across digital marketing, performance ads, enterprise SEO, and automated conversion funnels.
-                          </p>
-                        </div>
-                        <div className={styles.topicsGrid}>
-                          <Link href="/services/performance-marketing" className={styles.topicCard}>
-                            <div className={styles.topicIcon}>📈</div>
-                            <div className={styles.topicInfo}>
-                              <h4>Performance Marketing</h4>
-                              <p>Google Ads & Meta Ads with strict ROAS governance</p>
-                            </div>
-                            <span className={styles.topicArrow}>→</span>
-                          </Link>
-                          <Link href="/services/seo" className={styles.topicCard}>
-                            <div className={styles.topicIcon}>🔍</div>
-                            <div className={styles.topicInfo}>
-                              <h4>SEO & Organic Growth</h4>
-                              <p>Technical architecture, AI entity search & Local 3-Pack</p>
-                            </div>
-                            <span className={styles.topicArrow}>→</span>
-                          </Link>
-                          <Link href="/services/social-media" className={styles.topicCard}>
-                            <div className={styles.topicIcon}>📱</div>
-                            <div className={styles.topicInfo}>
-                              <h4>Social Media Marketing</h4>
-                              <p>Short-form video hooks & organic community scaling</p>
-                            </div>
-                            <span className={styles.topicArrow}>→</span>
-                          </Link>
-                          <Link href="/services/ai-automation" className={styles.topicCard}>
-                            <div className={styles.topicIcon}>⚡</div>
-                            <div className={styles.topicInfo}>
-                              <h4>AI & Growth Automation</h4>
-                              <p>Autonomous CRM pipelines, workflows & lead nurture</p>
-                            </div>
-                            <span className={styles.topicArrow}>→</span>
-                          </Link>
-                        </div>
+                    <div className={styles.editorialNote}>
+                      <div className={styles.editorialNoteHeader}>
+                        <span className={styles.categoryDot} />
+                        <span className={styles.editorialNoteBadge}>Editorial Dispatch</span>
                       </div>
-                    </ScrollReveal>
+                      <h3 className={styles.editorialNoteTitle}>
+                        More Research & Growth Playbooks in Production
+                      </h3>
+                      <p className={styles.editorialNoteText}>
+                        Our senior growth operators in Bhubaneswar are currently compiling field benchmarks across Local 3-Pack SEO, Meta Ad creative velocity, and full-funnel CRO. Verified field notes and case studies are published weekly.
+                      </p>
+                    </div>
                   )}
                 </>
               )}
@@ -372,56 +339,58 @@ export default function InsightsClient({ articles = [] }: { articles: Article[] 
 
             {/* Sticky Sidebar Column (4 Columns) */}
             <aside className={styles.sidebarCol}>
-              {/* Dynamic Category Directory Card */}
-              <div className={styles.sidebarCard}>
-                <div className={styles.sidebarCardHeader}>
-                  <h4 className={styles.sidebarTitle}>Categories</h4>
-                  <span className={styles.sidebarTotalBadge}>{articles.length} Playbooks</span>
-                </div>
-                <div className={styles.categoryList}>
-                  {/* All Articles Option */}
-                  <button
-                    type="button"
-                    className={`${styles.categoryItem} ${
-                      activeCategory === 'All Articles' ? styles.categoryItemActive : ''
-                    }`}
-                    onClick={() => setActiveCategory('All Articles')}
-                  >
-                    <div className={styles.categoryLabelWrap}>
-                      <span className={styles.categoryBullet}>●</span>
-                      <span>All Articles</span>
-                    </div>
-                    <span className={styles.categoryCountBadge}>
-                      {articles.length}
-                    </span>
-                  </button>
+              {/* Dynamic Category Directory Card - Displayed when 2+ categories exist */}
+              {categories.length > 2 && (
+                <div className={styles.sidebarCard}>
+                  <div className={styles.sidebarCardHeader}>
+                    <h4 className={styles.sidebarTitle}>Categories</h4>
+                    <span className={styles.sidebarTotalBadge}>{articles.length} Playbooks</span>
+                  </div>
+                  <div className={styles.categoryList}>
+                    {/* All Articles Option */}
+                    <button
+                      type="button"
+                      className={`${styles.categoryItem} ${
+                        activeCategory === 'All Articles' ? styles.categoryItemActive : ''
+                      }`}
+                      onClick={() => setActiveCategory('All Articles')}
+                    >
+                      <div className={styles.categoryLabelWrap}>
+                        <span className={styles.categoryBullet}>●</span>
+                        <span>All Articles</span>
+                      </div>
+                      <span className={styles.categoryCountBadge}>
+                        {articles.length}
+                      </span>
+                    </button>
 
-                  {/* Individual Categories from Real Posts */}
-                  {categories.slice(1).map((cat) => {
-                    const count = articles.filter(
-                      (a) => a.category.toLowerCase() === cat.toLowerCase()
-                    ).length;
-                    return (
-                      <button
-                        key={cat}
-                        type="button"
-                        className={`${styles.categoryItem} ${
-                          activeCategory === cat ? styles.categoryItemActive : ''
-                        }`}
-                        onClick={() => setActiveCategory(cat)}
-                      >
-                        <div className={styles.categoryLabelWrap}>
-                          <span className={styles.categoryBullet}>●</span>
-                          <span>{cat}</span>
-                        </div>
-                        <span className={styles.categoryCountBadge}>
-                          {count}
-                        </span>
-                      </button>
-                    );
-                  })}
+                    {/* Individual Categories from Real Posts */}
+                    {categories.slice(1).map((cat) => {
+                      const count = articles.filter(
+                        (a) => a.category.toLowerCase() === cat.toLowerCase()
+                      ).length;
+                      return (
+                        <button
+                          key={cat}
+                          type="button"
+                          className={`${styles.categoryItem} ${
+                            activeCategory === cat ? styles.categoryItemActive : ''
+                          }`}
+                          onClick={() => setActiveCategory(cat)}
+                        >
+                          <div className={styles.categoryLabelWrap}>
+                            <span className={styles.categoryBullet}>●</span>
+                            <span>{cat}</span>
+                          </div>
+                          <span className={styles.categoryCountBadge}>
+                            {count}
+                          </span>
+                        </button>
+                      );
+                    })}
+                  </div>
                 </div>
-              </div>
+              )}
 
               {/* Newsletter Subscription Widget */}
               <div className={styles.newsletterCard}>

@@ -214,8 +214,8 @@ export default async function ArticlePage({
                 </article>
               )}
 
-              {/* Topic Cluster Pillar Post Card */}
-              {article.pillarPost && (
+              {/* Topic Cluster Pillar Post Card (Only render if pointing to a different pillar guide) */}
+              {article.pillarPost && article.pillarPost.slug !== slug && (
                 <PillarPostCard pillar={article.pillarPost} />
               )}
 

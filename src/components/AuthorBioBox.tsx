@@ -38,7 +38,9 @@ export default function AuthorBioBox({
         <div className={styles.authorMeta}>
           <span className={styles.label}>About the Author</span>
           <h4 className={styles.name}>{name}</h4>
-          {role && <span className={styles.role}>{role}</span>}
+          {role && role.trim().toLowerCase() !== name.trim().toLowerCase() && (
+            <span className={styles.role}>{role}</span>
+          )}
         </div>
       </div>
 

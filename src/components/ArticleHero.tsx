@@ -61,6 +61,7 @@ export default function ArticleHero({
 
   return (
     <section className={styles.heroSection}>
+      <div className={styles.heroAmbientAmber} />
       <div className={`container ${styles.inner}`}>
         {/* Left Column: Metadata & Title */}
         <div className={styles.leftCol}>
@@ -69,17 +70,17 @@ export default function ArticleHero({
             <Link href="/" className={styles.breadcrumbLink}>
               Home
             </Link>
-            <span>&gt;</span>
+            <span className={styles.breadcrumbSeparator}>/</span>
             <Link href="/insights" className={styles.breadcrumbLink}>
               Blog
             </Link>
-            <span>&gt;</span>
+            <span className={styles.breadcrumbSeparator}>/</span>
             <span className={styles.breadcrumbCurrent}>{category}</span>
           </nav>
 
           {/* Category Pill */}
           <div className={styles.categoryPill}>
-            <span aria-hidden="true">✦</span>
+            <span className={styles.pillDot} />
             <span>{category}</span>
           </div>
 

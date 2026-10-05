@@ -1,33 +1,46 @@
 .heroSection {
   position: relative;
   width: 100%;
-  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
-  border-bottom: 1px solid var(--border-subtle, #EDF2F7);
+  background: #FFFFFF;
+  border-bottom: 1px solid var(--border, #E2E8F0);
   overflow: hidden;
-  padding: 2.5rem 0 3.5rem;
+  padding-top: calc(var(--nav-height, 78px) + 36px);
+  padding-bottom: 48px;
+}
+
+.heroAmbientAmber {
+  position: absolute;
+  top: 10%;
+  right: 6%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.08) 0%, rgba(251, 191, 36, 0.02) 50%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
 }
 
 .inner {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2.25rem;
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 @media (min-width: 1024px) {
-  .heroSection {
-    padding: 3.5rem 0 4.5rem;
-  }
   .inner {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap: 3rem;
+    gap: 3.5rem;
   }
 }
 
 .leftCol {
-  flex: 1;
-  max-width: 680px;
+  flex: 1.15;
+  max-width: 660px;
 }
 
 .breadcrumbs {
@@ -42,6 +55,7 @@
 .breadcrumbLink {
   color: var(--text-secondary, #334155);
   text-decoration: none;
+  font-weight: 500;
   transition: color 0.2s ease;
 }
 
@@ -49,10 +63,15 @@
   color: var(--accent-gold-dark, #D97706);
 }
 
+.breadcrumbSeparator {
+  color: #CBD5E1;
+  font-size: 0.75rem;
+}
+
 .breadcrumbCurrent {
-  color: var(--text-primary, #000000);
-  font-weight: 600;
-  max-width: 200px;
+  color: #000000;
+  font-weight: 700;
+  max-width: 220px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -61,47 +80,44 @@
 .categoryPill {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  font-size: 0.75rem;
-  font-weight: 700;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--accent-gold-dark, #D97706);
-  background: var(--accent-gold-dim, rgba(245, 158, 11, 0.1));
-  border: 1px solid rgba(245, 158, 11, 0.25);
-  padding: 0.35rem 0.85rem;
+  color: #B45309;
+  background: #FFFBEB;
+  border: 1px solid #FDE68A;
+  padding: 4px 12px;
   border-radius: 9999px;
-  margin-bottom: 1.25rem;
+  margin-bottom: 14px;
+  box-shadow: inset 0 1px 0 #FFFFFF;
+}
+
+.pillDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #F59E0B;
+  box-shadow: 0 0 6px rgba(245, 158, 11, 0.8);
 }
 
 .title {
   font-family: var(--font-display), sans-serif;
-  font-size: 2.25rem;
-  font-weight: 800;
-  color: var(--text-primary, #000000);
-  line-height: 1.15;
+  font-size: clamp(26px, 3.4vw, 42px);
+  font-weight: 850;
+  color: #000000;
+  line-height: 1.18;
   letter-spacing: -0.025em;
-  margin: 0 0 1.25rem 0;
-}
-
-@media (min-width: 768px) {
-  .title {
-    font-size: 3rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .title {
-    font-size: 3.25rem;
-  }
+  margin: 0 0 16px 0;
 }
 
 .excerpt {
   font-family: var(--font-body), sans-serif;
-  font-size: 1.125rem;
-  line-height: 1.6;
-  color: var(--text-secondary, #334155);
-  margin: 0 0 1.75rem 0;
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: #475569;
+  margin: 0 0 24px 0;
 }
 
 .metaRow {
@@ -110,8 +126,8 @@
   justify-content: space-between;
   gap: 1rem;
   flex-wrap: wrap;
-  padding-top: 1rem;
-  border-top: 1px solid var(--border-subtle, #EDF2F7);
+  padding-top: 1.125rem;
+  border-top: 1px solid var(--border, #E2E8F0);
 }
 
 .authorBlock {
@@ -121,14 +137,17 @@
 }
 
 .avatar {
-  width: 46px;
-  height: 46px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   overflow: hidden;
-  border: 1px solid var(--border, #E2E8F0);
-  background: #FFFFFF;
+  border: 1.5px solid #FDE68A;
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFFBEB 100%);
   position: relative;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 0 #FFFFFF, 0 2px 6px rgba(245, 158, 11, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .avatarImg {
@@ -143,10 +162,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--accent-gold-dim, rgba(245, 158, 11, 0.12));
-  color: var(--accent-gold-dark, #D97706);
-  font-weight: 700;
-  font-size: 1.1rem;
+  color: #B45309;
+  font-weight: 800;
+  font-size: 1.05rem;
 }
 
 .authorText {
@@ -156,41 +174,43 @@
 
 .authorName {
   font-size: 0.95rem;
-  font-weight: 700;
-  color: var(--text-primary, #000000);
+  font-weight: 750;
+  color: #000000;
 }
 
 .dateReadTime {
   font-size: 0.8125rem;
-  color: var(--text-muted, #64748B);
-  font-weight: 400;
+  color: #64748B;
+  font-weight: 500;
 }
 
 .shareBtn {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.45rem;
   background: #FFFFFF;
-  border: 1px solid var(--border, #E2E8F0);
-  padding: 0.5rem 0.9rem;
+  border: 1.5px solid #E2E8F0;
+  padding: 0.5rem 1rem;
   border-radius: 9999px;
-  color: var(--text-secondary, #334155);
+  color: #334155;
   font-size: 0.8125rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: var(--shadow-xs, 0 1px 3px rgba(0, 0, 0, 0.04));
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: inset 0 1px 0 #FFFFFF, 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 .shareBtn:hover {
-  border-color: var(--accent-gold, #F59E0B);
-  color: var(--accent-gold-dark, #D97706);
+  border-color: #F59E0B;
+  color: #B45309;
+  background: #FFFBEB;
   transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(245, 158, 11, 0.15);
 }
 
 .rightCol {
-  flex: 1;
-  max-width: 580px;
+  flex: 0.95;
+  max-width: 520px;
   width: 100%;
 }
 
@@ -200,15 +220,19 @@
   aspect-ratio: 16 / 10;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 
+    inset 0 2px 0 #FFFFFF,
+    0 16px 40px -10px rgba(0, 0, 0, 0.09),
+    0 2px 6px rgba(0, 0, 0, 0.03);
+  border: 1.5px solid #E2E8F0;
+  background: #F8FAFC;
 }
 
 .bannerImage {
   object-fit: cover;
-  transition: transform 0.4s ease;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .bannerWrap:hover .bannerImage {
-  transform: scale(1.02);
+  transform: scale(1.04);
 }
