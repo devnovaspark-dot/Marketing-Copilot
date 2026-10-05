@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import ScrollReveal from '@/components/ScrollReveal';
 import SERPSimulator from './_components/SERPSimulator';
@@ -9,39 +10,43 @@ import styles from './seo-page.module.css';
 
 // 12 Target Industries
 const industriesList = [
-  { name: 'Healthcare & Clinics', icon: '🏥', example: 'Dental, hospitals & specialized treatments' },
-  { name: 'Education & Institutions', icon: '🎓', example: 'Coaching centers, schools & colleges' },
-  { name: 'Real Estate & Builders', icon: '🏢', example: 'Luxury apartments & commercial properties' },
-  { name: 'Hospitality & Hotels', icon: '🏨', example: 'Direct room bookings & banquet searches' },
-  { name: 'E-commerce Brands', icon: '🛍️', example: 'High-intent product queries & transactions' },
-  { name: 'Technology & SaaS', icon: '💻', example: 'B2B search intent, demos & software trials' },
-  { name: 'Professional Services', icon: '⚖️', example: 'Legal, CA, architects & enterprise consulting' },
-  { name: 'Startups & Scaleups', icon: '🚀', example: 'Category discovery & rapid indexation' },
-  { name: 'Financial Services', icon: '💳', example: 'Wealth management, loans & tax advisory' },
-  { name: 'Beauty & Wellness', icon: '🌿', example: 'Salons, dermatology & spas' },
-  { name: 'Food & Restaurants', icon: '🍽️', example: 'Dining reservations, catering & foodies' },
-  { name: 'Local Businesses', icon: '📍', example: 'Google Maps 3-Pack & nearby inquiries' },
+  { name: 'Healthcare & Clinics', icon: '🏥', example: 'Dental clinics, private hospitals & specialized treatments' },
+  { name: 'Education & Coaching', icon: '🎓', example: 'Coaching centers, CBSE/ICSE schools & universities' },
+  { name: 'Real Estate & Builders', icon: '🏢', example: 'Luxury apartments, commercial properties & plots' },
+  { name: 'Hospitality & Hotels', icon: '🏨', example: 'Direct room bookings, banquet halls & venue searches' },
+  { name: 'E-commerce Brands', icon: '🛍️', example: 'High-intent product queries & direct transactions' },
+  { name: 'Technology & SaaS', icon: '💻', example: 'B2B search intent, software demos & product trials' },
+  { name: 'Professional Services', icon: '⚖️', example: 'Legal advocates, chartered accountants & consultants' },
+  { name: 'Startups & Scaleups', icon: '🚀', example: 'Category discovery & rapid search engine indexing' },
+  { name: 'Financial Services', icon: '💳', example: 'Wealth management, home loans & tax advisory' },
+  { name: 'Beauty & Wellness', icon: '🌿', example: 'Salons, dermatology clinics & wellness spas' },
+  { name: 'Food & Restaurants', icon: '🍽️', example: 'Local dining reservations, cafes & food catering' },
+  { name: 'Local Businesses', icon: '📍', example: 'Google Maps 3-Pack & high-converting nearby queries' },
 ];
 
 // What Can SEO Do for Your Business
 const seoBenefits = [
   {
     icon: '🎯',
+    badge: 'TARGETED VISIBILITY',
     title: 'Get Found by the Right People',
     desc: 'SEO helps your website appear when people search for products, services or solutions you offer. By targeting relevant keywords and search intent, you can attract visitors who are already interested in what your business provides.',
   },
   {
     icon: '📈',
+    badge: 'QUALIFIED TRAFFIC',
     title: 'Bring More Relevant Traffic',
     desc: 'More website visitors are not always better. Our SEO approach focuses on bringing relevant, high-intent traffic to your website. This means reaching people who are more likely to explore your services, contact your team or make a purchase.',
   },
   {
     icon: '🛡️',
+    badge: 'COMPOUNDING ASSET',
     title: 'Build Long-Term Online Visibility',
     desc: 'Unlike paid campaigns that stop when your budget ends, SEO can build lasting organic visibility. With consistent optimisation, useful content and technical improvements, your website can continue attracting search traffic and creating opportunities over the long term.',
   },
   {
     icon: '💼',
+    badge: 'COMMERCIAL IMPACT',
     title: 'Turn Searches Into Business Growth',
     desc: 'SEO can support more than rankings. A well-optimised website can improve visibility, attract qualified visitors and increase enquiries. We connect SEO with your business goals to help turn organic search activity into meaningful growth and potential customers.',
   },
@@ -50,7 +55,7 @@ const seoBenefits = [
 // What Makes Our SEO Marketing Different
 const seoDifferentPillars = [
   {
-    badge: 'PILLAR 01 · KEYWORD RESEARCH',
+    badge: 'PILLAR 01 · INTENT DISCOVERY',
     title: 'Business-Focused Keyword Research',
     desc: 'Not all of the most popular keywords attract customers. Our SEO marketing service in Bhubaneswar emphasizes keywords that align with your business, audience, and goals. We research search volume, intent, competition, location, and commercial value to discover terms that can bring in relevant traffic and real business possibilities.',
   },
@@ -65,7 +70,7 @@ const seoDifferentPillars = [
     desc: 'Even a good web page can fail due to technical issues. The SEO Marketing Service in Bhubaneswar ensures crawlability, indexing, broken links, redirects, sitemaps, mobile experience, Core Web Vitals, duplicate content, and site structure, forming a solid technical foundation.',
   },
   {
-    badge: 'PILLAR 04 · CONTENT STRATEGY',
+    badge: 'PILLAR 04 · CONTENT AUTHORITY',
     title: 'Content SEO',
     desc: "Good SEO needs content that people actually want to read. Our SEO marketing company in Bhubaneswar develops and optimizes service pages, blogs, landing pages, FAQs, location pages, and guides based on real search intent. We're here to provide you with useful information, not keyword-stuffing or content just to hit word counts.",
   },
@@ -197,6 +202,30 @@ export default function SEOPage() {
                 <span className={styles.tLabel}>Compounding Growth</span>
               </div>
             </div>
+
+            {/* Hero Dashboard Showcase Visual */}
+            <div className={styles.heroVisualContainer}>
+              <div className={styles.heroVisualFrame}>
+                <Image
+                  src="/images/dashboard_hero.jpg"
+                  alt="Google Search Console & SEO Growth Analytics Dashboard"
+                  fill
+                  priority
+                  sizes="(max-width: 1100px) 100vw, 1060px"
+                  className={styles.heroVisualImg}
+                />
+                <div className={styles.heroFloatingBadgeLeft}>
+                  <span style={{ fontSize: 20 }}>📊</span>
+                  <div style={{ textAlign: 'left' }}>
+                    <div style={{ fontSize: 13, fontWeight: 800 }}>#1 on Google Search</div>
+                    <div style={{ fontSize: 11, color: '#94A3B8' }}>Live Bhubaneswar Telemetry</div>
+                  </div>
+                </div>
+                <div className={styles.heroFloatingBadgeRight}>
+                  <span>⚡ Core Web Vitals 99/100 · Mobile Ready</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -223,7 +252,7 @@ export default function SEOPage() {
               <p className={styles.sectionSub}>
                 For each industry, we study how customers search, what competitors are ranking for and which keywords can bring valuable traffic. We then build a strategy around your specific goals, whether that means increasing local visibility, generating leads, improving rankings or attracting more relevant website visitors.
               </p>
-              <p style={{ fontWeight: 700, color: '#0B2093', marginTop: 12 }}>
+              <p style={{ fontWeight: 700, color: '#0B2093', marginTop: 14, fontSize: '16.5px' }}>
                 Different businesses need different SEO strategies. We build yours accordingly.
               </p>
             </div>
@@ -231,7 +260,9 @@ export default function SEOPage() {
             <div className={styles.industryGrid}>
               {industriesList.map((ind) => (
                 <div key={ind.name} className={styles.industryCard}>
-                  <span className={styles.industryIcon}>{ind.icon}</span>
+                  <div className={styles.industryIconBox}>
+                    <span>{ind.icon}</span>
+                  </div>
                   <h3 className={styles.industryName}>{ind.name}</h3>
                   <span className={styles.industryExample}>{ind.example}</span>
                 </div>
@@ -288,34 +319,46 @@ export default function SEOPage() {
                 </div>
               </div>
 
-              {/* SERP Search Preview Mockup */}
-              <div className={styles.serpMockupCard}>
-                <div className={styles.serpSearchInput}>
-                  <span>🔍</span>
-                  <span>best seo marketing company in bhubaneswar</span>
+              {/* Opportunities Visual Stack with Graphic & SERP Mockup */}
+              <div className={styles.oppVisualStack}>
+                <div className={styles.oppImageFrame}>
+                  <Image
+                    src="/images/Seo & local search.png"
+                    alt="SEO & Local Search Optimization Framework in Bhubaneswar"
+                    fill
+                    sizes="(max-width: 900px) 100vw, 480px"
+                    className={styles.oppFeaturedImg}
+                  />
                 </div>
 
-                <div className={styles.serpSnippet}>
-                  <div className={styles.serpUrl}>
-                    <span>🌐</span>
-                    <span>https://marketingcopilot.in &gt; services &gt; seo</span>
+                <div className={styles.serpMockupCard}>
+                  <div className={styles.serpSearchInput}>
+                    <span>🔍</span>
+                    <span>best seo marketing company in bhubaneswar</span>
                   </div>
-                  <h4 className={styles.serpResultTitle}>
-                    SEO Marketing Agency in Bhubaneswar | Make Google Your Growth Channel
-                  </h4>
-                  <p className={styles.serpResultDesc}>
-                    Top-ranked SEO marketing agency in Bhubaneswar. Technical SEO, Google Maps 3-Pack optimization, and high-intent organic traffic that converts visitors into paying customers.
-                  </p>
-                </div>
 
-                <div className={styles.serpStatsPills}>
-                  <div className={styles.serpPillItem}>
-                    <span className={styles.serpPillVal}>#1 Position</span>
-                    <span className={styles.serpPillLbl}>Organic Search</span>
+                  <div className={styles.serpSnippet}>
+                    <div className={styles.serpUrl}>
+                      <span>🌐</span>
+                      <span>https://marketingcopilot.in &gt; services &gt; seo</span>
+                    </div>
+                    <h4 className={styles.serpResultTitle}>
+                      SEO Marketing Agency in Bhubaneswar | Make Google Your Growth Channel
+                    </h4>
+                    <p className={styles.serpResultDesc}>
+                      Top-ranked SEO marketing agency in Bhubaneswar. Technical SEO, Google Maps 3-Pack optimization, and high-intent organic traffic that converts visitors into paying customers.
+                    </p>
                   </div>
-                  <div className={styles.serpPillItem}>
-                    <span className={styles.serpPillVal}>34.8% CTR</span>
-                    <span className={styles.serpPillLbl}>High Intent Clicks</span>
+
+                  <div className={styles.serpStatsPills}>
+                    <div className={styles.serpPillItem}>
+                      <span className={styles.serpPillVal}>#1 Position</span>
+                      <span className={styles.serpPillLbl}>Organic Search</span>
+                    </div>
+                    <div className={styles.serpPillItem}>
+                      <span className={styles.serpPillVal}>34.8% CTR</span>
+                      <span className={styles.serpPillLbl}>High Intent Clicks</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -345,8 +388,11 @@ export default function SEOPage() {
             <div className={styles.benefitsGrid}>
               {seoBenefits.map((b) => (
                 <div key={b.title} className={styles.benefitCard}>
-                  <div className={styles.benefitIconBox}>
-                    <span>{b.icon}</span>
+                  <div className={styles.benefitTopRow}>
+                    <div className={styles.benefitIconBox}>
+                      <span>{b.icon}</span>
+                    </div>
+                    <span className={styles.benefitBadge}>{b.badge}</span>
                   </div>
                   <h3 className={styles.benefitTitle}>{b.title}</h3>
                   <p className={styles.benefitText}>{b.desc}</p>
@@ -406,14 +452,36 @@ export default function SEOPage() {
               </p>
             </div>
 
-            <div className={styles.specialGrid}>
-              {specialCards.map((c) => (
-                <div key={c.title} className={styles.specialCard}>
-                  <span className={styles.specialNumber}>{c.num}</span>
-                  <h3 className={styles.specialTitle}>{c.title}</h3>
-                  <p className={styles.specialText}>{c.desc}</p>
+            <div className={styles.specialContainer}>
+              {/* Agency Strategy Image */}
+              <div className={styles.specialImgWrapper}>
+                <Image
+                  src="/images/team_office.jpg"
+                  alt="Nova Spark Digital Marketing and SEO Strategy Team in Bhubaneswar"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 480px"
+                  className={styles.specialImg}
+                />
+                <div className={styles.specialImgOverlay}>
+                  <p className={styles.specialImgQuote}>
+                    &quot;Strategy first. Data with context. Human content. Compounding growth for Bhubaneswar brands.&quot;
+                  </p>
+                  <span className={styles.specialImgSub}>
+                    Nova Spark Digital Strategy Lab · Bhubaneswar
+                  </span>
                 </div>
-              ))}
+              </div>
+
+              {/* 4 Core Philosophy Cards */}
+              <div className={styles.specialGrid}>
+                {specialCards.map((c) => (
+                  <div key={c.title} className={styles.specialCard}>
+                    <span className={styles.specialNumber}>{c.num}</span>
+                    <h3 className={styles.specialTitle}>{c.title}</h3>
+                    <p className={styles.specialText}>{c.desc}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </ScrollReveal>
         </div>
