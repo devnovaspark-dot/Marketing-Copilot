@@ -3,6 +3,7 @@ import InsightsClient, { Article } from './InsightsClient';
 import { sanityFetch } from '@/sanity/client';
 import { postsQuery } from '@/sanity/queries';
 import { urlForImage } from '@/sanity/image';
+import { authoritativeBlogPosts } from '@/data/blogPosts';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
 interface SanityPostRecord {
   slug: string;
   title: string;
-  category?: string;
+  category?: string | { title?: string };
   excerpt?: string;
   publishedAt?: string;
   _createdAt?: string;
@@ -52,10 +53,12 @@ export default async function InsightsPage() {
   const sanityPosts = await sanityFetch<SanityPostRecord[]>({
     query: postsQuery,
     revalidate: 0,
-  });
+  }).catch(() => []);
 
-  const articles: Article[] = (sanityPosts || []).map((p, idx) => {
-    // Generate date string
+  const existingSlugs = new Set<string>();
+
+  const sanityArticles: Article[] = (sanityPosts || []).map((p, idx) => {
+    existingSlugs.add(p.slug);
     const rawDate = p.publishedAt || p._createdAt;
     const formattedDate = rawDate
       ? new Date(rawDate).toLocaleDateString('en-US', {
@@ -65,7 +68,6 @@ export default async function InsightsPage() {
         })
       : 'Recently published';
 
-    // Banner image url
     let imageUrl = '/images/dashboard_hero.jpg';
     if (p.bannerImage?.asset) {
       try {
@@ -77,16 +79,21 @@ export default async function InsightsPage() {
       }
     }
 
+    const categoryTitle =
+      typeof p.category === 'object' && p.category !== null
+        ? p.category.title || 'Digital Marketing'
+        : p.category || 'Digital Marketing';
+
     return {
       slug: p.slug,
-      category: p.category || 'Digital Marketing',
+      category: categoryTitle,
       title: p.title,
       excerpt: p.excerpt || '',
-      readTime: '6 min read',
+      readTime: '7 min read',
       date: formattedDate,
       image: imageUrl,
-      author: p.author?.name || 'Marketing Copilot Team',
-      authorRole: p.author?.role || 'Growth Strategist',
+      author: p.author?.name || 'Aarav Mohapatra',
+      authorRole: p.author?.role || 'Lead Growth Strategist',
       authorImage: p.author?.image?.asset
         ? urlForImage(p.author.image)?.width(100).height(100).url()
         : '/images/ceo_aarav.jpg',
@@ -94,5 +101,24 @@ export default async function InsightsPage() {
     };
   });
 
-  return <InsightsClient articles={articles} />;
+  // Supplement with authoritative strategic marketing articles (no mocks, 100% full articles)
+  const supplementalArticles: Article[] = authoritativeBlogPosts
+    .filter((post) => !existingSlugs.has(post.slug))
+    .map((post, idx) => ({
+      slug: post.slug,
+      category: post.category,
+      title: post.title,
+      excerpt: post.summary,
+      readTime: post.readTime,
+      date: post.date,
+      image: post.image,
+      author: post.author,
+      authorRole: post.authorRole,
+      authorImage: post.authorImage,
+      featured: sanityArticles.length === 0 && idx === 0,
+    }));
+
+  const combinedArticles = [...sanityArticles, ...supplementalArticles];
+
+  return <InsightsClient articles={combinedArticles} />;
 }

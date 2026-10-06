@@ -6,12 +6,19 @@ import BlogFaqAccordion, { FAQItem } from '@/components/BlogFaqAccordion';
 import PortableTextRenderer, { slugifyHeading } from '@/components/PortableTextRenderer';
 import PillarPostCard from '@/components/PillarPostCard';
 import TableOfContents, { HeadingItem } from '@/components/TableOfContents';
+import KeyTakeawaysSidebarCard from '@/components/KeyTakeawaysSidebarCard';
+import RelatedStoriesSidebar from '@/components/RelatedStoriesSidebar';
 import AuthorBioBox from '@/components/AuthorBioBox';
 import BlogSidebarCta from '@/components/BlogSidebarCta';
+import ReadingProgressBar from '@/components/ReadingProgressBar';
 import { sanityFetch } from '@/sanity/client';
 import { postBySlugQuery, postPathsQuery } from '@/sanity/queries';
 import { urlForImage } from '@/sanity/image';
-import ReadingProgressBar from '@/components/ReadingProgressBar';
+import {
+  getBlogPostBySlug,
+  getAllBlogSlugs,
+  getRelatedBlogPosts,
+} from '@/data/blogPosts';
 import styles from './page.module.css';
 
 export const dynamicParams = true;
@@ -28,7 +35,7 @@ interface PortableTextBlockItem {
 interface SanityPostDetail {
   title: string;
   metaTitle?: string;
-  category?: string;
+  category?: string | { title?: string };
   publishedAt?: string;
   _createdAt?: string;
   bannerImage?: {
@@ -85,53 +92,115 @@ function extractHeadingsFromPortableText(blocks?: PortableTextBlockItem[]): Head
 }
 
 async function getArticle(slug: string) {
-  const sanityPost = await sanityFetch<SanityPostDetail>({
-    query: postBySlugQuery,
-    params: { slug },
-    revalidate: 0,
-  });
+  // 1. Check Sanity first
+  try {
+    const sanityPost = await sanityFetch<SanityPostDetail>({
+      query: postBySlugQuery,
+      params: { slug },
+      revalidate: 0,
+    });
 
-  if (sanityPost) {
-    const bannerUrl = sanityPost.bannerImage?.asset
-      ? urlForImage(sanityPost.bannerImage)?.width(1200).height(750).url()
-      : null;
+    if (
+      sanityPost &&
+      sanityPost.title &&
+      Array.isArray(sanityPost.body) &&
+      sanityPost.body.length > 0
+    ) {
+      const bannerUrl = sanityPost.bannerImage?.asset
+        ? urlForImage(sanityPost.bannerImage)?.width(1200).height(750).url()
+        : null;
 
-    const authorImageUrl = sanityPost.author?.image?.asset
-      ? urlForImage(sanityPost.author.image)?.width(120).height(120).url()
-      : undefined;
+      const authorImageUrl = sanityPost.author?.image?.asset
+        ? urlForImage(sanityPost.author.image)?.width(120).height(120).url()
+        : undefined;
 
-    const rawDate = sanityPost.publishedAt || sanityPost._createdAt;
-    const publishedDate = rawDate
-      ? new Date(rawDate).toLocaleDateString('en-US', {
-          year: 'numeric',
-          month: 'short',
-          day: 'numeric',
-        })
-      : 'Recently published';
+      const rawDate = sanityPost.publishedAt || sanityPost._createdAt;
+      const publishedDate = rawDate
+        ? new Date(rawDate).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric',
+          })
+        : 'Recently published';
 
-    const headings = extractHeadingsFromPortableText(sanityPost.body);
+      const extractedHeadings = extractHeadingsFromPortableText(sanityPost.body);
+      const fallbackData = getBlogPostBySlug(slug);
 
+      const categoryName =
+        typeof sanityPost.category === 'object' && sanityPost.category !== null
+          ? sanityPost.category.title || 'Digital Marketing'
+          : sanityPost.category || fallbackData?.category || 'Digital Marketing';
+
+      const resolvedTakeaways =
+        sanityPost.keyTakeaways &&
+        sanityPost.keyTakeaways.filter(
+          (t: string) => typeof t === 'string' && t.trim().length > 0
+        ).length >= 2
+          ? sanityPost.keyTakeaways
+          : fallbackData?.takeaways || [];
+
+      const resolvedFaqs =
+        sanityPost.faqItems && sanityPost.faqItems.length >= 2
+          ? sanityPost.faqItems
+          : fallbackData?.faqItems || [];
+
+      return {
+        isSanity: true,
+        title: sanityPost.title,
+        metaTitle: sanityPost.metaTitle || sanityPost.title,
+        category: categoryName,
+        readTime: fallbackData?.readTime || '7 min read',
+        date: publishedDate,
+        image: bannerUrl || fallbackData?.image || '/images/dashboard_hero.jpg',
+        imageAlt: sanityPost.bannerImage?.alt || fallbackData?.imageAlt || sanityPost.title,
+        author: sanityPost.author?.name || fallbackData?.author || 'Aarav Mohapatra',
+        authorRole:
+          sanityPost.author?.role || fallbackData?.authorRole || 'Lead Growth Strategist',
+        authorImage: authorImageUrl || fallbackData?.authorImage,
+        authorBio: sanityPost.author?.bio || fallbackData?.authorBio,
+        summary: sanityPost.excerpt || fallbackData?.summary || '',
+        takeaways: resolvedTakeaways,
+        body: sanityPost.body,
+        contentHtml: undefined,
+        faqItems: resolvedFaqs,
+        pillarPost: sanityPost.pillarPost,
+        headings:
+          extractedHeadings.length > 0
+            ? extractedHeadings
+            : fallbackData?.headings || [],
+        noIndex: Boolean(sanityPost.noIndex),
+        metaKeywords: sanityPost.metaKeywords || fallbackData?.metaKeywords || [],
+      };
+    }
+  } catch (err) {
+    console.warn(`[getArticle] Sanity lookup failed for "${slug}":`, err);
+  }
+
+  // 2. Fallback to local authoritative high-value post
+  const localPost = getBlogPostBySlug(slug);
+  if (localPost) {
     return {
-      isSanity: true,
-      title: sanityPost.title,
-      metaTitle: sanityPost.metaTitle || sanityPost.title,
-      category: sanityPost.category || 'Insights',
-      readTime: '6 min read',
-      date: publishedDate,
-      image: bannerUrl || '/images/dashboard_hero.jpg',
-      imageAlt: sanityPost.bannerImage?.alt || sanityPost.title,
-      author: sanityPost.author?.name || 'Marketing Copilot',
-      authorRole: sanityPost.author?.role || 'Growth Strategist',
-      authorImage: authorImageUrl,
-      authorBio: sanityPost.author?.bio,
-      summary: sanityPost.excerpt || '',
-      takeaways: sanityPost.keyTakeaways || [],
-      body: sanityPost.body,
-      faqItems: sanityPost.faqItems || [],
-      pillarPost: sanityPost.pillarPost,
-      headings,
-      noIndex: Boolean(sanityPost.noIndex),
-      metaKeywords: sanityPost.metaKeywords || [],
+      isSanity: false,
+      title: localPost.title,
+      metaTitle: localPost.metaTitle,
+      category: localPost.category,
+      readTime: localPost.readTime,
+      date: localPost.date,
+      image: localPost.image,
+      imageAlt: localPost.imageAlt,
+      author: localPost.author,
+      authorRole: localPost.authorRole,
+      authorImage: localPost.authorImage,
+      authorBio: localPost.authorBio,
+      summary: localPost.summary,
+      takeaways: localPost.takeaways,
+      body: undefined,
+      contentHtml: localPost.contentHtml,
+      faqItems: localPost.faqItems,
+      pillarPost: undefined,
+      headings: localPost.headings,
+      noIndex: Boolean(localPost.noIndex),
+      metaKeywords: localPost.metaKeywords || [],
     };
   }
 
@@ -139,8 +208,15 @@ async function getArticle(slug: string) {
 }
 
 export async function generateStaticParams() {
-  const sanitySlugs = await sanityFetch<string[]>({ query: postPathsQuery, revalidate: 0 });
-  return (sanitySlugs || []).map((slug) => ({ slug }));
+  const sanitySlugs = await sanityFetch<string[]>({
+    query: postPathsQuery,
+    revalidate: 0,
+  }).catch(() => []);
+
+  const allSlugs = Array.from(
+    new Set([...(sanitySlugs || []), ...getAllBlogSlugs()])
+  );
+  return allSlugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
@@ -151,7 +227,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const article = await getArticle(slug);
 
-  if (!article) return { title: 'Article Not Found' };
+  if (!article) return { title: 'Article Not Found | Marketing Copilot' };
 
   return {
     title: `${article.metaTitle} | Marketing Copilot`,
@@ -189,7 +265,17 @@ export default async function ArticlePage({
 
   if (!article) notFound();
 
-  // Generate FAQ schema if FAQ items exist
+  // Retrieve 3 related stories for the sidebar (excluding current article)
+  const relatedStories = getRelatedBlogPosts(slug, 3).map((p) => ({
+    slug: p.slug,
+    title: p.title,
+    category: p.category,
+    readTime: p.readTime,
+    image: p.image,
+    date: p.date,
+  }));
+
+  // Generate FAQ schema for search engines
   const faqSchema =
     article.faqItems && article.faqItems.length > 0
       ? {
@@ -218,7 +304,7 @@ export default async function ArticlePage({
         />
       )}
 
-      {/* Hero Section matching Ekatraa structure & Marketing Copilot brand */}
+      {/* Top Hero Section matching screenshot layout & Marketing Copilot brand style */}
       <ArticleHero
         title={article.title}
         category={article.category}
@@ -236,42 +322,29 @@ export default async function ArticlePage({
           <div className={styles.layoutGrid}>
             {/* Left Column: Core Article Content */}
             <main className={styles.mainCol}>
-              {/* Executive Key Takeaways Box */}
-              {article.takeaways &&
-                article.takeaways.filter((item: string) => typeof item === 'string' && item.trim().length > 0).length > 0 && (
-                  <div className={styles.takeawaysBox} aria-label="Executive Key Takeaways">
-                    <div className={styles.takeawaysHeader}>
-                      <span className={styles.takeawaysBadge}>✦ Executive Summary</span>
-                      <h3 className={styles.takeawaysTitle}>Key Takeaways &amp; Strategic Action Points</h3>
-                    </div>
-                    <ul className={styles.takeawaysList}>
-                      {article.takeaways
-                        .filter((item: string) => typeof item === 'string' && item.trim().length > 0)
-                        .map((rawItem: string, idx: number) => {
-                          const item = rawItem.replace(/^\d+[\.\)]\s*/, '').trim();
-                          return (
-                            <li key={idx} className={styles.takeawayItem}>
-                              <span className={styles.takeawayIconWrap} aria-hidden="true">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-                                  <polyline points="20 6 9 17 4 12" />
-                                </svg>
-                              </span>
-                              <span>{item}</span>
-                            </li>
-                          );
-                        })}
-                    </ul>
-                  </div>
-                )}
+              {/* Decorative Accent Header (matching screenshot structure with our royal blue & amber style) */}
+              <div className={styles.decorativeAccentBar}>
+                <div className={styles.accentGlow} />
+                <div className={styles.accentBadge}>
+                  <span className={styles.accentDot} />
+                  <span>Verified Strategic Playbook</span>
+                </div>
+                <span className={styles.accentCategory}>{article.category}</span>
+              </div>
 
               {/* Main Article Body */}
-              {article.body && (
-                <article className={styles.articleBody}>
+              <article className={styles.articleBody}>
+                {article.body ? (
                   <PortableTextRenderer value={article.body} />
-                </article>
-              )}
+                ) : article.contentHtml ? (
+                  <div
+                    className={styles.rawHtmlContent}
+                    dangerouslySetInnerHTML={{ __html: article.contentHtml }}
+                  />
+                ) : null}
+              </article>
 
-              {/* Topic Cluster Pillar Post Card (Only render if pointing to a different pillar guide) */}
+              {/* Topic Cluster Pillar Post Card (if present) */}
               {article.pillarPost && article.pillarPost.slug !== slug && (
                 <PillarPostCard pillar={article.pillarPost} />
               )}
@@ -290,40 +363,26 @@ export default async function ArticlePage({
               )}
             </main>
 
-            {/* Right Column: Sticky Sidebar */}
+            {/* Right Column: Sticky Sidebar matching exact layout structure */}
             <aside className={styles.sidebarCol}>
-              {/* Strategic Factsheet Card */}
-              <div className={styles.factsheetCard} aria-label="Article Strategic Overview">
-                <div className={styles.factsheetHeader}>
-                  <span className={styles.factsheetBadge}>✦ Strategic Factsheet</span>
-                  <h4 className={styles.factsheetTitle}>Executive Overview</h4>
-                </div>
-                <div className={styles.factsheetList}>
-                  <div className={styles.factsheetRow}>
-                    <span className={styles.factsheetLabel}>Category</span>
-                    <span className={styles.factsheetVal}>{article.category}</span>
-                  </div>
-                  <div className={styles.factsheetRow}>
-                    <span className={styles.factsheetLabel}>Read Time</span>
-                    <span className={styles.factsheetVal}>{article.readTime}</span>
-                  </div>
-                  <div className={styles.factsheetRow}>
-                    <span className={styles.factsheetLabel}>Target Audience</span>
-                    <span className={styles.factsheetVal}>Founders &amp; Operators</span>
-                  </div>
-                  <div className={styles.factsheetRow}>
-                    <span className={styles.factsheetLabel}>Market Geography</span>
-                    <span className={styles.factsheetVal}>Bhubaneswar • Odisha</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Table of Contents ("On This Page") */}
+              {/* 1. Table of Contents ("On This Page") */}
               {article.headings && article.headings.length >= 2 && (
                 <TableOfContents headings={article.headings} />
               )}
 
-              {/* Sticky Marketing Consultation CTA */}
+              {/* 2. Key Takeaways Card (In Sidebar) */}
+              {article.takeaways && article.takeaways.length > 0 && (
+                <KeyTakeawaysSidebarCard takeaways={article.takeaways} />
+              )}
+
+              {/* 3. Related Stories (In Sidebar as requested) */}
+              <RelatedStoriesSidebar
+                stories={relatedStories}
+                title="Related Stories"
+                viewAllLink="/insights"
+              />
+
+              {/* 4. Strategic Marketing Consultation CTA */}
               <BlogSidebarCta />
             </aside>
           </div>
