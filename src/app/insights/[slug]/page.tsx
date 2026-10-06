@@ -307,15 +307,6 @@ export default async function ArticlePage({
           <div className={styles.layoutGrid}>
             {/* Left Column: Core Article Content */}
             <article className={styles.mainCol}>
-              {/* Decorative Accent Header */}
-              <div className={styles.decorativeAccentBar}>
-                <div className={styles.accentGlow} />
-                <div className={styles.accentBadge}>
-                  <span className={styles.accentDot} />
-                  <span>Verified Strategic Playbook</span>
-                </div>
-                <span className={styles.accentCategory}>{article.category}</span>
-              </div>
 
               {/* In-Article Table of Contents (Added directly to Left Content Column for Desktop & Mobile) */}
               {article.headings && article.headings.length >= 1 && (
