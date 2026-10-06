@@ -302,8 +302,8 @@ export default function Header() {
                         <Image
                           src="/images/ns_services_graphic.png"
                           alt="Bhubaneswar 360 Digital Marketing Growth Architecture"
-                          width={240}
-                          height={150}
+                          fill
+                          sizes="240px"
                           className={styles.spotlightGraphicImg}
                           priority
                         />
