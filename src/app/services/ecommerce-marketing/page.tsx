@@ -5,91 +5,110 @@ import Image from 'next/image';
 import ScrollReveal from '@/components/ScrollReveal';
 import BeamButton from '@/components/BeamButton';
 
-// 12-Section Custom Components
-import EcommerceGrowthSimulator from './_components/EcommerceGrowthSimulator';
+// Supporting Components & Calculators
 import QuickConnectMapSection from '@/app/_components/QuickConnectMapSection';
-import EcommerceWorkstation from './_components/EcommerceWorkstation';
 import EcommerceRoasCalculator from './_components/EcommerceRoasCalculator';
-import EcommerceComparisonMatrix from './_components/EcommerceComparisonMatrix';
-import EcommerceScaleRoadmap from './_components/EcommerceScaleRoadmap';
 
 import styles from './ecommerce-page.module.css';
 
-const ecommerceArsenal = [
+// 5 Core Ecommerce Marketing Services
+const ecommerceServices = [
   {
-    name: 'Shopify Plus & Hydrogen',
-    category: 'High-Converting Storefronts',
-    desc: 'Sub-second mobile checkout load times, localized UPI 1-click buy buttons, and dynamic currency switching.',
-    status: 'SUB-1S LOAD',
-    icon: '🛍️',
+    icon: '🔍',
+    badge: 'ORGANIC STORE SEARCH',
+    title: 'Ecommerce SEO',
+    desc: "Boost your e-commerce website's ranking on Google and get your products found by customers. Optimizing product pages, category pages, keywords, technical SEO, internal links, images, content, and schema to bring in relevant organic traffic and boost search performance for your store.",
   },
   {
-    name: 'Meta Advantage+ Shopping (ASC)',
-    category: 'AI-Powered Broad Acquisition',
-    desc: 'Machine-learning catalog campaigns optimized for highest incremental conversion value and minimum CPA.',
-    status: 'ASC OPTIMIZED',
-    icon: '⚡',
-  },
-  {
-    name: 'Google Performance Max & Merchant',
-    category: 'High-Intent Search & Shopping',
-    desc: 'Clean SKU feed syndication with automated negative keyword lists capturing active in-market buyers.',
-    status: 'FEED SYNCED',
     icon: '🎯',
+    badge: 'SHOPPING & SEARCH ADS',
+    title: 'Google Ads for Ecommerce',
+    desc: 'Connect with customers actively looking for products such as yours. We develop and optimize Google Ads Search and Shopping campaigns, delivering relevant traffic with targeted campaigns, product feeds, ad copy, conversion tracking, and continuous optimization for better e-commerce outcomes.',
   },
   {
-    name: 'Klaviyo Retention & VIP Flows',
-    category: 'Lifecycle & LTV Acceleration',
-    desc: 'Automated post-purchase repurchase triggers, replenishment reminders, and cart abandonment win-backs.',
-    status: '38% LTV BOOT',
-    icon: '✉️',
+    icon: '📱',
+    badge: 'META ACQUISITION & CAPI',
+    title: 'Meta Ads for Ecommerce Brands',
+    desc: 'Connect with potential customers on Facebook and Instagram by targeting them with a Facebook ad. We develop campaigns for product discovery, targeting, retargeting, and conversions. We create ads, write copy, track and optimize, and help e-commerce brands attract new customers and convert interested website visitors.',
   },
   {
-    name: 'WhatsApp RTO Defense Firewalls',
-    category: 'Logistics Margin Protection',
-    desc: 'Automated COD phone number verification via OTP and address correction before dispatching inventory.',
-    status: '-55% RTO LEAK',
-    icon: '🛡️',
+    icon: '✨',
+    badge: 'COMMUNITY & RETENTION',
+    title: 'E-commerce Social Media Marketing',
+    desc: 'Establish a uniform online social media presence aligned with your e-commerce objectives. Product posts, Instagram Reels, carousels, creative product promotion, educational content, or campaigns for Instagram & Facebook. Our strategy helps increase product awareness, engagement, and customer interest through useful and engaging content.',
   },
   {
-    name: 'Looker Studio POAS Dashboard',
-    category: 'Real Contribution Margin Telemetry',
-    desc: 'Live profit-on-ad-spend tracking factoring product COGS, payment gateway fees, and shipping costs.',
-    status: 'TRUE MARGIN',
-    icon: '📊',
+    icon: '✍️',
+    badge: 'PERSUASIVE BUYER COPY',
+    title: 'E-commerce Content Marketing',
+    desc: 'Provide valuable information to enable your customers to make informed purchases. We create product descriptions, SEO blogs, buying guides, and promotional copy. Each piece is planned around your products, audience, and search needs to support e-commerce growth.',
   },
 ];
 
+// 6-Step Ecommerce Marketing Process
+const ecommerceProcessSteps = [
+  {
+    step: '01',
+    title: 'Business & Store Audit',
+    desc: 'We start by understanding your e-commerce website, products, competitors, existing marketing activities, and current challenges.',
+  },
+  {
+    step: '02',
+    title: 'Audience & Keyword Research',
+    desc: 'We identify your target customers, their search behavior, interests, and buying intent.',
+  },
+  {
+    step: '03',
+    title: 'Marketing Strategy',
+    desc: 'Based on our findings, we develop a practical marketing roadmap covering the channels most relevant to your business.',
+  },
+  {
+    step: '04',
+    title: 'Campaign & Content Setup',
+    desc: 'Our team works on SEO, ads, creatives, content, landing pages, and tracking according to the agreed strategy.',
+  },
+  {
+    step: '05',
+    title: 'Launch & Monitor',
+    desc: 'Once campaigns are live, we monitor performance and identify opportunities for optimization.',
+  },
+  {
+    step: '06',
+    title: 'Optimize & Scale',
+    desc: 'We use campaign data and customer behavior to refine targeting, creatives, landing pages, and marketing priorities.',
+  },
+];
+
+// 6 Frequently Asked Questions
 const ecommerceFaqs = [
   {
-    q: 'How do you reduce high RTO (Return to Origin) rates for Cash on Delivery (COD) orders?',
-    a: 'We deploy automated WhatsApp OTP verification and AI address scrubbing before your warehouse dispatches an order. Customers confirm their delivery slot, and risky or incomplete addresses are flagged. This reduces COD return rates from 30%+ down to 10-14%, saving lakhs in reverse logistics.',
-    takeaway: 'Address scrubbing and automated order verification stop logistics profit drain before dispatches occur.',
+    q: 'What does an e-commerce marketing agency do?',
+    a: 'An e-commerce marketing agency can assist online retailers in reaching potential customers, enhancing web visibility, driving website traffic, and boosting conversions via SEO, paid advertising, social media, content, and optimization.',
   },
   {
-    q: 'What is the minimum monthly ad budget needed to scale profitably with your team?',
-    a: 'We typically partner with D2C brands spending at least ₹50,000 to ₹1,00,000 per month on paid acquisition (Meta + Google). This provides sufficient data volume for rapid creative testing and algorithmic learning.',
-    takeaway: 'Adequate ad spend velocity allows ad platform AI algorithms to identify high-value repeat buyers quickly.',
+    q: 'How can e-commerce SEO help my online store?',
+    a: 'Product and category pages can be optimized to rank higher in search engine results, ensuring that your e-commerce store draws in your target audience.',
   },
   {
-    q: 'How do you overcome the iOS 14.5 and third-party cookie tracking loss?',
-    a: 'We implement Meta Conversions API (CAPI) and Google Enhanced Conversions directly through server-side GTM containers. This bypasses browser ad-blockers and privacy drops, maintaining a 95%+ event match quality score.',
-    takeaway: 'Server-side attribution gives ad algorithms true transaction data to find higher-spending purchasers.',
+    q: 'Should I invest in Google Ads or Meta Ads?',
+    a: 'It will depend on your products, your audience, and your goals. Google Ads can tap into existing search intent, and Meta Ads can help with product discovery, targeting, and retargeting.',
   },
   {
-    q: 'Can you help increase our store’s Average Order Value (AOV)?',
-    a: 'Yes! We redesign your cart drawer with 1-click tiered volume discounts ("Buy 2 Get 10% Off"), intelligent product bundles, and post-purchase thank-you page upsells that increase basket size by 24% to 38% without inflating CAC.',
-    takeaway: 'Elevating AOV allows you to bid more aggressively than competitors while remaining strictly profitable.',
+    q: 'Can you manage both SEO and paid advertising?',
+    a: 'Yes. A combined approach can help e-commerce businesses build long-term organic visibility while using paid campaigns to reach relevant audiences and generate immediate traffic.',
   },
   {
-    q: 'Do you work with local Bhubaneswar and Odisha artisanal & manufacturing brands?',
-    a: 'Extensively. We have helped Odisha handloom brands like Ektraa Sambalpuri Sarees, organic food producers, and regional apparel manufacturers scale into nationwide multi-crore D2C powerhouses with nationwide delivery.',
-    takeaway: 'Deep regional manufacturing authenticity paired with global performance marketing creates unbeatable brand moat.',
+    q: 'Do you work with new e-commerce businesses?',
+    a: 'Yes. New stores could greatly benefit from having their SEO, tracking, content, advertising, and conversion strategy established early.',
+  },
+  {
+    q: 'Can you help e-commerce businesses outside Bhubaneswar?',
+    a: 'Yes. As an e-commerce marketing agency in Bhubaneswar, e-commerce campaigns can be designed for businesses with customers all over Odisha, India, and more.',
   },
 ];
 
 export default function EcommerceMarketingPage() {
-  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
   const toggleFaq = (index: number) => {
     setOpenFaqIndex((prev) => (prev === index ? null : index));
@@ -107,24 +126,27 @@ export default function EcommerceMarketingPage() {
             <ScrollReveal>
               <div className={styles.heroEyebrowPill}>
                 <span className={styles.emeraldPulseDot} />
-                <span>#1 E-Commerce &amp; D2C Growth Agency in Bhubaneswar</span>
+                <span>Ecommerce Marketing That Drives Traffic, Sales &amp; Brand Growth</span>
               </div>
 
               <h1 className={styles.heroTitle}>
-                Scale Your D2C Brand Beyond ₹50L/Month With{' '}
-                <span className="accent-gradient">High Blended ROAS</span>
+                Scale Your <span className="accent-gradient">Online Store</span>
               </h1>
 
               <p className={styles.heroSub}>
-                No vanity screenshots. We deploy high-converting Meta Advantage+ shopping funnels, Google Performance Max campaigns, CAPI server-side tracking, and automated WhatsApp RTO reduction for India’s fastest-growing consumer brands.
+                We combine e-commerce SEO, Google Shopping, Meta Ads, content, and conversion optimisation to help Bhubaneswar businesses reach high-intent customers and build a stronger online presence.
               </p>
 
               <div className={styles.heroActions}>
-                <BeamButton href="/contact" label="Book a D2C Growth Audit" size="lg" />
-                <a href="#growth-simulator" className={styles.heroSecondaryBtn}>
-                  <span>Explore Growth Simulator &amp; ROAS</span>
-                  <span>↓</span>
-                </a>
+                <BeamButton href="/contact" label="Start Your Ecommerce Growth Plan" size="lg" arrow={true} />
+                <BeamButton
+                  href="#store-audit"
+                  label="Request a Free Store Audit"
+                  size="lg"
+                  variant="outline"
+                  arrow={false}
+                  icon={<span style={{ marginRight: '6px' }}>↓</span>}
+                />
               </div>
 
               <div className={styles.trustStrip}>
@@ -165,22 +187,255 @@ export default function EcommerceMarketingPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          2. INTERACTIVE ECOMMERCE GROWTH SIMULATOR
+          2. WHAT MAKES ECOMMERCE MARKETING DIFFERENT?
          ══════════════════════════════════════════════════ */}
-      <EcommerceGrowthSimulator />
+      <section className={styles.diffSection}>
+        <div className="container">
+          <div className={styles.diffGrid}>
+            <ScrollReveal>
+              <span className={styles.sectionEyebrow}>THE ECOMMERCE PARADIGM SHIFT</span>
+              <h2 className={styles.sectionHeading}>
+                What Makes Ecommerce Marketing Different?
+              </h2>
+              <p className={styles.narrativeParagraph}>
+                With traditional marketing, it&apos;s all about creating awareness, whereas with e-commerce marketing, it&apos;s about taking the customer from discovery to purchase. A customer can see your product for the first time on Instagram, then find your brand on Google, then click a paid advertisement, visit your website, compare products, and then come back later to buy.
+              </p>
+              <p className={styles.narrativeParagraph}>
+                It is important to build a consistent experience around all digital interactions. SEO, paid ads, social media, content, and the website should all be aligned to support the customer journey.
+              </p>
+              <p className={styles.narrativeParagraph}>
+                We approach ecommerce marketing in a holistic way, linking all the pieces together to reach the right people, foster trust, enhance engagement, and generate additional conversions at Nova Spark Digital.
+              </p>
+              <div className={styles.highlightPillBox}>
+                <span>💡</span>
+                <span className={styles.highlightPillText}>
+                  Holistic omnichannel synchronization transforms casual browsers into high-LTV repeat buyers.
+                </span>
+              </div>
+            </ScrollReveal>
+
+            {/* Skeuomorphic Connected Journey Card */}
+            <ScrollReveal delay={0.15}>
+              <div className={styles.journeyCard}>
+                <div className={styles.journeyHeader}>
+                  <span className={styles.journeyTitle}>Connected Customer Journey</span>
+                  <span className={styles.journeyBadge}>FULL FUNNEL</span>
+                </div>
+
+                <div className={styles.journeyFlow}>
+                  <div className={styles.journeyStep}>
+                    <div className={styles.stepIconBadge}>📱</div>
+                    <div className={styles.stepInfo}>
+                      <span className={styles.stepTitle}>1. Discovery on Instagram</span>
+                      <span className={styles.stepSub}>Engaging reels, carousels &amp; Meta product discovery ads</span>
+                    </div>
+                  </div>
+
+                  <div className={styles.journeyStep}>
+                    <div className={styles.stepIconBadge}>🔍</div>
+                    <div className={styles.stepInfo}>
+                      <span className={styles.stepTitle}>2. High-Intent Google Search</span>
+                      <span className={styles.stepSub}>Product &amp; category SEO plus Google Shopping placement</span>
+                    </div>
+                  </div>
+
+                  <div className={styles.journeyStep}>
+                    <div className={styles.stepIconBadge}>🎯</div>
+                    <div className={styles.stepInfo}>
+                      <span className={styles.stepTitle}>3. Retargeting &amp; Social Proof</span>
+                      <span className={styles.stepSub}>Dynamic catalog ads re-engaging interested shoppers</span>
+                    </div>
+                  </div>
+
+                  <div className={styles.journeyStep}>
+                    <div className={styles.stepIconBadge}>🛍️</div>
+                    <div className={styles.stepInfo}>
+                      <span className={styles.stepTitle}>4. Storefront Comparison</span>
+                      <span className={styles.stepSub}>High-converting product pages, reviews &amp; instant trust cues</span>
+                    </div>
+                  </div>
+
+                  <div className={styles.journeyStep}>
+                    <div className={styles.stepIconBadge}>⚡</div>
+                    <div className={styles.stepInfo}>
+                      <span className={styles.stepTitle}>5. Seamless Purchase &amp; Loyalty</span>
+                      <span className={styles.stepSub}>Frictionless checkout, COD verification &amp; retention flows</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
 
       {/* ══════════════════════════════════════════════════
-          3. REGIONAL BHUBANESWAR GEO-REACH FOOTPRINT
+          3. GROW YOUR ONLINE STORE WITH RESULT-DRIVEN MARKETING
          ══════════════════════════════════════════════════ */}
-      <QuickConnectMapSection />
+      <section className={styles.growStoreSection}>
+        <div className="container">
+          <div className={styles.growGrid}>
+            <ScrollReveal className={styles.growNarrativeBox}>
+              <span className={styles.sectionEyebrow}>PROVEN COMMERCE SCALING</span>
+              <h2 className={styles.sectionHeading}>
+                Grow Your Online Store With Result-Driven Ecommerce Marketing
+              </h2>
+              <p className={styles.narrativeParagraph}>
+                Your e-commerce website is more than a digital storefront. It&apos;s the place where your customers find your products, make comparisons, trust you, and make their purchase.
+              </p>
+              <p className={styles.narrativeParagraph}>
+                With Nova Spark Digital, e-commerce and D2C brands in Bhubaneswar can attain more website visibility, draw in the right visitors, and convert traffic into sales. Our ecommerce marketing services include ecommerce SEO, Google Ads, Meta Ads, socials, content, conversion optimization, and performance tracking to give you a full growth plan.
+              </p>
+              <p className={styles.narrativeParagraph}>
+                From starting a new online business to managing low sales to scaling up your e-commerce business, we develop marketing strategies around your products, audience, and business objectives.
+              </p>
+            </ScrollReveal>
+
+            {/* 3 Pillars of E-Commerce Growth */}
+            <div className={styles.growPillarsRow}>
+              <ScrollReveal delay={0.05} className={styles.pillarCard}>
+                <div className={styles.pillarIconBox}>🛍️</div>
+                <h3 className={styles.pillarTitle}>Beyond A Storefront</h3>
+                <p className={styles.pillarDesc}>
+                  We create immersive product experiences where customers evaluate options, build genuine brand confidence, and convert with certainty.
+                </p>
+              </ScrollReveal>
+
+              <ScrollReveal delay={0.12} className={styles.pillarCard}>
+                <div className={styles.pillarIconBox}>📈</div>
+                <h3 className={styles.pillarTitle}>Qualified Store Visibility</h3>
+                <p className={styles.pillarDesc}>
+                  Connect with buyers throughout Bhubaneswar and across India who possess genuine purchase intent for your specific catalogue.
+                </p>
+              </ScrollReveal>
+
+              <ScrollReveal delay={0.19} className={styles.pillarCard}>
+                <div className={styles.pillarIconBox}>🎯</div>
+                <h3 className={styles.pillarTitle}>Tailored Full Growth Plan</h3>
+                <p className={styles.pillarDesc}>
+                  Whether you are launching, fixing sluggish sales, or scaling past revenue milestones, your strategy is custom-built around your unit economics.
+                </p>
+              </ScrollReveal>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ══════════════════════════════════════════════════
-          4. ARCHITECTURE WORKSTATION
+          4. ECOMMERCE MARKETING SERVICES IN BHUBANESWAR
          ══════════════════════════════════════════════════ */}
-      <EcommerceWorkstation />
+      <section className={styles.servicesSection}>
+        <div className="container">
+          <ScrollReveal className={styles.servicesHeader}>
+            <span className={styles.sectionEyebrow}>COMPREHENSIVE CAPABILITIES</span>
+            <h2 className={styles.sectionHeading}>
+              Ecommerce Marketing Services in Bhubaneswar
+            </h2>
+            <p className={styles.narrativeParagraph}>
+              A successful ecommerce business needs more than traffic. You need the right people visiting your store, a smooth buying experience, and marketing campaigns that encourage customers to return.
+            </p>
+          </ScrollReveal>
+
+          {/* Row 1: 3 Service Cards */}
+          <div className={styles.servicesGrid}>
+            {ecommerceServices.slice(0, 3).map((srv, idx) => (
+              <ScrollReveal key={idx} delay={idx * 0.08} className={styles.serviceCard}>
+                <div className={styles.serviceCardTop}>
+                  <div className={styles.serviceIconBox}>{srv.icon}</div>
+                  <span className={styles.serviceBadge}>{srv.badge}</span>
+                </div>
+                <h3 className={styles.serviceCardTitle}>{srv.title}</h3>
+                <p className={styles.serviceCardDesc}>{srv.desc}</p>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          {/* Row 2: 2 Service Cards Centered */}
+          <div className={styles.servicesGridRow2}>
+            {ecommerceServices.slice(3, 5).map((srv, idx) => (
+              <ScrollReveal key={idx} delay={0.24 + idx * 0.08} className={styles.serviceCard}>
+                <div className={styles.serviceCardTop}>
+                  <div className={styles.serviceIconBox}>{srv.icon}</div>
+                  <span className={styles.serviceBadge}>{srv.badge}</span>
+                </div>
+                <h3 className={styles.serviceCardTitle}>{srv.title}</h3>
+                <p className={styles.serviceCardDesc}>{srv.desc}</p>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ══════════════════════════════════════════════════
-          5. INTERACTIVE ROAS & PROFIT CALCULATOR
+          5. PERFORMANCE-DRIVEN ECOMMERCE MARKETING NARRATIVE
+         ══════════════════════════════════════════════════ */}
+      <section className={styles.growthNarrativeSection}>
+        <div className="container">
+          <ScrollReveal>
+            <div className={styles.narrativeCard}>
+              <div className={styles.narrativeLeft}>
+                <span className={styles.sectionEyebrow}>PERFORMANCE-DRIVEN ECOMMERCE MARKETING</span>
+                <h2 className={styles.sectionHeading}>
+                  Start Growing Your Ecommerce Brand With Nova Spark Digital
+                </h2>
+                <p className={styles.narrativeParagraph}>
+                  Your e-commerce store can have the potential to connect with customers beyond your reach. However, sustainable growth is dependent on the right mix of visibility, traffic, creativity, conversion, and ongoing optimization.
+                </p>
+                <p className={styles.narrativeParagraph}>
+                  At Nova Spark Digital, we help e-commerce businesses in Bhubaneswar integrate these elements into actionable, data-driven digital marketing campaigns.
+                </p>
+                <p className={styles.narrativeParagraph}>
+                  Whether you need help with e-commerce SEO, Meta Ads, social media, content marketing, or conversion optimization, we can help you strengthen your online presence and maximize your sales opportunities.
+                </p>
+                <p className={styles.narrativeParagraph} style={{ fontWeight: 650, color: '#0F172A' }}>
+                  Let&apos;s talk about what you want to achieve and create your next digital marketing plan.
+                </p>
+
+                <div style={{ marginTop: '16px' }}>
+                  <BeamButton href="/contact" label="Start Your Ecommerce Growth Journey" size="md" arrow={true} />
+                </div>
+              </div>
+
+              <div className={styles.narrativeRight}>
+                <div className={styles.narrativeMiniCard}>
+                  <span className={styles.narrativeMiniIcon}>🔍</span>
+                  <div>
+                    <div className={styles.narrativeMiniTextTitle}>E-Commerce SEO &amp; Organic Reach</div>
+                    <div className={styles.narrativeMiniTextSub}>Category architecture &amp; high-intent keyword authority</div>
+                  </div>
+                </div>
+
+                <div className={styles.narrativeMiniCard}>
+                  <span className={styles.narrativeMiniIcon}>🎯</span>
+                  <div>
+                    <div className={styles.narrativeMiniTextTitle}>Google Shopping &amp; PMax Funnels</div>
+                    <div className={styles.narrativeMiniTextSub}>Automated SKU feed syndication &amp; negative match lists</div>
+                  </div>
+                </div>
+
+                <div className={styles.narrativeMiniCard}>
+                  <span className={styles.narrativeMiniIcon}>📱</span>
+                  <div>
+                    <div className={styles.narrativeMiniTextTitle}>Meta Ads Advantage+ (ASC)</div>
+                    <div className={styles.narrativeMiniTextSub}>Server-side CAPI telemetry &amp; high-ROAS creative angles</div>
+                  </div>
+                </div>
+
+                <div className={styles.narrativeMiniCard}>
+                  <span className={styles.narrativeMiniIcon}>⚡</span>
+                  <div>
+                    <div className={styles.narrativeMiniTextTitle}>Conversion Rate Optimization</div>
+                    <div className={styles.narrativeMiniTextSub}>1-click mobile checkout, bundle boosts &amp; COD verification</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════
+          UNIT ECONOMICS & ROAS CALCULATOR
          ══════════════════════════════════════════════════ */}
       <section style={{ padding: 'clamp(56px, 7vw, 96px) 0', background: '#FFFFFF' }}>
         <div className="container">
@@ -200,47 +455,41 @@ export default function EcommerceMarketingPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          6. THE E-COMMERCE STANDARD (COMPARISON MATRIX)
+          6. OUR E-COMMERCE MARKETING PROCESS (6 STEPS)
          ══════════════════════════════════════════════════ */}
-      <section style={{ padding: 'clamp(56px, 7vw, 96px) 0', background: '#F8FAFC', borderTop: '1px solid #E2E8F0', borderBottom: '1px solid #E2E8F0' }}>
+      <section className={styles.processSection} id="store-audit">
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 40px' }}>
-            <span style={{ fontSize: '12px', fontWeight: 800, color: '#0B2093', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-              THE MARKETING COPILOT DIFFERENCE
-            </span>
-            <h2 style={{ fontSize: 'clamp(1.8rem, 3.2vw, 2.6rem)', fontWeight: 800, color: '#0F172A', marginTop: '8px', lineHeight: 1.2 }}>
-              Traditional Agencies vs. Our D2C Growth Engine
+          <ScrollReveal className={styles.processHeader}>
+            <span className={styles.sectionEyebrow}>Start Your Ecommerce Growth Journey</span>
+            <h2 className={styles.sectionHeading}>
+              Our E-commerce Marketing Process
             </h2>
-            <p style={{ fontSize: '15px', color: '#475569', marginTop: '12px' }}>
-              Why Indian brands scaling beyond ₹10L/month fire generic digital agencies and switch to full-funnel unit economics engineering.
+            <p className={styles.narrativeParagraph}>
+              Our e-commerce marketing process combines strategy, data, creativity, and optimisation to attract the right audience, improve conversions, and support sustainable online growth.
             </p>
+          </ScrollReveal>
+
+          <div className={styles.processGrid}>
+            {ecommerceProcessSteps.map((stepItem, idx) => (
+              <ScrollReveal key={stepItem.step} delay={idx * 0.07} className={styles.processCard}>
+                <div className={styles.processCardTop}>
+                  <span className={styles.processStepNum}>{stepItem.step}</span>
+                </div>
+                <h3 className={styles.processCardTitle}>{stepItem.title}</h3>
+                <p className={styles.processCardDesc}>{stepItem.desc}</p>
+              </ScrollReveal>
+            ))}
           </div>
-          <EcommerceComparisonMatrix />
         </div>
       </section>
 
       {/* ══════════════════════════════════════════════════
-          7. 30-DAY D2C SCALE ROADMAP
+          REGIONAL BHUBANESWAR GEO-REACH FOOTPRINT
          ══════════════════════════════════════════════════ */}
-      <section style={{ padding: 'clamp(56px, 7vw, 96px) 0', background: '#FFFFFF' }}>
-        <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 40px' }}>
-            <span style={{ fontSize: '12px', fontWeight: 800, color: '#0B2093', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-              EXECUTION BLUEPRINT
-            </span>
-            <h2 style={{ fontSize: 'clamp(1.8rem, 3.2vw, 2.6rem)', fontWeight: 800, color: '#0F172A', marginTop: '8px', lineHeight: 1.2 }}>
-              The 30-Day D2C Scale Roadmap
-            </h2>
-            <p style={{ fontSize: '15px', color: '#475569', marginTop: '12px' }}>
-              A systematic, phased sprint to eliminate attribution blind spots, launch high-ROAS creative angles, and build resilient recurring revenue.
-            </p>
-          </div>
-          <EcommerceScaleRoadmap />
-        </div>
-      </section>
+      <QuickConnectMapSection />
 
       {/* ══════════════════════════════════════════════════
-          8. EDITORIAL CASE STUDY SHOWCASE
+          EDITORIAL CASE STUDY SHOWCASE
          ══════════════════════════════════════════════════ */}
       <section className={styles.caseSection}>
         <div className="container">
@@ -260,12 +509,12 @@ export default function EcommerceMarketingPage() {
                 </div>
 
                 <p className={styles.editorialDesc}>
-                  Ektraa possessed exquisite authentic Sambalpuri handloom collections but was held back by a 31% COD return rate and unpredictable ad performance. Marketing Copilot implemented server-side CAPI tracking, automated WhatsApp order confirmations, and UGC unboxing videos that scaled orders nationwide.
+                  Ektraa possessed exquisite authentic Sambalpuri handloom collections but was held back by a 31% COD return rate and unpredictable ad performance. Nova Spark Digital implemented server-side CAPI tracking, automated WhatsApp order confirmations, and UGC unboxing videos that scaled orders nationwide.
                 </p>
 
                 <div className={styles.editorialQuoteBlock}>
                   <p className={styles.editorialQuoteText}>
-                    &quot;Marketing Copilot restructured our entire unit economics. From server-side tracking to automated WhatsApp order verification, our Sambalpuri handloom collections are now selling across Mumbai, Bangalore, and Delhi at peak profitability.&quot;
+                    &quot;Nova Spark Digital restructured our entire unit economics. From server-side tracking to automated WhatsApp order verification, our Sambalpuri handloom collections are now selling across Mumbai, Bangalore, and Delhi at peak profitability.&quot;
                   </p>
                   <span className={styles.editorialQuoteAuthor}>
                     — Founder, Ektraa Handloom Bhubaneswar
@@ -312,54 +561,19 @@ export default function EcommerceMarketingPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          9. ENTERPRISE PLATFORMS & STACK ARSENAL
-         ══════════════════════════════════════════════════ */}
-      <section className={styles.arsenalSection}>
-        <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto' }}>
-            <span style={{ fontSize: '12px', fontWeight: 800, color: '#0B2093', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-              OUR E-COMMERCE STACK
-            </span>
-            <h2 style={{ fontSize: 'clamp(1.8rem, 3.2vw, 2.6rem)', fontWeight: 800, color: '#0F172A', marginTop: '8px', lineHeight: 1.2 }}>
-              Battle-Tested E-Commerce Technology
-            </h2>
-            <p style={{ fontSize: '15px', color: '#475569', marginTop: '12px' }}>
-              We partner with industry-leading e-commerce infrastructure providers to ensure high conversion rates and bulletproof attribution.
-            </p>
-          </div>
-
-          <div className={styles.arsenalGrid}>
-            {ecommerceArsenal.map((spec, idx) => (
-              <div key={idx} className={styles.specCard}>
-                <div className={styles.specCardHeader}>
-                  <div className={styles.specIconBox}>{spec.icon}</div>
-                  <span className={styles.specStatus}>{spec.status}</span>
-                </div>
-                <h4 className={styles.specTitle}>{spec.name}</h4>
-                <div className={styles.specCategory}>{spec.category}</div>
-                <p className={styles.specDesc}>{spec.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════════════
-          10. MINIMALIST HAIRLINE FAQ LIST
+          7. FREQUENTLY ASKED QUESTIONS (FAQ)
          ══════════════════════════════════════════════════ */}
       <section className={styles.faqSection}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto' }}>
-            <span style={{ fontSize: '12px', fontWeight: 800, color: '#0B2093', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-              FREQUENTLY ASKED QUESTIONS
-            </span>
-            <h2 style={{ fontSize: 'clamp(1.8rem, 3.2vw, 2.6rem)', fontWeight: 800, color: '#0F172A', marginTop: '8px', lineHeight: 1.2 }}>
-              Everything You Need to Know About D2C Scaling
+          <ScrollReveal style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto' }}>
+            <span className={styles.sectionEyebrow}>CLEAR ANSWERS</span>
+            <h2 className={styles.sectionHeading}>
+              Frequently Asked Questions
             </h2>
-            <p style={{ fontSize: '15px', color: '#475569', marginTop: '12px' }}>
-              Clear answers on ROAS expectations, logistics protection, and campaign management.
+            <p className={styles.narrativeParagraph}>
+              Everything you need to know about working with an e-commerce marketing agency in Bhubaneswar.
             </p>
-          </div>
+          </ScrollReveal>
 
           <div className={styles.faqContainer}>
             {ecommerceFaqs.map((faq, index) => {
@@ -378,10 +592,6 @@ export default function EcommerceMarketingPage() {
                   {isOpen && (
                     <div className={styles.faqPane}>
                       <p className={styles.faqAnswer}>{faq.a}</p>
-                      <div className={styles.faqTakeaway}>
-                        <span>💡</span>
-                        <span>{faq.takeaway}</span>
-                      </div>
                     </div>
                   )}
                 </div>
@@ -392,45 +602,46 @@ export default function EcommerceMarketingPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          11. EXECUTIVE BOTTOM CONVERSION TERMINAL
+          8. PERFORMANCE-DRIVEN BOTTOM CONVERSION BANNER
          ══════════════════════════════════════════════════ */}
-      <section className={styles.conversionSection} id="executive-terminal">
+      <section className={styles.conversionSection}>
         <div className="container">
-          <div className={styles.executiveTerminal}>
-            <div className={styles.termGlow} />
-            <div style={{ position: 'relative', zIndex: 2 }}>
-              <span className={styles.termPill}>CONFIDENTIAL D2C PERFORMANCE AUDIT</span>
-              <h2 className={styles.termTitle}>
-                Ready to Scale Your D2C Brand Profitably?
-              </h2>
-              <p className={styles.termSub}>
-                Get a comprehensive review of your store’s unit economics, ad creative fatigue, and RTO leaks. Our growth directors will deliver an actionable 30-day scaling plan tailored for your brand.
-              </p>
-              <div className={styles.termContact}>
-                <span>Direct Line:</span>
-                <a href="tel:+919876543210" className={styles.termPhone}>
-                  +91 98765 43210
-                </a>
-                <span>·</span>
-                <span>Bhubaneswar HQ (Patia Corridor)</span>
+          <ScrollReveal>
+            <div className={styles.executiveTerminal}>
+              <div className={styles.termGlow} />
+              <div style={{ position: 'relative', zIndex: 2 }}>
+                <span className={styles.termPill}>PERFORMANCE-DRIVEN ECOMMERCE MARKETING</span>
+                <h2 className={styles.termTitle}>
+                  Want More Traffic, Leads &amp; Online Sales?
+                </h2>
+                <p className={styles.termSub}>
+                  Bring your products in front of the right audience with a connected strategy across ecommerce SEO, Google Ads, Meta Ads, social media, and conversion optimisation.
+                </p>
+                <div className={styles.termContact}>
+                  <span>Direct Line:</span>
+                  <a href="tel:+919876543210" className={styles.termPhone}>
+                    +91 98765 43210
+                  </a>
+                  <span>·</span>
+                  <span>Bhubaneswar HQ (Patia Corridor)</span>
+                </div>
+              </div>
+
+              <div className={styles.termActions}>
+                <BeamButton href="/contact" label="Get Your Ecommerce Strategy" size="lg" arrow={true} />
+                <BeamButton
+                  href="https://wa.me/919876543210?text=Hi%20Nova%20Spark,%20I%20would%20like%20to%20talk%20to%20your%20growth%20team%20about%20ecommerce%20marketing."
+                  label="Talk to Our Growth Team"
+                  size="lg"
+                  variant="outline"
+                  arrow={false}
+                  icon={<span style={{ marginRight: '6px' }}>💬</span>}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                />
               </div>
             </div>
-
-            <div className={styles.termActions}>
-              <a href="/contact" className={styles.termAuditBtn}>
-                <span>Claim Your Free D2C Audit</span>
-                <span>→</span>
-              </a>
-              <a
-                href="https://wa.me/919876543210?text=Hi%20Marketing%20Copilot,%20I%20would%20like%20to%20audit%20our%20D2C%20store%20unit%20economics."
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.termWhatsAppBtn}
-              >
-                <span>💬 WhatsApp Growth Director</span>
-              </a>
-            </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
     </div>
