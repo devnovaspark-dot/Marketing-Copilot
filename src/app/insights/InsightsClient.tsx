@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import ScrollReveal from '@/components/ScrollReveal';
@@ -26,10 +26,24 @@ export interface Article {
 export default function InsightsClient({ articles = [] }: { articles: Article[] }) {
   const [activeCategory, setActiveCategory] = useState('All Stories');
   const [searchQuery, setSearchQuery] = useState('');
-  const [sortOrder, setSortOrder] = useState<'latest' | 'oldest'>('latest');
+  const [sortOption, setSortOption] = useState<'latest' | 'oldest' | 'title'>('latest');
+  const [isSortOpen, setIsSortOpen] = useState(false);
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
   const [bookmarkedSlugs, setBookmarkedSlugs] = useState<Set<string>>(new Set());
+
+  const sortRef = useRef<HTMLDivElement>(null);
+
+  // Close sort dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (sortRef.current && !sortRef.current.contains(event.target as Node)) {
+        setIsSortOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   // Dynamically extract real categories from published Sanity articles
   const categories = useMemo(() => {
@@ -60,11 +74,14 @@ export default function InsightsClient({ articles = [] }: { articles: Article[] 
       return matchesCategory && matchesSearch;
     });
 
-    if (sortOrder === 'oldest') {
+    if (sortOption === 'oldest') {
       return [...list].reverse();
     }
+    if (sortOption === 'title') {
+      return [...list].sort((a, b) => a.title.localeCompare(b.title));
+    }
     return list;
-  }, [articles, activeCategory, searchQuery, sortOrder]);
+  }, [articles, activeCategory, searchQuery, sortOption]);
 
   // Featured article is the first one in the filtered list
   const featuredArticle = filteredArticles[0];
@@ -99,9 +116,22 @@ export default function InsightsClient({ articles = [] }: { articles: Article[] 
     <>
       <div className={styles.page}>
         {/* ================================================================= */}
-        {/* 1. Hero Section (Matching Ekatraa layout & Marketing Copilot brand)*/}
+        {/* 1. Hero Section with Background Image & Enhanced Bottom Height    */}
         {/* ================================================================= */}
         <section className={styles.hero}>
+          {/* Background Image softly blended on the right, matching Ekatraa style */}
+          <div className={styles.heroBgMedia}>
+            <Image
+              src="/images/team_office.jpg"
+              alt="Marketing Copilot Growth Operations & Research Studio"
+              fill
+              priority
+              className={styles.heroBgImg}
+              sizes="(max-width: 768px) 100vw, 55vw"
+            />
+            <div className={styles.heroBgGradient} />
+          </div>
+
           <div className="container">
             <div className={styles.heroInner}>
               <div className={styles.heroEyebrow}>
@@ -121,7 +151,7 @@ export default function InsightsClient({ articles = [] }: { articles: Article[] 
         </section>
 
         {/* ================================================================= */}
-        {/* 2. Filter Bar (Category Pills & Sort Dropdown)                    */}
+        {/* 2. Filter Bar with Working Dropdown & Skeuomorphic Controls       */}
         {/* ================================================================= */}
         <div className="container">
           <div className={styles.filterBar}>
@@ -142,12 +172,15 @@ export default function InsightsClient({ articles = [] }: { articles: Article[] 
               })}
             </div>
 
-            <div className={styles.sortWrap}>
+            {/* Interactive Sort Dropdown with working open/close menu */}
+            <div className={styles.sortWrap} ref={sortRef}>
               <button
                 type="button"
-                className={styles.sortButton}
-                onClick={() => setSortOrder(sortOrder === 'latest' ? 'oldest' : 'latest')}
-                aria-label={`Sort by ${sortOrder === 'latest' ? 'Oldest' : 'Latest'}`}
+                className={`${styles.sortButton} ${isSortOpen ? styles.sortButtonActive : ''}`}
+                onClick={() => setIsSortOpen((prev) => !prev)}
+                aria-expanded={isSortOpen}
+                aria-haspopup="listbox"
+                aria-label="Sort stories"
               >
                 <svg
                   className={styles.sortIcon}
@@ -157,25 +190,78 @@ export default function InsightsClient({ articles = [] }: { articles: Article[] 
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2"
+                  aria-hidden="true"
                 >
                   <line x1="21" y1="6" x2="3" y2="6" />
                   <line x1="17" y1="12" x2="7" y2="12" />
                   <line x1="13" y1="18" x2="11" y2="18" />
                 </svg>
-                <span>{sortOrder === 'latest' ? 'Latest' : 'Oldest'}</span>
-                <span className={styles.sortChevron}>▾</span>
+                <span>
+                  {sortOption === 'latest'
+                    ? 'Latest'
+                    : sortOption === 'oldest'
+                    ? 'Oldest'
+                    : 'Title A-Z'}
+                </span>
+                <span className={`${styles.sortChevron} ${isSortOpen ? styles.sortChevronRotated : ''}`}>
+                  ▾
+                </span>
               </button>
+
+              {isSortOpen && (
+                <div className={styles.sortDropdown} role="listbox">
+                  <button
+                    type="button"
+                    className={`${styles.sortOption} ${sortOption === 'latest' ? styles.sortOptionActive : ''}`}
+                    onClick={() => {
+                      setSortOption('latest');
+                      setIsSortOpen(false);
+                    }}
+                    role="option"
+                    aria-selected={sortOption === 'latest'}
+                  >
+                    <span>Latest Stories</span>
+                    {sortOption === 'latest' && <span className={styles.sortCheck}>✓</span>}
+                  </button>
+                  <button
+                    type="button"
+                    className={`${styles.sortOption} ${sortOption === 'oldest' ? styles.sortOptionActive : ''}`}
+                    onClick={() => {
+                      setSortOption('oldest');
+                      setIsSortOpen(false);
+                    }}
+                    role="option"
+                    aria-selected={sortOption === 'oldest'}
+                  >
+                    <span>Oldest Stories</span>
+                    {sortOption === 'oldest' && <span className={styles.sortCheck}>✓</span>}
+                  </button>
+                  <button
+                    type="button"
+                    className={`${styles.sortOption} ${sortOption === 'title' ? styles.sortOptionActive : ''}`}
+                    onClick={() => {
+                      setSortOption('title');
+                      setIsSortOpen(false);
+                    }}
+                    role="option"
+                    aria-selected={sortOption === 'title'}
+                  >
+                    <span>Title (A — Z)</span>
+                    {sortOption === 'title' && <span className={styles.sortCheck}>✓</span>}
+                  </button>
+                </div>
+              )}
             </div>
           </div>
 
           {/* =============================================================== */}
-          {/* 3. Main 2-Column Layout Grid (Matching Ekatraa layout)          */}
+          {/* 3. Main 2-Column Layout Grid (Skeuomorphic & Polished)          */}
           {/* =============================================================== */}
           <div className={styles.layoutGrid}>
             {/* Left Content Column (Stories) */}
             <main className={styles.mainCol}>
               {filteredArticles.length === 0 ? (
-                /* Clean Empty State */
+                /* Skeuomorphic Empty State */
                 <div className={styles.emptyState}>
                   <div className={styles.emptyIcon}>✦</div>
                   <h3 className={styles.emptyTitle}>No stories found</h3>
@@ -185,22 +271,20 @@ export default function InsightsClient({ articles = [] }: { articles: Article[] 
                       : `We could not find any stories matching "${searchQuery}". Try another keyword or clear your filter.`}
                   </p>
                   {articles.length > 0 && (
-                    <button
-                      type="button"
-                      className={styles.resetBtn}
+                    <BeamButton
                       onClick={() => {
                         setActiveCategory('All Stories');
                         setSearchQuery('');
                       }}
-                    >
-                      View All Stories
-                    </button>
+                      label="View All Stories"
+                      size="sm"
+                    />
                   )}
                 </div>
               ) : (
                 <>
                   {/* ======================================================= */}
-                  {/* Featured Story Card (Horizontal split matching reference)*/}
+                  {/* Featured Story Card (Skeuomorphic Masterpiece)          */}
                   {/* ======================================================= */}
                   {featuredArticle && (
                     <ScrollReveal>
@@ -216,7 +300,7 @@ export default function InsightsClient({ articles = [] }: { articles: Article[] 
                             fill
                             priority
                             className={styles.featuredImg}
-                            sizes="(max-width: 768px) 100vw, 45vw"
+                            sizes="(max-width: 768px) 100vw, 48vw"
                           />
                         </Link>
 
@@ -256,13 +340,12 @@ export default function InsightsClient({ articles = [] }: { articles: Article[] 
                               </div>
                             </div>
 
-                            <Link
+                            {/* Same BeamButton animation as navbar */}
+                            <BeamButton
                               href={`/insights/${featuredArticle.slug}`}
-                              className={styles.readMoreLink}
-                            >
-                              <span>Read More</span>
-                              <span className={styles.readMoreArrow}>→</span>
-                            </Link>
+                              label="Read More"
+                              size="sm"
+                            />
                           </div>
                         </div>
                       </article>
@@ -333,26 +416,33 @@ export default function InsightsClient({ articles = [] }: { articles: Article[] 
                                     </div>
                                   </div>
 
-                                  <button
-                                    type="button"
-                                    className={`${styles.bookmarkBtn} ${
-                                      isBookmarked ? styles.bookmarkBtnActive : ''
-                                    }`}
-                                    onClick={(e) => toggleBookmark(article.slug, e)}
-                                    aria-label="Save story"
-                                    title={isBookmarked ? 'Bookmarked' : 'Bookmark story'}
-                                  >
-                                    <svg
-                                      width="15"
-                                      height="15"
-                                      viewBox="0 0 24 24"
-                                      fill={isBookmarked ? 'currentColor' : 'none'}
-                                      stroke="currentColor"
-                                      strokeWidth="2"
+                                  <div className={styles.storyCardActions}>
+                                    <button
+                                      type="button"
+                                      className={`${styles.bookmarkBtn} ${
+                                        isBookmarked ? styles.bookmarkBtnActive : ''
+                                      }`}
+                                      onClick={(e) => toggleBookmark(article.slug, e)}
+                                      aria-label="Save story"
+                                      title={isBookmarked ? 'Bookmarked' : 'Bookmark story'}
                                     >
-                                      <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
-                                    </svg>
-                                  </button>
+                                      <svg
+                                        width="15"
+                                        height="15"
+                                        viewBox="0 0 24 24"
+                                        fill={isBookmarked ? 'currentColor' : 'none'}
+                                        stroke="currentColor"
+                                        strokeWidth="2"
+                                      >
+                                        <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
+                                      </svg>
+                                    </button>
+                                    <BeamButton
+                                      href={`/insights/${article.slug}`}
+                                      label="Read Story"
+                                      size="sm"
+                                    />
+                                  </div>
                                 </div>
                               </div>
                             </article>
@@ -362,7 +452,7 @@ export default function InsightsClient({ articles = [] }: { articles: Article[] 
                     </div>
                   )}
 
-                  {/* Clean Editorial Dispatch Note (When only 1 article exists) */}
+                  {/* Clean Skeuomorphic Editorial Notice (When only 1 article exists) */}
                   {filteredArticles.length === 1 && (
                     <div className={styles.editorialNotice}>
                       <div className={styles.editorialNoticeTag}>✦ Editorial Dispatch</div>
@@ -379,10 +469,10 @@ export default function InsightsClient({ articles = [] }: { articles: Article[] 
             </main>
 
             {/* ============================================================= */}
-            {/* Right Sidebar Column (Matching Ekatraa layout)                */}
+            {/* Right Sidebar Column (Skeuomorphic & Matching Reference)     */}
             {/* ============================================================= */}
             <aside className={styles.sidebarCol}>
-              {/* 1. Search Box at top of sidebar */}
+              {/* 1. Pill Search Box at top of sidebar */}
               <div className={styles.sidebarSearchCard}>
                 <div className={styles.searchWrap}>
                   <svg
@@ -478,6 +568,7 @@ export default function InsightsClient({ articles = [] }: { articles: Article[] 
                       className={styles.newsletterInput}
                       aria-label="Enter your email"
                     />
+                    {/* BeamButton matching navbar */}
                     <BeamButton
                       type="submit"
                       label="Subscribe"
