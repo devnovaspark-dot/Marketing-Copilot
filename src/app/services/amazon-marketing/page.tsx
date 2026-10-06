@@ -7,7 +7,6 @@ import BeamButton from '@/components/BeamButton';
 
 // Interactive Components & Regional Connect
 import QuickConnectMapSection from '@/app/_components/QuickConnectMapSection';
-import AmazonPpcCalculator from './_components/AmazonPpcCalculator';
 
 import styles from './amazon-marketing-page.module.css';
 
@@ -386,22 +385,104 @@ export default function AmazonMarketingPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          UNIT ECONOMICS & PPC PROFIT ENGINE
+          SKEUOMORPHIC SHOWCASE & PPC COMMAND CENTER
          ══════════════════════════════════════════════════ */}
-      <section style={{ padding: 'clamp(56px, 7vw, 96px) 0', background: '#FFFFFF' }}>
+      <section className={styles.showcaseSection}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 40px' }}>
-            <span style={{ fontSize: '12px', fontWeight: 800, color: '#0B2093', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-              UNIT ECONOMICS &amp; PPC CALCULATOR
-            </span>
-            <h2 style={{ fontSize: 'clamp(1.8rem, 3.2vw, 2.6rem)', fontWeight: 800, color: '#0F172A', marginTop: '8px', lineHeight: 1.2 }}>
-              Simulate Your Amazon Advertising Margins &amp; ACoS
-            </h2>
-            <p style={{ fontSize: '15px', color: '#475569', marginTop: '12px' }}>
-              Model how negative keyword dayparting, exact match keyword silos, and listing conversion rate improvements lift your bottom-line net profit.
-            </p>
-          </div>
-          <AmazonPpcCalculator />
+          <ScrollReveal>
+            <div className={styles.showcaseCard}>
+              <div className={styles.cardGlassGloss} />
+
+              {/* Left Column: Strategic PPC Capabilities */}
+              <div className={styles.showcaseLeft}>
+                <div className={styles.sectionHeaderBadge}>
+                  <span className={styles.badgeDot} />
+                  <span>SELLER CENTRAL ANALYTICS &amp; PPC COMMAND</span>
+                </div>
+                <h2 className={styles.sectionHeading}>
+                  Engineered Amazon PPC That Protects Margins &amp; Powers Organic Rank
+                </h2>
+                <p className={styles.narrativeParagraph}>
+                  Amazon PPC is far more than automated bidding. It is your most powerful intelligence engine. When managed with surgical accuracy, paid campaigns reveal exact shopper intent, harvest high-converting search queries, and drive the sales velocity needed to dominate Page 1 organic placements.
+                </p>
+                <p className={styles.narrativeParagraph}>
+                  At Nova Spark Digital, our Amazon specialists structure strict keyword silos, continuous negative match pruning, and automated dayparting schedules to maintain aggressive Top-of-Search visibility at the lowest possible ACoS.
+                </p>
+
+                <div className={styles.showcasePoints}>
+                  <div className={styles.showcasePointItem}>
+                    <div className={styles.showcasePointIcon}>🎯</div>
+                    <div className={styles.showcasePointText}>
+                      <span className={styles.showcasePointTitle}>Surgical Campaign Architecture</span>
+                      <span className={styles.showcasePointDesc}>
+                        Isolated Exact, Phrase, and Broad discovery campaigns with negative cross-pollination to eliminate wasted click spend.
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className={styles.showcasePointItem}>
+                    <div className={styles.showcasePointIcon}>📈</div>
+                    <div className={styles.showcasePointText}>
+                      <span className={styles.showcasePointTitle}>Organic Rank Velocity Multiplier</span>
+                      <span className={styles.showcasePointDesc}>
+                        Targeted Top-of-Search placement elevates core keyword ranking naturally, compounding sales volume without endless ad inflation.
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className={styles.showcasePointItem}>
+                    <div className={styles.showcasePointIcon}>🛡️</div>
+                    <div className={styles.showcasePointText}>
+                      <span className={styles.showcasePointTitle}>ASIN &amp; Competitor Defense</span>
+                      <span className={styles.showcasePointDesc}>
+                        Defend your product detail pages against rival ad conquests while strategically capturing competitor market share.
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <BeamButton
+                  href="/contact"
+                  label="Request a Free Amazon Account Audit"
+                  size="md"
+                  arrow={true}
+                />
+              </div>
+
+              {/* Right Column: Skeuomorphic Image Frame with Floating Telemetry */}
+              <div className={styles.showcaseRight}>
+                <div className={styles.showcaseImageContainer}>
+                  <div className={styles.showcaseImageFrame}>
+                    <div className={styles.cardGlassGloss} />
+                    <Image
+                      src="/images/amazon_ppc_showcase.jpg"
+                      alt="Amazon Seller Central advertising dashboard workstation showing PPC campaign analytics, sales, spend, and ACoS trends"
+                      width={800}
+                      height={500}
+                      className={styles.showcaseImg}
+                      priority
+                    />
+                  </div>
+
+                  {/* Tactile Floating Badges */}
+                  <div className={styles.floatingBadgeTop}>
+                    <span className={styles.badgeIcon}>📊</span>
+                    <span>
+                      <strong className={styles.badgeMetric}>20.57% Target ACoS</strong> • Profitable Scale
+                    </span>
+                  </div>
+
+                  <div className={styles.floatingBadgeBottom}>
+                    <span className={styles.badgeIcon}>🏆</span>
+                    <span>
+                      <strong className={styles.badgeMetric}>415+ Daily Orders</strong> • High Margin
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 

@@ -5,9 +5,8 @@ import Image from 'next/image';
 import ScrollReveal from '@/components/ScrollReveal';
 import BeamButton from '@/components/BeamButton';
 
-// Supporting Components & Calculators
+// Supporting Components
 import QuickConnectMapSection from '@/app/_components/QuickConnectMapSection';
-import EcommerceRoasCalculator from './_components/EcommerceRoasCalculator';
 
 import styles from './ecommerce-page.module.css';
 
@@ -462,22 +461,104 @@ export default function EcommerceMarketingPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          7. UNIT ECONOMICS & ROAS CALCULATOR
+          7. SKEUOMORPHIC SHOWCASE & PROFIT ARCHITECTURE
          ══════════════════════════════════════════════════ */}
-      <section style={{ padding: 'clamp(56px, 7vw, 96px) 0', background: '#FFFFFF' }}>
+      <section className={styles.showcaseSection}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 40px' }}>
-            <span style={{ fontSize: '12px', fontWeight: 800, color: '#0B2093', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-              UNIT ECONOMICS &amp; PROFIT ENGINE
-            </span>
-            <h2 style={{ fontSize: 'clamp(1.8rem, 3.2vw, 2.6rem)', fontWeight: 800, color: '#0F172A', marginTop: '8px', lineHeight: 1.2 }}>
-              Calculate Your True Net Profit &amp; RTO Savings
-            </h2>
-            <p style={{ fontSize: '15px', color: '#475569', marginTop: '12px' }}>
-              Adjust your monthly ad budget, current ROAS, and return rate to simulate how our creative testing and automated order verification firewalls elevate net contribution margin.
-            </p>
-          </div>
-          <EcommerceRoasCalculator />
+          <ScrollReveal>
+            <div className={styles.showcaseCard}>
+              <div className={styles.cardGlassGloss} />
+
+              {/* Left Column: Text & Strategic Proof Points */}
+              <div className={styles.showcaseLeft}>
+                <div className={styles.sectionHeaderBadge}>
+                  <span className={styles.badgeDot} />
+                  <span>OMNICHANNEL SCALE &amp; REVENUE ARCHITECTURE</span>
+                </div>
+                <h2 className={styles.sectionHeading}>
+                  Turning Digital Traffic Into Sustainable Store Profitability
+                </h2>
+                <p className={styles.narrativeParagraph}>
+                  High-performing e-commerce brands aren&apos;t built on random traffic spikes. They thrive on synchronized multi-touch journeys — uniting high-intent Google Shopping queries, high-converting Meta reels, precision retargeting, and frictionless checkout flows.
+                </p>
+                <p className={styles.narrativeParagraph}>
+                  At Nova Spark Digital, our growth architects engineer every customer touchpoint to maximize net contribution margin and systematically reduce customer acquisition costs (CAC) for businesses in Bhubaneswar and beyond.
+                </p>
+
+                <div className={styles.showcasePoints}>
+                  <div className={styles.showcasePointItem}>
+                    <div className={styles.showcasePointIcon}>📈</div>
+                    <div className={styles.showcasePointText}>
+                      <span className={styles.showcasePointTitle}>Omnichannel Funnel Integration</span>
+                      <span className={styles.showcasePointDesc}>
+                        Seamless server-side tracking connecting Instagram discovery, Google Shopping intent, catalog ads, and retention sequences.
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className={styles.showcasePointItem}>
+                    <div className={styles.showcasePointIcon}>🛡️</div>
+                    <div className={styles.showcasePointText}>
+                      <span className={styles.showcasePointTitle}>RTO &amp; Return Mitigation Firewalls</span>
+                      <span className={styles.showcasePointDesc}>
+                        Automated WhatsApp address verification and COD-to-prepaid conversion prompts that protect your bottom-line delivery margins.
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className={styles.showcasePointItem}>
+                    <div className={styles.showcasePointIcon}>⚡</div>
+                    <div className={styles.showcasePointText}>
+                      <span className={styles.showcasePointTitle}>High-Velocity Creative Testing</span>
+                      <span className={styles.showcasePointDesc}>
+                        Rapid weekly creative iterations across product hooks, UGC testimonials, and dynamic bundles to discover scalable winners.
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <BeamButton
+                  href="/contact"
+                  label="Claim Your Free Store Profitability Audit"
+                  size="md"
+                  arrow={true}
+                />
+              </div>
+
+              {/* Right Column: Skeuomorphic Image Frame with Floating Telemetry */}
+              <div className={styles.showcaseRight}>
+                <div className={styles.showcaseImageContainer}>
+                  <div className={styles.showcaseImageFrame}>
+                    <div className={styles.cardGlassGloss} />
+                    <Image
+                      src="/images/work_ecommerce.jpg"
+                      alt="E-commerce store performance analytics dashboard showing 4.8X ROAS and revenue growth"
+                      width={800}
+                      height={600}
+                      className={styles.showcaseImg}
+                      priority
+                    />
+                  </div>
+
+                  {/* Tactile Floating Badges */}
+                  <div className={styles.floatingBadgeTop}>
+                    <span className={styles.badgeIcon}>🔥</span>
+                    <span>
+                      <strong className={styles.badgeMetric}>4.8x Blended ROAS</strong> • Scaled Funnels
+                    </span>
+                  </div>
+
+                  <div className={styles.floatingBadgeBottom}>
+                    <span className={styles.badgeIcon}>⚡</span>
+                    <span>
+                      <strong className={styles.badgeMetric}>+142% Revenue</strong> • Verified Lift
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
