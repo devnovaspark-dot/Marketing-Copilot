@@ -13,18 +13,62 @@ import { postBySlugQuery, postPathsQuery } from '@/sanity/queries';
 import { urlForImage } from '@/sanity/image';
 import ReadingProgressBar from '@/components/ReadingProgressBar';
 import styles from './page.module.css';
+import { FALLBACK_ARTICLES } from '@/data/fallbackArticles';
 
 export const dynamicParams = true;
 export const revalidate = 0;
 
-function extractHeadingsFromPortableText(blocks: any[]): HeadingItem[] {
+interface PortableTextBlockItem {
+  _type?: string;
+  style?: string;
+  children?: {
+    text?: string;
+  }[];
+}
+
+interface SanityPostDetail {
+  title: string;
+  metaTitle?: string;
+  category?: string;
+  publishedAt?: string;
+  _createdAt?: string;
+  bannerImage?: {
+    asset?: {
+      _ref?: string;
+    };
+    alt?: string;
+  };
+  author?: {
+    name?: string;
+    role?: string;
+    bio?: string;
+    image?: {
+      asset?: {
+        _ref?: string;
+      };
+    };
+  };
+  excerpt?: string;
+  keyTakeaways?: string[];
+  body?: PortableTextBlockItem[];
+  faqItems?: { question: string; answer: string }[];
+  pillarPost?: {
+    title: string;
+    slug: string;
+    excerpt?: string;
+  };
+  noIndex?: boolean;
+  metaKeywords?: string[];
+}
+
+function extractHeadingsFromPortableText(blocks?: PortableTextBlockItem[]): HeadingItem[] {
   if (!Array.isArray(blocks)) return [];
   const headings: HeadingItem[] = [];
 
   blocks.forEach((block) => {
     if (block._type === 'block' && (block.style === 'h2' || block.style === 'h3')) {
       const text = block.children
-        ?.map((child: any) => child.text || '')
+        ?.map((child) => child.text || '')
         .join('')
         .trim();
 
@@ -42,7 +86,7 @@ function extractHeadingsFromPortableText(blocks: any[]): HeadingItem[] {
 }
 
 async function getArticle(slug: string) {
-  const sanityPost = await sanityFetch<any>({
+  const sanityPost = await sanityFetch<SanityPostDetail>({
     query: postBySlugQuery,
     params: { slug },
     revalidate: 0,
@@ -92,12 +136,43 @@ async function getArticle(slug: string) {
     };
   }
 
+  // Graceful fallback to rich companion editorial articles
+  const fallback = FALLBACK_ARTICLES.find((a) => a.slug === slug);
+  if (fallback) {
+    return {
+      isSanity: false,
+      title: fallback.title,
+      metaTitle: fallback.metaTitle || fallback.title,
+      category: fallback.category,
+      readTime: fallback.readTime,
+      date: fallback.date,
+      image: fallback.image,
+      imageAlt: fallback.imageAlt || fallback.title,
+      author: fallback.author,
+      authorRole: fallback.authorRole,
+      authorImage: fallback.authorImage,
+      authorBio: fallback.authorBio,
+      summary: fallback.excerpt,
+      takeaways: fallback.takeaways,
+      body: fallback.body,
+      faqItems: fallback.faqItems,
+      pillarPost: null,
+      headings: fallback.headings,
+      noIndex: false,
+      metaKeywords: [fallback.category, 'Marketing Copilot', 'Growth Playbook', 'Bhubaneswar'],
+    };
+  }
+
   return null;
 }
 
 export async function generateStaticParams() {
   const sanitySlugs = await sanityFetch<string[]>({ query: postPathsQuery, revalidate: 0 });
-  return (sanitySlugs || []).map((slug) => ({ slug }));
+  const allSlugs = new Set<string>([
+    ...(sanitySlugs || []),
+    ...FALLBACK_ARTICLES.map((a) => a.slug),
+  ]);
+  return Array.from(allSlugs).map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({

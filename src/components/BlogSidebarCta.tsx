@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import BeamButton from '@/components/BeamButton';
 import styles from './BlogSidebarCta.module.css';
 
