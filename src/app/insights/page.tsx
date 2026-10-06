@@ -3,7 +3,6 @@ import InsightsClient, { Article } from './InsightsClient';
 import { sanityFetch } from '@/sanity/client';
 import { postsQuery } from '@/sanity/queries';
 import { urlForImage } from '@/sanity/image';
-import { FALLBACK_ARTICLES } from '@/data/fallbackArticles';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -92,37 +91,8 @@ export default async function InsightsPage() {
         ? urlForImage(p.author.image)?.width(100).height(100).url()
         : '/images/ceo_aarav.jpg',
       featured: idx === 0,
-      takeaways: [
-        'Multi-channel local marketing engine built for high-intent customer acquisition',
-        'Direct synergy between Local SEO, review velocity, and Google 3-Pack prominence',
-        'High-converting landing page experiences that protect customer acquisition costs',
-      ],
     };
   });
 
-  // Blend with companion editorial articles if they are not already published in Sanity
-  const liveSlugs = new Set((sanityPosts || []).map((p) => p.slug));
-  const companionArticles: Article[] = FALLBACK_ARTICLES.filter(
-    (fa) => !liveSlugs.has(fa.slug)
-  ).map((fa) => ({
-    slug: fa.slug,
-    category: fa.category,
-    title: fa.title,
-    excerpt: fa.excerpt,
-    readTime: fa.readTime,
-    date: fa.date,
-    image: fa.image,
-    author: fa.author,
-    authorRole: fa.authorRole,
-    authorImage: fa.authorImage,
-    featured: false,
-    takeaways: fa.takeaways,
-  }));
-
-  const allArticles: Article[] = [...articles, ...companionArticles];
-  if (allArticles.length > 0) {
-    allArticles[0].featured = true;
-  }
-
-  return <InsightsClient articles={allArticles} />;
+  return <InsightsClient articles={articles} />;
 }

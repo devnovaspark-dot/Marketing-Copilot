@@ -13,7 +13,6 @@ import { postBySlugQuery, postPathsQuery } from '@/sanity/queries';
 import { urlForImage } from '@/sanity/image';
 import ReadingProgressBar from '@/components/ReadingProgressBar';
 import styles from './page.module.css';
-import { FALLBACK_ARTICLES } from '@/data/fallbackArticles';
 
 export const dynamicParams = true;
 export const revalidate = 0;
@@ -136,43 +135,12 @@ async function getArticle(slug: string) {
     };
   }
 
-  // Graceful fallback to rich companion editorial articles
-  const fallback = FALLBACK_ARTICLES.find((a) => a.slug === slug);
-  if (fallback) {
-    return {
-      isSanity: false,
-      title: fallback.title,
-      metaTitle: fallback.metaTitle || fallback.title,
-      category: fallback.category,
-      readTime: fallback.readTime,
-      date: fallback.date,
-      image: fallback.image,
-      imageAlt: fallback.imageAlt || fallback.title,
-      author: fallback.author,
-      authorRole: fallback.authorRole,
-      authorImage: fallback.authorImage,
-      authorBio: fallback.authorBio,
-      summary: fallback.excerpt,
-      takeaways: fallback.takeaways,
-      body: fallback.body,
-      faqItems: fallback.faqItems,
-      pillarPost: null,
-      headings: fallback.headings,
-      noIndex: false,
-      metaKeywords: [fallback.category, 'Marketing Copilot', 'Growth Playbook', 'Bhubaneswar'],
-    };
-  }
-
   return null;
 }
 
 export async function generateStaticParams() {
   const sanitySlugs = await sanityFetch<string[]>({ query: postPathsQuery, revalidate: 0 });
-  const allSlugs = new Set<string>([
-    ...(sanitySlugs || []),
-    ...FALLBACK_ARTICLES.map((a) => a.slug),
-  ]);
-  return Array.from(allSlugs).map((slug) => ({ slug }));
+  return (sanitySlugs || []).map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
