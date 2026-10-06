@@ -457,8 +457,8 @@ export default function AmazonMarketingPage() {
                     <Image
                       src="/images/amazon_ppc_showcase.jpg"
                       alt="Amazon Seller Central advertising dashboard workstation showing PPC campaign analytics, sales, spend, and ACoS trends"
-                      width={800}
-                      height={500}
+                      width={1376}
+                      height={768}
                       className={styles.showcaseImg}
                       priority
                     />
@@ -477,6 +477,22 @@ export default function AmazonMarketingPage() {
                     <span>
                       <strong className={styles.badgeMetric}>415+ Daily Orders</strong> • High Margin
                     </span>
+                  </div>
+
+                  {/* Live Performance Telemetry Strip */}
+                  <div className={styles.showcaseTelemetryStrip}>
+                    <div className={styles.showcaseTelemetryCell}>
+                      <span className={styles.showcaseTelemetryVal}>₹1.8 Cr+</span>
+                      <span className={styles.showcaseTelemetryLabel}>Managed Ad GMV</span>
+                    </div>
+                    <div className={styles.showcaseTelemetryCell}>
+                      <span className={styles.showcaseTelemetryVal}>4.85x</span>
+                      <span className={styles.showcaseTelemetryLabel}>Blended ROAS</span>
+                    </div>
+                    <div className={styles.showcaseTelemetryCell}>
+                      <span className={styles.showcaseTelemetryVal}>-34%</span>
+                      <span className={styles.showcaseTelemetryLabel}>ACoS Deflation</span>
+                    </div>
                   </div>
                 </div>
               </div>

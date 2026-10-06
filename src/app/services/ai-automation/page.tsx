@@ -177,6 +177,9 @@ export default function AiAutomationPage() {
       {/* ══════════════════════════════════════════════════
          SECTION 8: EDITORIAL CLIENT CASE STUDY
       ══════════════════════════════════════════════════ */}
+      {/* ══════════════════════════════════════════════════
+         SECTION 8: EDITORIAL CLIENT CASE STUDY
+      ══════════════════════════════════════════════════ */}
       <section className={styles.caseStudySection}>
         <div className="container">
           <div className={styles.caseStudyCard}>
@@ -193,6 +196,8 @@ export default function AiAutomationPage() {
                   Client Spotlight &middot; Experiential Travel
                 </div>
               </div>
+
+              {/* Verified Autonomous Sales Metrics */}
               <div className={styles.clientProofStrip}>
                 <div className={styles.proofItem}>
                   <span className={styles.proofVal}>₹42 Lakhs</span>
@@ -206,6 +211,11 @@ export default function AiAutomationPage() {
                   <span className={styles.proofVal}>82%</span>
                   <span className={styles.proofLabel}>Auto-Booked</span>
                 </div>
+              </div>
+
+              <div className={styles.clientDeploymentBadge}>
+                <span className={styles.livePulseDot} />
+                <span>Meta Cloud API &amp; WhatsApp Agents &middot; Live Production</span>
               </div>
             </div>
 
@@ -222,8 +232,8 @@ export default function AiAutomationPage() {
 
               <div className={styles.metricPillsRow}>
                 <div className={styles.metricPill}>
-                  <span className={styles.metricPillNumber}>1.4s</span>
-                  <span className={styles.metricPillDesc}>Avg Bot Latency</span>
+                  <span className={styles.metricPillNumber}>3.8x</span>
+                  <span className={styles.metricPillDesc}>Booking Conversion Lift</span>
                 </div>
                 <div className={styles.metricPill}>
                   <span className={styles.metricPillNumber}>+310%</span>
@@ -239,16 +249,15 @@ export default function AiAutomationPage() {
                 &ldquo;Before Copilot, 40% of our weekend ad leads went cold because our staff couldn&apos;t reply until Monday morning. Now, the AI sends the exact villa photos, custom itineraries, and takes the advance deposit in under two minutes.&rdquo;
                 <span className={styles.quoteAuthor}>— Debashis M., Operations Director, Weekend Bhraman</span>
               </div>
-            </div>
-          </div>
 
-          {/* Centered CTA Button Down Odisha Travel & Hospitality Automation */}
-          <div className={styles.caseStudyCtaRow}>
-            <BeamButton
-              href="/contact"
-              label="Automate Your Sales Pipeline Like Weekend Bhraman →"
-              size="lg"
-            />
+              <div className={styles.caseInlineBtnRow}>
+                <BeamButton
+                  href="/contact"
+                  label="Automate Your Sales Pipeline Like Weekend Bhraman →"
+                  size="md"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
