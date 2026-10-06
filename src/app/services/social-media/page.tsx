@@ -131,15 +131,15 @@ export default function SocialMediaPage() {
         <div className="container">
           <div className={styles.heroCenter}>
             <ScrollReveal>
-              <div className={styles.heroEyebrowPill}>
+              <h1 className={styles.heroEyebrowPill}>
                 <span className={styles.emeraldPulseDot} />
                 <span>Social Media Marketing Agency · Bhubaneswar &amp; Odisha</span>
-              </div>
+              </h1>
 
-              <h1 className={styles.heroTitle}>
+              <h2 className={styles.heroTitle}>
                 Strategic Social Media Marketing for{' '}
                 <span className="accent-gradient">Business Growth</span>
-              </h1>
+              </h2>
 
               <p className={styles.heroSub}>
                 From planning and content creation to advertising and daily management, we handle your social media presence with a clear focus on growth and engagement.

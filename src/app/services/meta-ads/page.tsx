@@ -203,15 +203,15 @@ export default function MetaAdsPage() {
         <div className="container">
           <div className={styles.heroCenter}>
             <ScrollReveal>
-              <div className={styles.heroEyebrowPill}>
+              <h1 className={styles.heroEyebrowPill}>
                 <span className={styles.bluePulseDot} />
                 <span>Meta Ads Agency · Bhubaneswar &amp; Odisha</span>
-              </div>
+              </h1>
 
-              <h1 className={styles.heroTitle}>
+              <h2 className={styles.heroTitle}>
                 Make Every Meta Ad{' '}
                 <span className="accent-gradient">Work Harder</span>
-              </h1>
+              </h2>
 
               <p className={styles.heroSub}>
                 Build targeted Facebook and Instagram campaigns that connect your brand with relevant audiences, generate quality leads, and support measurable business growth.

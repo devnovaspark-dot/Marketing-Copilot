@@ -58,14 +58,14 @@ export default function AiAutomationPage() {
         <div className={styles.heroMeshGrid} />
         <div className="container">
           <div className={styles.heroCenter}>
-            <div className={styles.heroEyebrowPill}>
+            <h1 className={styles.heroEyebrowPill}>
               <div className={styles.emeraldPulseDot} />
               Enterprise AI &amp; Workflow Infrastructure &middot; Bhubaneswar
-            </div>
-
-            <h1 className={styles.heroTitle}>
-              Turn Inbound Inquiries Into Booked Revenue in &lt; 2 Seconds.
             </h1>
+
+            <h2 className={styles.heroTitle}>
+              Turn Inbound Inquiries Into Booked Revenue in &lt; 2 Seconds.
+            </h2>
 
             <p className={styles.heroSub}>
               We architect autonomous WhatsApp conversational agents, self-healing CRM pipelines, and voice dispatchers

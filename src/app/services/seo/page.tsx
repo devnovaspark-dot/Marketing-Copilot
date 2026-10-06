@@ -238,14 +238,14 @@ export default function SEOPage() {
         <div className="container">
           <div className={styles.heroCenter}>
             <ScrollReveal>
-              <div className={styles.heroEyebrowPill}>
+              <h1 className={styles.heroEyebrowPill}>
                 <span className={styles.emeraldPulseDot} />
                 <span>SEO Marketing Agency in Bhubaneswar</span>
-              </div>
-
-              <h1 className={styles.heroTitle}>
-                Make Google Your <span className="accent-gradient">Growth Channel</span>
               </h1>
+
+              <h2 className={styles.heroTitle}>
+                Make Google Your <span className="accent-gradient">Growth Channel</span>
+              </h2>
 
               <p className={styles.heroSub}>
                 Build stronger search visibility with SEO strategies designed to attract relevant customers, improve rankings and generate sustainable organic traffic for your business.

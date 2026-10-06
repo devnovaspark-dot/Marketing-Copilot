@@ -153,15 +153,15 @@ export default function WebDevelopmentPage() {
         <div className="container">
           <div className={styles.heroCenter}>
             <ScrollReveal>
-              <div className={styles.heroEyebrowPill}>
+              <h1 className={styles.heroEyebrowPill}>
                 <span className={styles.emeraldPulseDot} />
                 <span>Best Website Development Agency in Bhubaneswar</span>
-              </div>
+              </h1>
 
-              <h1 className={styles.heroTitle}>
+              <h2 className={styles.heroTitle}>
                 High-Performance Websites{' '}
                 <span className="accent-gradient">Built to Grow</span>
-              </h1>
+              </h2>
 
               <p className={styles.heroSub}>
                 Create a website that keeps up with your business. From sleek designs to smooth performance, Nova Spark develops responsive and scalable websites that deliver better user experiences and support long-term digital growth.

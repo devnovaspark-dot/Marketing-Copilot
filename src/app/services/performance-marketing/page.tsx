@@ -172,15 +172,15 @@ export default function PerformanceMarketingPage() {
         <div className="container" style={{ width: '100%' }}>
           <div className={styles.heroCenter}>
             <ScrollReveal>
-              <div className={styles.heroEyebrowPill}>
+              <h1 className={styles.heroEyebrowPill}>
                 <span className={styles.emeraldPulseDot} />
                 <span>Performance Marketing Agency in Bhubaneswar</span>
-              </div>
+              </h1>
 
-              <h1 className={styles.heroTitle}>
+              <h2 className={styles.heroTitle}>
                 Turn Marketing Spend Into{' '}
                 <span className="accent-gradient">Measurable Growth</span>
-              </h1>
+              </h2>
 
               <p className={styles.heroSub}>
                 From Google Ads and Meta Ads to landing page optimisation, remarketing, audience targeting, and conversion tracking, we build performance-driven campaigns focused on the outcomes that matter: qualified leads, sales, customer acquisition, and revenue growth.
