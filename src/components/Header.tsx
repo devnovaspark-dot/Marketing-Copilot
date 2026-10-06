@@ -309,9 +309,9 @@ export default function Header() {
                         />
                       </div>
 
-                      <h4 className={styles.spotlightHeadline}>
+                      <div className={styles.spotlightHeadline}>
                         Need a Tailored Growth Architecture?
-                      </h4>
+                      </div>
                       <p className={styles.spotlightSubtext}>
                         Get a free 30-min forensic audit of your Google rankings, Meta ROAS, and conversion funnel.
                       </p>
