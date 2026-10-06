@@ -163,7 +163,7 @@ export default function EcommerceMarketingPage() {
               </div>
             </ScrollReveal>
 
-            {/* Horizontal Telemetry Ribbon */}
+            {/* Horizontal Skeuomorphic Telemetry Ribbon */}
             <div className={styles.telemetryRibbon}>
               <div className={styles.telemetryCell}>
                 <span className={styles.tVal}>₹4.2 Cr+</span>
@@ -187,13 +187,21 @@ export default function EcommerceMarketingPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          2. WHAT MAKES ECOMMERCE MARKETING DIFFERENT?
+          2. REGIONAL MAP SECTION (PLACED JUST BELOW HERO)
+         ══════════════════════════════════════════════════ */}
+      <QuickConnectMapSection />
+
+      {/* ══════════════════════════════════════════════════
+          3. WHAT MAKES ECOMMERCE MARKETING DIFFERENT?
          ══════════════════════════════════════════════════ */}
       <section className={styles.diffSection}>
         <div className="container">
           <div className={styles.diffGrid}>
             <ScrollReveal>
-              <span className={styles.sectionEyebrow}>THE ECOMMERCE PARADIGM SHIFT</span>
+              <div className={styles.sectionHeaderBadge}>
+                <span className={styles.badgeDot} />
+                <span>THE ECOMMERCE PARADIGM SHIFT</span>
+              </div>
               <h2 className={styles.sectionHeading}>
                 What Makes Ecommerce Marketing Different?
               </h2>
@@ -207,7 +215,7 @@ export default function EcommerceMarketingPage() {
                 We approach ecommerce marketing in a holistic way, linking all the pieces together to reach the right people, foster trust, enhance engagement, and generate additional conversions at Nova Spark Digital.
               </p>
               <div className={styles.highlightPillBox}>
-                <span>💡</span>
+                <span className={styles.highlightIcon}>💡</span>
                 <span className={styles.highlightPillText}>
                   Holistic omnichannel synchronization transforms casual browsers into high-LTV repeat buyers.
                 </span>
@@ -217,8 +225,12 @@ export default function EcommerceMarketingPage() {
             {/* Skeuomorphic Connected Journey Card */}
             <ScrollReveal delay={0.15}>
               <div className={styles.journeyCard}>
+                <div className={styles.cardGlassGloss} />
                 <div className={styles.journeyHeader}>
-                  <span className={styles.journeyTitle}>Connected Customer Journey</span>
+                  <div className={styles.journeyTitleWrap}>
+                    <span className={styles.journeyHeaderIcon}>🔄</span>
+                    <span className={styles.journeyTitle}>Connected Customer Journey</span>
+                  </div>
                   <span className={styles.journeyBadge}>FULL FUNNEL</span>
                 </div>
 
@@ -270,13 +282,16 @@ export default function EcommerceMarketingPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          3. GROW YOUR ONLINE STORE WITH RESULT-DRIVEN MARKETING
+          4. GROW YOUR ONLINE STORE WITH RESULT-DRIVEN MARKETING
          ══════════════════════════════════════════════════ */}
       <section className={styles.growStoreSection}>
         <div className="container">
           <div className={styles.growGrid}>
             <ScrollReveal className={styles.growNarrativeBox}>
-              <span className={styles.sectionEyebrow}>PROVEN COMMERCE SCALING</span>
+              <div className={styles.sectionHeaderBadge}>
+                <span className={styles.badgeDot} />
+                <span>PROVEN COMMERCE SCALING</span>
+              </div>
               <h2 className={styles.sectionHeading}>
                 Grow Your Online Store With Result-Driven Ecommerce Marketing
               </h2>
@@ -291,9 +306,10 @@ export default function EcommerceMarketingPage() {
               </p>
             </ScrollReveal>
 
-            {/* 3 Pillars of E-Commerce Growth */}
+            {/* 3 Skeuomorphic Pillars of E-Commerce Growth */}
             <div className={styles.growPillarsRow}>
               <ScrollReveal delay={0.05} className={styles.pillarCard}>
+                <div className={styles.cardGlassGloss} />
                 <div className={styles.pillarIconBox}>🛍️</div>
                 <h3 className={styles.pillarTitle}>Beyond A Storefront</h3>
                 <p className={styles.pillarDesc}>
@@ -302,6 +318,7 @@ export default function EcommerceMarketingPage() {
               </ScrollReveal>
 
               <ScrollReveal delay={0.12} className={styles.pillarCard}>
+                <div className={styles.cardGlassGloss} />
                 <div className={styles.pillarIconBox}>📈</div>
                 <h3 className={styles.pillarTitle}>Qualified Store Visibility</h3>
                 <p className={styles.pillarDesc}>
@@ -310,6 +327,7 @@ export default function EcommerceMarketingPage() {
               </ScrollReveal>
 
               <ScrollReveal delay={0.19} className={styles.pillarCard}>
+                <div className={styles.cardGlassGloss} />
                 <div className={styles.pillarIconBox}>🎯</div>
                 <h3 className={styles.pillarTitle}>Tailored Full Growth Plan</h3>
                 <p className={styles.pillarDesc}>
@@ -322,12 +340,15 @@ export default function EcommerceMarketingPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          4. ECOMMERCE MARKETING SERVICES IN BHUBANESWAR
+          5. ECOMMERCE MARKETING SERVICES IN BHUBANESWAR
          ══════════════════════════════════════════════════ */}
       <section className={styles.servicesSection}>
         <div className="container">
           <ScrollReveal className={styles.servicesHeader}>
-            <span className={styles.sectionEyebrow}>COMPREHENSIVE CAPABILITIES</span>
+            <div className={styles.sectionHeaderBadge}>
+              <span className={styles.badgeDot} />
+              <span>COMPREHENSIVE CAPABILITIES</span>
+            </div>
             <h2 className={styles.sectionHeading}>
               Ecommerce Marketing Services in Bhubaneswar
             </h2>
@@ -336,10 +357,11 @@ export default function EcommerceMarketingPage() {
             </p>
           </ScrollReveal>
 
-          {/* Row 1: 3 Service Cards */}
+          {/* Row 1: 3 Skeuomorphic Service Cards */}
           <div className={styles.servicesGrid}>
             {ecommerceServices.slice(0, 3).map((srv, idx) => (
               <ScrollReveal key={idx} delay={idx * 0.08} className={styles.serviceCard}>
+                <div className={styles.cardGlassGloss} />
                 <div className={styles.serviceCardTop}>
                   <div className={styles.serviceIconBox}>{srv.icon}</div>
                   <span className={styles.serviceBadge}>{srv.badge}</span>
@@ -350,10 +372,11 @@ export default function EcommerceMarketingPage() {
             ))}
           </div>
 
-          {/* Row 2: 2 Service Cards Centered */}
+          {/* Row 2: 2 Skeuomorphic Service Cards Centered */}
           <div className={styles.servicesGridRow2}>
             {ecommerceServices.slice(3, 5).map((srv, idx) => (
               <ScrollReveal key={idx} delay={0.24 + idx * 0.08} className={styles.serviceCard}>
+                <div className={styles.cardGlassGloss} />
                 <div className={styles.serviceCardTop}>
                   <div className={styles.serviceIconBox}>{srv.icon}</div>
                   <span className={styles.serviceBadge}>{srv.badge}</span>
@@ -367,14 +390,18 @@ export default function EcommerceMarketingPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          5. PERFORMANCE-DRIVEN ECOMMERCE MARKETING NARRATIVE
+          6. PERFORMANCE-DRIVEN ECOMMERCE MARKETING NARRATIVE
          ══════════════════════════════════════════════════ */}
       <section className={styles.growthNarrativeSection}>
         <div className="container">
           <ScrollReveal>
             <div className={styles.narrativeCard}>
+              <div className={styles.cardGlassGloss} />
               <div className={styles.narrativeLeft}>
-                <span className={styles.sectionEyebrow}>PERFORMANCE-DRIVEN ECOMMERCE MARKETING</span>
+                <div className={styles.sectionHeaderBadge}>
+                  <span className={styles.badgeDot} />
+                  <span>PERFORMANCE-DRIVEN ECOMMERCE MARKETING</span>
+                </div>
                 <h2 className={styles.sectionHeading}>
                   Start Growing Your Ecommerce Brand With Nova Spark Digital
                 </h2>
@@ -391,14 +418,14 @@ export default function EcommerceMarketingPage() {
                   Let&apos;s talk about what you want to achieve and create your next digital marketing plan.
                 </p>
 
-                <div style={{ marginTop: '16px' }}>
+                <div style={{ marginTop: '20px' }}>
                   <BeamButton href="/contact" label="Start Your Ecommerce Growth Journey" size="md" arrow={true} />
                 </div>
               </div>
 
               <div className={styles.narrativeRight}>
                 <div className={styles.narrativeMiniCard}>
-                  <span className={styles.narrativeMiniIcon}>🔍</span>
+                  <div className={styles.miniIconBox}>🔍</div>
                   <div>
                     <div className={styles.narrativeMiniTextTitle}>E-Commerce SEO &amp; Organic Reach</div>
                     <div className={styles.narrativeMiniTextSub}>Category architecture &amp; high-intent keyword authority</div>
@@ -406,7 +433,7 @@ export default function EcommerceMarketingPage() {
                 </div>
 
                 <div className={styles.narrativeMiniCard}>
-                  <span className={styles.narrativeMiniIcon}>🎯</span>
+                  <div className={styles.miniIconBox}>🎯</div>
                   <div>
                     <div className={styles.narrativeMiniTextTitle}>Google Shopping &amp; PMax Funnels</div>
                     <div className={styles.narrativeMiniTextSub}>Automated SKU feed syndication &amp; negative match lists</div>
@@ -414,7 +441,7 @@ export default function EcommerceMarketingPage() {
                 </div>
 
                 <div className={styles.narrativeMiniCard}>
-                  <span className={styles.narrativeMiniIcon}>📱</span>
+                  <div className={styles.miniIconBox}>📱</div>
                   <div>
                     <div className={styles.narrativeMiniTextTitle}>Meta Ads Advantage+ (ASC)</div>
                     <div className={styles.narrativeMiniTextSub}>Server-side CAPI telemetry &amp; high-ROAS creative angles</div>
@@ -422,7 +449,7 @@ export default function EcommerceMarketingPage() {
                 </div>
 
                 <div className={styles.narrativeMiniCard}>
-                  <span className={styles.narrativeMiniIcon}>⚡</span>
+                  <div className={styles.miniIconBox}>⚡</div>
                   <div>
                     <div className={styles.narrativeMiniTextTitle}>Conversion Rate Optimization</div>
                     <div className={styles.narrativeMiniTextSub}>1-click mobile checkout, bundle boosts &amp; COD verification</div>
@@ -435,7 +462,7 @@ export default function EcommerceMarketingPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          UNIT ECONOMICS & ROAS CALCULATOR
+          7. UNIT ECONOMICS & ROAS CALCULATOR
          ══════════════════════════════════════════════════ */}
       <section style={{ padding: 'clamp(56px, 7vw, 96px) 0', background: '#FFFFFF' }}>
         <div className="container">
@@ -455,12 +482,15 @@ export default function EcommerceMarketingPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          6. OUR E-COMMERCE MARKETING PROCESS (6 STEPS)
+          8. OUR E-COMMERCE MARKETING PROCESS (6 STEPS)
          ══════════════════════════════════════════════════ */}
       <section className={styles.processSection} id="store-audit">
         <div className="container">
           <ScrollReveal className={styles.processHeader}>
-            <span className={styles.sectionEyebrow}>Start Your Ecommerce Growth Journey</span>
+            <div className={styles.sectionHeaderBadge}>
+              <span className={styles.badgeDot} />
+              <span>Start Your Ecommerce Growth Journey</span>
+            </div>
             <h2 className={styles.sectionHeading}>
               Our E-commerce Marketing Process
             </h2>
@@ -472,6 +502,7 @@ export default function EcommerceMarketingPage() {
           <div className={styles.processGrid}>
             {ecommerceProcessSteps.map((stepItem, idx) => (
               <ScrollReveal key={stepItem.step} delay={idx * 0.07} className={styles.processCard}>
+                <div className={styles.cardGlassGloss} />
                 <div className={styles.processCardTop}>
                   <span className={styles.processStepNum}>{stepItem.step}</span>
                 </div>
@@ -484,17 +515,13 @@ export default function EcommerceMarketingPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          REGIONAL BHUBANESWAR GEO-REACH FOOTPRINT
-         ══════════════════════════════════════════════════ */}
-      <QuickConnectMapSection />
-
-      {/* ══════════════════════════════════════════════════
-          EDITORIAL CASE STUDY SHOWCASE
+          9. EDITORIAL CASE STUDY SHOWCASE
          ══════════════════════════════════════════════════ */}
       <section className={styles.caseSection}>
         <div className="container">
           <ScrollReveal>
             <div className={styles.editorialContainer}>
+              <div className={styles.cardGlassGloss} />
               <div className={styles.editorialContent}>
                 <div className={styles.editorialBadge}>
                   <span className={styles.badgeDot} />
@@ -522,7 +549,7 @@ export default function EcommerceMarketingPage() {
                 </div>
 
                 <div>
-                  <BeamButton href="/portfolio" label="Explore All Verified Case Studies" size="md" />
+                  <BeamButton href="/portfolio" label="Explore All Verified Case Studies" size="md" arrow={true} />
                 </div>
               </div>
 
@@ -561,12 +588,15 @@ export default function EcommerceMarketingPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          7. FREQUENTLY ASKED QUESTIONS (FAQ)
+          10. FREQUENTLY ASKED QUESTIONS (FAQ)
          ══════════════════════════════════════════════════ */}
       <section className={styles.faqSection}>
         <div className="container">
           <ScrollReveal style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto' }}>
-            <span className={styles.sectionEyebrow}>CLEAR ANSWERS</span>
+            <div className={styles.sectionHeaderBadge}>
+              <span className={styles.badgeDot} />
+              <span>CLEAR ANSWERS</span>
+            </div>
             <h2 className={styles.sectionHeading}>
               Frequently Asked Questions
             </h2>
@@ -602,14 +632,15 @@ export default function EcommerceMarketingPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          8. PERFORMANCE-DRIVEN BOTTOM CONVERSION BANNER
+          11. PERFORMANCE-DRIVEN BOTTOM CONVERSION BANNER
          ══════════════════════════════════════════════════ */}
       <section className={styles.conversionSection}>
         <div className="container">
           <ScrollReveal>
             <div className={styles.executiveTerminal}>
               <div className={styles.termGlow} />
-              <div style={{ position: 'relative', zIndex: 2 }}>
+              <div className={styles.cardGlassGlossDark} />
+              <div className={styles.termContent}>
                 <span className={styles.termPill}>PERFORMANCE-DRIVEN ECOMMERCE MARKETING</span>
                 <h2 className={styles.termTitle}>
                   Want More Traffic, Leads &amp; Online Sales?
@@ -638,6 +669,8 @@ export default function EcommerceMarketingPage() {
                   icon={<span style={{ marginRight: '6px' }}>💬</span>}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className={styles.termSecondaryInner}
+                  wrapperClassName={styles.termSecondaryWrapper}
                 />
               </div>
             </div>

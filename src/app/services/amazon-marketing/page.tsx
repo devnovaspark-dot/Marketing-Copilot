@@ -138,7 +138,7 @@ export default function AmazonMarketingPage() {
                 />
               </div>
 
-              {/* 3 Core Value Pills in Hero */}
+              {/* 3 Core Skeuomorphic Value Pills in Hero */}
               <div className={styles.heroPillarsStrip}>
                 <div className={styles.heroPillarBadge}>
                   <span className={styles.heroPillarIcon}>✓</span>
@@ -176,7 +176,7 @@ export default function AmazonMarketingPage() {
               </div>
             </ScrollReveal>
 
-            {/* Horizontal Telemetry Ribbon */}
+            {/* Horizontal Skeuomorphic Telemetry Ribbon */}
             <div className={styles.telemetryRibbon}>
               <div className={styles.telemetryCell}>
                 <span className={styles.tVal}>18.4%</span>
@@ -200,13 +200,21 @@ export default function AmazonMarketingPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          2. HOW AMAZON PPC SUPPORTS ECOMMERCE GROWTH
+          2. REGIONAL MAP SECTION (PLACED JUST BELOW HERO)
+         ══════════════════════════════════════════════════ */}
+      <QuickConnectMapSection />
+
+      {/* ══════════════════════════════════════════════════
+          3. HOW AMAZON PPC SUPPORTS ECOMMERCE GROWTH
          ══════════════════════════════════════════════════ */}
       <section className={styles.ppcSupportSection}>
         <div className="container">
           <div className={styles.ppcSupportGrid}>
             <ScrollReveal>
-              <span className={styles.sectionEyebrow}>MARKETPLACE INTELLIGENCE &amp; SYNERGY</span>
+              <div className={styles.sectionHeaderBadge}>
+                <span className={styles.badgeDot} />
+                <span>MARKETPLACE INTELLIGENCE &amp; SYNERGY</span>
+              </div>
               <h2 className={styles.sectionHeading}>
                 How Amazon PPC Supports Ecommerce Growth
               </h2>
@@ -220,7 +228,7 @@ export default function AmazonMarketingPage() {
                 Integrating Amazon PPC with other marketing channels can lead to a more holistic marketing strategy for e-commerce businesses. A complete digital marketing agency in Bhubaneswar can integrate Amazon ads, SEO, content marketing, and paid marketing to boost visibility in various digital channels.
               </p>
               <div className={styles.highlightPillBox}>
-                <span>💡</span>
+                <span className={styles.highlightIcon}>💡</span>
                 <span className={styles.highlightPillText}>
                   Amazon search term telemetry directly enriches organic listings, Google Ads keyword sets, and cross-channel merchandising.
                 </span>
@@ -230,8 +238,12 @@ export default function AmazonMarketingPage() {
             {/* Skeuomorphic Intelligence Card */}
             <ScrollReveal delay={0.15}>
               <div className={styles.intelCard}>
+                <div className={styles.cardGlassGloss} />
                 <div className={styles.intelHeader}>
-                  <span className={styles.intelTitle}>Cross-Channel Synergy Loop</span>
+                  <div className={styles.intelTitleWrap}>
+                    <span className={styles.intelHeaderIcon}>🔄</span>
+                    <span className={styles.intelTitle}>Cross-Channel Synergy Loop</span>
+                  </div>
                   <span className={styles.intelBadge}>DATA-DRIVEN</span>
                 </div>
 
@@ -275,12 +287,15 @@ export default function AmazonMarketingPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          3. WHY CHOOSE NOVA SPARK DIGITAL FOR AMAZON MARKETING?
+          4. WHY CHOOSE NOVA SPARK DIGITAL FOR AMAZON MARKETING?
          ══════════════════════════════════════════════════ */}
       <section className={styles.whyChooseSection}>
         <div className="container">
           <ScrollReveal className={styles.whyChooseHeader}>
-            <span className={styles.sectionEyebrow}>THE NOVA SPARK ADVANTAGE</span>
+            <div className={styles.sectionHeaderBadge}>
+              <span className={styles.badgeDot} />
+              <span>THE NOVA SPARK ADVANTAGE</span>
+            </div>
             <h2 className={styles.sectionHeading}>
               Why Choose Nova Spark Digital for Amazon Marketing?
             </h2>
@@ -289,9 +304,11 @@ export default function AmazonMarketingPage() {
             </p>
           </ScrollReveal>
 
+          {/* 4 Skeuomorphic Pillar Cards */}
           <div className={styles.whyPillarsGrid}>
             {whyChoosePillars.map((pillar, idx) => (
               <ScrollReveal key={idx} delay={idx * 0.08} className={styles.whyCard}>
+                <div className={styles.cardGlassGloss} />
                 <div className={styles.whyCardTop}>
                   <div className={styles.whyIconBox}>{pillar.icon}</div>
                   <span className={styles.whyCardBadge}>{pillar.badge}</span>
@@ -305,14 +322,18 @@ export default function AmazonMarketingPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          4. AMAZON MARKETING AGENCY IN BHUBANESWAR
+          5. AMAZON MARKETING AGENCY IN BHUBANESWAR
          ══════════════════════════════════════════════════ */}
       <section className={styles.agencySection} id="ppc-services">
         <div className="container">
           <ScrollReveal>
             <div className={styles.agencyCard}>
+              <div className={styles.cardGlassGloss} />
               <div className={styles.agencyLeft}>
-                <span className={styles.sectionEyebrow}>LOCAL ROOTS · PAN-INDIA SCALE</span>
+                <div className={styles.sectionHeaderBadge}>
+                  <span className={styles.badgeDot} />
+                  <span>LOCAL ROOTS · PAN-INDIA SCALE</span>
+                </div>
                 <h2 className={styles.sectionHeading}>
                   Amazon Marketing Agency in Bhubaneswar
                 </h2>
@@ -329,14 +350,14 @@ export default function AmazonMarketingPage() {
                   Our Amazon marketing strategies are designed for startups, expanding e-commerce businesses, and established brands alike, depending on your current stage and growth objectives.
                 </p>
 
-                <div style={{ marginTop: '16px' }}>
+                <div style={{ marginTop: '20px' }}>
                   <BeamButton href="/contact" label="Start Growing on Amazon" size="md" arrow={true} />
                 </div>
               </div>
 
               <div className={styles.agencyRight}>
                 <div className={styles.agencyMiniCard}>
-                  <span className={styles.agencyMiniIcon}>🏙️</span>
+                  <div className={styles.miniIconBox}>🏙️</div>
                   <div>
                     <div className={styles.agencyMiniTitle}>Bhubaneswar Local Insight</div>
                     <div className={styles.agencyMiniSub}>Hands-on regional support tailored to regional manufacturers &amp; founders.</div>
@@ -344,7 +365,7 @@ export default function AmazonMarketingPage() {
                 </div>
 
                 <div className={styles.agencyMiniCard}>
-                  <span className={styles.agencyMiniIcon}>🌐</span>
+                  <div className={styles.miniIconBox}>🌐</div>
                   <div>
                     <div className={styles.agencyMiniTitle}>Pan-India &amp; Global Reach</div>
                     <div className={styles.agencyMiniSub}>Proven playbooks scaling listings across Amazon India, USA, and GCC markets.</div>
@@ -352,7 +373,7 @@ export default function AmazonMarketingPage() {
                 </div>
 
                 <div className={styles.agencyMiniCard}>
-                  <span className={styles.agencyMiniIcon}>🚀</span>
+                  <div className={styles.miniIconBox}>🚀</div>
                   <div>
                     <div className={styles.agencyMiniTitle}>Startups &amp; Enterprise Brands</div>
                     <div className={styles.agencyMiniSub}>Custom execution whether launching your first SKU or scaling 500+ ASINs.</div>
@@ -385,12 +406,15 @@ export default function AmazonMarketingPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          5. OUR AMAZON MARKETING PROCESS (5 STEPS)
+          6. OUR AMAZON MARKETING PROCESS (5 STEPS)
          ══════════════════════════════════════════════════ */}
       <section className={styles.processSection}>
         <div className="container">
           <ScrollReveal className={styles.processHeader}>
-            <span className={styles.sectionEyebrow}>STRUCTURED EXECUTION BLUEPRINT</span>
+            <div className={styles.sectionHeaderBadge}>
+              <span className={styles.badgeDot} />
+              <span>STRUCTURED EXECUTION BLUEPRINT</span>
+            </div>
             <h2 className={styles.sectionHeading}>
               Our Amazon Marketing Process
             </h2>
@@ -403,6 +427,7 @@ export default function AmazonMarketingPage() {
           <div className={styles.processGrid}>
             {amazonProcessSteps.slice(0, 3).map((stepItem, idx) => (
               <ScrollReveal key={stepItem.step} delay={idx * 0.08} className={styles.processCard}>
+                <div className={styles.cardGlassGloss} />
                 <div className={styles.processCardTop}>
                   <span className={styles.processStepNum}>Step {stepItem.step}</span>
                 </div>
@@ -416,6 +441,7 @@ export default function AmazonMarketingPage() {
           <div className={styles.processGridRow2}>
             {amazonProcessSteps.slice(3, 5).map((stepItem, idx) => (
               <ScrollReveal key={stepItem.step} delay={0.24 + idx * 0.08} className={styles.processCard}>
+                <div className={styles.cardGlassGloss} />
                 <div className={styles.processCardTop}>
                   <span className={styles.processStepNum}>Step {stepItem.step}</span>
                 </div>
@@ -428,17 +454,13 @@ export default function AmazonMarketingPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          REGIONAL BHUBANESWAR GEO-REACH FOOTPRINT
-         ══════════════════════════════════════════════════ */}
-      <QuickConnectMapSection />
-
-      {/* ══════════════════════════════════════════════════
           EDITORIAL CLIENT CASE STUDY
          ══════════════════════════════════════════════════ */}
       <section className={styles.caseStudySection}>
         <div className="container">
           <ScrollReveal>
             <div className={styles.caseStudyCard}>
+              <div className={styles.cardGlassGloss} />
               <div className={styles.caseStudyMedia}>
                 <Image
                   src="/images/heed_1.png"
@@ -488,12 +510,15 @@ export default function AmazonMarketingPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          6. FREQUENTLY ASKED QUESTIONS (FAQ)
+          7. FREQUENTLY ASKED QUESTIONS (FAQ)
          ══════════════════════════════════════════════════ */}
       <section className={styles.faqSection}>
         <div className="container">
           <ScrollReveal style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto' }}>
-            <span className={styles.sectionEyebrow}>CLEAR EXPLANATIONS</span>
+            <div className={styles.sectionHeaderBadge}>
+              <span className={styles.badgeDot} />
+              <span>CLEAR EXPLANATIONS</span>
+            </div>
             <h2 className={styles.sectionHeading}>
               Frequently Asked Questions About Amazon Growth
             </h2>
@@ -529,14 +554,15 @@ export default function AmazonMarketingPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          7. BOTTOM CONVERSION TERMINAL
+          8. BOTTOM CONVERSION TERMINAL
          ══════════════════════════════════════════════════ */}
       <section className={styles.conversionSection}>
         <div className="container">
           <ScrollReveal>
             <div className={styles.executiveTerminal}>
               <div className={styles.termGlow} />
-              <div style={{ position: 'relative', zIndex: 2 }}>
+              <div className={styles.cardGlassGlossDark} />
+              <div className={styles.termContent}>
                 <span className={styles.termPill}>Make Every Amazon Ad Rupee Count</span>
                 <h2 className={styles.termTitle}>
                   Ready to Scale Your Amazon Sales With Smarter PPC?
@@ -562,6 +588,8 @@ export default function AmazonMarketingPage() {
                   size="lg"
                   variant="outline"
                   arrow={true}
+                  className={styles.termSecondaryInner}
+                  wrapperClassName={styles.termSecondaryWrapper}
                 />
               </div>
             </div>

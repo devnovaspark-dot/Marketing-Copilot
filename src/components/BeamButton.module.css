@@ -115,6 +115,9 @@
   z-index: 2;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
   gap: 6px;
   padding: 9px 22px;
   font-family: var(--font-display);
