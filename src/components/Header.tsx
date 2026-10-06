@@ -30,28 +30,28 @@ const serviceClusters: HeaderServiceCluster[] = [
     category: 'Search & Performance',
     tag: 'DEMAND CAPTURE',
     services: [
-      { href: '/services/seo', label: 'SEO Services', shortLabel: 'SEO', icon: '⚡', desc: 'Rank #1 on Google in Bhubaneswar', badge: 'High Intent' },
-      { href: '/services/google-ads', label: 'Google Ads / PPC', shortLabel: 'Google Ads', icon: '🎯', desc: 'High-ROI paid search campaigns', badge: 'Top ROAS' },
-      { href: '/services/meta-ads', label: 'Meta Ads', shortLabel: 'Meta Ads', icon: '🚀', desc: 'Facebook, Instagram & WhatsApp ads', badge: 'CAPI Ready' },
-      { href: '/services/performance-marketing', label: 'Performance Marketing', shortLabel: 'Performance', icon: '📈', desc: 'Revenue attribution & unit economics', badge: 'Full-Funnel' },
+      { href: '/services/seo-services-in-bhubaneswar', label: 'SEO Services', shortLabel: 'SEO', icon: '⚡', desc: 'Rank #1 on Google in Bhubaneswar', badge: 'High Intent' },
+      { href: '/services/google-ads-services-in-bhubaneswar', label: 'Google Ads / PPC', shortLabel: 'Google Ads', icon: '🎯', desc: 'High-ROI paid search campaigns', badge: 'Top ROAS' },
+      { href: '/services/google-ads-services-in-bhubaneswar', label: 'Meta Ads', shortLabel: 'Meta Ads', icon: '🚀', desc: 'Facebook, Instagram & WhatsApp ads', badge: 'CAPI Ready' },
+      { href: '/services/performance-marketing-in-bhubaneswar', label: 'Performance Marketing', shortLabel: 'Performance', icon: '📈', desc: 'Revenue attribution & unit economics', badge: 'Full-Funnel' },
     ],
   },
   {
     category: 'Brand & Experience',
     tag: 'CONVERSION & CODE',
     services: [
-      { href: '/services/web-development', label: 'Website Development', shortLabel: 'Web Platform', icon: '💻', desc: 'Sub-second speed Next.js websites', badge: 'Next.js 15' },
-      { href: '/services/creative-branding', label: 'Creative & Branding', shortLabel: 'Creative Brand', icon: '🎨', desc: 'Distinct visual identities & guidelines', badge: 'Identity' },
-      { href: '/services/social-media', label: 'Social Media Marketing', shortLabel: 'Social Media', icon: '📱', desc: 'Thumb-stopping Reels & community', badge: 'Reels' },
-      { href: '/services/ai-automation', label: 'AI & Automation', shortLabel: 'AI Automation', icon: '🤖', desc: 'Autonomous bots, WhatsApp & CRM workflows', badge: 'AI Agents' },
+      { href: '/services/web-development-in-bhubaneswar', label: 'Website Development', shortLabel: 'Web Platform', icon: '💻', desc: 'Sub-second speed Next.js websites', badge: 'Next.js 15' },
+      { href: '/services/creative-branding-services-in-bhubaneswar', label: 'Creative & Branding', shortLabel: 'Creative Brand', icon: '🎨', desc: 'Distinct visual identities & guidelines', badge: 'Identity' },
+      { href: '/services/social-media-marketing-in-bhubaneswar', label: 'Social Media Marketing', shortLabel: 'Social Media', icon: '📱', desc: 'Thumb-stopping Reels & community', badge: 'Reels' },
+      { href: '/services/ai-automation-services-in-bhubaneswar', label: 'AI & Automation', shortLabel: 'AI Automation', icon: '🤖', desc: 'Autonomous bots, WhatsApp & CRM workflows', badge: 'AI Agents' },
     ],
   },
   {
     category: 'Commerce & Scale',
     tag: 'D2C & RETAIL',
     services: [
-      { href: '/services/ecommerce-marketing', label: 'E-commerce Marketing', shortLabel: 'E-Commerce', icon: '🛍️', desc: 'Scale online store GMV & checkout', badge: 'D2C Scale' },
-      { href: '/services/amazon-marketing', label: 'Amazon Marketing & PPC', shortLabel: 'Amazon PPC', icon: '📦', desc: 'Dominate Buy Box & Sponsored Ads', badge: 'Lower ACOS' },
+      { href: '/services/ecommerce-marketing-services-in-bhubaneswar', label: 'E-commerce Marketing', shortLabel: 'E-Commerce', icon: '🛍️', desc: 'Scale online store GMV & checkout', badge: 'D2C Scale' },
+      { href: '/services/amazon-marketing-services-in-bhubaneswar', label: 'Amazon Marketing & PPC', shortLabel: 'Amazon PPC', icon: '📦', desc: 'Dominate Buy Box & Sponsored Ads', badge: 'Lower ACOS' },
     ],
   },
 ];

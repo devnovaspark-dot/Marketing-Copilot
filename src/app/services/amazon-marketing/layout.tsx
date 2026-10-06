@@ -4,12 +4,12 @@ export const metadata: Metadata = {
   title: 'Amazon Marketing Agency in Bhubaneswar | Amazon PPC & Marketplace Growth',
   description: 'Dominate Amazon search with specialized Amazon ads, A+ content, brand store development, and organic ranking optimization in Bhubaneswar.',
   alternates: {
-    canonical: 'https://marketingcopilot.in/services/amazon-marketing',
+    canonical: 'https://marketingcopilot.in/services/amazon-marketing-services-in-bhubaneswar',
   },
   openGraph: {
     title: 'Amazon Marketing Agency in Bhubaneswar | Amazon PPC & Marketplace Growth',
     description: 'Dominate Amazon search with specialized Amazon ads and marketplace scaling.',
-    url: 'https://marketingcopilot.in/services/amazon-marketing',
+    url: 'https://marketingcopilot.in/services/amazon-marketing-services-in-bhubaneswar',
     siteName: 'Marketing Copilot',
     locale: 'en_IN',
     type: 'website',

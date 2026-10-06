@@ -4,12 +4,12 @@ export const metadata: Metadata = {
   title: 'Local SEO Services in Bhubaneswar | Google Maps Top 3 Ranking',
   description: 'Dominate Google Local Map Pack across Bhubaneswar. Google Business Profile optimization, review acceleration, local citations, and geo-targeted authority.',
   alternates: {
-    canonical: 'https://marketingcopilot.in/services/local-seo',
+    canonical: 'https://marketingcopilot.in/services/local-seo-services-in-bhubaneswar',
   },
   openGraph: {
     title: 'Local SEO Services in Bhubaneswar | Google Maps Top 3 Ranking',
     description: 'Dominate Google Local Map Pack across Bhubaneswar. Google Business Profile optimization and review acceleration.',
-    url: 'https://marketingcopilot.in/services/local-seo',
+    url: 'https://marketingcopilot.in/services/local-seo-services-in-bhubaneswar',
     siteName: 'Marketing Copilot',
     locale: 'en_IN',
     type: 'website',

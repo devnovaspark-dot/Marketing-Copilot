@@ -40,7 +40,7 @@ const serviceCatalog: ServiceItem[] = [
     metric: '+240%',
     metricLabel: 'Organic Inquiries Lift',
     color: '#0B2093',
-    href: '/services/seo',
+    href: '/services/seo-services-in-bhubaneswar',
   },
   {
     id: 'google-ads',
@@ -56,7 +56,7 @@ const serviceCatalog: ServiceItem[] = [
     metric: '6.8X',
     metricLabel: 'Peak Commercial ROAS',
     color: '#1D4ED8',
-    href: '/services/google-ads',
+    href: '/services/google-ads-services-in-bhubaneswar',
   },
   {
     id: 'meta-ads',
@@ -72,7 +72,7 @@ const serviceCatalog: ServiceItem[] = [
     metric: '4.2X',
     metricLabel: 'Acquisition Velocity',
     color: '#0081FB',
-    href: '/services/meta-ads',
+    href: '/services/google-ads-services-in-bhubaneswar',
   },
   {
     id: 'web-dev',
@@ -88,7 +88,7 @@ const serviceCatalog: ServiceItem[] = [
     metric: '99/100',
     metricLabel: 'Google Speed SLA',
     color: '#10B981',
-    href: '/services/web-development',
+    href: '/services/web-development-in-bhubaneswar',
   },
   {
     id: 'branding',
@@ -104,7 +104,7 @@ const serviceCatalog: ServiceItem[] = [
     metric: '120+',
     metricLabel: 'Brand Identities Built',
     color: '#0B2093',
-    href: '/services/creative-branding',
+    href: '/services/creative-branding-services-in-bhubaneswar',
   },
   {
     id: 'social-media',
@@ -120,7 +120,7 @@ const serviceCatalog: ServiceItem[] = [
     metric: '+320%',
     metricLabel: 'Average Reach Lift',
     color: '#F59E0B',
-    href: '/services/social-media',
+    href: '/services/social-media-marketing-in-bhubaneswar',
   },
   {
     id: 'amazon-marketing',
@@ -136,7 +136,7 @@ const serviceCatalog: ServiceItem[] = [
     metric: '4.8X',
     metricLabel: 'Average Amazon ROAS',
     color: '#FF9900',
-    href: '/services/amazon-marketing',
+    href: '/services/amazon-marketing-services-in-bhubaneswar',
   },
   {
     id: 'ecommerce',
@@ -152,7 +152,7 @@ const serviceCatalog: ServiceItem[] = [
     metric: '+185%',
     metricLabel: 'Average Cart Value Lift',
     color: '#06B6D4',
-    href: '/services/ecommerce-marketing',
+    href: '/services/ecommerce-marketing-services-in-bhubaneswar',
   },
   {
     id: 'performance',
@@ -168,7 +168,7 @@ const serviceCatalog: ServiceItem[] = [
     metric: '8.4X',
     metricLabel: 'Peak Measured ROAS',
     color: '#0B2093',
-    href: '/services/performance-marketing',
+    href: '/services/performance-marketing-in-bhubaneswar',
   },
   {
     id: 'automation',
@@ -184,7 +184,7 @@ const serviceCatalog: ServiceItem[] = [
     metric: '< 2s',
     metricLabel: 'First Response Time',
     color: '#0B2093',
-    href: '/services/ai-automation',
+    href: '/services/ai-automation-services-in-bhubaneswar',
   },
 ];
 

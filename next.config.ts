@@ -79,6 +79,110 @@ const nextConfig: NextConfig = {
         source: '/faq-digital-marketing-Bhubaneswar',
         destination: '/faq',
       },
+      // Recommended Service URLs in Bhubaneswar
+      {
+        source: '/services/seo-services-in-bhubaneswar',
+        destination: '/services/seo',
+      },
+      {
+        source: '/services/google-ads-services-in-bhubaneswar',
+        destination: '/services/google-ads',
+      },
+      {
+        source: '/services/social-media-marketing-in-bhubaneswar',
+        destination: '/services/social-media',
+      },
+      {
+        source: '/services/performance-marketing-in-bhubaneswar',
+        destination: '/services/performance-marketing',
+      },
+      {
+        source: '/services/ai-automation-services-in-bhubaneswar',
+        destination: '/services/ai-automation',
+      },
+      {
+        source: '/services/web-development-in-bhubaneswar',
+        destination: '/services/web-development',
+      },
+      {
+        source: '/services/meta-ads-services-in-bhubaneswar',
+        destination: '/services/meta-ads',
+      },
+      {
+        source: '/services/creative-branding-services-in-bhubaneswar',
+        destination: '/services/creative-branding',
+      },
+      {
+        source: '/services/ecommerce-marketing-services-in-bhubaneswar',
+        destination: '/services/ecommerce-marketing',
+      },
+      {
+        source: '/services/amazon-marketing-services-in-bhubaneswar',
+        destination: '/services/amazon-marketing',
+      },
+      {
+        source: '/services/local-seo-services-in-bhubaneswar',
+        destination: '/services/local-seo',
+      },
+    ];
+  },
+  async redirects() {
+    return [
+      {
+        source: '/services/seo',
+        destination: '/services/seo-services-in-bhubaneswar',
+        permanent: true,
+      },
+      {
+        source: '/services/google-ads',
+        destination: '/services/google-ads-services-in-bhubaneswar',
+        permanent: true,
+      },
+      {
+        source: '/services/meta-ads',
+        destination: '/services/google-ads-services-in-bhubaneswar',
+        permanent: true,
+      },
+      {
+        source: '/services/social-media',
+        destination: '/services/social-media-marketing-in-bhubaneswar',
+        permanent: true,
+      },
+      {
+        source: '/services/performance-marketing',
+        destination: '/services/performance-marketing-in-bhubaneswar',
+        permanent: true,
+      },
+      {
+        source: '/services/ai-automation',
+        destination: '/services/ai-automation-services-in-bhubaneswar',
+        permanent: true,
+      },
+      {
+        source: '/services/web-development',
+        destination: '/services/web-development-in-bhubaneswar',
+        permanent: true,
+      },
+      {
+        source: '/services/creative-branding',
+        destination: '/services/creative-branding-services-in-bhubaneswar',
+        permanent: true,
+      },
+      {
+        source: '/services/ecommerce-marketing',
+        destination: '/services/ecommerce-marketing-services-in-bhubaneswar',
+        permanent: true,
+      },
+      {
+        source: '/services/amazon-marketing',
+        destination: '/services/amazon-marketing-services-in-bhubaneswar',
+        permanent: true,
+      },
+      {
+        source: '/services/local-seo',
+        destination: '/services/local-seo-services-in-bhubaneswar',
+        permanent: true,
+      },
     ];
   },
   async headers() {

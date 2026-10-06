@@ -4,12 +4,12 @@ export const metadata: Metadata = {
   title: 'Creative Branding Agency in Bhubaneswar | Visual Identity & Strategy',
   description: 'Build memorable brand recall. Brand positioning, visual design systems, packaging, and high-converting storytelling crafted in Bhubaneswar.',
   alternates: {
-    canonical: 'https://marketingcopilot.in/services/creative-branding',
+    canonical: 'https://marketingcopilot.in/services/creative-branding-services-in-bhubaneswar',
   },
   openGraph: {
     title: 'Creative Branding Agency in Bhubaneswar | Visual Identity & Strategy',
     description: 'Build memorable brand recall. Visual design systems and storytelling.',
-    url: 'https://marketingcopilot.in/services/creative-branding',
+    url: 'https://marketingcopilot.in/services/creative-branding-services-in-bhubaneswar',
     siteName: 'Marketing Copilot',
     locale: 'en_IN',
     type: 'website',

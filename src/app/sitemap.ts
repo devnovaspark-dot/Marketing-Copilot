@@ -80,19 +80,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // Dedicated Service Pages
+  // Dedicated Service Pages (Recommended Local SEO URLs in Bhubaneswar)
   const services = [
-    'seo',
-    'google-ads',
-    'meta-ads',
-    'social-media',
-    'performance-marketing',
-    'web-development',
-    'ai-automation',
-    'amazon-marketing',
-    'creative-branding',
-    'ecommerce-marketing',
-    'local-seo',
+    'seo-services-in-bhubaneswar',
+    'google-ads-services-in-bhubaneswar',
+    'social-media-marketing-in-bhubaneswar',
+    'performance-marketing-in-bhubaneswar',
+    'web-development-in-bhubaneswar',
+    'ai-automation-services-in-bhubaneswar',
+    'amazon-marketing-services-in-bhubaneswar',
+    'creative-branding-services-in-bhubaneswar',
+    'ecommerce-marketing-services-in-bhubaneswar',
+    'local-seo-services-in-bhubaneswar',
   ];
 
   const serviceRoutes: MetadataRoute.Sitemap = services.map((slug) => ({

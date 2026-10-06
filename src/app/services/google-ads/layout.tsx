@@ -4,12 +4,12 @@ export const metadata: Metadata = {
   title: 'Google Ads & PPC Agency in Bhubaneswar | High-ROAS Search Campaigns',
   description: 'Certified Google Ads company in Bhubaneswar. High-intent search, Performance Max, zero ad waste negative keyword shielding, and proven ROI scaling.',
   alternates: {
-    canonical: 'https://marketingcopilot.in/services/google-ads',
+    canonical: 'https://marketingcopilot.in/services/google-ads-services-in-bhubaneswar',
   },
   openGraph: {
     title: 'Google Ads & PPC Agency in Bhubaneswar | High-ROAS Search Campaigns',
     description: 'Certified Google Ads company in Bhubaneswar. High-intent search, Performance Max, zero ad waste, and proven ROI scaling.',
-    url: 'https://marketingcopilot.in/services/google-ads',
+    url: 'https://marketingcopilot.in/services/google-ads-services-in-bhubaneswar',
     siteName: 'Marketing Copilot',
     locale: 'en_IN',
     type: 'website',

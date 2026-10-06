@@ -4,12 +4,12 @@ export const metadata: Metadata = {
   title: 'AI Marketing & Workflow Automation in Bhubaneswar | Growth Ops',
   description: 'Automate marketing operations and customer nurturing with AI. CRM integrations, automated lead routing, and predictive analytics for businesses in Bhubaneswar.',
   alternates: {
-    canonical: 'https://marketingcopilot.in/services/ai-automation',
+    canonical: 'https://marketingcopilot.in/services/ai-automation-services-in-bhubaneswar',
   },
   openGraph: {
     title: 'AI Marketing & Workflow Automation in Bhubaneswar | Growth Ops',
     description: 'Automate marketing operations and customer nurturing with AI.',
-    url: 'https://marketingcopilot.in/services/ai-automation',
+    url: 'https://marketingcopilot.in/services/ai-automation-services-in-bhubaneswar',
     siteName: 'Marketing Copilot',
     locale: 'en_IN',
     type: 'website',
