@@ -116,18 +116,18 @@ export default function InsightsClient({ articles = [] }: { articles: Article[] 
     <>
       <div className={styles.page}>
         {/* ================================================================= */}
-        {/* 1. Hero Section with Background Image & Enhanced Bottom Height    */}
+        {/* 1. Hero Section with Warm Aesthetic Photography & Grand Stature   */}
         {/* ================================================================= */}
         <section className={styles.hero}>
-          {/* Background Image softly blended on the right, matching Ekatraa style */}
+          {/* Background Image: sunlit editorial study with vase & botanicals */}
           <div className={styles.heroBgMedia}>
             <Image
-              src="/images/team_office.jpg"
-              alt="Marketing Copilot Growth Operations & Research Studio"
+              src="/images/journal_hero_editorial_warm.jpg"
+              alt="Marketing Copilot Journal & Growth Strategy Studio"
               fill
               priority
               className={styles.heroBgImg}
-              sizes="(max-width: 768px) 100vw, 55vw"
+              sizes="(max-width: 900px) 100vw, 58vw"
             />
             <div className={styles.heroBgGradient} />
           </div>
@@ -135,7 +135,9 @@ export default function InsightsClient({ articles = [] }: { articles: Article[] 
           <div className="container">
             <div className={styles.heroInner}>
               <div className={styles.heroEyebrow}>
-                THE MARKETING COPILOT JOURNAL
+                <span className={styles.heroEyebrowDot} />
+                <span>THE MARKETING COPILOT JOURNAL</span>
+                <span className={styles.heroEyebrowBadge}>EST. 2024</span>
               </div>
 
               <h1 className={styles.heroTitle}>
@@ -146,6 +148,20 @@ export default function InsightsClient({ articles = [] }: { articles: Article[] 
               <p className={styles.heroSub}>
                 Ideas, inspiration, and expert playbooks to help you create growth strategies that stay in markets forever.
               </p>
+
+              <div className={styles.heroEditorialMeta}>
+                <span className={styles.heroMetaItem}>
+                  <span className={styles.heroMetaIcon}>✦</span> Field-Tested Playbooks
+                </span>
+                <span className={styles.heroMetaDivider}>•</span>
+                <span className={styles.heroMetaItem}>
+                  Zero Fluff
+                </span>
+                <span className={styles.heroMetaDivider}>•</span>
+                <span className={styles.heroMetaItem}>
+                  Senior Strategist Dispatches
+                </span>
+              </div>
             </div>
           </div>
         </section>
