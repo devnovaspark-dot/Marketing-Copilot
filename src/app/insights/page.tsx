@@ -3,7 +3,6 @@ import InsightsClient, { Article } from './InsightsClient';
 import { sanityFetch } from '@/sanity/client';
 import { postsQuery } from '@/sanity/queries';
 import { urlForImage } from '@/sanity/image';
-import { authoritativeBlogPosts } from '@/data/blogPosts';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -55,10 +54,7 @@ export default async function InsightsPage() {
     revalidate: 0,
   }).catch(() => []);
 
-  const existingSlugs = new Set<string>();
-
-  const sanityArticles: Article[] = (sanityPosts || []).map((p, idx) => {
-    existingSlugs.add(p.slug);
+  const articles: Article[] = (sanityPosts || []).map((p, idx) => {
     const rawDate = p.publishedAt || p._createdAt;
     const formattedDate = rawDate
       ? new Date(rawDate).toLocaleDateString('en-US', {
@@ -101,24 +97,5 @@ export default async function InsightsPage() {
     };
   });
 
-  // Supplement with authoritative strategic marketing articles (no mocks, 100% full articles)
-  const supplementalArticles: Article[] = authoritativeBlogPosts
-    .filter((post) => !existingSlugs.has(post.slug))
-    .map((post, idx) => ({
-      slug: post.slug,
-      category: post.category,
-      title: post.title,
-      excerpt: post.summary,
-      readTime: post.readTime,
-      date: post.date,
-      image: post.image,
-      author: post.author,
-      authorRole: post.authorRole,
-      authorImage: post.authorImage,
-      featured: sanityArticles.length === 0 && idx === 0,
-    }));
-
-  const combinedArticles = [...sanityArticles, ...supplementalArticles];
-
-  return <InsightsClient articles={combinedArticles} />;
+  return <InsightsClient articles={articles} />;
 }

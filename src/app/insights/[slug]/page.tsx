@@ -7,18 +7,13 @@ import PortableTextRenderer, { slugifyHeading } from '@/components/PortableTextR
 import PillarPostCard from '@/components/PillarPostCard';
 import TableOfContents, { HeadingItem } from '@/components/TableOfContents';
 import KeyTakeawaysSidebarCard from '@/components/KeyTakeawaysSidebarCard';
-import RelatedStoriesSidebar from '@/components/RelatedStoriesSidebar';
+import RelatedStoriesSidebar, { RelatedStoryItem } from '@/components/RelatedStoriesSidebar';
 import AuthorBioBox from '@/components/AuthorBioBox';
 import BlogSidebarCta from '@/components/BlogSidebarCta';
 import ReadingProgressBar from '@/components/ReadingProgressBar';
 import { sanityFetch } from '@/sanity/client';
-import { postBySlugQuery, postPathsQuery } from '@/sanity/queries';
+import { postBySlugQuery, postPathsQuery, relatedPostsQuery } from '@/sanity/queries';
 import { urlForImage } from '@/sanity/image';
-import {
-  getBlogPostBySlug,
-  getAllBlogSlugs,
-  getRelatedBlogPosts,
-} from '@/data/blogPosts';
 import styles from './page.module.css';
 
 export const dynamicParams = true;
@@ -67,6 +62,20 @@ interface SanityPostDetail {
   metaKeywords?: string[];
 }
 
+interface SanityRelatedPostRecord {
+  _id: string;
+  title: string;
+  slug: string;
+  category?: string | { title?: string };
+  publishedAt?: string;
+  _createdAt?: string;
+  bannerImage?: {
+    asset?: {
+      _ref?: string;
+    };
+  };
+}
+
 function extractHeadingsFromPortableText(blocks?: PortableTextBlockItem[]): HeadingItem[] {
   if (!Array.isArray(blocks)) return [];
   const headings: HeadingItem[] = [];
@@ -92,7 +101,6 @@ function extractHeadingsFromPortableText(blocks?: PortableTextBlockItem[]): Head
 }
 
 async function getArticle(slug: string) {
-  // 1. Check Sanity first
   try {
     const sanityPost = await sanityFetch<SanityPostDetail>({
       query: postBySlugQuery,
@@ -124,84 +132,42 @@ async function getArticle(slug: string) {
         : 'Recently published';
 
       const extractedHeadings = extractHeadingsFromPortableText(sanityPost.body);
-      const fallbackData = getBlogPostBySlug(slug);
 
       const categoryName =
         typeof sanityPost.category === 'object' && sanityPost.category !== null
           ? sanityPost.category.title || 'Digital Marketing'
-          : sanityPost.category || fallbackData?.category || 'Digital Marketing';
+          : sanityPost.category || 'Digital Marketing';
 
-      const resolvedTakeaways =
-        sanityPost.keyTakeaways &&
-        sanityPost.keyTakeaways.filter(
-          (t: string) => typeof t === 'string' && t.trim().length > 0
-        ).length >= 2
-          ? sanityPost.keyTakeaways
-          : fallbackData?.takeaways || [];
+      const takeaways = (sanityPost.keyTakeaways || []).filter(
+        (t) => typeof t === 'string' && t.trim().length > 0
+      );
 
-      const resolvedFaqs =
-        sanityPost.faqItems && sanityPost.faqItems.length >= 2
-          ? sanityPost.faqItems
-          : fallbackData?.faqItems || [];
+      const faqs = sanityPost.faqItems || [];
 
       return {
-        isSanity: true,
         title: sanityPost.title,
         metaTitle: sanityPost.metaTitle || sanityPost.title,
         category: categoryName,
-        readTime: fallbackData?.readTime || '7 min read',
+        readTime: '6 min read',
         date: publishedDate,
-        image: bannerUrl || fallbackData?.image || '/images/dashboard_hero.jpg',
-        imageAlt: sanityPost.bannerImage?.alt || fallbackData?.imageAlt || sanityPost.title,
-        author: sanityPost.author?.name || fallbackData?.author || 'Aarav Mohapatra',
-        authorRole:
-          sanityPost.author?.role || fallbackData?.authorRole || 'Lead Growth Strategist',
-        authorImage: authorImageUrl || fallbackData?.authorImage,
-        authorBio: sanityPost.author?.bio || fallbackData?.authorBio,
-        summary: sanityPost.excerpt || fallbackData?.summary || '',
-        takeaways: resolvedTakeaways,
+        image: bannerUrl || '/images/dashboard_hero.jpg',
+        imageAlt: sanityPost.bannerImage?.alt || sanityPost.title,
+        author: sanityPost.author?.name || 'Aarav Mohapatra',
+        authorRole: sanityPost.author?.role || 'Lead Growth Strategist',
+        authorImage: authorImageUrl,
+        authorBio: sanityPost.author?.bio,
+        summary: sanityPost.excerpt || '',
+        takeaways,
         body: sanityPost.body,
-        contentHtml: undefined,
-        faqItems: resolvedFaqs,
+        faqItems: faqs,
         pillarPost: sanityPost.pillarPost,
-        headings:
-          extractedHeadings.length > 0
-            ? extractedHeadings
-            : fallbackData?.headings || [],
+        headings: extractedHeadings,
         noIndex: Boolean(sanityPost.noIndex),
-        metaKeywords: sanityPost.metaKeywords || fallbackData?.metaKeywords || [],
+        metaKeywords: sanityPost.metaKeywords || [],
       };
     }
   } catch (err) {
-    console.warn(`[getArticle] Sanity lookup failed for "${slug}":`, err);
-  }
-
-  // 2. Fallback to local authoritative high-value post
-  const localPost = getBlogPostBySlug(slug);
-  if (localPost) {
-    return {
-      isSanity: false,
-      title: localPost.title,
-      metaTitle: localPost.metaTitle,
-      category: localPost.category,
-      readTime: localPost.readTime,
-      date: localPost.date,
-      image: localPost.image,
-      imageAlt: localPost.imageAlt,
-      author: localPost.author,
-      authorRole: localPost.authorRole,
-      authorImage: localPost.authorImage,
-      authorBio: localPost.authorBio,
-      summary: localPost.summary,
-      takeaways: localPost.takeaways,
-      body: undefined,
-      contentHtml: localPost.contentHtml,
-      faqItems: localPost.faqItems,
-      pillarPost: undefined,
-      headings: localPost.headings,
-      noIndex: Boolean(localPost.noIndex),
-      metaKeywords: localPost.metaKeywords || [],
-    };
+    console.warn(`[getArticle] Failed to fetch article from Sanity for "${slug}":`, err);
   }
 
   return null;
@@ -213,10 +179,7 @@ export async function generateStaticParams() {
     revalidate: 0,
   }).catch(() => []);
 
-  const allSlugs = Array.from(
-    new Set([...(sanitySlugs || []), ...getAllBlogSlugs()])
-  );
-  return allSlugs.map((slug) => ({ slug }));
+  return (sanitySlugs || []).map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
@@ -265,17 +228,39 @@ export default async function ArticlePage({
 
   if (!article) notFound();
 
-  // Retrieve 3 related stories for the sidebar (excluding current article)
-  const relatedStories = getRelatedBlogPosts(slug, 3).map((p) => ({
-    slug: p.slug,
-    title: p.title,
-    category: p.category,
-    readTime: p.readTime,
-    image: p.image,
-    date: p.date,
-  }));
+  // Fetch real related posts strictly from Sanity (no mocks)
+  const rawRelated = await sanityFetch<SanityRelatedPostRecord[]>({
+    query: relatedPostsQuery,
+    params: { slug },
+    revalidate: 0,
+  }).catch(() => []);
 
-  // Generate FAQ schema for search engines
+  const relatedStories: RelatedStoryItem[] = (rawRelated || []).map((p) => {
+    let imageUrl = '/images/dashboard_hero.jpg';
+    if (p.bannerImage?.asset) {
+      try {
+        imageUrl =
+          urlForImage(p.bannerImage)?.width(200).height(200).fit('crop').url() ||
+          '/images/dashboard_hero.jpg';
+      } catch {
+        imageUrl = '/images/dashboard_hero.jpg';
+      }
+    }
+    const catTitle =
+      typeof p.category === 'object' && p.category !== null
+        ? p.category.title || 'Digital Marketing'
+        : p.category || 'Digital Marketing';
+
+    return {
+      slug: p.slug,
+      title: p.title,
+      category: catTitle,
+      readTime: '6 min read',
+      image: imageUrl,
+    };
+  });
+
+  // Generate FAQ schema for search engines if FAQ items exist in Sanity
   const faqSchema =
     article.faqItems && article.faqItems.length > 0
       ? {
@@ -322,7 +307,7 @@ export default async function ArticlePage({
           <div className={styles.layoutGrid}>
             {/* Left Column: Core Article Content */}
             <main className={styles.mainCol}>
-              {/* Decorative Accent Header (matching screenshot structure with our royal blue & amber style) */}
+              {/* Decorative Accent Header */}
               <div className={styles.decorativeAccentBar}>
                 <div className={styles.accentGlow} />
                 <div className={styles.accentBadge}>
@@ -332,17 +317,12 @@ export default async function ArticlePage({
                 <span className={styles.accentCategory}>{article.category}</span>
               </div>
 
-              {/* Main Article Body */}
-              <article className={styles.articleBody}>
-                {article.body ? (
+              {/* Main Article Body from Sanity PortableText */}
+              {article.body && (
+                <article className={styles.articleBody}>
                   <PortableTextRenderer value={article.body} />
-                ) : article.contentHtml ? (
-                  <div
-                    className={styles.rawHtmlContent}
-                    dangerouslySetInnerHTML={{ __html: article.contentHtml }}
-                  />
-                ) : null}
-              </article>
+                </article>
+              )}
 
               {/* Topic Cluster Pillar Post Card (if present) */}
               {article.pillarPost && article.pillarPost.slug !== slug && (
@@ -366,7 +346,7 @@ export default async function ArticlePage({
             {/* Right Column: Sticky Sidebar matching exact layout structure */}
             <aside className={styles.sidebarCol}>
               {/* 1. Table of Contents ("On This Page") */}
-              {article.headings && article.headings.length >= 2 && (
+              {article.headings && article.headings.length >= 1 && (
                 <TableOfContents headings={article.headings} />
               )}
 
@@ -375,12 +355,14 @@ export default async function ArticlePage({
                 <KeyTakeawaysSidebarCard takeaways={article.takeaways} />
               )}
 
-              {/* 3. Related Stories (In Sidebar as requested) */}
-              <RelatedStoriesSidebar
-                stories={relatedStories}
-                title="Related Stories"
-                viewAllLink="/insights"
-              />
+              {/* 3. Related Stories (In Sidebar, only when real Sanity posts exist) */}
+              {relatedStories.length > 0 && (
+                <RelatedStoriesSidebar
+                  stories={relatedStories}
+                  title="Related Stories"
+                  viewAllLink="/insights"
+                />
+              )}
 
               {/* 4. Strategic Marketing Consultation CTA */}
               <BlogSidebarCta />

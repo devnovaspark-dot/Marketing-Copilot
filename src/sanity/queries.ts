@@ -57,3 +57,16 @@ export const postBySlugQuery = groq`
 export const postPathsQuery = groq`
   *[_type == "post" && defined(slug.current)][].slug.current
 `;
+
+// Query to fetch up to 3 real related posts from Sanity (excluding current slug)
+export const relatedPostsQuery = groq`
+  *[_type == "post" && defined(slug.current) && slug.current != $slug] | order(coalesce(publishedAt, _createdAt) desc)[0...3] {
+    _id,
+    title,
+    "slug": slug.current,
+    "category": category->title,
+    publishedAt,
+    _createdAt,
+    bannerImage
+  }
+`;
