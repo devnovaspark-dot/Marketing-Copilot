@@ -9,7 +9,7 @@ export const dataset =
   'production';
 
 export const projectId =
-  process.env.SANITY_PROJECT_ID ||
   process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ||
-  '';
+  process.env.SANITY_PROJECT_ID ||
+  '8berkxan';
 
