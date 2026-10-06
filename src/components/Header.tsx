@@ -297,21 +297,16 @@ export default function Header() {
                         <span className={styles.spotlightRating}>★ 4.9/5</span>
                       </div>
 
-                      {/* Sample Graphics Visual Frame */}
+                      {/* Full-view Graphics Visual Frame */}
                       <div className={styles.spotlightGraphicBox}>
                         <Image
                           src="/images/ns_services_graphic.png"
-                          alt="Bhubaneswar Digital Growth System Architecture"
+                          alt="Bhubaneswar 360 Digital Marketing Growth Architecture"
                           width={240}
-                          height={100}
+                          height={150}
                           className={styles.spotlightGraphicImg}
                           priority
                         />
-                        <div className={styles.graphicOverlayGlow} />
-                        <div className={styles.graphicBadge}>
-                          <span className={styles.graphicBadgeDot} />
-                          <span>GROWTH ENGINE</span>
-                        </div>
                       </div>
 
                       <h4 className={styles.spotlightHeadline}>
