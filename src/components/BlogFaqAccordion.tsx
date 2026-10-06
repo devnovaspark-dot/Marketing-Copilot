@@ -11,13 +11,15 @@ export interface FAQItem {
 interface BlogFaqAccordionProps {
   items: FAQItem[];
   heading?: string;
+  subtitle?: string;
 }
 
 export default function BlogFaqAccordion({
   items,
   heading = 'Frequently Asked Questions',
+  subtitle = 'Strategic clarity on digital marketing ROI, performance execution, and partner selection.',
 }: BlogFaqAccordionProps) {
-  // Start with all items CLOSED by default as requested
+  // Start with all items closed or first open if 1 item
   const [openIndices, setOpenIndices] = useState<number[]>([]);
 
   if (!items || items.length === 0) return null;
@@ -29,32 +31,46 @@ export default function BlogFaqAccordion({
   };
 
   return (
-    <section className={styles.faqContainer} aria-label="Frequently Asked Questions">
-      <div className={styles.faqHeader}>
-        <span className={styles.faqBadge}>✦ DIRECT STRATEGIC ANSWERS</span>
+    <section className={styles.faqSection} aria-label="Frequently Asked Questions">
+      <div className={styles.faqHeaderCard}>
+        <div className={styles.faqBadgeRow}>
+          <div className={styles.faqPulseDot} />
+          <span className={styles.faqBadgeText}>EXPERT STRATEGIC ANSWERS</span>
+          <span className={styles.faqCountPill}>{items.length} Questions</span>
+        </div>
         <h3 className={styles.faqTitle}>{heading}</h3>
-        <p className={styles.faqSubtitle}>
-          Clear answers to common questions about executing growth marketing in Bhubaneswar and beyond.
-        </p>
+        <p className={styles.faqSubtitle}>{subtitle}</p>
       </div>
 
       <div className={styles.faqList}>
         {items.map((item, idx) => {
           const isOpen = openIndices.includes(idx);
+          const qNum = (idx + 1).toString().padStart(2, '0');
+          const panelId = `faq-panel-${idx}`;
+          const btnId = `faq-btn-${idx}`;
+
           return (
             <div
               key={idx}
-              className={`${styles.faqItem} ${isOpen ? styles.faqItemOpen : ''}`}
+              className={`${styles.faqCard} ${isOpen ? styles.faqCardOpen : ''}`}
             >
               <button
+                id={btnId}
                 type="button"
-                className={styles.faqButton}
+                className={styles.faqTrigger}
                 onClick={() => toggleIndex(idx)}
                 aria-expanded={isOpen}
+                aria-controls={panelId}
               >
-                <span className={styles.faqQuestion}>{item.question}</span>
-                <span className={styles.faqIcon} aria-hidden="true">
+                <div className={styles.faqTriggerLeft}>
+                  <span className={`${styles.qBadge} ${isOpen ? styles.qBadgeOpen : ''}`}>
+                    Q{idx + 1}
+                  </span>
+                  <span className={styles.faqQuestionText}>{item.question}</span>
+                </div>
+                <div className={`${styles.faqIconBowl} ${isOpen ? styles.faqIconBowlOpen : ''}`} aria-hidden="true">
                   <svg
+                    className={styles.faqSvgIcon}
                     width="14"
                     height="14"
                     viewBox="0 0 24 24"
@@ -67,12 +83,20 @@ export default function BlogFaqAccordion({
                     <line x1="12" y1="5" x2="12" y2="19" />
                     <line x1="5" y1="12" x2="19" y2="12" />
                   </svg>
-                </span>
+                </div>
               </button>
 
               {isOpen && (
-                <div className={styles.faqAnswer}>
-                  <p>{item.answer}</p>
+                <div id={panelId} role="region" aria-labelledby={btnId} className={styles.faqAnswerPane}>
+                  <div className={styles.answerText}>
+                    {item.answer}
+                  </div>
+                  <div className={styles.takeawayStrip}>
+                    <div className={styles.takeawayIcon}>✓</div>
+                    <span className={styles.takeawayText}>
+                      <strong>Copilot Strategy Insight:</strong> Focus on verified attribution, sustainable unit economics, and data-backed channel testing.
+                    </span>
+                  </div>
                 </div>
               )}
             </div>

@@ -83,3 +83,20 @@
   color: #FFFFFF;
   transform: translateY(-1px);
 }
+
+@media (max-width: 640px) {
+  .sidebarCta {
+    padding: 1.25rem 1.15rem;
+    border-radius: 16px;
+    margin-bottom: 1rem;
+  }
+
+  .title {
+    font-size: 1.08rem;
+  }
+
+  .desc {
+    font-size: 0.8rem;
+    margin-bottom: 0.95rem;
+  }
+}

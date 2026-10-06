@@ -198,3 +198,73 @@
   background: var(--bg-card-subtle, #F8FAFC);
   border-top: 1px solid var(--border-subtle, #EDF2F7);
 }
+
+@media (max-width: 768px) {
+  .portableText h2 {
+    font-size: clamp(1.35rem, 5vw, 1.55rem);
+    margin-top: 2.25rem;
+    margin-bottom: 0.85rem;
+    padding-left: 10px;
+    border-left-width: 3px;
+  }
+
+  .portableText h3 {
+    font-size: clamp(1.15rem, 4vw, 1.28rem);
+    margin-top: 1.75rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .portableText h4 {
+    font-size: 1.05rem;
+    margin-top: 1.5rem;
+  }
+
+  .portableText p {
+    font-size: 0.98rem;
+    line-height: 1.72;
+    margin-bottom: 1.25rem;
+  }
+
+  .portableText > p:first-of-type {
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+
+  .portableText ul {
+    margin: 1.15rem 0 1.5rem 0;
+    gap: 8px;
+  }
+
+  .portableText ul li {
+    padding: 9px 12px 9px 38px;
+    font-size: 13.5px;
+    border-radius: 10px;
+  }
+
+  .portableText ul li::before {
+    left: 10px;
+    top: 9px;
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
+  }
+
+  .portableText blockquote {
+    padding: 1rem 1.15rem 1rem 2.6rem;
+    margin: 1.75rem 0;
+    font-size: 0.98rem;
+    line-height: 1.65;
+    border-radius: 0 12px 12px 0;
+  }
+
+  .portableText blockquote::before {
+    left: 10px;
+    top: 6px;
+    font-size: 2.25rem;
+  }
+
+  .imageWrapper {
+    margin: 1.75rem 0;
+    border-radius: 12px;
+  }
+}

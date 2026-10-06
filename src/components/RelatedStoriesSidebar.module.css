@@ -180,3 +180,21 @@
 .readTimeIcon {
   font-size: 11px;
 }
+
+@media (max-width: 640px) {
+  .relatedCard {
+    padding: 1.15rem 1rem;
+    border-radius: 16px;
+    margin-bottom: 1rem;
+  }
+
+  .thumbnailWrap {
+    width: 64px;
+    height: 64px;
+    min-width: 64px;
+  }
+
+  .storyTitle {
+    font-size: 13px;
+  }
+}

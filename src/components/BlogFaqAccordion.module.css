@@ -1,125 +1,343 @@
-.faqContainer {
+/* ══════════════════════════════════════════════════
+   BLOG FAQ ACCORDION — BESPOKE SKEUOMORPHIC AESTHETICS
+   Tactile Inset Highlights, Soft Drop Shadows,
+   Raised Icon Bowls & Brand Precision Palette
+   ══════════════════════════════════════════════════ */
+
+.faqSection {
   margin-top: 3.5rem;
-  padding-top: 2.5rem;
-  border-top: 1px solid var(--border-subtle, #EDF2F7);
+  padding-top: 2.25rem;
+  border-top: 1.5px solid #E2E8F0;
+  width: 100%;
 }
 
-.faqHeader {
+/* Header Card with Inset Shine */
+.faqHeaderCard {
+  background: linear-gradient(145deg, #FFFFFF 0%, #F8FAFD 50%, #F1F6FD 100%);
+  border: 1.5px solid #CBD5E1;
+  border-radius: 20px;
+  padding: 1.6rem 1.8rem;
   margin-bottom: 1.5rem;
+  box-shadow: 
+    inset 0 2px 0 #FFFFFF,
+    inset 0 -1px 0 rgba(0, 0, 0, 0.03),
+    0 8px 24px -6px rgba(11, 32, 147, 0.06);
+  position: relative;
+  overflow: hidden;
 }
 
-.faqBadge {
-  display: inline-block;
-  font-size: 0.72rem;
+.faqHeaderCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #0B2093 0%, #3B82F6 50%, #F59E0B 100%);
+}
+
+.faqBadgeRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 0.65rem;
+}
+
+.faqPulseDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.7);
+}
+
+.faqBadgeText {
+  font-family: var(--font-display), sans-serif;
+  font-size: 10.5px;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #0B2093;
-  background: #EFF6FF;
-  border: 1px solid #BFDBFE;
-  padding: 4px 10px;
+}
+
+.faqCountPill {
+  font-size: 10.5px;
+  font-weight: 750;
+  color: #0B2093;
+  background: #EEF2FF;
+  border: 1px solid rgba(11, 32, 147, 0.18);
+  padding: 2px 8px;
   border-radius: 9999px;
-  margin-bottom: 0.75rem;
   box-shadow: inset 0 1px 0 #FFFFFF;
 }
 
 .faqTitle {
   font-family: var(--font-display), sans-serif;
-  font-size: 1.75rem;
-  font-weight: 800;
-  color: var(--text-primary, #000000);
-  letter-spacing: -0.02em;
-  margin: 0;
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  font-weight: 850;
+  color: #0F172A;
+  letter-spacing: -0.025em;
+  margin: 0 0 0.35rem 0;
+  line-height: 1.25;
 }
 
 .faqSubtitle {
-  font-size: 0.95rem;
-  color: #64748B;
-  margin: 0.45rem 0 1.5rem 0;
-  line-height: 1.6;
+  font-family: var(--font-body), sans-serif;
+  font-size: clamp(13.5px, 1.1vw, 15px);
+  color: #475569;
+  margin: 0;
+  line-height: 1.55;
 }
 
+/* Accordion Stack */
 .faqList {
   display: flex;
   flex-direction: column;
-  gap: 0.875rem;
+  gap: 0.85rem;
+  width: 100%;
 }
 
-.faqItem {
-  border: 1.5px solid #E2E8F0;
+.faqCard {
+  border: 1.5px solid #CBD5E1;
   border-radius: 16px;
   background: #FFFFFF;
   overflow: hidden;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 
-    inset 0 1px 0 #FFFFFF,
-    0 2px 8px rgba(0, 0, 0, 0.02);
+    inset 0 1.5px 0 #FFFFFF,
+    0 2px 6px rgba(15, 23, 42, 0.03);
 }
 
-.faqItem:hover {
-  border-color: #CBD5E1;
-  transform: translateY(-1px);
+.faqCard:hover {
+  border-color: #94A3B8;
+  transform: translateY(-1.5px);
   box-shadow: 
-    inset 0 1px 0 #FFFFFF,
-    0 4px 14px rgba(0, 0, 0, 0.04);
+    inset 0 1.5px 0 #FFFFFF,
+    0 8px 20px -4px rgba(11, 32, 147, 0.08);
 }
 
-.faqItemOpen {
-  border-color: #0B2093;
-  background: #FAFCFF;
+.faqCardOpen {
+  border-color: #0B2093 !important;
+  background: linear-gradient(180deg, #F9FBFF 0%, #FFFFFF 100%);
+  border-left: 4px solid #0B2093 !important;
   box-shadow: 
-    inset 0 1px 0 #FFFFFF,
-    0 8px 24px rgba(11, 32, 147, 0.08);
+    inset 0 2px 0 #FFFFFF,
+    0 12px 28px -6px rgba(11, 32, 147, 0.1);
 }
 
-.faqButton {
+.faqTrigger {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  padding: 1.125rem 1.25rem;
+  padding: 1.1rem 1.25rem;
   background: transparent;
   border: none;
   cursor: pointer;
   text-align: left;
+  user-select: none;
 }
 
-.faqQuestion {
-  font-family: var(--font-display), sans-serif;
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--text-primary, #000000);
-  line-height: 1.4;
-  margin: 0;
-}
-
-.faqIcon {
+.faqTriggerLeft {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  min-width: 28px;
-  border-radius: 50%;
-  background: #F1F5F9;
-  color: #475569;
-  font-size: 1.125rem;
-  font-weight: 600;
-  transition: transform 0.25s ease, background-color 0.2s ease, color 0.2s ease;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
 }
 
-.faqItemOpen .faqIcon {
-  transform: rotate(45deg);
-  background: #EFF6FF;
+.qBadge {
+  font-family: var(--font-display), sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  color: #0B2093;
+  background: #EEF2FF;
+  border: 1.5px solid rgba(11, 32, 147, 0.18);
+  padding: 3px 8px;
+  border-radius: 7px;
+  flex-shrink: 0;
+  box-shadow: inset 0 1px 0 #FFFFFF;
+  transition: all 0.2s ease;
+}
+
+.qBadgeOpen {
+  background: #0B2093;
+  color: #FFFFFF;
+  border-color: #0B2093;
+  box-shadow: 0 2px 6px rgba(11, 32, 147, 0.35);
+}
+
+.faqQuestionText {
+  font-family: var(--font-display), sans-serif;
+  font-size: 1.02rem;
+  font-weight: 750;
+  color: #0F172A;
+  line-height: 1.4;
+  margin: 0;
+  transition: color 0.2s ease;
+}
+
+.faqCard:hover .faqQuestionText,
+.faqCardOpen .faqQuestionText {
   color: #0B2093;
 }
 
-.faqAnswer {
-  padding: 0 1.25rem 1.25rem;
+/* 3D Raised Icon Bowl */
+.faqIconBowl {
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #FFFFFF 0%, #EEF2F6 100%);
+  border: 1.5px solid #CBD5E1;
+  color: #0B2093;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 
+    inset 0 1.5px 0 #FFFFFF,
+    inset 0 -1px 0 rgba(0, 0, 0, 0.05),
+    0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+}
+
+.faqCard:hover .faqIconBowl {
+  border-color: #0B2093;
+}
+
+.faqSvgIcon {
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faqIconBowlOpen {
+  background: #0B2093;
+  color: #FFFFFF;
+  border-color: #0B2093;
+  box-shadow: 
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.35),
+    0 4px 12px rgba(11, 32, 147, 0.35);
+}
+
+.faqIconBowlOpen .faqSvgIcon {
+  transform: rotate(45deg);
+}
+
+/* Answer Container */
+.faqAnswerPane {
+  padding: 0 1.25rem 1.25rem 3.4rem;
+  animation: faqSlideDown 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes faqSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.answerText {
   font-family: var(--font-body), sans-serif;
-  font-size: 0.95rem;
-  line-height: 1.65;
-  color: var(--text-secondary, #334155);
+  font-size: 15px;
+  line-height: 1.7;
+  color: #334155;
   white-space: pre-line;
+  margin-bottom: 0.85rem;
+}
+
+.takeawayStrip {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  background: rgba(11, 32, 147, 0.04);
+  border: 1px solid rgba(11, 32, 147, 0.12);
+  border-radius: 9px;
+  padding: 8px 12px;
+}
+
+.takeawayIcon {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: #10B981;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 850;
+  flex-shrink: 0;
+  margin-top: 1.5px;
+  box-shadow: 0 1px 3px rgba(16, 185, 129, 0.4);
+}
+
+.takeawayText {
+  font-size: 12.5px;
+  color: #1E293B;
+  line-height: 1.5;
+}
+
+.takeawayText strong {
+  color: #0B2093;
+}
+
+/* Mobile Responsive Optimization */
+@media (max-width: 768px) {
+  .faqHeaderCard {
+    padding: 1.25rem 1rem;
+    border-radius: 16px;
+  }
+
+  .faqTrigger {
+    padding: 0.95rem 1rem;
+    gap: 10px;
+  }
+
+  .faqTriggerLeft {
+    gap: 8px;
+  }
+
+  .qBadge {
+    font-size: 10px;
+    padding: 2px 6px;
+  }
+
+  .faqQuestionText {
+    font-size: 0.94rem;
+    line-height: 1.35;
+  }
+
+  .faqIconBowl {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+  }
+
+  .faqIconBowl svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .faqAnswerPane {
+    padding: 0 1rem 1rem 1rem;
+  }
+
+  .answerText {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .takeawayStrip {
+    padding: 7px 10px;
+  }
+
+  .takeawayText {
+    font-size: 11.5px;
+  }
 }

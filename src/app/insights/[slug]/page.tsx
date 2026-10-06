@@ -317,10 +317,14 @@ export default async function ArticlePage({
                 <span className={styles.accentCategory}>{article.category}</span>
               </div>
 
-              {/* Mobile Quick Table of Contents (Collapsible on screens < 1024px) */}
+              {/* In-Article Table of Contents (Added directly to Left Content Column for Desktop & Mobile) */}
               {article.headings && article.headings.length >= 1 && (
-                <div className={styles.mobileTocWrapper}>
-                  <TableOfContents headings={article.headings} isMobileCollapsible />
+                <div className={styles.inArticleTocWrapper}>
+                  <TableOfContents
+                    headings={article.headings}
+                    variant="inline"
+                    isMobileCollapsible
+                  />
                 </div>
               )}
 
@@ -355,7 +359,7 @@ export default async function ArticlePage({
               {/* 1. Table of Contents ("On This Page" - Desktop) */}
               {article.headings && article.headings.length >= 1 && (
                 <div className={styles.desktopTocWrapper}>
-                  <TableOfContents headings={article.headings} />
+                  <TableOfContents headings={article.headings} variant="sidebar" />
                 </div>
               )}
 

@@ -1,6 +1,10 @@
 .page {
   background: #FFFFFF;
   padding-bottom: 100px;
+  overflow-x: clip;
+  max-width: 100vw;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .contentWrapper {
@@ -9,6 +13,7 @@
   padding: 1.5rem 1rem 0;
   width: 100%;
   box-sizing: border-box;
+  overflow-x: clip;
 }
 
 @media (min-width: 640px) {
@@ -48,31 +53,32 @@
   }
 }
 
-.mobileTocWrapper {
+/* In-Article Table of Contents (Left Column — Displayed for both Desktop & Mobile) */
+.inArticleTocWrapper {
   display: block;
-  margin-bottom: 1.75rem;
+  margin-bottom: 2rem;
+  width: 100%;
 }
 
+/* Desktop Companion TOC in Right Sidebar */
 .desktopTocWrapper {
   display: none;
 }
 
 @media (min-width: 1024px) {
-  .mobileTocWrapper {
-    display: none;
-  }
-
   .desktopTocWrapper {
     display: block;
   }
 }
 
+/* ── Right Sidebar: Sticky, Clean, Zero Internal Scrollbar ── */
 .sidebarCol {
   width: 100%;
   min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+  overflow: visible !important;
 }
 
 @media (min-width: 1024px) {
@@ -81,30 +87,9 @@
     position: sticky;
     top: calc(var(--nav-height, 78px) + 20px);
     align-self: start;
-    max-height: calc(100vh - var(--nav-height, 78px) - 30px);
-    overflow-y: auto;
-    overscroll-behavior: contain;
-    padding-right: 6px;
-    padding-bottom: 24px;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(11, 32, 147, 0.2) transparent;
-  }
-
-  .sidebarCol::-webkit-scrollbar {
-    width: 4px;
-  }
-
-  .sidebarCol::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  .sidebarCol::-webkit-scrollbar-thumb {
-    background: rgba(11, 32, 147, 0.2);
-    border-radius: 9999px;
-  }
-
-  .sidebarCol::-webkit-scrollbar-thumb:hover {
-    background: rgba(11, 32, 147, 0.4);
+    /* Strictly ZERO internal scrolling or overflow clipping */
+    overflow: visible !important;
+    max-height: none !important;
   }
 }
 
@@ -119,19 +104,10 @@
   border-radius: 14px;
   background: linear-gradient(90deg, #F0F5FF 0%, #FFFFFF 50%, #FFFDF5 100%);
   border: 1.5px solid #E2E8F0;
-  margin-bottom: 2rem;
+  margin-bottom: 1.85rem;
   box-shadow: 
     inset 0 1px 0 #FFFFFF,
     0 4px 14px rgba(11, 32, 147, 0.04);
-}
-
-@media (max-width: 639px) {
-  .decorativeAccentBar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
-    padding: 10px 14px;
-  }
 }
 
 .accentGlow {
@@ -177,6 +153,7 @@
   font-size: 1.0625rem;
   line-height: 1.8;
   margin-bottom: 3rem;
+  width: 100%;
 }
 
 .articleBody p {
@@ -248,4 +225,74 @@
 
 .rawHtmlContent {
   width: 100%;
+}
+
+/* ── Mobile Responsive Optimizations ── */
+@media (max-width: 768px) {
+  .page {
+    padding-bottom: 60px;
+  }
+
+  .contentWrapper {
+    padding: 1.25rem 12px 0;
+  }
+
+  .layoutGrid {
+    gap: 1.5rem;
+  }
+
+  .inArticleTocWrapper {
+    margin-bottom: 1.5rem;
+  }
+
+  .decorativeAccentBar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 10px 14px;
+    margin-bottom: 1.25rem;
+  }
+
+  .articleBody {
+    font-size: 1rem;
+    line-height: 1.72;
+    margin-bottom: 2rem;
+  }
+
+  .articleBody p {
+    margin: 0 0 1.25rem 0;
+  }
+
+  .articleBody h2 {
+    font-size: clamp(1.35rem, 5vw, 1.55rem);
+    margin: 2rem 0 0.75rem 0;
+    scroll-margin-top: 85px;
+  }
+
+  .articleBody h3 {
+    font-size: clamp(1.15rem, 4vw, 1.28rem);
+    margin: 1.5rem 0 0.65rem 0;
+    scroll-margin-top: 85px;
+  }
+
+  .articleBody ul,
+  .articleBody ol {
+    margin: 0.75rem 0 1.25rem 1rem;
+    gap: 0.5rem;
+  }
+
+  .articleBody li {
+    font-size: 0.95rem;
+  }
+
+  .articleBody blockquote {
+    padding: 1rem 1.15rem;
+    font-size: 0.95rem;
+    margin: 1.25rem 0;
+    border-radius: 0 10px 10px 0;
+  }
+
+  .sidebarCol {
+    gap: 1rem;
+  }
 }

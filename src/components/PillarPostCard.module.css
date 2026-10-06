@@ -65,3 +65,19 @@
   color: var(--accent-gold-dark, #D97706);
   gap: 0.75rem;
 }
+
+@media (max-width: 640px) {
+  .pillarCard {
+    padding: 1.25rem 1rem;
+    border-radius: 16px;
+    margin: 2rem 0;
+  }
+
+  .pillarTitle {
+    font-size: 1.12rem;
+  }
+
+  .pillarExcerpt {
+    font-size: 0.88rem;
+  }
+}

@@ -88,3 +88,15 @@
   flex: 1;
   font-weight: 550;
 }
+
+@media (max-width: 640px) {
+  .takeawaysCard {
+    padding: 1.15rem 1rem;
+    border-radius: 16px;
+    margin-bottom: 1rem;
+  }
+
+  .takeawayItem {
+    font-size: 13px;
+  }
+}
