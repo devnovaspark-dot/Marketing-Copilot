@@ -460,7 +460,7 @@ export default function SEOPage() {
               <div className={styles.oppVisualStack}>
                 <div className={styles.oppImageFrame}>
                   <Image
-                    src="/images/Seo & local search.png"
+                    src="/images/SEO framework.jpg"
                     alt="SEO & Local Search Optimization Framework in Bhubaneswar"
                     fill
                     sizes="(max-width: 900px) 100vw, 480px"
@@ -618,7 +618,7 @@ export default function SEOPage() {
               {/* Agency Strategy Image */}
               <div className={styles.specialImgWrapper}>
                 <Image
-                  src="/images/team_office.jpg"
+                  src="/images/SEO strategy_team.jpg"
                   alt="Nova Spark Digital Marketing and SEO Strategy Team in Bhubaneswar"
                   fill
                   sizes="(max-width: 1024px) 100vw, 480px"

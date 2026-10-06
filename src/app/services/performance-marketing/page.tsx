@@ -263,7 +263,7 @@ export default function PerformanceMarketingPage() {
             <div className={styles.funnelImageBanner}>
               <div className={styles.funnelBannerImgWrap}>
                 <Image
-                  src="/images/services_performance.jpg"
+                  src="/images/Funnel Architecture.jpg"
                   alt="Nova Spark Full-Funnel Performance Architecture"
                   fill
                   sizes="(max-width: 1024px) 100vw, 550px"
@@ -329,7 +329,7 @@ export default function PerformanceMarketingPage() {
             <div className={styles.visualShowcaseCard}>
               <div className={styles.visualImgWrapper}>
                 <Image
-                  src="/images/Google ads & Meta ads.png"
+                  src="/images/Cross-Network_.jpg"
                   alt="Nova Spark Google Ads & Meta Ads Performance Engine Bhubaneswar"
                   fill
                   sizes="(max-width: 1024px) 100vw, 600px"
@@ -426,7 +426,7 @@ export default function PerformanceMarketingPage() {
               </div>
               <div className={styles.whyBannerImgWrap}>
                 <Image
-                  src="/images/hero_growth_mastery.jpg"
+                  src="/images/Growth Banner.jpg"
                   alt="Nova Spark Performance Marketing Agency Bhubaneswar Growth Mastery"
                   fill
                   sizes="(max-width: 1024px) 100vw, 550px"
@@ -565,7 +565,7 @@ export default function PerformanceMarketingPage() {
               <div className={styles.dashboardImgCard}>
                 <div className={styles.dashboardImgWrap}>
                   <Image
-                    src="/images/dashboard_hero.jpg"
+                    src="/images/Dashboard Telemetry_.jpg"
                     alt="Nova Spark Performance Marketing Live Dashboard Telemetry"
                     fill
                     sizes="(max-width: 1024px) 100vw, 650px"

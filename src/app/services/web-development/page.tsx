@@ -288,7 +288,7 @@ export default function WebDevelopmentPage() {
 
               <div className={styles.visualImageWrap}>
                 <Image
-                  src="/images/Website devlopment.png"
+                  src="/images/Website Framework.jpg"
                   alt="Modern Website Development Nova Spark Digital Bhubaneswar"
                   fill
                   sizes="(max-width: 768px) 100vw, 500px"
@@ -384,6 +384,53 @@ export default function WebDevelopmentPage() {
               </ScrollReveal>
             ))}
           </div>
+
+          {/* Sub-Second Infrastructure Architecture Showcase Banner */}
+          <ScrollReveal>
+            <div className={styles.infraBannerWrapper}>
+              <div className={styles.infraBannerBox}>
+                <div className={styles.visualImageWrap}>
+                  <Image
+                    src="/images/Infrastructure Banner.jpg"
+                    alt="High-Performance Next.js Serverless Cloud Infrastructure Bhubaneswar"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 550px"
+                    className={styles.visualImg}
+                  />
+                  <div className={styles.visualImgOverlay}>
+                    <span>Edge Deployed &bull; 99.99% Uptime</span>
+                    <span>Sub-100ms Telemetry</span>
+                  </div>
+                </div>
+
+                <div className={styles.visualShowcaseContent}>
+                  <div className={styles.visualBadge}>
+                    <span>⚡ SERVERLESS ARCHITECTURE &amp; EDGE CDN</span>
+                  </div>
+                  <h3 className={styles.visualTitle}>
+                    Sub-Second Performance Powered by Modern Infrastructure
+                  </h3>
+                  <p className={styles.visualText}>
+                    Speed directly dictates conversions. We engineer every platform on global edge networks with automated image pipeline transformations, static asset compression, and instant database querying.
+                  </p>
+                  <div className={styles.visualStatsStrip}>
+                    <div className={styles.statItem}>
+                      <span className={styles.statVal}>&lt; 0.8s</span>
+                      <span className={styles.statLbl}>Largest Contentful Paint</span>
+                    </div>
+                    <div className={styles.statItem}>
+                      <span className={styles.statVal}>99.99%</span>
+                      <span className={styles.statLbl}>Cloud SLA Uptime</span>
+                    </div>
+                    <div className={styles.statItem}>
+                      <span className={styles.statVal}>100%</span>
+                      <span className={styles.statLbl}>Zero-Downtime CI/CD</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 

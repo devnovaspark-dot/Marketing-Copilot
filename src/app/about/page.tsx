@@ -590,6 +590,12 @@ const heroSlides = [
     alt: 'Marketing Copilot digital marketing company strategy and campaigns in Bhubaneswar',
     caption: 'Strategic Growth & Execution',
   },
+  {
+    id: 'slide-2',
+    src: '/images/Agency Feature_.jpg',
+    alt: 'Marketing Copilot digital marketing agency operations and executive war-room in Bhubaneswar',
+    caption: 'Executive Growth War-Room',
+  },
 ];
 
 export default function AboutPage() {

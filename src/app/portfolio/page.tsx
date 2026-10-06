@@ -46,6 +46,13 @@ const heroPortfolioSlides = [
     metric: '85+ #1 Google Rankings',
     sub: 'Dominant High-Intent Search Visibility',
   },
+  {
+    id: 'portfolio-hero-4',
+    src: '/images/Client Case Study_.jpg',
+    alt: 'Marketing Copilot Verified Client Case Study Growth Architecture',
+    metric: '+410% Conversion Velocity',
+    sub: 'Omnichannel Attribution & Regional Scaling',
+  },
 ];
 
 export default function PortfolioPage() {

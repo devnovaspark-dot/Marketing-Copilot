@@ -692,4 +692,11 @@
   .kpiStrip {
     grid-template-columns: 1fr;
   }
+  .arsenalCard {
+    padding: 16px 14px !important;
+    border-radius: 14px !important;
+  }
+  .telemetryCell {
+    padding: 14px 10px !important;
+  }
 }

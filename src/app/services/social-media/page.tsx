@@ -223,7 +223,7 @@ export default function SocialMediaPage() {
             <div className={styles.visualShowcaseCard}>
               <div className={styles.visualImgWrapper}>
                 <Image
-                  src="/images/Social media marketing.png"
+                  src="/images/Viral Engine_.jpg"
                   alt="Nova Spark Social Media Marketing Bhubaneswar Architecture"
                   fill
                   sizes="(max-width: 1024px) 100vw, 600px"
@@ -301,7 +301,7 @@ export default function SocialMediaPage() {
             <ScrollReveal className={styles.brandVisualCol}>
               <div className={styles.brandImgCard}>
                 <Image
-                  src="/images/zue_fashion_shoot.jpg"
+                  src="/images/Brand Shoot_.jpg"
                   alt="Nova Spark Social Media Client Shoot in Bhubaneswar"
                   fill
                   sizes="(max-width: 1024px) 100vw, 520px"

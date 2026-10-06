@@ -170,6 +170,53 @@ export default function LocalSeoPage() {
       <LocalSeoGridSimulator />
 
       {/* ══════════════════════════════════════════════════
+          2.5. HYPERLOCAL COVERAGE & GEO-GRID DOMINANCE SHOWCASE
+         ══════════════════════════════════════════════════ */}
+      <section className={styles.coverageSection}>
+        <div className="container">
+          <ScrollReveal>
+            <div className={styles.coverageCard}>
+              <div className={styles.coverageImgWrap}>
+                <Image
+                  src="/images/Local Coverage.jpg"
+                  alt="Hyperlocal Google Maps Geo-Grid Coverage Across Bhubaneswar"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 550px"
+                  className={styles.editorialImg}
+                />
+              </div>
+
+              <div className={styles.coverageContent}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#EFF6FF', border: '1px solid #BFDBFE', padding: '4px 12px', borderRadius: 999, alignSelf: 'flex-start', color: '#0B2093', fontSize: 11.5, fontWeight: 800 }}>
+                  <span>⚡ 100% REGIONAL GEO-GRID PENETRATION</span>
+                </div>
+                <h2 style={{ fontSize: 'clamp(20px, 2.4vw, 30px)', fontWeight: 800, color: '#0F172A', margin: 0, lineHeight: 1.25 }}>
+                  Hyperlocal Map Dominance Across Bhubaneswar &amp; Cuttack
+                </h2>
+                <p style={{ fontSize: 15, lineHeight: 1.65, color: '#475569', margin: 0 }}>
+                  From Saheed Nagar and Patia to Nayapalli, Jaydev Vihar, and Chandrasekharpur, our geotagged citation architecture and review acceleration funnels ensure your business ranks in the Google Map 3-Pack wherever high-intent local customers search.
+                </p>
+                <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap', paddingTop: 10, borderTop: '1px solid #E2E8F0' }}>
+                  <div>
+                    <div style={{ fontSize: 20, fontWeight: 800, color: '#0B2093' }}>100%</div>
+                    <div style={{ fontSize: 11, fontWeight: 700, color: '#64748B', textTransform: 'uppercase' }}>Geo-Grid Lock</div>
+                  </div>
+                  <div>
+                    <div style={{ fontSize: 20, fontWeight: 800, color: '#0B2093' }}>#1 Rank</div>
+                    <div style={{ fontSize: 11, fontWeight: 700, color: '#64748B', textTransform: 'uppercase' }}>3-Pack Placement</div>
+                  </div>
+                  <div>
+                    <div style={{ fontSize: 20, fontWeight: 800, color: '#0B2093' }}>+410%</div>
+                    <div style={{ fontSize: 11, fontWeight: 700, color: '#64748B', textTransform: 'uppercase' }}>Walk-in Calls</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════
           3. REGIONAL BHUBANESWAR GEO-REACH FOOTPRINT
          ══════════════════════════════════════════════════ */}
       <QuickConnectMapSection />

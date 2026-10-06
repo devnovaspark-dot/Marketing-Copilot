@@ -324,7 +324,7 @@ export default function MetaAdsPage() {
 
               <div className={styles.visualImageWrap}>
                 <Image
-                  src="/images/Google ads & Meta ads.png"
+                  src="/images/Ad Framework.jpg"
                   alt="Meta and Facebook Advertising Framework Nova Spark Digital Bhubaneswar"
                   fill
                   sizes="(max-width: 768px) 100vw, 500px"

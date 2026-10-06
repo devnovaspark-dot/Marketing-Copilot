@@ -32,7 +32,7 @@ const serviceClusters: HeaderServiceCluster[] = [
     services: [
       { href: '/services/seo-services-in-bhubaneswar', label: 'SEO Services', shortLabel: 'SEO', icon: '⚡', desc: 'Rank #1 on Google in Bhubaneswar', badge: 'High Intent' },
       { href: '/services/google-ads-services-in-bhubaneswar', label: 'Google Ads / PPC', shortLabel: 'Google Ads', icon: '🎯', desc: 'High-ROI paid search campaigns', badge: 'Top ROAS' },
-      { href: '/services/google-ads-services-in-bhubaneswar', label: 'Meta Ads', shortLabel: 'Meta Ads', icon: '🚀', desc: 'Facebook, Instagram & WhatsApp ads', badge: 'CAPI Ready' },
+      { href: '/services/meta-ads-services-in-bhubaneswar', label: 'Meta Ads', shortLabel: 'Meta Ads', icon: '🚀', desc: 'Facebook, Instagram & WhatsApp ads', badge: 'CAPI Ready' },
       { href: '/services/performance-marketing-in-bhubaneswar', label: 'Performance Marketing', shortLabel: 'Performance', icon: '📈', desc: 'Revenue attribution & unit economics', badge: 'Full-Funnel' },
     ],
   },

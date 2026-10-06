@@ -120,8 +120,9 @@ html {
   background-color: var(--bg-deep);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
-  max-width: 100%;
+  overflow-x: clip;
+  max-width: 100vw;
+  width: 100%;
 }
 
 body {
@@ -129,15 +130,15 @@ body {
   background-color: var(--bg-deep);
   color: var(--text-primary);
   line-height: 1.6;
-  overflow-x: hidden;
-  max-width: 100%;
+  overflow-x: clip;
+  max-width: 100vw;
   width: 100%;
   position: relative;
 }
 
 main {
   overflow-x: clip;
-  max-width: 100%;
+  max-width: 100vw;
   width: 100%;
 }
 
@@ -642,5 +643,55 @@ ul, ol {
 [data-ui="Portal"],
 #sanity-portal {
   z-index: 9999999 !important;
+}
+
+/* ── Universal Protection Against Horizontal Scrolling on Mobile & Tablet ── */
+@media (max-width: 768px) {
+  html, body, main {
+    overflow-x: clip !important;
+    max-width: 100vw !important;
+    width: 100% !important;
+  }
+
+  .container,
+  .container-sm {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Compact Card Padding & Box Containment on Mobile */
+  .card,
+  .skeuo-card-base,
+  [class*="Card"],
+  [class*="card"] {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Prevent Tables, Simulators & Matrices from Causing Page Overflow */
+  table,
+  [class*="Table"],
+  [class*="table"],
+  [class*="Matrix"],
+  [class*="matrix"],
+  [class*="Simulator"],
+  [class*="simulator"],
+  [class*="Workstation"],
+  [class*="workstation"] {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Smooth Internal Horizontal Scrolling for Comparison Tables without Viewport Bleed */
+  [class*="tableWrapper"],
+  [class*="TableWrapper"],
+  [class*="matrixContainer"],
+  [class*="MatrixContainer"] {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100% !important;
+  }
 }
 

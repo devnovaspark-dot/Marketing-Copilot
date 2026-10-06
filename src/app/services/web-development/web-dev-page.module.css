@@ -470,6 +470,40 @@
   font-weight: 700;
 }
 
+/* Infrastructure Architecture Showcase Banner */
+.infraBannerWrapper {
+  margin-top: 48px;
+}
+
+.infraBannerBox {
+  background: linear-gradient(145deg, #FFFFFF 0%, #F8FAFC 100%);
+  border: 1.5px solid #CBD5E1;
+  border-radius: 24px;
+  padding: 32px;
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 36px;
+  align-items: center;
+  box-shadow: 
+    inset 0 2px 0 #FFFFFF,
+    0 16px 40px -10px rgba(11, 32, 147, 0.08);
+}
+
+@media (max-width: 1024px) {
+  .infraBannerBox {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .infraBannerBox {
+    padding: 16px;
+    border-radius: 16px;
+  }
+}
+
 /* ══════════════════════════════════════════════════
    3. HIGH-PERFORMANCE WEBSITES BUILT FOR GROWTH (PROCESS)
 ══════════════════════════════════════════════════ */
@@ -920,10 +954,18 @@
     border-bottom: 1px solid #E2E8F0;
   }
   .homeStyleCtaBox {
-    padding: 32px 20px;
-    border-radius: 20px;
+    padding: 28px 16px !important;
+    border-radius: 18px !important;
   }
   .visualImageWrap {
     height: 240px;
+  }
+  .processCard,
+  .whyBestCard {
+    padding: 16px 14px !important;
+    border-radius: 14px !important;
+  }
+  .telemetryCell {
+    padding: 14px 10px !important;
   }
 }

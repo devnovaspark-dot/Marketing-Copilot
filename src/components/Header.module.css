@@ -42,6 +42,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+  position: relative;
 }
 
 /* Logo with Official Transparent 3D Emblem */
@@ -120,7 +121,7 @@
 }
 
 .navItem {
-  position: relative;
+  position: static;
 }
 
 .navLink {
@@ -191,18 +192,19 @@
   background: rgba(11, 32, 147, 0.08);
 }
 
-/* Seamless Skeuomorphic Dropdown with Rock-Solid Anchor & Silky Opening Physics */
+/* Seamless Skeuomorphic Dropdown Anchored to Centered Header Pill */
 .dropdown {
   position: absolute;
-  top: 100%;
+  top: calc(100% + 8px);
   left: 50%;
   transform: translateX(-50%);
-  padding-top: 10px;
-  width: min(890px, calc(100vw - 36px));
+  padding-top: 4px;
+  width: min(770px, calc(100vw - 32px));
+  max-width: 770px;
   z-index: 99999;
   pointer-events: none;
   visibility: hidden;
-  transition: visibility 0.24s;
+  transition: visibility 0.22s;
 }
 
 .dropdownOpen {
@@ -210,27 +212,27 @@
   pointer-events: auto;
 }
 
-/* The Animated Frosted Glass Mega-Menu Card */
+/* The Animated Frosted Glass Mega-Menu Card (Compact & Proportioned) */
 .dropdownCard {
   width: 100%;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(250, 252, 255, 0.96) 100%);
   backdrop-filter: blur(36px) saturate(200%);
   -webkit-backdrop-filter: blur(36px) saturate(200%);
   border: 1.5px solid rgba(255, 255, 255, 0.95);
-  border-radius: var(--radius-2xl);
+  border-radius: 18px;
   box-shadow: 
     inset 0 2px 0 #FFFFFF,
-    0 28px 70px -10px rgba(11, 32, 147, 0.16),
-    0 4px 20px rgba(0, 0, 0, 0.05);
-  padding: 20px 22px 14px;
+    0 24px 60px -10px rgba(11, 32, 147, 0.16),
+    0 4px 18px rgba(0, 0, 0, 0.05);
+  padding: 13px 16px 8px;
 
   /* Silky smooth physics-based spring animation */
   opacity: 0;
-  transform: translateY(-8px) scale(0.98);
+  transform: translateY(-6px) scale(0.985);
   transform-origin: top center;
   transition: 
-    opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity 0.24s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.24s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
@@ -241,34 +243,34 @@
 
 .megaMenuContainer {
   display: grid;
-  grid-template-columns: 1fr 270px;
-  gap: 20px;
+  grid-template-columns: 1fr 220px;
+  gap: 14px;
   align-items: stretch;
 }
 
 .megaMenuClusters {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 9px;
 }
 
 .clusterCol {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 3px;
 }
 
 .clusterHeader {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding-left: 6px;
-  margin-bottom: 2px;
+  gap: 6px;
+  padding-left: 4px;
+  margin-bottom: 1px;
 }
 
 .clusterCategory {
   font-family: var(--font-display);
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -276,10 +278,10 @@
 }
 
 .clusterTag {
-  font-size: 9px;
+  font-size: 8px;
   font-weight: 700;
-  letter-spacing: 0.06em;
-  padding: 2px 6px;
+  letter-spacing: 0.05em;
+  padding: 1.5px 5px;
   border-radius: 999px;
   background: rgba(11, 32, 147, 0.07);
   color: #0B2093;
@@ -288,19 +290,19 @@
 .clusterList {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 6px;
+  gap: 4px 6px;
 }
 
 .megaMenuItem {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
-  padding: 8px 10px;
-  border-radius: var(--radius-md);
+  gap: 7px;
+  padding: 5px 7px;
+  border-radius: 7px;
   text-decoration: none;
   background: transparent;
   border: 1px solid transparent;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .megaMenuItem:hover {
@@ -308,7 +310,7 @@
   border-color: rgba(11, 32, 147, 0.12);
   box-shadow: 
     inset 0 1px 0 #FFFFFF, 
-    0 2px 8px rgba(11, 32, 147, 0.08);
+    0 2px 6px rgba(11, 32, 147, 0.06);
   transform: translateY(-1px);
 }
 
@@ -316,10 +318,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 24px;
-  height: 24px;
-  font-size: 13px;
-  border-radius: 6px;
+  width: 21px;
+  height: 21px;
+  font-size: 11.5px;
+  border-radius: 5px;
   background: rgba(11, 32, 147, 0.06);
   flex-shrink: 0;
   margin-top: 1px;
@@ -327,7 +329,7 @@
 }
 
 .megaMenuItem:hover .megaMenuIcon {
-  transform: scale(1.15) rotate(4deg);
+  transform: scale(1.12) rotate(3deg);
   background: rgba(11, 32, 147, 0.14);
 }
 
@@ -341,17 +343,17 @@
 .megaMenuTitleRow {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   flex-wrap: wrap;
 }
 
 .megaMenuLabel {
   font-family: var(--font-display);
-  font-size: 12.5px;
+  font-size: 11.5px;
   font-weight: 700;
   color: #0F172A;
   transition: color 0.15s ease;
-  line-height: 1.25;
+  line-height: 1.2;
 }
 
 .megaMenuItem:hover .megaMenuLabel {
@@ -359,23 +361,23 @@
 }
 
 .megaMenuBadge {
-  font-size: 9px;
+  font-size: 8px;
   font-weight: 700;
-  padding: 1px 5px;
-  border-radius: 4px;
+  padding: 1px 4px;
+  border-radius: 3px;
   background: rgba(16, 185, 129, 0.12);
   color: #047857;
   letter-spacing: 0.02em;
 }
 
 .megaMenuDesc {
-  font-size: 10.5px;
+  font-size: 9.5px;
   color: #64748B;
-  line-height: 1.3;
+  line-height: 1.25;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 210px;
+  max-width: 170px;
 }
 
 /* Right Column Spotlight Card */
@@ -386,15 +388,15 @@
 .spotlightCard {
   width: 100%;
   background: linear-gradient(145deg, #0B2093 0%, #071355 100%);
-  border-radius: var(--radius-lg);
-  padding: 16px;
+  border-radius: 14px;
+  padding: 11px 13px;
   color: #FFFFFF;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   box-shadow: 
     inset 0 1px 0 rgba(255, 255, 255, 0.2),
-    0 12px 28px -6px rgba(11, 32, 147, 0.35);
+    0 12px 24px -6px rgba(11, 32, 147, 0.35);
   position: relative;
   overflow: hidden;
 }
@@ -404,8 +406,8 @@
   position: absolute;
   top: -40px;
   right: -40px;
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(238, 242, 255, 0.15) 0%, transparent 70%);
   pointer-events: none;
@@ -414,20 +416,20 @@
 .spotlightTopRow {
   display: flex;
   align-items: center;
-  gap: 6px;
-  margin-bottom: 8px;
+  gap: 5px;
+  margin-bottom: 5px;
 }
 
 .spotlightPulseDot {
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: #10B981;
-  box-shadow: 0 0 8px #10B981;
+  box-shadow: 0 0 6px #10B981;
 }
 
 .spotlightHqText {
-  font-size: 10px;
+  font-size: 9.5px;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -436,7 +438,7 @@
 
 .spotlightRating {
   margin-left: auto;
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: 800;
   color: #FCD34D;
 }
@@ -445,14 +447,15 @@
 .spotlightGraphicBox {
   position: relative;
   width: 100%;
-  aspect-ratio: 1371 / 1147;
-  border-radius: 10px;
+  aspect-ratio: 16 / 9;
+  max-height: 100px;
+  border-radius: 8px;
   overflow: hidden;
-  margin: 6px 0 10px;
+  margin: 3px 0 7px;
   border: 1px solid rgba(255, 255, 255, 0.25);
   box-shadow: 
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 6px 18px rgba(0, 0, 0, 0.25);
+    0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 .spotlightGraphicImg {
@@ -465,59 +468,58 @@
   transform: scale(1.03);
 }
 
-
 .spotlightHeadline {
   font-family: var(--font-display);
-  font-size: 13.5px;
+  font-size: 12px;
   font-weight: 800;
-  line-height: 1.35;
+  line-height: 1.3;
   color: #FFFFFF;
-  margin-bottom: 6px;
+  margin-bottom: 3px;
 }
 
 .spotlightSubtext {
-  font-size: 11px;
-  line-height: 1.45;
+  font-size: 9.5px;
+  line-height: 1.35;
   color: #C7D2FE;
-  margin-bottom: 12px;
+  margin-bottom: 7px;
 }
 
 .spotlightAuditBtn {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 5px;
   background: #FFFFFF;
   color: #0B2093;
   font-family: var(--font-display);
-  font-size: 11.5px;
+  font-size: 10.5px;
   font-weight: 700;
-  padding: 8px 12px;
-  border-radius: var(--radius-md);
+  padding: 6px 10px;
+  border-radius: 6px;
   text-decoration: none;
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  transition: all 0.18s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .spotlightAuditBtn:hover {
   background: #F8FAFC;
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
-  gap: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
+  gap: 7px;
 }
 
 .spotlightDivider {
   height: 1px;
   background: rgba(255, 255, 255, 0.14);
-  margin: 10px 0;
+  margin: 6px 0;
 }
 
 .spotlightWhatsAppBtn {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  font-size: 10.5px;
+  gap: 5px;
+  font-size: 9.5px;
   font-weight: 600;
   color: #A7F3D0;
   text-decoration: none;
@@ -529,16 +531,16 @@
 }
 
 .waOnlineDot {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
   background: #34D399;
 }
 
 /* Mega Menu Bottom Bar */
 .dropdownFooter {
-  margin-top: 14px;
-  padding-top: 10px;
+  margin-top: 8px;
+  padding-top: 7px;
   border-top: 1px solid #E2E8F0;
   display: flex;
   align-items: center;
@@ -548,26 +550,26 @@
 .dropdownAll {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   font-family: var(--font-display);
-  font-size: 11.5px;
+  font-size: 10.5px;
   font-weight: 700;
   color: #0B2093;
   text-decoration: none;
-  padding: 2px 6px;
+  padding: 1px 4px;
   transition: gap var(--transition-fast), color var(--transition-fast);
 }
 
 .dropdownAll:hover {
-  gap: 9px;
+  gap: 8px;
   color: #071355;
 }
 
 .dropdownGuarantee {
   display: flex;
   align-items: center;
-  gap: 5px;
-  font-size: 10.5px;
+  gap: 4px;
+  font-size: 9.5px;
   font-weight: 600;
   color: #64748B;
 }
@@ -819,10 +821,10 @@
   max-height: calc(100dvh - 20px);
   left: auto;
   width: min(320px, calc(100vw - 20px));
-  max-width: 340px;
+  max-width: calc(100vw - 20px);
   background: linear-gradient(180deg, #FFFFFF 0%, #FAFCFF 60%, #F5F8FE 100%);
   border: 1.5px solid rgba(215, 225, 238, 0.95);
-  border-radius: 22px;
+  border-radius: 20px;
   box-shadow: 
     inset 0 2px 0 0 #FFFFFF,
     inset 0 -1.5px 2px rgba(11, 32, 147, 0.04),
@@ -830,9 +832,9 @@
     0 6px 20px rgba(15, 23, 42, 0.1);
   display: flex;
   flex-direction: column;
-  padding: 12px 14px;
+  padding: 12px;
   overflow-y: auto;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
   z-index: 99999;
   animation: mobileSideCardSlide 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
@@ -1082,33 +1084,38 @@
 
 .mobileServicesSubmenu {
   margin: 2px 0 4px;
-  padding: 6px;
+  padding: 5px;
   background: rgba(241, 245, 249, 0.65);
   border: 1px solid rgba(226, 232, 240, 0.85);
-  border-radius: 14px;
+  border-radius: 12px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 3px;
+  overflow-x: hidden;
 }
 
 .mobileServicesGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4px;
+  min-width: 0;
+  width: 100%;
 }
 
 .mobileServiceChip {
   display: flex;
   align-items: center;
   gap: 5px;
-  padding: 6px 8px;
-  border-radius: 8px;
+  padding: 5px 6px;
+  border-radius: 7px;
   background: #FFFFFF;
   border: 1px solid rgba(226, 232, 240, 0.9);
   text-decoration: none;
   transition: all 0.15s ease;
   box-shadow: 0 1px 2px rgba(15, 23, 42, 0.02);
-  min-height: 32px;
+  min-height: 29px;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .mobileServiceChip:hover {
@@ -1131,13 +1138,15 @@
 
 .chipLabel {
   font-family: var(--font-display);
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: 700;
   color: #334155;
   line-height: 1.2;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  min-width: 0;
+  flex: 1;
 }
 
 .mobileAllServicesBtn {
@@ -1229,7 +1238,16 @@
     max-height: calc(100dvh - 16px);
     left: auto;
     width: min(310px, calc(100vw - 16px));
-    padding: 11px 12px 12px;
-    border-radius: 20px;
+    max-width: calc(100vw - 16px);
+    padding: 10px 11px 11px;
+    border-radius: 18px;
+  }
+  .mobileServiceChip {
+    padding: 4px 5px;
+    gap: 3.5px;
+    min-height: 27px;
+  }
+  .chipLabel {
+    font-size: 9px;
   }
 }
