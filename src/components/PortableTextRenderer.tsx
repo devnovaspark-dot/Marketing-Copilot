@@ -38,21 +38,25 @@ const components: PortableTextComponents = {
       if (!value?.asset?._ref) {
         return null;
       }
-      const imageUrl = urlForImage(value)?.width(900).url();
+      const imageUrl = urlForImage(value)?.width(1200).auto('format').fit('max').url();
       if (!imageUrl) return null;
 
       return (
         <figure className={styles.imageWrapper}>
-          <Image
-            src={imageUrl}
-            alt={value.alt || 'Marketing Copilot insight illustration'}
-            width={900}
-            height={500}
-            className={styles.embeddedImage}
-          />
+          <div className={styles.imageContainer}>
+            <Image
+              src={imageUrl}
+              alt={value.alt || 'Marketing Copilot strategic illustration'}
+              width={1200}
+              height={675}
+              sizes="(max-width: 768px) 100vw, 840px"
+              className={styles.embeddedImage}
+            />
+          </div>
           {value.caption && (
             <figcaption className={styles.imageCaption}>
-              {value.caption}
+              <span className={styles.captionDot} />
+              <span>{value.caption}</span>
             </figcaption>
           )}
         </figure>
