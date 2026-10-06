@@ -132,7 +132,7 @@ export default function InsightsClient({ articles = [] }: { articles: Article[] 
             <div className={styles.heroBgGradient} />
           </div>
 
-          <div className="container">
+          <div className={styles.pageContainer}>
             <div className={styles.heroInner}>
               <div className={styles.heroEyebrow}>
                 <span className={styles.heroEyebrowDot} />
@@ -148,20 +148,6 @@ export default function InsightsClient({ articles = [] }: { articles: Article[] 
               <p className={styles.heroSub}>
                 Ideas, inspiration, and expert playbooks to help you create growth strategies that stay in markets forever.
               </p>
-
-              <div className={styles.heroEditorialMeta}>
-                <span className={styles.heroMetaItem}>
-                  <span className={styles.heroMetaIcon}>✦</span> Field-Tested Playbooks
-                </span>
-                <span className={styles.heroMetaDivider}>•</span>
-                <span className={styles.heroMetaItem}>
-                  Zero Fluff
-                </span>
-                <span className={styles.heroMetaDivider}>•</span>
-                <span className={styles.heroMetaItem}>
-                  Senior Strategist Dispatches
-                </span>
-              </div>
             </div>
           </div>
         </section>
@@ -169,7 +155,7 @@ export default function InsightsClient({ articles = [] }: { articles: Article[] 
         {/* ================================================================= */}
         {/* 2. Filter Bar with Working Dropdown & Skeuomorphic Controls       */}
         {/* ================================================================= */}
-        <div className="container">
+        <div className={styles.pageContainer}>
           <div className={styles.filterBar}>
             <div className={styles.categoryPills}>
               {categories.map((cat) => {
