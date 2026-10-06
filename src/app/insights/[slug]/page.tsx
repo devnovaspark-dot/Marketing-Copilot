@@ -306,7 +306,7 @@ export default async function ArticlePage({
         <div className={styles.contentWrapper}>
           <div className={styles.layoutGrid}>
             {/* Left Column: Core Article Content */}
-            <main className={styles.mainCol}>
+            <article className={styles.mainCol}>
               {/* Decorative Accent Header */}
               <div className={styles.decorativeAccentBar}>
                 <div className={styles.accentGlow} />
@@ -317,11 +317,18 @@ export default async function ArticlePage({
                 <span className={styles.accentCategory}>{article.category}</span>
               </div>
 
+              {/* Mobile Quick Table of Contents (Collapsible on screens < 1024px) */}
+              {article.headings && article.headings.length >= 1 && (
+                <div className={styles.mobileTocWrapper}>
+                  <TableOfContents headings={article.headings} isMobileCollapsible />
+                </div>
+              )}
+
               {/* Main Article Body from Sanity PortableText */}
               {article.body && (
-                <article className={styles.articleBody}>
+                <div className={styles.articleBody}>
                   <PortableTextRenderer value={article.body} />
-                </article>
+                </div>
               )}
 
               {/* Topic Cluster Pillar Post Card (if present) */}
@@ -341,13 +348,15 @@ export default async function ArticlePage({
               {article.faqItems && article.faqItems.length > 0 && (
                 <BlogFaqAccordion items={article.faqItems} />
               )}
-            </main>
+            </article>
 
             {/* Right Column: Sticky Sidebar matching exact layout structure */}
             <aside className={styles.sidebarCol}>
-              {/* 1. Table of Contents ("On This Page") */}
+              {/* 1. Table of Contents ("On This Page" - Desktop) */}
               {article.headings && article.headings.length >= 1 && (
-                <TableOfContents headings={article.headings} />
+                <div className={styles.desktopTocWrapper}>
+                  <TableOfContents headings={article.headings} />
+                </div>
               )}
 
               {/* 2. Key Takeaways Card (In Sidebar) */}

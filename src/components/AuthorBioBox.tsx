@@ -51,7 +51,7 @@ export default function AuthorBioBox({
 
         <div className={styles.authorMeta}>
           <span className={styles.label}>About the Author</span>
-          <h4 className={styles.name}>{name}</h4>
+          <div className={styles.name}>{name}</div>
           <span className={styles.role}>{resolvedRole}</span>
         </div>
       </div>

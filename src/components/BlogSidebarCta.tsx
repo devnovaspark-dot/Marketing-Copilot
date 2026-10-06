@@ -5,7 +5,7 @@ export default function BlogSidebarCta() {
   return (
     <aside className={styles.sidebarCta} aria-label="Book Growth Strategy Consultation">
       <span className={styles.badge}>✦ Bhubaneswar Growth Team</span>
-      <h3 className={styles.title}>Ready to Scale Your Revenue?</h3>
+      <div className={styles.title}>Ready to Scale Your Revenue?</div>
       <p className={styles.desc}>
         Get a customized performance marketing blueprint engineered for your business by senior strategists.
       </p>
