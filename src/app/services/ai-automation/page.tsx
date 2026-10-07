@@ -60,7 +60,7 @@ export default function AiAutomationPage() {
           <div className={styles.heroCenter}>
             <h1 className={styles.heroEyebrowPill}>
               <div className={styles.emeraldPulseDot} />
-              Enterprise AI &amp; Workflow Infrastructure &middot; Bhubaneswar
+              Enterprise AI &amp; Workflow Infrastructure &middot; India
             </h1>
 
             <h2 className={styles.heroTitle}>
@@ -345,7 +345,7 @@ export default function AiAutomationPage() {
             <div className={styles.arsenalBannerImgWrap}>
               <Image
                 src="/images/hero_performance_scale.jpg"
-                alt="Nova Spark Enterprise AI Architecture Infrastructure Bhubaneswar"
+                alt="Nova Spark Enterprise AI Architecture Infrastructure India"
                 fill
                 sizes="(max-width: 1024px) 100vw, 550px"
                 className={styles.bannerImg}

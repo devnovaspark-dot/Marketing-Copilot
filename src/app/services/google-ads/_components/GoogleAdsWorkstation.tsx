@@ -18,7 +18,7 @@ const WORKSTATION_TABS: TabData[] = [
     id: 'exact-match',
     tabLabel: '01. Intent Harvest Bidding',
     title: 'High-Intent Exact Match Bidding Architecture',
-    desc: 'We structure single-theme ad groups (STAGs) around commercial-intent queries with exact and phrase match modifiers, capturing buyers ready to transact in Bhubaneswar.',
+    desc: 'We structure single-theme ad groups (STAGs) around commercial-intent queries with exact and phrase match modifiers, capturing buyers ready to transact in India.',
     features: [
       'Pinpoint geographical radius targeting (5–12 km around your Bhubaneswar clinic/store)',
       'Dayparting bid schedules aligned strictly with your sales team calling hours',
@@ -113,7 +113,7 @@ export default function GoogleAdsWorkstation() {
             The Marketing Copilot Google Ads Workstation
           </h2>
           <p className={styles.sub}>
-            Explore the four technical pillars powering high-intent search conversions and minimal click waste across Bhubaneswar.
+            Explore the four technical pillars powering high-intent search conversions and minimal click waste across India.
           </p>
         </div>
 

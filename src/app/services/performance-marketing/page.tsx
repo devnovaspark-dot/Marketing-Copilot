@@ -138,8 +138,8 @@ const performanceFaqs = [
     a: 'Campaigns can be Google Ads, Meta Ads, or other digital advertising platforms that are applicable to your business and audience. The channel mix you select should be suited to your business goals, target customers, and their buying process.',
   },
   {
-    q: 'Do you provide Google Ads management in Bhubaneswar?',
-    a: 'Yes. Nova Spark can handle Google Ads ads for businesses in Bhubaneswar, as well as businesses in India or elsewhere.',
+    q: 'Do you provide Google Ads management in India?',
+    a: 'Yes. Nova Spark can handle Google Ads ads for businesses in India, as well as businesses globally.',
   },
   {
     q: 'Do you provide Meta Ads management?',
@@ -174,7 +174,7 @@ export default function PerformanceMarketingPage() {
             <ScrollReveal>
               <h1 className={styles.heroEyebrowPill}>
                 <span className={styles.emeraldPulseDot} />
-                <span>Performance Marketing Agency in Bhubaneswar</span>
+                <span>Performance Marketing Agency in India</span>
               </h1>
 
               <h2 className={styles.heroTitle}>
@@ -296,7 +296,7 @@ export default function PerformanceMarketingPage() {
         <div className="container">
           <ScrollReveal className={styles.sectionHeader}>
             <div className={styles.eyebrow}>
-              <span>Performance Marketing Services in Bhubaneswar</span>
+              <span>Performance Marketing Services in India</span>
             </div>
             <h2 className={styles.sectionTitle}>
               Everything You Need to Build a{' '}
@@ -379,7 +379,7 @@ export default function PerformanceMarketingPage() {
         <div className="container">
           <ScrollReveal className={styles.sectionHeader}>
             <div className={styles.eyebrow}>
-              <span>Why Choose Nova Spark for Performance Marketing in Bhubaneswar?</span>
+              <span>Why Choose Nova Spark for Performance Marketing in India?</span>
             </div>
             <h2 className={styles.sectionTitle}>
               Smart Strategy Backed by{' '}
@@ -695,7 +695,7 @@ export default function PerformanceMarketingPage() {
               <span className="accent-gradient">Performance Marketing Questions</span>
             </h2>
             <p className={styles.sectionDesc}>
-              Clear, transparent answers on ad spend allocation, attribution modeling, channel selection, and ROAS benchmarks in Bhubaneswar.
+              Clear, transparent answers on ad spend allocation, attribution modeling, channel selection, and ROAS benchmarks in India.
             </p>
           </ScrollReveal>
 

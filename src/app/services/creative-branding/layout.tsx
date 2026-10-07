@@ -1,22 +1,22 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Creative Branding Agency in Bhubaneswar | Visual Identity & Strategy',
-  description: 'Build memorable brand recall. Brand positioning, visual design systems, packaging, and high-converting storytelling crafted in Bhubaneswar.',
+  title: 'Creative Branding Agency in India | Visual Identity & Strategy',
+  description: 'Build memorable brand recall. Brand positioning, visual design systems, packaging, and high-converting storytelling crafted in India.',
   alternates: {
-    canonical: 'https://marketingcopilot.in/services/creative-branding-services-in-bhubaneswar',
+    canonical: 'https://marketingcopilot.in/services/creative-branding-services-in-india',
   },
   openGraph: {
-    title: 'Creative Branding Agency in Bhubaneswar | Visual Identity & Strategy',
+    title: 'Creative Branding Agency in India | Visual Identity & Strategy',
     description: 'Build memorable brand recall. Visual design systems and storytelling.',
-    url: 'https://marketingcopilot.in/services/creative-branding-services-in-bhubaneswar',
+    url: 'https://marketingcopilot.in/services/creative-branding-services-in-india',
     siteName: 'Marketing Copilot',
     locale: 'en_IN',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Creative Branding Agency in Bhubaneswar | Visual Identity & Strategy',
+    title: 'Creative Branding Agency in India | Visual Identity & Strategy',
     description: 'Build memorable brand recall with premium visual identity.',
   },
 };

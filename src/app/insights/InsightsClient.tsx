@@ -462,7 +462,7 @@ export default function InsightsClient({ articles = [] }: { articles: Article[] 
                         More Research &amp; Growth Playbooks in Production
                       </h3>
                       <p className={styles.editorialNoticeText}>
-                        Our senior growth operators in Bhubaneswar are currently compiling field benchmarks across Local 3-Pack SEO, Meta Ad creative velocity, and full-funnel CRO. Verified field notes and case studies are published weekly.
+                        Our senior growth operators in India are currently compiling field benchmarks across Local 3-Pack SEO, Meta Ad creative velocity, and full-funnel CRO. Verified field notes and case studies are published weekly.
                       </p>
                     </div>
                   )}

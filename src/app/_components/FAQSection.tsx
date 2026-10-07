@@ -12,12 +12,12 @@ interface FAQItem {
 
 const faqs: FAQItem[] = [
   {
-    q: 'What Digital Marketing Services Does Marketing Copilot Offer in Bhubaneswar?',
+    q: 'What Digital Marketing Services Does Marketing Copilot Offer in India?',
     a: 'Marketing Copilot offers full-service digital marketing services such as SEO, Google Ads, Meta Ads, social media marketing, website solutions, content marketing, and more, which are specific to your business goals.',
   },
   {
-    q: 'Can You Help My Business Rank on Google in Bhubaneswar?',
-    a: 'Yes, our digital marketing solutions for SEO in Bhubaneswar cover keyword research, technical optimization, quality content creation, local SEO, and strategies that help you attract relevant customers.',
+    q: 'Can You Help My Business Rank on Google in India?',
+    a: 'Yes, our digital marketing solutions for SEO in India cover keyword research, technical optimization, quality content creation, local SEO, and strategies that help you attract relevant customers.',
   },
   {
     q: 'How Long Does Digital Marketing Take to Show Results?',
@@ -28,7 +28,7 @@ const faqs: FAQItem[] = [
     a: 'Yes, our online marketing services are tailored for businesses of various sizes. We create practical strategies around your budget, goals, audience, and industry to improve visibility, generate leads, and support growth.',
   },
   {
-    q: 'What makes Marketing Copilot the best digital marketing company in Bhubaneswar?',
+    q: 'What makes Marketing Copilot the best digital marketing company in India?',
     a: (
       <>
         <Link href="/" className={styles.brandLink}>
@@ -40,7 +40,7 @@ const faqs: FAQItem[] = [
   },
   {
     q: 'What industries does Marketing Copilot work with?',
-    a: 'We work with IT and app businesses, Yoga and Wellness, Travel Agencies, Interior Design, EdTech, e-commerce, real estate, healthcare, education, D2C brands, and professional services in Bhubaneswar and across Odisha.',
+    a: 'We work with IT and app businesses, Yoga and Wellness, Travel Agencies, Interior Design, EdTech, e-commerce, real estate, healthcare, education, D2C brands, and professional services in India and across Odisha.',
   },
 ];
 

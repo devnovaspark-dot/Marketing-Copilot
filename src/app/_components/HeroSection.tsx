@@ -9,7 +9,7 @@ const heroSlides = [
   {
     id: 'slide-1',
     src: '/images/hero_slide_1.webp',
-    alt: 'Marketing Copilot digital marketing company strategy and campaigns in Bhubaneswar',
+    alt: 'Marketing Copilot digital marketing company strategy and campaigns in India',
     caption: 'Strategic Growth & Execution',
   },
   {
@@ -61,7 +61,7 @@ export default function HeroSection() {
 
           <h1 className={`display-hero ${styles.headline}`}>
             Digital Marketing Company{' '}
-            <span className={`accent-gradient ${styles.heroAccent}`}>in Bhubaneswar</span>
+            <span className={`accent-gradient ${styles.heroAccent}`}>in India</span>
           </h1>
 
           <div className={styles.sub}>

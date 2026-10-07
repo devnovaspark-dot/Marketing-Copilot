@@ -224,7 +224,7 @@ export default function AmazonMarketingPage() {
                 The information gleaned from PPC campaigns can help companies make better marketing choices. Good search phrases can be used in product titles and descriptions, content, and Amazon SEO. Likewise, campaign performance can reveal products, audiences, and categories with greater sales potential.
               </p>
               <p className={styles.narrativeParagraph}>
-                Integrating Amazon PPC with other marketing channels can lead to a more holistic marketing strategy for e-commerce businesses. A complete digital marketing agency in Bhubaneswar can integrate Amazon ads, SEO, content marketing, and paid marketing to boost visibility in various digital channels.
+                Integrating Amazon PPC with other marketing channels can lead to a more holistic marketing strategy for e-commerce businesses. A complete digital marketing agency in India can integrate Amazon ads, SEO, content marketing, and paid marketing to boost visibility in various digital channels.
               </p>
               <div className={styles.highlightPillBox}>
                 <span className={styles.highlightIcon}>💡</span>
@@ -321,7 +321,7 @@ export default function AmazonMarketingPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          5. AMAZON MARKETING AGENCY IN BHUBANESWAR
+          5. AMAZON MARKETING AGENCY IN INDIA
          ══════════════════════════════════════════════════ */}
       <section className={styles.agencySection} id="ppc-services">
         <div className="container">
@@ -334,10 +334,10 @@ export default function AmazonMarketingPage() {
                   <span>LOCAL ROOTS · PAN-INDIA SCALE</span>
                 </div>
                 <h2 className={styles.sectionHeading}>
-                  Amazon Marketing Agency in Bhubaneswar
+                  Amazon Marketing Agency in India
                 </h2>
                 <p className={styles.narrativeParagraph}>
-                  Nova Spark Digital is an Amazon marketing agency in Bhubaneswar that can help you make a stronger presence on Amazon.
+                  Nova Spark Digital is an Amazon marketing agency in India that can help you make a stronger presence on Amazon.
                 </p>
                 <p className={styles.narrativeParagraph}>
                   We handle businesses looking to boost product visibility, optimize their Amazon listing, and leverage Amazon advertising more effectively.

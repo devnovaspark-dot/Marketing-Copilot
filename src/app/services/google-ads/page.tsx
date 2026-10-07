@@ -107,12 +107,12 @@ export default function GoogleAdsPage() {
             <ScrollReveal>
               <div className={styles.heroEyebrowPill}>
                 <span className={styles.emeraldPulseDot} />
-                <span>#1 Google Ads &amp; Search PPC Agency in Bhubaneswar</span>
+                <span>#1 Google Ads &amp; Search PPC Agency in India</span>
               </div>
 
               <h1 className={styles.heroTitle}>
                 Capture High-Intent Customers When They{' '}
-                <span className="accent-gradient">Search in Bhubaneswar</span>
+                <span className="accent-gradient">Search in India</span>
               </h1>
 
               <p className={styles.heroSub}>

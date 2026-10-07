@@ -80,7 +80,7 @@ export default function GoogleAdsSearchSimulator() {
               Google Search Ad Intelligence Simulator
             </h2>
             <p className={styles.simSub}>
-              Experience how our 10/10 Quality Score landing page architecture and 400+ negative keyword firewalls capture #1 position at the lowest cost-per-click across Bhubaneswar.
+              Experience how our 10/10 Quality Score landing page architecture and 400+ negative keyword firewalls capture #1 position at the lowest cost-per-click across India.
             </p>
           </div>
 

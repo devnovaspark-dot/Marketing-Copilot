@@ -57,7 +57,7 @@ export default function MetaComparisonMatrix() {
             Boosting Instagram Posts vs. <span className="accent-gradient">Full-Funnel Performance</span>
           </h2>
           <p className={styles.subhead}>
-            Why hitting &quot;Boost Post&quot; burns budget in Bhubaneswar, while an algorithmic conversion architecture scales predictable revenue.
+            Why hitting &quot;Boost Post&quot; burns budget in India, while an algorithmic conversion architecture scales predictable revenue.
           </p>
         </ScrollReveal>
 

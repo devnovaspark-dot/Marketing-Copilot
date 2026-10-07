@@ -62,7 +62,7 @@ const brandingArsenal = [
 
 const brandingFaqs = [
   {
-    q: 'How does a professional brand identity help our business increase pricing power in Bhubaneswar?',
+    q: 'How does a professional brand identity help our business increase pricing power in India?',
     a: 'When your visual presentation looks like an unorganized commodity, prospective clients default to aggressive discount haggling. A bespoke corporate identity communicates elite craft, institutional trust, and premium prestige — allowing our clients to command 30% to 50% higher project fees without losing deal volume.',
     takeaway: 'Premium visual design signals luxury authority, eliminating price resistance and discount haggling.',
   },
@@ -107,7 +107,7 @@ export default function CreativeBrandingPage() {
             <ScrollReveal>
               <div className={styles.heroEyebrowPill}>
                 <span className={styles.emeraldPulseDot} />
-                <span>#1 Brand Identity &amp; Corporate Design Studio in Bhubaneswar</span>
+                <span>#1 Brand Identity &amp; Corporate Design Studio in India</span>
               </div>
 
               <h1 className={styles.heroTitle}>
@@ -212,7 +212,7 @@ export default function CreativeBrandingPage() {
               Cheap Freelancers vs. Our Brand Architecture
             </h2>
             <p style={{ fontSize: '15px', color: '#475569', marginTop: '12px' }}>
-              Why visionary founders in Bhubaneswar avoid generic online logo mills and invest in durable trademark-ready corporate identity systems.
+              Why visionary founders in India avoid generic online logo mills and invest in durable trademark-ready corporate identity systems.
             </p>
           </div>
           <BrandComparisonMatrix />

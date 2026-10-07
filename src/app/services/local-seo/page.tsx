@@ -62,7 +62,7 @@ const localSeoArsenal = [
 
 const localSeoFaqs = [
   {
-    q: 'How long does it take to rank in the Google Map 3-Pack in Bhubaneswar?',
+    q: 'How long does it take to rank in the Google Map 3-Pack in India?',
     a: 'With our category restructuring, geo-tagged photo uploads, and NAP citation lockdown, businesses typically enter the Google Map 3-Pack within 14 to 30 days. Full city-wide 5x5 geo-grid lockdown across all pin codes is usually accomplished by Day 60.',
     takeaway: 'Systematic GMB optimization and geo-tagged citations deliver rapid, lasting local map visibility.',
   },
@@ -107,7 +107,7 @@ export default function LocalSeoPage() {
             <ScrollReveal>
               <div className={styles.heroEyebrowPill}>
                 <span className={styles.emeraldPulseDot} />
-                <span>#1 Google Map 3-Pack &amp; Local SEO Agency in Bhubaneswar</span>
+                <span>#1 Google Map 3-Pack &amp; Local SEO Agency in India</span>
               </div>
 
               <h1 className={styles.heroTitle}>
@@ -259,7 +259,7 @@ export default function LocalSeoPage() {
               Traditional SEO Agencies vs. Map 3-Pack Domination
             </h2>
             <p style={{ fontSize: '15px', color: '#475569', marginTop: '12px' }}>
-              Why brick-and-mortar businesses in Bhubaneswar fire generic national SEO agencies and switch to hyperlocal geo-grid dominance.
+              Why brick-and-mortar businesses in India fire generic national SEO agencies and switch to hyperlocal geo-grid dominance.
             </p>
           </div>
           <LocalSeoComparisonMatrix />

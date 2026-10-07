@@ -27,14 +27,14 @@ export default function Footer() {
     { label: 'Contact Us', href: '/contact' },
   ];
 
-  // Point to main /services overview while individual sub-pages are finalized for Phase 2
   const ourServices = [
-    { label: 'SEO & Search', href: '/services' },
-    { label: 'Google & Meta Ads', href: '/services' },
-    { label: 'Social Media', href: '/services' },
-    { label: 'Creative & Branding', href: '/services' },
-    { label: 'Web Development', href: '/services' },
-    { label: 'AI Automation', href: '/services' },
+    { label: 'Digital Growth Partner', href: '/services/digital-growth-partner' },
+    { label: 'SEO & Search', href: '/services/seo-services-in-india' },
+    { label: 'Google & Meta Ads', href: '/services/google-ads-services-in-india' },
+    { label: 'Social Media', href: '/services/social-media-marketing-in-india' },
+    { label: 'Creative & Branding', href: '/services/creative-branding-services-in-india' },
+    { label: 'Web Development', href: '/services/web-development-in-india' },
+    { label: 'AI Automation', href: '/services/ai-automation-services-in-india' },
   ];
 
   return (
@@ -84,7 +84,7 @@ export default function Footer() {
               <h3 className={styles.colHeading}>About Marketing Copilot</h3>
               
               <p className={styles.aboutText}>
-                We are a results-driven digital marketing agency in Bhubaneswar specializing in full-funnel customer acquisition, SEO, high-ROAS paid media, UI/UX design, and web development.
+                We are a results-driven digital marketing agency in India specializing in full-funnel customer acquisition, SEO, high-ROAS paid media, UI/UX design, and web development.
               </p>
             </div>
 

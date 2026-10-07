@@ -111,7 +111,7 @@ export default function SEOCapabilitiesWorkstation() {
             <span>SEO GROWTH SUITE • BUILT FOR BHUBANESWAR</span>
           </div>
           <h2 className={`display-md ${styles.headline}`}>
-            How We Rank Your Business #1 on <span className="accent-gradient">Google in Bhubaneswar</span>
+            How We Rank Your Business #1 on <span className="accent-gradient">Google in India</span>
           </h2>
           <p className={styles.subhead}>
             We replace technical guesswork with a 4-pillar Google growth system. Fast loading speeds, Google Maps #1 rank, and high-buyer search traffic that converts into paying customers.
@@ -259,7 +259,7 @@ export default function SEOCapabilitiesWorkstation() {
 
                   <div className={styles.searchBarSim}>
                     <span className={styles.searchIcon}>🔍</span>
-                    <span className={styles.searchQuery}>top rated business in bhubaneswar</span>
+                    <span className={styles.searchQuery}>top rated business in india</span>
                   </div>
 
                   <div className={styles.mapResultItem}>

@@ -110,7 +110,7 @@ const whyBestPillars = [
 // FAQ Data (Closed by default per user request)
 const webDevFaqs = [
   {
-    q: '1. What makes Nova Spark a website development agency in Bhubaneswar?',
+    q: '1. What makes Nova Spark a website development agency in India?',
     a: 'We at Nova Spark fuse creativity, tech, and business strategy to develop a website that resonates with your brand, captures your audience, and serves your business objectives.',
   },
   {
@@ -155,7 +155,7 @@ export default function WebDevelopmentPage() {
             <ScrollReveal>
               <h1 className={styles.heroEyebrowPill}>
                 <span className={styles.emeraldPulseDot} />
-                <span>Best Website Development Agency in Bhubaneswar</span>
+                <span>Best Website Development Agency in India</span>
               </h1>
 
               <h2 className={styles.heroTitle}>
@@ -207,7 +207,7 @@ export default function WebDevelopmentPage() {
 
       {/* ══════════════════════════════════════════════════
           2. MAP SECTION DIRECTLY BELOW HERO
-          (Driving Business Growth With Digital Marketing in Bhubaneswar)
+          (Driving Business Growth With Digital Marketing in India)
          ══════════════════════════════════════════════════ */}
       <QuickConnectMapSection />
 
@@ -268,7 +268,7 @@ export default function WebDevelopmentPage() {
                   Engineered for Conversion Velocity &amp; Sub-Second Mobile Speed
                 </h3>
                 <p className={styles.visualText}>
-                  From responsive custom code to modern e-commerce stores and mobile web applications, we combine fast architectures, user-friendly layouts, and scalable technology for Bhubaneswar businesses.
+                  From responsive custom code to modern e-commerce stores and mobile web applications, we combine fast architectures, user-friendly layouts, and scalable technology for businesses across India.
                 </p>
                 <div className={styles.visualStatsStrip}>
                   <div className={styles.statItem}>
@@ -289,7 +289,7 @@ export default function WebDevelopmentPage() {
               <div className={styles.visualImageWrap}>
                 <Image
                   src="/images/Website Framework.jpg"
-                  alt="Modern Website Development Nova Spark Digital Bhubaneswar"
+                  alt="Modern Website Development Nova Spark Digital India"
                   fill
                   sizes="(max-width: 768px) 100vw, 500px"
                   className={styles.visualImg}
@@ -392,7 +392,7 @@ export default function WebDevelopmentPage() {
                 <div className={styles.visualImageWrap}>
                   <Image
                     src="/images/Infrastructure Banner.jpg"
-                    alt="High-Performance Next.js Serverless Cloud Infrastructure Bhubaneswar"
+                    alt="High-Performance Next.js Serverless Cloud Infrastructure India"
                     fill
                     sizes="(max-width: 768px) 100vw, 550px"
                     className={styles.visualImg}

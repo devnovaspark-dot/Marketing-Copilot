@@ -185,7 +185,7 @@ export default function SERPSimulator() {
                 <div className={styles.sitelinksGrid}>
                   <div className={styles.sitelinkItem}>
                     <span className={styles.sitelinkTitle}>View Signature Portfolio</span>
-                    <span className={styles.sitelinkDesc}>Explore 200+ completed projects in Bhubaneswar</span>
+                    <span className={styles.sitelinkDesc}>Explore 200+ completed projects in India</span>
                   </div>
                   <div className={styles.sitelinkItem}>
                     <span className={styles.sitelinkTitle}>Free Consultation &amp; Estimate</span>

@@ -33,14 +33,14 @@ const serviceCatalog: ServiceItem[] = [
     categoryGroup: 'search',
     shortCategory: 'Organic Search',
     title: 'SEO & Organic Growth',
-    tagline: 'Rank #1 on Google across Bhubaneswar with white-hat technical speed, schema moats, and geo-targeted authority.',
+    tagline: 'Rank #1 on Google across India with white-hat technical speed, schema moats, and geo-targeted authority.',
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop',
     iconSrc: '/images/icons/seo.svg',
     deliverables: ['Google 3-Pack Map Moat', 'Core Web Vitals < 0.9s', 'High-Intent Topic Clusters'],
     metric: '+240%',
     metricLabel: 'Organic Inquiries Lift',
     color: '#0B2093',
-    href: '/services/seo-services-in-bhubaneswar',
+    href: '/services/seo-services-in-india',
   },
   {
     id: 'google-ads',
@@ -56,7 +56,7 @@ const serviceCatalog: ServiceItem[] = [
     metric: '6.8X',
     metricLabel: 'Peak Commercial ROAS',
     color: '#1D4ED8',
-    href: '/services/google-ads-services-in-bhubaneswar',
+    href: '/services/google-ads-services-in-india',
   },
   {
     id: 'meta-ads',
@@ -72,7 +72,7 @@ const serviceCatalog: ServiceItem[] = [
     metric: '4.2X',
     metricLabel: 'Acquisition Velocity',
     color: '#0081FB',
-    href: '/services/google-ads-services-in-bhubaneswar',
+    href: '/services/meta-ads-services-in-india',
   },
   {
     id: 'web-dev',
@@ -88,7 +88,7 @@ const serviceCatalog: ServiceItem[] = [
     metric: '99/100',
     metricLabel: 'Google Speed SLA',
     color: '#10B981',
-    href: '/services/web-development-in-bhubaneswar',
+    href: '/services/web-development-in-india',
   },
   {
     id: 'branding',
@@ -104,7 +104,7 @@ const serviceCatalog: ServiceItem[] = [
     metric: '120+',
     metricLabel: 'Brand Identities Built',
     color: '#0B2093',
-    href: '/services/creative-branding-services-in-bhubaneswar',
+    href: '/services/creative-branding-services-in-india',
   },
   {
     id: 'social-media',
@@ -120,7 +120,7 @@ const serviceCatalog: ServiceItem[] = [
     metric: '+320%',
     metricLabel: 'Average Reach Lift',
     color: '#F59E0B',
-    href: '/services/social-media-marketing-in-bhubaneswar',
+    href: '/services/social-media-marketing-in-india',
   },
   {
     id: 'amazon-marketing',
@@ -136,7 +136,7 @@ const serviceCatalog: ServiceItem[] = [
     metric: '4.8X',
     metricLabel: 'Average Amazon ROAS',
     color: '#FF9900',
-    href: '/services/amazon-marketing-services-in-bhubaneswar',
+    href: '/services/amazon-marketing-services-in-india',
   },
   {
     id: 'ecommerce',
@@ -152,7 +152,7 @@ const serviceCatalog: ServiceItem[] = [
     metric: '+185%',
     metricLabel: 'Average Cart Value Lift',
     color: '#06B6D4',
-    href: '/services/ecommerce-marketing-services-in-bhubaneswar',
+    href: '/services/ecommerce-marketing-services-in-india',
   },
   {
     id: 'performance',
@@ -168,7 +168,7 @@ const serviceCatalog: ServiceItem[] = [
     metric: '8.4X',
     metricLabel: 'Peak Measured ROAS',
     color: '#0B2093',
-    href: '/services/performance-marketing-in-bhubaneswar',
+    href: '/services/performance-marketing-in-india',
   },
   {
     id: 'automation',
@@ -184,7 +184,7 @@ const serviceCatalog: ServiceItem[] = [
     metric: '< 2s',
     metricLabel: 'First Response Time',
     color: '#0B2093',
-    href: '/services/ai-automation-services-in-bhubaneswar',
+    href: '/services/ai-automation-services-in-india',
   },
 ];
 
@@ -192,7 +192,7 @@ const heroSlides = [
   {
     id: 'slide-1',
     src: '/images/ns_services_graphic.png',
-    alt: 'Marketing Copilot digital marketing strategy and revenue growth architecture in Bhubaneswar',
+    alt: 'Marketing Copilot digital marketing strategy and revenue growth architecture in India',
     caption: 'Strategic Growth & Execution',
   },
   {
@@ -377,7 +377,7 @@ const comparisonPoints = [
     traditional: 'Junior account managers acting as slow middlemen',
     traditionalMetric: 'Junior Account Middlemen',
     traditionalTag: 'Communication Bottlenecks',
-    copilot: 'Direct access to senior growth architects and media buyers in Bhubaneswar',
+    copilot: 'Direct access to senior growth architects and media buyers in India',
     copilotMetric: 'Principal Architects Only',
     copilotTag: 'Direct Studio Slack Access',
     slaBadge: 'Zero Middlemen',

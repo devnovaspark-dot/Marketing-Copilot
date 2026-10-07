@@ -17,8 +17,8 @@ const FAQSection = dynamic(() => import('./_components/FAQSection'));
 const CTASection = dynamic(() => import('./_components/CTASection'));
 
 export const metadata: Metadata = {
-  title: 'Digital Marketing Company in Bhubaneswar | Marketing Copilot',
-  description: 'Top-rated digital marketing agency in Bhubaneswar. SEO, Google Ads, Meta Ads, web development and compounding revenue growth for Bhubaneswar businesses.',
+  title: 'Digital Marketing Company in India | Marketing Copilot',
+  description: 'Top-rated digital marketing agency in India. SEO, Google Ads, Meta Ads, web development and compounding revenue growth for businesses across India.',
   verification: {
     google: '79f0bLLJO5DmUzDFyrPHZ1vouQGfmYsHB5NZ594DHww',
   },
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
     canonical: 'https://marketingcopilot.in/',
   },
   openGraph: {
-    title: 'Digital Marketing Company in Bhubaneswar | Marketing Copilot',
-    description: 'Top-rated digital marketing agency in Bhubaneswar. SEO, Google Ads, Meta Ads, web development and compounding revenue growth for Bhubaneswar businesses.',
+    title: 'Digital Marketing Company in India | Marketing Copilot',
+    description: 'Top-rated digital marketing agency in India. SEO, Google Ads, Meta Ads, web development and compounding revenue growth for businesses across India.',
     url: 'https://marketingcopilot.in/',
     siteName: 'Marketing Copilot',
     locale: 'en_IN',
@@ -35,8 +35,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Digital Marketing Company in Bhubaneswar | Marketing Copilot',
-    description: 'Top-rated digital marketing agency in Bhubaneswar. SEO, Google Ads, Meta Ads, web development and compounding revenue growth for Bhubaneswar businesses.',
+    title: 'Digital Marketing Company in India | Marketing Copilot',
+    description: 'Top-rated digital marketing agency in India. SEO, Google Ads, Meta Ads, web development and compounding revenue growth for businesses across India.',
   },
 };
 

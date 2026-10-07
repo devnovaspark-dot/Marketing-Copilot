@@ -120,7 +120,7 @@ export default function LocalSeoWorkstation() {
             The Hyperlocal Local SEO Workstation
           </h2>
           <p className={styles.sub}>
-            Explore the four proprietary mechanisms we deploy to achieve permanent Google Map 3-Pack rankings across all Bhubaneswar corridors.
+            Explore the four proprietary mechanisms we deploy to achieve permanent Google Map 3-Pack rankings across India.
           </p>
         </div>
 

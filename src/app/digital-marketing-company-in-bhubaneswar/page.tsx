@@ -14,10 +14,10 @@ import FAQSection from '../_components/FAQSection';
 import CTASection from '../_components/CTASection';
 
 export const metadata: Metadata = {
-  title: 'Digital Marketing Company in Bhubaneswar',
-  description: 'Bhubaneswar’s leading digital marketing company. Drive revenue, high-intent leads, and top Google rankings with Marketing Copilot.',
+  title: 'Digital Marketing Company in India',
+  description: 'India’s leading digital marketing company. Drive revenue, high-intent leads, and top Google rankings with Marketing Copilot.',
   alternates: {
-    canonical: 'https://marketingcopilot.in/digital-marketing-company-in-bhubaneswar',
+    canonical: 'https://marketingcopilot.in/digital-marketing-company-in-india',
   },
 };
 

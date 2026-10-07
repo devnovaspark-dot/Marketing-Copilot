@@ -15,14 +15,14 @@ interface QuickConnectMapSectionProps {
 
 export default function QuickConnectMapSection({
   id = 'direct-connect',
-  eyebrow = 'Driving Business Growth With Digital Marketing in Bhubaneswar',
+  eyebrow = 'Driving Business Growth With Digital Marketing in India',
   title = (
     <>
       Smart Digital Marketing for<br />
       <span className={styles.titleAccent}>Growing Businesses</span>
     </>
   ),
-  subtitle = 'As a digital marketing company in Bhubaneswar, we combine SEO, social media, content, and performance marketing to help brands grow online.',
+  subtitle = 'As a digital marketing company in India, we combine SEO, social media, content, and performance marketing to help brands grow online.',
   headingTag = 'h2',
 }: QuickConnectMapSectionProps = {}) {
   const [copiedField, setCopiedField] = useState<string | null>(null);

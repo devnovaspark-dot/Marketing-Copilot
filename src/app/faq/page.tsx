@@ -19,7 +19,7 @@ const heroSlides = [
   {
     id: 'slide-2',
     src: '/images/Faq_slide2.png',
-    alt: 'Executive strategy, question flows, and growth decisions in Bhubaneswar',
+    alt: 'Executive strategy, question flows, and growth decisions in India',
     caption: 'Executive Strategy & Decision Maps',
   },
   {
@@ -65,8 +65,8 @@ const faqGroups: FAQGroup[] = [
     },
     faqs: [
       {
-        q: 'What digital marketing services are provided by Nova Spark in Bhubaneswar?',
-        a: 'Nova Spark provides SEO, local SEO, Google Ads, Meta Ads, social media marketing, content marketing, website development, and tailored digital growth services for businesses in Bhubaneswar and Odisha.',
+        q: 'What digital marketing services are provided by Nova Spark in India?',
+        a: 'Nova Spark provides SEO, local SEO, Google Ads, Meta Ads, social media marketing, content marketing, website development, and tailored digital growth services for businesses across India and Odisha.',
         takeaway: 'Comprehensive full-service digital growth tailored for Odisha businesses.',
       },
       {
@@ -124,7 +124,7 @@ const faqGroups: FAQGroup[] = [
     },
     faqs: [
       {
-        q: 'What is the advantage of SEO for my business in Bhubaneswar?',
+        q: 'What is the advantage of SEO for my business in India?',
         a: 'SEO can make your business visible when potential customers look around for the products/services that you offer. We enhance your website, content, technical SEO, and local visibility to boost visibility for relevant organic traffic.',
         takeaway: 'Compounds long-term organic visibility and qualified inbound traffic.',
       },
@@ -173,7 +173,7 @@ const faqGroups: FAQGroup[] = [
     },
     faqs: [
       {
-        q: 'What budget should we start with for Google Ads or Meta Ads in Bhubaneswar?',
+        q: 'What budget should we start with for Google Ads or Meta Ads in India?',
         a: 'There is no fixed starting budget for every business. We consider your industry, target audience, competition, location, goals, and average customer value before recommending an appropriate testing budget.',
         takeaway: 'Custom testing budget determined by your sector and customer value.',
       },
@@ -222,7 +222,7 @@ const faqGroups: FAQGroup[] = [
     },
     faqs: [
       {
-        q: 'How much does a business website from Nova Spark cost in Bhubaneswar?',
+        q: 'How much does a business website from Nova Spark cost in India?',
         a: 'Website pricing is dependent on different pages, design, features, integrations, technology, and project scope. Nova Spark gives a clear quotation as per the actual needs of the business.',
         takeaway: 'Transparent quotations tailored to your exact scope and functionality needs.',
       },
@@ -310,7 +310,7 @@ const faqGroups: FAQGroup[] = [
     collage: {
       mainImage: '/images/faq_pricing_engagement.png',
       subImage: '',
-      caption: 'SEO, Google Ads, Meta Ads, Social Media & Web Solutions for Bhubaneswar Businesses',
+      caption: 'SEO, Google Ads, Meta Ads, Social Media & Web Solutions for Businesses in India',
       tag: '💼 TRANSPARENT PRICING & SCOPE',
     },
     faqs: [
@@ -927,7 +927,7 @@ export default function FAQPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════════════
-          DRIVING BUSINESS GROWTH WITH DIGITAL MARKETING IN BHUBANESWAR
+          DRIVING BUSINESS GROWTH WITH DIGITAL MARKETING IN INDIA
          ══════════════════════════════════════════════════════════ */}
       <QuickConnectMapSection headingTag="h2" />
 
@@ -1361,7 +1361,7 @@ export default function FAQPage() {
 
                 <a
                   href={`https://wa.me/918763570630?text=${encodeURIComponent(
-                    'Hi Marketing Copilot, I have an unanswered question about digital marketing in Bhubaneswar.'
+                    'Hi Marketing Copilot, I have an unanswered question about digital marketing in India.'
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -1437,7 +1437,7 @@ export default function FAQPage() {
                 <div className={styles.deskWhatsappCallout}>
                   <a
                     href={`https://wa.me/918763570630?text=${encodeURIComponent(
-                      'Hi Aarav, I have a strategic digital marketing question regarding my business in Bhubaneswar.'
+                      'Hi Aarav, I have a strategic digital marketing question regarding my business in India.'
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -1575,7 +1575,7 @@ export default function FAQPage() {
                             name="question"
                             required
                             rows={3}
-                            placeholder="Ask any question about your ads, SEO, website, or marketing in Bhubaneswar..."
+                            placeholder="Ask any question about your ads, SEO, website, or marketing in India..."
                             value={formState.question}
                             onChange={(e) => setFormState({ ...formState, question: e.target.value })}
                             className={styles.cockpitTextarea}

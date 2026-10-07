@@ -19,7 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/digital-marketing-company-in-bhubaneswar`,
+      url: `${baseUrl}/digital-marketing-company-in-india`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
       priority: 0.9,
@@ -80,18 +80,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // Dedicated Service Pages (Recommended Local SEO URLs in Bhubaneswar)
+  // Dedicated Service Pages (Recommended URLs in India)
   const services = [
-    'seo-services-in-bhubaneswar',
-    'google-ads-services-in-bhubaneswar',
-    'social-media-marketing-in-bhubaneswar',
-    'performance-marketing-in-bhubaneswar',
-    'web-development-in-bhubaneswar',
-    'ai-automation-services-in-bhubaneswar',
-    'amazon-marketing-services-in-bhubaneswar',
-    'creative-branding-services-in-bhubaneswar',
-    'ecommerce-marketing-services-in-bhubaneswar',
-    'local-seo-services-in-bhubaneswar',
+    'seo-services-in-india',
+    'google-ads-services-in-india',
+    'social-media-marketing-in-india',
+    'performance-marketing-in-india',
+    'web-development-in-india',
+    'ai-automation-services-in-india',
+    'amazon-marketing-services-in-india',
+    'creative-branding-services-in-india',
+    'ecommerce-marketing-services-in-india',
+    'local-seo-services-in-india',
+    'digital-growth-partner',
   ];
 
   const serviceRoutes: MetadataRoute.Sitemap = services.map((slug) => ({

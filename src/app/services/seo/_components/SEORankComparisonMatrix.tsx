@@ -75,7 +75,7 @@ export default function SEORankComparisonMatrix() {
             </div>
             <span className={styles.cardMetaText}>
               {activeTab === 'page1' 
-                ? '92% of all Google clicks in Bhubaneswar go to the top 3 spots.' 
+                ? '92% of all Google clicks in India go to the top 3 spots.' 
                 : 'Less than 2% of Google searchers ever click beyond page 1.'}
             </span>
           </div>

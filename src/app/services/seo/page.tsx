@@ -88,20 +88,20 @@ const industriesList = [
 // Interactive Suggested Keywords for Opportunities section
 const searchPresets = [
   {
-    query: 'seo agency in bhubaneswar',
-    title: 'Top SEO Marketing Agency in Bhubaneswar | Make Google Your Growth Channel',
+    query: 'seo agency in india',
+    title: 'Top SEO Marketing Agency in India | Make Google Your Growth Channel',
     ctr: '38.4% CTR',
     intent: 'Transactional · High Inquiries',
   },
   {
-    query: 'digital marketing company in bhubaneswar',
-    title: 'Digital Marketing Company in Bhubaneswar | Strategy. Search. Growth.',
+    query: 'digital marketing company in india',
+    title: 'Digital Marketing Company in India | Strategy. Search. Growth.',
     ctr: '34.8% CTR',
     intent: 'Commercial · Enterprise Inquiries',
   },
   {
-    query: 'best web development company in bhubaneswar',
-    title: 'High-Performance Web Development & Next.js Agency in Bhubaneswar',
+    query: 'best web development company in india',
+    title: 'High-Performance Web Development & Next.js Agency in India',
     ctr: '31.2% CTR',
     intent: 'Commercial · Direct Call Intent',
   },
@@ -140,22 +140,22 @@ const seoDifferentPillars = [
   {
     badge: 'PILLAR 01 · INTENT DISCOVERY',
     title: 'Business-Focused Keyword Research',
-    desc: 'Not all of the most popular keywords attract customers. Our SEO marketing service in Bhubaneswar emphasizes keywords that align with your business, audience, and goals. We research search volume, intent, competition, location, and commercial value to discover terms that can bring in relevant traffic and real business possibilities.',
+    desc: 'Not all of the most popular keywords attract customers. Our SEO marketing service in India emphasizes keywords that align with your business, audience, and goals. We research search volume, intent, competition, location, and commercial value to discover terms that can bring in relevant traffic and real business possibilities.',
   },
   {
     badge: 'PILLAR 02 · ON-PAGE OPTIMIZATION',
     title: 'On-Page SEO That Makes Sense',
-    desc: 'Our SEO marketing agency in Bhubaneswar optimizes content, internal links, images, URLs, headings, and meta descriptions. Each page is user-friendly, easy to understand, and easy to read, making your site relevant, useful, and search-friendly.',
+    desc: 'Our SEO marketing agency in India optimizes content, internal links, images, URLs, headings, and meta descriptions. Each page is user-friendly, easy to understand, and easy to read, making your site relevant, useful, and search-friendly.',
   },
   {
     badge: 'PILLAR 03 · TECHNICAL ARCHITECTURE',
     title: 'Technical SEO',
-    desc: 'Even a good web page can fail due to technical issues. The SEO Marketing Service in Bhubaneswar ensures crawlability, indexing, broken links, redirects, sitemaps, mobile experience, Core Web Vitals, duplicate content, and site structure, forming a solid technical foundation.',
+    desc: 'Even a good web page can fail due to technical issues. The SEO Marketing Service in India ensures crawlability, indexing, broken links, redirects, sitemaps, mobile experience, Core Web Vitals, duplicate content, and site structure, forming a solid technical foundation.',
   },
   {
     badge: 'PILLAR 04 · CONTENT AUTHORITY',
     title: 'Content SEO',
-    desc: "Good SEO needs content that people actually want to read. Our SEO marketing company in Bhubaneswar develops and optimizes service pages, blogs, landing pages, FAQs, location pages, and guides based on real search intent. We're here to provide you with useful information, not keyword-stuffing or content just to hit word counts.",
+    desc: "Good SEO needs content that people actually want to read. Our SEO marketing company in India develops and optimizes service pages, blogs, landing pages, FAQs, location pages, and guides based on real search intent. We're here to provide you with useful information, not keyword-stuffing or content just to hit word counts.",
   },
 ];
 
@@ -190,7 +190,7 @@ const seoFaqs = [
     a: 'The SEO services include keyword research, technical SEO, on-page optimization, content optimization, local SEO, competitor analysis, link building, and monitoring.',
   },
   {
-    q: '2. How can SEO help my Bhubaneswar business?',
+    q: '2. How can SEO help my business in India?',
     a: 'SEO helps your business appear for relevant Google searches, attract qualified visitors, strengthen local visibility, and create consistent opportunities for inquiries without relying entirely on paid advertising.',
   },
   {
@@ -202,7 +202,7 @@ const seoFaqs = [
     a: 'Yes. Identify keyword opportunities, content gaps, technical issues, and authority-building opportunities to create a focused strategy for competing with established websites.',
   },
   {
-    q: '5. Do you provide local SEO in Bhubaneswar?',
+    q: '5. Do you provide local SEO in India?',
     a: 'Yes. We specialise in location-based keywords, Google Business Profile optimisation, local landing pages, citations, reviews, and tactics to help your customers find you locally.',
   },
   {
@@ -240,7 +240,7 @@ export default function SEOPage() {
             <ScrollReveal>
               <h1 className={styles.heroEyebrowPill}>
                 <span className={styles.emeraldPulseDot} />
-                <span>SEO Marketing Agency in Bhubaneswar</span>
+                <span>SEO Marketing Agency in India</span>
               </h1>
 
               <h2 className={styles.heroTitle}>
@@ -305,7 +305,7 @@ export default function SEOPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          2. DRIVING BUSINESS GROWTH WITH DIGITAL MARKETING IN BHUBANESWAR
+          2. DRIVING BUSINESS GROWTH WITH DIGITAL MARKETING IN INDIA
           (Replaces the image down the hero as requested)
          ══════════════════════════════════════════════════ */}
       <QuickConnectMapSection />
@@ -321,10 +321,10 @@ export default function SEOPage() {
                 <span>Custom Industry Frameworks</span>
               </div>
               <h2 className={styles.sectionTitle}>
-                SEO Marketing Agency in Bhubaneswar for <span className="accent-gradient">Different Industries</span>
+                SEO Marketing Agency in India for <span className="accent-gradient">Different Industries</span>
               </h2>
               <p className={styles.sectionSub}>
-                Every business has a different audience, competition and customer journey. That is why our SEO Marketing agency in Bhubaneswar does not use the same strategy for every client.
+                Every business has a different audience, competition and customer journey. That is why our SEO Marketing agency in India does not use the same strategy for every client.
               </p>
               <p className={styles.sectionSub}>
                 We create SEO strategies for industries including healthcare, education, real estate, hospitality, e-commerce, technology, SaaS, professional services, startups, financial services, beauty and wellness, food and restaurants, and local businesses.
@@ -427,7 +427,7 @@ export default function SEOPage() {
                   Users are already looking for products, services, and solutions that you provide; they&apos;re looking at Google. But the question is, are they really finding your website or your competitors?
                 </p>
                 <p className={styles.oppText}>
-                  An effective SEO approach enables your company to stand out when viewers are searching for the services you offer. In fact, when a user is searching for an SEO agency in Bhubaneswar, a coaching institution, a healthcare service, or even a digital marketing firm or a web development company, they are likely to be serious about it.
+                  An effective SEO approach enables your company to stand out when viewers are searching for the services you offer. In fact, when a user is searching for an SEO agency in India, a coaching institution, a healthcare service, or even a digital marketing firm or a web development company, they are likely to be serious about it.
                 </p>
                 <p className={styles.oppText}>
                   Organic search allows you to connect with people at the right time, when they are researching, comparing, or ready to act.
@@ -461,7 +461,7 @@ export default function SEOPage() {
                 <div className={styles.oppImageFrame}>
                   <Image
                     src="/images/SEO framework.jpg"
-                    alt="SEO & Local Search Optimization Framework in Bhubaneswar"
+                    alt="SEO & Local Search Optimization Framework in India"
                     fill
                     sizes="(max-width: 900px) 100vw, 480px"
                     className={styles.oppFeaturedImg}
@@ -508,7 +508,7 @@ export default function SEOPage() {
                       {currentPreset.title}
                     </h4>
                     <p className={styles.serpResultDesc}>
-                      Top-ranked SEO marketing agency in Bhubaneswar. Technical SEO, Google Maps 3-Pack optimization, and high-intent organic traffic that converts visitors into paying customers.
+                      Top-ranked SEO marketing agency in India. Technical SEO, Google Maps 3-Pack optimization, and high-intent organic traffic that converts visitors into paying customers.
                     </p>
                   </div>
 
@@ -579,7 +579,7 @@ export default function SEOPage() {
                 What Makes Our <span className="accent-gradient">SEO Marketing Different?</span>
               </h2>
               <p className={styles.sectionSub}>
-                SEO shouldn&apos;t be a black art that leaves people with a monthly report that is hard to read and difficult to understand. At Nova Spark Digital, we don&apos;t get caught up in theory. Our SEO marketing agency in Bhubaneswar combines technical SEO, content strategy, keyword research, local optimization, and ongoing performance analysis.
+                SEO shouldn&apos;t be a black art that leaves people with a monthly report that is hard to read and difficult to understand. At Nova Spark Digital, we don&apos;t get caught up in theory. Our SEO marketing agency in India combines technical SEO, content strategy, keyword research, local optimization, and ongoing performance analysis.
               </p>
             </div>
 
@@ -619,7 +619,7 @@ export default function SEOPage() {
               <div className={styles.specialImgWrapper}>
                 <Image
                   src="/images/SEO strategy_team.jpg"
-                  alt="Nova Spark Digital Marketing and SEO Strategy Team in Bhubaneswar"
+                  alt="Nova Spark Digital Marketing and SEO Strategy Team in India"
                   fill
                   sizes="(max-width: 1024px) 100vw, 480px"
                   className={styles.specialImg}
@@ -669,7 +669,7 @@ export default function SEOPage() {
               Frequently Asked <span className="accent-gradient">Questions</span>
             </h2>
             <p className={styles.sectionSub} style={{ maxWidth: 640, margin: '0 auto' }}>
-              Clear, transparent answers on timeline, local SEO in Bhubaneswar, strategy creation, and measurable results.
+              Clear, transparent answers on timeline, local SEO in India, strategy creation, and measurable results.
             </p>
           </ScrollReveal>
 
@@ -723,11 +723,11 @@ export default function SEOPage() {
 
               <h2 className={styles.ctaHeadline}>
                 Get Found Faster with{' '}
-                <span className="accent-gradient">SEO Marketing Service in Bhubaneswar</span>
+                <span className="accent-gradient">SEO Marketing Service in India</span>
               </h2>
 
               <p className={styles.ctaDescription}>
-                Get in touch with Nova Spark Digital and start building a stronger organic presence in Bhubaneswar and beyond.
+                Get in touch with Nova Spark Digital and start building a stronger organic presence in India and beyond.
               </p>
 
               <div className={styles.ctaBrandPunchline}>

@@ -34,28 +34,28 @@ export const metadata: Metadata = {
     },
   },
   title: {
-    default: "Digital Marketing Company in Bhubaneswar | Marketing Copilot",
+    default: "Digital Marketing Company in India | Marketing Copilot",
     template: "%s | Marketing Copilot"
   },
-  description: "Top-rated digital marketing agency in Bhubaneswar. SEO, Google Ads, Meta Ads, web development and compounding revenue growth for Bhubaneswar businesses.",
+  description: "Top-rated digital marketing agency in India. SEO, Google Ads, Meta Ads, web development and compounding revenue growth for businesses across India.",
   keywords: [
-    "Digital Marketing company in Bhubaneswar",
+    "Digital Marketing company in India",
     "Marketing Copilot",
-    "Marketing Copilot Bhubaneswar",
+    "Marketing Copilot India",
     "Digital Marketing Services",
     "Online marketing Services",
     "Digital Marketing Agency",
     "Digital Marketing Solutions",
-    "Best Digital Marketing Agency in Bhubaneswar",
-    "SEO Bhubaneswar",
+    "Best Digital Marketing Agency in India",
+    "SEO India",
     "Performance Marketing",
     "Social Media Marketing",
     "Bhubaneswar"
   ],
   authors: [{ name: "Marketing Copilot" }],
   openGraph: {
-    title: "Digital Marketing Company in Bhubaneswar | Marketing Copilot",
-    description: "Top-rated digital marketing agency in Bhubaneswar. SEO, Google Ads, Meta Ads, web development and compounding revenue growth for Bhubaneswar businesses.",
+    title: "Digital Marketing Company in India | Marketing Copilot",
+    description: "Top-rated digital marketing agency in India. SEO, Google Ads, Meta Ads, web development and compounding revenue growth for businesses across India.",
     url: "https://marketingcopilot.in/",
     siteName: "Marketing Copilot Digital Marketing Agency",
     type: "website",
@@ -64,14 +64,14 @@ export const metadata: Metadata = {
         url: "/images/marketing-copilot-logo.png",
         width: 1200,
         height: 630,
-        alt: "Marketing Copilot Digital Marketing Agency Bhubaneswar"
+        alt: "Marketing Copilot Digital Marketing Agency"
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Digital Marketing Company in Bhubaneswar | Marketing Copilot",
-    description: "Top-rated digital marketing agency in Bhubaneswar. SEO, Google Ads, Meta Ads, web development and compounding revenue growth for Bhubaneswar businesses.",
+    title: "Digital Marketing Company in India | Marketing Copilot",
+    description: "Top-rated digital marketing agency in India. SEO, Google Ads, Meta Ads, web development and compounding revenue growth for businesses across India.",
     images: ["/images/marketing-copilot-logo.png"]
   },
   icons: {
@@ -95,7 +95,7 @@ const websiteSchema = {
   "@id": "https://marketingcopilot.in/#website",
   "url": "https://marketingcopilot.in/",
   "name": "Marketing Copilot",
-  "description": "Digital Marketing Company in Bhubaneswar offering SEO, Google Ads, Meta Ads, social media marketing and digital marketing solutions.",
+  "description": "Digital Marketing Company in India offering SEO, Google Ads, Meta Ads, social media marketing and digital marketing solutions.",
   "publisher": {
     "@id": "https://marketingcopilot.in/#organization"
   },
@@ -114,7 +114,7 @@ const organizationSchema = {
         "@type": "ImageObject",
         "url": "https://marketingcopilot.in/images/marketing-copilot-logo.png"
       },
-      "description": "Marketing Copilot is a digital marketing company in Bhubaneswar providing SEO, Google Ads, Meta Ads, social media marketing, web solutions, creative services and AI-powered digital marketing solutions.",
+      "description": "Marketing Copilot is a digital marketing company in India providing SEO, Google Ads, Meta Ads, social media marketing, web solutions, creative services and AI-powered digital marketing solutions.",
       "telephone": "+91 8280788689",
       "email": "connect@novasparkdigitalmarketingagency.com",
       "address": {
@@ -133,7 +133,7 @@ const organizationSchema = {
       "url": "https://marketingcopilot.in/",
       "image": "https://marketingcopilot.in/images/marketing-copilot-brand.png",
       "logo": "https://marketingcopilot.in/images/marketing-copilot-logo.png",
-      "description": "Digital marketing company in Bhubaneswar offering SEO, Google Ads, Meta Ads, social media marketing, web solutions, creative services and AI-powered marketing solutions.",
+      "description": "Digital marketing company in India offering SEO, Google Ads, Meta Ads, social media marketing, web solutions, creative services and AI-powered marketing solutions.",
       "telephone": "+91 8280788689",
       "email": "connect@novasparkdigitalmarketingagency.com",
       "parentOrganization": {
@@ -194,7 +194,7 @@ const organizationSchema = {
       "@id": "https://marketingcopilot.in/#website",
       "url": "https://marketingcopilot.in/",
       "name": "Marketing Copilot",
-      "description": "Digital Marketing Company in Bhubaneswar",
+      "description": "Digital Marketing Company in India",
       "publisher": {
         "@id": "https://marketingcopilot.in/#organization"
       },
@@ -211,7 +211,7 @@ const localBusinessSchema = {
   "url": "https://marketingcopilot.in/",
   "logo": "https://marketingcopilot.in/images/marketing-copilot-logo.png",
   "image": "https://marketingcopilot.in/images/marketing-copilot-brand.png",
-  "description": "Marketing Copilot is a digital marketing company in Bhubaneswar providing SEO, Google Ads, Meta Ads, social media marketing, web solutions, creative services and AI-powered digital marketing solutions.",
+  "description": "Marketing Copilot is a digital marketing company in India providing SEO, Google Ads, Meta Ads, social media marketing, web solutions, creative services and AI-powered digital marketing solutions.",
   "telephone": "+91 8280788689",
   "email": "connect@novasparkdigitalmarketingagency.com",
   "priceRange": "$$",

@@ -34,7 +34,7 @@ export default function MetaAdStudioSimulator() {
             Simulate Your High-Converting <span className="accent-gradient">Meta Ad Funnel</span>
           </h2>
           <p className={styles.subhead}>
-            Test the three highest-performing ad architectures deployed by Marketing Copilot across Instagram, Facebook, and WhatsApp in Bhubaneswar.
+            Test the three highest-performing ad architectures deployed by Marketing Copilot across Instagram, Facebook, and WhatsApp in India.
           </p>
         </ScrollReveal>
 

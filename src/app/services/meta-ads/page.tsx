@@ -49,7 +49,7 @@ const whyMatterFeatures = [
   },
 ];
 
-// 6 Core Meta Ads Services in Bhubaneswar
+// 6 Core Meta Ads Services in India
 const metaServices = [
   {
     num: '01',
@@ -143,7 +143,7 @@ const metaFaqs = [
     a: 'Meta Ads are paid ads on Facebook and Instagram designed to help businesses target audiences, capture leads, boost website visits, and convert leads.',
   },
   {
-    q: '2. How much should I spend on Meta Ads in Bhubaneswar?',
+    q: '2. How much should I spend on Meta Ads in India?',
     a: "The amount of the Meta Ads budget is determined by your goals, audience size, competition, industry, and campaign duration. We suggest a budget depending on your goals and what you're looking to acquire.",
   },
   {
@@ -256,7 +256,7 @@ export default function MetaAdsPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          2. DRIVING BUSINESS GROWTH WITH DIGITAL MARKETING IN BHUBANESWAR
+          2. DRIVING BUSINESS GROWTH WITH DIGITAL MARKETING IN INDIA
           (Positioned directly below the hero section as requested)
          ══════════════════════════════════════════════════ */}
       <QuickConnectMapSection />
@@ -325,7 +325,7 @@ export default function MetaAdsPage() {
               <div className={styles.visualImageWrap}>
                 <Image
                   src="/images/Ad Framework.jpg"
-                  alt="Meta and Facebook Advertising Framework Nova Spark Digital Bhubaneswar"
+                  alt="Meta and Facebook Advertising Framework Nova Spark Digital India"
                   fill
                   sizes="(max-width: 768px) 100vw, 500px"
                   className={styles.visualImg}
@@ -354,7 +354,7 @@ export default function MetaAdsPage() {
 
               <h2 className={styles.agencyTitle}>
                 Performance-Driven Meta Ads Agency{' '}
-                <span className="accent-gradient">in Bhubaneswar</span>
+                <span className="accent-gradient">in India</span>
               </h2>
 
               <p className={styles.agencyParagraph}>
@@ -362,11 +362,11 @@ export default function MetaAdsPage() {
               </p>
 
               <p className={styles.agencyParagraph}>
-                Nova Spark Digital is propagating to provide a powerful Meta Ads marketing solution in Bhubaneswar and is dedicated to creating awareness, engagement, and leads for businesses, making website hits and sales through Facebook and Instagram ads.
+                Nova Spark Digital is propagating to provide a powerful Meta Ads marketing solution in India and is dedicated to creating awareness, engagement, and leads for businesses, making website hits and sales through Facebook and Instagram ads.
               </p>
 
               <p className={styles.agencyParagraph}>
-                Our strategy for Meta Ads is custom crafted for every local business in Bhubaneswar, every ecommerce business, every education business, every real estate business, every healthcare service provider, every service-based business, and every growing D2C brand based on their target audience, business vertical, and marketing objectives.
+                Our strategy for Meta Ads is custom crafted for every business in India, every ecommerce business, every education business, every real estate business, every healthcare service provider, every service-based business, and every growing D2C brand based on their target audience, business vertical, and marketing objectives.
               </p>
 
               <div className={styles.verticalChips}>
@@ -383,7 +383,7 @@ export default function MetaAdsPage() {
                 <div className={styles.mediaFrame}>
                   <Image
                     src="/images/services_performance.jpg"
-                    alt="Performance Marketing and Meta Ads Management in Bhubaneswar"
+                    alt="Performance Marketing and Meta Ads Management in India"
                     fill
                     sizes="(max-width: 768px) 100vw, 480px"
                     className={styles.visualImg}
@@ -421,7 +421,7 @@ export default function MetaAdsPage() {
                 Meta&apos;s advertising ecosystem gives businesses access to consumers via Facebook, Instagram, and other Meta placements. You can introduce your products or services and reach your potential customers before they even look for them.
               </p>
               <p className={styles.sectionDesc} style={{ marginTop: '12px' }}>
-                Meta advertising can be employed for local and broader campaigns for businesses in Bhubaneswar. If it&apos;s a marketing campaign that allows targeting, you can target audiences by their location, interests, behaviors, and previous interactions with your business.
+                Meta advertising can be employed for local and broader campaigns for businesses in India. If it&apos;s a marketing campaign that allows targeting, you can target audiences by their location, interests, behaviors, and previous interactions with your business.
               </p>
             </ScrollReveal>
           </div>
@@ -453,7 +453,7 @@ export default function MetaAdsPage() {
               </div>
               <h2 className={styles.sectionTitle}>
                 Our Meta Ads Marketing Services{' '}
-                <span className="accent-gradient">in Bhubaneswar</span>
+                <span className="accent-gradient">in India</span>
               </h2>
               <p className={styles.sectionDesc}>
                 When it comes to Meta Ads, Nova Spark Digital can help you plan, set up, optimize, and report on your campaign.
@@ -517,7 +517,7 @@ export default function MetaAdsPage() {
               </div>
 
               <h2 className={styles.localTitle}>
-                Meta Ads Marketing in Bhubaneswar{' '}
+                Meta Ads Marketing in India{' '}
                 <span className="accent-gradient">for Local &amp; Growing Brands</span>
               </h2>
 
@@ -558,7 +558,7 @@ export default function MetaAdsPage() {
               </div>
               <h2 className={styles.sectionTitle}>
                 Why Choose Nova Spark Digital{' '}
-                <span className="accent-gradient">for Meta Ads in Bhubaneswar?</span>
+                <span className="accent-gradient">for Meta Ads in India?</span>
               </h2>
               <p className={styles.sectionDesc}>
                 Nova Spark Digital is a digital marketing agency whose approach focuses on connecting paid advertising with the wider digital marketing strategy.

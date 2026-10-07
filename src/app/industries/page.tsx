@@ -17,7 +17,7 @@ const heroSlides = [
   {
     id: 'slide-1',
     src: '/images/industries image 1st slide.png',
-    alt: 'Specialized digital marketing architectures for real estate, builders, and urban construction in Bhubaneswar',
+    alt: 'Specialized digital marketing architectures for real estate, builders, and urban construction in India',
     caption: 'Real Estate & Infrastructure',
   },
   {
@@ -536,7 +536,7 @@ export default function IndustriesPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════════════
-          SECTION 3: DRIVING BUSINESS GROWTH WITH DIGITAL MARKETING IN BHUBANESWAR
+          SECTION 3: DRIVING BUSINESS GROWTH WITH DIGITAL MARKETING IN INDIA
          ══════════════════════════════════════════════════════════ */}
       <QuickConnectMapSection />
 
@@ -557,7 +557,7 @@ export default function IndustriesPage() {
               <span className="accent-gradient">Live CPL &amp; Pipeline Projection Engine.</span>
             </h2>
             <p className={styles.sectionSub}>
-              Select your commercial vertical, adjust your monthly ad spend, and instantly model your verified inbound lead volume, target CPL ceiling, and pipeline value in Bhubaneswar.
+              Select your commercial vertical, adjust your monthly ad spend, and instantly model your verified inbound lead volume, target CPL ceiling, and pipeline value in India.
             </p>
           </ScrollReveal>
 

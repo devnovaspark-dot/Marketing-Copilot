@@ -9,7 +9,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ success: true, message: 'Form received' });
     }
 
-    const { name, email, phone, company, budget, services, message } = body;
+    const { name, email, phone, company, website, budget, services, message } = body;
 
     if (!name || !email) {
       return NextResponse.json(
@@ -35,6 +35,7 @@ export async function POST(req: Request) {
       'Work Email': email,
       'Phone / WhatsApp': phone || 'Not provided',
       'Company Name': company || 'Not specified',
+      'Website URL': website || 'Not provided',
       'Monthly Budget': budget || 'Not specified',
       'Services Requested': formattedServices,
       'Project Details / Message': message || 'No additional details provided',
@@ -42,7 +43,7 @@ export async function POST(req: Request) {
       _template: 'table',
       _captcha: 'false',
       _autoresponse:
-        'Thank you for reaching out to Marketing Copilot! We have safely received your consultation inquiry. Our senior growth team in Bhubaneswar is reviewing your requirements and will reach out to you within 4 hours with your preliminary growth blueprint.',
+        'Thank you for reaching out to Marketing Copilot! We have safely received your consultation inquiry. Our senior growth team in India is reviewing your requirements and will reach out to you within 4 hours with your preliminary growth blueprint.',
     };
 
     const formsubmitRes = await fetch(

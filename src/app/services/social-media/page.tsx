@@ -239,7 +239,7 @@ export default function SocialMediaPage() {
                   Full-Lifecycle Content Production &amp; Community Growth
                 </h3>
                 <p className={styles.visualDesc}>
-                  From high-retention 9:16 vertical video shoots to daily audience conversations and hyper-targeted lead funnels across Bhubaneswar.
+                  From high-retention 9:16 vertical video shoots to daily audience conversations and hyper-targeted lead funnels across India.
                 </p>
 
                 <div className={styles.visualFeatures}>
@@ -267,7 +267,7 @@ export default function SocialMediaPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          4. BRAND BUILDING WITH SOCIAL MEDIA IN BHUBANESWAR
+          4. BRAND BUILDING WITH SOCIAL MEDIA IN INDIA
          ══════════════════════════════════════════════════ */}
       <section className={styles.brandSection}>
         <div className="container">
@@ -278,11 +278,11 @@ export default function SocialMediaPage() {
               </div>
               <h2 className={styles.brandTitle}>
                 Build a Stronger Brand With Social Media Marketing in{' '}
-                <span className="accent-gradient">Bhubaneswar</span>
+                <span className="accent-gradient">India</span>
               </h2>
 
               <p className={styles.brandLead}>
-                Your social media presence can become a valuable business asset when it is backed by the right strategy. Social media marketing in Bhubaneswar can assist businesses in generating content, engaging target users, and establishing meaningful connections with them. Each strategy we create is customized to your industry, audience, competitors, and business objectives.
+                Your social media presence can become a valuable business asset when it is backed by the right strategy. Social media marketing in India can assist businesses in generating content, engaging target users, and establishing meaningful connections with them. Each strategy we create is customized to your industry, audience, competitors, and business objectives.
               </p>
 
               <p className={styles.brandParagraph}>
@@ -302,7 +302,7 @@ export default function SocialMediaPage() {
               <div className={styles.brandImgCard}>
                 <Image
                   src="/images/Brand Shoot_.jpg"
-                  alt="Nova Spark Social Media Client Shoot in Bhubaneswar"
+                  alt="Nova Spark Social Media Client Shoot in India"
                   fill
                   sizes="(max-width: 1024px) 100vw, 520px"
                   className={styles.brandImg}
@@ -390,7 +390,7 @@ export default function SocialMediaPage() {
               <span className="accent-gradient">Marketing Questions</span>
             </h2>
             <p className={styles.sectionDesc}>
-              Get clear answers about our social media marketing services, content strategy, audience engagement, paid campaigns, and how we help Bhubaneswar businesses grow online.
+              Get clear answers about our social media marketing services, content strategy, audience engagement, paid campaigns, and how we help businesses across India grow online.
             </p>
           </ScrollReveal>
 
@@ -444,7 +444,7 @@ export default function SocialMediaPage() {
               </h2>
 
               <p className={styles.homeCtaSub}>
-                Get a free 30-minute social media strategy audit. We’ll review your current content, identify what’s holding back engagement, and map out a clear 30-day strategy to improve reach, engagement, and brand visibility in Bhubaneswar.
+                Get a free 30-minute social media strategy audit. We’ll review your current content, identify what’s holding back engagement, and map out a clear 30-day strategy to improve reach, engagement, and brand visibility in India.
               </p>
 
               <div className={styles.homeCtaActions}>

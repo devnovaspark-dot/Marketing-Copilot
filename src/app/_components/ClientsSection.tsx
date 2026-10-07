@@ -70,7 +70,7 @@ export default function ClientsSection() {
             </h2>
             
             <p className={styles.ctaSubtitle}>
-              Partner with a trusted Digital Marketing Company in Bhubaneswar for SEO, Google Ads, online marketing services, and tailored Digital Marketing Solutions that drive visibility, leads, and growth.
+              Partner with a trusted Digital Marketing Company in India for SEO, Google Ads, online marketing services, and tailored Digital Marketing Solutions that drive visibility, leads, and growth.
             </p>
 
             {/* Centered Feature Capability Pills */}

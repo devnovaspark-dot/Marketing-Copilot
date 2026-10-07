@@ -26,7 +26,7 @@ const services: ServiceItem[] = [
     category: 'Paid Search & PPC',
     title: 'Google Ads Management',
     tagline: 'Reach High-Intent Customers with Google Ads',
-    desc: 'Run Google Ads campaigns that can help you grow your business with relevant traffic, leads, and sales. As a digital marketing company in Bhubaneswar, we manage search, Performance Max, display, shopping, and YouTube campaigns. Digital marketing services are built around the right visitors, improved ad performance, and the smart allocation of advertising dollars.',
+    desc: 'Run Google Ads campaigns that can help you grow your business with relevant traffic, leads, and sales. As a digital marketing company in India, we manage search, Performance Max, display, shopping, and YouTube campaigns. Digital marketing services are built around the right visitors, improved ad performance, and the smart allocation of advertising dollars.',
     tags: [
       'Search Ads',
       'Performance Max',
@@ -37,7 +37,7 @@ const services: ServiceItem[] = [
       'Conversion Tracking',
       'Smart Budget Allocation',
     ],
-    href: '/services/performance-marketing-in-bhubaneswar',
+    href: '/services/performance-marketing-in-india',
     color: '#0B2093',
     stat: '4.8x',
     statLabel: 'Average ROAS',
@@ -59,7 +59,7 @@ const services: ServiceItem[] = [
       'Audience Targeting',
       'Campaign Optimization',
     ],
-    href: '/services/performance-marketing-in-bhubaneswar',
+    href: '/services/performance-marketing-in-india',
     color: '#0B2093',
     stat: '+142%',
     statLabel: 'Revenue Lift',
@@ -70,7 +70,7 @@ const services: ServiceItem[] = [
     category: 'SEO & Organic Growth',
     title: 'Search Engine Optimization',
     tagline: 'Get Found Where Customers Search',
-    desc: 'Gain better rankings in Google and reach out to potential customers who are actively looking for your services. Our SEO services in Bhubaneswar encompass technical SEO, local SEO, AEO, and GEO. As a digital marketing agency, we provide pragmatic digital marketing solutions to increase search visibility, drive targeted traffic, and help your business rank well online.',
+    desc: 'Gain better rankings in Google and reach out to potential customers who are actively looking for your services. Our SEO services in India encompass technical SEO, local SEO, AEO, and GEO. As a digital marketing agency, we provide pragmatic digital marketing solutions to increase search visibility, drive targeted traffic, and help your business rank well online.',
     tags: [
       'Technical SEO',
       'Local SEO',
@@ -81,7 +81,7 @@ const services: ServiceItem[] = [
       'Rank Tracking',
       'Organic Growth',
     ],
-    href: '/services/seo-services-in-bhubaneswar',
+    href: '/services/seo-services-in-india',
     color: '#0D007F',
     stat: '+187%',
     statLabel: 'Organic Traffic Lift',
@@ -92,7 +92,7 @@ const services: ServiceItem[] = [
     category: 'Social Media & Content',
     title: 'Social Media Marketing',
     tagline: 'Build a Stronger Brand on Social',
-    desc: 'Be more prominent on social media with consistency and engaging content. Our social media marketing solutions involve account administration, branding, reels, content creation, and creative posts. At Digital Marketing Company in Bhubaneswar, we aim to assist local businesses in reaching out to their audience, promoting their services, and establishing a robust social footprint that fosters their future success.',
+    desc: 'Be more prominent on social media with consistency and engaging content. Our social media marketing solutions involve account administration, branding, reels, content creation, and creative posts. At Digital Marketing Company in India, we aim to assist local businesses in reaching out to their audience, promoting their services, and establishing a robust social footprint that fosters their future success.',
     tags: [
       'Account Administration',
       'Branding & Identity',
@@ -103,7 +103,7 @@ const services: ServiceItem[] = [
       'Social Growth',
       'Community Building',
     ],
-    href: '/services/social-media-marketing-in-bhubaneswar',
+    href: '/services/social-media-marketing-in-india',
     color: '#F59E0B',
     stat: '10M+',
     statLabel: 'Monthly Impressions',
@@ -125,7 +125,7 @@ const services: ServiceItem[] = [
       'Visual Content',
       'Digital Advertising',
     ],
-    href: '/services/ai-automation-services-in-bhubaneswar',
+    href: '/services/ai-automation-services-in-india',
     color: '#8B5CF6',
     stat: '10x',
     statLabel: 'Production Speed',
@@ -136,7 +136,7 @@ const services: ServiceItem[] = [
     category: 'Visual Production & Studio',
     title: 'Commercial Photography & Video',
     tagline: 'Show Your Brand at Its Best',
-    desc: 'Bring a professional visual presentation of your products, services, and business with professional photos and videos. We offer commercial production, photography, videography, branded movie shoots, and drone shoots. These visual digital marketing solutions can aid your professional growth in the digital world, offering your company in Bhubaneswar the picture of professionalism and improving interaction with customers.',
+    desc: 'Bring a professional visual presentation of your products, services, and business with professional photos and videos. We offer commercial production, photography, videography, branded movie shoots, and drone shoots. These visual digital marketing solutions can aid your professional growth in the digital world, offering your company in India the picture of professionalism and improving interaction with customers.',
     tags: [
       'Commercial Production',
       'Product Photography',
@@ -147,7 +147,7 @@ const services: ServiceItem[] = [
       'Studio Shoots',
       'Brand Presentation',
     ],
-    href: '/services/creative-branding-services-in-bhubaneswar',
+    href: '/services/creative-branding-services-in-india',
     color: '#06B6D4',
     stat: '4K/8K',
     statLabel: 'Cinematic Quality',
@@ -169,7 +169,7 @@ const services: ServiceItem[] = [
       'Local Citations',
       'Regional Visibility',
     ],
-    href: '/digital-marketing-company-in-bhubaneswar',
+    href: '/digital-marketing-company-in-india',
     color: '#10B981',
     stat: '#1',
     statLabel: 'Local Market Share',
@@ -180,7 +180,7 @@ const services: ServiceItem[] = [
     category: 'Local Search & Map Pack',
     title: 'Google Business Profile Optimization',
     tagline: 'Get More Visibility on Google Maps',
-    desc: 'Get your business on to increasingly easier discovery by local customers in Google Search & Google Maps. Google Business Profile services prioritize the accuracy of business information, optimizing profiles, reviews, local visibility, and customer engagement. We are a digital marketing company focused on driving local engagement and converting local search into calls, visits & inquiries for businesses in Bhubaneswar!',
+    desc: 'Get your business on to increasingly easier discovery by local customers in Google Search & Google Maps. Google Business Profile services prioritize the accuracy of business information, optimizing profiles, reviews, local visibility, and customer engagement. We are a digital marketing company focused on driving local engagement and converting local search into calls, visits & inquiries for businesses in India!',
     tags: [
       'GBP Optimization',
       'Google Maps Ranking',
@@ -191,7 +191,7 @@ const services: ServiceItem[] = [
       'Photo & Post Updates',
       'Local Map Pack',
     ],
-    href: '/services/seo-services-in-bhubaneswar',
+    href: '/services/seo-services-in-india',
     color: '#D97706',
     stat: '3.4x',
     statLabel: 'Direct Calls & Leads',
@@ -219,10 +219,10 @@ export default function ServicesSection() {
             </div>
             <h3 className={`display-lg ${styles.headline}`}>
               Best Digital Marketing Services{' '}
-              <span className="accent-gradient">in Bhubaneswar</span>
+              <span className="accent-gradient">in India</span>
             </h3>
             <p className={`body-lg ${styles.subText}`}>
-              As a trusted digital marketing company in Bhubaneswar, we are able to provide you with integrated digital marketing services, including SEO, online marketing services, paid advertising, social media, and web solutions. Our digital marketing solutions help businesses generate qualified leads, strengthen visibility, and achieve measurable growth through strategic campaigns.
+              As a trusted digital marketing company in India, we are able to provide you with integrated digital marketing services, including SEO, online marketing services, paid advertising, social media, and web solutions. Our digital marketing solutions help businesses generate qualified leads, strengthen visibility, and achieve measurable growth through strategic campaigns.
             </p>
             <div className={styles.headerPills}>
               <span className={styles.headerPill}>

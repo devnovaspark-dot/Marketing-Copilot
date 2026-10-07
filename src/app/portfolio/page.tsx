@@ -370,7 +370,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* ─────────────────────────────────────────────────────────────
-          DRIVING BUSINESS GROWTH WITH DIGITAL MARKETING IN BHUBANESWAR
+          DRIVING BUSINESS GROWTH WITH DIGITAL MARKETING IN INDIA
           ───────────────────────────────────────────────────────────── */}
       <QuickConnectMapSection />
 
@@ -850,7 +850,7 @@ export default function PortfolioPage() {
             <div className={styles.centerCtaWrap} style={{ paddingTop: 28 }}>
               <BeamButton
                 href="/contact"
-                label="Schedule Territory Strategy Session in Bhubaneswar →"
+                label="Schedule Territory Strategy Session in India →"
                 size="md"
               />
             </div>

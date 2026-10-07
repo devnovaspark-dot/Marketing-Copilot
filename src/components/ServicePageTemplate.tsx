@@ -299,12 +299,12 @@ export default function ServicePageTemplate({
       a: 'Paid campaigns (Google Ads and Meta Ads) begin generating qualified phone calls and inquiries within 48 to 72 hours of going live. Organic SEO and content compounding typically demonstrate rank acceleration and inbound volume within 60 to 90 days.',
     },
     {
-      q: 'What makes Marketing Copilot different from traditional agencies in Bhubaneswar?',
+      q: 'What makes Marketing Copilot different from traditional agencies in India?',
       a: 'Marketing Copilot eliminates agency bloat and vanity metrics. We operate with strict attribution modeling, live client reporting dashboards, and weekly performance sprints focused strictly on your bottom-line revenue and ROI.',
     },
     {
       q: 'Can Marketing Copilot handle our entire marketing stack end-to-end?',
-      a: 'Yes. From high-speed Next.js web development and conversion-rate optimization to multi-channel paid ads, SEO, and local map pack dominance, our team acts as your dedicated fractional growth team in Bhubaneswar.',
+      a: 'Yes. From high-speed Next.js web development and conversion-rate optimization to multi-channel paid ads, SEO, and local map pack dominance, our team acts as your dedicated fractional growth team in India.',
     },
   ];
 
@@ -597,7 +597,7 @@ export default function ServicePageTemplate({
                 <div className={styles.spotlightImgBox}>
                   <Image
                     src={spotlightImage}
-                    alt={`Strategic campaign execution in Bhubaneswar — Marketing Copilot`}
+                    alt={`Strategic campaign execution in India — Marketing Copilot`}
                     fill
                     sizes="(max-width: 1024px) 100vw, 560px"
                     className={styles.spotlightImg}
@@ -861,7 +861,7 @@ export default function ServicePageTemplate({
               Predictable Roadmap
             </div>
             <h2 className="display-md" style={{ color: '#0F172A' }}>
-              How Marketing Copilot Delivers In Bhubaneswar
+              How Marketing Copilot Delivers In India
             </h2>
             <p className="body-md" style={{ color: '#64748B', maxWidth: 620, margin: '10px auto 0' }}>
               A battle-tested 4-step framework engineered to eliminate guesswork and drive compounding ROI.
@@ -901,7 +901,7 @@ export default function ServicePageTemplate({
               Answers for Bhubaneswar Business Leaders
             </h2>
             <p className="body-md" style={{ color: '#64748B', maxWidth: 600, margin: '10px auto 0' }}>
-              Everything you need to know about our {eyebrow} services in Bhubaneswar.
+              Everything you need to know about our {eyebrow} services in India.
             </p>
           </ScrollReveal>
 
@@ -951,7 +951,7 @@ export default function ServicePageTemplate({
               <div>
                 <span className={styles.termPill}>SCHEDULE EXECUTIVE AUDIT</span>
                 <h3 className={styles.termTitle}>
-                  Ready to Capture #1 Market Share in Bhubaneswar?
+                  Ready to Capture #1 Market Share in India?
                 </h3>
                 <p className={styles.termSub}>
                   Claim your free 30-minute forensic growth audit. We will crawl your Core Web Vitals, analyze competitor acquisition gaps, and model your ROI roadmap across Odisha.
