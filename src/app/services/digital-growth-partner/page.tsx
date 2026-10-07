@@ -1209,38 +1209,14 @@ export default function DigitalGrowthPartnerPage() {
           <div className={styles.grandCardChassis}>
             <div className={styles.grandHeader}>
               <div className={styles.grandEyebrow}>
-                <span className={styles.pulsingLed} />
-                <span>TAKE THE NEXT LEAP · COMPLIMENTARY 360° GROWTH AUDIT</span>
+                <span>360° GROWTH AUDIT</span>
               </div>
               <h2 className={styles.grandTitleH2}>
-                Ready to Scale Your Business{' '}
-                <span className={styles.grandTitleAccent}>
-                  With a Dedicated Growth Partner?
-                </span>
+                Ready to Accelerate Your Growth?
               </h2>
               <p className={styles.grandSubtitle}>
-                Stop guessing with fragmented agencies. We will inspect your search ranking gaps, paid ad spend efficiency, and landing page drop-offs to deliver an actionable 90-day growth blueprint.
+                Get your custom 90-day growth blueprint within 2 hours.
               </p>
-            </div>
-
-            {/* 4 Executive Assurance Chips */}
-            <div className={styles.grandAssuranceStrip}>
-              <div className={styles.grandAssurancePill}>
-                <span>🔒</span>
-                <span>Strict NDA Guaranteed</span>
-              </div>
-              <div className={styles.grandAssurancePill}>
-                <span>⚡</span>
-                <span>2-Hour Response SLA</span>
-              </div>
-              <div className={styles.grandAssurancePill}>
-                <span>🎯</span>
-                <span>Zero Lock-In Retainers</span>
-              </div>
-              <div className={styles.grandAssurancePill}>
-                <span>💰</span>
-                <span>100% Data Ownership</span>
-              </div>
             </div>
 
             {finalSuccess ? (
@@ -1275,11 +1251,14 @@ export default function DigitalGrowthPartnerPage() {
                     />
                   </div>
                   <div className={styles.fieldGroup}>
-                    <label className={styles.fieldLabel}>Company Name</label>
+                    <label className={styles.fieldLabel}>
+                      Work Email <span>*</span>
+                    </label>
                     <input
-                      type="text"
-                      value={finalForm.company}
-                      onChange={(e) => setFinalForm({ ...finalForm, company: e.target.value })}
+                      type="email"
+                      required
+                      value={finalForm.email}
+                      onChange={(e) => setFinalForm({ ...finalForm, email: e.target.value })}
                       className={styles.tactileField}
                     />
                   </div>
@@ -1300,37 +1279,24 @@ export default function DigitalGrowthPartnerPage() {
                   </div>
                   <div className={styles.fieldGroup}>
                     <label className={styles.fieldLabel}>
-                      Work Email <span>*</span>
+                      Website or Company
                     </label>
                     <input
-                      type="email"
-                      required
-                      value={finalForm.email}
-                      onChange={(e) => setFinalForm({ ...finalForm, email: e.target.value })}
+                      type="text"
+                      value={finalForm.website}
+                      onChange={(e) => setFinalForm({ ...finalForm, website: e.target.value, company: e.target.value })}
                       className={styles.tactileField}
                     />
                   </div>
                 </div>
 
+                {/* Primary Focus Areas (Compact Chiclets) */}
                 <div className={styles.fieldGroup}>
                   <label className={styles.fieldLabel}>
-                    Website URL <span className={styles.fieldLabelOpt}>(Optional)</span>
-                  </label>
-                  <input
-                    type="url"
-                    value={finalForm.website}
-                    onChange={(e) => setFinalForm({ ...finalForm, website: e.target.value })}
-                    className={styles.tactileField}
-                  />
-                </div>
-
-                {/* Services multi-select — Starts unselected */}
-                <div className={styles.fieldGroup}>
-                  <label className={styles.fieldLabel}>
-                    Services You Wish to Audit <span className={styles.fieldLabelOpt}>(Select any)</span>
+                    Primary Focus <span className={styles.fieldLabelOpt}>(Select any)</span>
                   </label>
                   <div className={styles.servicesChicletGrid}>
-                    {availableServices.map((svc) => {
+                    {['⚡ SEO & Content', '🎯 Google Ads', '🚀 Meta Ads', '💻 Full-Funnel Growth'].map((svc) => {
                       const selected = finalForm.services.includes(svc);
                       return (
                         <button
@@ -1348,60 +1314,29 @@ export default function DigitalGrowthPartnerPage() {
                   </div>
                 </div>
 
-                {/* Budget — Starts unselected */}
-                <div className={styles.fieldGroup}>
-                  <label className={styles.fieldLabel}>
-                    Planned Monthly Budget <span className={styles.fieldLabelOpt}>(Optional)</span>
-                  </label>
-                  <div className={styles.budgetPillGrid}>
-                    {budgetOptions.map((b) => (
-                      <button
-                        type="button"
-                        key={b}
-                        onClick={() =>
-                          setFinalForm({
-                            ...finalForm,
-                            budget: finalForm.budget === b ? '' : b,
-                          })
-                        }
-                        className={`${styles.budgetPillBtn} ${
-                          finalForm.budget === b ? styles.budgetPillBtnActive : ''
-                        }`}
-                      >
-                        {b} {finalForm.budget === b ? '✓' : ''}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Requirement */}
-                <div className={styles.fieldGroup}>
-                  <label className={styles.fieldLabel}>
-                    Current Growth Bottleneck / Questions
-                  </label>
-                  <textarea
-                    rows={2}
-                    value={finalForm.requirement}
-                    onChange={(e) => setFinalForm({ ...finalForm, requirement: e.target.value })}
-                    className={styles.tactileTextarea}
-                  />
-                </div>
-
                 {finalError && (
                   <p style={{ color: '#DC2626', fontSize: '12px', fontWeight: 700, margin: '8px 0' }}>
                     {finalError}
                   </p>
                 )}
 
-                {/* BeamButton matching the navbar button style animation */}
-                <div style={{ marginTop: 18 }}>
+                {/* Submit Button */}
+                <div style={{ marginTop: 14 }}>
                   <BeamButton
                     type="submit"
                     disabled={finalSubmitting}
                     fullWidth
                     size="lg"
-                    label={finalSubmitting ? 'Evaluating Blueprint...' : 'Get My Free Consultation →'}
+                    label={finalSubmitting ? 'Evaluating Blueprint...' : 'Get Free Consultation →'}
                   />
+                </div>
+
+                <div className={styles.grandCompactTrust}>
+                  <span>🔒 Strict NDA</span>
+                  <span>•</span>
+                  <span>⚡ 2-Hour Response SLA</span>
+                  <span>•</span>
+                  <span>💬 Direct Founder Call</span>
                 </div>
 
                 <div className={styles.grandFooterBypass}>
