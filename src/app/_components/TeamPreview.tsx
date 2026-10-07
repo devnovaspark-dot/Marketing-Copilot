@@ -65,13 +65,19 @@ const leaders = [
   },
 ];
 
-export default function TeamPreview() {
+export default function TeamPreview({ eyebrow }: { eyebrow?: string } = {}) {
   return (
     <section className={`section ${styles.section}`}>
       <div className="container">
-        {/* Header - Eyebrow deleted as requested */}
+        {/* Header */}
         <div className={styles.header}>
           <ScrollReveal>
+            {eyebrow && (
+              <div className="eyebrow" style={{ marginBottom: 12 }}>
+                <span className="eyebrow-dot" />
+                {eyebrow}
+              </div>
+            )}
             <h3 className="display-lg">
               Meet the minds<br />
               <span className="accent-gradient">powering your growth.</span>

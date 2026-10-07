@@ -4,9 +4,12 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import ScrollReveal from '@/components/ScrollReveal';
+import BeamButton from '@/components/BeamButton';
 import ReviewBadgesStrip from './ReviewBadgesStrip';
 import QuickConnectMapSection from '@/app/_components/QuickConnectMapSection';
 import BrandSpotlightSection from '@/app/_components/BrandSpotlightSection';
+import StrategySection from '@/app/_components/StrategySection';
+import TeamPreview from '@/app/_components/TeamPreview';
 import styles from './digital-growth-partner.module.css';
 
 interface LeadFormData {
@@ -50,31 +53,116 @@ const clientLogos = [
   { name: 'Zue Studio', src: '/images/clients/Zue-Studio-Logo-color (1).png' },
 ];
 
+const metroHubDetails: Record<
+  string,
+  {
+    name: string;
+    tag: string;
+    status: string;
+    desc: string;
+    category: string;
+    speed: string;
+  }
+> = {
+  bhubaneswar: {
+    name: 'Bhubaneswar HQ (Mallick Complex)',
+    tag: 'EXECUTIVE COMMAND CENTER',
+    status: 'Live War Room Open',
+    desc: 'Physical headquarters hosting our senior performance strategists, creative production lab, and on-site client sprints.',
+    category: 'Central Engineering & Omnichannel Media',
+    speed: 'Instant Local Dispatch',
+  },
+  delhi: {
+    name: 'Delhi NCR (Gurugram & Noida)',
+    tag: 'COMMERCIAL CORRIDOR',
+    status: 'High Volume Active',
+    desc: 'Powering multi-crore customer acquisition engines for high-growth D2C apparel, B2B manufacturing, and logistics brands.',
+    category: 'High-Intent Google Ads & Search Scale',
+    speed: '48-Hour Sprint Kickoff',
+  },
+  mumbai: {
+    name: 'Mumbai & BKC Corridor',
+    tag: 'FINANCE & LUXURY RETAIL',
+    status: 'Active Pipeline',
+    desc: 'Engineering high-converting Meta Advantage+ funnels and sub-second landing pages for premium fashion, hospitality, and fintech.',
+    category: 'CAPI First-Party Pixel & Video Reels',
+    speed: '48-Hour Sprint Kickoff',
+  },
+  bengaluru: {
+    name: 'Bengaluru (Koramangala & Indiranagar)',
+    tag: 'TECH & SAAS ECOSYSTEM',
+    status: 'Continuous Scaling',
+    desc: 'Scaling product-led growth, programmatic SEO architectures, and automated customer qualification funnels for modern startups.',
+    category: 'Programmatic SEO & Conversion Engineering',
+    speed: '48-Hour Sprint Kickoff',
+  },
+  hyderabad: {
+    name: 'Hyderabad (HITEC City & Gachibowli)',
+    tag: 'HEALTHCARE & REAL ESTATE',
+    status: 'Active Campaigns',
+    desc: 'Dominating Google Maps 3-pack and hyper-local search for multi-specialty clinical networks and luxury residential towers.',
+    category: 'Local 3-Pack SEO & High-Ticket Leads',
+    speed: '48-Hour Sprint Kickoff',
+  },
+  kolkata: {
+    name: 'Kolkata & Eastern Hub',
+    tag: 'RETAIL & COMMERCE',
+    status: 'Active Campaigns',
+    desc: 'Driving footfalls and omnichannel D2C revenue across Eastern India commercial districts with localized search graphs.',
+    category: 'Omnichannel Performance Media',
+    speed: '48-Hour Sprint Kickoff',
+  },
+  pune: {
+    name: 'Pune IT & Auto Corridor',
+    tag: 'B2B & EDUCATION',
+    status: 'Active Campaigns',
+    desc: 'Capturing high-ticket institutional and corporate inquiries via targeted LinkedIn Ads and exact-match Google PPC fortresses.',
+    category: 'B2B Lead Generation & Technical SEO',
+    speed: '48-Hour Sprint Kickoff',
+  },
+  chennai: {
+    name: 'Chennai Commercial Belt',
+    tag: 'SAAS & ENTERPRISE',
+    status: 'Active Campaigns',
+    desc: 'Delivering predictable customer acquisition pipelines for global B2B SaaS firms and regional healthcare institutions.',
+    category: 'Google Performance Max & Entity Schema',
+    speed: '48-Hour Sprint Kickoff',
+  },
+  ahmedabad: {
+    name: 'Ahmedabad & Gujarat Industrial',
+    tag: 'MANUFACTURING & D2C',
+    status: 'Active Campaigns',
+    desc: 'Scaling domestic and export B2B lead pipelines with comprehensive conversion rate optimization and WhatsApp CRM integration.',
+    category: 'Export Inquiries & CRM Automations',
+    speed: '48-Hour Sprint Kickoff',
+  },
+};
+
 export default function DigitalGrowthPartnerPage() {
-  // Form 1 (Hero Deck)
+  // Form 1 (Hero Deck) — Nothing pre-checked per user instruction
   const [heroForm, setHeroForm] = useState<LeadFormData>({
     name: '',
     company: '',
     phone: '',
     email: '',
     website: '',
-    services: ['SEO', 'Google Ads'],
-    budget: '₹50K - ₹1L',
+    services: [],
+    budget: '',
     requirement: '',
   });
   const [heroSubmitting, setHeroSubmitting] = useState(false);
   const [heroSuccess, setHeroSuccess] = useState(false);
   const [heroError, setHeroError] = useState('');
 
-  // Form 2 (Final Deck)
+  // Form 2 (Final Deck) — Nothing pre-checked per user instruction
   const [finalForm, setFinalForm] = useState<LeadFormData>({
     name: '',
     company: '',
     phone: '',
     email: '',
     website: '',
-    services: ['SEO', 'Meta Ads'],
-    budget: '₹1L - ₹3L',
+    services: [],
+    budget: '',
     requirement: '',
   });
   const [finalSubmitting, setFinalSubmitting] = useState(false);
@@ -83,6 +171,9 @@ export default function DigitalGrowthPartnerPage() {
 
   // Interactive timeframe switcher for Results Section
   const [timeframe, setTimeframe] = useState<'90d' | '1y' | 'all'>('90d');
+
+  // Interactive Active Metro Hub State for Operations Command Center
+  const [activeHub, setActiveHub] = useState<string>('bhubaneswar');
 
   // Service toggle helper
   const toggleService = (formType: 'hero' | 'final', service: string) => {
@@ -135,8 +226,8 @@ export default function DigitalGrowthPartnerPage() {
           phone: data.phone,
           email: data.email,
           website: data.website,
-          services: data.services,
-          budget: data.budget,
+          services: data.services.length > 0 ? data.services : ['Digital Growth Partner Audit'],
+          budget: data.budget || 'Custom Growth Budget',
           message: data.requirement || 'Requested 360° Digital Growth Consultation',
         }),
       });
@@ -154,6 +245,8 @@ export default function DigitalGrowthPartnerPage() {
       setSubmitting(false);
     }
   };
+
+  const selectedHubData = metroHubDetails[activeHub] || metroHubDetails.bhubaneswar;
 
   return (
     <div className={styles.page}>
@@ -221,7 +314,7 @@ export default function DigitalGrowthPartnerPage() {
               </div>
             </div>
 
-            {/* Review Badges Strip: Capterra (5.0), GoodFirms (4.9), Google (4.9), DesignRush (4.7), UpCity (5.0) - No GetApp */}
+            {/* Review Badges Strip: Capterra (5.0), GoodFirms (4.9), Google (4.9), DesignRush (4.7), UpCity (5.0) - GetApp Omitted */}
             <ReviewBadgesStrip />
           </div>
 
@@ -321,9 +414,11 @@ export default function DigitalGrowthPartnerPage() {
                   />
                 </div>
 
-                {/* Service Pills */}
+                {/* Service Pills — Initially unselected */}
                 <div className={styles.fieldGroup}>
-                  <label className={styles.fieldLabel}>Services You Need</label>
+                  <label className={styles.fieldLabel}>
+                    Services You Need <span className={styles.fieldLabelOpt}>(Select any)</span>
+                  </label>
                   <div className={styles.servicesChicletGrid}>
                     {availableServices.map((svc) => {
                       const selected = heroForm.services.includes(svc);
@@ -343,20 +438,27 @@ export default function DigitalGrowthPartnerPage() {
                   </div>
                 </div>
 
-                {/* Budget Pills */}
+                {/* Budget Pills — Initially unselected */}
                 <div className={styles.fieldGroup}>
-                  <label className={styles.fieldLabel}>Planned Monthly Budget</label>
+                  <label className={styles.fieldLabel}>
+                    Planned Monthly Budget <span className={styles.fieldLabelOpt}>(Optional)</span>
+                  </label>
                   <div className={styles.budgetPillGrid}>
                     {budgetOptions.map((b) => (
                       <button
                         type="button"
                         key={b}
-                        onClick={() => setHeroForm({ ...heroForm, budget: b })}
+                        onClick={() =>
+                          setHeroForm({
+                            ...heroForm,
+                            budget: heroForm.budget === b ? '' : b,
+                          })
+                        }
                         className={`${styles.budgetPillBtn} ${
                           heroForm.budget === b ? styles.budgetPillBtnActive : ''
                         }`}
                       >
-                        {b}
+                        {b} {heroForm.budget === b ? '✓' : ''}
                       </button>
                     ))}
                   </div>
@@ -382,13 +484,16 @@ export default function DigitalGrowthPartnerPage() {
                   </p>
                 )}
 
-                <button
-                  type="submit"
-                  disabled={heroSubmitting}
-                  className={styles.extrudedCtaBtn}
-                >
-                  {heroSubmitting ? 'Evaluating Blueprint...' : 'GET MY FREE CONSULTATION →'}
-                </button>
+                {/* BeamButton matching the navbar button style animation */}
+                <div style={{ marginTop: 14 }}>
+                  <BeamButton
+                    type="submit"
+                    disabled={heroSubmitting}
+                    fullWidth
+                    size="lg"
+                    label={heroSubmitting ? 'Evaluating Blueprint...' : 'Get My Free Consultation →'}
+                  />
+                </div>
 
                 <div className={styles.consoleFooterGuarantees}>
                   <span>🔒 100% Confidential</span>
@@ -402,8 +507,8 @@ export default function DigitalGrowthPartnerPage() {
       </section>
 
       {/* ═════════════════════════════════════════════════════════════════
-          SLIDING BRAND ICONS MARQUEE (JUST BELOW HERO AS LIKE HOME PAGE)
-      ═════════════════════════════════════════════════════════════════ */}
+          SLIDING BRAND ICONS MARQUEE (COLORFUL & VIBRANT AS LIKE HOME PAGE)
+      ═════════════════════════════════════════════ */}
       <section className={styles.slidingBrandSection}>
         <div className={styles.container}>
           <div className={styles.marqueeHeader}>
@@ -415,6 +520,7 @@ export default function DigitalGrowthPartnerPage() {
         </div>
 
         <div className={styles.marqueeContainer}>
+          <div className={styles.marqueeFadeLeft} />
           <div className={styles.marqueeTrack}>
             {[...clientLogos, ...clientLogos, ...clientLogos, ...clientLogos].map((logo, idx) => (
               <div key={`${logo.name}-${idx}`} className={styles.marqueeLogoCard} title={logo.name}>
@@ -428,12 +534,13 @@ export default function DigitalGrowthPartnerPage() {
               </div>
             ))}
           </div>
+          <div className={styles.marqueeFadeRight} />
         </div>
       </section>
 
       {/* ═════════════════════════════════════════════════════════════════
           INTERACTIVE MAP SECTION (JUST BELOW HERO & BRAND ICONS)
-      ═════════════════════════════════════════════════════════════════ */}
+      ═════════════════════════════════════════════ */}
       <QuickConnectMapSection
         id="direct-connect"
         eyebrow="Driving Business Growth With Digital Marketing in India"
@@ -453,7 +560,7 @@ export default function DigitalGrowthPartnerPage() {
 
       {/* ═════════════════════════════════════════════════════════════════
           SECTION 3: RESULTS THAT MATTER — 3 PERFECTLY ALIGNED GAUGES
-      ═════════════════════════════════════════════════════════════════ */}
+      ═════════════════════════════════════════════ */}
       <section className={`${styles.container} ${styles.performanceCockpit}`}>
         <div className={styles.headerCenter}>
           <div className={styles.eyebrowBadge}>
@@ -717,88 +824,24 @@ export default function DigitalGrowthPartnerPage() {
       </section>
 
       {/* ═════════════════════════════════════════════════════════════════
-          SECTION 5: CLIENT SPOTLIGHT • CASE STUDY IN ACTION (REPLACED COCKPIT)
+          SECTION 5: CLIENT SPOTLIGHT • CASE STUDY IN ACTION
       ═════════════════════════════════════════════ */}
       <BrandSpotlightSection />
 
       {/* ═════════════════════════════════════════════════════════════════
-          SECTION 6: MEET THE FOUNDERS — ALIGNED DUO GRID
+          SECTION 6: OUR GROWTH FRAMEWORK · EXECUTION BLUEPRINT
+          (Positioned directly bridging client spotlight proof to systematic execution)
       ═════════════════════════════════════════════ */}
-      <section className={styles.foundersSection}>
-        <div className={styles.container}>
-          <div className={styles.headerCenter}>
-            <div className={styles.eyebrowBadge}>
-              <span className={styles.pulsingLed} />
-              <span>LEADERSHIP &amp; ACCOUNTABILITY</span>
-            </div>
-            <h2 className={styles.titlePrimary}>Meet the Founders</h2>
-            <p className={styles.subtitle}>
-              No junior hand-offs or outsourced chaos. Your brand's growth blueprint is directly architected, managed, and reviewed by seasoned founders.
-            </p>
-          </div>
-
-          <div className={styles.foundersDuoGrid}>
-            {/* Shankar */}
-            <ScrollReveal delay={100}>
-              <div className={styles.founderChassis}>
-                <div className={styles.founderPortraitHalo}>
-                  <Image
-                    src="/images/team/exec_1.png"
-                    alt="Shankarsan Nayak — Founder & CEO"
-                    fill
-                    sizes="140px"
-                    style={{ objectFit: 'cover' }}
-                  />
-                </div>
-                <h3 className={styles.founderNameH3}>Shankarsan Nayak</h3>
-                <span className={styles.founderRoleChip}>Founder &amp; CEO</span>
-                <p className={styles.founderBioParagraph}>
-                  10+ years architecting search systems, algorithmic paid advertising, and high-growth revenue funnels. Has personally scaled over 50+ businesses across India with engineering rigor and predictable CAC economics.
-                </p>
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.founderLinkedinAction}
-                >
-                  Connect on LinkedIn ↗
-                </a>
-              </div>
-            </ScrollReveal>
-
-            {/* Pranjal */}
-            <ScrollReveal delay={200}>
-              <div className={styles.founderChassis}>
-                <div className={styles.founderPortraitHalo}>
-                  <Image
-                    src="/images/team/exec_2.png"
-                    alt="Pranjal Sharma — Founding Team Member & COO"
-                    fill
-                    sizes="140px"
-                    style={{ objectFit: 'cover' }}
-                  />
-                </div>
-                <h3 className={styles.founderNameH3}>Pranjal Sharma</h3>
-                <span className={styles.founderRoleChip}>Co-Founder &amp; COO</span>
-                <p className={styles.founderBioParagraph}>
-                  12+ years heading operational scale, enterprise media operations, and cross-channel execution rigor. Ensures that creative assets, technical audits, and performance milestones meet strict SLAs on time and on budget.
-                </p>
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.founderLinkedinAction}
-                >
-                  Connect on LinkedIn ↗
-                </a>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
+      <StrategySection />
 
       {/* ═════════════════════════════════════════════════════════════════
-          SECTION 7: EVERYTHING YOU NEED TO GROW ONLINE — 8 ALIGNED CARDS
+          SECTION 7: LEADERSHIP & ACCOUNTABILITY
+          "Meet the minds powering your growth."
+      ═════════════════════════════════════════════ */}
+      <TeamPreview eyebrow="LEADERSHIP & ACCOUNTABILITY" />
+
+      {/* ═════════════════════════════════════════════════════════════════
+          SECTION 8: EVERYTHING YOU NEED TO GROW ONLINE — 8 ALIGNED CARDS
       ═════════════════════════════════════════════ */}
       <section className={`${styles.container} ${styles.sectionPad}`}>
         <div className={styles.headerCenter}>
@@ -896,7 +939,7 @@ export default function DigitalGrowthPartnerPage() {
       </section>
 
       {/* ═════════════════════════════════════════════════════════════════
-          SECTION 8: WHY WORK WITH US? — 4 ALIGNED PILLARS + ADVANTAGE MATRIX
+          SECTION 9: THE COPILOT ADVANTAGE — 4 ALIGNED PILLARS + INTERACTIVE MATRIX
       ═════════════════════════════════════════════ */}
       <section className={styles.comparisonMatrixSection}>
         <div className={styles.container}>
@@ -943,7 +986,7 @@ export default function DigitalGrowthPartnerPage() {
             </div>
           </div>
 
-          {/* Head-to-Head Comparison Matrix */}
+          {/* Head-to-Head Comparison Matrix With Interactive Tactile Badges */}
           <div className={styles.comparisonTableWrap}>
             <div className={styles.matrixRowHeader}>
               <div>Growth Dimension</div>
@@ -951,78 +994,113 @@ export default function DigitalGrowthPartnerPage() {
               <div style={{ color: '#0B2093' }}>Marketing Copilot</div>
             </div>
 
+            {/* Row 1 */}
             <div className={styles.matrixRowItem}>
               <div>
                 <div className={styles.matrixFeatureName}>1. Account Leadership</div>
                 <div className={styles.matrixFeatureSub}>Who actually manages your growth</div>
               </div>
-              <div className={styles.matrixBadPoint}>
-                <span className={styles.crossIcon}>✕</span>
-                <span>Junior account managers &amp; interns</span>
+              <div className={styles.interactiveBadBadge}>
+                <div className={styles.badBadgeContent}>
+                  <span className={styles.badIconGlow}>✕</span>
+                  <span>Junior account managers &amp; interns</span>
+                </div>
+                <span className={styles.badBadgeHint}>Risk: High Churn &amp; Budget Waste</span>
               </div>
-              <div className={styles.matrixGoodPoint}>
-                <span className={styles.checkIcon}>✓</span>
-                <span>Founders &amp; Senior Strategists directly</span>
+              <div className={styles.interactiveGoodBadge}>
+                <div className={styles.goodBadgeContent}>
+                  <span className={styles.goodIconGlow}>✓</span>
+                  <span>Founders &amp; Senior Strategists directly</span>
+                </div>
+                <span className={styles.goodBadgeHint}>Guarantee: Direct Accountability</span>
               </div>
             </div>
 
+            {/* Row 2 */}
             <div className={styles.matrixRowItem}>
               <div>
                 <div className={styles.matrixFeatureName}>2. Focus Metric</div>
                 <div className={styles.matrixFeatureSub}>How success is judged and measured</div>
               </div>
-              <div className={styles.matrixBadPoint}>
-                <span className={styles.crossIcon}>✕</span>
-                <span>Impressions, clicks, vanity reports</span>
+              <div className={styles.interactiveBadBadge}>
+                <div className={styles.badBadgeContent}>
+                  <span className={styles.badIconGlow}>✕</span>
+                  <span>Impressions, clicks, vanity reports</span>
+                </div>
+                <span className={styles.badBadgeHint}>Flaw: Zero Correlation with Revenue</span>
               </div>
-              <div className={styles.matrixGoodPoint}>
-                <span className={styles.checkIcon}>✓</span>
-                <span>Net Pipeline, ROAS &amp; Bankable GMV</span>
+              <div className={styles.interactiveGoodBadge}>
+                <div className={styles.goodBadgeContent}>
+                  <span className={styles.goodIconGlow}>✓</span>
+                  <span>Net Pipeline, ROAS &amp; Bankable GMV</span>
+                </div>
+                <span className={styles.goodBadgeHint}>Guarantee: Verified Commercial Growth</span>
               </div>
             </div>
 
+            {/* Row 3 */}
             <div className={styles.matrixRowItem}>
               <div>
                 <div className={styles.matrixFeatureName}>3. Account Ownership</div>
                 <div className={styles.matrixFeatureSub}>Pixels, ad accounts, and creative IP</div>
               </div>
-              <div className={styles.matrixBadPoint}>
-                <span className={styles.crossIcon}>✕</span>
-                <span>Held hostage in agency ad manager</span>
+              <div className={styles.interactiveBadBadge}>
+                <div className={styles.badBadgeContent}>
+                  <span className={styles.badIconGlow}>✕</span>
+                  <span>Held hostage in agency ad manager</span>
+                </div>
+                <span className={styles.badBadgeHint}>Trap: Loss of pixel data if you leave</span>
               </div>
-              <div className={styles.matrixGoodPoint}>
-                <span className={styles.checkIcon}>✓</span>
-                <span>100% Owned by you from Day 1</span>
+              <div className={styles.interactiveGoodBadge}>
+                <div className={styles.goodBadgeContent}>
+                  <span className={styles.goodIconGlow}>✓</span>
+                  <span>100% Owned by you from Day 1</span>
+                </div>
+                <span className={styles.goodBadgeHint}>Guarantee: Full Asset &amp; Data Control</span>
               </div>
             </div>
 
+            {/* Row 4 */}
             <div className={styles.matrixRowItem}>
               <div>
                 <div className={styles.matrixFeatureName}>4. Execution Synergy</div>
                 <div className={styles.matrixFeatureSub}>Integration of code, ads, and design</div>
               </div>
-              <div className={styles.matrixBadPoint}>
-                <span className={styles.crossIcon}>✕</span>
-                <span>Fragmented across 3 different vendors</span>
+              <div className={styles.interactiveBadBadge}>
+                <div className={styles.badBadgeContent}>
+                  <span className={styles.badIconGlow}>✕</span>
+                  <span>Fragmented across 3 different vendors</span>
+                </div>
+                <span className={styles.badBadgeHint}>Friction: Finger-pointing when ads stall</span>
               </div>
-              <div className={styles.matrixGoodPoint}>
-                <span className={styles.checkIcon}>✓</span>
-                <span>One Unified Synchronized Growth Pod</span>
+              <div className={styles.interactiveGoodBadge}>
+                <div className={styles.goodBadgeContent}>
+                  <span className={styles.goodIconGlow}>✓</span>
+                  <span>One Unified Synchronized Growth Pod</span>
+                </div>
+                <span className={styles.goodBadgeHint}>Guarantee: Zero Communication Lag</span>
               </div>
             </div>
 
+            {/* Row 5 */}
             <div className={styles.matrixRowItem}>
               <div>
                 <div className={styles.matrixFeatureName}>5. Contract Flexibility</div>
                 <div className={styles.matrixFeatureSub}>Commitment requirements</div>
               </div>
-              <div className={styles.matrixBadPoint}>
-                <span className={styles.crossIcon}>✕</span>
-                <span>6 to 12 month rigid lock-in traps</span>
+              <div className={styles.interactiveBadBadge}>
+                <div className={styles.badBadgeContent}>
+                  <span className={styles.badIconGlow}>✕</span>
+                  <span>6 to 12 month rigid lock-in traps</span>
+                </div>
+                <span className={styles.badBadgeHint}>Risk: Stuck paying even if results drop</span>
               </div>
-              <div className={styles.matrixGoodPoint}>
-                <span className={styles.checkIcon}>✓</span>
-                <span>Zero Lock-In; month-to-month agility</span>
+              <div className={styles.interactiveGoodBadge}>
+                <div className={styles.goodBadgeContent}>
+                  <span className={styles.goodIconGlow}>✓</span>
+                  <span>Zero Lock-In; month-to-month agility</span>
+                </div>
+                <span className={styles.goodBadgeHint}>Guarantee: We earn your trust monthly</span>
               </div>
             </div>
           </div>
@@ -1030,114 +1108,186 @@ export default function DigitalGrowthPartnerPage() {
       </section>
 
       {/* ═════════════════════════════════════════════════════════════════
-          SECTION 9: BASED IN INDIA. WORKING ACROSS INDIA.
+          SECTION 10: OPERATIONS COMMAND CENTER (HEADQUARTERS & NATIONWIDE RADAR)
       ═════════════════════════════════════════════ */}
-      <section className={`${styles.container} ${styles.sectionPad}`}>
-        <div className={styles.hqSectionGrid}>
-          {/* Left: Contact Channels */}
-          <div className={styles.hqCardChassis}>
-            <div>
-              <div className={styles.eyebrowBadge}>
-                <span className={styles.pulsingLed} />
-                <span>HEADQUARTERS &amp; CHANNELS</span>
+      <section className={styles.commandCenterSection}>
+        <div className={styles.container}>
+          <div className={styles.hqSectionGrid}>
+            {/* Left Card: Headquarters & Strategic Channels */}
+            <div className={styles.hqCardChassis}>
+              <div>
+                <div className={styles.hqLiveStatusTag}>
+                  <span className={styles.pulsingLed} />
+                  <span>STRATEGY WAR ROOM · IMMEDIATE DISPATCH</span>
+                </div>
+                <h2 className={styles.titlePrimary} style={{ textAlign: 'left', marginBottom: '10px' }}>
+                  Physical Presence in Bhubaneswar.<br />
+                  <span className={styles.titleAccent}>Nationwide Execution Across India.</span>
+                </h2>
+                <p className={styles.subtitle} style={{ textAlign: 'left', margin: 0, fontSize: '14px' }}>
+                  Whether you need in-person war-room sprints at our physical office or seamless digital collaboration across major metros, our senior growth architects are directly accessible.
+                </p>
               </div>
-              <h2 className={styles.titlePrimary} style={{ textAlign: 'left', marginBottom: '10px' }}>
-                Based in India.<br />Working Across India.
-              </h2>
-              <p className={styles.subtitle} style={{ textAlign: 'left', margin: 0 }}>
-                Whether you need in-person war-room sprints at our physical office or seamless digital collaboration across major metros, we are always accessible.
-              </p>
-            </div>
 
-            <div className={styles.contactChannelStrip}>
-              <div className={styles.contactChannelItem}>
-                <div className={styles.channelIconBubble}>📍</div>
-                <div className={styles.channelTextMeta}>
-                  <span className={styles.channelSmallLabel}>Registered Office</span>
-                  <span style={{ fontSize: '14px', fontWeight: 800, color: '#0F172A' }}>
-                    Mallick Complex, Unit 3, Kharvela Nagar, Bhubaneswar, Odisha 751001
+              <div className={styles.contactChannelStrip}>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Mallick+Complex,+Unit+3,+Kharvela+Nagar,+Bhubaneswar,+Odisha+751001"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.contactChannelItem}
+                >
+                  <div className={styles.channelIconBubble}>📍</div>
+                  <div className={styles.channelTextMeta}>
+                    <span className={styles.channelSmallLabel}>Registered Corporate Office</span>
+                    <span className={styles.channelValueText}>
+                      Mallick Complex, Unit 3, Kharvela Nagar, Bhubaneswar, Odisha 751001
+                    </span>
+                  </div>
+                  <span className={styles.channelActionBadge}>Maps ↗</span>
+                </a>
+
+                <a href="tel:+919437168434" className={styles.contactChannelItem}>
+                  <div className={styles.channelIconBubble}>📞</div>
+                  <div className={styles.channelTextMeta}>
+                    <span className={styles.channelSmallLabel}>Executive Direct Hotline</span>
+                    <span className={styles.channelValueText}>+91 94371 68434</span>
+                  </div>
+                  <span className={styles.channelActionBadge}>Call Now ↗</span>
+                </a>
+
+                <a
+                  href="https://wa.me/919437168434?text=Hi%20Marketing%20Copilot%2C%20I%20would%20like%20to%20discuss%20a%20digital%20growth%20partnership"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.contactChannelItem}
+                  style={{ borderLeft: '4px solid #10B981' }}
+                >
+                  <div className={styles.channelIconBubble} style={{ background: '#DCFCE7', color: '#16A34A' }}>
+                    💬
+                  </div>
+                  <div className={styles.channelTextMeta}>
+                    <span className={styles.channelSmallLabel}>Instant WhatsApp War Room</span>
+                    <span className={styles.channelValueText} style={{ color: '#16A34A' }}>
+                      Chat with Senior Strategist (+91 94371 68434)
+                    </span>
+                  </div>
+                  <span className={styles.channelActionBadge} style={{ background: '#DCFCE7', color: '#16A34A', borderColor: '#86EFAC' }}>
+                    Chat ↗
                   </span>
+                </a>
+              </div>
+
+              <div className={styles.hqFooterSla}>
+                <span>⚡ 2-Hour Audit Response Turnaround</span>
+                <span>•</span>
+                <span>48-Hour Sprint Kickoff Guaranteed</span>
+              </div>
+            </div>
+
+            {/* Right Card: Interactive Metro Radar & Commercial Hubs Console */}
+            <div className={styles.metroRadarCard}>
+              <div>
+                <div className={styles.eyebrowBadge} style={{ marginBottom: 12 }}>
+                  <span className={styles.pulsingLed} />
+                  <span>🇮🇳 NATIONWIDE CAMPAIGN RADAR</span>
+                </div>
+                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '22px', fontWeight: 900, color: '#0B2093', marginBottom: '8px' }}>
+                  Active Commercial Hubs &amp; Metro Corridors
+                </h3>
+                <p style={{ fontSize: '13px', color: '#475569', lineHeight: 1.6, margin: 0 }}>
+                  Click any commercial hub to review live campaign focus and deployment capacity:
+                </p>
+
+                {/* Interactive Metro Selector Pills */}
+                <div className={styles.metroTagCloud}>
+                  {Object.entries(metroHubDetails).map(([key, data]) => {
+                    const isActive = activeHub === key;
+                    return (
+                      <button
+                        type="button"
+                        key={key}
+                        onClick={() => setActiveHub(key)}
+                        className={`${styles.metroPillBtn} ${isActive ? styles.metroPillBtnActive : ''}`}
+                      >
+                        {key === 'bhubaneswar' ? '📍' : '⚡'} {data.name.split(' (')[0]}
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
 
-              <div className={styles.contactChannelItem}>
-                <div className={styles.channelIconBubble}>📞</div>
-                <div className={styles.channelTextMeta}>
-                  <span className={styles.channelSmallLabel}>Direct Phone</span>
-                  <a href="tel:+919437168434" className={styles.channelValueLink}>
-                    +91 94371 68434
-                  </a>
+              {/* Dynamic Live Telemetry Dossier Box */}
+              <div className={styles.activeHubDossier}>
+                <div className={styles.hubDossierHeader}>
+                  <span className={styles.hubDossierName}>{selectedHubData.name}</span>
+                  <span className={styles.hubDossierStatus}>● {selectedHubData.status}</span>
+                </div>
+                <p className={styles.hubDossierDesc}>{selectedHubData.desc}</p>
+                <div className={styles.hubDossierStats}>
+                  <div className={styles.hubStatTile}>
+                    <span>🎯</span>
+                    <span>{selectedHubData.category}</span>
+                  </div>
+                  <div className={styles.hubStatTile}>
+                    <span>⚡</span>
+                    <span>{selectedHubData.speed}</span>
+                  </div>
                 </div>
               </div>
 
-              <div className={styles.contactChannelItem}>
-                <div className={styles.channelIconBubble} style={{ background: '#DCFCE7', color: '#16A34A' }}>
-                  💬
-                </div>
-                <div className={styles.channelTextMeta}>
-                  <span className={styles.channelSmallLabel}>Instant WhatsApp</span>
-                  <a
-                    href="https://wa.me/919437168434?text=Hi%20Marketing%20Copilot%2C%20I%20want%20to%20discuss%20a%20digital%20growth%20partnership"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.channelValueLink}
-                    style={{ color: '#16A34A' }}
-                  >
-                    Chat with a Strategist (+91 94371 68434) →
-                  </a>
-                </div>
+              <div style={{ paddingTop: 14, borderTop: '1.5px dashed #CBD5E1', display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: '12px', color: '#0B2093', fontWeight: 800 }}>
+                <span>✓ Direct First-Party CAPI Attribution</span>
+                <span>•</span>
+                <span>Zero Account Black-Boxes</span>
               </div>
-            </div>
-          </div>
-
-          {/* Right: Metro Radar */}
-          <div className={styles.metroRadarCard}>
-            <div className={styles.eyebrowBadge}>
-              <span>🇮🇳 Nationwide Footprint</span>
-            </div>
-            <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '22px', fontWeight: 900, color: '#0B2093', marginBottom: '8px' }}>
-              Active Commercial Hubs
-            </h3>
-            <p style={{ fontSize: '13px', color: '#475569', lineHeight: 1.6, maxWidth: '340px' }}>
-              Managing performance media and organic visibility across India's premier commercial corridors:
-            </p>
-
-            <div className={styles.metroTagCloud}>
-              <span className={styles.metroPill}>Delhi NCR</span>
-              <span className={styles.metroPill}>Mumbai</span>
-              <span className={styles.metroPill}>Bengaluru</span>
-              <span className={styles.metroPill}>Hyderabad</span>
-              <span className={`${styles.metroPill} ${styles.metroPillHighlight}`}>Bhubaneswar HQ</span>
-              <span className={styles.metroPill}>Kolkata</span>
-              <span className={styles.metroPill}>Pune</span>
-              <span className={styles.metroPill}>Chennai</span>
-              <span className={styles.metroPill}>Ahmedabad</span>
-            </div>
-
-            <div style={{ marginTop: 'auto', paddingTop: '18px', borderTop: '1px dashed #CBD5E1', width: '100%' }}>
-              <strong style={{ fontSize: '13px', color: '#0B2093' }}>
-                ✓ Rapid Onboarding: 48-Hour Sprint Kickoff
-              </strong>
             </div>
           </div>
         </div>
       </section>
 
       {/* ═════════════════════════════════════════════════════════════════
-          SECTION 10: READY TO GROW? — GRAND CLOSING CONVERSION SUITE
+          SECTION 11: TAKE THE NEXT LEAP — LUXURY EXECUTIVE SUITE
       ═════════════════════════════════════════════ */}
       <section className={styles.grandCtaSection} id="audit-form">
+        <div className={styles.grandAmbientGlow1} />
+        <div className={styles.grandAmbientGlow2} />
+
         <div className={styles.container}>
           <div className={styles.grandCardChassis}>
             <div className={styles.grandHeader}>
-              <div className={styles.eyebrowBadge}>
+              <div className={styles.grandEyebrow}>
                 <span className={styles.pulsingLed} />
-                <span>TAKE THE NEXT LEAP</span>
+                <span>TAKE THE NEXT LEAP · COMPLIMENTARY 360° GROWTH AUDIT</span>
               </div>
-              <h2 className={styles.grandTitleH2}>Ready to Grow?</h2>
+              <h2 className={styles.grandTitleH2}>
+                Ready to Scale Your Business{' '}
+                <span className={styles.grandTitleAccent}>
+                  With a Dedicated Growth Partner?
+                </span>
+              </h2>
               <p className={styles.grandSubtitle}>
-                Get your complimentary 360° Digital Growth Audit. We will analyze your search ranking gaps, paid ad spend efficiency, and landing page drop-offs with an actionable 90-day blueprint.
+                Stop guessing with fragmented agencies. We will inspect your search ranking gaps, paid ad spend efficiency, and landing page drop-offs to deliver an actionable 90-day growth blueprint.
               </p>
+            </div>
+
+            {/* 4 Executive Assurance Chips */}
+            <div className={styles.grandAssuranceStrip}>
+              <div className={styles.grandAssurancePill}>
+                <span>🔒</span>
+                <span>Strict NDA Guaranteed</span>
+              </div>
+              <div className={styles.grandAssurancePill}>
+                <span>⚡</span>
+                <span>2-Hour Response SLA</span>
+              </div>
+              <div className={styles.grandAssurancePill}>
+                <span>🎯</span>
+                <span>Zero Lock-In Retainers</span>
+              </div>
+              <div className={styles.grandAssurancePill}>
+                <span>💰</span>
+                <span>100% Data Ownership</span>
+              </div>
             </div>
 
             {finalSuccess ? (
@@ -1160,7 +1310,7 @@ export default function DigitalGrowthPartnerPage() {
               <form onSubmit={(e) => handleFormSubmit(e, 'final')}>
                 <div className={styles.inputGridDouble}>
                   <div className={styles.fieldGroup}>
-                    <label className={styles.fieldLabel}>
+                    <label className={styles.grandFieldLabel}>
                       Full Name <span>*</span>
                     </label>
                     <input
@@ -1169,24 +1319,24 @@ export default function DigitalGrowthPartnerPage() {
                       placeholder="e.g. Priya Sen"
                       value={finalForm.name}
                       onChange={(e) => setFinalForm({ ...finalForm, name: e.target.value })}
-                      className={styles.tactileField}
+                      className={styles.tactileFieldDark}
                     />
                   </div>
                   <div className={styles.fieldGroup}>
-                    <label className={styles.fieldLabel}>Company Name</label>
+                    <label className={styles.grandFieldLabel}>Company Name</label>
                     <input
                       type="text"
                       placeholder="e.g. Nova Tech Logistics"
                       value={finalForm.company}
                       onChange={(e) => setFinalForm({ ...finalForm, company: e.target.value })}
-                      className={styles.tactileField}
+                      className={styles.tactileFieldDark}
                     />
                   </div>
                 </div>
 
                 <div className={styles.inputGridDouble}>
                   <div className={styles.fieldGroup}>
-                    <label className={styles.fieldLabel}>
+                    <label className={styles.grandFieldLabel}>
                       Phone / WhatsApp <span>*</span>
                     </label>
                     <input
@@ -1195,11 +1345,11 @@ export default function DigitalGrowthPartnerPage() {
                       placeholder="+91 98765 43210"
                       value={finalForm.phone}
                       onChange={(e) => setFinalForm({ ...finalForm, phone: e.target.value })}
-                      className={styles.tactileField}
+                      className={styles.tactileFieldDark}
                     />
                   </div>
                   <div className={styles.fieldGroup}>
-                    <label className={styles.fieldLabel}>
+                    <label className={styles.grandFieldLabel}>
                       Work Email <span>*</span>
                     </label>
                     <input
@@ -1208,27 +1358,29 @@ export default function DigitalGrowthPartnerPage() {
                       placeholder="priya@novatech.com"
                       value={finalForm.email}
                       onChange={(e) => setFinalForm({ ...finalForm, email: e.target.value })}
-                      className={styles.tactileField}
+                      className={styles.tactileFieldDark}
                     />
                   </div>
                 </div>
 
                 <div className={styles.fieldGroup}>
-                  <label className={styles.fieldLabel}>
-                    Website URL <span className={styles.fieldLabelOpt}>(Optional)</span>
+                  <label className={styles.grandFieldLabel}>
+                    Website URL <span className={styles.grandFieldLabelOpt}>(Optional)</span>
                   </label>
                   <input
                     type="url"
                     placeholder="https://yourwebsite.com"
                     value={finalForm.website}
                     onChange={(e) => setFinalForm({ ...finalForm, website: e.target.value })}
-                    className={styles.tactileField}
+                    className={styles.tactileFieldDark}
                   />
                 </div>
 
-                {/* Services multi-select */}
+                {/* Services multi-select — Starts unselected */}
                 <div className={styles.fieldGroup}>
-                  <label className={styles.fieldLabel}>Services</label>
+                  <label className={styles.grandFieldLabel}>
+                    Services You Wish to Audit <span className={styles.grandFieldLabelOpt}>(Select any)</span>
+                  </label>
                   <div className={styles.servicesChicletGrid}>
                     {availableServices.map((svc) => {
                       const selected = finalForm.services.includes(svc);
@@ -1237,8 +1389,8 @@ export default function DigitalGrowthPartnerPage() {
                           type="button"
                           key={svc}
                           onClick={() => toggleService('final', svc)}
-                          className={`${styles.servicePillBtn} ${
-                            selected ? styles.servicePillBtnActive : ''
+                          className={`${styles.servicePillBtnDark} ${
+                            selected ? styles.servicePillBtnDarkActive : ''
                           }`}
                         >
                           {svc} {selected ? '✓' : '+'}
@@ -1248,20 +1400,27 @@ export default function DigitalGrowthPartnerPage() {
                   </div>
                 </div>
 
-                {/* Budget */}
+                {/* Budget — Starts unselected */}
                 <div className={styles.fieldGroup}>
-                  <label className={styles.fieldLabel}>Planned Budget</label>
+                  <label className={styles.grandFieldLabel}>
+                    Planned Monthly Budget <span className={styles.grandFieldLabelOpt}>(Optional)</span>
+                  </label>
                   <div className={styles.budgetPillGrid}>
                     {budgetOptions.map((b) => (
                       <button
                         type="button"
                         key={b}
-                        onClick={() => setFinalForm({ ...finalForm, budget: b })}
-                        className={`${styles.budgetPillBtn} ${
-                          finalForm.budget === b ? styles.budgetPillBtnActive : ''
+                        onClick={() =>
+                          setFinalForm({
+                            ...finalForm,
+                            budget: finalForm.budget === b ? '' : b,
+                          })
+                        }
+                        className={`${styles.budgetPillBtnDark} ${
+                          finalForm.budget === b ? styles.budgetPillBtnDarkActive : ''
                         }`}
                       >
-                        {b}
+                        {b} {finalForm.budget === b ? '✓' : ''}
                       </button>
                     ))}
                   </div>
@@ -1269,37 +1428,45 @@ export default function DigitalGrowthPartnerPage() {
 
                 {/* Requirement */}
                 <div className={styles.fieldGroup}>
-                  <label className={styles.fieldLabel}>
-                    Requirement / Questions
+                  <label className={styles.grandFieldLabel}>
+                    Current Growth Bottleneck / Questions
                   </label>
                   <textarea
                     rows={2}
-                    placeholder="What specific growth goal or channel would you like us to audit first?"
+                    placeholder="What specific growth goal or channel would you like our senior team to inspect first?"
                     value={finalForm.requirement}
                     onChange={(e) => setFinalForm({ ...finalForm, requirement: e.target.value })}
-                    className={styles.tactileTextarea}
+                    className={styles.tactileTextareaDark}
                   />
                 </div>
 
                 {finalError && (
-                  <p style={{ color: '#DC2626', fontSize: '12px', fontWeight: 700, margin: '8px 0' }}>
+                  <p style={{ color: '#F87171', fontSize: '12px', fontWeight: 700, margin: '8px 0' }}>
                     {finalError}
                   </p>
                 )}
 
-                <button
-                  type="submit"
-                  disabled={finalSubmitting}
-                  className={styles.extrudedCtaBtn}
-                  style={{ fontSize: '15px', padding: '16px 24px' }}
-                >
-                  {finalSubmitting ? 'Submitting Request...' : 'GET MY FREE CONSULTATION →'}
-                </button>
+                {/* BeamButton matching the navbar button style animation */}
+                <div style={{ marginTop: 18 }}>
+                  <BeamButton
+                    type="submit"
+                    disabled={finalSubmitting}
+                    fullWidth
+                    size="lg"
+                    label={finalSubmitting ? 'Evaluating Blueprint...' : 'Get My Free Consultation →'}
+                  />
+                </div>
 
-                <div className={styles.consoleFooterGuarantees}>
-                  <span>🔒 Strict NDA Guaranteed</span>
-                  <span>⚡ 2-Hour Response Time</span>
-                  <span>💬 No Sales Pressure</span>
+                <div className={styles.grandFooterBypass}>
+                  <span>Need an immediate audit?</span>
+                  <a
+                    href="https://wa.me/919437168434?text=Hi%20Marketing%20Copilot%2C%20I%20need%20an%20urgent%20growth%20audit%20consultation"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.grandFooterBypassLink}
+                  >
+                    WhatsApp Shankarsan directly at +91 94371 68434 →
+                  </a>
                 </div>
               </form>
             )}
