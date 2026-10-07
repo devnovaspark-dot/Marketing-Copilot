@@ -1250,20 +1250,614 @@
 /* ═════════════════════════════════════════════════════════════════
    SECTION 8: WHY WORK WITH US? — 4 ALIGNED PILLARS + INTERACTIVE MATRIX
 ═════════════════════════════════════════════ */
-.comparisonMatrixSection {
-  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFD 50%, #FFFFFF 100%);
+/* ═════════════════════════════════════════════════════════════════
+   SECTION: THE COPILOT ADVANTAGE — INTERACTIVE STORYTELLING THEATER
+═════════════════════════════════════════════ */
+.storytellingCockpitSection {
+  background: linear-gradient(180deg, #F8FAFD 0%, #FFFFFF 35%, #F8FAFD 100%);
   border-top: 1.5px solid #E2E8F0;
   border-bottom: 1.5px solid #E2E8F0;
-  padding: 104px 0;
+  padding: 104px 0 96px;
   position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .storytellingCockpitSection {
+    padding: 72px 0 64px;
+  }
+}
+
+/* ── Interactive Chapter Timeline Stepper ── */
+.storyChapterNav {
+  margin-bottom: 36px;
+}
+
+.storyNavControlsBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 18px;
+  padding: 0 4px;
+}
+
+.storyCounterPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px;
+  border-radius: 999px;
+  background: #EEF2FF;
+  border: 1px solid rgba(11, 32, 147, 0.15);
+  font-family: var(--font-display, inherit);
+  font-size: 11.5px;
+  font-weight: 800;
+  color: #0B2093;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.storyArrowBtns {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.storyArrowBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-family: var(--font-display, inherit);
+  font-size: 12px;
+  font-weight: 800;
+  color: #0B2093;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFD 100%);
+  border: 1.5px solid #CBD5E1;
+  box-shadow: 
+    inset 0 1.5px 0 #FFFFFF,
+    0 2px 5px rgba(0, 0, 0, 0.03);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}
+
+.storyArrowBtn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  border-color: #0B2093;
+  box-shadow: 
+    inset 0 1.5px 0 #FFFFFF,
+    0 6px 14px rgba(11, 32, 147, 0.12);
+}
+
+.storyArrowBtn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* 5 Chapter Tabs Grid */
+.storyStageTrack {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 1040px) {
+  .storyStageTrack {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+.storyStageStepBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 16px 16px 14px;
+  border-radius: 20px;
+  background: linear-gradient(175deg, #FFFFFF 0%, #FAFCFF 60%, #F1F5F9 100%);
+  border: 2px solid #CBD5E1;
+  box-shadow: 
+    inset 0 2px 0 #FFFFFF,
+    inset 0 -1.5px 1px rgba(0, 0, 0, 0.02),
+    0 4px 12px rgba(0, 0, 0, 0.03);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+@media (max-width: 1040px) {
+  .storyStageStepBtn {
+    min-width: 220px;
+    width: auto;
+  }
+}
+
+.storyStageStepBtn:hover {
+  transform: translateY(-3px);
+  border-color: #94A3B8;
+  box-shadow: 
+    inset 0 2px 0 #FFFFFF,
+    0 8px 20px rgba(11, 32, 147, 0.08);
+}
+
+.storyStageStepBtnActive {
+  background: linear-gradient(175deg, #FFFFFF 0%, #EEF2FF 50%, #E0E7FF 100%);
+  border-color: #0B2093;
+  transform: translateY(-4px);
+  box-shadow: 
+    inset 0 2px 0 #FFFFFF,
+    inset 0 -1.5px 2px rgba(11, 32, 147, 0.08),
+    0 14px 30px -6px rgba(11, 32, 147, 0.22);
+}
+
+.stepTopRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.stepStageBadge {
+  font-family: var(--font-display, inherit);
+  font-size: 11px;
+  font-weight: 900;
+  color: #64748B;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.storyStageStepBtnActive .stepStageBadge {
+  color: #0B2093;
+}
+
+.stepIconBubble {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.stepStageTitle {
+  font-family: var(--font-display, inherit);
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #0F172A;
+  line-height: 1.3;
+  margin-bottom: 4px;
+}
+
+.storyStageStepBtnActive .stepStageTitle {
+  color: #0B2093;
+}
+
+.stepTimelinePill {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #64748B;
+}
+
+.storyStageStepBtnActive .stepTimelinePill {
+  color: #3B82F6;
+  font-weight: 800;
+}
+
+.stepActiveIndicatorLine {
+  position: absolute;
+  bottom: -2px;
+  left: 20%;
+  right: 20%;
+  height: 3px;
+  background: linear-gradient(90deg, #FFB800 0%, #EA580C 100%);
+  border-radius: 999px;
+}
+
+/* ── The Story Battle Theater Arena ── */
+.storyBattleTheater {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: stretch;
+  margin-bottom: 56px;
+}
+
+@media (max-width: 980px) {
+  .storyBattleTheater {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* Left: The Traditional Agency Retainer Trap */
+.traditionalStoryPanel {
+  padding: 36px 32px;
+  border-radius: 28px;
+  background: linear-gradient(165deg, #FFFFFF 0%, #FFF8F8 50%, #FEF2F2 100%);
+  border: 2px solid #FCA5A5;
+  box-shadow: 
+    inset 0 3px 0 #FFFFFF,
+    inset 0 -2px 3px rgba(220, 38, 38, 0.04),
+    0 18px 45px -12px rgba(220, 38, 38, 0.12),
+    0 2px 8px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  transition: all 0.28s ease;
+}
+
+@media (max-width: 600px) {
+  .traditionalStoryPanel {
+    padding: 26px 20px;
+  }
+}
+
+.traditionalStoryPanel:hover {
+  border-color: #F87171;
+  box-shadow: 
+    inset 0 3px 0 #FFFFFF,
+    0 24px 55px -12px rgba(220, 38, 38, 0.18);
+}
+
+/* Right: The Copilot Advantage */
+.copilotStoryPanel {
+  padding: 36px 32px;
+  border-radius: 28px;
+  background: linear-gradient(165deg, #0A1B54 0%, #061138 50%, #030822 100%);
+  border: 2px solid rgba(16, 185, 129, 0.45);
+  box-shadow: 
+    inset 0 2.5px 0 rgba(255, 255, 255, 0.22),
+    inset 0 0 32px rgba(16, 185, 129, 0.08),
+    0 22px 55px -10px rgba(11, 32, 147, 0.35),
+    0 4px 16px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #FFFFFF;
+  position: relative;
+  transition: all 0.28s ease;
+}
+
+@media (max-width: 600px) {
+  .copilotStoryPanel {
+    padding: 26px 20px;
+  }
+}
+
+.copilotStoryPanel:hover {
+  border-color: #10B981;
+  box-shadow: 
+    inset 0 2.5px 0 rgba(255, 255, 255, 0.3),
+    inset 0 0 45px rgba(16, 185, 129, 0.14),
+    0 28px 65px -10px rgba(11, 32, 147, 0.45);
+}
+
+/* Panel Header Controls & 3D Interactive Symbols */
+.panelTopBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.traditionalAlertTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: 999px;
+  background: #FEE2E2;
+  border: 1.5px solid #FCA5A5;
+  color: #991B1B;
+  font-family: var(--font-display, inherit);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  box-shadow: inset 0 1px 0 #FFFFFF;
+}
+
+.copilotCrownTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px;
+  border-radius: 999px;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1.5px solid rgba(16, 185, 129, 0.5);
+  color: #6EE7B7;
+  font-family: var(--font-display, inherit);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.panelSymbolRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.panelHeadlineTraditional {
+  font-family: var(--font-display, inherit);
+  font-size: clamp(20px, 2.4vw, 25px);
+  font-weight: 900;
+  color: #991B1B;
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+
+.panelHeadlineCopilot {
+  font-family: var(--font-display, inherit);
+  font-size: clamp(20px, 2.4vw, 25px);
+  font-weight: 900;
+  color: #FFFFFF;
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+
+.panelStoryTextTraditional {
+  font-size: 14px;
+  line-height: 1.68;
+  color: #475569;
+  margin-bottom: 22px;
+}
+
+.panelStoryTextCopilot {
+  font-size: 14px;
+  line-height: 1.68;
+  color: #CBD5E1;
+  margin-bottom: 22px;
+}
+
+/* ── Diagnostic Telemetry Box ── */
+.storyDiagnosticBox {
+  border-radius: 18px;
+  padding: 16px 18px;
+  margin-bottom: 22px;
+}
+
+.diagnosticBoxTraditional {
+  background: #FFFFFF;
+  border: 1.5px solid #FECACA;
+  box-shadow: inset 0 1.5px 0 #FFFFFF, 0 2px 6px rgba(220, 38, 38, 0.04);
+}
+
+.diagnosticBoxCopilot {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1.5px solid rgba(16, 185, 129, 0.3);
+  box-shadow: inset 0 1.5px 0 rgba(255, 255, 255, 0.08);
+}
+
+.diagnosticHeaderTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 10.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+}
+
+.diagnosticTitleTraditional {
+  color: #B91C1C;
+}
+
+.diagnosticTitleCopilot {
+  color: #34D399;
+}
+
+.diagnosticMetricsList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.diagnosticMetricRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12.5px;
+  gap: 10px;
+}
+
+.metricRowLabelTraditional {
+  color: #64748B;
+  font-weight: 700;
+}
+
+.metricRowLabelCopilot {
+  color: #94A3B8;
+  font-weight: 700;
+}
+
+.metricRowValueTraditional {
+  color: #DC2626;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-align: right;
+}
+
+.metricRowValueCopilot {
+  color: #10B981;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-align: right;
+}
+
+/* Reality Quote & Growth Promise Footers */
+.storyRealityQuote {
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: #FEF2F2;
+  border-left: 4px solid #DC2626;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: #7F1D1D;
+  font-style: italic;
+}
+
+.storyGrowthPromise {
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  border-left: 4px solid #10B981;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: #D1FAE5;
+}
+
+.growthPromiseBadge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 800;
+  color: #34D399;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+  font-style: normal;
+}
+
+/* ── 3D Interactive Symbols That Move On Hover/Touch ── */
+.symbol3DItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #334155;
+}
+
+/* 3D Skeuomorphic Red Cross that MOVES interactively */
+.symbol3DCross {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: linear-gradient(145deg, #EF4444 0%, #DC2626 100%);
+  color: #FFFFFF;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 900;
+  flex-shrink: 0;
+  box-shadow: 
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1.5px 0 rgba(0, 0, 0, 0.25),
+    0 3px 0 #B91C1C,
+    0 6px 12px rgba(220, 38, 38, 0.25);
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.symbol3DCross:hover {
+  transform: translateY(-3px) scale(1.15) rotate(-8deg);
+  box-shadow: 
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.6),
+    0 5px 0 #B91C1C,
+    0 10px 18px rgba(220, 38, 38, 0.35);
+}
+
+.symbol3DCross:active {
+  transform: translateY(2px) scale(0.95);
+  box-shadow: 
+    inset 0 1px 0 rgba(0, 0, 0, 0.3),
+    0 1px 0 #B91C1C;
+}
+
+/* 3D Skeuomorphic Green Check that MOVES interactively */
+.symbol3DCheck {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: linear-gradient(145deg, #10B981 0%, #059669 100%);
+  color: #FFFFFF;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 900;
+  flex-shrink: 0;
+  box-shadow: 
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1.5px 0 rgba(0, 0, 0, 0.25),
+    0 3px 0 #047857,
+    0 6px 12px rgba(16, 185, 129, 0.25);
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.symbol3DCheck:hover {
+  transform: translateY(-3px) scale(1.15) rotate(8deg);
+  box-shadow: 
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.6),
+    0 5px 0 #047857,
+    0 10px 18px rgba(16, 185, 129, 0.35);
+}
+
+.symbol3DCheck:active {
+  transform: translateY(2px) scale(0.95);
+  box-shadow: 
+    inset 0 1px 0 rgba(0, 0, 0, 0.3),
+    0 1px 0 #047857;
+}
+
+.copilotText {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #0B2093;
+}
+
+/* ── 4 Foundational Strategic Pillars Quad Grid ── */
+.storyPillarsHeader {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.storyPillarsSubTitle {
+  font-family: var(--font-display, inherit);
+  font-size: 20px;
+  font-weight: 900;
+  color: #0B2093;
+  margin-bottom: 6px;
+}
+
+.storyPillarsSubCopy {
+  font-size: 13.5px;
+  color: #64748B;
+  margin: 0;
 }
 
 .pillarsQuadGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 22px;
+  gap: 20px;
   align-items: stretch;
-  margin-bottom: 52px;
 }
 
 @media (max-width: 980px) {
@@ -1279,14 +1873,14 @@
 }
 
 .pillarCardAligned {
-  padding: 30px 24px;
-  border-radius: 24px;
+  padding: 26px 22px;
+  border-radius: 22px;
   background: linear-gradient(160deg, #FFFFFF 0%, #FAFCFF 50%, #F1F5F9 100%);
   border: 2px solid #CBD5E1;
   box-shadow: 
     inset 0 3px 0 #FFFFFF,
     inset 0 -2px 3px rgba(11, 32, 147, 0.03),
-    0 12px 32px rgba(11, 32, 147, 0.07);
+    0 10px 28px rgba(11, 32, 147, 0.06);
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -1295,205 +1889,37 @@
 }
 
 .pillarCardAligned:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
   border-color: #0B2093;
   box-shadow: 
     inset 0 3px 0 #FFFFFF,
-    0 24px 55px -8px rgba(11, 32, 147, 0.18);
+    0 20px 45px -8px rgba(11, 32, 147, 0.16);
 }
 
 .pillarNum {
   font-family: var(--font-display, inherit);
-  font-size: 34px;
+  font-size: 28px;
   font-weight: 900;
   background: linear-gradient(135deg, #0B2093 0%, #2563EB 50%, #F59E0B 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   line-height: 1;
 }
 
 .pillarTitleH3 {
   font-family: var(--font-display, inherit);
-  font-size: 18px;
+  font-size: 16.5px;
   font-weight: 800;
   color: #0B2093;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .pillarBody {
-  font-size: 13px;
+  font-size: 12.5px;
   line-height: 1.6;
   color: #475569;
   flex: 1;
-}
-
-/* ── Interactive Comparison Table ── */
-.comparisonTableWrap {
-  border-radius: 28px;
-  background: #FFFFFF;
-  border: 2px solid #CBD5E1;
-  box-shadow: 
-    inset 0 3px 0 #FFFFFF,
-    0 24px 60px -12px rgba(11, 32, 147, 0.12),
-    0 4px 16px rgba(0, 0, 0, 0.03);
-  overflow: hidden;
-}
-
-.matrixRowHeader {
-  display: grid;
-  grid-template-columns: 1.15fr 1fr 1.1fr;
-  padding: 20px 32px;
-  background: linear-gradient(180deg, #F8FAFC 0%, #EEF2FF 100%);
-  border-bottom: 2px solid #E2E8F0;
-  font-family: var(--font-display, inherit);
-  font-size: 13px;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #1E293B;
-  align-items: center;
-}
-
-@media (max-width: 768px) {
-  .matrixRowHeader {
-    grid-template-columns: 1fr 1fr;
-    padding: 16px 20px;
-  }
-  .matrixColTraditional {
-    display: none;
-  }
-}
-
-.matrixRowItem {
-  display: grid;
-  grid-template-columns: 1.15fr 1fr 1.1fr;
-  padding: 22px 32px;
-  border-bottom: 1.5px solid #F1F5F9;
-  align-items: center;
-  transition: all 0.22s ease;
-  position: relative;
-}
-
-@media (max-width: 768px) {
-  .matrixRowItem {
-    grid-template-columns: 1fr 1fr;
-    padding: 18px 20px;
-  }
-}
-
-.matrixRowItem:hover {
-  background: linear-gradient(90deg, #F8FAFD 0%, #FFFFFF 50%, #F8FAFD 100%);
-  box-shadow: inset 0 1px 0 rgba(11, 32, 147, 0.04), inset 0 -1px 0 rgba(11, 32, 147, 0.04);
-}
-
-.matrixRowItem:last-child {
-  border-bottom: none;
-}
-
-.matrixFeatureName {
-  font-family: var(--font-display, inherit);
-  font-size: 15px;
-  font-weight: 900;
-  color: #0F172A;
-}
-
-.matrixFeatureSub {
-  font-size: 12px;
-  color: #64748B;
-  margin-top: 2px;
-}
-
-/* ── 3D Interactive Symbols That Move On Hover/Touch ── */
-.symbol3DItem {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 13.5px;
-  font-weight: 700;
-  color: #334155;
-}
-
-/* 3D Skeuomorphic Red Cross that MOVES interactively */
-.symbol3DCross {
-  width: 24px;
-  height: 24px;
-  border-radius: 7px;
-  background: linear-gradient(145deg, #EF4444 0%, #DC2626 100%);
-  color: #FFFFFF;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  font-weight: 900;
-  flex-shrink: 0;
-  box-shadow: 
-    inset 0 1.5px 0 rgba(255, 255, 255, 0.5),
-    inset 0 -1.5px 0 rgba(0, 0, 0, 0.25),
-    0 2.5px 0 #B91C1C,
-    0 5px 10px rgba(220, 38, 38, 0.25);
-  cursor: pointer;
-  user-select: none;
-  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.symbol3DCross:hover {
-  transform: translateY(-3px) scale(1.15) rotate(-8deg);
-  box-shadow: 
-    inset 0 1.5px 0 rgba(255, 255, 255, 0.6),
-    0 4.5px 0 #B91C1C,
-    0 8px 16px rgba(220, 38, 38, 0.35);
-}
-
-.symbol3DCross:active {
-  transform: translateY(2px) scale(0.95);
-  box-shadow: 
-    inset 0 1px 0 rgba(0, 0, 0, 0.3),
-    0 1px 0 #B91C1C;
-}
-
-/* 3D Skeuomorphic Green Check that MOVES interactively */
-.symbol3DCheck {
-  width: 24px;
-  height: 24px;
-  border-radius: 7px;
-  background: linear-gradient(145deg, #10B981 0%, #059669 100%);
-  color: #FFFFFF;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  font-weight: 900;
-  flex-shrink: 0;
-  box-shadow: 
-    inset 0 1.5px 0 rgba(255, 255, 255, 0.5),
-    inset 0 -1.5px 0 rgba(0, 0, 0, 0.25),
-    0 2.5px 0 #047857,
-    0 5px 10px rgba(16, 185, 129, 0.25);
-  cursor: pointer;
-  user-select: none;
-  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.symbol3DCheck:hover {
-  transform: translateY(-3px) scale(1.15) rotate(8deg);
-  box-shadow: 
-    inset 0 1.5px 0 rgba(255, 255, 255, 0.6),
-    0 4.5px 0 #047857,
-    0 8px 16px rgba(16, 185, 129, 0.35);
-}
-
-.symbol3DCheck:active {
-  transform: translateY(2px) scale(0.95);
-  box-shadow: 
-    inset 0 1px 0 rgba(0, 0, 0, 0.3),
-    0 1px 0 #047857;
-}
-
-.copilotText {
-  font-size: 13.5px;
-  font-weight: 800;
-  color: #0B2093;
 }
 
 /* ═════════════════════════════════════════════════════════════════

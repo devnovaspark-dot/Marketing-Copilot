@@ -138,6 +138,214 @@ const metroHubDetails: Record<
   },
 };
 
+interface StoryChapter {
+  id: string;
+  stageNumber: string;
+  stageTitle: string;
+  stageShortTitle: string;
+  icon: string;
+  timelineLabel: string;
+  traditional: {
+    badge: string;
+    headline: string;
+    storyText: string;
+    diagnosticLabel: string;
+    metrics: { label: string; value: string }[];
+    realityQuote: string;
+  };
+  copilot: {
+    badge: string;
+    headline: string;
+    storyText: string;
+    diagnosticLabel: string;
+    metrics: { label: string; value: string }[];
+    growthPromise: string;
+  };
+}
+
+const storyChapters: StoryChapter[] = [
+  {
+    id: 'assets',
+    stageNumber: '01',
+    stageTitle: 'Asset & Data Sovereignty',
+    stageShortTitle: 'Asset Sovereignty',
+    icon: '🔐',
+    timelineLabel: 'Day 1 Root Access',
+    traditional: {
+      badge: '⚠️ THE RETAINER TRAP: LOCKED IN AGENCY BLACK-BOX',
+      headline: 'Proprietary Pixel Hostage & Lost Data History',
+      storyText:
+        'Conventional agencies configure Google Ads and Meta Pixels inside their private agency Business Managers. If you ever leave or dispute fees, you lose years of ad pixel training, lookalike audience data, and custom conversion events.',
+      diagnosticLabel: 'AGENCY HOSTAGE AUDIT',
+      metrics: [
+        { label: 'Pixel & Ad Account', value: 'Agency Locked (No Root Access)' },
+        { label: 'Audience Portability', value: '0% (Non-Transferable)' },
+        { label: 'Exit Penalty', value: 'Years of Optimization Erased' },
+      ],
+      realityQuote:
+        '“We invested ₹35 Lakhs over 18 months, but when we parted ways, the agency locked our ad manager and refused access.”',
+    },
+    copilot: {
+      badge: '👑 THE COPILOT ADVANTAGE: 100% ENTERPRISE SOVEREIGNTY',
+      headline: 'You Own Every Pixel, Codebase & Audience From Day 1',
+      storyText:
+        'We set up everything directly under your corporate domain and organization IDs. You hold root super-admin ownership over all ad accounts, GA4 telemetry, Meta CAPI credentials, and Next.js repositories. Your enterprise equity stays with you forever.',
+      diagnosticLabel: 'CO-PILOT SOVEREIGNTY PROTOCOL',
+      metrics: [
+        { label: 'Pixel & Ad Account', value: '100% Client Super-Admin' },
+        { label: 'Audience Portability', value: 'Instant 1-Click Root Access' },
+        { label: 'Asset Retention', value: 'Permanent Client IP Ownership' },
+      ],
+      growthPromise:
+        'Zero hostage traps. Every single rupee of ad spend builds compounding algorithmic equity in accounts you permanently control.',
+    },
+  },
+  {
+    id: 'leadership',
+    stageNumber: '02',
+    stageTitle: 'War Room Leadership',
+    stageShortTitle: 'Founder-Led War Room',
+    icon: '🎯',
+    timelineLabel: 'Direct Strategic Pod',
+    traditional: {
+      badge: '⚠️ THE JUNIOR BAIT-AND-SWITCH',
+      headline: 'Pitched by Charismatic Execs, Managed by Interns',
+      storyText:
+        'You are charmed during sales calls by agency directors and senior strategists. But within 14 days of signing, your brand is handed down to fresh junior interns juggling 12 other client accounts. Strategic questions get lost in slow support ticket queues.',
+      diagnosticLabel: 'ALLOCATION REALITY AUDIT',
+      metrics: [
+        { label: 'Account Handler', value: 'Junior Interns (12+ Accounts)' },
+        { label: 'Response Protocol', value: '48-72h Generic Ticketing' },
+        { label: 'Sprint Oversight', value: 'Passive Out-of-the-Box Templates' },
+      ],
+      realityQuote:
+        '“Our cost-per-lead tripled in festive season, but our account manager was on leave and nobody else had context on our campaigns.”',
+    },
+    copilot: {
+      badge: '👑 THE COPILOT ADVANTAGE: FOUNDER-LED EXECUTION POD',
+      headline: 'Direct War Room With Senior Founders & Growth Architects',
+      storyText:
+        'You collaborate directly with seasoned growth engineers and founding partners who have scaled multi-crore pipelines. Dedicated WhatsApp and Slack war rooms give you immediate strategic pivots with sub-2-hour turnaround and zero telephone-game friction.',
+      diagnosticLabel: 'CO-PILOT EXECUTION POD',
+      metrics: [
+        { label: 'Account Handler', value: 'Senior Founders & Lead Operators' },
+        { label: 'Response Protocol', value: '< 2 Hours Direct WhatsApp SLA' },
+        { label: 'Sprint Oversight', value: 'Daily Bid & Funnel Optimization' },
+      ],
+      growthPromise:
+        'Real operators with skin in the game. You work directly with the strategists who architect and deploy your campaigns.',
+    },
+  },
+  {
+    id: 'scoreboard',
+    stageNumber: '03',
+    stageTitle: 'The True Scoreboard',
+    stageShortTitle: 'Bankable GMV & ROAS',
+    icon: '📊',
+    timelineLabel: 'Audited Financials',
+    traditional: {
+      badge: '⚠️ THE VANITY METRIC ILLUSION',
+      headline: '40-Page PDF Reports of Meaningless Impressions',
+      storyText:
+        'End-of-month reviews are dominated by vanity numbers: "2.4 Million Impressions!", "80,000 Reach!", "15,000 Clicks!". But when your executive leadership looks at your bank account and CRM qualified leads, net revenue remains stagnant.',
+      diagnosticLabel: 'REPORTING TRANSPARENCY AUDIT',
+      metrics: [
+        { label: 'North Star Metric', value: 'Vanity Impressions & Clicks' },
+        { label: 'Attribution Model', value: 'Vague Disconnected Spreadsheets' },
+        { label: 'CRM Alignment', value: 'Zero Integration With Sales CRM' },
+      ],
+      realityQuote:
+        '“The agency kept celebrating reaching 1M impressions, while our actual sales pipeline was starving for qualified leads.”',
+    },
+    copilot: {
+      badge: '👑 THE COPILOT ADVANTAGE: REVENUE ATTRIBUTION',
+      headline: 'Bankable GMV, Qualified Pipeline & Net Cash Margin',
+      storyText:
+        'We throw vanity metrics into the trash. Every ad dollar is tracked through server-side Meta CAPI and Google Enhanced Conversions directly into your CRM or e-commerce gateway. We evaluate performance purely on verified revenue, CAC, and bottom-line margin.',
+      diagnosticLabel: 'CO-PILOT REVENUE TELEMETRY',
+      metrics: [
+        { label: 'North Star Metric', value: 'Audited Pipeline, ROAS & GMV' },
+        { label: 'Attribution Model', value: 'First-Party Server-Side CAPI' },
+        { label: 'CRM Alignment', value: 'Live 2-Way CRM & Webhook Sync' },
+      ],
+      growthPromise:
+        'No smoke and mirrors. We measure success by whether your business deposits grow and your customer acquisition scales profitably.',
+    },
+  },
+  {
+    id: 'speed',
+    stageNumber: '04',
+    stageTitle: 'Execution Velocity',
+    stageShortTitle: 'Full-Stack Pod',
+    icon: '⚡',
+    timelineLabel: '48-Hour Live Sprints',
+    traditional: {
+      badge: '⚠️ THE 3-VENDOR FINGER-POINTING TRAP',
+      headline: 'Endless Delays Between Devs, Designers & Media Buyers',
+      storyText:
+        'Your SEO agency complains that your website developer is too slow. Your website developer takes 3 weeks to change a landing page headline. The media buying team blames the creative designer for ad fatigue. Sprints stall while you play full-time mediator.',
+      diagnosticLabel: 'ORGANIZATIONAL FRICTION AUDIT',
+      metrics: [
+        { label: 'Landing Page Deployment', value: '3 to 4 Weeks Per Variant' },
+        { label: 'Creative Velocity', value: '1-2 Generic Creatives / Month' },
+        { label: 'Vendor Coordination', value: '3 Disconnected Third Parties' },
+      ],
+      realityQuote:
+        '“Testing a simple promotional landing page took a whole month because three different agencies couldn’t agree on tracking tags.”',
+    },
+    copilot: {
+      badge: '👑 THE COPILOT ADVANTAGE: SYNCHRONIZED POD',
+      headline: 'Sub-Second Next.js Code, Viral Creatives & Ad Bids in Sync',
+      storyText:
+        'A single synchronized growth pod where high-converting engineering, viral UGC video production, and algorithmic ad buying operate in lockstep. A new sub-second landing page with 12 video creative hooks is designed, coded, and live within 48 hours.',
+      diagnosticLabel: 'CO-PILOT VELOCITY ENGINE',
+      metrics: [
+        { label: 'Landing Page Deployment', value: 'Sub-48 Hours (Next.js Native)' },
+        { label: 'Creative Velocity', value: '12+ Fresh UGC Variations / Mo' },
+        { label: 'Vendor Coordination', value: 'One Unified Full-Stack Pod' },
+      ],
+      growthPromise:
+        'Rapid execution beats delayed perfection. We test, iterate, and compound conversion wins faster than any traditional agency can write a brief.',
+    },
+  },
+  {
+    id: 'agility',
+    stageNumber: '05',
+    stageTitle: 'Commercial Freedom',
+    stageShortTitle: 'Zero Lock-In Agility',
+    icon: '🤝',
+    timelineLabel: 'Month-to-Month Agility',
+    traditional: {
+      badge: '⚠️ THE 12-MONTH RETAINER HANDCUFF',
+      headline: 'Locked Into Minimum Spend Traps & Hefty Break Fees',
+      storyText:
+        'Traditional agencies demand 6 to 12-month ironclad contracts with mandatory retainer minimums, spend percentage escalators, and 60-to-90-day termination notices. Even when campaigns flounder, you are legally forced to keep paying.',
+      diagnosticLabel: 'CONTRACTUAL FREEDOM AUDIT',
+      metrics: [
+        { label: 'Contract Commitment', value: '6 to 12 Month Lock-In Trap' },
+        { label: 'Termination Notice', value: '60 to 90 Days Punitive Delay' },
+        { label: 'Incentive Alignment', value: 'Fixed Fee Regardless of Profit' },
+      ],
+      realityQuote:
+        '“We realized in month 2 that the strategy wasn’t working, but our contract legally compelled us to pay for 10 more months.”',
+    },
+    copilot: {
+      badge: '👑 THE COPILOT ADVANTAGE: MERIT-BASED AGILITY',
+      headline: 'Month-to-Month Sprints Earned Through Compounded Growth',
+      storyText:
+        'We never hide behind restrictive legal handcuffs. Our partnerships operate on flexible, month-to-month performance sprints. We earn our seat at your strategy table every single 30 days through transparent execution, verified pipeline, and mutual trust.',
+      diagnosticLabel: 'CO-PILOT MERIT PACT',
+      metrics: [
+        { label: 'Contract Commitment', value: 'Zero Lock-In Handcuffs' },
+        { label: 'Termination Notice', value: 'Flexible 30-Day Agility' },
+        { label: 'Incentive Alignment', value: 'Skin in the Game Partnership' },
+      ],
+      growthPromise:
+        'True partnership. We retain clients by generating tangible revenue and enterprise value, never through contractual traps.',
+    },
+  },
+];
+
 export default function DigitalGrowthPartnerPage() {
   // Form 1 (Hero Deck) — Nothing pre-checked per user instruction
   const [heroForm, setHeroForm] = useState<LeadFormData>({
@@ -174,6 +382,9 @@ export default function DigitalGrowthPartnerPage() {
 
   // Interactive Active Metro Hub State for Operations Command Center
   const [activeHub, setActiveHub] = useState<string>('bhubaneswar');
+
+  // Interactive Storytelling Stage State for The Copilot Advantage
+  const [activeStoryStage, setActiveStoryStage] = useState<number>(0);
 
   // Service toggle helper
   const toggleService = (formType: 'hero' | 'final', service: string) => {
@@ -525,7 +736,157 @@ export default function DigitalGrowthPartnerPage() {
       </section>
 
       {/* ═════════════════════════════════════════════════════════════════
-          INTERACTIVE MAP SECTION (JUST BELOW HERO & BRAND ICONS)
+          OPERATIONS COMMAND CENTER (HEADQUARTERS & NATIONWIDE RADAR)
+          Positioned directly above the map section per user instruction
+      ═════════════════════════════════════════════ */}
+      <section className={styles.commandCenterSection}>
+        <div className={styles.container}>
+          <div className={styles.hqSectionGrid}>
+            {/* Left Card: Headquarters & Strategic Channels */}
+            <div className={styles.hqCardChassis}>
+              <div>
+                <div className={styles.hqLiveStatusTag}>
+                  <span className={styles.statusLedNeutral} />
+                  <span>CLIENT DISPATCH &amp; OPERATIONS</span>
+                </div>
+                <h2 className={styles.titlePrimary} style={{ textAlign: 'left', marginBottom: '10px' }}>
+                  Strategic Hub in Bhubaneswar.<br />
+                  <span className={styles.titleAccent}>Scaling Brands Across India.</span>
+                </h2>
+                <p className={styles.subtitle} style={{ textAlign: 'left', margin: 0, fontSize: '14px' }}>
+                  Meet our senior partners in-person for strategy sprints at our corporate office, or collaborate seamlessly through a dedicated WhatsApp war room from anywhere across India.
+                </p>
+              </div>
+
+              {/* High-End Tactical Channel Grid */}
+              <div className={styles.executiveChannelGrid}>
+                {/* Physical Office Card */}
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Mallick+Complex,+Unit+3,+Kharvela+Nagar,+Bhubaneswar,+Odisha+751001"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.executiveOfficeCard}
+                >
+                  <div className={styles.executiveCardTop}>
+                    <div className={styles.channelIconBubble}>📍</div>
+                    <span className={styles.channelSmallLabel}>Registered Corporate Office</span>
+                  </div>
+                  <div className={styles.channelValueText}>
+                    Mallick Complex, Unit 3, Kharvela Nagar, Bhubaneswar, Odisha 751001
+                  </div>
+                  <div className={styles.cardActionFooter}>
+                    <span>Open in Google Maps ↗</span>
+                  </div>
+                </a>
+
+                {/* Direct Communications Dual-Column */}
+                <div className={styles.executiveCommsDouble}>
+                  <a href="tel:+919437168434" className={styles.executiveCommTile}>
+                    <div className={styles.channelIconBubbleSmall}>📞</div>
+                    <div>
+                      <span className={styles.channelMicroLabel}>Direct Line</span>
+                      <div className={styles.channelValueBold}>+91 94371 68434</div>
+                    </div>
+                  </a>
+
+                  <a
+                    href="https://wa.me/919437168434?text=Hi%20Marketing%20Copilot%2C%20I%20would%20like%20to%20discuss%20a%20digital%20growth%20partnership"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`${styles.executiveCommTile} ${styles.executiveWhatsAppTile}`}
+                  >
+                    <div className={styles.channelIconBubbleSmall} style={{ background: '#DCFCE7', color: '#16A34A', border: '1px solid #86EFAC' }}>
+                      💬
+                    </div>
+                    <div>
+                      <span className={styles.channelMicroLabel}>WhatsApp Desk</span>
+                      <div className={styles.channelValueBold} style={{ color: '#16A34A' }}>
+                        Chat Founder ↗
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <div className={styles.hqFooterSla}>
+                <span>⚡ 2-Hour Audit Response Turnaround</span>
+                <span>•</span>
+                <span>48-Hour Sprint Kickoff Guaranteed</span>
+              </div>
+            </div>
+
+            {/* Right Card: Interactive Metro Radar & Commercial Hubs Console */}
+            <div className={styles.metroRadarCard}>
+              <div>
+                <div className={styles.radarNeutralTag}>
+                  <span className={styles.statusLedNeutral} />
+                  <span>PAN-INDIA CAMPAIGN RADAR</span>
+                </div>
+                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '22px', fontWeight: 900, color: '#0B2093', marginBottom: '8px' }}>
+                  Active Commercial Hubs &amp; Metro Corridors
+                </h3>
+                <p style={{ fontSize: '13px', color: '#475569', lineHeight: 1.6, margin: 0 }}>
+                  Click any commercial zone to inspect live campaign focus and deployment capacity:
+                </p>
+
+                {/* Interactive Metro Selector Pills */}
+                <div className={styles.metroTagCloud}>
+                  {Object.entries(metroHubDetails).map(([key, data]) => {
+                    const isActive = activeHub === key;
+                    return (
+                      <button
+                        type="button"
+                        key={key}
+                        onClick={() => setActiveHub(key)}
+                        className={`${styles.metroPillBtn} ${isActive ? styles.metroPillBtnActive : ''}`}
+                      >
+                        {key === 'bhubaneswar' ? '📍' : '⚡'} {data.name.split(' (')[0]}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Dynamic Live Telemetry Dossier Cockpit */}
+              <div className={styles.activeHubDossier}>
+                <div className={styles.hubDossierHeader}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+                    <span className={styles.hubDossierTag}>{selectedHubData.tag}</span>
+                    <span className={styles.hubDossierName}>{selectedHubData.name}</span>
+                  </div>
+                  <span className={styles.hubDossierStatus}>● {selectedHubData.status}</span>
+                </div>
+                <p className={styles.hubDossierDesc}>{selectedHubData.desc}</p>
+                <div className={styles.hubDossierStats}>
+                  <div className={styles.hubStatTile}>
+                    <span className={styles.hubStatIcon}>🎯</span>
+                    <div>
+                      <div className={styles.hubStatMetaLabel}>Specialization</div>
+                      <div className={styles.hubStatValue}>{selectedHubData.category}</div>
+                    </div>
+                  </div>
+                  <div className={styles.hubStatTile}>
+                    <span className={styles.hubStatIcon}>⚡</span>
+                    <div>
+                      <div className={styles.hubStatMetaLabel}>Turnaround SLA</div>
+                      <div className={styles.hubStatValue}>{selectedHubData.speed}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div style={{ paddingTop: 14, borderTop: '1.5px dashed #CBD5E1', display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: '12px', color: '#0B2093', fontWeight: 800 }}>
+                <span>✓ Direct First-Party CAPI Attribution</span>
+                <span>•</span>
+                <span>Zero Account Black-Boxes</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═════════════════════════════════════════════════════════════════
+          INTERACTIVE MAP SECTION
       ═════════════════════════════════════════════ */}
       <QuickConnectMapSection
         id="direct-connect"
@@ -664,7 +1025,13 @@ export default function DigitalGrowthPartnerPage() {
       </section>
 
       {/* ═════════════════════════════════════════════════════════════════
-          SECTION 4: REAL CAMPAIGNS. REAL RESULTS — 3 PERFECTLY ALIGNED CASE STUDIES
+          CLIENT SPOTLIGHT • CASE STUDY IN ACTION
+          Positioned directly above Real clients, Real results we are proud of
+      ═════════════════════════════════════════════ */}
+      <BrandSpotlightSection />
+
+      {/* ═════════════════════════════════════════════════════════════════
+          REAL CAMPAIGNS. REAL RESULTS — 3 PERFECTLY ALIGNED CASE STUDIES
       ═════════════════════════════════════════════ */}
       <section className={styles.caseStudiesAlignedSection}>
         <div className={styles.container}>
@@ -810,11 +1177,6 @@ export default function DigitalGrowthPartnerPage() {
       </section>
 
       {/* ═════════════════════════════════════════════════════════════════
-          SECTION 5: CLIENT SPOTLIGHT • CASE STUDY IN ACTION
-      ═════════════════════════════════════════════ */}
-      <BrandSpotlightSection />
-
-      {/* ═════════════════════════════════════════════════════════════════
           SECTION 6: OUR GROWTH FRAMEWORK · EXECUTION BLUEPRINT
           (Positioned directly bridging client spotlight proof to systematic execution)
       ═════════════════════════════════════════════ */}
@@ -925,288 +1287,221 @@ export default function DigitalGrowthPartnerPage() {
       </section>
 
       {/* ═════════════════════════════════════════════════════════════════
-          SECTION 9: THE COPILOT ADVANTAGE — 4 ALIGNED PILLARS + INTERACTIVE MATRIX
+          THE COPILOT ADVANTAGE — INTERACTIVE STORYTELLING COCKPIT & TRANSFORMATION THEATER
       ═════════════════════════════════════════════ */}
-      <section className={styles.comparisonMatrixSection}>
+      <section className={styles.storytellingCockpitSection}>
         <div className={styles.container}>
+          {/* Section Header */}
           <div className={styles.headerCenter}>
             <div className={styles.eyebrowBadge}>
               <span className={styles.pulsingLed} />
-              <span>THE COPILOT ADVANTAGE</span>
+              <span>THE COPILOT ADVANTAGE · INTERACTIVE STORYTELLING</span>
             </div>
-            <h2 className={styles.titlePrimary}>Why Work With Us?</h2>
+            <h2 className={styles.titlePrimary}>
+              The Retainer Trap vs.<br />
+              <span className={styles.titleAccent}>The Copilot Transformation</span>
+            </h2>
             <p className={styles.subtitle}>
-              See how partnering with a dedicated growth partner differs fundamentally from traditional agency retainer models.
+              Experience how partnering with a dedicated digital growth partner feels across 5 critical growth milestones. Click each chapter below to contrast reality:
             </p>
           </div>
 
-          {/* 4 Aligned Strategic Pillars */}
+          {/* Interactive Chapter Stepper Nav */}
+          <div className={styles.storyChapterNav}>
+            {/* Nav Controls Bar */}
+            <div className={styles.storyNavControlsBar}>
+              <div className={styles.storyCounterPill}>
+                <span>📖 CHAPTER {activeStoryStage + 1} OF {storyChapters.length}</span>
+                <span>•</span>
+                <span>{storyChapters[activeStoryStage].stageTitle}</span>
+              </div>
+
+              <div className={styles.storyArrowBtns}>
+                <button
+                  type="button"
+                  onClick={() => setActiveStoryStage((prev) => Math.max(0, prev - 1))}
+                  disabled={activeStoryStage === 0}
+                  className={styles.storyArrowBtn}
+                  aria-label="Previous Chapter"
+                >
+                  ← Prev Chapter
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setActiveStoryStage((prev) => Math.min(storyChapters.length - 1, prev + 1))}
+                  disabled={activeStoryStage === storyChapters.length - 1}
+                  className={styles.storyArrowBtn}
+                  aria-label="Next Chapter"
+                >
+                  Next Chapter →
+                </button>
+              </div>
+            </div>
+
+            {/* 5 Chapter Tabs Track */}
+            <div className={styles.storyStageTrack}>
+              {storyChapters.map((chapter, idx) => {
+                const isActive = activeStoryStage === idx;
+                return (
+                  <button
+                    type="button"
+                    key={chapter.id}
+                    onClick={() => setActiveStoryStage(idx)}
+                    className={`${styles.storyStageStepBtn} ${
+                      isActive ? styles.storyStageStepBtnActive : ''
+                    }`}
+                  >
+                    <div className={styles.stepTopRow}>
+                      <span className={styles.stepStageBadge}>Chapter {chapter.stageNumber}</span>
+                      <span className={styles.stepIconBubble}>{chapter.icon}</span>
+                    </div>
+                    <div className={styles.stepStageTitle}>{chapter.stageShortTitle}</div>
+                    <div className={styles.stepTimelinePill}>{chapter.timelineLabel}</div>
+                    {isActive && <div className={styles.stepActiveIndicatorLine} />}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Split-Screen Battle Theater Arena */}
+          {(() => {
+            const currentStory = storyChapters[activeStoryStage];
+            return (
+              <div className={styles.storyBattleTheater}>
+                {/* Left Side: The Traditional Agency Experience */}
+                <div className={styles.traditionalStoryPanel}>
+                  <div>
+                    <div className={styles.panelTopBar}>
+                      <span className={styles.traditionalAlertTag}>
+                        {currentStory.traditional.badge}
+                      </span>
+                      <div className={styles.panelSymbolRow} title="Interactive 3D Friction Indicator">
+                        <span className={styles.symbol3DCross}>✕</span>
+                      </div>
+                    </div>
+
+                    <h3 className={styles.panelHeadlineTraditional}>
+                      {currentStory.traditional.headline}
+                    </h3>
+                    <p className={styles.panelStoryTextTraditional}>
+                      {currentStory.traditional.storyText}
+                    </p>
+
+                    {/* Diagnostic Telemetry Inset Box */}
+                    <div className={`${styles.storyDiagnosticBox} ${styles.diagnosticBoxTraditional}`}>
+                      <div className={`${styles.diagnosticHeaderTitle} ${styles.diagnosticTitleTraditional}`}>
+                        <span>⚙️ {currentStory.traditional.diagnosticLabel}</span>
+                        <span>[HIGH FRICTION]</span>
+                      </div>
+                      <div className={styles.diagnosticMetricsList}>
+                        {currentStory.traditional.metrics.map((m, i) => (
+                          <div key={i} className={styles.diagnosticMetricRow}>
+                            <span className={styles.metricRowLabelTraditional}>{m.label}:</span>
+                            <span className={styles.metricRowValueTraditional}>
+                              ✕ {m.value}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Reality Quote Callout */}
+                  <div className={styles.storyRealityQuote}>
+                    {currentStory.traditional.realityQuote}
+                  </div>
+                </div>
+
+                {/* Right Side: The Copilot Advantage */}
+                <div className={styles.copilotStoryPanel}>
+                  <div>
+                    <div className={styles.panelTopBar}>
+                      <span className={styles.copilotCrownTag}>
+                        <span className={styles.pulsingLed} />
+                        {currentStory.copilot.badge}
+                      </span>
+                      <div className={styles.panelSymbolRow} title="Interactive 3D Verified Indicator">
+                        <span className={styles.symbol3DCheck}>✓</span>
+                      </div>
+                    </div>
+
+                    <h3 className={styles.panelHeadlineCopilot}>
+                      {currentStory.copilot.headline}
+                    </h3>
+                    <p className={styles.panelStoryTextCopilot}>
+                      {currentStory.copilot.storyText}
+                    </p>
+
+                    {/* Diagnostic Telemetry Inset Box */}
+                    <div className={`${styles.storyDiagnosticBox} ${styles.diagnosticBoxCopilot}`}>
+                      <div className={`${styles.diagnosticHeaderTitle} ${styles.diagnosticTitleCopilot}`}>
+                        <span>⚡ {currentStory.copilot.diagnosticLabel}</span>
+                        <span>[VERIFIED AUDIT]</span>
+                      </div>
+                      <div className={styles.diagnosticMetricsList}>
+                        {currentStory.copilot.metrics.map((m, i) => (
+                          <div key={i} className={styles.diagnosticMetricRow}>
+                            <span className={styles.metricRowLabelCopilot}>{m.label}:</span>
+                            <span className={styles.metricRowValueCopilot}>
+                              ✓ {m.value}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Growth Promise Covenant */}
+                  <div className={styles.storyGrowthPromise}>
+                    <div className={styles.growthPromiseBadge}>
+                      🛡️ THE PARTNER COVENANT
+                    </div>
+                    {currentStory.copilot.growthPromise}
+                  </div>
+                </div>
+              </div>
+            );
+          })()}
+
+          {/* 4 Foundational Strategic Pillars */}
+          <div className={styles.storyPillarsHeader}>
+            <h3 className={styles.storyPillarsSubTitle}>
+              Four Immutable Pillars of Growth
+            </h3>
+            <p className={styles.storyPillarsSubCopy}>
+              The architectural bedrock supporting every sprint we run for ambitious enterprises across India.
+            </p>
+          </div>
+
           <div className={styles.pillarsQuadGrid}>
             <div className={styles.pillarCardAligned}>
               <div className={styles.pillarNum}>01</div>
-              <h3 className={styles.pillarTitleH3}>Direct Account Ownership</h3>
+              <h4 className={styles.pillarTitleH3}>Direct Account Ownership</h4>
               <p className={styles.pillarBody}>
                 You own 100% of your Google Ads accounts, Meta pixels, and creative IP from Day 1. Never held hostage by agency logins.
               </p>
             </div>
             <div className={styles.pillarCardAligned}>
               <div className={styles.pillarNum}>02</div>
-              <h3 className={styles.pillarTitleH3}>Founder-Led Execution</h3>
+              <h4 className={styles.pillarTitleH3}>Founder-Led Execution</h4>
               <p className={styles.pillarBody}>
                 Direct strategy and sprint oversight by our senior founders. No junior interns managing your ad spend.
               </p>
             </div>
             <div className={styles.pillarCardAligned}>
               <div className={styles.pillarNum}>03</div>
-              <h3 className={styles.pillarTitleH3}>Integrated Tech Stack</h3>
+              <h4 className={styles.pillarTitleH3}>Integrated Tech Stack</h4>
               <p className={styles.pillarBody}>
                 We align high-converting engineering, creative velocity, and algorithmic media buying into one synchronized pod.
               </p>
             </div>
             <div className={styles.pillarCardAligned}>
               <div className={styles.pillarNum}>04</div>
-              <h3 className={styles.pillarTitleH3}>Sub-2-Hour Response SLA</h3>
+              <h4 className={styles.pillarTitleH3}>Sub-2-Hour Response SLA</h4>
               <p className={styles.pillarBody}>
                 Dedicated WhatsApp war room with real-time sprint updates, transparent metrics, and 0 lock-in contracts.
               </p>
-            </div>
-          </div>
-
-          {/* Head-to-Head Comparison Matrix With Interactive Tactile Badges */}
-          <div className={styles.comparisonTableWrap}>
-            <div className={styles.matrixRowHeader}>
-              <div>Growth Dimension</div>
-              <div className={styles.matrixColTraditional}>Traditional Agencies</div>
-              <div style={{ color: '#0B2093' }}>Marketing Copilot</div>
-            </div>
-
-            {/* Row 1 */}
-            <div className={styles.matrixRowItem}>
-              <div>
-                <div className={styles.matrixFeatureName}>1. Account Leadership</div>
-                <div className={styles.matrixFeatureSub}>Who actually manages your growth</div>
-              </div>
-              <div className={styles.symbol3DItem}>
-                <span className={styles.symbol3DCross}>✕</span>
-                <span>Junior account managers &amp; interns</span>
-              </div>
-              <div className={styles.symbol3DItem}>
-                <span className={styles.symbol3DCheck}>✓</span>
-                <span className={styles.copilotText}>Founders &amp; Senior Strategists directly</span>
-              </div>
-            </div>
-
-            {/* Row 2 */}
-            <div className={styles.matrixRowItem}>
-              <div>
-                <div className={styles.matrixFeatureName}>2. Focus Metric</div>
-                <div className={styles.matrixFeatureSub}>How success is judged and measured</div>
-              </div>
-              <div className={styles.symbol3DItem}>
-                <span className={styles.symbol3DCross}>✕</span>
-                <span>Impressions, clicks &amp; vanity reports</span>
-              </div>
-              <div className={styles.symbol3DItem}>
-                <span className={styles.symbol3DCheck}>✓</span>
-                <span className={styles.copilotText}>Net Pipeline, ROAS &amp; Bankable GMV</span>
-              </div>
-            </div>
-
-            {/* Row 3 */}
-            <div className={styles.matrixRowItem}>
-              <div>
-                <div className={styles.matrixFeatureName}>3. Account Ownership</div>
-                <div className={styles.matrixFeatureSub}>Pixels, ad accounts, and creative IP</div>
-              </div>
-              <div className={styles.symbol3DItem}>
-                <span className={styles.symbol3DCross}>✕</span>
-                <span>Held hostage in agency ad manager</span>
-              </div>
-              <div className={styles.symbol3DItem}>
-                <span className={styles.symbol3DCheck}>✓</span>
-                <span className={styles.copilotText}>100% Owned by you from Day 1</span>
-              </div>
-            </div>
-
-            {/* Row 4 */}
-            <div className={styles.matrixRowItem}>
-              <div>
-                <div className={styles.matrixFeatureName}>4. Execution Synergy</div>
-                <div className={styles.matrixFeatureSub}>Integration of code, ads, and design</div>
-              </div>
-              <div className={styles.symbol3DItem}>
-                <span className={styles.symbol3DCross}>✕</span>
-                <span>Fragmented across 3 different vendors</span>
-              </div>
-              <div className={styles.symbol3DItem}>
-                <span className={styles.symbol3DCheck}>✓</span>
-                <span className={styles.copilotText}>One Unified Synchronized Growth Pod</span>
-              </div>
-            </div>
-
-            {/* Row 5 */}
-            <div className={styles.matrixRowItem}>
-              <div>
-                <div className={styles.matrixFeatureName}>5. Contract Flexibility</div>
-                <div className={styles.matrixFeatureSub}>Commitment requirements</div>
-              </div>
-              <div className={styles.symbol3DItem}>
-                <span className={styles.symbol3DCross}>✕</span>
-                <span>6 to 12 month rigid lock-in traps</span>
-              </div>
-              <div className={styles.symbol3DItem}>
-                <span className={styles.symbol3DCheck}>✓</span>
-                <span className={styles.copilotText}>Zero Lock-In; month-to-month agility</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ═════════════════════════════════════════════════════════════════
-          SECTION 10: OPERATIONS COMMAND CENTER (HEADQUARTERS & NATIONWIDE RADAR)
-      ═════════════════════════════════════════════ */}
-      <section className={styles.commandCenterSection}>
-        <div className={styles.container}>
-          <div className={styles.hqSectionGrid}>
-            {/* Left Card: Headquarters & Strategic Channels */}
-            <div className={styles.hqCardChassis}>
-              <div>
-                <div className={styles.hqLiveStatusTag}>
-                  <span className={styles.statusLedNeutral} />
-                  <span>CLIENT DISPATCH &amp; OPERATIONS</span>
-                </div>
-                <h2 className={styles.titlePrimary} style={{ textAlign: 'left', marginBottom: '10px' }}>
-                  Strategic Hub in Bhubaneswar.<br />
-                  <span className={styles.titleAccent}>Scaling Brands Across India.</span>
-                </h2>
-                <p className={styles.subtitle} style={{ textAlign: 'left', margin: 0, fontSize: '14px' }}>
-                  Meet our senior partners in-person for strategy sprints at our corporate office, or collaborate seamlessly through a dedicated WhatsApp war room from anywhere across India.
-                </p>
-              </div>
-
-              {/* High-End Tactical Channel Grid */}
-              <div className={styles.executiveChannelGrid}>
-                {/* Physical Office Card */}
-                <a
-                  href="https://www.google.com/maps/search/?api=1&query=Mallick+Complex,+Unit+3,+Kharvela+Nagar,+Bhubaneswar,+Odisha+751001"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.executiveOfficeCard}
-                >
-                  <div className={styles.executiveCardTop}>
-                    <div className={styles.channelIconBubble}>📍</div>
-                    <span className={styles.channelSmallLabel}>Registered Corporate Office</span>
-                  </div>
-                  <div className={styles.channelValueText}>
-                    Mallick Complex, Unit 3, Kharvela Nagar, Bhubaneswar, Odisha 751001
-                  </div>
-                  <div className={styles.cardActionFooter}>
-                    <span>Open in Google Maps ↗</span>
-                  </div>
-                </a>
-
-                {/* Direct Communications Dual-Column */}
-                <div className={styles.executiveCommsDouble}>
-                  <a href="tel:+919437168434" className={styles.executiveCommTile}>
-                    <div className={styles.channelIconBubbleSmall}>📞</div>
-                    <div>
-                      <span className={styles.channelMicroLabel}>Direct Line</span>
-                      <div className={styles.channelValueBold}>+91 94371 68434</div>
-                    </div>
-                  </a>
-
-                  <a
-                    href="https://wa.me/919437168434?text=Hi%20Marketing%20Copilot%2C%20I%20would%20like%20to%20discuss%20a%20digital%20growth%20partnership"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`${styles.executiveCommTile} ${styles.executiveWhatsAppTile}`}
-                  >
-                    <div className={styles.channelIconBubbleSmall} style={{ background: '#DCFCE7', color: '#16A34A', border: '1px solid #86EFAC' }}>
-                      💬
-                    </div>
-                    <div>
-                      <span className={styles.channelMicroLabel}>WhatsApp Desk</span>
-                      <div className={styles.channelValueBold} style={{ color: '#16A34A' }}>
-                        Chat Founder ↗
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              </div>
-
-              <div className={styles.hqFooterSla}>
-                <span>⚡ 2-Hour Audit Response Turnaround</span>
-                <span>•</span>
-                <span>48-Hour Sprint Kickoff Guaranteed</span>
-              </div>
-            </div>
-
-            {/* Right Card: Interactive Metro Radar & Commercial Hubs Console */}
-            <div className={styles.metroRadarCard}>
-              <div>
-                <div className={styles.radarNeutralTag}>
-                  <span className={styles.statusLedNeutral} />
-                  <span>PAN-INDIA CAMPAIGN RADAR</span>
-                </div>
-                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '22px', fontWeight: 900, color: '#0B2093', marginBottom: '8px' }}>
-                  Active Commercial Hubs &amp; Metro Corridors
-                </h3>
-                <p style={{ fontSize: '13px', color: '#475569', lineHeight: 1.6, margin: 0 }}>
-                  Click any commercial zone to inspect live campaign focus and deployment capacity:
-                </p>
-
-                {/* Interactive Metro Selector Pills */}
-                <div className={styles.metroTagCloud}>
-                  {Object.entries(metroHubDetails).map(([key, data]) => {
-                    const isActive = activeHub === key;
-                    return (
-                      <button
-                        type="button"
-                        key={key}
-                        onClick={() => setActiveHub(key)}
-                        className={`${styles.metroPillBtn} ${isActive ? styles.metroPillBtnActive : ''}`}
-                      >
-                        {key === 'bhubaneswar' ? '📍' : '⚡'} {data.name.split(' (')[0]}
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {/* Dynamic Live Telemetry Dossier Cockpit */}
-              <div className={styles.activeHubDossier}>
-                <div className={styles.hubDossierHeader}>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-                    <span className={styles.hubDossierTag}>{selectedHubData.tag}</span>
-                    <span className={styles.hubDossierName}>{selectedHubData.name}</span>
-                  </div>
-                  <span className={styles.hubDossierStatus}>● {selectedHubData.status}</span>
-                </div>
-                <p className={styles.hubDossierDesc}>{selectedHubData.desc}</p>
-                <div className={styles.hubDossierStats}>
-                  <div className={styles.hubStatTile}>
-                    <span className={styles.hubStatIcon}>🎯</span>
-                    <div>
-                      <div className={styles.hubStatMetaLabel}>Specialization</div>
-                      <div className={styles.hubStatValue}>{selectedHubData.category}</div>
-                    </div>
-                  </div>
-                  <div className={styles.hubStatTile}>
-                    <span className={styles.hubStatIcon}>⚡</span>
-                    <div>
-                      <div className={styles.hubStatMetaLabel}>Turnaround SLA</div>
-                      <div className={styles.hubStatValue}>{selectedHubData.speed}</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div style={{ paddingTop: 14, borderTop: '1.5px dashed #CBD5E1', display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: '12px', color: '#0B2093', fontWeight: 800 }}>
-                <span>✓ Direct First-Party CAPI Attribution</span>
-                <span>•</span>
-                <span>Zero Account Black-Boxes</span>
-              </div>
             </div>
           </div>
         </div>
