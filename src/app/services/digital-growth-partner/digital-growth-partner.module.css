@@ -949,11 +949,14 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 8px;
-  padding: 12px;
-  border-radius: 14px;
-  background: #F8FAFD;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #F8FAFD 0%, #EEF2FF 100%);
   border: 1.5px solid #E2E8F0;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.03);
+  box-shadow: 
+    inset 0 1px 0 #FFFFFF,
+    inset 0 -1px 2px rgba(11, 32, 147, 0.03),
+    0 2px 6px rgba(0, 0, 0, 0.02);
   margin-bottom: 16px;
 }
 
@@ -986,6 +989,37 @@
   font-size: 12px;
   color: #334155;
   min-height: 78px;
+}
+
+.caseCardBlueprintBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 18px;
+  border-radius: 12px;
+  font-family: var(--font-display, inherit);
+  font-size: 12px;
+  font-weight: 800;
+  color: #0B2093;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F1F5F9 100%);
+  border: 1.5px solid #CBD5E1;
+  box-shadow: 
+    inset 0 1.5px 0 #FFFFFF,
+    0 2px 6px rgba(0, 0, 0, 0.04);
+  text-decoration: none;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+.caseCardBlueprintBtn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(180deg, #0B2093 0%, #1D4ED8 100%);
+  color: #FFFFFF;
+  border-color: #0B2093;
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    0 8px 18px rgba(11, 32, 147, 0.25);
 }
 
 .casePlaybookChecklist li {
@@ -1028,9 +1062,10 @@
   padding: 36px 32px;
   border-radius: 28px;
   background: linear-gradient(155deg, #FFFFFF 0%, #FAFCFF 50%, #F1F5F9 100%);
-  border: 2px solid #E2E8F0;
+  border: 2px solid #CBD5E1;
   box-shadow: 
     inset 0 3px 0 #FFFFFF,
+    inset 0 -2px 3px rgba(11, 32, 147, 0.03),
     0 16px 40px -10px rgba(11, 32, 147, 0.09);
   display: flex;
   flex-direction: column;
@@ -1247,11 +1282,11 @@
   padding: 30px 24px;
   border-radius: 24px;
   background: linear-gradient(160deg, #FFFFFF 0%, #FAFCFF 50%, #F1F5F9 100%);
-  border: 2px solid #E2E8F0;
+  border: 2px solid #CBD5E1;
   box-shadow: 
-    inset 0 2.5px 0 #FFFFFF,
+    inset 0 3px 0 #FFFFFF,
     inset 0 -2px 3px rgba(11, 32, 147, 0.03),
-    0 10px 28px rgba(11, 32, 147, 0.06);
+    0 12px 32px rgba(11, 32, 147, 0.07);
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -1263,8 +1298,8 @@
   transform: translateY(-5px);
   border-color: #0B2093;
   box-shadow: 
-    inset 0 2.5px 0 #FFFFFF,
-    0 20px 48px -8px rgba(11, 32, 147, 0.16);
+    inset 0 3px 0 #FFFFFF,
+    0 24px 55px -8px rgba(11, 32, 147, 0.18);
 }
 
 .pillarNum {
@@ -1348,7 +1383,8 @@
 }
 
 .matrixRowItem:hover {
-  background: #F8FAFD;
+  background: linear-gradient(90deg, #F8FAFD 0%, #FFFFFF 50%, #F8FAFD 100%);
+  box-shadow: inset 0 1px 0 rgba(11, 32, 147, 0.04), inset 0 -1px 0 rgba(11, 32, 147, 0.04);
 }
 
 .matrixRowItem:last-child {

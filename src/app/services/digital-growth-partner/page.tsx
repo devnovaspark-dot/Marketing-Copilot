@@ -671,7 +671,7 @@ export default function DigitalGrowthPartnerPage() {
           <div className={styles.headerCenter}>
             <div className={styles.eyebrowBadge}>
               <span className={styles.pulsingLed} />
-              <span>TACTICAL BLUEPRINTS</span>
+              <span>Real clients, Real results we are proud of</span>
             </div>
             <h2 className={styles.titlePrimary}>Real Campaigns. Real Results.</h2>
             <p className={styles.subtitle}>
@@ -715,7 +715,7 @@ export default function DigitalGrowthPartnerPage() {
                     <li><span className={styles.greenCheck}>✓</span> Headless Next.js Checkout (+28% Conversion)</li>
                     <li><span className={styles.greenCheck}>✓</span> Meta CAPI First-Party Pixel Attribution</li>
                   </ul>
-                  <Link href="/portfolio" className={styles.heroChiclet} style={{ alignSelf: 'flex-start', marginTop: 'auto' }}>
+                  <Link href="/portfolio" className={styles.caseCardBlueprintBtn}>
                     Read Full Blueprint →
                   </Link>
                 </div>
@@ -757,7 +757,7 @@ export default function DigitalGrowthPartnerPage() {
                     <li><span className={styles.greenCheck}>✓</span> 35 Hyper-Local Micro Landing Pages</li>
                     <li><span className={styles.greenCheck}>✓</span> Real-Time WhatsApp CRM Lead Routing</li>
                   </ul>
-                  <Link href="/portfolio" className={styles.heroChiclet} style={{ alignSelf: 'flex-start', marginTop: 'auto' }}>
+                  <Link href="/portfolio" className={styles.caseCardBlueprintBtn}>
                     Read Full Blueprint →
                   </Link>
                 </div>
@@ -799,7 +799,7 @@ export default function DigitalGrowthPartnerPage() {
                     <li><span className={styles.greenCheck}>✓</span> Automated Post-Visit Review System</li>
                     <li><span className={styles.greenCheck}>✓</span> Geo-Targeted High-Intent Search Ads</li>
                   </ul>
-                  <Link href="/portfolio" className={styles.heroChiclet} style={{ alignSelf: 'flex-start', marginTop: 'auto' }}>
+                  <Link href="/portfolio" className={styles.caseCardBlueprintBtn}>
                     Read Full Blueprint →
                   </Link>
                 </div>
