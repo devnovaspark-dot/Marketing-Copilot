@@ -35,8 +35,20 @@ const budgetOptions = [
   '₹5L+',
 ];
 
+const clientLogos = [
+  { name: 'Sabour', src: '/images/clients/Sabour-logo.png' },
+  { name: 'Ekatraa', src: '/images/clients/ekatraa.png' },
+  { name: 'Heed Health', src: '/images/clients/heed.png' },
+  { name: 'Medallion House', src: '/images/clients/medallion-house.png' },
+  { name: 'Praveen Electronics', src: '/images/clients/praveen-electronics.png' },
+  { name: 'Sri Pandurangan', src: '/images/clients/sri-pandurangan-divine-fresh.png' },
+  { name: 'Travysys', src: '/images/clients/travysys.png' },
+  { name: 'Weekend Bhraman', src: '/images/clients/weekend-bhraman.png' },
+  { name: 'Zue Studio', src: '/images/clients/Zue-Studio-Logo-color (1).png' },
+];
+
 export default function DigitalGrowthPartnerPage() {
-  // Form 1 (Hero Deck) State
+  // Form 1 (Hero Deck)
   const [heroForm, setHeroForm] = useState<LeadFormData>({
     name: '',
     company: '',
@@ -51,7 +63,7 @@ export default function DigitalGrowthPartnerPage() {
   const [heroSuccess, setHeroSuccess] = useState(false);
   const [heroError, setHeroError] = useState('');
 
-  // Form 2 (Final Section Deck) State
+  // Form 2 (Final Deck)
   const [finalForm, setFinalForm] = useState<LeadFormData>({
     name: '',
     company: '',
@@ -66,14 +78,14 @@ export default function DigitalGrowthPartnerPage() {
   const [finalSuccess, setFinalSuccess] = useState(false);
   const [finalError, setFinalError] = useState('');
 
+  // Interactive timeframe switcher for Results Section
+  const [timeframe, setTimeframe] = useState<'90d' | '1y' | 'all'>('90d');
+
   // Terminal active tab state
   const [activeTerminal, setActiveTerminal] = useState<'google' | 'meta' | 'seo'>('google');
 
   // Service toggle helper
-  const toggleService = (
-    formType: 'hero' | 'final',
-    service: string
-  ) => {
+  const toggleService = (formType: 'hero' | 'final', service: string) => {
     if (formType === 'hero') {
       setHeroForm((prev) => {
         const exists = prev.services.includes(service);
@@ -98,10 +110,7 @@ export default function DigitalGrowthPartnerPage() {
   };
 
   // Submit handler
-  const handleFormSubmit = async (
-    e: React.FormEvent,
-    formType: 'hero' | 'final'
-  ) => {
+  const handleFormSubmit = async (e: React.FormEvent, formType: 'hero' | 'final') => {
     e.preventDefault();
     const data = formType === 'hero' ? heroForm : finalForm;
     const setSubmitting = formType === 'hero' ? setHeroSubmitting : setFinalSubmitting;
@@ -137,7 +146,7 @@ export default function DigitalGrowthPartnerPage() {
       if (res.ok && (json?.success || json?.message)) {
         setSuccess(true);
       } else {
-        setError(json?.message || 'Failed to submit. Please contact us directly via WhatsApp.');
+        setError(json?.message || 'Failed to submit. Please WhatsApp us directly.');
       }
     } catch {
       setError('Network error. Please WhatsApp us directly at +91 94371 68434.');
@@ -148,104 +157,101 @@ export default function DigitalGrowthPartnerPage() {
 
   return (
     <div className={styles.page}>
-      <div className={styles.ambientGlowTop} />
-      <div className={styles.ambientGridLines} />
+      {/* Dynamic Ambient Background Elements */}
+      <div className={styles.ambientOrb1} />
+      <div className={styles.ambientOrb2} />
+      <div className={styles.ambientGridBg} />
 
       {/* ═════════════════════════════════════════════════════════════════
-          SECTION 1: HERO & LEAD COMMAND TERMINAL
+          SECTION 1: HERO & INTERACTIVE AUDIT CONSOLE
       ═════════════════════════════════════════════════════════════════ */}
-      <section className={`${styles.sectionContainer} ${styles.heroSection}`}>
+      <section className={`${styles.container} ${styles.heroSection}`}>
         <div className={styles.heroGrid}>
-          {/* Left Column: Value Messaging */}
-          <div className={styles.heroContent}>
-            <div className={styles.heroBadgeRow}>
-              <div className={styles.heroBadge}>
-                <span className={styles.sectionEyebrowLed} />
+          {/* Left Column: Vision & Proposition */}
+          <div className={styles.heroColLeft}>
+            <div className={styles.heroBadgeCluster}>
+              <div className={styles.heroBadgeFlagship}>
+                <span className={styles.pulsingLed} />
                 <span>DIGITAL GROWTH PARTNER</span>
               </div>
-              <div className={styles.heroHqBadge}>
-                <span>🇮🇳 Serving Pan-India Brands</span>
+              <div className={styles.heroBadgeNation}>
+                <span>🇮🇳 Scaling Brands Across India</span>
               </div>
             </div>
 
-            <h1 className={styles.heroTitle}>
+            <h1 className={styles.heroDisplayH1}>
               READY TO GROW YOUR BUSINESS{' '}
-              <span className={styles.heroTitleAccent}>
+              <span className={styles.heroShimmerAccent}>
                 WITH DIGITAL MARKETING?
               </span>
             </h1>
 
-            {/* Tactile Service Chiclets */}
-            <div className={styles.channelChiclets}>
-              <span className={styles.chicletPill}>⚡ SEO</span>
-              <span className={styles.chicletDot}>•</span>
-              <span className={styles.chicletPill}>🎯 PPC</span>
-              <span className={styles.chicletDot}>•</span>
-              <span className={styles.chicletPill}>🚀 META ADS</span>
-              <span className={styles.chicletDot}>•</span>
-              <span className={styles.chicletPill}>📱 SOCIAL</span>
-              <span className={styles.chicletDot}>•</span>
-              <span className={styles.chicletPill}>🤖 GEO / AEO</span>
-              <span className={styles.chicletDot}>•</span>
-              <span className={styles.chicletPill}>💻 WEB</span>
+            {/* Tactile Channel Chiclets */}
+            <div className={styles.heroChicletsRow}>
+              <span className={styles.heroChiclet}>⚡ SEO</span>
+              <span className={styles.heroChicletDot}>•</span>
+              <span className={styles.heroChiclet}>🎯 PPC</span>
+              <span className={styles.heroChicletDot}>•</span>
+              <span className={styles.heroChiclet}>🚀 META ADS</span>
+              <span className={styles.heroChicletDot}>•</span>
+              <span className={styles.heroChiclet}>📱 SOCIAL</span>
+              <span className={styles.heroChicletDot}>•</span>
+              <span className={styles.heroChiclet}>🤖 GEO / AEO</span>
+              <span className={styles.heroChicletDot}>•</span>
+              <span className={styles.heroChiclet}>💻 WEB</span>
             </div>
 
-            <p className={styles.heroValueProp}>
-              Stop burning marketing budget on disjointed agencies and vanity impressions. As your dedicated Digital Growth Partner, we engineer end-to-end customer acquisition systems that connect high-intent search, paid performance, and conversion architecture directly to revenue.
+            <p className={styles.heroLeadParagraph}>
+              Stop burning your growth capital on isolated campaigns and vanity impressions. As your dedicated Digital Growth Partner, we engineer end-to-end customer acquisition systems that connect high-intent search, paid performance, and conversion architecture directly to revenue.
             </p>
 
-            <div className={styles.heroHighlightsGrid}>
-              <div className={styles.heroHighlightTile}>
-                <div className={styles.highlightMetric}>₹14.8Cr+</div>
-                <div className={styles.highlightLabel}>Tracked Client Pipeline &amp; GMV</div>
+            <div className={styles.heroProofStrip}>
+              <div className={styles.heroProofTile}>
+                <div className={styles.heroProofNum}>₹14.8Cr+</div>
+                <div className={styles.heroProofLabel}>Verified Client Revenue</div>
               </div>
-              <div className={styles.heroHighlightTile}>
-                <div className={styles.highlightMetric}>&lt; 2 Hours</div>
-                <div className={styles.highlightLabel}>Audit Response SLA</div>
+              <div className={styles.heroProofTile}>
+                <div className={styles.heroProofNum}>&lt; 2 Hours</div>
+                <div className={styles.heroProofLabel}>Audit Turnaround SLA</div>
               </div>
-              <div className={styles.heroHighlightTile}>
-                <div className={styles.highlightMetric}>100%</div>
-                <div className={styles.highlightLabel}>Direct Account &amp; Data Ownership</div>
+              <div className={styles.heroProofTile}>
+                <div className={styles.heroProofNum}>100%</div>
+                <div className={styles.heroProofLabel}>Direct Account Ownership</div>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Skeuomorphic Lead Terminal */}
-          <div className={`${styles.skeuoCard} ${styles.leadDeck}`}>
-            <span className={styles.cardRivetTL} />
-            <span className={styles.cardRivetTR} />
-            <span className={styles.cardRivetBL} />
-            <span className={styles.cardRivetBR} />
-
-            <div className={styles.deckHeader}>
-              <div className={styles.deckTitleWrap}>
-                <span className={styles.deckIndicator} />
-                <span className={styles.deckTitle}>Consultation Deck</span>
+          {/* Right Column: Interactive Skeuomorphic Audit Console */}
+          <div className={styles.auditConsole}>
+            <div className={styles.consoleChromeBar}>
+              <div className={styles.consoleStatusGroup}>
+                <span className={styles.pulsingLed} />
+                <span className={styles.consoleHeading}>Free Consultation Deck</span>
               </div>
-              <span className={styles.deckSlotsLeft}>Only 2 Client Slots for Q2</span>
+              <span className={styles.consoleSpotsBadge}>2 Slots Left for Q2</span>
             </div>
 
             {heroSuccess ? (
-              <div className={styles.formSuccessCard}>
-                <div className={styles.successIconBadge}>✓</div>
-                <h3 className={styles.successTitle}>Blueprint In Motion!</h3>
-                <p className={styles.successText}>
-                  Thank you, <strong>{heroForm.name}</strong>. Our senior growth leads are reviewing your project requirements and will respond within <strong>2 hours</strong> with your bespoke roadmap.
+              <div className={styles.successBannerBox}>
+                <div className={styles.successCheckIcon}>✓</div>
+                <h3 className={styles.successHeadline}>Blueprint Initiated!</h3>
+                <p className={styles.successCopy}>
+                  Thank you, <strong>{heroForm.name}</strong>! Our senior growth team is reviewing your project details. We will email your preliminary 90-day growth blueprint within <strong>2 hours</strong>.
                 </p>
                 <a
                   href={`https://wa.me/919437168434?text=Hi%20Marketing%20Copilot%2C%20I%20just%20submitted%20the%20growth%20consultation%20form%20for%20${encodeURIComponent(heroForm.company || 'my company')}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={styles.successWaBtn}
+                  className={styles.successWhatsAppBtn}
                 >
                   <span>💬 Fast-Track on WhatsApp</span>
                 </a>
               </div>
             ) : (
               <form onSubmit={(e) => handleFormSubmit(e, 'hero')}>
-                <div className={styles.formRowDouble}>
-                  <div className={styles.formGroup}>
-                    <label className={styles.formLabel}>
+                <div className={styles.inputGridDouble}>
+                  <div className={styles.fieldGroup}>
+                    <label className={styles.fieldLabel}>
                       Name <span>*</span>
                     </label>
                     <input
@@ -254,24 +260,24 @@ export default function DigitalGrowthPartnerPage() {
                       placeholder="e.g. Rahul Sharma"
                       value={heroForm.name}
                       onChange={(e) => setHeroForm({ ...heroForm, name: e.target.value })}
-                      className={styles.engravedInput}
+                      className={styles.tactileField}
                     />
                   </div>
-                  <div className={styles.formGroup}>
-                    <label className={styles.formLabel}>Company</label>
+                  <div className={styles.fieldGroup}>
+                    <label className={styles.fieldLabel}>Company</label>
                     <input
                       type="text"
-                      placeholder="e.g. Apex Health Labs"
+                      placeholder="e.g. Apex Health"
                       value={heroForm.company}
                       onChange={(e) => setHeroForm({ ...heroForm, company: e.target.value })}
-                      className={styles.engravedInput}
+                      className={styles.tactileField}
                     />
                   </div>
                 </div>
 
-                <div className={styles.formRowDouble}>
-                  <div className={styles.formGroup}>
-                    <label className={styles.formLabel}>
+                <div className={styles.inputGridDouble}>
+                  <div className={styles.fieldGroup}>
+                    <label className={styles.fieldLabel}>
                       Phone / WhatsApp <span>*</span>
                     </label>
                     <input
@@ -280,11 +286,11 @@ export default function DigitalGrowthPartnerPage() {
                       placeholder="+91 98765 43210"
                       value={heroForm.phone}
                       onChange={(e) => setHeroForm({ ...heroForm, phone: e.target.value })}
-                      className={styles.engravedInput}
+                      className={styles.tactileField}
                     />
                   </div>
-                  <div className={styles.formGroup}>
-                    <label className={styles.formLabel}>
+                  <div className={styles.fieldGroup}>
+                    <label className={styles.fieldLabel}>
                       Work Email <span>*</span>
                     </label>
                     <input
@@ -293,28 +299,28 @@ export default function DigitalGrowthPartnerPage() {
                       placeholder="name@company.com"
                       value={heroForm.email}
                       onChange={(e) => setHeroForm({ ...heroForm, email: e.target.value })}
-                      className={styles.engravedInput}
+                      className={styles.tactileField}
                     />
                   </div>
                 </div>
 
-                <div className={styles.formGroup}>
-                  <label className={styles.formLabel}>
-                    Website <span className={styles.formLabelOpt}>(Optional)</span>
+                <div className={styles.fieldGroup}>
+                  <label className={styles.fieldLabel}>
+                    Website URL <span className={styles.fieldLabelOpt}>(Optional)</span>
                   </label>
                   <input
                     type="url"
-                    placeholder="https://yourwebsite.com"
+                    placeholder="https://yourbrand.com"
                     value={heroForm.website}
                     onChange={(e) => setHeroForm({ ...heroForm, website: e.target.value })}
-                    className={styles.engravedInput}
+                    className={styles.tactileField}
                   />
                 </div>
 
-                {/* Services Chiclets */}
-                <div className={styles.formGroup}>
-                  <label className={styles.formLabel}>Services Needed</label>
-                  <div className={styles.servicesPillWrap}>
+                {/* Service Pills */}
+                <div className={styles.fieldGroup}>
+                  <label className={styles.fieldLabel}>Services You Need</label>
+                  <div className={styles.servicesChicletGrid}>
                     {availableServices.map((svc) => {
                       const selected = heroForm.services.includes(svc);
                       return (
@@ -322,8 +328,8 @@ export default function DigitalGrowthPartnerPage() {
                           type="button"
                           key={svc}
                           onClick={() => toggleService('hero', svc)}
-                          className={`${styles.serviceSelectPill} ${
-                            selected ? styles.serviceSelectPillActive : ''
+                          className={`${styles.servicePillBtn} ${
+                            selected ? styles.servicePillBtnActive : ''
                           }`}
                         >
                           {svc} {selected ? '✓' : '+'}
@@ -333,17 +339,17 @@ export default function DigitalGrowthPartnerPage() {
                   </div>
                 </div>
 
-                {/* Budget Range */}
-                <div className={styles.formGroup}>
-                  <label className={styles.formLabel}>Monthly Budget</label>
-                  <div className={styles.budgetPillWrap}>
+                {/* Budget Pills */}
+                <div className={styles.fieldGroup}>
+                  <label className={styles.fieldLabel}>Planned Monthly Budget</label>
+                  <div className={styles.budgetPillGrid}>
                     {budgetOptions.map((b) => (
                       <button
                         type="button"
                         key={b}
                         onClick={() => setHeroForm({ ...heroForm, budget: b })}
-                        className={`${styles.budgetPill} ${
-                          heroForm.budget === b ? styles.budgetPillActive : ''
+                        className={`${styles.budgetPillBtn} ${
+                          heroForm.budget === b ? styles.budgetPillBtnActive : ''
                         }`}
                       >
                         {b}
@@ -353,16 +359,16 @@ export default function DigitalGrowthPartnerPage() {
                 </div>
 
                 {/* Requirement */}
-                <div className={styles.formGroup}>
-                  <label className={styles.formLabel}>
+                <div className={styles.fieldGroup}>
+                  <label className={styles.fieldLabel}>
                     Requirement / Growth Bottleneck
                   </label>
                   <textarea
                     rows={2}
-                    placeholder="Briefly describe your current challenge (e.g. high CPL, dropping SEO traffic, need to scale to ₹50L/mo)"
+                    placeholder="Describe your current bottleneck (e.g. high CPL on Meta, need to rank #1 on Google, scale to ₹50L/mo)"
                     value={heroForm.requirement}
                     onChange={(e) => setHeroForm({ ...heroForm, requirement: e.target.value })}
-                    className={styles.engravedTextarea}
+                    className={styles.tactileTextarea}
                   />
                 </div>
 
@@ -375,12 +381,12 @@ export default function DigitalGrowthPartnerPage() {
                 <button
                   type="submit"
                   disabled={heroSubmitting}
-                  className={styles.tactileSubmitBtn}
+                  className={styles.extrudedCtaBtn}
                 >
                   {heroSubmitting ? 'Evaluating Blueprint...' : 'GET MY FREE CONSULTATION →'}
                 </button>
 
-                <div className={styles.deckTrustStrip}>
+                <div className={styles.consoleFooterGuarantees}>
                   <span>🔒 100% Confidential</span>
                   <span>⚡ 2-Hour Response</span>
                   <span>🎯 Custom Roadmap</span>
@@ -392,171 +398,130 @@ export default function DigitalGrowthPartnerPage() {
       </section>
 
       {/* ═════════════════════════════════════════════════════════════════
-          SECTION 2: TRUSTED ACROSS INDIA (LOGOS & STATS)
-      ═════════════════════════════════════════════════════════════════ */}
-      <section className={styles.trustedSection}>
-        <div className={styles.sectionContainer} style={{ padding: 0 }}>
-          <div className={styles.sectionHeader}>
-            <div className={styles.sectionEyebrow}>
-              <span className={styles.sectionEyebrowLed} />
+          SECTION 2: TRUSTED ACROSS INDIA — INFINITE MARQUEE & STAT BAR
+      ═════════════════════════════════════════════ */}
+      <section className={styles.marqueeSection}>
+        <div className={styles.container}>
+          <div className={styles.headerCenter} style={{ marginBottom: '40px' }}>
+            <div className={styles.eyebrowBadge}>
+              <span className={styles.pulsingLed} />
               <span>TRUSTED ACROSS INDIA</span>
             </div>
-            <h2 className={styles.sectionTitle}>
-              Proven Partners to India’s Most Ambitious Brands
+            <h2 className={styles.titlePrimary}>
+              Trusted by Ambitious Brands from Seed to Scale
             </h2>
-            <p className={styles.sectionDesc}>
-              From funded startups to multi-location enterprises, our clients count on us for reliable performance, continuous testing, and transparent attribution.
+            <p className={styles.subtitle}>
+              From high-growth D2C brands to enterprise healthcare and real estate developers across India.
             </p>
           </div>
 
-          {/* Stats Bar */}
-          <div className={styles.statsBarGrid}>
-            <div className={styles.statTile}>
-              <div className={styles.statTileNumber}>50+</div>
-              <div className={styles.statTileLabel}>Enterprises Scaled</div>
-              <div className={styles.statTileSub}>Across 12+ industry sectors</div>
+          {/* 4 Stat Ribbons */}
+          <div className={styles.statRibbonGrid}>
+            <div className={styles.statRibbonCard}>
+              <div className={styles.statRibbonNumber}>50+</div>
+              <div className={styles.statRibbonLabel}>Enterprises Scaled</div>
+              <div className={styles.statRibbonSub}>Across 12+ industry categories</div>
             </div>
-            <div className={styles.statTile}>
-              <div className={styles.statTileNumber}>₹14.8 Cr+</div>
-              <div className={styles.statTileLabel}>Client Pipeline Delivered</div>
-              <div className={styles.statTileSub}>Verified through bankable CRM metrics</div>
+            <div className={styles.statRibbonCard}>
+              <div className={styles.statRibbonNumber}>₹14.8 Cr+</div>
+              <div className={styles.statRibbonLabel}>Client Pipeline Delivered</div>
+              <div className={styles.statRibbonSub}>Audited via CRM revenue metrics</div>
             </div>
-            <div className={styles.statTile}>
-              <div className={styles.statTileNumber}>94.2%</div>
-              <div className={styles.statTileLabel}>Client Retention MoM</div>
-              <div className={styles.statTileSub}>Zero long-term lock-in traps</div>
+            <div className={styles.statRibbonCard}>
+              <div className={styles.statRibbonNumber}>94.2%</div>
+              <div className={styles.statRibbonLabel}>MoM Client Retention</div>
+              <div className={styles.statRibbonSub}>Zero mandatory lock-in clauses</div>
             </div>
-            <div className={styles.statTile}>
-              <div className={styles.statTileNumber}>4.9 / 5.0</div>
-              <div className={styles.statTileLabel}>Verified Client Rating</div>
-              <div className={styles.statTileSub}>Based on 140+ reviews</div>
+            <div className={styles.statRibbonCard}>
+              <div className={styles.statRibbonNumber}>4.9 / 5.0</div>
+              <div className={styles.statRibbonLabel}>Verified Client Rating</div>
+              <div className={styles.statRibbonSub}>Over 140+ verified client reviews</div>
             </div>
           </div>
+        </div>
 
-          {/* Client Logos Skeuomorphic Display */}
-          <div className={styles.clientLogosWrap}>
-            <div className={styles.clientLogosGrid}>
-              <div className={styles.logoItem}>
+        {/* Seamless Infinite Marquee Track (Repeated for seamless loop) */}
+        <div className={styles.marqueeContainer}>
+          <div className={styles.marqueeTrack}>
+            {[...clientLogos, ...clientLogos, ...clientLogos].map((logo, idx) => (
+              <div key={`${logo.name}-${idx}`} className={styles.marqueeLogoCard}>
                 <Image
-                  src="/images/clients/Sabour-logo.png"
-                  alt="Sabour Brand Partner"
+                  src={logo.src}
+                  alt={`${logo.name} Partner`}
                   width={120}
-                  height={40}
-                  className={styles.logoImg}
+                  height={38}
+                  className={styles.marqueeLogoImg}
                 />
               </div>
-              <div className={styles.logoItem}>
-                <Image
-                  src="/images/clients/ekatraa.png"
-                  alt="Ekatraa Client"
-                  width={120}
-                  height={40}
-                  className={styles.logoImg}
-                />
-              </div>
-              <div className={styles.logoItem}>
-                <Image
-                  src="/images/clients/heed.png"
-                  alt="Heed Health Care"
-                  width={120}
-                  height={40}
-                  className={styles.logoImg}
-                />
-              </div>
-              <div className={styles.logoItem}>
-                <Image
-                  src="/images/clients/medallion-house.png"
-                  alt="Medallion House Partner"
-                  width={120}
-                  height={40}
-                  className={styles.logoImg}
-                />
-              </div>
-              <div className={styles.logoItem}>
-                <Image
-                  src="/images/clients/praveen-electronics.png"
-                  alt="Praveen Electronics Retailer"
-                  width={120}
-                  height={40}
-                  className={styles.logoImg}
-                />
-              </div>
-              <div className={styles.logoItem}>
-                <Image
-                  src="/images/clients/sri-pandurangan-divine-fresh.png"
-                  alt="Sri Pandurangan Divine Fresh"
-                  width={120}
-                  height={40}
-                  className={styles.logoImg}
-                />
-              </div>
-              <div className={styles.logoItem}>
-                <Image
-                  src="/images/clients/travysys.png"
-                  alt="Travysys Global Technology"
-                  width={120}
-                  height={40}
-                  className={styles.logoImg}
-                />
-              </div>
-              <div className={styles.logoItem}>
-                <Image
-                  src="/images/clients/weekend-bhraman.png"
-                  alt="Weekend Bhraman Travel"
-                  width={120}
-                  height={40}
-                  className={styles.logoImg}
-                />
-              </div>
-              <div className={styles.logoItem}>
-                <Image
-                  src="/images/clients/Zue-Studio-Logo-color (1).png"
-                  alt="Zue Studio Fashion D2C"
-                  width={120}
-                  height={40}
-                  className={styles.logoImg}
-                />
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* ═════════════════════════════════════════════════════════════════
-          SECTION 3: RESULTS THAT MATTER (SKEUOMORPHIC GAUGES)
-      ═════════════════════════════════════════════════════════════════ */}
-      <section className={`${styles.sectionContainer} ${styles.resultsSection}`}>
-        <div className={styles.sectionHeader}>
-          <div className={styles.sectionEyebrow}>
-            <span className={styles.sectionEyebrowLed} />
+          SECTION 3: RESULTS THAT MATTER — INTERACTIVE PERFORMANCE COCKPIT
+      ═════════════════════════════════════════════ */}
+      <section className={`${styles.container} ${styles.performanceCockpit}`}>
+        <div className={styles.headerCenter}>
+          <div className={styles.eyebrowBadge}>
+            <span className={styles.pulsingLed} />
             <span>MEASURABLE BUSINESS IMPACT</span>
           </div>
-          <h2 className={styles.sectionTitle}>Results That Matter</h2>
-          <p className={styles.sectionDesc}>
+          <h2 className={styles.titlePrimary}>Results That Matter</h2>
+          <p className={styles.subtitle}>
             We measure success in net margin, verified leads, and compounded enterprise value—not clicks or vanity metrics.
           </p>
         </div>
 
-        <div className={styles.resultsGrid}>
+        {/* Timeframe Switcher */}
+        <div className={styles.timeframeSwitchBar}>
+          <button
+            type="button"
+            onClick={() => setTimeframe('90d')}
+            className={`${styles.timeframeBtn} ${
+              timeframe === '90d' ? styles.timeframeBtnActive : ''
+            }`}
+          >
+            Last 90 Days
+          </button>
+          <button
+            type="button"
+            onClick={() => setTimeframe('1y')}
+            className={`${styles.timeframeBtn} ${
+              timeframe === '1y' ? styles.timeframeBtnActive : ''
+            }`}
+          >
+            1 Year Scale
+          </button>
+          <button
+            type="button"
+            onClick={() => setTimeframe('all')}
+            className={`${styles.timeframeBtn} ${
+              timeframe === 'all' ? styles.timeframeBtnActive : ''
+            }`}
+          >
+            Lifetime Compounding
+          </button>
+        </div>
+
+        {/* 3 High-Impact Instrument Gauges */}
+        <div className={styles.gaugesTriadGrid}>
           {/* Gauge 1: Traffic */}
           <ScrollReveal delay={100}>
-            <div className={`${styles.skeuoCard} ${styles.skeuoCardHover} ${styles.resultGaugeCard}`}>
-              <span className={styles.cardRivetTL} />
-              <span className={styles.cardRivetTR} />
-              <span className={styles.cardRivetBL} />
-              <span className={styles.cardRivetBR} />
-
-              <div className={styles.gaugeInstrumentFrame}>
-                <div className={styles.gaugeInnerDial}>
-                  <div className={styles.gaugeDialValue}>+187%</div>
-                  <div className={styles.gaugeDialUnit}>ORGANIC TRAFFIC</div>
+            <div className={styles.gaugeChassis}>
+              <div className={styles.instrumentBezel}>
+                <div className={styles.instrumentDialFace}>
+                  <div className={styles.instrumentValueBig}>
+                    {timeframe === '90d' ? '+187%' : timeframe === '1y' ? '+340%' : '+612%'}
+                  </div>
+                  <div className={styles.instrumentMetricSub}>ORGANIC TRAFFIC</div>
                 </div>
               </div>
-              <h3 className={styles.resultTitle}>High-Intent Search Traffic</h3>
-              <p className={styles.resultDesc}>
+              <h3 className={styles.gaugeHeading}>High-Intent Search Traffic</h3>
+              <p className={styles.gaugeDescription}>
                 Compounded growth in commercial &amp; transactional search volume via technical SEO, entity hubs, and AI search presence.
               </p>
-              <div className={styles.resultBenchmarkPill}>
+              <div className={styles.gaugeProofBadge}>
                 <span>Industry Avg: +22%</span>
                 <span>•</span>
                 <strong style={{ color: '#0B2093' }}>8.5X Outperformance</strong>
@@ -566,23 +531,20 @@ export default function DigitalGrowthPartnerPage() {
 
           {/* Gauge 2: ROAS */}
           <ScrollReveal delay={200}>
-            <div className={`${styles.skeuoCard} ${styles.skeuoCardHover} ${styles.resultGaugeCard}`}>
-              <span className={styles.cardRivetTL} />
-              <span className={styles.cardRivetTR} />
-              <span className={styles.cardRivetBL} />
-              <span className={styles.cardRivetBR} />
-
-              <div className={styles.gaugeInstrumentFrame}>
-                <div className={styles.gaugeInnerDial}>
-                  <div className={styles.gaugeDialValue}>3.4X</div>
-                  <div className={styles.gaugeDialUnit}>BLENDED ROAS</div>
+            <div className={styles.gaugeChassis}>
+              <div className={styles.instrumentBezel}>
+                <div className={styles.instrumentDialFace}>
+                  <div className={styles.instrumentValueBig}>
+                    {timeframe === '90d' ? '3.4X' : timeframe === '1y' ? '3.8X' : '4.2X'}
+                  </div>
+                  <div className={styles.instrumentMetricSub}>BLENDED ROAS</div>
                 </div>
               </div>
-              <h3 className={styles.resultTitle}>Paid Ad Return on Spend</h3>
-              <p className={styles.resultDesc}>
+              <h3 className={styles.gaugeHeading}>Paid Ad Return on Spend</h3>
+              <p className={styles.gaugeDescription}>
                 Cross-channel paid media return across Google Search, Shopping, and Meta Advantage+ campaigns with verified CAPI attribution.
               </p>
-              <div className={styles.resultBenchmarkPill}>
+              <div className={styles.gaugeProofBadge}>
                 <span>Target: 2.2X</span>
                 <span>•</span>
                 <strong style={{ color: '#059669' }}>+54% Margin Boost</strong>
@@ -592,23 +554,20 @@ export default function DigitalGrowthPartnerPage() {
 
           {/* Gauge 3: CPL */}
           <ScrollReveal delay={300}>
-            <div className={`${styles.skeuoCard} ${styles.skeuoCardHover} ${styles.resultGaugeCard}`}>
-              <span className={styles.cardRivetTL} />
-              <span className={styles.cardRivetTR} />
-              <span className={styles.cardRivetBL} />
-              <span className={styles.cardRivetBR} />
-
-              <div className={styles.gaugeInstrumentFrame}>
-                <div className={styles.gaugeInnerDial}>
-                  <div className={styles.gaugeDialValue}>-34%</div>
-                  <div className={styles.gaugeDialUnit}>LOWER CPL</div>
+            <div className={styles.gaugeChassis}>
+              <div className={styles.instrumentBezel}>
+                <div className={styles.instrumentDialFace}>
+                  <div className={styles.instrumentValueBig}>
+                    {timeframe === '90d' ? '-34%' : timeframe === '1y' ? '-46%' : '-58%'}
+                  </div>
+                  <div className={styles.instrumentMetricSub}>LOWER CPL</div>
                 </div>
               </div>
-              <h3 className={styles.resultTitle}>Cost Per Qualified Lead</h3>
-              <p className={styles.resultDesc}>
+              <h3 className={styles.gaugeHeading}>Cost Per Qualified Lead</h3>
+              <p className={styles.gaugeDescription}>
                 Systematic reduction in acquisition costs through landing page conversion rate optimization, negative keyword fortresses, and CRM filtering.
               </p>
-              <div className={styles.resultBenchmarkPill}>
+              <div className={styles.gaugeProofBadge}>
                 <span>Baseline: ₹1,450</span>
                 <span>•</span>
                 <strong style={{ color: '#0B2093' }}>Now: ₹957 Avg CPL</strong>
@@ -619,351 +578,333 @@ export default function DigitalGrowthPartnerPage() {
       </section>
 
       {/* ═════════════════════════════════════════════════════════════════
-          SECTION 4: REAL CAMPAIGNS. REAL RESULTS. (CASE STUDIES)
-      ═════════════════════════════════════════════════════════════════ */}
-      <section className={styles.caseStudiesSection}>
-        <div className={styles.sectionContainer} style={{ padding: 0 }}>
-          <div className={styles.sectionHeader}>
-            <div className={styles.sectionEyebrow}>
-              <span className={styles.sectionEyebrowLed} />
+          SECTION 4: REAL CAMPAIGNS. REAL RESULTS — BENTO DOSSIER
+      ═════════════════════════════════════════════ */}
+      <section className={styles.caseStudiesBentoSection}>
+        <div className={styles.container}>
+          <div className={styles.headerCenter}>
+            <div className={styles.eyebrowBadge}>
+              <span className={styles.pulsingLed} />
               <span>TACTICAL BLUEPRINTS</span>
             </div>
-            <h2 className={styles.sectionTitle}>Real Campaigns. Real Results.</h2>
-            <p className={styles.sectionDesc}>
-              A deep look into real businesses we partnered with, the obstacles we overcame, and the exact growth mechanics we deployed.
+            <h2 className={styles.titlePrimary}>Real Campaigns. Real Results.</h2>
+            <p className={styles.subtitle}>
+              Take an inside look at how our synchronized growth stack solves real-world bottlenecks for ambitious businesses.
             </p>
           </div>
 
-          <div className={styles.caseStudiesGrid}>
-            {/* Case Study 1 */}
+          <div className={styles.bentoGridWrapper}>
+            {/* Left: Wide Flagship Dossier (E-Commerce & Fashion) */}
             <ScrollReveal delay={100}>
-              <div className={`${styles.skeuoCard} ${styles.skeuoCardHover} ${styles.caseStudyCard}`}>
-                <div className={styles.caseImageFrame}>
+              <div className={styles.flagshipCaseDossier}>
+                <div className={styles.flagshipHeroImageFrame}>
                   <Image
                     src="/images/work_fashion.jpg"
-                    alt="D2C Fashion & Apparel Case Study"
+                    alt="Zue Studio D2C Apparel Scaling Case Study"
                     fill
-                    sizes="(max-width: 768px) 100vw, 380px"
-                    className={styles.caseStudyImg}
+                    sizes="(max-width: 980px) 100vw, 720px"
+                    className={styles.flagshipImg}
                   />
-                  <span className={styles.caseImageBadge}>D2C Apparel &amp; Fashion</span>
+                  <span className={styles.flagshipFloatingPill}>Flagship D2C Scale</span>
                 </div>
-                <div className={styles.caseCardBody}>
-                  <h3 className={styles.caseClientTitle}>
+                <div className={styles.flagshipBody}>
+                  <h3 className={styles.caseClientH3}>
                     Zue Studio: Scaling From ₹15L to ₹1.2Cr GMV in 120 Days
                   </h3>
-                  <p className={styles.caseSummary}>
-                    Overcame high iOS drop-offs and rising ad costs by revamping the creative pipeline and building sub-second checkout speeds.
+                  <p className={styles.caseParagraph}>
+                    Overcame high iOS drop-offs and rising paid ad costs by deploying a high-velocity UGC video creative pipeline combined with a headless Next.js checkout yielding +28% completion.
                   </p>
-                  <div className={styles.caseStatsBox}>
-                    <div className={styles.caseStatItem}>
-                      <div className={styles.caseStatVal}>4.1X</div>
-                      <div className={styles.caseStatLbl}>Blended ROAS</div>
+                  <div className={styles.metricDoubleBox}>
+                    <div className={styles.metricBoxCol}>
+                      <div className={styles.metricBigStat}>4.1X</div>
+                      <div className={styles.metricStatLabel}>Blended ROAS</div>
                     </div>
-                    <div className={styles.caseStatItem}>
-                      <div className={styles.caseStatVal}>-42%</div>
-                      <div className={styles.caseStatLbl}>Cost Per Sale</div>
+                    <div className={styles.metricBoxCol}>
+                      <div className={styles.metricBigStat}>-42%</div>
+                      <div className={styles.metricStatLabel}>Cost Per Purchase</div>
                     </div>
                   </div>
-                  <ul className={styles.casePlaybookList}>
-                    <li><span className={styles.casePlaybookCheck}>✓</span> Meta Advantage+ Shopping with 15 UGC video creatives</li>
-                    <li><span className={styles.casePlaybookCheck}>✓</span> Server-side Conversions API for 99.4% tracking accuracy</li>
-                    <li><span className={styles.casePlaybookCheck}>✓</span> Headless Next.js checkout yielding +28% completion</li>
-                  </ul>
-                  <Link href="/portfolio" className={styles.chicletPill} style={{ alignSelf: 'flex-start' }}>
-                    View Full Case Study →
+                  <Link href="/portfolio" className={styles.heroChiclet} style={{ alignSelf: 'flex-start' }}>
+                    View Full Tactical Breakdown →
                   </Link>
                 </div>
               </div>
             </ScrollReveal>
 
-            {/* Case Study 2 */}
-            <ScrollReveal delay={200}>
-              <div className={`${styles.skeuoCard} ${styles.skeuoCardHover} ${styles.caseStudyCard}`}>
-                <div className={styles.caseImageFrame}>
-                  <Image
-                    src="/images/work_realestate.jpg"
-                    alt="Luxury Real Estate Lead Generation"
-                    fill
-                    sizes="(max-width: 768px) 100vw, 380px"
-                    className={styles.caseStudyImg}
-                  />
-                  <span className={styles.caseImageBadge}>Luxury Real Estate</span>
-                </div>
-                <div className={styles.caseCardBody}>
-                  <h3 className={styles.caseClientTitle}>
-                    Utkal Heights: Generating 90+ High-Net-Worth Buyers Monthly
-                  </h3>
-                  <p className={styles.caseSummary}>
-                    Eliminated costly third-party portal reliance through targeted Google search radius ads and hyper-localized search clusters.
-                  </p>
-                  <div className={styles.caseStatsBox}>
-                    <div className={styles.caseStatItem}>
-                      <div className={styles.caseStatVal}>90+</div>
-                      <div className={styles.caseStatLbl}>Verified Monthly Leads</div>
-                    </div>
-                    <div className={styles.caseStatItem}>
-                      <div className={styles.caseStatVal}>-60%</div>
-                      <div className={styles.caseStatLbl}>Cost Per Qualified Lead</div>
-                    </div>
+            {/* Right: Stacked Case Studies (Real Estate & Healthcare) */}
+            <div className={styles.sideCasesCol}>
+              {/* Study 2: Real Estate */}
+              <ScrollReveal delay={200}>
+                <div className={styles.sideCaseCard}>
+                  <div className={styles.sideCaseImgFrame}>
+                    <Image
+                      src="/images/work_realestate.jpg"
+                      alt="Utkal Heights Luxury Real Estate"
+                      fill
+                      sizes="(max-width: 980px) 100vw, 480px"
+                      className={styles.flagshipImg}
+                    />
+                    <span className={styles.flagshipFloatingPill} style={{ fontSize: '10px' }}>
+                      Luxury Real Estate
+                    </span>
                   </div>
-                  <ul className={styles.casePlaybookList}>
-                    <li><span className={styles.casePlaybookCheck}>✓</span> Exact-match Google Search Ads with negative keyword shield</li>
-                    <li><span className={styles.casePlaybookCheck}>✓</span> 35 localized micro-neighborhood amenity landing pages</li>
-                    <li><span className={styles.casePlaybookCheck}>✓</span> 1-click WhatsApp interactive property brochure automation</li>
-                  </ul>
-                  <Link href="/portfolio" className={styles.chicletPill} style={{ alignSelf: 'flex-start' }}>
-                    View Full Case Study →
-                  </Link>
+                  <div className={styles.sideCaseBody}>
+                    <h3 className={styles.caseClientH3} style={{ fontSize: '18px' }}>
+                      Utkal Heights: 90+ High-Net-Worth Buyers / Mo
+                    </h3>
+                    <p className={styles.caseParagraph} style={{ fontSize: '13px', marginBottom: '14px' }}>
+                      Eliminated third-party portal dependency via exact-match Google Search Ads and 35 localized micro-neighborhood landing pages.
+                    </p>
+                    <div className={styles.metricDoubleBox} style={{ padding: '10px', marginBottom: '14px' }}>
+                      <div className={styles.metricBoxCol}>
+                        <div className={styles.metricBigStat} style={{ fontSize: '18px' }}>90+</div>
+                        <div className={styles.metricStatLabel}>Monthly Inquiries</div>
+                      </div>
+                      <div className={styles.metricBoxCol}>
+                        <div className={styles.metricBigStat} style={{ fontSize: '18px' }}>-60%</div>
+                        <div className={styles.metricStatLabel}>Cost Per Lead</div>
+                      </div>
+                    </div>
+                    <Link href="/portfolio" className={styles.heroChiclet} style={{ alignSelf: 'flex-start' }}>
+                      Read Case Study →
+                    </Link>
+                  </div>
                 </div>
-              </div>
-            </ScrollReveal>
+              </ScrollReveal>
 
-            {/* Case Study 3 */}
-            <ScrollReveal delay={300}>
-              <div className={`${styles.skeuoCard} ${styles.skeuoCardHover} ${styles.caseStudyCard}`}>
-                <div className={styles.caseImageFrame}>
-                  <Image
-                    src="/images/work_healthcare.jpg"
-                    alt="Healthcare Local SEO Case Study"
-                    fill
-                    sizes="(max-width: 768px) 100vw, 380px"
-                    className={styles.caseStudyImg}
-                  />
-                  <span className={styles.caseImageBadge}>Healthcare &amp; Clinics</span>
-                </div>
-                <div className={styles.caseCardBody}>
-                  <h3 className={styles.caseClientTitle}>
-                    CareFirst Clinics: Dominating Google Maps Across 14 Keywords
-                  </h3>
-                  <p className={styles.caseSummary}>
-                    Transformed low local walk-ins into a consistent stream of booked appointments using Google Maps 3-Pack optimization.
-                  </p>
-                  <div className={styles.caseStatsBox}>
-                    <div className={styles.caseStatItem}>
-                      <div className={styles.caseStatVal}>+190%</div>
-                      <div className={styles.caseStatLbl}>Direct Patient Calls</div>
-                    </div>
-                    <div className={styles.caseStatItem}>
-                      <div className={styles.caseStatVal}>#1 Rank</div>
-                      <div className={styles.caseStatLbl}>14 High-Intent Searches</div>
-                    </div>
+              {/* Study 3: Healthcare */}
+              <ScrollReveal delay={300}>
+                <div className={styles.sideCaseCard}>
+                  <div className={styles.sideCaseImgFrame}>
+                    <Image
+                      src="/images/work_healthcare.jpg"
+                      alt="CareFirst Multi-Specialty Clinics"
+                      fill
+                      sizes="(max-width: 980px) 100vw, 480px"
+                      className={styles.flagshipImg}
+                    />
+                    <span className={styles.flagshipFloatingPill} style={{ fontSize: '10px' }}>
+                      Healthcare &amp; Clinics
+                    </span>
                   </div>
-                  <ul className={styles.casePlaybookList}>
-                    <li><span className={styles.casePlaybookCheck}>✓</span> Google Business Profile entity overhaul and geotagged updates</li>
-                    <li><span className={styles.casePlaybookCheck}>✓</span> Automated post-treatment SMS review acceleration engine</li>
-                    <li><span className={styles.casePlaybookCheck}>✓</span> Hyperlocal clinical schema markup and citation sync</li>
-                  </ul>
-                  <Link href="/portfolio" className={styles.chicletPill} style={{ alignSelf: 'flex-start' }}>
-                    View Full Case Study →
-                  </Link>
+                  <div className={styles.sideCaseBody}>
+                    <h3 className={styles.caseClientH3} style={{ fontSize: '18px' }}>
+                      CareFirst: Dominating Google Maps 3-Pack
+                    </h3>
+                    <p className={styles.caseParagraph} style={{ fontSize: '13px', marginBottom: '14px' }}>
+                      Google Business Profile entity overhaul and automated post-visit SMS review acceleration driving 190% more direct calls.
+                    </p>
+                    <div className={styles.metricDoubleBox} style={{ padding: '10px', marginBottom: '14px' }}>
+                      <div className={styles.metricBoxCol}>
+                        <div className={styles.metricBigStat} style={{ fontSize: '18px' }}>+190%</div>
+                        <div className={styles.metricStatLabel}>Direct Calls</div>
+                      </div>
+                      <div className={styles.metricBoxCol}>
+                        <div className={styles.metricBigStat} style={{ fontSize: '18px' }}>#1 Rank</div>
+                        <div className={styles.metricStatLabel}>14 Local Searches</div>
+                      </div>
+                    </div>
+                    <Link href="/portfolio" className={styles.heroChiclet} style={{ alignSelf: 'flex-start' }}>
+                      Read Case Study →
+                    </Link>
+                  </div>
                 </div>
-              </div>
-            </ScrollReveal>
+              </ScrollReveal>
+            </div>
           </div>
         </div>
       </section>
 
       {/* ═════════════════════════════════════════════════════════════════
-          SECTION 5: SEE WHAT WE MANAGE (TERMINAL VIEWPORTS)
+          SECTION 5: SEE WHAT WE MANAGE — DARK CYBER-COCKPIT
       ═════════════════════════════════════════════ */}
-      <section className={`${styles.sectionContainer} ${styles.manageSection}`}>
-        <div className={styles.sectionHeader}>
-          <div className={styles.sectionEyebrow}>
-            <span className={styles.sectionEyebrowLed} />
-            <span>TRANSPARENT COCKPIT</span>
-          </div>
-          <h2 className={styles.sectionTitle}>See What We Manage</h2>
-          <p className={styles.sectionDesc}>
-            No black boxes or vague agency reports. You receive direct access and telemetry into production campaigns, attribution pixels, and search visibility.
-          </p>
-        </div>
+      <section className={styles.cockpitSection}>
+        <div className={styles.cockpitNeonGrid} />
+        <div className={styles.cockpitAmbientGlow} />
 
-        {/* Tab Switcher */}
-        <div className={styles.terminalSwitcher}>
-          <button
-            type="button"
-            onClick={() => setActiveTerminal('google')}
-            className={`${styles.terminalTabBtn} ${
-              activeTerminal === 'google' ? styles.terminalTabBtnActive : ''
-            }`}
-          >
-            🎯 Google Ads Cockpit
-          </button>
-          <button
-            type="button"
-            onClick={() => setActiveTerminal('meta')}
-            className={`${styles.terminalTabBtn} ${
-              activeTerminal === 'meta' ? styles.terminalTabBtnActive : ''
-            }`}
-          >
-            🚀 Meta Ads Studio
-          </button>
-          <button
-            type="button"
-            onClick={() => setActiveTerminal('seo')}
-            className={`${styles.terminalTabBtn} ${
-              activeTerminal === 'seo' ? styles.terminalTabBtnActive : ''
-            }`}
-          >
-            ⚡ SEO Ranking Radar
-          </button>
-        </div>
-
-        {/* Console Window */}
-        <div className={styles.terminalConsole}>
-          <div className={styles.terminalTitleBar}>
-            <div className={styles.windowControls}>
-              <span className={styles.windowDotRed} />
-              <span className={styles.windowDotYellow} />
-              <span className={styles.windowDotGreen} />
+        <div className={styles.container}>
+          <div className={styles.cockpitHeader}>
+            <div className={styles.cockpitEyebrow}>
+              <span className={styles.pulsingLed} />
+              <span>TRANSPARENT COCKPIT</span>
             </div>
-            <div className={styles.terminalTitleText}>
-              PRODUCTION_CONSOLE // marketingcopilot.in/{activeTerminal}-stream
-            </div>
-            <div className={styles.terminalLiveBadge}>
-              <span className={styles.sectionEyebrowLed} />
-              <span>LIVE TELEMETRY</span>
-            </div>
+            <h2 className={styles.cockpitTitle}>See What We Manage</h2>
+            <p className={styles.cockpitSubtitle}>
+              Zero black boxes or vague agency reports. You receive direct access and telemetry into production campaigns, attribution pixels, and search visibility.
+            </p>
           </div>
 
-          <div className={styles.terminalContentGrid}>
-            {/* Visual Screenshot / Diagram */}
-            <div className={styles.terminalVisualBox}>
-              <Image
-                src={
-                  activeTerminal === 'google'
-                    ? '/images/Ad Framework.jpg'
-                    : activeTerminal === 'meta'
-                    ? '/images/Google ads & Meta ads.png'
-                    : '/images/SEO framework.jpg'
-                }
-                alt="Production Ad & SEO Management"
-                fill
-                sizes="(max-width: 768px) 100vw, 600px"
-                className={styles.terminalImg}
-              />
+          <div className={styles.cockpitConsoleFrame}>
+            <div className={styles.cockpitTitleBar}>
+              <div className={styles.cockpitTabList}>
+                <button
+                  type="button"
+                  onClick={() => setActiveTerminal('google')}
+                  className={`${styles.cockpitTabBtn} ${
+                    activeTerminal === 'google' ? styles.cockpitTabBtnActive : ''
+                  }`}
+                >
+                  🎯 Google Ads Cockpit
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setActiveTerminal('meta')}
+                  className={`${styles.cockpitTabBtn} ${
+                    activeTerminal === 'meta' ? styles.cockpitTabBtnActive : ''
+                  }`}
+                >
+                  🚀 Meta Ads Studio
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setActiveTerminal('seo')}
+                  className={`${styles.cockpitTabBtn} ${
+                    activeTerminal === 'seo' ? styles.cockpitTabBtnActive : ''
+                  }`}
+                >
+                  ⚡ SEO Ranking Radar
+                </button>
+              </div>
+
+              <div style={{ fontSize: '11px', fontFamily: 'monospace', color: '#10B981', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                <span className={styles.pulsingLed} />
+                <span>LIVE PRODUCTION FEED</span>
+              </div>
             </div>
 
-            {/* Readout Column */}
-            <div className={styles.terminalStatsCol}>
-              {activeTerminal === 'google' && (
-                <>
-                  <div className={styles.terminalStatBlock}>
-                    <div className={styles.statBlockLabel}>Search Impression Share</div>
-                    <div className={`${styles.statBlockNumber} ${styles.statBlockHighlight}`}>
-                      88.4%
-                    </div>
-                    <div className={styles.statBlockDesc}>
-                      Dominating top-of-page real estate on core buying keywords with high Quality Scores (9.2/10).
-                    </div>
-                  </div>
-                  <div className={styles.terminalStatBlock}>
-                    <div className={styles.statBlockLabel}>Negative Keyword Fortress</div>
-                    <div className={`${styles.statBlockNumber} ${styles.statBlockGreen}`}>
-                      1,840+ Blocked Terms
-                    </div>
-                    <div className={styles.statBlockDesc}>
-                      Eliminating accidental ad spend on free, career, or irrelevant queries.
-                    </div>
-                  </div>
-                </>
-              )}
+            <div className={styles.cockpitGrid}>
+              {/* Display Frame */}
+              <div className={styles.cockpitDisplayViewport}>
+                <Image
+                  src={
+                    activeTerminal === 'google'
+                      ? '/images/Ad Framework.jpg'
+                      : activeTerminal === 'meta'
+                      ? '/images/Google ads & Meta ads.png'
+                      : '/images/SEO framework.jpg'
+                  }
+                  alt="Production Campaign Telemetry"
+                  fill
+                  sizes="(max-width: 900px) 100vw, 680px"
+                  style={{ objectFit: 'cover' }}
+                />
+              </div>
 
-              {activeTerminal === 'meta' && (
-                <>
-                  <div className={styles.terminalStatBlock}>
-                    <div className={styles.statBlockLabel}>CAPI Match Quality</div>
-                    <div className={`${styles.statBlockNumber} ${styles.statBlockGreen}`}>
-                      9.8 / 10 (Event Quality Score)
+              {/* Metrics Readouts */}
+              <div className={styles.cockpitMetricsCol}>
+                {activeTerminal === 'google' && (
+                  <>
+                    <div className={styles.cyberTelemetryCard}>
+                      <div className={styles.cyberMetricLabel}>Search Impression Share</div>
+                      <div className={`${styles.cyberMetricStat} ${styles.cyberMetricGold}`}>
+                        88.4%
+                      </div>
+                      <div className={styles.cyberMetricDetail}>
+                        Dominating top-of-page ad placements on high-intent buyer terms with Quality Score 9.2/10.
+                      </div>
                     </div>
-                    <div className={styles.statBlockDesc}>
-                      Server-side Conversions API feeds first-party customer signals directly back to Meta's AI bidding.
+                    <div className={styles.cyberTelemetryCard}>
+                      <div className={styles.cyberMetricLabel}>Negative Keyword Fortress</div>
+                      <div className={`${styles.cyberMetricStat} ${styles.cyberMetricEmerald}`}>
+                        1,840+ Blocked Terms
+                      </div>
+                      <div className={styles.cyberMetricDetail}>
+                        Eliminating wasted spend on accidental, job-seeker, or free searches.
+                      </div>
                     </div>
-                  </div>
-                  <div className={styles.terminalStatBlock}>
-                    <div className={styles.statBlockLabel}>Creative Testing Velocity</div>
-                    <div className={`${styles.statBlockNumber} ${styles.statBlockHighlight}`}>
-                      12 Variations / Sprint
-                    </div>
-                    <div className={styles.statBlockDesc}>
-                      Continuous testing of UGC hooks, angles, and thumbnails to prevent ad fatigue.
-                    </div>
-                  </div>
-                </>
-              )}
+                  </>
+                )}
 
-              {activeTerminal === 'seo' && (
-                <>
-                  <div className={styles.terminalStatBlock}>
-                    <div className={styles.statBlockLabel}>Top 3 Google Positions</div>
-                    <div className={`${styles.statBlockNumber} ${styles.statBlockGreen}`}>
-                      1,280+ High-Intent Keywords
+                {activeTerminal === 'meta' && (
+                  <>
+                    <div className={styles.cyberTelemetryCard}>
+                      <div className={styles.cyberMetricLabel}>CAPI Event Match Quality</div>
+                      <div className={`${styles.cyberMetricStat} ${styles.cyberMetricEmerald}`}>
+                        9.8 / 10.0
+                      </div>
+                      <div className={styles.cyberMetricDetail}>
+                        Direct server-side Conversions API feeding first-party buyer signals back to Meta's AI bidding.
+                      </div>
                     </div>
-                    <div className={styles.statBlockDesc}>
-                      High-converting buyer queries indexed and ranking in top 3 organic spots and AI answers.
+                    <div className={styles.cyberTelemetryCard}>
+                      <div className={styles.cyberMetricLabel}>Creative Velocity</div>
+                      <div className={`${styles.cyberMetricStat} ${styles.cyberMetricGold}`}>
+                        12 Variations / Sprint
+                      </div>
+                      <div className={styles.cyberMetricDetail}>
+                        Continuous A/B testing of hooks, UGC video creators, and offer angles to prevent ad fatigue.
+                      </div>
                     </div>
-                  </div>
-                  <div className={styles.terminalStatBlock}>
-                    <div className={styles.statBlockLabel}>Core Web Vitals Score</div>
-                    <div className={`${styles.statBlockNumber} ${styles.statBlockHighlight}`}>
-                      99 / 100 (Mobile Speed)
+                  </>
+                )}
+
+                {activeTerminal === 'seo' && (
+                  <>
+                    <div className={styles.cyberTelemetryCard}>
+                      <div className={styles.cyberMetricLabel}>Top 3 Google Positions</div>
+                      <div className={`${styles.cyberMetricStat} ${styles.cyberMetricEmerald}`}>
+                        1,280+ Keywords
+                      </div>
+                      <div className={styles.cyberMetricDetail}>
+                        Securing featured snippets and top organic real estate for high-converting customer searches.
+                      </div>
                     </div>
-                    <div className={styles.statBlockDesc}>
-                      Sub-second Largest Contentful Paint (LCP) ensuring instant loads on 4G/5G mobile connections.
+                    <div className={styles.cyberTelemetryCard}>
+                      <div className={styles.cyberMetricLabel}>Core Web Vitals Speed</div>
+                      <div className={`${styles.cyberMetricStat} ${styles.cyberMetricGold}`}>
+                        99 / 100 Mobile Score
+                      </div>
+                      <div className={styles.cyberMetricDetail}>
+                        Sub-second Largest Contentful Paint (LCP) ensuring zero drop-off on mobile connections.
+                      </div>
                     </div>
-                  </div>
-                </>
-              )}
+                  </>
+                )}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* ═════════════════════════════════════════════════════════════════
-          SECTION 6: MEET THE FOUNDERS
-      ═════════════════════════════════════════════════════════════════ */}
+          SECTION 6: MEET THE FOUNDERS — EDITORIAL LEADERSHIP
+      ═════════════════════════════════════════════ */}
       <section className={styles.foundersSection}>
-        <div className={styles.sectionContainer} style={{ padding: 0 }}>
-          <div className={styles.sectionHeader}>
-            <div className={styles.sectionEyebrow}>
-              <span className={styles.sectionEyebrowLed} />
+        <div className={styles.container}>
+          <div className={styles.headerCenter}>
+            <div className={styles.eyebrowBadge}>
+              <span className={styles.pulsingLed} />
               <span>LEADERSHIP &amp; ACCOUNTABILITY</span>
             </div>
-            <h2 className={styles.sectionTitle}>Meet the Founders</h2>
-            <p className={styles.sectionDesc}>
+            <h2 className={styles.titlePrimary}>Meet the Founders</h2>
+            <p className={styles.subtitle}>
               No junior hand-offs or outsourced chaos. Your brand's growth blueprint is directly architected, managed, and reviewed by seasoned founders.
             </p>
           </div>
 
-          <div className={styles.foundersGrid}>
+          <div className={styles.foundersDuoGrid}>
             {/* Shankar */}
             <ScrollReveal delay={100}>
-              <div className={`${styles.skeuoCard} ${styles.skeuoCardHover} ${styles.founderCard}`}>
-                <span className={styles.cardRivetTL} />
-                <span className={styles.cardRivetTR} />
-                <span className={styles.cardRivetBL} />
-                <span className={styles.cardRivetBR} />
-
-                <div className={styles.founderAvatarFrame}>
+              <div className={styles.founderChassis}>
+                <div className={styles.founderPortraitHalo}>
                   <Image
                     src="/images/team/exec_1.png"
                     alt="Shankarsan Nayak — Founder & CEO"
                     fill
-                    sizes="130px"
-                    className={styles.founderAvatarImg}
+                    sizes="140px"
+                    style={{ objectFit: 'cover' }}
                   />
                 </div>
-                <h3 className={styles.founderName}>Shankarsan Nayak</h3>
-                <span className={styles.founderRoleBadge}>Founder &amp; CEO</span>
-                <p className={styles.founderExp}>
+                <h3 className={styles.founderNameH3}>Shankarsan Nayak</h3>
+                <span className={styles.founderRoleChip}>Founder &amp; CEO</span>
+                <p className={styles.founderBioParagraph}>
                   10+ years architecting search systems, algorithmic paid advertising, and high-growth revenue funnels. Has personally scaled over 50+ businesses across India with engineering rigor and predictable CAC economics.
                 </p>
                 <a
                   href="https://linkedin.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={styles.founderLinkedinBtn}
+                  className={styles.founderLinkedinAction}
                 >
                   Connect on LinkedIn ↗
                 </a>
@@ -972,31 +913,26 @@ export default function DigitalGrowthPartnerPage() {
 
             {/* Pranjal */}
             <ScrollReveal delay={200}>
-              <div className={`${styles.skeuoCard} ${styles.skeuoCardHover} ${styles.founderCard}`}>
-                <span className={styles.cardRivetTL} />
-                <span className={styles.cardRivetTR} />
-                <span className={styles.cardRivetBL} />
-                <span className={styles.cardRivetBR} />
-
-                <div className={styles.founderAvatarFrame}>
+              <div className={styles.founderChassis}>
+                <div className={styles.founderPortraitHalo}>
                   <Image
                     src="/images/team/exec_2.png"
                     alt="Pranjal Sharma — Founding Team Member & COO"
                     fill
-                    sizes="130px"
-                    className={styles.founderAvatarImg}
+                    sizes="140px"
+                    style={{ objectFit: 'cover' }}
                   />
                 </div>
-                <h3 className={styles.founderName}>Pranjal Sharma</h3>
-                <span className={styles.founderRoleBadge}>Co-Founder &amp; COO</span>
-                <p className={styles.founderExp}>
+                <h3 className={styles.founderNameH3}>Pranjal Sharma</h3>
+                <span className={styles.founderRoleChip}>Co-Founder &amp; COO</span>
+                <p className={styles.founderBioParagraph}>
                   12+ years heading operational scale, enterprise media operations, and cross-channel execution rigor. Ensures that creative assets, technical audits, and performance milestones meet strict SLAs on time and on budget.
                 </p>
                 <a
                   href="https://linkedin.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={styles.founderLinkedinBtn}
+                  className={styles.founderLinkedinAction}
                 >
                   Connect on LinkedIn ↗
                 </a>
@@ -1007,152 +943,199 @@ export default function DigitalGrowthPartnerPage() {
       </section>
 
       {/* ═════════════════════════════════════════════════════════════════
-          SECTION 7: EVERYTHING YOU NEED TO GROW ONLINE
-      ═════════════════════════════════════════════════════════════════ */}
-      <section className={`${styles.sectionContainer} ${styles.capabilitiesSection}`}>
-        <div className={styles.sectionHeader}>
-          <div className={styles.sectionEyebrow}>
-            <span className={styles.sectionEyebrowLed} />
+          SECTION 7: EVERYTHING YOU NEED TO GROW ONLINE — BENTO STACK
+      ═════════════════════════════════════════════ */}
+      <section className={`${styles.container} ${styles.sectionPad}`}>
+        <div className={styles.headerCenter}>
+          <div className={styles.eyebrowBadge}>
+            <span className={styles.pulsingLed} />
             <span>END-TO-END GROWTH STACK</span>
           </div>
-          <h2 className={styles.sectionTitle}>
-            Everything You Need to Grow Online
-          </h2>
-          <p className={styles.sectionDesc}>
+          <h2 className={styles.titlePrimary}>Everything You Need to Grow Online</h2>
+          <p className={styles.subtitle}>
             A synchronized suite of performance services designed to work together without the overhead of managing multiple disconnected vendors.
           </p>
         </div>
 
-        <div className={styles.capabilitiesGrid}>
+        <div className={styles.capabilitiesBentoGrid}>
           {/* 1. SEO */}
-          <div className={`${styles.skeuoCard} ${styles.skeuoCardHover} ${styles.capCard}`}>
-            <div className={styles.capIconPill}>⚡</div>
-            <h3 className={styles.capTitle}>Search Engine Optimization</h3>
-            <p className={styles.capDesc}>
-              Technical SEO audits, semantic schema, and topic cluster architecture to secure #1 rankings for transactional keywords.
+          <div className={styles.capabilityCard}>
+            <div className={styles.capabilityIconFrame}>⚡</div>
+            <h3 className={styles.capabilityH3}>Search Engine Optimization</h3>
+            <p className={styles.capabilityText}>
+              Technical SEO audits, semantic schema, and topic cluster architecture to secure #1 rankings for high-intent queries.
             </p>
-            <span className={styles.capFeatureTag}>High Buyer Intent</span>
+            <span className={styles.capabilityTag}>Organic Pipeline</span>
           </div>
 
           {/* 2. Google Ads */}
-          <div className={`${styles.skeuoCard} ${styles.skeuoCardHover} ${styles.capCard}`}>
-            <div className={styles.capIconPill}>🎯</div>
-            <h3 className={styles.capTitle}>Google Ads &amp; PPC</h3>
-            <p className={styles.capDesc}>
-              High-ROAS search, Shopping, and Performance Max campaigns with precision negative keyword filters and smart bidding.
+          <div className={styles.capabilityCard}>
+            <div className={styles.capabilityIconFrame}>🎯</div>
+            <h3 className={styles.capabilityH3}>Google Ads &amp; PPC</h3>
+            <p className={styles.capabilityText}>
+              High-ROAS search, Shopping, and Performance Max campaigns with precision negative keyword shields and smart bidding.
             </p>
-            <span className={styles.capFeatureTag}>Immediate Pipeline</span>
+            <span className={styles.capabilityTag}>Immediate Demand</span>
           </div>
 
           {/* 3. Meta Ads */}
-          <div className={`${styles.skeuoCard} ${styles.skeuoCardHover} ${styles.capCard}`}>
-            <div className={styles.capIconPill}>🚀</div>
-            <h3 className={styles.capTitle}>Meta Ads</h3>
-            <p className={styles.capDesc}>
-              Full-funnel Facebook &amp; Instagram advertising powered by Advantage+ budgeting, UGC creatives, and Conversions API (CAPI).
+          <div className={styles.capabilityCard}>
+            <div className={styles.capabilityIconFrame}>🚀</div>
+            <h3 className={styles.capabilityH3}>Meta Ads</h3>
+            <p className={styles.capabilityText}>
+              Full-funnel Facebook &amp; Instagram advertising powered by Advantage+ budgeting, UGC creatives, and Conversions API.
             </p>
-            <span className={styles.capFeatureTag}>Viral Scale</span>
+            <span className={styles.capabilityTag}>Viral Scale</span>
           </div>
 
           {/* 4. Social Media */}
-          <div className={`${styles.skeuoCard} ${styles.skeuoCardHover} ${styles.capCard}`}>
-            <div className={styles.capIconPill}>📱</div>
-            <h3 className={styles.capTitle}>Social Media Growth</h3>
-            <p className={styles.capDesc}>
+          <div className={styles.capabilityCard}>
+            <div className={styles.capabilityIconFrame}>📱</div>
+            <h3 className={styles.capabilityH3}>Social Media Growth</h3>
+            <p className={styles.capabilityText}>
               Thumb-stopping short-form Reels, community building, and brand authority that turns casual viewers into brand advocates.
             </p>
-            <span className={styles.capFeatureTag}>Brand Resonance</span>
+            <span className={styles.capabilityTag}>Brand Resonance</span>
           </div>
 
           {/* 5. GEO / AEO */}
-          <div className={`${styles.skeuoCard} ${styles.skeuoCardHover} ${styles.capCard}`}>
-            <div className={styles.capIconPill}>🤖</div>
-            <h3 className={styles.capTitle}>GEO / AEO Optimization</h3>
-            <p className={styles.capDesc}>
+          <div className={styles.capabilityCard}>
+            <div className={styles.capabilityIconFrame}>🤖</div>
+            <h3 className={styles.capabilityH3}>GEO / AEO Optimization</h3>
+            <p className={styles.capabilityText}>
               Be the cited authority inside ChatGPT, Perplexity, Claude, and Google AI Overviews using entity-rich content graphs.
             </p>
-            <span className={styles.capFeatureTag}>AI Search Ready</span>
+            <span className={styles.capabilityTag}>AI Search Ready</span>
           </div>
 
           {/* 6. Websites */}
-          <div className={`${styles.skeuoCard} ${styles.skeuoCardHover} ${styles.capCard}`}>
-            <div className={styles.capIconPill}>💻</div>
-            <h3 className={styles.capTitle}>High-Conversion Websites</h3>
-            <p className={styles.capDesc}>
+          <div className={styles.capabilityCard}>
+            <div className={styles.capabilityIconFrame}>💻</div>
+            <h3 className={styles.capabilityH3}>High-Conversion Websites</h3>
+            <p className={styles.capabilityText}>
               Sub-second speed Next.js websites built with responsive skeuomorphic design, clean code, and zero page bloat.
             </p>
-            <span className={styles.capFeatureTag}>Sub-Second Speed</span>
+            <span className={styles.capabilityTag}>Sub-Second Speed</span>
           </div>
 
           {/* 7. Content Marketing */}
-          <div className={`${styles.skeuoCard} ${styles.skeuoCardHover} ${styles.capCard}`}>
-            <div className={styles.capIconPill}>✍️</div>
-            <h3 className={styles.capTitle}>Content Marketing</h3>
-            <p className={styles.capDesc}>
+          <div className={styles.capabilityCard}>
+            <div className={styles.capabilityIconFrame}>✍️</div>
+            <h3 className={styles.capabilityH3}>Content Marketing</h3>
+            <p className={styles.capabilityText}>
               In-depth industry whitepapers, teardowns, buyer guides, and lead magnets that establish category leadership.
             </p>
-            <span className={styles.capFeatureTag}>Authority Building</span>
+            <span className={styles.capabilityTag}>Authority Building</span>
           </div>
 
           {/* 8. CRO */}
-          <div className={`${styles.skeuoCard} ${styles.skeuoCardHover} ${styles.capCard}`}>
-            <div className={styles.capIconPill}>🧪</div>
-            <h3 className={styles.capTitle}>Conversion Rate Optimization</h3>
-            <p className={styles.capDesc}>
+          <div className={styles.capabilityCard}>
+            <div className={styles.capabilityIconFrame}>🧪</div>
+            <h3 className={styles.capabilityH3}>Conversion Rate Optimization</h3>
+            <p className={styles.capabilityText}>
               Continuous multivariate testing of headlines, checkout friction, form fields, and trust proof to double your conversion rate.
             </p>
-            <span className={styles.capFeatureTag}>Multiplier Effect</span>
+            <span className={styles.capabilityTag}>Multiplier Effect</span>
           </div>
         </div>
       </section>
 
       {/* ═════════════════════════════════════════════════════════════════
-          SECTION 8: WHY WORK WITH US? (4 PILLARS)
+          SECTION 8: WHY WORK WITH US? — HEAD-TO-HEAD ADVANTAGE MATRIX
       ═════════════════════════════════════════════ */}
-      <section className={styles.whyUsSection}>
-        <div className={styles.sectionContainer} style={{ padding: 0 }}>
-          <div className={styles.sectionHeader}>
-            <div className={styles.sectionEyebrow}>
-              <span className={styles.sectionEyebrowLed} />
+      <section className={styles.comparisonMatrixSection}>
+        <div className={styles.container}>
+          <div className={styles.headerCenter}>
+            <div className={styles.eyebrowBadge}>
+              <span className={styles.pulsingLed} />
               <span>THE COPILOT ADVANTAGE</span>
             </div>
-            <h2 className={styles.sectionTitle}>Why Work With Us?</h2>
-            <p className={styles.sectionDesc}>
-              The typical agency model is broken: junior account managers, slow turnaround, and inflated retainers. Here is how we do things differently.
+            <h2 className={styles.titlePrimary}>Why Work With Us?</h2>
+            <p className={styles.subtitle}>
+              See how partnering with a dedicated growth partner differs fundamentally from traditional agency retainer models.
             </p>
           </div>
 
-          <div className={styles.pillarsGrid}>
-            <div className={`${styles.skeuoCard} ${styles.skeuoCardHover} ${styles.pillarCard}`}>
-              <div className={styles.pillarNumber}>01</div>
-              <h3 className={styles.pillarTitle}>Strategy First</h3>
-              <p className={styles.pillarDesc}>
-                We don’t run ads blindly. We analyze your customer acquisition economics, unit margins, and lifetime value to build a profitable roadmap before spending a single rupee.
-              </p>
+          <div className={styles.comparisonTableWrap}>
+            <div className={styles.matrixRowHeader}>
+              <div>Growth Dimension</div>
+              <div className={styles.matrixColTraditional}>Traditional Agencies</div>
+              <div style={{ color: '#0B2093' }}>Marketing Copilot</div>
             </div>
 
-            <div className={`${styles.skeuoCard} ${styles.skeuoCardHover} ${styles.pillarCard}`}>
-              <div className={styles.pillarNumber}>02</div>
-              <h3 className={styles.pillarTitle}>Senior Expertise</h3>
-              <p className={styles.pillarDesc}>
-                You work directly with founders and seasoned growth strategists with over a decade of track record. No junior interns learning on your ad budget.
-              </p>
+            <div className={styles.matrixRowItem}>
+              <div>
+                <div className={styles.matrixFeatureName}>1. Account Leadership</div>
+                <div className={styles.matrixFeatureSub}>Who actually manages your growth</div>
+              </div>
+              <div className={styles.matrixBadPoint}>
+                <span className={styles.crossIcon}>✕</span>
+                <span>Junior account managers &amp; interns</span>
+              </div>
+              <div className={styles.matrixGoodPoint}>
+                <span className={styles.checkIcon}>✓</span>
+                <span>Founders &amp; Senior Strategists directly</span>
+              </div>
             </div>
 
-            <div className={`${styles.skeuoCard} ${styles.skeuoCardHover} ${styles.pillarCard}`}>
-              <div className={styles.pillarNumber}>03</div>
-              <h3 className={styles.pillarTitle}>Performance Focus</h3>
-              <p className={styles.pillarDesc}>
-                Our compensation and pride are tied to real commercial outcomes: qualified inquiries, pipeline value, reduced CPL, and bankable bottom-line growth.
-              </p>
+            <div className={styles.matrixRowItem}>
+              <div>
+                <div className={styles.matrixFeatureName}>2. Focus Metric</div>
+                <div className={styles.matrixFeatureSub}>How success is judged and measured</div>
+              </div>
+              <div className={styles.matrixBadPoint}>
+                <span className={styles.crossIcon}>✕</span>
+                <span>Impressions, clicks, vanity reports</span>
+              </div>
+              <div className={styles.matrixGoodPoint}>
+                <span className={styles.checkIcon}>✓</span>
+                <span>Net Pipeline, ROAS &amp; Bankable GMV</span>
+              </div>
             </div>
 
-            <div className={`${styles.skeuoCard} ${styles.skeuoCardHover} ${styles.pillarCard}`}>
-              <div className={styles.pillarNumber}>04</div>
-              <h3 className={styles.pillarTitle}>One Growth Team</h3>
-              <p className={styles.pillarDesc}>
-                Eliminate friction between your developers, designers, and media buyers. We operate as your synchronized internal growth unit with rapid weekly sprints.
-              </p>
+            <div className={styles.matrixRowItem}>
+              <div>
+                <div className={styles.matrixFeatureName}>3. Account Ownership</div>
+                <div className={styles.matrixFeatureSub}>Pixels, ad accounts, and creative IP</div>
+              </div>
+              <div className={styles.matrixBadPoint}>
+                <span className={styles.crossIcon}>✕</span>
+                <span>Held hostage in agency ad manager</span>
+              </div>
+              <div className={styles.matrixGoodPoint}>
+                <span className={styles.checkIcon}>✓</span>
+                <span>100% Owned by you from Day 1</span>
+              </div>
+            </div>
+
+            <div className={styles.matrixRowItem}>
+              <div>
+                <div className={styles.matrixFeatureName}>4. Execution Synergy</div>
+                <div className={styles.matrixFeatureSub}>Integration of code, ads, and design</div>
+              </div>
+              <div className={styles.matrixBadPoint}>
+                <span className={styles.crossIcon}>✕</span>
+                <span>Fragmented across 3 different vendors</span>
+              </div>
+              <div className={styles.matrixGoodPoint}>
+                <span className={styles.checkIcon}>✓</span>
+                <span>One Unified Synchronized Growth Pod</span>
+              </div>
+            </div>
+
+            <div className={styles.matrixRowItem}>
+              <div>
+                <div className={styles.matrixFeatureName}>5. Contract Flexibility</div>
+                <div className={styles.matrixFeatureSub}>Commitment requirements</div>
+              </div>
+              <div className={styles.matrixBadPoint}>
+                <span className={styles.crossIcon}>✕</span>
+                <span>6 to 12 month rigid lock-in traps</span>
+              </div>
+              <div className={styles.matrixGoodPoint}>
+                <span className={styles.checkIcon}>✓</span>
+                <span>Zero Lock-In; month-to-month agility</span>
+              </div>
             </div>
           </div>
         </div>
@@ -1161,60 +1144,53 @@ export default function DigitalGrowthPartnerPage() {
       {/* ═════════════════════════════════════════════════════════════════
           SECTION 9: BASED IN INDIA. WORKING ACROSS INDIA.
       ═════════════════════════════════════════════ */}
-      <section className={`${styles.sectionContainer} ${styles.locationSection}`}>
-        <div className={styles.locationDeckGrid}>
-          <div className={`${styles.skeuoCard} ${styles.locationContactDeck}`}>
-            <span className={styles.cardRivetTL} />
-            <span className={styles.cardRivetTR} />
-            <span className={styles.cardRivetBL} />
-            <span className={styles.cardRivetBR} />
-
-            <div className={styles.sectionEyebrow}>
-              <span className={styles.sectionEyebrowLed} />
+      <section className={`${styles.container} ${styles.sectionPad}`}>
+        <div className={styles.hqSectionGrid}>
+          {/* Left: Contact Channels */}
+          <div className={styles.hqCardChassis}>
+            <div className={styles.eyebrowBadge}>
+              <span className={styles.pulsingLed} />
               <span>HEADQUARTERS &amp; CHANNELS</span>
             </div>
-            <h2 className={styles.sectionTitle} style={{ textAlign: 'left', marginBottom: '10px' }}>
+            <h2 className={styles.titlePrimary} style={{ textAlign: 'left', marginBottom: '10px' }}>
               Based in India.<br />Working Across India.
             </h2>
-            <p className={styles.sectionDesc} style={{ textAlign: 'left', margin: 0 }}>
+            <p className={styles.subtitle} style={{ textAlign: 'left', margin: 0 }}>
               Whether you need in-person war-room sprints at our physical office or seamless digital collaboration across major metros, we are always accessible.
             </p>
 
-            <div className={styles.locationItemsCol}>
-              {/* Office */}
-              <div className={styles.locationItemRow}>
-                <div className={styles.locIconCircle}>📍</div>
-                <div className={styles.locTextCol}>
-                  <span className={styles.locLabel}>Registered Office</span>
-                  <span className={styles.locVal}>
+            <div className={styles.contactChannelStrip}>
+              <div className={styles.contactChannelItem}>
+                <div className={styles.channelIconBubble}>📍</div>
+                <div className={styles.channelTextMeta}>
+                  <span className={styles.channelSmallLabel}>Registered Office</span>
+                  <span style={{ fontSize: '14px', fontWeight: 800, color: '#0F172A' }}>
                     Mallick Complex, Unit 3, Kharvela Nagar, Bhubaneswar, Odisha 751001
                   </span>
                 </div>
               </div>
 
-              {/* Phone */}
-              <div className={styles.locationItemRow}>
-                <div className={styles.locIconCircle}>📞</div>
-                <div className={styles.locTextCol}>
-                  <span className={styles.locLabel}>Direct Line</span>
-                  <a href="tel:+919437168434" className={`${styles.locVal} ${styles.locValLink}`}>
+              <div className={styles.contactChannelItem}>
+                <div className={styles.channelIconBubble}>📞</div>
+                <div className={styles.channelTextMeta}>
+                  <span className={styles.channelSmallLabel}>Direct Phone</span>
+                  <a href="tel:+919437168434" className={styles.channelValueLink}>
                     +91 94371 68434
                   </a>
                 </div>
               </div>
 
-              {/* WhatsApp */}
-              <div className={styles.locationItemRow}>
-                <div className={styles.locIconCircle} style={{ background: '#DCFCE7', color: '#16A34A' }}>
+              <div className={styles.contactChannelItem}>
+                <div className={styles.channelIconBubble} style={{ background: '#DCFCE7', color: '#16A34A' }}>
                   💬
                 </div>
-                <div className={styles.locTextCol}>
-                  <span className={styles.locLabel}>Instant WhatsApp</span>
+                <div className={styles.channelTextMeta}>
+                  <span className={styles.channelSmallLabel}>Instant WhatsApp</span>
                   <a
                     href="https://wa.me/919437168434?text=Hi%20Marketing%20Copilot%2C%20I%20want%20to%20discuss%20a%20digital%20growth%20partnership"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`${styles.locVal} ${styles.locValLink}`}
+                    className={styles.channelValueLink}
                     style={{ color: '#16A34A' }}
                   >
                     Chat with a Strategist (+91 94371 68434) →
@@ -1224,82 +1200,77 @@ export default function DigitalGrowthPartnerPage() {
             </div>
           </div>
 
-          {/* India Reach Display */}
-          <div className={`${styles.skeuoCard} ${styles.coverageMapCard}`}>
-            <span className={styles.cardRivetTL} />
-            <span className={styles.cardRivetTR} />
-            <span className={styles.cardRivetBL} />
-            <span className={styles.cardRivetBR} />
-
-            <div className={styles.coverageBadge}>
+          {/* Right: Metro Radar */}
+          <div className={styles.metroRadarCard}>
+            <div className={styles.eyebrowBadge}>
               <span>🇮🇳 Nationwide Footprint</span>
             </div>
-            <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '20px', fontWeight: 800, color: '#0B2093', marginBottom: '8px' }}>
-              Active Client Clusters
+            <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '22px', fontWeight: 900, color: '#0B2093', marginBottom: '8px' }}>
+              Active Commercial Hubs
             </h3>
-            <p style={{ fontSize: '13px', color: '#475569', lineHeight: 1.5, maxWidth: '340px' }}>
-              We manage enterprise growth and localized campaigns for clients in every major commercial corridor across India.
+            <p style={{ fontSize: '13px', color: '#475569', lineHeight: 1.6, maxWidth: '340px' }}>
+              Managing performance media and organic visibility across India's premier commercial corridors:
             </p>
 
-            <div className={styles.coverageHubsGrid}>
-              <span className={styles.hubTag}>Delhi NCR</span>
-              <span className={styles.hubTag}>Mumbai</span>
-              <span className={styles.hubTag}>Bengaluru</span>
-              <span className={styles.hubTag}>Hyderabad</span>
-              <span className={`${styles.hubTag} ${styles.hubTagHighlight}`}>Bhubaneswar HQ</span>
-              <span className={styles.hubTag}>Kolkata</span>
-              <span className={styles.hubTag}>Pune</span>
-              <span className={styles.hubTag}>Chennai</span>
-              <span className={styles.hubTag}>Ahmedabad</span>
+            <div className={styles.metroTagCloud}>
+              <span className={styles.metroPill}>Delhi NCR</span>
+              <span className={styles.metroPill}>Mumbai</span>
+              <span className={styles.metroPill}>Bengaluru</span>
+              <span className={styles.metroPill}>Hyderabad</span>
+              <span className={`${styles.metroPill} ${styles.metroPillHighlight}`}>Bhubaneswar HQ</span>
+              <span className={styles.metroPill}>Kolkata</span>
+              <span className={styles.metroPill}>Pune</span>
+              <span className={styles.metroPill}>Chennai</span>
+              <span className={styles.metroPill}>Ahmedabad</span>
             </div>
 
-            <div style={{ marginTop: 'auto', paddingTop: '16px', borderTop: '1px dashed #CBD5E1', width: '100%' }}>
-              <div style={{ fontSize: '12px', fontWeight: 700, color: '#0B2093' }}>
+            <div style={{ marginTop: 'auto', paddingTop: '18px', borderTop: '1px dashed #CBD5E1', width: '100%' }}>
+              <strong style={{ fontSize: '13px', color: '#0B2093' }}>
                 ✓ Rapid Onboarding: 48-Hour Sprint Kickoff
-              </div>
+              </strong>
             </div>
           </div>
         </div>
       </section>
 
       {/* ═════════════════════════════════════════════════════════════════
-          SECTION 10: READY TO GROW? (FINAL LEAD DECK)
+          SECTION 10: READY TO GROW? — GRAND CLOSING CONVERSION SUITE
       ═════════════════════════════════════════════ */}
-      <section className={styles.finalCtaSection} id="audit-form">
-        <div className={styles.sectionContainer} style={{ padding: 0 }}>
-          <div className={styles.finalDeckCard}>
-            <div className={styles.finalCtaHeader}>
-              <div className={styles.sectionEyebrow}>
-                <span className={styles.sectionEyebrowLed} />
+      <section className={styles.grandCtaSection} id="audit-form">
+        <div className={styles.container}>
+          <div className={styles.grandCardChassis}>
+            <div className={styles.grandHeader}>
+              <div className={styles.eyebrowBadge}>
+                <span className={styles.pulsingLed} />
                 <span>TAKE THE NEXT LEAP</span>
               </div>
-              <h2 className={styles.finalCtaTitle}>Ready to Grow?</h2>
-              <p className={styles.finalCtaSubtitle}>
+              <h2 className={styles.grandTitleH2}>Ready to Grow?</h2>
+              <p className={styles.grandSubtitle}>
                 Get your complimentary 360° Digital Growth Audit. We will analyze your search ranking gaps, paid ad spend efficiency, and landing page drop-offs with an actionable 90-day blueprint.
               </p>
             </div>
 
             {finalSuccess ? (
-              <div className={styles.formSuccessCard}>
-                <div className={styles.successIconBadge}>✓</div>
-                <h3 className={styles.successTitle}>Request Confirmed!</h3>
-                <p className={styles.successText}>
-                  Thank you, <strong>{finalForm.name}</strong>. Our senior growth team is analyzing your domain and will email you the full breakdown within <strong>2 hours</strong>.
+              <div className={styles.successBannerBox}>
+                <div className={styles.successCheckIcon}>✓</div>
+                <h3 className={styles.successHeadline}>Request Confirmed!</h3>
+                <p className={styles.successCopy}>
+                  Thank you, <strong>{finalForm.name}</strong>! Our senior growth team is analyzing your domain and will email you the full breakdown within <strong>2 hours</strong>.
                 </p>
                 <a
                   href={`https://wa.me/919437168434?text=Hi%20Marketing%20Copilot%2C%20I%20just%20submitted%20the%20growth%20audit%20request%20for%20${encodeURIComponent(finalForm.company || 'my company')}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={styles.successWaBtn}
+                  className={styles.successWhatsAppBtn}
                 >
                   <span>Connect Instantly on WhatsApp →</span>
                 </a>
               </div>
             ) : (
               <form onSubmit={(e) => handleFormSubmit(e, 'final')}>
-                <div className={styles.formRowDouble}>
-                  <div className={styles.formGroup}>
-                    <label className={styles.formLabel}>
+                <div className={styles.inputGridDouble}>
+                  <div className={styles.fieldGroup}>
+                    <label className={styles.fieldLabel}>
                       Full Name <span>*</span>
                     </label>
                     <input
@@ -1308,24 +1279,24 @@ export default function DigitalGrowthPartnerPage() {
                       placeholder="e.g. Priya Sen"
                       value={finalForm.name}
                       onChange={(e) => setFinalForm({ ...finalForm, name: e.target.value })}
-                      className={styles.engravedInput}
+                      className={styles.tactileField}
                     />
                   </div>
-                  <div className={styles.formGroup}>
-                    <label className={styles.formLabel}>Company Name</label>
+                  <div className={styles.fieldGroup}>
+                    <label className={styles.fieldLabel}>Company Name</label>
                     <input
                       type="text"
                       placeholder="e.g. Nova Tech Logistics"
                       value={finalForm.company}
                       onChange={(e) => setFinalForm({ ...finalForm, company: e.target.value })}
-                      className={styles.engravedInput}
+                      className={styles.tactileField}
                     />
                   </div>
                 </div>
 
-                <div className={styles.formRowDouble}>
-                  <div className={styles.formGroup}>
-                    <label className={styles.formLabel}>
+                <div className={styles.inputGridDouble}>
+                  <div className={styles.fieldGroup}>
+                    <label className={styles.fieldLabel}>
                       Phone / WhatsApp <span>*</span>
                     </label>
                     <input
@@ -1334,11 +1305,11 @@ export default function DigitalGrowthPartnerPage() {
                       placeholder="+91 98765 43210"
                       value={finalForm.phone}
                       onChange={(e) => setFinalForm({ ...finalForm, phone: e.target.value })}
-                      className={styles.engravedInput}
+                      className={styles.tactileField}
                     />
                   </div>
-                  <div className={styles.formGroup}>
-                    <label className={styles.formLabel}>
+                  <div className={styles.fieldGroup}>
+                    <label className={styles.fieldLabel}>
                       Work Email <span>*</span>
                     </label>
                     <input
@@ -1347,28 +1318,28 @@ export default function DigitalGrowthPartnerPage() {
                       placeholder="priya@novatech.com"
                       value={finalForm.email}
                       onChange={(e) => setFinalForm({ ...finalForm, email: e.target.value })}
-                      className={styles.engravedInput}
+                      className={styles.tactileField}
                     />
                   </div>
                 </div>
 
-                <div className={styles.formGroup}>
-                  <label className={styles.formLabel}>
-                    Website URL <span className={styles.formLabelOpt}>(Optional)</span>
+                <div className={styles.fieldGroup}>
+                  <label className={styles.fieldLabel}>
+                    Website URL <span className={styles.fieldLabelOpt}>(Optional)</span>
                   </label>
                   <input
                     type="url"
                     placeholder="https://yourwebsite.com"
                     value={finalForm.website}
                     onChange={(e) => setFinalForm({ ...finalForm, website: e.target.value })}
-                    className={styles.engravedInput}
+                    className={styles.tactileField}
                   />
                 </div>
 
                 {/* Services multi-select */}
-                <div className={styles.formGroup}>
-                  <label className={styles.formLabel}>Services</label>
-                  <div className={styles.servicesPillWrap}>
+                <div className={styles.fieldGroup}>
+                  <label className={styles.fieldLabel}>Services</label>
+                  <div className={styles.servicesChicletGrid}>
                     {availableServices.map((svc) => {
                       const selected = finalForm.services.includes(svc);
                       return (
@@ -1376,8 +1347,8 @@ export default function DigitalGrowthPartnerPage() {
                           type="button"
                           key={svc}
                           onClick={() => toggleService('final', svc)}
-                          className={`${styles.serviceSelectPill} ${
-                            selected ? styles.serviceSelectPillActive : ''
+                          className={`${styles.servicePillBtn} ${
+                            selected ? styles.servicePillBtnActive : ''
                           }`}
                         >
                           {svc} {selected ? '✓' : '+'}
@@ -1388,16 +1359,16 @@ export default function DigitalGrowthPartnerPage() {
                 </div>
 
                 {/* Budget */}
-                <div className={styles.formGroup}>
-                  <label className={styles.formLabel}>Planned Budget</label>
-                  <div className={styles.budgetPillWrap}>
+                <div className={styles.fieldGroup}>
+                  <label className={styles.fieldLabel}>Planned Budget</label>
+                  <div className={styles.budgetPillGrid}>
                     {budgetOptions.map((b) => (
                       <button
                         type="button"
                         key={b}
                         onClick={() => setFinalForm({ ...finalForm, budget: b })}
-                        className={`${styles.budgetPill} ${
-                          finalForm.budget === b ? styles.budgetPillActive : ''
+                        className={`${styles.budgetPillBtn} ${
+                          finalForm.budget === b ? styles.budgetPillBtnActive : ''
                         }`}
                       >
                         {b}
@@ -1407,8 +1378,8 @@ export default function DigitalGrowthPartnerPage() {
                 </div>
 
                 {/* Requirement */}
-                <div className={styles.formGroup}>
-                  <label className={styles.formLabel}>
+                <div className={styles.fieldGroup}>
+                  <label className={styles.fieldLabel}>
                     Requirement / Questions
                   </label>
                   <textarea
@@ -1416,7 +1387,7 @@ export default function DigitalGrowthPartnerPage() {
                     placeholder="What specific growth goal or channel would you like us to audit first?"
                     value={finalForm.requirement}
                     onChange={(e) => setFinalForm({ ...finalForm, requirement: e.target.value })}
-                    className={styles.engravedTextarea}
+                    className={styles.tactileTextarea}
                   />
                 </div>
 
@@ -1429,13 +1400,13 @@ export default function DigitalGrowthPartnerPage() {
                 <button
                   type="submit"
                   disabled={finalSubmitting}
-                  className={styles.tactileSubmitBtn}
+                  className={styles.extrudedCtaBtn}
                   style={{ fontSize: '15px', padding: '16px 24px' }}
                 >
                   {finalSubmitting ? 'Submitting Request...' : 'GET MY FREE CONSULTATION →'}
                 </button>
 
-                <div className={styles.deckTrustStrip} style={{ marginTop: '18px' }}>
+                <div className={styles.consoleFooterGuarantees}>
                   <span>🔒 Strict NDA Guaranteed</span>
                   <span>⚡ 2-Hour Response Time</span>
                   <span>💬 No Sales Pressure</span>
