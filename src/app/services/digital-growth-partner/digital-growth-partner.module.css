@@ -1467,14 +1467,14 @@
   background: #FFFFFF;
   border-top: 1.5px solid #E2E8F0;
   border-bottom: 1.5px solid #E2E8F0;
-  padding: 88px 0;
+  padding: 84px 0;
   position: relative;
 }
 
 .hqSectionGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 32px;
+  gap: 28px;
   align-items: stretch;
 }
 
@@ -1485,37 +1485,49 @@
   }
 }
 
-.hqCardChassis {
-  padding: 36px 32px;
+.hqCardChassis,
+.metroRadarCard {
+  padding: 34px 30px;
   border-radius: 26px;
   background: linear-gradient(160deg, #FFFFFF 0%, #FAFCFF 50%, #F8FAFD 100%);
   border: 2px solid #CBD5E1;
   box-shadow: 
     inset 0 2.5px 0 #FFFFFF,
     inset 0 -2px 3px rgba(11, 32, 147, 0.02),
-    0 16px 45px -12px rgba(11, 32, 147, 0.08);
+    0 16px 45px -12px rgba(11, 32, 147, 0.08),
+    0 2px 8px rgba(0, 0, 0, 0.02);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
   position: relative;
+  transition: all 0.28s ease;
 }
 
-/* Clean Neutral Monochrome Header (No Loud Color!) */
-.hqLiveStatusTag {
+.hqCardChassis:hover,
+.metroRadarCard:hover {
+  border-color: #94A3B8;
+  box-shadow: 
+    inset 0 2.5px 0 #FFFFFF,
+    0 22px 55px -12px rgba(11, 32, 147, 0.12);
+}
+
+/* Neutral Monochrome Header Tags (No Loud Colors!) */
+.hqLiveStatusTag,
+.radarNeutralTag {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 14px;
+  padding: 5px 14px;
   border-radius: 999px;
   background: #FFFFFF;
   border: 1.5px solid #CBD5E1;
-  font-size: 11px;
+  font-size: 10.5px;
   font-weight: 800;
   color: #1E293B;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   box-shadow: 
     inset 0 1px 0 #FFFFFF,
     0 1px 3px rgba(0, 0, 0, 0.04);
@@ -1529,84 +1541,153 @@
   box-shadow: 0 0 3px rgba(100, 116, 139, 0.4);
 }
 
-.contactChannelStrip {
+/* ── Left Card: Tactical Channel Directory ── */
+.executiveChannelGrid {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin: 20px 0;
+  margin: 22px 0 16px;
 }
 
-.contactChannelItem {
+.executiveOfficeCard {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-  padding: 14px 18px;
-  border-radius: 16px;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 18px;
+  border-radius: 18px;
   background: #FFFFFF;
-  border: 1.5px solid #E2E8F0;
+  border: 1.5px solid #CBD5E1;
   box-shadow: 
     inset 0 1.5px 0 #FFFFFF,
-    0 2px 6px rgba(0, 0, 0, 0.02);
-  transition: all 0.22s ease;
+    inset 0 -1.5px 2px rgba(11, 32, 147, 0.02),
+    0 2px 6px rgba(0, 0, 0, 0.03);
   text-decoration: none;
   color: inherit;
+  transition: all 0.22s ease;
 }
 
-.contactChannelItem:hover {
-  transform: translateX(3px);
+.executiveOfficeCard:hover {
+  transform: translateY(-2px);
   border-color: #0B2093;
   box-shadow: 
     inset 0 1.5px 0 #FFFFFF,
-    0 6px 16px rgba(11, 32, 147, 0.08);
+    0 8px 20px rgba(11, 32, 147, 0.1);
+}
+
+.executiveCardTop {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .channelIconBubble {
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
   background: #F8FAFD;
   border: 1px solid #CBD5E1;
   color: #0B2093;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
+  font-size: 16px;
   flex-shrink: 0;
   box-shadow: inset 0 1px 0 #FFFFFF;
 }
 
-.channelTextMeta {
+.channelIconBubbleSmall {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: #F1F5F9;
+  border: 1px solid #CBD5E1;
+  color: #0B2093;
   display: flex;
-  flex-direction: column;
-  flex: 1;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
 }
 
 .channelSmallLabel {
   font-size: 10px;
   font-weight: 800;
   text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #64748B;
+}
+
+.channelMicroLabel {
+  font-size: 9.5px;
+  font-weight: 800;
+  text-transform: uppercase;
   letter-spacing: 0.06em;
   color: #64748B;
-  margin-bottom: 2px;
+  display: block;
+  margin-bottom: 1px;
 }
 
 .channelValueText {
-  font-size: 13.5px;
-  font-weight: 800;
-  color: #0F172A;
-  line-height: 1.35;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1E293B;
+  line-height: 1.4;
 }
 
-.channelActionBadge {
+.channelValueBold {
+  font-size: 13px;
+  font-weight: 900;
+  color: #0F172A;
+}
+
+.cardActionFooter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   font-size: 11px;
   font-weight: 800;
   color: #0B2093;
-  padding: 5px 11px;
-  border-radius: 8px;
-  background: #F1F5F9;
-  border: 1px solid #CBD5E1;
-  white-space: nowrap;
+  padding-top: 6px;
+  border-top: 1px dashed #E2E8F0;
+}
+
+.executiveCommsDouble {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+@media (max-width: 520px) {
+  .executiveCommsDouble {
+    grid-template-columns: 1fr;
+  }
+}
+
+.executiveCommTile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: #FFFFFF;
+  border: 1.5px solid #CBD5E1;
+  box-shadow: 
+    inset 0 1px 0 #FFFFFF,
+    0 2px 4px rgba(0, 0, 0, 0.02);
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.22s ease;
+}
+
+.executiveCommTile:hover {
+  transform: translateY(-2px);
+  border-color: #0B2093;
+  box-shadow: 0 6px 14px rgba(11, 32, 147, 0.08);
+}
+
+.executiveWhatsAppTile:hover {
+  border-color: #10B981;
+  box-shadow: 0 6px 14px rgba(16, 185, 129, 0.12);
 }
 
 .hqFooterSla {
@@ -1620,47 +1701,12 @@
   color: #475569;
 }
 
-/* ── Right Card: Metro Radar Console (Clean & Neutral) ── */
-.metroRadarCard {
-  padding: 36px 32px;
-  border-radius: 26px;
-  background: linear-gradient(160deg, #FFFFFF 0%, #FAFCFF 50%, #F8FAFD 100%);
-  border: 2px solid #CBD5E1;
-  box-shadow: 
-    inset 0 2.5px 0 #FFFFFF,
-    0 16px 45px -12px rgba(11, 32, 147, 0.08);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  position: relative;
-}
-
-/* Clean Neutral Header (No Loud Color!) */
-.radarNeutralTag {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 14px;
-  border-radius: 999px;
-  background: #FFFFFF;
-  border: 1.5px solid #CBD5E1;
-  font-size: 11px;
-  font-weight: 800;
-  color: #1E293B;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 14px;
-  box-shadow: 
-    inset 0 1px 0 #FFFFFF,
-    0 1px 3px rgba(0, 0, 0, 0.04);
-}
-
+/* ── Right Card: Metro Radar Console ── */
 .metroTagCloud {
   display: flex;
   flex-wrap: wrap;
   gap: 7px;
-  margin: 16px 0 18px;
+  margin: 14px 0 16px;
 }
 
 .metroPillBtn {
@@ -1698,21 +1744,32 @@
   transform: translateY(-1px);
 }
 
-/* Active Hub Dossier Box */
+/* Active Hub Dossier HUD Screen */
 .activeHubDossier {
   padding: 16px 18px;
-  border-radius: 16px;
+  border-radius: 18px;
   background: #F8FAFD;
-  border: 1.5px solid #E2E8F0;
-  box-shadow: inset 0 1.5px 3px rgba(0, 0, 0, 0.02);
+  border: 1.5px solid #CBD5E1;
+  box-shadow: 
+    inset 0 2px 4px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 #FFFFFF;
   margin-bottom: 16px;
 }
 
 .hubDossierHeader {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: 6px;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.hubDossierTag {
+  font-size: 9.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #64748B;
 }
 
 .hubDossierName {
@@ -1725,37 +1782,62 @@
 .hubDossierStatus {
   font-size: 10px;
   font-weight: 800;
-  color: #0B2093;
-  background: #EEF2FF;
-  padding: 2px 8px;
+  color: #065F46;
+  background: #D1FAE5;
+  padding: 3px 9px;
   border-radius: 999px;
-  border: 1px solid rgba(11, 32, 147, 0.15);
+  border: 1px solid #A7F3D0;
+  white-space: nowrap;
 }
 
 .hubDossierDesc {
   font-size: 12.5px;
   color: #475569;
   line-height: 1.5;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .hubDossierStats {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 8px;
+  gap: 10px;
+}
+
+@media (max-width: 520px) {
+  .hubDossierStats {
+    grid-template-columns: 1fr;
+  }
 }
 
 .hubStatTile {
-  padding: 7px 10px;
-  border-radius: 9px;
+  padding: 8px 12px;
+  border-radius: 12px;
   background: #FFFFFF;
-  border: 1px solid #E2E8F0;
-  font-size: 10.5px;
-  font-weight: 800;
-  color: #1E293B;
+  border: 1.5px solid #E2E8F0;
+  box-shadow: inset 0 1px 0 #FFFFFF, 0 1px 2px rgba(0, 0, 0, 0.02);
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 8px;
+}
+
+.hubStatIcon {
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.hubStatMetaLabel {
+  font-size: 9.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748B;
+}
+
+.hubStatValue {
+  font-size: 11.5px;
+  font-weight: 800;
+  color: #0F172A;
+  line-height: 1.25;
 }
 
 /* ═════════════════════════════════════════════════════════════════

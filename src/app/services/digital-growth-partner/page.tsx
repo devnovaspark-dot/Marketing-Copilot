@@ -1074,63 +1074,65 @@ export default function DigitalGrowthPartnerPage() {
               <div>
                 <div className={styles.hqLiveStatusTag}>
                   <span className={styles.statusLedNeutral} />
-                  <span>STRATEGY WAR ROOM · IMMEDIATE DISPATCH</span>
+                  <span>CLIENT DISPATCH &amp; OPERATIONS</span>
                 </div>
                 <h2 className={styles.titlePrimary} style={{ textAlign: 'left', marginBottom: '10px' }}>
-                  Physical Presence in Bhubaneswar.<br />
-                  <span className={styles.titleAccent}>Nationwide Execution Across India.</span>
+                  Strategic Hub in Bhubaneswar.<br />
+                  <span className={styles.titleAccent}>Scaling Brands Across India.</span>
                 </h2>
                 <p className={styles.subtitle} style={{ textAlign: 'left', margin: 0, fontSize: '14px' }}>
-                  Whether you need in-person war-room sprints at our physical office or seamless digital collaboration across major metros, our senior growth architects are directly accessible.
+                  Meet our senior partners in-person for strategy sprints at our corporate office, or collaborate seamlessly through a dedicated WhatsApp war room from anywhere across India.
                 </p>
               </div>
 
-              <div className={styles.contactChannelStrip}>
+              {/* High-End Tactical Channel Grid */}
+              <div className={styles.executiveChannelGrid}>
+                {/* Physical Office Card */}
                 <a
                   href="https://www.google.com/maps/search/?api=1&query=Mallick+Complex,+Unit+3,+Kharvela+Nagar,+Bhubaneswar,+Odisha+751001"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={styles.contactChannelItem}
+                  className={styles.executiveOfficeCard}
                 >
-                  <div className={styles.channelIconBubble}>📍</div>
-                  <div className={styles.channelTextMeta}>
+                  <div className={styles.executiveCardTop}>
+                    <div className={styles.channelIconBubble}>📍</div>
                     <span className={styles.channelSmallLabel}>Registered Corporate Office</span>
-                    <span className={styles.channelValueText}>
-                      Mallick Complex, Unit 3, Kharvela Nagar, Bhubaneswar, Odisha 751001
-                    </span>
                   </div>
-                  <span className={styles.channelActionBadge}>Maps ↗</span>
+                  <div className={styles.channelValueText}>
+                    Mallick Complex, Unit 3, Kharvela Nagar, Bhubaneswar, Odisha 751001
+                  </div>
+                  <div className={styles.cardActionFooter}>
+                    <span>Open in Google Maps ↗</span>
+                  </div>
                 </a>
 
-                <a href="tel:+919437168434" className={styles.contactChannelItem}>
-                  <div className={styles.channelIconBubble}>📞</div>
-                  <div className={styles.channelTextMeta}>
-                    <span className={styles.channelSmallLabel}>Executive Direct Hotline</span>
-                    <span className={styles.channelValueText}>+91 94371 68434</span>
-                  </div>
-                  <span className={styles.channelActionBadge}>Call Now ↗</span>
-                </a>
+                {/* Direct Communications Dual-Column */}
+                <div className={styles.executiveCommsDouble}>
+                  <a href="tel:+919437168434" className={styles.executiveCommTile}>
+                    <div className={styles.channelIconBubbleSmall}>📞</div>
+                    <div>
+                      <span className={styles.channelMicroLabel}>Direct Line</span>
+                      <div className={styles.channelValueBold}>+91 94371 68434</div>
+                    </div>
+                  </a>
 
-                <a
-                  href="https://wa.me/919437168434?text=Hi%20Marketing%20Copilot%2C%20I%20would%20like%20to%20discuss%20a%20digital%20growth%20partnership"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.contactChannelItem}
-                  style={{ borderLeft: '4px solid #10B981' }}
-                >
-                  <div className={styles.channelIconBubble} style={{ background: '#DCFCE7', color: '#16A34A' }}>
-                    💬
-                  </div>
-                  <div className={styles.channelTextMeta}>
-                    <span className={styles.channelSmallLabel}>Instant WhatsApp War Room</span>
-                    <span className={styles.channelValueText} style={{ color: '#16A34A' }}>
-                      Chat with Senior Strategist (+91 94371 68434)
-                    </span>
-                  </div>
-                  <span className={styles.channelActionBadge} style={{ background: '#DCFCE7', color: '#16A34A', borderColor: '#86EFAC' }}>
-                    Chat ↗
-                  </span>
-                </a>
+                  <a
+                    href="https://wa.me/919437168434?text=Hi%20Marketing%20Copilot%2C%20I%20would%20like%20to%20discuss%20a%20digital%20growth%20partnership"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`${styles.executiveCommTile} ${styles.executiveWhatsAppTile}`}
+                  >
+                    <div className={styles.channelIconBubbleSmall} style={{ background: '#DCFCE7', color: '#16A34A', border: '1px solid #86EFAC' }}>
+                      💬
+                    </div>
+                    <div>
+                      <span className={styles.channelMicroLabel}>WhatsApp Desk</span>
+                      <div className={styles.channelValueBold} style={{ color: '#16A34A' }}>
+                        Chat Founder ↗
+                      </div>
+                    </div>
+                  </a>
+                </div>
               </div>
 
               <div className={styles.hqFooterSla}>
@@ -1145,13 +1147,13 @@ export default function DigitalGrowthPartnerPage() {
               <div>
                 <div className={styles.radarNeutralTag}>
                   <span className={styles.statusLedNeutral} />
-                  <span>🇮🇳 NATIONWIDE CAMPAIGN RADAR</span>
+                  <span>PAN-INDIA CAMPAIGN RADAR</span>
                 </div>
                 <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '22px', fontWeight: 900, color: '#0B2093', marginBottom: '8px' }}>
                   Active Commercial Hubs &amp; Metro Corridors
                 </h3>
                 <p style={{ fontSize: '13px', color: '#475569', lineHeight: 1.6, margin: 0 }}>
-                  Click any commercial hub to review live campaign focus and deployment capacity:
+                  Click any commercial zone to inspect live campaign focus and deployment capacity:
                 </p>
 
                 {/* Interactive Metro Selector Pills */}
@@ -1172,21 +1174,30 @@ export default function DigitalGrowthPartnerPage() {
                 </div>
               </div>
 
-              {/* Dynamic Live Telemetry Dossier Box */}
+              {/* Dynamic Live Telemetry Dossier Cockpit */}
               <div className={styles.activeHubDossier}>
                 <div className={styles.hubDossierHeader}>
-                  <span className={styles.hubDossierName}>{selectedHubData.name}</span>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+                    <span className={styles.hubDossierTag}>{selectedHubData.tag}</span>
+                    <span className={styles.hubDossierName}>{selectedHubData.name}</span>
+                  </div>
                   <span className={styles.hubDossierStatus}>● {selectedHubData.status}</span>
                 </div>
                 <p className={styles.hubDossierDesc}>{selectedHubData.desc}</p>
                 <div className={styles.hubDossierStats}>
                   <div className={styles.hubStatTile}>
-                    <span>🎯</span>
-                    <span>{selectedHubData.category}</span>
+                    <span className={styles.hubStatIcon}>🎯</span>
+                    <div>
+                      <div className={styles.hubStatMetaLabel}>Specialization</div>
+                      <div className={styles.hubStatValue}>{selectedHubData.category}</div>
+                    </div>
                   </div>
                   <div className={styles.hubStatTile}>
-                    <span>⚡</span>
-                    <span>{selectedHubData.speed}</span>
+                    <span className={styles.hubStatIcon}>⚡</span>
+                    <div>
+                      <div className={styles.hubStatMetaLabel}>Turnaround SLA</div>
+                      <div className={styles.hubStatValue}>{selectedHubData.speed}</div>
+                    </div>
                   </div>
                 </div>
               </div>
