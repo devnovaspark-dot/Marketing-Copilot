@@ -291,63 +291,6 @@ const growthStackCapabilities: GrowthCapability[] = [
   },
 ];
 
-interface ComparisonPoint {
-  id: string;
-  dimension: string;
-  category: 'all' | 'ownership' | 'team' | 'speed';
-  traditionalTitle: string;
-  traditionalDesc: string;
-  copilotTitle: string;
-  copilotDesc: string;
-}
-
-const comparisonPoints: ComparisonPoint[] = [
-  {
-    id: 'team',
-    dimension: 'Account Leadership',
-    category: 'team',
-    traditionalTitle: 'Junior Account Managers & Fresh Interns',
-    traditionalDesc: 'Handed off to 22-year-old account managers juggling 12+ other brands simultaneously. Communication gets lost in slow support ticket queues.',
-    copilotTitle: 'Founders & Lead Growth Architects Directly',
-    copilotDesc: 'Direct WhatsApp and Slack war room with seasoned growth engineers and founding partners. Live strategic pivots with a sub-2-hour response SLA.',
-  },
-  {
-    id: 'metrics',
-    dimension: 'North Star Metric',
-    category: 'all',
-    traditionalTitle: 'Vanity Impressions & Click Reports',
-    traditionalDesc: '40-page PDF decks touting impressions and clicks while your executive team is left wondering why actual net sales and cash margin remain flat.',
-    copilotTitle: 'Bankable GMV Pipeline & Blended ROAS',
-    copilotDesc: 'Every rupee is tracked through server-side Meta CAPI and Google Enhanced Conversions directly to your CRM. Success is judged purely on verified revenue.',
-  },
-  {
-    id: 'ownership',
-    dimension: 'Data & Asset Ownership',
-    category: 'ownership',
-    traditionalTitle: 'Held Hostage in Agency Ad Manager',
-    traditionalDesc: 'Pixels and ad accounts configured inside proprietary agency accounts. If you leave or dispute retainers, you lose years of ad pixel training.',
-    copilotTitle: '100% Root Client Admin Ownership',
-    copilotDesc: 'Root super-admin ownership over all ad accounts, GA4, Meta pixels, and Next.js repositories registered in your corporate name from Day 1.',
-  },
-  {
-    id: 'speed',
-    dimension: 'Execution Synergy',
-    category: 'speed',
-    traditionalTitle: '3 Fractured Vendors Pointing Fingers',
-    traditionalDesc: 'SEO agency blames website devs, devs take 3 weeks to change a landing page, ad buyers complain about broken tracking scripts.',
-    copilotTitle: 'Unified Full-Stack Pod (Code + Creatives + Ads)',
-    copilotDesc: 'Sub-second Next.js code, viral UGC video production, and algorithmic media buying operate in lockstep. New high-converting pages live within 48 hours.',
-  },
-  {
-    id: 'contracts',
-    dimension: 'Contract Agility',
-    category: 'speed',
-    traditionalTitle: '6 to 12-Month Lock-In Retainers',
-    traditionalDesc: 'Punitive minimum spend clauses and 60 to 90-day cancellation notices legally forcing you to keep paying even when campaigns flounder.',
-    copilotTitle: 'Zero Lock-In; Month-to-Month Agility',
-    copilotDesc: 'Month-to-month performance sprints. We earn our seat at your strategy table every single 30 days through audited revenue expansion.',
-  },
-];
 
 const growthPartnerFaqs = [
   {
@@ -416,12 +359,9 @@ export default function DigitalGrowthPartnerPage() {
   // Interactive Capability State for End-to-End Growth Stack
   const [activeStackService, setActiveStackService] = useState<number>(0);
 
-  // Interactive Filter & Hover State for The Copilot Advantage
-  const [activeAdvantageFilter, setActiveAdvantageFilter] = useState<'all' | 'ownership' | 'team' | 'speed'>('all');
-  const [hoveredAdvantageRow, setHoveredAdvantageRow] = useState<number | null>(null);
 
-  // Interactive FAQ Accordion State (First item open by default)
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
+  // Interactive FAQ Accordion State (Closed by default so user chooses what to open)
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   // Service toggle helper
   const toggleService = (formType: 'hero' | 'final', service: string) => {
@@ -923,6 +863,106 @@ export default function DigitalGrowthPartnerPage() {
       </section>
 
       {/* ═════════════════════════════════════════════════════════════════
+          END-TO-END GROWTH STACK — SYNCHRONIZED FULL-FUNNEL PERFORMANCE ENGINE
+      ═════════════════════════════════════════════ */}
+      <section className={`${styles.container} ${styles.sectionPad}`}>
+        <div className={styles.headerCenter}>
+          <div className={styles.eyebrowBadge}>
+            <span className={styles.pulsingLed} />
+            <span>END-TO-END GROWTH STACK</span>
+          </div>
+          <h2 className={styles.titlePrimary}>Everything You Need to Grow Online</h2>
+          <p className={styles.subtitle}>
+            A synchronized suite of performance services designed to work together without the overhead of managing multiple disconnected vendors.
+          </p>
+        </div>
+
+        {/* Interactive Capability Ribbon Track */}
+        <div className={styles.engineRibbonTrack}>
+          {growthStackCapabilities.map((cap, idx) => {
+            const isActive = activeStackService === idx;
+            return (
+              <button
+                type="button"
+                key={cap.id}
+                onClick={() => setActiveStackService(idx)}
+                className={`${styles.engineRibbonTab} ${isActive ? styles.engineRibbonTabActive : ''}`}
+              >
+                {isActive && <span className={styles.engineTabPulseGlow} />}
+                <span className={styles.engineTabIcon}>{cap.icon}</span>
+                <div className={styles.engineTabMeta}>
+                  <span className={styles.engineTabTitle}>{cap.title}</span>
+                  <span className={styles.engineTabStage}>{cap.stage}</span>
+                </div>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Live Active Capability Cockpit Chassis */}
+        {(() => {
+          const activeCap = growthStackCapabilities[activeStackService] || growthStackCapabilities[0];
+          return (
+            <div className={styles.engineCockpitChassis}>
+              {/* Cockpit Header with Telemetry Metric */}
+              <div className={styles.cockpitTopBar}>
+                <div className={styles.cockpitIdentity}>
+                  <div className={styles.cockpitIconFrame}>{activeCap.icon}</div>
+                  <div>
+                    <div className={styles.cockpitMetaRow}>
+                      <span className={styles.cockpitCategoryTag}>{activeCap.category}</span>
+                      <span className={styles.cockpitStageTag}>{activeCap.stage}</span>
+                    </div>
+                    <h3 className={styles.cockpitTitleH3}>{activeCap.title}</h3>
+                  </div>
+                </div>
+
+                <div className={styles.cockpitMetricGauge}>
+                  <div className={styles.gaugeNumber}>{activeCap.metricNum}</div>
+                  <div className={styles.gaugeSubText}>{activeCap.metricLabel}</div>
+                  <div className={styles.gaugeSlaTag}>⚡ {activeCap.turnaround}</div>
+                </div>
+              </div>
+
+              {/* Capability Description */}
+              <p className={styles.cockpitDescription}>{activeCap.shortDesc}</p>
+
+              {/* 3-Step Deliverable Workflow Triad */}
+              <div className={styles.cockpitWorkflowArea}>
+                <div className={styles.workflowSectionLabel}>
+                  <span>⚙️ SPRINT EXECUTION WORKFLOW</span>
+                </div>
+                <div className={styles.workflowTriadGrid}>
+                  {activeCap.workflow.map((w, wIdx) => (
+                    <div key={wIdx} className={styles.workflowStepTile}>
+                      <div className={styles.workflowStepTop}>
+                        <span className={styles.workflowStepNum}>{w.step}</span>
+                        <h4 className={styles.workflowStepH4}>{w.title}</h4>
+                      </div>
+                      <p className={styles.workflowStepDesc}>{w.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Deployed Tech Stack Bar */}
+              <div className={styles.cockpitFooterTech}>
+                <span className={styles.techBarLabel}>DEPLOYED STACK:</span>
+                <div className={styles.techTagsCluster}>
+                  {activeCap.techStack.map((tech, tIdx) => (
+                    <span key={tIdx} className={styles.techTagPill}>
+                      <span className={styles.techDot} />
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          );
+        })()}
+      </section>
+
+      {/* ═════════════════════════════════════════════════════════════════
           INTERACTIVE MAP SECTION
       ═════════════════════════════════════════════ */}
       <QuickConnectMapSection
@@ -1226,300 +1266,146 @@ export default function DigitalGrowthPartnerPage() {
       <TeamPreview eyebrow="LEADERSHIP & ACCOUNTABILITY" />
 
       {/* ═════════════════════════════════════════════════════════════════
-          SECTION 8: EVERYTHING YOU NEED TO GROW ONLINE — 8 ALIGNED CARDS
+          SECTION 9: THE COPILOT ADVANTAGE — 4 ALIGNED PILLARS + INTERACTIVE MATRIX
       ═════════════════════════════════════════════ */}
-      <section className={`${styles.container} ${styles.sectionPad}`}>
-        <div className={styles.headerCenter}>
-          <div className={styles.eyebrowBadge}>
-            <span className={styles.pulsingLed} />
-            <span>END-TO-END GROWTH STACK</span>
-          </div>
-          <h2 className={styles.titlePrimary}>Everything You Need to Grow Online</h2>
-          <p className={styles.subtitle}>
-            A synchronized suite of performance services designed to work together without the overhead of managing multiple disconnected vendors.
-          </p>
-        </div>
-
-        {/* Interactive Capability Ribbon Track */}
-        <div className={styles.engineRibbonTrack}>
-          {growthStackCapabilities.map((cap, idx) => {
-            const isActive = activeStackService === idx;
-            return (
-              <button
-                type="button"
-                key={cap.id}
-                onClick={() => setActiveStackService(idx)}
-                className={`${styles.engineRibbonTab} ${isActive ? styles.engineRibbonTabActive : ''}`}
-              >
-                {isActive && <span className={styles.engineTabPulseGlow} />}
-                <span className={styles.engineTabIcon}>{cap.icon}</span>
-                <div className={styles.engineTabMeta}>
-                  <span className={styles.engineTabTitle}>{cap.title}</span>
-                  <span className={styles.engineTabStage}>{cap.stage}</span>
-                </div>
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Live Active Capability Cockpit Chassis */}
-        {(() => {
-          const activeCap = growthStackCapabilities[activeStackService] || growthStackCapabilities[0];
-          return (
-            <div className={styles.engineCockpitChassis}>
-              {/* Cockpit Header with Telemetry Metric */}
-              <div className={styles.cockpitTopBar}>
-                <div className={styles.cockpitIdentity}>
-                  <div className={styles.cockpitIconFrame}>{activeCap.icon}</div>
-                  <div>
-                    <div className={styles.cockpitMetaRow}>
-                      <span className={styles.cockpitCategoryTag}>{activeCap.category}</span>
-                      <span className={styles.cockpitStageTag}>{activeCap.stage}</span>
-                    </div>
-                    <h3 className={styles.cockpitTitleH3}>{activeCap.title}</h3>
-                  </div>
-                </div>
-
-                <div className={styles.cockpitMetricGauge}>
-                  <div className={styles.gaugeNumber}>{activeCap.metricNum}</div>
-                  <div className={styles.gaugeSubText}>{activeCap.metricLabel}</div>
-                  <div className={styles.gaugeSlaTag}>⚡ {activeCap.turnaround}</div>
-                </div>
-              </div>
-
-              {/* Capability Description */}
-              <p className={styles.cockpitDescription}>{activeCap.shortDesc}</p>
-
-              {/* 3-Step Deliverable Workflow Triad */}
-              <div className={styles.cockpitWorkflowArea}>
-                <div className={styles.workflowSectionLabel}>
-                  <span>⚙️ SPRINT EXECUTION WORKFLOW</span>
-                </div>
-                <div className={styles.workflowTriadGrid}>
-                  {activeCap.workflow.map((w, wIdx) => (
-                    <div key={wIdx} className={styles.workflowStepTile}>
-                      <div className={styles.workflowStepTop}>
-                        <span className={styles.workflowStepNum}>{w.step}</span>
-                        <h4 className={styles.workflowStepH4}>{w.title}</h4>
-                      </div>
-                      <p className={styles.workflowStepDesc}>{w.desc}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Deployed Tech Stack Bar */}
-              <div className={styles.cockpitFooterTech}>
-                <span className={styles.techBarLabel}>DEPLOYED STACK:</span>
-                <div className={styles.techTagsCluster}>
-                  {activeCap.techStack.map((tech, tIdx) => (
-                    <span key={tIdx} className={styles.techTagPill}>
-                      <span className={styles.techDot} />
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          );
-        })()}
-      </section>
-
-      {/* ═════════════════════════════════════════════════════════════════
-          THE COPILOT ADVANTAGE — HEAD-TO-HEAD BATTLE ARENA
-      ═════════════════════════════════════════════ */}
-      <section className={styles.advantageBattleSection}>
+      <section className={styles.comparisonMatrixSection}>
         <div className={styles.container}>
-          {/* Section Header */}
           <div className={styles.headerCenter}>
             <div className={styles.eyebrowBadge}>
               <span className={styles.pulsingLed} />
-              <span>THE COPILOT ADVANTAGE · HEAD-TO-HEAD AUDIT</span>
+              <span>THE COPILOT ADVANTAGE</span>
             </div>
-            <h2 className={styles.titlePrimary}>
-              The Traditional Agency Trap vs.<br />
-              <span className={styles.titleAccent}>The Marketing Copilot Standard</span>
-            </h2>
+            <h2 className={styles.titlePrimary}>Why Work With Us?</h2>
             <p className={styles.subtitle}>
-              Why leading enterprises partner with a dedicated growth partner instead of outsourcing to bloated, slow-moving agencies.
+              See how partnering with a dedicated growth partner differs fundamentally from traditional agency retainer models.
             </p>
           </div>
 
-          {/* Interactive Dimension Filter Bar */}
-          <div className={styles.battleFilterBar}>
-            <button
-              type="button"
-              onClick={() => setActiveAdvantageFilter('all')}
-              className={`${styles.battleFilterBtn} ${activeAdvantageFilter === 'all' ? styles.battleFilterBtnActive : ''}`}
-            >
-              All Dimensions ({comparisonPoints.length})
-            </button>
-            <button
-              type="button"
-              onClick={() => setActiveAdvantageFilter('ownership')}
-              className={`${styles.battleFilterBtn} ${activeAdvantageFilter === 'ownership' ? styles.battleFilterBtnActive : ''}`}
-            >
-              Root Ownership
-            </button>
-            <button
-              type="button"
-              onClick={() => setActiveAdvantageFilter('team')}
-              className={`${styles.battleFilterBtn} ${activeAdvantageFilter === 'team' ? styles.battleFilterBtnActive : ''}`}
-            >
-              Executive Leadership
-            </button>
-            <button
-              type="button"
-              onClick={() => setActiveAdvantageFilter('speed')}
-              className={`${styles.battleFilterBtn} ${activeAdvantageFilter === 'speed' ? styles.battleFilterBtnActive : ''}`}
-            >
-              Speed &amp; Agility
-            </button>
-          </div>
-
-          {/* Dual-Terminal Battle Arena */}
-          {(() => {
-            const visiblePoints = activeAdvantageFilter === 'all'
-              ? comparisonPoints
-              : comparisonPoints.filter((cp) => cp.category === activeAdvantageFilter);
-
-            return (
-              <div className={styles.battleArenaChassis}>
-                {/* Left Terminal: Traditional Agency */}
-                <div className={styles.battlePanelTraditional}>
-                  <div className={styles.battlePanelTopHeader}>
-                    <span className={styles.traditionalWarningBadge}>
-                      ⚠️ THE STATUS QUO TRAP
-                    </span>
-                    <div className={styles.symbol3DItem}>
-                      <span>Traditional Agency</span>
-                      <button
-                        type="button"
-                        className={styles.symbol3DCross}
-                        title="Friction Indicator (Interactable)"
-                        aria-label="Traditional friction symbol"
-                      >
-                        ✕
-                      </button>
-                    </div>
-                  </div>
-
-                  <div className={styles.battleRowsContainer}>
-                    {visiblePoints.map((point, pIdx) => {
-                      const isHovered = hoveredAdvantageRow === pIdx;
-                      return (
-                        <div
-                          key={point.id}
-                          className={`${styles.battleRowItem} ${styles.battleRowItemTraditional} ${
-                            isHovered ? styles.battleRowHoverSync : ''
-                          }`}
-                          onMouseEnter={() => setHoveredAdvantageRow(pIdx)}
-                          onMouseLeave={() => setHoveredAdvantageRow(null)}
-                        >
-                          <div className={styles.rowDimensionChip}>{point.dimension}</div>
-                          <div className={styles.rowLeadTitleBad}>
-                            <span className={styles.rowIconBad}>✕</span>
-                            <span>{point.traditionalTitle}</span>
-                          </div>
-                          <p className={styles.rowDescTextBad}>{point.traditionalDesc}</p>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                {/* Right Terminal: The Marketing Copilot */}
-                <div className={styles.battlePanelCopilot}>
-                  <div className={styles.battlePanelTopHeader}>
-                    <span className={styles.copilotCrownBadge}>
-                      <span className={styles.pulsingLed} />
-                      👑 DEDICATED GROWTH PARTNER
-                    </span>
-                    <div className={styles.symbol3DItem}>
-                      <span className={styles.copilotText}>Marketing Copilot</span>
-                      <button
-                        type="button"
-                        className={styles.symbol3DCheck}
-                        title="Verified Advantage Indicator (Interactable)"
-                        aria-label="Verified Copilot advantage symbol"
-                      >
-                        ✓
-                      </button>
-                    </div>
-                  </div>
-
-                  <div className={styles.battleRowsContainer}>
-                    {visiblePoints.map((point, pIdx) => {
-                      const isHovered = hoveredAdvantageRow === pIdx;
-                      return (
-                        <div
-                          key={point.id}
-                          className={`${styles.battleRowItem} ${styles.battleRowItemCopilot} ${
-                            isHovered ? styles.battleRowHoverSync : ''
-                          }`}
-                          onMouseEnter={() => setHoveredAdvantageRow(pIdx)}
-                          onMouseLeave={() => setHoveredAdvantageRow(null)}
-                        >
-                          <div className={styles.rowDimensionChipCopilot}>{point.dimension}</div>
-                          <div className={styles.rowLeadTitleGood}>
-                            <span className={styles.rowIconGood}>✓</span>
-                            <span>{point.copilotTitle}</span>
-                          </div>
-                          <p className={styles.rowDescTextGood}>{point.copilotDesc}</p>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              </div>
-            );
-          })()}
-
-          {/* 4 Foundational Strategic Pillars */}
-          <div className={styles.storyPillarsHeader} style={{ marginTop: '54px' }}>
-            <h3 className={styles.storyPillarsSubTitle}>
-              Four Immutable Pillars of Growth
-            </h3>
-            <p className={styles.storyPillarsSubCopy}>
-              The architectural bedrock supporting every sprint we run for ambitious enterprises across India.
-            </p>
-          </div>
-
+          {/* 4 Aligned Strategic Pillars */}
           <div className={styles.pillarsQuadGrid}>
             <div className={styles.pillarCardAligned}>
               <div className={styles.pillarNum}>01</div>
-              <h4 className={styles.pillarTitleH3}>Direct Account Ownership</h4>
+              <h3 className={styles.pillarTitleH3}>Direct Account Ownership</h3>
               <p className={styles.pillarBody}>
                 You own 100% of your Google Ads accounts, Meta pixels, and creative IP from Day 1. Never held hostage by agency logins.
               </p>
             </div>
             <div className={styles.pillarCardAligned}>
               <div className={styles.pillarNum}>02</div>
-              <h4 className={styles.pillarTitleH3}>Founder-Led Execution</h4>
+              <h3 className={styles.pillarTitleH3}>Founder-Led Execution</h3>
               <p className={styles.pillarBody}>
                 Direct strategy and sprint oversight by our senior founders. No junior interns managing your ad spend.
               </p>
             </div>
             <div className={styles.pillarCardAligned}>
               <div className={styles.pillarNum}>03</div>
-              <h4 className={styles.pillarTitleH3}>Integrated Tech Stack</h4>
+              <h3 className={styles.pillarTitleH3}>Integrated Tech Stack</h3>
               <p className={styles.pillarBody}>
                 We align high-converting engineering, creative velocity, and algorithmic media buying into one synchronized pod.
               </p>
             </div>
             <div className={styles.pillarCardAligned}>
               <div className={styles.pillarNum}>04</div>
-              <h4 className={styles.pillarTitleH3}>Sub-2-Hour Response SLA</h4>
+              <h3 className={styles.pillarTitleH3}>Sub-2-Hour Response SLA</h3>
               <p className={styles.pillarBody}>
                 Dedicated WhatsApp war room with real-time sprint updates, transparent metrics, and 0 lock-in contracts.
               </p>
+            </div>
+          </div>
+
+          {/* Head-to-Head Comparison Matrix With Interactive Tactile Badges */}
+          <div className={styles.comparisonTableWrap}>
+            <div className={styles.matrixRowHeader}>
+              <div>Growth Dimension</div>
+              <div className={styles.matrixColTraditional}>Traditional Agencies</div>
+              <div style={{ color: '#0B2093' }}>Marketing Copilot</div>
+            </div>
+
+            {/* Row 1 */}
+            <div className={styles.matrixRowItem}>
+              <div>
+                <div className={styles.matrixFeatureName}>1. Account Leadership</div>
+                <div className={styles.matrixFeatureSub}>Who actually manages your growth</div>
+              </div>
+              <div className={styles.symbol3DItem}>
+                <span className={styles.symbol3DCross}>✕</span>
+                <span>Junior account managers &amp; interns</span>
+              </div>
+              <div className={styles.symbol3DItem}>
+                <span className={styles.symbol3DCheck}>✓</span>
+                <span className={styles.copilotText}>Founders &amp; Senior Strategists directly</span>
+              </div>
+            </div>
+
+            {/* Row 2 */}
+            <div className={styles.matrixRowItem}>
+              <div>
+                <div className={styles.matrixFeatureName}>2. Focus Metric</div>
+                <div className={styles.matrixFeatureSub}>How success is judged and measured</div>
+              </div>
+              <div className={styles.symbol3DItem}>
+                <span className={styles.symbol3DCross}>✕</span>
+                <span>Impressions, clicks &amp; vanity reports</span>
+              </div>
+              <div className={styles.symbol3DItem}>
+                <span className={styles.symbol3DCheck}>✓</span>
+                <span className={styles.copilotText}>Net Pipeline, ROAS &amp; Bankable GMV</span>
+              </div>
+            </div>
+
+            {/* Row 3 */}
+            <div className={styles.matrixRowItem}>
+              <div>
+                <div className={styles.matrixFeatureName}>3. Account Ownership</div>
+                <div className={styles.matrixFeatureSub}>Pixels, ad accounts, and creative IP</div>
+              </div>
+              <div className={styles.symbol3DItem}>
+                <span className={styles.symbol3DCross}>✕</span>
+                <span>Held hostage in agency ad manager</span>
+              </div>
+              <div className={styles.symbol3DItem}>
+                <span className={styles.symbol3DCheck}>✓</span>
+                <span className={styles.copilotText}>100% Owned by you from Day 1</span>
+              </div>
+            </div>
+
+            {/* Row 4 */}
+            <div className={styles.matrixRowItem}>
+              <div>
+                <div className={styles.matrixFeatureName}>4. Execution Synergy</div>
+                <div className={styles.matrixFeatureSub}>Integration of code, ads, and design</div>
+              </div>
+              <div className={styles.symbol3DItem}>
+                <span className={styles.symbol3DCross}>✕</span>
+                <span>Fragmented across 3 different vendors</span>
+              </div>
+              <div className={styles.symbol3DItem}>
+                <span className={styles.symbol3DCheck}>✓</span>
+                <span className={styles.copilotText}>One Unified Synchronized Growth Pod</span>
+              </div>
+            </div>
+
+            {/* Row 5 */}
+            <div className={styles.matrixRowItem}>
+              <div>
+                <div className={styles.matrixFeatureName}>5. Contract Flexibility</div>
+                <div className={styles.matrixFeatureSub}>Commitment requirements</div>
+              </div>
+              <div className={styles.symbol3DItem}>
+                <span className={styles.symbol3DCross}>✕</span>
+                <span>6 to 12 month rigid lock-in traps</span>
+              </div>
+              <div className={styles.symbol3DItem}>
+                <span className={styles.symbol3DCheck}>✓</span>
+                <span className={styles.copilotText}>Zero Lock-In; month-to-month agility</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* ═════════════════════════════════════════════════════════════════
-          SECTION: FREQUENTLY ASKED QUESTIONS (ACCORDION)
+          SECTION: FREQUENTLY ASKED QUESTIONS (SKEUOMORPHIC ACCORDION)
       ═════════════════════════════════════════════ */}
       <section className={styles.faqSection} id="growth-faq">
         <div className={styles.container}>
@@ -1548,30 +1434,54 @@ export default function DigitalGrowthPartnerPage() {
                     className={styles.faqQuestionBtn}
                     aria-expanded={isOpen}
                   >
-                    <span className={styles.faqQuestionText}>{faq.q}</span>
+                    <div className={styles.faqQuestionLeft}>
+                      <span className={styles.faqNumberBadge}>
+                        {String(idx + 1).padStart(2, '0')}
+                      </span>
+                      <span className={styles.faqQuestionText}>{faq.q}</span>
+                    </div>
                     <span className={styles.faqToggleBadge}>+</span>
                   </button>
                   {isOpen && (
                     <div className={styles.faqAnswerPanel}>
-                      <p className={styles.faqAnswerText}>{faq.a}</p>
+                      <div className={styles.faqAnswerInner}>
+                        <p className={styles.faqAnswerText}>{faq.a}</p>
+                      </div>
                     </div>
                   )}
                 </div>
               );
             })}
 
-            {/* Direct Helpline Banner */}
+            {/* Tactile Skeuomorphic VIP Concierge War Room Console */}
             <div className={styles.faqFooterHelp}>
-              <span className={styles.faqHelpPrompt}>
-                Have a specific question about your market or budget?
-              </span>
+              <div className={styles.faqHelpMeta}>
+                <div className={styles.faqHelpStatusPill}>
+                  <span className={styles.pulsingLed} />
+                  <span>LIVE FOUNDER DISPATCH</span>
+                </div>
+                <h3 className={styles.faqHelpHeadline}>
+                  Have a specific question about your market or budget?
+                </h3>
+                <p className={styles.faqHelpSubCopy}>
+                  Connect directly with our senior founding partners. Audited response SLA &lt; 15 mins.
+                </p>
+              </div>
+
               <a
                 href="https://wa.me/919437168434?text=Hi%20Marketing%20Copilot%2C%20I%20have%20a%20question%20regarding%20the%20digital%20growth%20partnership"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={styles.faqHelpWhatsAppLink}
+                className={styles.faqHelpWhatsAppBtn}
+                aria-label="Chat directly with founder on WhatsApp"
               >
-                <span>💬 Ask on WhatsApp</span>
+                <div className={styles.faqWhatsAppIconWrap}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12.031 2C6.495 2 2 6.495 2 12.031c0 1.77.464 3.499 1.345 5.025L2 22l5.086-1.334a10.009 10.009 0 0 0 4.945 1.365h.004c5.535 0 10.03-4.495 10.03-10.031C22.065 6.495 17.568 2 12.031 2zm0 18.375c-1.505 0-2.98-.405-4.267-1.168l-.306-.182-3.17.832.846-3.09-.2-.317A8.324 8.324 0 0 1 3.688 12.03c0-4.6 3.743-8.343 8.343-8.343 4.601 0 8.344 3.743 8.344 8.343 0 4.601-3.743 8.344-8.344 8.344zm4.573-6.248c-.25-.125-1.482-.731-1.712-.815-.23-.083-.396-.125-.563.125-.167.25-.646.815-.792.982-.146.167-.292.188-.542.063-.25-.125-1.056-.39-2.012-1.242-.744-.664-1.247-1.484-1.393-1.734-.146-.25-.016-.385.109-.51.113-.112.25-.292.375-.438.125-.146.167-.25.25-.417.083-.167.042-.313-.021-.438-.063-.125-.563-1.356-.771-1.856-.203-.487-.41-.421-.563-.429l-.48-.008c-.166 0-.437.063-.666.313-.23.25-.875.856-.875 2.087s.896 2.42 1.021 2.587c.125.167 1.764 2.694 4.275 3.778.597.258 1.064.412 1.428.528.6.191 1.146.164 1.578.1.48-.072 1.482-.605 1.69-1.189.208-.584.208-1.085.146-1.189-.063-.104-.23-.167-.48-.292z"/>
+                  </svg>
+                </div>
+                <span>DIRECT FOUNDER WHATSAPP</span>
+                <span className={styles.faqWhatsAppSlaPill}>&lt; 15 MIN SLA</span>
               </a>
             </div>
           </div>
