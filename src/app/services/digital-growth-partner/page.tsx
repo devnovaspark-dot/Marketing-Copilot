@@ -320,14 +320,6 @@ export default function DigitalGrowthPartnerPage() {
 
           {/* Right Column: Interactive Skeuomorphic Audit Console */}
           <div className={styles.auditConsole}>
-            <div className={styles.consoleChromeBar}>
-              <div className={styles.consoleStatusGroup}>
-                <span className={styles.pulsingLed} />
-                <span className={styles.consoleHeading}>Free Consultation Deck</span>
-              </div>
-              <span className={styles.consoleSpotsBadge}>2 Slots Left for Q2</span>
-            </div>
-
             {heroSuccess ? (
               <div className={styles.successBannerBox}>
                 <div className={styles.successCheckIcon}>✓</div>
@@ -354,7 +346,6 @@ export default function DigitalGrowthPartnerPage() {
                     <input
                       type="text"
                       required
-                      placeholder="e.g. Rahul Sharma"
                       value={heroForm.name}
                       onChange={(e) => setHeroForm({ ...heroForm, name: e.target.value })}
                       className={styles.tactileField}
@@ -364,7 +355,6 @@ export default function DigitalGrowthPartnerPage() {
                     <label className={styles.fieldLabel}>Company</label>
                     <input
                       type="text"
-                      placeholder="e.g. Apex Health"
                       value={heroForm.company}
                       onChange={(e) => setHeroForm({ ...heroForm, company: e.target.value })}
                       className={styles.tactileField}
@@ -380,7 +370,6 @@ export default function DigitalGrowthPartnerPage() {
                     <input
                       type="tel"
                       required
-                      placeholder="+91 98765 43210"
                       value={heroForm.phone}
                       onChange={(e) => setHeroForm({ ...heroForm, phone: e.target.value })}
                       className={styles.tactileField}
@@ -393,7 +382,6 @@ export default function DigitalGrowthPartnerPage() {
                     <input
                       type="email"
                       required
-                      placeholder="name@company.com"
                       value={heroForm.email}
                       onChange={(e) => setHeroForm({ ...heroForm, email: e.target.value })}
                       className={styles.tactileField}
@@ -407,7 +395,6 @@ export default function DigitalGrowthPartnerPage() {
                   </label>
                   <input
                     type="url"
-                    placeholder="https://yourbrand.com"
                     value={heroForm.website}
                     onChange={(e) => setHeroForm({ ...heroForm, website: e.target.value })}
                     className={styles.tactileField}
@@ -471,7 +458,6 @@ export default function DigitalGrowthPartnerPage() {
                   </label>
                   <textarea
                     rows={2}
-                    placeholder="Describe your current bottleneck (e.g. high CPL on Meta, need to rank #1 on Google, scale to ₹50L/mo)"
                     value={heroForm.requirement}
                     onChange={(e) => setHeroForm({ ...heroForm, requirement: e.target.value })}
                     className={styles.tactileTextarea}
@@ -1000,19 +986,13 @@ export default function DigitalGrowthPartnerPage() {
                 <div className={styles.matrixFeatureName}>1. Account Leadership</div>
                 <div className={styles.matrixFeatureSub}>Who actually manages your growth</div>
               </div>
-              <div className={styles.interactiveBadBadge}>
-                <div className={styles.badBadgeContent}>
-                  <span className={styles.badIconGlow}>✕</span>
-                  <span>Junior account managers &amp; interns</span>
-                </div>
-                <span className={styles.badBadgeHint}>Risk: High Churn &amp; Budget Waste</span>
+              <div className={styles.symbol3DItem}>
+                <span className={styles.symbol3DCross}>✕</span>
+                <span>Junior account managers &amp; interns</span>
               </div>
-              <div className={styles.interactiveGoodBadge}>
-                <div className={styles.goodBadgeContent}>
-                  <span className={styles.goodIconGlow}>✓</span>
-                  <span>Founders &amp; Senior Strategists directly</span>
-                </div>
-                <span className={styles.goodBadgeHint}>Guarantee: Direct Accountability</span>
+              <div className={styles.symbol3DItem}>
+                <span className={styles.symbol3DCheck}>✓</span>
+                <span className={styles.copilotText}>Founders &amp; Senior Strategists directly</span>
               </div>
             </div>
 
@@ -1022,19 +1002,13 @@ export default function DigitalGrowthPartnerPage() {
                 <div className={styles.matrixFeatureName}>2. Focus Metric</div>
                 <div className={styles.matrixFeatureSub}>How success is judged and measured</div>
               </div>
-              <div className={styles.interactiveBadBadge}>
-                <div className={styles.badBadgeContent}>
-                  <span className={styles.badIconGlow}>✕</span>
-                  <span>Impressions, clicks, vanity reports</span>
-                </div>
-                <span className={styles.badBadgeHint}>Flaw: Zero Correlation with Revenue</span>
+              <div className={styles.symbol3DItem}>
+                <span className={styles.symbol3DCross}>✕</span>
+                <span>Impressions, clicks &amp; vanity reports</span>
               </div>
-              <div className={styles.interactiveGoodBadge}>
-                <div className={styles.goodBadgeContent}>
-                  <span className={styles.goodIconGlow}>✓</span>
-                  <span>Net Pipeline, ROAS &amp; Bankable GMV</span>
-                </div>
-                <span className={styles.goodBadgeHint}>Guarantee: Verified Commercial Growth</span>
+              <div className={styles.symbol3DItem}>
+                <span className={styles.symbol3DCheck}>✓</span>
+                <span className={styles.copilotText}>Net Pipeline, ROAS &amp; Bankable GMV</span>
               </div>
             </div>
 
@@ -1044,19 +1018,13 @@ export default function DigitalGrowthPartnerPage() {
                 <div className={styles.matrixFeatureName}>3. Account Ownership</div>
                 <div className={styles.matrixFeatureSub}>Pixels, ad accounts, and creative IP</div>
               </div>
-              <div className={styles.interactiveBadBadge}>
-                <div className={styles.badBadgeContent}>
-                  <span className={styles.badIconGlow}>✕</span>
-                  <span>Held hostage in agency ad manager</span>
-                </div>
-                <span className={styles.badBadgeHint}>Trap: Loss of pixel data if you leave</span>
+              <div className={styles.symbol3DItem}>
+                <span className={styles.symbol3DCross}>✕</span>
+                <span>Held hostage in agency ad manager</span>
               </div>
-              <div className={styles.interactiveGoodBadge}>
-                <div className={styles.goodBadgeContent}>
-                  <span className={styles.goodIconGlow}>✓</span>
-                  <span>100% Owned by you from Day 1</span>
-                </div>
-                <span className={styles.goodBadgeHint}>Guarantee: Full Asset &amp; Data Control</span>
+              <div className={styles.symbol3DItem}>
+                <span className={styles.symbol3DCheck}>✓</span>
+                <span className={styles.copilotText}>100% Owned by you from Day 1</span>
               </div>
             </div>
 
@@ -1066,19 +1034,13 @@ export default function DigitalGrowthPartnerPage() {
                 <div className={styles.matrixFeatureName}>4. Execution Synergy</div>
                 <div className={styles.matrixFeatureSub}>Integration of code, ads, and design</div>
               </div>
-              <div className={styles.interactiveBadBadge}>
-                <div className={styles.badBadgeContent}>
-                  <span className={styles.badIconGlow}>✕</span>
-                  <span>Fragmented across 3 different vendors</span>
-                </div>
-                <span className={styles.badBadgeHint}>Friction: Finger-pointing when ads stall</span>
+              <div className={styles.symbol3DItem}>
+                <span className={styles.symbol3DCross}>✕</span>
+                <span>Fragmented across 3 different vendors</span>
               </div>
-              <div className={styles.interactiveGoodBadge}>
-                <div className={styles.goodBadgeContent}>
-                  <span className={styles.goodIconGlow}>✓</span>
-                  <span>One Unified Synchronized Growth Pod</span>
-                </div>
-                <span className={styles.goodBadgeHint}>Guarantee: Zero Communication Lag</span>
+              <div className={styles.symbol3DItem}>
+                <span className={styles.symbol3DCheck}>✓</span>
+                <span className={styles.copilotText}>One Unified Synchronized Growth Pod</span>
               </div>
             </div>
 
@@ -1088,19 +1050,13 @@ export default function DigitalGrowthPartnerPage() {
                 <div className={styles.matrixFeatureName}>5. Contract Flexibility</div>
                 <div className={styles.matrixFeatureSub}>Commitment requirements</div>
               </div>
-              <div className={styles.interactiveBadBadge}>
-                <div className={styles.badBadgeContent}>
-                  <span className={styles.badIconGlow}>✕</span>
-                  <span>6 to 12 month rigid lock-in traps</span>
-                </div>
-                <span className={styles.badBadgeHint}>Risk: Stuck paying even if results drop</span>
+              <div className={styles.symbol3DItem}>
+                <span className={styles.symbol3DCross}>✕</span>
+                <span>6 to 12 month rigid lock-in traps</span>
               </div>
-              <div className={styles.interactiveGoodBadge}>
-                <div className={styles.goodBadgeContent}>
-                  <span className={styles.goodIconGlow}>✓</span>
-                  <span>Zero Lock-In; month-to-month agility</span>
-                </div>
-                <span className={styles.goodBadgeHint}>Guarantee: We earn your trust monthly</span>
+              <div className={styles.symbol3DItem}>
+                <span className={styles.symbol3DCheck}>✓</span>
+                <span className={styles.copilotText}>Zero Lock-In; month-to-month agility</span>
               </div>
             </div>
           </div>
@@ -1117,7 +1073,7 @@ export default function DigitalGrowthPartnerPage() {
             <div className={styles.hqCardChassis}>
               <div>
                 <div className={styles.hqLiveStatusTag}>
-                  <span className={styles.pulsingLed} />
+                  <span className={styles.statusLedNeutral} />
                   <span>STRATEGY WAR ROOM · IMMEDIATE DISPATCH</span>
                 </div>
                 <h2 className={styles.titlePrimary} style={{ textAlign: 'left', marginBottom: '10px' }}>
@@ -1187,8 +1143,8 @@ export default function DigitalGrowthPartnerPage() {
             {/* Right Card: Interactive Metro Radar & Commercial Hubs Console */}
             <div className={styles.metroRadarCard}>
               <div>
-                <div className={styles.eyebrowBadge} style={{ marginBottom: 12 }}>
-                  <span className={styles.pulsingLed} />
+                <div className={styles.radarNeutralTag}>
+                  <span className={styles.statusLedNeutral} />
                   <span>🇮🇳 NATIONWIDE CAMPAIGN RADAR</span>
                 </div>
                 <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '22px', fontWeight: 900, color: '#0B2093', marginBottom: '8px' }}>
@@ -1246,12 +1202,9 @@ export default function DigitalGrowthPartnerPage() {
       </section>
 
       {/* ═════════════════════════════════════════════════════════════════
-          SECTION 11: TAKE THE NEXT LEAP — LUXURY EXECUTIVE SUITE
+          SECTION 11: TAKE THE NEXT LEAP — CLEAN, LIGHT & COMPACT SKEUOMORPHIC CARD
       ═════════════════════════════════════════════ */}
       <section className={styles.grandCtaSection} id="audit-form">
-        <div className={styles.grandAmbientGlow1} />
-        <div className={styles.grandAmbientGlow2} />
-
         <div className={styles.container}>
           <div className={styles.grandCardChassis}>
             <div className={styles.grandHeader}>
@@ -1310,76 +1263,71 @@ export default function DigitalGrowthPartnerPage() {
               <form onSubmit={(e) => handleFormSubmit(e, 'final')}>
                 <div className={styles.inputGridDouble}>
                   <div className={styles.fieldGroup}>
-                    <label className={styles.grandFieldLabel}>
+                    <label className={styles.fieldLabel}>
                       Full Name <span>*</span>
                     </label>
                     <input
                       type="text"
                       required
-                      placeholder="e.g. Priya Sen"
                       value={finalForm.name}
                       onChange={(e) => setFinalForm({ ...finalForm, name: e.target.value })}
-                      className={styles.tactileFieldDark}
+                      className={styles.tactileField}
                     />
                   </div>
                   <div className={styles.fieldGroup}>
-                    <label className={styles.grandFieldLabel}>Company Name</label>
+                    <label className={styles.fieldLabel}>Company Name</label>
                     <input
                       type="text"
-                      placeholder="e.g. Nova Tech Logistics"
                       value={finalForm.company}
                       onChange={(e) => setFinalForm({ ...finalForm, company: e.target.value })}
-                      className={styles.tactileFieldDark}
+                      className={styles.tactileField}
                     />
                   </div>
                 </div>
 
                 <div className={styles.inputGridDouble}>
                   <div className={styles.fieldGroup}>
-                    <label className={styles.grandFieldLabel}>
+                    <label className={styles.fieldLabel}>
                       Phone / WhatsApp <span>*</span>
                     </label>
                     <input
                       type="tel"
                       required
-                      placeholder="+91 98765 43210"
                       value={finalForm.phone}
                       onChange={(e) => setFinalForm({ ...finalForm, phone: e.target.value })}
-                      className={styles.tactileFieldDark}
+                      className={styles.tactileField}
                     />
                   </div>
                   <div className={styles.fieldGroup}>
-                    <label className={styles.grandFieldLabel}>
+                    <label className={styles.fieldLabel}>
                       Work Email <span>*</span>
                     </label>
                     <input
                       type="email"
                       required
-                      placeholder="priya@novatech.com"
                       value={finalForm.email}
                       onChange={(e) => setFinalForm({ ...finalForm, email: e.target.value })}
-                      className={styles.tactileFieldDark}
+                      className={styles.tactileField}
                     />
                   </div>
                 </div>
 
                 <div className={styles.fieldGroup}>
-                  <label className={styles.grandFieldLabel}>
-                    Website URL <span className={styles.grandFieldLabelOpt}>(Optional)</span>
+                  <label className={styles.fieldLabel}>
+                    Website URL <span className={styles.fieldLabelOpt}>(Optional)</span>
                   </label>
                   <input
                     type="url"
-                    placeholder="https://yourwebsite.com"
                     value={finalForm.website}
                     onChange={(e) => setFinalForm({ ...finalForm, website: e.target.value })}
-                    className={styles.tactileFieldDark}
+                    className={styles.tactileField}
                   />
                 </div>
 
                 {/* Services multi-select — Starts unselected */}
                 <div className={styles.fieldGroup}>
-                  <label className={styles.grandFieldLabel}>
-                    Services You Wish to Audit <span className={styles.grandFieldLabelOpt}>(Select any)</span>
+                  <label className={styles.fieldLabel}>
+                    Services You Wish to Audit <span className={styles.fieldLabelOpt}>(Select any)</span>
                   </label>
                   <div className={styles.servicesChicletGrid}>
                     {availableServices.map((svc) => {
@@ -1389,8 +1337,8 @@ export default function DigitalGrowthPartnerPage() {
                           type="button"
                           key={svc}
                           onClick={() => toggleService('final', svc)}
-                          className={`${styles.servicePillBtnDark} ${
-                            selected ? styles.servicePillBtnDarkActive : ''
+                          className={`${styles.servicePillBtn} ${
+                            selected ? styles.servicePillBtnActive : ''
                           }`}
                         >
                           {svc} {selected ? '✓' : '+'}
@@ -1402,8 +1350,8 @@ export default function DigitalGrowthPartnerPage() {
 
                 {/* Budget — Starts unselected */}
                 <div className={styles.fieldGroup}>
-                  <label className={styles.grandFieldLabel}>
-                    Planned Monthly Budget <span className={styles.grandFieldLabelOpt}>(Optional)</span>
+                  <label className={styles.fieldLabel}>
+                    Planned Monthly Budget <span className={styles.fieldLabelOpt}>(Optional)</span>
                   </label>
                   <div className={styles.budgetPillGrid}>
                     {budgetOptions.map((b) => (
@@ -1416,8 +1364,8 @@ export default function DigitalGrowthPartnerPage() {
                             budget: finalForm.budget === b ? '' : b,
                           })
                         }
-                        className={`${styles.budgetPillBtnDark} ${
-                          finalForm.budget === b ? styles.budgetPillBtnDarkActive : ''
+                        className={`${styles.budgetPillBtn} ${
+                          finalForm.budget === b ? styles.budgetPillBtnActive : ''
                         }`}
                       >
                         {b} {finalForm.budget === b ? '✓' : ''}
@@ -1428,20 +1376,19 @@ export default function DigitalGrowthPartnerPage() {
 
                 {/* Requirement */}
                 <div className={styles.fieldGroup}>
-                  <label className={styles.grandFieldLabel}>
+                  <label className={styles.fieldLabel}>
                     Current Growth Bottleneck / Questions
                   </label>
                   <textarea
                     rows={2}
-                    placeholder="What specific growth goal or channel would you like our senior team to inspect first?"
                     value={finalForm.requirement}
                     onChange={(e) => setFinalForm({ ...finalForm, requirement: e.target.value })}
-                    className={styles.tactileTextareaDark}
+                    className={styles.tactileTextarea}
                   />
                 </div>
 
                 {finalError && (
-                  <p style={{ color: '#F87171', fontSize: '12px', fontWeight: 700, margin: '8px 0' }}>
+                  <p style={{ color: '#DC2626', fontSize: '12px', fontWeight: 700, margin: '8px 0' }}>
                     {finalError}
                   </p>
                 )}
