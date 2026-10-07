@@ -79,7 +79,7 @@ const growthSteps = [
   },
 ];
 
-// 4 Pillars of Why Nova Spark is the Best
+// 4 Pillars of Why Marketing Copilot is the Best
 const whyBestPillars = [
   {
     icon: '📱',
@@ -110,27 +110,27 @@ const whyBestPillars = [
 // FAQ Data (Closed by default per user request)
 const webDevFaqs = [
   {
-    q: '1. What makes Nova Spark a website development agency in India?',
-    a: 'We at Nova Spark fuse creativity, tech, and business strategy to develop a website that resonates with your brand, captures your audience, and serves your business objectives.',
+    q: '1. What makes Marketing Copilot a website development agency in India?',
+    a: 'We at Marketing Copilot fuse creativity, tech, and business strategy to develop a website that resonates with your brand, captures your audience, and serves your business objectives.',
   },
   {
-    q: '2. What types of websites does Nova Spark develop?',
+    q: '2. What types of websites does Marketing Copilot develop?',
     a: 'We create custom business websites, WordPress sites, e-commerce websites, and more, depending on your needs, your audience, and your future business goals.',
   },
   {
-    q: '3. How does Nova Spark approach website development?',
+    q: '3. How does Marketing Copilot approach website development?',
     a: 'We begin by getting to know your business, your people, and your goals. We then design, build, test, and fine-tune your site for optimal performance and user experience.',
   },
   {
-    q: '4. Can Nova Spark create an SEO-friendly website?',
+    q: '4. Can Marketing Copilot create an SEO-friendly website?',
     a: 'Yes. We adhere to SEO best practices such as responsive design, proper website structure, quick loading speeds, and optimizing technical elements to deliver a solid groundwork for SEO success.',
   },
   {
-    q: '5. Does Nova Spark provide website maintenance after development?',
+    q: '5. Does Marketing Copilot provide website maintenance after development?',
     a: 'Yes. We maintain and support your website throughout, ensuring it’s kept up to date, bug-free, fast, secure, and optimized to perform at its best.',
   },
   {
-    q: '6. Why should businesses choose Nova Spark for website development?',
+    q: '6. Why should businesses choose Marketing Copilot for website development?',
     a: 'Our website development is centered on beautiful, usable, responsive, and goal-driven websites. Our solution integrates all three aspects of development, performance, and user experience.',
   },
 ];
@@ -164,7 +164,7 @@ export default function WebDevelopmentPage() {
               </h2>
 
               <p className={styles.heroSub}>
-                Create a website that keeps up with your business. From sleek designs to smooth performance, Nova Spark develops responsive and scalable websites that deliver better user experiences and support long-term digital growth.
+                Create a website that keeps up with your business. From sleek designs to smooth performance, Marketing Copilot develops responsive and scalable websites that deliver better user experiences and support long-term digital growth.
               </p>
 
               <div className={styles.heroActions}>
@@ -289,14 +289,14 @@ export default function WebDevelopmentPage() {
               <div className={styles.visualImageWrap}>
                 <Image
                   src="/images/Website Framework.jpg"
-                  alt="Modern Website Development Nova Spark Digital India"
+                  alt="Modern Website Development Marketing Copilot India"
                   fill
                   sizes="(max-width: 768px) 100vw, 500px"
                   className={styles.visualImg}
                 />
                 <div className={styles.visualImgOverlay}>
                   <span>Fast, Responsive &amp; Scalable</span>
-                  <span>Nova Spark Verified</span>
+                  <span>Marketing Copilot Verified</span>
                 </div>
               </div>
             </div>
@@ -348,7 +348,7 @@ export default function WebDevelopmentPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          5. WHAT MAKES NOVA SPARK THE BEST WEB DEVELOPMENT COMPANY?
+          5. WHAT MAKES MARKETING COPILOT THE BEST WEB DEVELOPMENT COMPANY?
          ══════════════════════════════════════════════════ */}
       <section className={styles.whyBestSection}>
         <div className="container">
@@ -356,14 +356,14 @@ export default function WebDevelopmentPage() {
             <ScrollReveal>
               <div className={styles.eyebrowBadge}>
                 <span className={styles.eyebrowDot} />
-                <span>The Nova Spark Advantage</span>
+                <span>The Marketing Copilot Advantage</span>
               </div>
               <h2 className={styles.sectionTitle}>
-                What Makes Nova Spark the{' '}
+                What Makes Marketing Copilot the{' '}
                 <span className="accent-gradient">Best Web Development Company?</span>
               </h2>
               <p className={styles.sectionDesc}>
-                Our Nova Spark Digital Marketing Agency websites feature contemporary design, seamless functionality, and business-oriented development. We strive to provide websites that are professional, efficient, and promote business growth.
+                Our Marketing Copilot Digital Marketing Agency websites feature contemporary design, seamless functionality, and business-oriented development. We strive to provide websites that are professional, efficient, and promote business growth.
               </p>
             </ScrollReveal>
           </div>
@@ -520,7 +520,7 @@ export default function WebDevelopmentPage() {
               </div>
 
               <div className={styles.ctaBrandPunchline}>
-                Nova Spark Digital — Modern. Fast. Scalable.
+                Marketing Copilot — Modern. Fast. Scalable.
               </div>
             </ScrollReveal>
           </div>

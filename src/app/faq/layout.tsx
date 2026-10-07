@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     'digital marketing cost India',
     'SEO FAQ India',
     'Google ads questions India',
-    'social media marketing questions Odisha',
+    'social media marketing questions India',
   ],
   alternates: {
     canonical: 'https://marketingcopilot.in/faq',

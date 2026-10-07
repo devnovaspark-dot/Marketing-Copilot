@@ -18,7 +18,7 @@ const sprintPhases: SprintPhase[] = [
     phase: 'PHASE 01',
     days: 'Days 1–7',
     title: 'Conversion Architecture & Wireframing',
-    summary: 'We analyze your Bhubaneswar customer personas, map frictionless sales funnels, and construct mobile-first wireframes.',
+    summary: 'We analyze your target customer personas, map frictionless sales funnels, and construct mobile-first wireframes.',
     deliverables: [
       'Buyer journey mapping & conversion funnel architecture',
       'Mobile thumb-zone ergonomics and sticky CTA placements',

@@ -56,7 +56,7 @@ export default function WebDevRoiCalculator() {
             How Much Revenue Is A Slow Website <span className="accent-gradient">Costing Your Business?</span>
           </h2>
           <p className={styles.subhead}>
-            Model how sub-second Next.js page speeds reduce visitor bounce rates and multiply monthly inquiries across Bhubaneswar.
+            Model how sub-second Next.js page speeds reduce visitor bounce rates and multiply monthly inquiries for your business.
           </p>
         </ScrollReveal>
 

@@ -39,13 +39,13 @@ const COMPARISON_DATA: ComparisonRow[] = [
     dimension: 'Omnichannel Visual Consistency',
     subtext: 'From facade to Instagram feed',
     traditional: 'Mismatched fonts, erratic colors, and amateur social graphics that confuse prospective buyers',
-    copilot: 'Unified visual prestige across Bhubaneswar office facades, fleet livery, packaging, and digital ads',
+    copilot: 'Unified visual prestige across corporate office facades, fleet livery, packaging, and digital touchpoints',
   },
   {
     dimension: 'Brand Strategy & Positioning',
-    subtext: 'Emotional connection with Odisha consumers',
+    subtext: 'Emotional connection with target consumers',
     traditional: 'Superficial decorative graphics with zero understanding of consumer psychology or market competition',
-    copilot: 'Deep brand positioning and messaging frameworks tailored for premium buyers across Odisha',
+    copilot: 'Deep brand positioning and messaging frameworks tailored for premium buyers across target markets',
   },
 ];
 

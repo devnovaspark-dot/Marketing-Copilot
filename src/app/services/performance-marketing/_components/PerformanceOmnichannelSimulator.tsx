@@ -18,7 +18,7 @@ const STAGES: Stage[] = [
     id: 'tof',
     stageName: '01. Top of Funnel',
     title: 'Demand Creation & Attention',
-    desc: 'High-hook Meta Reels & YouTube ads creating awareness across 850,000+ Odisha prospects.',
+    desc: 'High-hook Meta Reels & YouTube ads creating awareness across 850,000+ targeted prospects.',
     sharePercent: 45,
     channels: 'Meta Advantage+, YouTube Bumpers',
   },
@@ -72,7 +72,7 @@ export default function PerformanceOmnichannelSimulator() {
               Full-Funnel Performance Allocation Simulator
             </h2>
             <p className={styles.simSub}>
-              Single-channel marketing creates fragile revenue. See how our blended Meta + Google + WhatsApp orchestration lowers customer acquisition costs while multiplying pipeline across Bhubaneswar.
+              Single-channel marketing creates fragile revenue. See how our blended Meta + Google + WhatsApp orchestration lowers customer acquisition costs while multiplying pipeline across your target markets.
             </p>
           </div>
 

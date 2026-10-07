@@ -13,34 +13,38 @@ interface FAQItem {
 const faqs: FAQItem[] = [
   {
     q: 'What Digital Marketing Services Does Marketing Copilot Offer in India?',
-    a: 'Marketing Copilot offers full-service digital marketing services such as SEO, Google Ads, Meta Ads, social media marketing, website solutions, content marketing, and more, which are specific to your business goals.',
+    a: 'Marketing Copilot offers full-service digital marketing services such as SEO, Google Ads, Meta Ads, social media marketing, website solutions, content marketing, and AI-powered growth systems tailored to your specific business goals.',
   },
   {
-    q: 'Can You Help My Business Rank on Google in India?',
-    a: 'Yes, our digital marketing solutions for SEO in India cover keyword research, technical optimization, quality content creation, local SEO, and strategies that help you attract relevant customers.',
+    q: 'Can You Help My Business Rank on Google Across India?',
+    a: 'Yes, our digital marketing solutions for SEO in India cover keyword research, technical optimization, quality content creation, local & national SEO, and authority building that help you attract qualified buyers across target markets.',
   },
   {
     q: 'How Long Does Digital Marketing Take to Show Results?',
-    a: 'It depends on different industries, competition, websites, budgets, and strategies. Paid campaigns can drive quick results, and SEO takes time to optimize and create meaningful organic growth.',
+    a: 'It depends on different industries, competition, websites, budgets, and strategies. Paid campaigns can drive quick results, while SEO takes time to optimize and build sustainable, compounding organic growth.',
   },
   {
     q: 'Do You Provide Online Marketing Services for Small Businesses?',
     a: 'Yes, our online marketing services are tailored for businesses of various sizes. We create practical strategies around your budget, goals, audience, and industry to improve visibility, generate leads, and support growth.',
   },
   {
-    q: 'What makes Marketing Copilot the best digital marketing company in India?',
+    q: 'What Makes Marketing Copilot a Leading Digital Marketing Company in India?',
     a: (
       <>
         <Link href="/" className={styles.brandLink}>
           Marketing Copilot
         </Link>{' '}
-        is a blend of strategy, creativity, data, and performance, offering focused digital marketing services. We deliver measurable results, clear communication, and tailored digital marketing solutions that meet your business goals.
+        combines strategy, creativity, engineering, and performance marketing to help brands scale. We deliver measurable ROI, transparent reporting, and tailored digital marketing solutions designed for ambitious businesses across India.
       </>
     ),
   },
   {
     q: 'What industries does Marketing Copilot work with?',
-    a: 'We work with IT and app businesses, Yoga and Wellness, Travel Agencies, Interior Design, EdTech, e-commerce, real estate, healthcare, education, D2C brands, and professional services in India and across Odisha.',
+    a: 'We work with businesses across India, including IT and app businesses, healthcare, education, travel, e-commerce, real estate, D2C brands, hospitality, and professional services.',
+  },
+  {
+    q: 'Can we meet your team in Bhubaneswar?',
+    a: 'Yes, absolutely. Our physical headquarters is located at Mallick Complex, Unit 3, Kharvela Nagar, Bhubaneswar, Odisha. We welcome founders and marketing leaders for in-person strategy sessions, while collaborating seamlessly with teams across India.',
   },
 ];
 

@@ -163,7 +163,7 @@ export default function GoogleAdsSearchSimulator() {
               </div>
               <div className={styles.specRow}>
                 <span className={styles.specLabel}>Targeting Radius</span>
-                <span className={styles.specVal}>Strict 8 km Bhubaneswar Hub</span>
+                <span className={styles.specVal}>Based on Business Location &amp; Campaign Objectives</span>
               </div>
 
               <div style={{ marginTop: '16px' }}>

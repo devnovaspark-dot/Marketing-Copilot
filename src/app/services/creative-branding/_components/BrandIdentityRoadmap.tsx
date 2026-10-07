@@ -17,11 +17,11 @@ const PHASES: RoadmapPhase[] = [
     phase: 1,
     timeline: 'Days 1 – 7',
     title: 'Brand Archetype Discovery & Competitive Positioning',
-    description: 'We conduct executive stakeholder interviews, analyze visual aesthetics across Bhubaneswar competitors, and establish your brand positioning thesis.',
+    description: 'We conduct executive stakeholder interviews, analyze visual aesthetics across industry competitors, and establish your brand positioning thesis.',
     deliverable: 'Brand Strategy Brief + Moodboard Architecture',
     items: [
       'Founder vision & customer psychographic profile mapping',
-      'Competitive landscape visual audit across Odisha',
+      'Competitive landscape visual audit across target markets',
       'Archetype definition (Vanguard, Minimalist Luxury, Heritage)',
       'Tone of voice & core value proposition articulation',
     ],

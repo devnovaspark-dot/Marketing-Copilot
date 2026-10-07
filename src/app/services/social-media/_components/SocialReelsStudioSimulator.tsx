@@ -25,38 +25,38 @@ export default function SocialReelsStudioSimulator() {
     cinematic: {
       tag: '9:16 CINEMATIC COMMERCIAL REEL',
       hook: '⚡ 3-SEC PATTERN INTERRUPT',
-      headline: 'How Bhubaneswar’s Leading Lifestyle Brand Scaled to ₹50 Lakhs/Mo',
+      headline: 'How a Leading Lifestyle Brand Scaled to ₹50 Lakhs/Mo',
       sound: 'Trending Commercial Audio · 142K Uses',
       views: '184.2K',
       shares: '1,420',
       saves: '3,890',
       watchTime: '88% Completion',
       inquiries: '85+ Direct WhatsApp Chats',
-      summary: 'High-production 4K Sony FX3 cinematography, dynamic kinetic captions, color-graded aesthetic, and an irresistible call-to-action driving Bhubaneswar buyers into your funnel.',
+      summary: 'High-production 4K Sony FX3 cinematography, dynamic kinetic captions, color-graded aesthetic, and an irresistible call-to-action driving target buyers into your funnel.',
     },
     founder: {
       tag: 'AUTHENTIC FOUNDER STORYTELLING',
       hook: '🎙️ RAW MICROPHONE HOOK',
-      headline: 'The Truth About Starting an Odisha Business That Nobody Talks About',
+      headline: 'The Truth About Scaling a High-Growth Brand That Nobody Talks About',
       sound: 'Original Voice Audio · Direct Mic',
       views: '96.5K',
       shares: '2,840',
       saves: '4,120',
       watchTime: '92% Completion',
       inquiries: '120+ High-Ticket B2B Inquiries',
-      summary: 'Raw, authentic founder thought leadership establishing deep authority and trust with investors, corporate buyers, and high-ticket clients across Bhubaneswar and Cuttack.',
+      summary: 'Raw, authentic founder thought leadership establishing deep authority and trust with customers, corporate buyers, and high-ticket clients across target markets.',
     },
     bts: {
-      tag: 'HYPERLOCAL STORE / CLINIC WALKTHROUGH',
-      hook: '📍 PATIA & SAHEED NAGAR TOUR',
-      headline: 'Step Inside Our Bhubaneswar Studio: What Makes Our Process Different',
-      sound: 'Lively Ambient Sound & Odia Hook',
+      tag: 'IMMERSIVE BRAND EXPERIENCE WALKTHROUGH',
+      hook: '📍 BEHIND THE SCENES TOUR',
+      headline: 'Step Inside Our Creative Studio: What Makes Our Process Different',
+      sound: 'Lively Ambient Sound & High-Energy Beat',
       views: '142.0K',
       shares: '980',
       saves: '2,150',
       watchTime: '84% Completion',
-      inquiries: '65+ In-Store Showroom Walk-Ins',
-      summary: 'Showroom, clinic, or studio immersive tour giving prospective clients a behind-the-scenes look that completely eliminates hesitation and drives physical footfall.',
+      inquiries: '65+ Direct Customer Inquiries',
+      summary: 'Showroom, clinic, or studio immersive tour giving prospective clients a behind-the-scenes look that completely eliminates hesitation and drives verified inbound leads.',
     },
   };
 
@@ -72,7 +72,7 @@ export default function SocialReelsStudioSimulator() {
             <span>Interactive Reel &amp; Content Studio</span>
           </div>
           <h2 className={`display-md ${styles.headline}`}>
-            Thumb-Stopping Content That <span className="accent-gradient">Captures Odisha</span>
+            Thumb-Stopping Content That <span className="accent-gradient">Captures Attention</span>
           </h2>
           <p className={styles.subhead}>
             No boring Canva static posters. We script, film, and edit high-velocity commercial video Reels that turn casual scrolling into paying clients.
@@ -174,7 +174,7 @@ export default function SocialReelsStudioSimulator() {
                       <span className={styles.followBadge}>Follow</span>
                     </div>
                     <p className={styles.reelCaption}>
-                      Transforming brands across Bhubaneswar with sub-second growth engineering... #bhubaneswar #odishabusiness
+                      Transforming brands across India with sub-second growth engineering... #digitalmarketing #brandgrowth
                     </p>
                     <div className={styles.audioTicker}>
                       <span>♫ Trending Audio · Commercial License Verified</span>
@@ -197,7 +197,7 @@ export default function SocialReelsStudioSimulator() {
               <div className={styles.metricTile}>
                 <span className={styles.mKey}>Organic Views Target</span>
                 <span className={styles.mVal}>{current.views}</span>
-                <span className={styles.mSub}>Odisha &amp; Regional Reach</span>
+                <span className={styles.mSub}>Target Audience Reach</span>
               </div>
 
               <div className={styles.metricTile}>

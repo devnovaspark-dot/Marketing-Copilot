@@ -51,7 +51,7 @@ const industriesList = [
     name: 'Professional Services', 
     icon: '⚖️', 
     example: 'Legal advocates, chartered accountants & consultants',
-    focus: 'Authority building, local Bhubaneswar trust signals & verified client lead forms'
+    focus: 'Authority building, nationwide trust signals & verified client lead forms'
   },
   { 
     name: 'Startups & Scaleups', 
@@ -159,7 +159,7 @@ const seoDifferentPillars = [
   },
 ];
 
-// What Makes Nova Spark Digital So Special
+// What Makes Marketing Copilot So Special
 const specialCards = [
   {
     num: '01',
@@ -276,7 +276,7 @@ export default function SEOPage() {
                 </div>
                 <div className={styles.trustStars}>★★★★★</div>
                 <span className={styles.trustLabel}>
-                  Trusted by 50+ Bhubaneswar &amp; Odisha Businesses
+                  Trusted by 50+ Businesses Across India
                 </span>
               </div>
             </ScrollReveal>
@@ -579,7 +579,7 @@ export default function SEOPage() {
                 What Makes Our <span className="accent-gradient">SEO Marketing Different?</span>
               </h2>
               <p className={styles.sectionSub}>
-                SEO shouldn&apos;t be a black art that leaves people with a monthly report that is hard to read and difficult to understand. At Nova Spark Digital, we don&apos;t get caught up in theory. Our SEO marketing agency in India combines technical SEO, content strategy, keyword research, local optimization, and ongoing performance analysis.
+                SEO shouldn&apos;t be a black art that leaves people with a monthly report that is hard to read and difficult to understand. At Marketing Copilot, we don&apos;t get caught up in theory. Our SEO marketing agency in India combines technical SEO, content strategy, keyword research, local optimization, and ongoing performance analysis.
               </p>
             </div>
 
@@ -597,20 +597,20 @@ export default function SEOPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          7. SPECIAL SECTION (WHAT MAKES NOVA SPARK SPECIAL)
+          7. SPECIAL SECTION (WHAT MAKES MARKETING COPILOT SPECIAL)
          ══════════════════════════════════════════════════ */}
       <section className={styles.specialSection}>
         <div className="container">
           <ScrollReveal>
             <div className="text-center" style={{ maxWidth: 860, margin: '0 auto' }}>
               <div className={styles.sectionEyebrow}>
-                <span>The Nova Spark Advantage</span>
+                <span>The Marketing Copilot Advantage</span>
               </div>
               <h2 className={styles.sectionTitle}>
-                What makes Nova Spark Digital <span className="accent-gradient">so special?</span>
+                What makes Marketing Copilot <span className="accent-gradient">so special?</span>
               </h2>
               <p className={styles.sectionSub}>
-                It&apos;s not enough of an SEO partner merely to know keywords. You need a team that understands business, customers, and digital marketing as a whole. Our Nova Spark Digital SEO strategy emphasizes:
+                It&apos;s not enough of an SEO partner merely to know keywords. You need a team that understands business, customers, and digital marketing as a whole. Our Marketing Copilot SEO strategy emphasizes:
               </p>
             </div>
 
@@ -619,17 +619,17 @@ export default function SEOPage() {
               <div className={styles.specialImgWrapper}>
                 <Image
                   src="/images/SEO strategy_team.jpg"
-                  alt="Nova Spark Digital Marketing and SEO Strategy Team in India"
+                  alt="Marketing Copilot SEO Strategy Team in India"
                   fill
                   sizes="(max-width: 1024px) 100vw, 480px"
                   className={styles.specialImg}
                 />
                 <div className={styles.specialImgOverlay}>
                   <p className={styles.specialImgQuote}>
-                    &quot;Strategy first. Data with context. Human content. Compounding growth for Bhubaneswar brands.&quot;
+                    &quot;Strategy first. Data with context. Human content. Compounding growth for Indian brands.&quot;
                   </p>
                   <span className={styles.specialImgSub}>
-                    Nova Spark Digital Strategy Lab · Bhubaneswar
+                    Marketing Copilot Digital Strategy Lab · Bhubaneswar HQ
                   </span>
                 </div>
               </div>
@@ -727,11 +727,11 @@ export default function SEOPage() {
               </h2>
 
               <p className={styles.ctaDescription}>
-                Get in touch with Nova Spark Digital and start building a stronger organic presence in India and beyond.
+                Get in touch with Marketing Copilot and start building a stronger organic presence in India and beyond.
               </p>
 
               <div className={styles.ctaBrandPunchline}>
-                Nova Spark Digital — Strategy. Search. Growth.
+                Marketing Copilot — Strategy. Search. Growth.
               </div>
 
               <div className={styles.ctaActions}>

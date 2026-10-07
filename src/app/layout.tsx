@@ -116,7 +116,7 @@ const organizationSchema = {
       },
       "description": "Marketing Copilot is a digital marketing company in India providing SEO, Google Ads, Meta Ads, social media marketing, web solutions, creative services and AI-powered digital marketing solutions.",
       "telephone": "+91 8280788689",
-      "email": "connect@novasparkdigitalmarketingagency.com",
+      "email": "info@marketingcopilot.in",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Mallick Complex, Unit 3, Kharvela Nagar",
@@ -135,7 +135,7 @@ const organizationSchema = {
       "logo": "https://marketingcopilot.in/images/marketing-copilot-logo.png",
       "description": "Digital marketing company in India offering SEO, Google Ads, Meta Ads, social media marketing, web solutions, creative services and AI-powered marketing solutions.",
       "telephone": "+91 8280788689",
-      "email": "connect@novasparkdigitalmarketingagency.com",
+      "email": "info@marketingcopilot.in",
       "parentOrganization": {
         "@id": "https://marketingcopilot.in/#organization"
       },
@@ -213,7 +213,7 @@ const localBusinessSchema = {
   "image": "https://marketingcopilot.in/images/marketing-copilot-brand.png",
   "description": "Marketing Copilot is a digital marketing company in India providing SEO, Google Ads, Meta Ads, social media marketing, web solutions, creative services and AI-powered digital marketing solutions.",
   "telephone": "+91 8280788689",
-  "email": "connect@novasparkdigitalmarketingagency.com",
+  "email": "info@marketingcopilot.in",
   "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",

@@ -58,7 +58,7 @@ export default function WebDevComparisonMatrix() {
             <span className="accent-gradient">Marketing Copilot</span>
           </h2>
           <p className={styles.subhead}>
-            Why Bhubaneswar enterprises replace legacy WordPress sites with our custom Next.js web applications.
+            Why ambitious Indian enterprises replace legacy WordPress sites with our custom Next.js web applications.
           </p>
         </ScrollReveal>
 

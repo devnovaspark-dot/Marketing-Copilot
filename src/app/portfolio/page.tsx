@@ -192,7 +192,7 @@ export default function PortfolioPage() {
               </h1>
 
               <p className={styles.heroDesc}>
-                We don&apos;t sell vanity metrics or vague promises. Browse our portfolio of audited client campaigns with verified commercial outcomes across Bhubaneswar, Odisha, and nationwide markets.
+                We don&apos;t sell vanity metrics or vague promises. Browse our portfolio of audited client campaigns with verified commercial outcomes across India, including regional and local markets.
               </p>
 
               {/* Quick Trust Strip with Smooth Counter */}
@@ -288,7 +288,7 @@ export default function PortfolioPage() {
               </h2>
               <div className={styles.sectionHeaderBar} />
               <p className={styles.sectionSub}>
-                How we helped a premier builder dominate organic Google search in Bhubaneswar and generate 90+ verified buyer leads monthly without portal dependency.
+                How we helped a premier real estate brand dominate organic Google search and generate qualified buyer leads without portal dependency.
               </p>
             </ScrollReveal>
           </div>

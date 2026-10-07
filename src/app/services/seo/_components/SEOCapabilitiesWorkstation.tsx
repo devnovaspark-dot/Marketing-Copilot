@@ -225,7 +225,7 @@ export default function SEOCapabilitiesWorkstation() {
                   {/* Benchmark Bar */}
                   <div className={styles.benchmarkBox}>
                     <div className={styles.benchmarkRow}>
-                      <span className={styles.benchLabel}>Your Website (Nova Spark Optimized)</span>
+                      <span className={styles.benchLabel}>Your Website (Marketing Copilot Optimized)</span>
                       <span className={styles.benchValGreen}>0.7s</span>
                     </div>
                     <div className={styles.barTrack}>

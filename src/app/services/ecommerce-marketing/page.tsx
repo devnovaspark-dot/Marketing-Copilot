@@ -101,8 +101,8 @@ const ecommerceFaqs = [
     a: 'Yes. New stores could greatly benefit from having their SEO, tracking, content, advertising, and conversion strategy established early.',
   },
   {
-    q: 'Can you help e-commerce businesses outside Bhubaneswar?',
-    a: 'Yes. As an e-commerce marketing agency in India, e-commerce campaigns can be designed for businesses with customers all over Odisha, India, and more.',
+    q: 'Can you help e-commerce businesses across India?',
+    a: 'Yes. As an e-commerce marketing agency in India, our e-commerce campaigns are designed for businesses targeting customers across all Indian states and global markets.',
   },
 ];
 
@@ -133,7 +133,7 @@ export default function EcommerceMarketingPage() {
               </h1>
 
               <p className={styles.heroSub}>
-                We combine e-commerce SEO, Google Shopping, Meta Ads, content, and conversion optimisation to help Bhubaneswar businesses reach high-intent customers and build a stronger online presence.
+                We combine e-commerce SEO, Google Shopping, Meta Ads, content, and conversion optimisation to help Indian businesses and D2C brands reach high-intent customers and grow online revenue.
               </p>
 
               <div className={styles.heroActions}>
@@ -211,7 +211,7 @@ export default function EcommerceMarketingPage() {
                 It is important to build a consistent experience around all digital interactions. SEO, paid ads, social media, content, and the website should all be aligned to support the customer journey.
               </p>
               <p className={styles.narrativeParagraph}>
-                We approach ecommerce marketing in a holistic way, linking all the pieces together to reach the right people, foster trust, enhance engagement, and generate additional conversions at Nova Spark Digital.
+                We approach ecommerce marketing in a holistic way, linking all the pieces together to reach the right people, foster trust, enhance engagement, and generate additional conversions at Marketing Copilot.
               </p>
               <div className={styles.highlightPillBox}>
                 <span className={styles.highlightIcon}>💡</span>
@@ -298,7 +298,7 @@ export default function EcommerceMarketingPage() {
                 Your e-commerce website is more than a digital storefront. It&apos;s the place where your customers find your products, make comparisons, trust you, and make their purchase.
               </p>
               <p className={styles.narrativeParagraph}>
-                With Nova Spark Digital, e-commerce and D2C brands in India can attain more website visibility, draw in the right visitors, and convert traffic into sales. Our ecommerce marketing services include ecommerce SEO, Google Ads, Meta Ads, socials, content, conversion optimization, and performance tracking to give you a full growth plan.
+                With Marketing Copilot, e-commerce and D2C brands in India can attain more website visibility, draw in the right visitors, and convert traffic into sales. Our ecommerce marketing services include ecommerce SEO, Google Ads, Meta Ads, socials, content, conversion optimization, and performance tracking to give you a full growth plan.
               </p>
               <p className={styles.narrativeParagraph}>
                 From starting a new online business to managing low sales to scaling up your e-commerce business, we develop marketing strategies around your products, audience, and business objectives.
@@ -321,7 +321,7 @@ export default function EcommerceMarketingPage() {
                 <div className={styles.pillarIconBox}>📈</div>
                 <h3 className={styles.pillarTitle}>Qualified Store Visibility</h3>
                 <p className={styles.pillarDesc}>
-                  Connect with buyers throughout Bhubaneswar and across India who possess genuine purchase intent for your specific catalogue.
+                  Connect with buyers across India who possess genuine purchase intent for your specific catalogue.
                 </p>
               </ScrollReveal>
 
@@ -402,13 +402,13 @@ export default function EcommerceMarketingPage() {
                   <span>PERFORMANCE-DRIVEN ECOMMERCE MARKETING</span>
                 </div>
                 <h2 className={styles.sectionHeading}>
-                  Start Growing Your Ecommerce Brand With Nova Spark Digital
+                  Start Growing Your Ecommerce Brand With Marketing Copilot
                 </h2>
                 <p className={styles.narrativeParagraph}>
                   Your e-commerce store can have the potential to connect with customers beyond your reach. However, sustainable growth is dependent on the right mix of visibility, traffic, creativity, conversion, and ongoing optimization.
                 </p>
                 <p className={styles.narrativeParagraph}>
-                  At Nova Spark Digital, we help e-commerce businesses in India integrate these elements into actionable, data-driven digital marketing campaigns.
+                  At Marketing Copilot, we help e-commerce businesses in India integrate these elements into actionable, data-driven digital marketing campaigns.
                 </p>
                 <p className={styles.narrativeParagraph}>
                   Whether you need help with e-commerce SEO, Meta Ads, social media, content marketing, or conversion optimization, we can help you strengthen your online presence and maximize your sales opportunities.
@@ -482,7 +482,7 @@ export default function EcommerceMarketingPage() {
                   High-performing e-commerce brands aren&apos;t built on random traffic spikes. They thrive on synchronized multi-touch journeys — uniting high-intent Google Shopping queries, high-converting Meta reels, precision retargeting, and frictionless checkout flows.
                 </p>
                 <p className={styles.narrativeParagraph}>
-                  At Nova Spark Digital, our growth architects engineer every customer touchpoint to maximize net contribution margin and systematically reduce customer acquisition costs (CAC) for businesses in India and beyond.
+                  At Marketing Copilot, our growth architects engineer every customer touchpoint to maximize net contribution margin and systematically reduce customer acquisition costs (CAC) for businesses in India and beyond.
                 </p>
 
                 <div className={styles.showcasePoints}>
@@ -617,12 +617,12 @@ export default function EcommerceMarketingPage() {
                 </div>
 
                 <p className={styles.editorialDesc}>
-                  Ektraa possessed exquisite authentic Sambalpuri handloom collections but was held back by a 31% COD return rate and unpredictable ad performance. Nova Spark Digital implemented server-side CAPI tracking, automated WhatsApp order confirmations, and UGC unboxing videos that scaled orders nationwide.
+                  Ektraa possessed exquisite authentic Sambalpuri handloom collections but was held back by a 31% COD return rate and unpredictable ad performance. Marketing Copilot implemented server-side CAPI tracking, automated WhatsApp order confirmations, and UGC unboxing videos that scaled orders nationwide.
                 </p>
 
                 <div className={styles.editorialQuoteBlock}>
                   <p className={styles.editorialQuoteText}>
-                    &quot;Nova Spark Digital restructured our entire unit economics. From server-side tracking to automated WhatsApp order verification, our Sambalpuri handloom collections are now selling across Mumbai, Bangalore, and Delhi at peak profitability.&quot;
+                    &quot;Marketing Copilot restructured our entire unit economics. From server-side tracking to automated WhatsApp order verification, our Sambalpuri handloom collections are now selling across Mumbai, Bangalore, and Delhi at peak profitability.&quot;
                   </p>
                   <span className={styles.editorialQuoteAuthor}>
                     — Founder, Ektraa Handloom Bhubaneswar
@@ -731,18 +731,18 @@ export default function EcommerceMarketingPage() {
                 </p>
                 <div className={styles.termContact}>
                   <span>Direct Line:</span>
-                  <a href="tel:+919876543210" className={styles.termPhone}>
-                    +91 98765 43210
+                  <a href="tel:+918280788689" className={styles.termPhone}>
+                    +91 82807 88689
                   </a>
                   <span>·</span>
-                  <span>Bhubaneswar HQ (Patia Corridor)</span>
+                  <span>Bhubaneswar HQ · Serving Brands Across India</span>
                 </div>
               </div>
 
               <div className={styles.termActions}>
                 <BeamButton href="/contact" label="Get Your Ecommerce Strategy" size="lg" arrow={true} />
                 <BeamButton
-                  href="https://wa.me/919876543210?text=Hi%20Nova%20Spark,%20I%20would%20like%20to%20talk%20to%20your%20growth%20team%20about%20ecommerce%20marketing."
+                  href="https://wa.me/918280788689?text=Hi%20Marketing%20Copilot,%20I%20would%20like%20to%20talk%20to%20your%20growth%20team%20about%20ecommerce%20marketing."
                   label="Talk to Our Growth Team"
                   size="lg"
                   variant="outline"

@@ -76,7 +76,7 @@ export default function ProcessPage() {
                 <span className="accent-gradient">to impact.</span>
               </h1>
               <p className={`body-lg ${styles.sub}`}>
-                A repeatable, proven system for turning ambitious goals into measurable growth. Every engagement follows this framework — customized for your opportunity.
+                A repeatable, proven system for turning ambitious goals into measurable growth. Our process is designed for businesses across India, with strategies adapted to each market, audience, industry, and growth objective.
               </p>
             </ScrollReveal>
           </div>

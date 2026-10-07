@@ -133,7 +133,7 @@ export default function SocialMediaPage() {
             <ScrollReveal>
               <h1 className={styles.heroEyebrowPill}>
                 <span className={styles.emeraldPulseDot} />
-                <span>Social Media Marketing Agency · Bhubaneswar &amp; Odisha</span>
+                <span>Social Media Marketing Agency · India</span>
               </h1>
 
               <h2 className={styles.heroTitle}>
@@ -224,7 +224,7 @@ export default function SocialMediaPage() {
               <div className={styles.visualImgWrapper}>
                 <Image
                   src="/images/Viral Engine_.jpg"
-                  alt="Nova Spark Social Media Marketing Bhubaneswar Architecture"
+                  alt="Marketing Copilot Social Media Marketing Architecture"
                   fill
                   sizes="(max-width: 1024px) 100vw, 600px"
                   className={styles.showcaseImg}
@@ -233,7 +233,7 @@ export default function SocialMediaPage() {
 
               <div className={styles.visualContentWrapper}>
                 <div className={styles.visualBadge}>
-                  <span>⚡ ODISHA VIRAL ENGINE</span>
+                  <span>⚡ VIRAL CONTENT ENGINE</span>
                 </div>
                 <h3 className={styles.visualTitle}>
                   Full-Lifecycle Content Production &amp; Community Growth
@@ -302,7 +302,7 @@ export default function SocialMediaPage() {
               <div className={styles.brandImgCard}>
                 <Image
                   src="/images/Brand Shoot_.jpg"
-                  alt="Nova Spark Social Media Client Shoot in India"
+                  alt="Marketing Copilot Social Media Client Shoot in India"
                   fill
                   sizes="(max-width: 1024px) 100vw, 520px"
                   className={styles.brandImg}

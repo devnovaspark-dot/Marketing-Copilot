@@ -56,7 +56,7 @@ export default function HeroSection() {
         <div className={styles.content}>
           <div className={styles.heroEyebrow}>
             <span className={styles.heroEyebrowDot} />
-            <span>Bhubaneswar’s Experts for Smarter Digital Marketing</span>
+            <span>Digital Marketing Company in India</span>
           </div>
 
           <h1 className={`display-hero ${styles.headline}`}>
@@ -66,10 +66,7 @@ export default function HeroSection() {
 
           <div className={styles.sub}>
             <p>
-              Grow your Bhubaneswar business with Marketing Copilot, a results-driven digital marketing company helping local businesses overcome low visibility, reach the right audience, and generate quality leads.
-            </p>
-            <p>
-              From SEO and Google Ads to social media marketing and web solutions, we offer personalised digital marketing services that turn online challenges into measurable business growth.
+              Helping businesses across India improve online visibility, generate qualified leads, and build sustainable digital growth with SEO, paid advertising, social media, web development, and AI-powered marketing solutions.
             </p>
           </div>
 

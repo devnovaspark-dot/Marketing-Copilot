@@ -164,7 +164,7 @@ export default function Header() {
           <div className={styles.brandTaglineCol}>
             <span className={styles.brandPrimaryText}>Your Business, Our Strategies</span>
             <span className={styles.brandSubText}>
-              <span className={styles.brandSparkle}>✦</span> Powered by NovaSpark
+              <span className={styles.brandSparkle}>✦</span> Powered by Marketing Copilot
             </span>
           </div>
         </Link>
@@ -303,7 +303,7 @@ export default function Header() {
                       <div className={styles.spotlightGraphicBox}>
                         <Image
                           src="/images/ns_services_graphic.png"
-                          alt="Bhubaneswar 360 Digital Marketing Growth Architecture"
+                          alt="India 360 Digital Marketing Growth Architecture"
                           fill
                           sizes="240px"
                           className={styles.spotlightGraphicImg}

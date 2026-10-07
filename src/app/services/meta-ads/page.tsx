@@ -95,7 +95,7 @@ const metaServices = [
   },
 ];
 
-// Why Choose Nova Spark Digital (6 Pillars)
+// Why Choose Marketing Copilot (6 Pillars)
 const whyChoosePillars = [
   {
     step: 'PILLAR 01',
@@ -130,7 +130,7 @@ const whyChoosePillars = [
   {
     step: 'PILLAR 06',
     title: 'Multi-Industry Experience',
-    desc: 'Nova Spark has publicly described experience across industries, including real estate, interior design, architecture, EdTech, travel, D2C, jewelry, and manufacturing.',
+    desc: 'Marketing Copilot has proven experience across industries, including real estate, interior design, architecture, EdTech, travel, D2C, jewelry, and manufacturing.',
     featureTag: '🏢 8+ Industry Frameworks',
     industries: ['Real Estate', 'Interior Design', 'Architecture', 'EdTech', 'Travel', 'D2C', 'Jewelry', 'Manufacturing'],
   },
@@ -325,7 +325,7 @@ export default function MetaAdsPage() {
               <div className={styles.visualImageWrap}>
                 <Image
                   src="/images/Ad Framework.jpg"
-                  alt="Meta and Facebook Advertising Framework Nova Spark Digital India"
+                  alt="Meta and Facebook Advertising Framework Marketing Copilot India"
                   fill
                   sizes="(max-width: 768px) 100vw, 500px"
                   className={styles.visualImg}
@@ -362,7 +362,7 @@ export default function MetaAdsPage() {
               </p>
 
               <p className={styles.agencyParagraph}>
-                Nova Spark Digital is propagating to provide a powerful Meta Ads marketing solution in India and is dedicated to creating awareness, engagement, and leads for businesses, making website hits and sales through Facebook and Instagram ads.
+                Marketing Copilot provides powerful Meta Ads marketing solutions in India and is dedicated to creating awareness, engagement, and qualified leads for businesses through Facebook and Instagram ads.
               </p>
 
               <p className={styles.agencyParagraph}>
@@ -456,7 +456,7 @@ export default function MetaAdsPage() {
                 <span className="accent-gradient">in India</span>
               </h2>
               <p className={styles.sectionDesc}>
-                When it comes to Meta Ads, Nova Spark Digital can help you plan, set up, optimize, and report on your campaign.
+                When it comes to Meta Ads, Marketing Copilot helps you plan, set up, optimize, and scale your campaigns with forensic attribution.
               </p>
             </ScrollReveal>
           </div>
@@ -499,7 +499,7 @@ export default function MetaAdsPage() {
               <div className={styles.localImageFrame}>
                 <Image
                   src="/images/image bbsr.png"
-                  alt="Bhubaneswar Local Business Growth Nova Spark Digital"
+                  alt="Regional Business Growth Marketing Copilot"
                   fill
                   sizes="(max-width: 768px) 100vw, 540px"
                   className={styles.visualImg}
@@ -546,7 +546,7 @@ export default function MetaAdsPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          7. WHY CHOOSE NOVA SPARK DIGITAL (6 PILLARS)
+          7. WHY CHOOSE MARKETING COPILOT (6 PILLARS)
          ══════════════════════════════════════════════════ */}
       <section className={styles.whyChooseSection}>
         <div className="container">
@@ -554,14 +554,14 @@ export default function MetaAdsPage() {
             <ScrollReveal>
               <div className={styles.eyebrowBadge}>
                 <span className={styles.eyebrowDot} />
-                <span>The Nova Spark Advantage</span>
+                <span>The Copilot Advantage</span>
               </div>
               <h2 className={styles.sectionTitle}>
-                Why Choose Nova Spark Digital{' '}
+                Why Choose Marketing Copilot{' '}
                 <span className="accent-gradient">for Meta Ads in India?</span>
               </h2>
               <p className={styles.sectionDesc}>
-                Nova Spark Digital is a digital marketing agency whose approach focuses on connecting paid advertising with the wider digital marketing strategy.
+                Marketing Copilot is a results-driven digital marketing agency whose approach connects paid advertising with your overarching digital marketing and lead engine.
               </p>
             </ScrollReveal>
           </div>
@@ -667,7 +667,7 @@ export default function MetaAdsPage() {
 
               <h2 className={styles.ctaHeadline}>
                 Start Your Meta Ads Campaign{' '}
-                <span className="accent-gradient">with Nova Spark Digital</span>
+                <span className="accent-gradient">with Marketing Copilot</span>
               </h2>
 
               <p className={styles.ctaParagraph}>
@@ -691,7 +691,7 @@ export default function MetaAdsPage() {
               </div>
 
               <div className={styles.ctaBrandPunchline}>
-                Nova Spark Digital — Strategy. Creative. Growth.
+                Marketing Copilot — Strategy. Creative. Growth.
               </div>
             </ScrollReveal>
           </div>

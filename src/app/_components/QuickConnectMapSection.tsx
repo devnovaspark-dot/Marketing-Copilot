@@ -47,7 +47,7 @@ export default function QuickConnectMapSection({
 
   const phone = '+91 82807 88689';
   const rawPhone = '+918280788689';
-  const email = 'connect@novasparkdigitalmarketingagency.com';
+  const email = 'info@marketingcopilot.in';
   const whatsappUrl = 'https://wa.me/918280788689?text=Hi%20Marketing%20Copilot%2C%20I%20would%20like%20to%20discuss%20a%20project%20for%20my%20brand.';
   const address = 'Mallick Complex, Unit 3, Kharvela Nagar, Bhubaneswar, Odisha 751001';
   const mapsSearchUrl = 'https://www.google.com/maps/search/?api=1&query=Mallick+Complex,+Unit+3,+Kharvela+Nagar,+Bhubaneswar,+Odisha+751001';

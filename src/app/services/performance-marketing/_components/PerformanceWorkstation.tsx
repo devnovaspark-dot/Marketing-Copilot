@@ -42,7 +42,7 @@ STATUS: SCALING MODE ACTIVATED (Profitable Unit Economics)`,
     features: [
       'Custom BigQuery pipeline combining Meta CAPI, Google Ads, and CRM data',
       'W-shaped attribution modeling capturing first-touch, lead-creation, and opportunity-close',
-      'Cross-device identity resolution for Odisha consumer buying patterns',
+      'Cross-device identity resolution for Indian consumer buying patterns',
       'Elimination of blind spots caused by iOS 14.5+ and privacy restrictions',
     ],
     codeLabel: 'Multi-Touch Journey Event Schema',
@@ -63,10 +63,10 @@ RESULT: Full-funnel attribution without platform bias.`,
       'Automated kill switches halting ad creative when CPA breaches 20% tolerance',
       'Surge scaling protocols increasing budget by 25% on winning ad angles',
       'Cross-platform budget balancing between Meta demand and Google search capture',
-      'Weekend vs weekday bid pacing optimized for Bhubaneswar buying rhythms',
+      'Weekend vs weekday bid pacing optimized for consumer buying rhythms',
     ],
     codeLabel: 'Automated Budget Pacing Rules',
-    codeSnippet: `// Automated Rule: "Scale_Winning_Angle_Bhubaneswar"
+    codeSnippet: `// Automated Rule: "Scale_Winning_Angle_Campaign"
 IF (ad_set.conversions >= 5 AND ad_set.cpa <= target_cpa * 0.85) {
   action: INCREASE_DAILY_BUDGET(25%);
   notify: "WhatsApp alert sent to Growth Director";
@@ -81,7 +81,7 @@ IF (ad_set.conversions >= 5 AND ad_set.cpa <= target_cpa * 0.85) {
     desc: 'Traffic without conversion is vanity. We deploy continuous A/B multivariate landing page testing that doubles conversion rates and drops blended CAC in half.',
     features: [
       'Sub-800ms Next.js lightweight mobile experiences with instant load times',
-      'Dynamic social proof popups customized with Bhubaneswar pin codes',
+      'Dynamic social proof popups customized with target location signals',
       'Micro-frictionless 1-tap WhatsApp consultation buttons',
       'Heatmap and session recording audits analyzing user drop-offs',
     ],
@@ -107,7 +107,7 @@ export default function PerformanceWorkstation() {
             The Performance Marketing Workstation
           </h2>
           <p className={styles.sub}>
-            Explore the four technical engines powering predictable revenue growth, full-funnel attribution, and CAC reduction across Odisha.
+            Explore the four technical engines powering predictable revenue growth, full-funnel attribution, and CAC reduction across India.
           </p>
         </div>
 

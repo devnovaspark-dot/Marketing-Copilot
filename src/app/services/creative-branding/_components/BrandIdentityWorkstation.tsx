@@ -112,7 +112,7 @@ export default function BrandIdentityWorkstation() {
             The Creative Brand Architecture Workstation
           </h2>
           <p className={styles.sub}>
-            Explore the four foundational pillars we deploy to build unforgettable corporate identities that command market prestige across Odisha.
+            Explore the four foundational pillars we deploy to build unforgettable corporate identities that command market prestige across India.
           </p>
         </div>
 

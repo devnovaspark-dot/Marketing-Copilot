@@ -33,7 +33,7 @@ const serviceCatalog: ServiceItem[] = [
     categoryGroup: 'search',
     shortCategory: 'Organic Search',
     title: 'SEO & Organic Growth',
-    tagline: 'Rank #1 on Google across India with white-hat technical speed, schema moats, and geo-targeted authority.',
+    tagline: 'Improve Google rankings across India with data-driven SEO, white-hat technical speed, schema moats, and high-intent topic authority.',
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop',
     iconSrc: '/images/icons/seo.svg',
     deliverables: ['Google 3-Pack Map Moat', 'Core Web Vitals < 0.9s', 'High-Intent Topic Clusters'],
@@ -68,7 +68,7 @@ const serviceCatalog: ServiceItem[] = [
     tagline: 'Turn social attention into qualified sales leads with scroll-stopping commercial video hooks and frictionless forms.',
     image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1000&auto=format&fit=crop',
     iconSrc: '/images/icons/meta-ads.svg',
-    deliverables: ['Dynamic Retargeting Loops', 'High-Intent Instant Forms', 'Odisha Audience Mapping'],
+    deliverables: ['Dynamic Retargeting Loops', 'High-Intent Instant Forms', 'Pan-India Audience Segmentation'],
     metric: '4.2X',
     metricLabel: 'Acquisition Velocity',
     color: '#0081FB',
@@ -219,8 +219,8 @@ const sprintPhases = [
     headline: 'Forensic Audit & Moat Discovery',
     summary: 'We eliminate technical crawl waste, map competitor keyword gaps, and calibrate end-to-end attribution.',
     deliverables: [
-      '1,000+ local page technical crawl & Schema.org JSON-LD hierarchy',
-      'Patia & Saheed Nagar commercial competitor keyword gap map',
+      '1,000+ page technical crawl & Schema.org JSON-LD hierarchy',
+      'Target market commercial competitor keyword gap map',
       'End-to-end lead attribution tracking & pixel calibration',
     ],
     metricValue: '100%',
@@ -253,7 +253,7 @@ const sprintPhases = [
     headline: 'Map 3-Pack Dominance & Paid Scale',
     summary: 'We pin your Google Business Profile into the top 3 and deploy negative-shielded search ads to capture active buyers.',
     deliverables: [
-      'Hyperlocal Google 3-Pack pin ranking across Bhubaneswar & Cuttack',
+      'Targeted Google Maps 3-Pack pin ranking across your service locations',
       'Negative keyword shielding on Google Search & PMax campaigns',
       'Dynamic Meta catalog retargeting & high-intent instant lead forms',
     ],
@@ -282,46 +282,46 @@ const sprintPhases = [
 
 const corridors = [
   {
-    hub: 'Patia & Infocity Corridor',
-    tag: 'Tech & B2B SaaS Ecosystem',
-    icon: '💻',
-    stat: '120K+ Monthly B2B Searches',
-    desc: 'High-density IT parks, startup incubators, and corporate campuses requiring sophisticated B2B lead pipelines and Google search authority.',
+    hub: 'National Metro Clusters (Delhi NCR, Mumbai, Bengaluru)',
+    tag: 'Enterprise & High-Volume Intent',
+    icon: '🏙️',
+    stat: 'High-LTV Commercial Intent',
+    desc: 'Dense corporate hubs, startup clusters, and competitive retail markets requiring sophisticated full-funnel paid media and organic SERP authority.',
   },
   {
-    hub: 'Saheed Nagar & Master Canteen',
-    tag: 'Commercial Retail & High-Street',
-    icon: '💎',
-    stat: '340K+ Hyperlocal Footfall',
-    desc: 'High-footfall central retail strip, lifestyle brands, clinical practices, and jewelry showrooms driven by hyperlocal Google Maps 3-Pack dominance.',
+    hub: 'Tier 1 Growth Engines (Hyderabad, Pune, Chennai, Kolkata)',
+    tag: 'Rapidly Scaling Urban Markets',
+    icon: '🚀',
+    stat: 'High-ROAS Conversion Density',
+    desc: 'Fast-growing commercial centers with massive digital adoption across healthcare, education, real estate, and B2B services.',
   },
   {
-    hub: 'Jaydev Vihar & Nayapalli',
-    tag: 'Hospitality & Luxury Real Estate',
-    icon: '🏢',
-    stat: '₹4.5 Cr+ Avg HNW Lead Value',
-    desc: 'Prime residential towers, boutique luxury hotels, fine dining, and major commercial complexes requiring high-ticket buyer targeting.',
+    hub: 'Pan-India E-Commerce & D2C Footprint',
+    tag: 'Nationwide Direct-to-Consumer',
+    icon: '📦',
+    stat: 'Pan-India Postal Reach',
+    desc: 'Nationwide customer acquisition strategies optimized for low CAC, high average order values, and automated WhatsApp repeat retention funnels.',
   },
   {
-    hub: 'Rasulgarh & Mancheswar IE',
-    tag: 'Industrial & Wholesale Supply',
-    icon: '🏭',
-    stat: 'Statewide B2B Logistics Demand',
-    desc: 'Heavy warehousing, automotive dealerships, building materials, and statewide distribution networks needing automated inbound inquiries.',
+    hub: 'High-Growth Tier 2 & Tier 3 Regional Markets',
+    tag: 'Untapped Opportunity Corridors',
+    icon: '📈',
+    stat: 'Lower CPC & Rising Digital Purchasing',
+    desc: 'Emerging regional hubs with skyrocketing mobile search volumes, lower competitive saturation, and strong local buying power.',
   },
   {
-    hub: 'Khandagiri & Patrapada',
-    tag: 'Healthcare & Higher Education',
-    icon: '🏥',
-    stat: '94% High-Trust Appointment Intent',
-    desc: 'Multi-specialty hospitals, private medical universities, and residential townships seeking high-trust local service discovery.',
+    hub: 'Hyperlocal Multi-Location Service Networks',
+    tag: 'Pin-Code & Map Pack Precision',
+    icon: '📍',
+    stat: 'Sub-3km High-Intent Radius',
+    desc: 'Clinics, retail outlets, showrooms, and local institutions dominating Google Maps 3-Pack rankings across multiple designated territories.',
   },
   {
-    hub: 'Twin-City Expressway (CTC-BBSR)',
-    tag: 'Inter-City Regional Commerce',
-    icon: '🛣️',
-    stat: '80K+ Daily Transit Commerce',
-    desc: 'The vital arterial lifeline linking Cuttack and Bhubaneswar, capturing statewide commercial transit and regional wholesale commerce.',
+    hub: 'Bhubaneswar & Odisha Market Expertise',
+    tag: 'Regional Advantage & Studio HQ',
+    icon: '🏛️',
+    stat: 'Deep Regional Nuance & Ground Presence',
+    desc: 'Our home base and testing ground, combining deep regional consumer psychology with enterprise digital capabilities for Odisha brands.',
   },
 ];
 
@@ -413,7 +413,7 @@ const martechTools: MarTechTool[] = [
     category: 'Crawl & Core Web Vitals',
     badgeColor: '#4285F4',
     status: 'Real-Time API Sync',
-    description: 'Direct API indexing telemetry, server log crawl monitoring, and geo-targeted keyword position tracking in Odisha.',
+    description: 'Direct API indexing telemetry, server log crawl monitoring, and location-specific keyword position tracking across your target Indian markets.',
     iconSvg: (
       <svg width="34" height="34" viewBox="0 0 40 40" fill="none">
         <path fill="#FBBC04" d="m11.081 30.527-4.72 4.721a.933.933 0 0 1-1.317 0l-.292-.292a.933.933 0 0 1 0-1.316l4.72-4.721a.933.933 0 0 1 1.318 0l.291.291a.93.93 0 0 1 0 1.317"/>
@@ -430,7 +430,7 @@ const martechTools: MarTechTool[] = [
     category: 'Commercial Search & PMax',
     badgeColor: '#1A73E8',
     status: 'Smart Bidding Active',
-    description: 'Automated target-CPA optimization, negative keyword shields, and click-to-call direct lead routing across Bhubaneswar.',
+    description: 'Automated target-CPA optimization, negative keyword shields, and click-to-call direct lead routing across your targeted service areas in India.',
     iconSvg: (
       <svg width="34" height="34" viewBox="0 0 250 230" fill="none">
         <path fill="#4285F4" d="M85.9 28.6c2.4-6.3 5.7-12.1 10.6-16.8c19.6-19.1 52-14.3 65.3 9.7c10 18.2 20.6 36 30.9 54c17.2 29.9 34.6 59.8 51.6 89.8c14.3 25.1-1.2 56.8-29.6 61.1c-17.4 2.6-33.7-5.4-42.7-21c-15.1-26.3-30.3-52.6-45.4-78.8-0.3-0.6-0.7-1.1-1.1-1.6-1.6-1.3-2.3-3.2-3.3-4.9-6.7-11.8-13.6-23.5-20.3-35.2-4.3-7.6-8.8-15.1-13.1-22.7-3.9-6.8-5.7-14.2-5.5-22C83.6 36.2 84.1 32.2 85.9 28.6z"/>
@@ -524,7 +524,7 @@ const martechTools: MarTechTool[] = [
     category: 'Competitive SERP Intelligence',
     badgeColor: '#FF642D',
     status: 'Daily Rank Tracking',
-    description: 'Monitors competitor keyword bidding, backlink velocity, and high-intent commercial keyword gaps in Odisha.',
+    description: 'Monitors competitor keyword bidding, backlink velocity, and high-intent commercial keyword gaps across your target Indian markets.',
     iconSvg: (
       <svg width="34" height="34" viewBox="0 0 24 24" fill="none">
         <path fill="#FF642D" d="M20.698 11.911c0 .444-.226.516-.79.516-.596 0-.706-.1-.77-.554-.118-1.152-.896-2.13-2.201-2.24-.418-.034-.518-.19-.518-.706 0-.48.074-.708.446-.708 2.265.01 3.833 1.832 3.833 3.69v.002zm3.3 0c0-3.456-2.338-7.11-7.74-7.11H5.52c-.218 0-.354.11-.354.31 0 .109.082.209.156.26.388.31.97.654 1.73 1.036.743.372 1.323.616 1.903.852.246.1.336.208.336.344 0 .19-.136.308-.4.308H.372c-.254 0-.372.164-.372.326 0 .136.044.254.162.372.69.726 1.796 1.596 3.4 2.604 1.466.91 2.98 1.74 4.533 2.492.236.11.308.236.308.372-.008.154-.126.28-.4.28H4.1c-.216 0-.344.12-.344.3 0 .1.08.226.19.326.888.808 2.311 1.688 4.207 2.494 2.53 1.08 5.094 1.721 7.98 1.721 5.465 0 7.867-4.087 7.867-7.289l-.002.002zm-7.133 5.104c-2.794 0-5.132-2.276-5.132-5.114 0-2.794 2.33-5.04 5.132-5.04 2.863 0 5.111 2.24 5.111 5.04a5.086 5.086 0 0 1-5.111 5.114z"/>
@@ -549,7 +549,7 @@ const martechTools: MarTechTool[] = [
 const servicesFaqs = [
   {
     q: 'How do your 10 services work together as an integrated system?',
-    a: 'Rather than running disconnected campaigns, we engineer a single unified flywheel: Next.js provides sub-second speed that Google rewards with higher rankings, creative videography lowers your cost per click on Meta and Google Ads, and hyperlocal SEO captures high-intent customers near your business across Bhubaneswar.',
+    a: 'Rather than running disconnected campaigns, we engineer a single unified flywheel: Next.js provides sub-second speed that Google rewards with higher rankings, creative videography lowers your cost per click on Meta and Google Ads, and targeted SEO captures high-intent customers across your designated markets in India.',
   },
   {
     q: 'How fast will my business start seeing qualified leads and phone calls?',
@@ -675,7 +675,7 @@ export default function ServicesPage() {
               <ScrollReveal className={styles.heroReveal}>
                 <div className={styles.heroEyebrowPill}>
                   <span className={styles.emeraldPulseDot} />
-                  <span>INTEGRATED REVENUE ENGINE • BHUBANESWAR GROWTH ARCHITECTURE</span>
+                  <span>INTEGRATED REVENUE ENGINE • PAN-INDIA GROWTH ARCHITECTURE</span>
                 </div>
 
                 <h1 className={`display-hero ${styles.heroTitle}`}>
@@ -685,7 +685,7 @@ export default function ServicesPage() {
 
                 <div className={styles.heroSub}>
                   <p>
-                    Most agencies sell disconnected tactics. We combine search dominance, sub-second web engineering, commercial videography, and paid media into an automated growth system that multiplies your pipeline across Bhubaneswar and Odisha.
+                    We combine search, web development, creative, paid media, and automation into an integrated growth system designed to help businesses across India generate stronger visibility, qualified leads, and measurable revenue.
                   </p>
                 </div>
 
@@ -707,7 +707,7 @@ export default function ServicesPage() {
                     <span className={`${styles.trustAvatar} ${styles.trustAvatarGold}`}>+50</span>
                   </div>
                   <div className={styles.trustStars}>★★★★★</div>
-                  <div className={styles.trustLabel}>Rated 4.9/5 by 50+ Bhubaneswar &amp; Odisha Brands</div>
+                  <div className={styles.trustLabel}>Rated 4.9/5 by 50+ Brands Across India</div>
                 </div>
               </ScrollReveal>
 
@@ -727,7 +727,7 @@ export default function ServicesPage() {
                 </div>
                 <div className={styles.telemetryCell}>
                   <span className={styles.tVal}>50+ Brands</span>
-                  <span className={styles.tLabel}>Bhubaneswar Scaled</span>
+                  <span className={styles.tLabel}>Scaled Across India</span>
                 </div>
               </div>
             </div>
@@ -1063,7 +1063,7 @@ export default function ServicesPage() {
                 Estimate Your <span className="accent-gradient">Compounding Revenue Pipeline</span>
               </h2>
               <p className={styles.calcSub}>
-                Fine-tune your traffic goals and average deal size to model verified inbound leads, displaced ad spend, and compounding pipeline value in Odisha.
+                Fine-tune your traffic goals and average deal size to model verified inbound leads, displaced ad spend, and compounding pipeline value based on your target market and business goals across India.
               </p>
             </ScrollReveal>
 
@@ -1191,10 +1191,10 @@ export default function ServicesPage() {
                 <span>THE COPILOT STANDARD</span>
               </div>
               <h2 className={`display-lg ${styles.compareTitle}`}>
-                Traditional Bhubaneswar Retainers vs. <span className="accent-gradient">Marketing Copilot</span>
+                Traditional Agency Retainers vs. <span className="accent-gradient">Marketing Copilot</span>
               </h2>
               <p className={styles.compareSub}>
-                Why forward-thinking Odisha enterprises replace slow, black-box retainer contracts with our high-velocity sprint performance model.
+                Why forward-thinking enterprises across India replace slow, black-box retainer contracts with our high-velocity sprint performance model.
               </p>
             </ScrollReveal>
 
@@ -1206,7 +1206,7 @@ export default function ServicesPage() {
                 <div className={styles.tableHeaderFeature} />
                 <div className={styles.tableHeaderTraditional}>
                   <span className={styles.tableHeaderLabel}>TRADITIONAL RETAINER</span>
-                  <span className={styles.tableHeaderSub}>Bhubaneswar Agency</span>
+                  <span className={styles.tableHeaderSub}>Traditional Agency</span>
                 </div>
                 <div className={styles.tableHeaderCopilot}>
                   <span className={styles.copilotRecommendedBadge}>
@@ -1272,7 +1272,7 @@ export default function ServicesPage() {
         </section>
 
         {/* ══════════════════════════════════════════════════
-            SECTION 7: BHUBANESWAR CITY COMMAND GRID
+            SECTION 7: INDIA-WIDE MARKET & AUDIENCE INTELLIGENCE
             (Dark-Canvas Premium Zone Intelligence Cards)
            ══════════════════════════════════════════════════ */}
         <section className={styles.cityCommandSection}>
@@ -1284,24 +1284,24 @@ export default function ServicesPage() {
             <ScrollReveal className="text-center">
               <div className={styles.cityCommandEyebrow}>
                 <span className={styles.cityLiveDot} />
-                <span>HYPERLOCAL REGIONAL INTELLIGENCE</span>
+                <span>PAN-INDIA AUDIENCE &amp; MARKET STRATEGY</span>
               </div>
               <h2 className={`display-lg ${styles.cityCommandTitle}`}>
-                Bhubaneswar&apos;s 6 Commercial<br />
-                <span className={styles.cityGradientText}>Zones. Precisely Mapped.</span>
+                India-Wide Market &amp;<br />
+                <span className={styles.cityGradientText}>Audience Intelligence</span>
               </h2>
               <p className={styles.cityCommandSub}>
-                Every rupee spent, every ad creative, every search ranking — calibrated to the exact commercial DNA of each Bhubaneswar district.
+                Every campaign is planned around your target market, customer intent, competition, location, and business objectives—whether you serve one city, multiple states, or customers across India.
               </p>
             </ScrollReveal>
 
             {/* Citywide Stats Strip */}
             <div className={styles.cityStatsStrip}>
               {[
-                { val: '6', label: 'Commercial Corridors Mapped' },
-                { val: '540K+', label: 'Monthly Local Search Intent' },
-                { val: '2.5 km', label: 'Avg Geofence Radius' },
-                { val: '98.4%', label: 'Maps 3-Pack Dominance Score' },
+                { val: 'Pan-India', label: 'Custom Targeted Reach' },
+                { val: '10M+', label: 'Monthly Search & Intent Volume' },
+                { val: 'Tier 1 & 2', label: 'Full Geographic Footprint' },
+                { val: '99.4%', label: 'Lead Attribution Precision' },
               ].map((stat, i) => (
                 <div key={i} className={styles.cityStatItem}>
                   <span className={styles.cityStatVal}>{stat.val}</span>
@@ -1331,7 +1331,7 @@ export default function ServicesPage() {
                         <span className={styles.zoneIconRing} style={{ borderColor: `${color}60` }} />
                       </div>
                       <div className={styles.zoneHeaderRight}>
-                        <span className={styles.zoneNumber} style={{ color }}>ZONE 0{idx + 1}</span>
+                        <span className={styles.zoneNumber} style={{ color }}>MARKET 0{idx + 1}</span>
                         <span className={styles.zoneTagBadge} style={{ color, borderColor: `${color}40`, background: `${color}10` }}>
                           {corridor.tag}
                         </span>
@@ -1357,8 +1357,8 @@ export default function ServicesPage() {
 
             {/* Bottom CTA */}
             <div className={styles.cityCommandCta}>
-              <BeamButton href="/contact" label="Target Your Local District" size="md" />
-              <span className={styles.cityCommandNote}>Geofencing calibrated within 48 hours of onboarding</span>
+              <BeamButton href="/contact" label="Target Your Market in India" size="md" />
+              <span className={styles.cityCommandNote}>Campaign strategy calibrated within 48 hours of onboarding</span>
             </div>
           </div>
         </section>

@@ -345,7 +345,7 @@ export default function AiAutomationPage() {
             <div className={styles.arsenalBannerImgWrap}>
               <Image
                 src="/images/hero_performance_scale.jpg"
-                alt="Nova Spark Enterprise AI Architecture Infrastructure India"
+                alt="Marketing Copilot Enterprise AI Architecture Infrastructure India"
                 fill
                 sizes="(max-width: 1024px) 100vw, 550px"
                 className={styles.bannerImg}

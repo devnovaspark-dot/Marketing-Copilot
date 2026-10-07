@@ -49,8 +49,8 @@ export default async function Page() {
     stageName: '02. Conversion Funnels',
     stagePill: 'CONVERSION RATE TECH',
     headline: '1-Click Indian Payment & WhatsApp Funnels',
-    subhead: 'Over 85% of Bhubaneswar digital transactions occur via UPI and WhatsApp. We build friction-free conversion paths directly into your interface.',
-    objective: 'Transform casual visitors into verified phone calls, showroom walk-ins, and direct UPI payments in under 3 taps.',
+    subhead: 'Over 85% of mobile transactions in India occur via UPI and WhatsApp. We build friction-free conversion paths directly into your interface.',
+    objective: 'Transform casual visitors into verified phone calls, customer orders, and direct UPI payments in under 3 taps.',
     deliverables: [
       'Razorpay & Cashfree 1-click UPI checkout with dynamic QR codes',
       'Sticky floating WhatsApp consultation buttons with automated pre-filled messages',
@@ -77,8 +77,8 @@ const handleOneClickCheckout = async (orderPayload) => {
     stageName: '03. Native SEO',
     stagePill: 'BUILT-IN SEARCH DOMINANCE',
     headline: 'Hardcoded Schema Markup & Core Web Vitals',
-    subhead: 'Google ranks websites that load fast and possess pristine structured data. We bake local SEO into every template and component.',
-    objective: 'Secure automatic Google Map 3-Pack indexing and top-3 organic rankings for Bhubaneswar search queries.',
+    subhead: 'Google ranks websites that load fast and possess pristine structured data. We bake technical SEO into every template and component.',
+    objective: 'Secure automatic Google indexing, local 3-pack visibility, and top organic rankings for commercial search queries.',
     deliverables: [
       'JSON-LD LocalBusiness & Medical/Real-Estate schema hardcoded into head tags',
       'Automated dynamic XML sitemap generation with hourly ping to Google Console',
@@ -111,7 +111,7 @@ export const generateMetadata = async () => ({
     subhead: 'Hosted on global edge nodes with instant Mumbai and Hyderabad routing, zero downtime, and automated enterprise backups.',
     objective: 'Guarantee 99.99% uptime, withstand high-volume traffic spikes, and protect customer data from unauthorized intrusion.',
     deliverables: [
-      'Cloudflare Enterprise Edge CDN caching content within 5ms of Bhubaneswar users',
+      'Cloudflare Enterprise Edge CDN caching content within 5ms of Indian users',
       'Automated daily offsite cloud database backups with point-in-time recovery',
       'Free automated Let’s Encrypt wildcard SSL certificates with strict HTTPS enforcement',
       'Advanced bot protection and web application firewall (WAF) filtering malicious traffic',
@@ -147,7 +147,7 @@ export default function WebDevWorkstation() {
             The Architecture Behind <span className="accent-gradient">High-Performance Websites</span>
           </h2>
           <p className={styles.subhead}>
-            We don’t install generic drag-and-drop templates. We engineer enterprise-grade digital platforms customized for Bhubaneswar commercial growth.
+            We don’t install generic drag-and-drop templates. We engineer enterprise-grade digital platforms customized for sustainable commercial growth.
           </p>
         </ScrollReveal>
 

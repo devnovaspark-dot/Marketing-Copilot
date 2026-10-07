@@ -36,7 +36,7 @@ const PHASES: RoadmapPhase[] = [
       'Top-of-Funnel UGC video hooks, unboxings, and expert authority angles',
       'Lightweight Next.js mobile landing pages with sub-800ms load times',
       'One-tap WhatsApp consultation flow with automated qualification',
-      'Dynamic social proof and local Bhubaneswar geo-relevance badges',
+      'Dynamic social proof and location-specific trust badges',
     ],
   },
   {

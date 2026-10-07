@@ -145,8 +145,8 @@ export default function MetaAdStudioSimulator() {
                     <div className={styles.waHeader}>
                       <div className={styles.waAvatar}>MC</div>
                       <div className={styles.waHeaderInfo}>
-                        <span className={styles.waTitle}>Nova Spark Strategist</span>
-                        <span className={styles.waStatus}>● Active in Bhubaneswar</span>
+                        <span className={styles.waTitle}>Marketing Copilot Strategist</span>
+                        <span className={styles.waStatus}>● Active (India Desk)</span>
                       </div>
                       <span className={styles.waVerifyBadge}>✓ Verified</span>
                     </div>

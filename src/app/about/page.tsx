@@ -43,7 +43,7 @@ interface FoundingStoryEpoch {
   metricLabel: string;
 }
 
-// ─── Data: Chrono-Chamber: The Nova Spark Story (Chronological Evolution) ───
+// ─── Data: Chrono-Chamber: The Marketing Copilot Story (Chronological Evolution) ───
 const foundingStoryEpochs: FoundingStoryEpoch[] = [
   {
     epoch: '01',
@@ -55,9 +55,9 @@ const foundingStoryEpochs: FoundingStoryEpoch[] = [
     shortTitle: 'The Idea Took Shape',
     codename: 'THE MISSION',
     tagline:
-      'Nova Spark was founded with the mission of being a digital marketing agency that really learns about a business before crafting marketing strategies around the business\'s goals.',
+      'Marketing Copilot was founded with the mission of being a digital marketing agency that really learns about a business before crafting marketing strategies around the business\'s goals.',
     quote:
-      'We founded Nova Spark on a simple premise: deeply understand each business first, then architect strategies around real commercial objectives rather than vanity numbers.',
+      'We founded Marketing Copilot on a simple premise: deeply understand each business first, then architect strategies around real commercial objectives rather than vanity numbers.',
     author: 'Shankarsan Nayak',
     authorRole: 'Founder & CEO',
     authorAvatar: '/images/team/exec_1.png',
@@ -75,7 +75,7 @@ const foundingStoryEpochs: FoundingStoryEpoch[] = [
       { label: 'Strategic Clarity', val: '100% Transparent', good: true },
     ],
     resolution:
-      'Nova Spark took root to replace empty reports and vanity impressions with digital marketing engineered entirely around business success.',
+      'Marketing Copilot took root to replace empty reports and vanity impressions with digital marketing engineered entirely around business success.',
     turningPoints: [
       'Deep Business Discovery',
       'Goal-Aligned Strategy',
@@ -89,8 +89,8 @@ const foundingStoryEpochs: FoundingStoryEpoch[] = [
     pillText: '02 · Late 2025',
     watermarkYear: '2025',
     medallionText: '2025',
-    title: 'Nova Spark Came to Life',
-    shortTitle: 'Nova Spark Came to Life',
+    title: 'Marketing Copilot Came to Life',
+    shortTitle: 'Marketing Copilot Came to Life',
     codename: 'SERVICES & EXECUTION',
     tagline:
       'We began engaging with businesses and building out our services in SEO, social media marketing, content, paid advertising, and digital strategy, learning from each project.',
@@ -165,13 +165,13 @@ const foundingStoryEpochs: FoundingStoryEpoch[] = [
     pillText: '04 · TODAY · 2026',
     watermarkYear: '2026',
     medallionText: '2026',
-    title: 'Growing With Bhubaneswar Businesses',
-    shortTitle: 'Growing With Bhubaneswar',
-    codename: 'SUSTAINED GROWTH',
+    title: 'Scaling With Businesses Across India',
+    shortTitle: 'Scaling Across India',
+    codename: 'PAN-INDIA SCALE',
     tagline:
-      'Nova Spark remains a leading digital marketing agency in Bhubaneswar, empowering businesses with targeted strategies, innovative marketing solutions, and sustained digital growth.',
+      'Marketing Copilot is a results-driven digital marketing agency serving businesses across India, empowering brands with targeted strategies, innovative marketing solutions, and sustained digital growth.',
     quote:
-      'Today, we partner with leading businesses across Bhubaneswar, delivering data-driven strategies and innovative marketing solutions that produce real business growth.',
+      'Today, we partner with leading businesses across India, delivering data-driven strategies and innovative marketing solutions that produce real business growth.',
     author: 'Shankarsan Nayak',
     authorRole: 'Founder & CEO',
     authorAvatar: '/images/team/exec_1.png',
@@ -181,15 +181,15 @@ const foundingStoryEpochs: FoundingStoryEpoch[] = [
     badgeLabel: 'LEADING AGENCY',
     artifactType: 'ledger',
     artifactTitle: 'Commercial Impact & Client Retention',
-    artifactSubtitle: 'Empowering Bhubaneswar businesses with innovative marketing solutions',
+    artifactSubtitle: 'Empowering businesses across India with innovative marketing solutions',
     artifactMetrics: [
-      { label: 'Bhubaneswar Brands Scaled', val: '50+ Businesses', good: true },
+      { label: 'Brands Scaled Across India', val: '50+ Businesses', good: true },
       { label: 'Growth Strategies', val: '100% Targeted', good: true },
       { label: 'Client Retention Rate', val: '94% MoM', good: true },
       { label: 'Transparent Partnership', val: 'Zero Lock-In', good: true },
     ],
     resolution:
-      'Nova Spark continues to lead digital marketing in Bhubaneswar, driving predictable revenue, sustained growth, and enduring brand equity for businesses.',
+      'Marketing Copilot continues to drive predictable revenue, sustained growth, and enduring brand equity for businesses across India.',
     turningPoints: [
       'Targeted Growth Strategies',
       'Sustained Digital Growth',
@@ -244,12 +244,12 @@ const fourUnfairAdvantages = [
   {
     id: 'moat-local',
     index: '01',
-    badge: 'HYPERLOCAL DOMINANCE',
-    title: 'Odisha Ground Reality & Regional Nuance',
-    desc: 'Deep consumer psychology across Odisha and Eastern India eliminates generic ad spend waste with cultural resonance.',
+    badge: 'MARKET INTELLIGENCE',
+    title: 'Indian Market Intelligence & Regional Nuance',
+    desc: 'Our Bhubaneswar and Odisha roots give us strong regional market understanding while our strategies are designed for businesses targeting customers across India.',
     deliverables: [
-      'Dual-language Odia & English creative hooks',
-      'Hyperlocal Google 3-Pack Map dominance',
+      'Pan-India audience intent & market segmentation',
+      'Regional consumer nuances with national scale',
     ],
     icon: '📍',
     metric: '3.2X',
@@ -419,23 +419,23 @@ const executiveArchitects = [
   },
 ];
 
-// ─── Data: 5-Phase Nova Spark Growth Process Roadmap ───
+// ─── Data: 5-Phase Marketing Copilot Growth Process Roadmap ───
 const operatingPhases = [
   {
     num: '01',
-    name: 'Understanding Your Bhubaneswar Market',
+    name: 'Understanding Your Market',
     time: '',
-    focus: 'Local Market & Marketing Audit',
-    desc: 'We study your business, local audience, competitors, website, and existing marketing to find opportunities to reach more customers across Bhubaneswar and Odisha.',
+    focus: 'Market & Marketing Audit',
+    desc: 'We study your business, target audience, competitors, website, and existing marketing to find opportunities to reach more customers across your target markets in India.',
     color: '#0B2093',
     deliverables: [
       'Business Model & Growth Objective Study',
-      'Bhubaneswar & Odisha Target Audience Analysis',
+      'Target Audience & Customer Intent Analysis',
       'Competitor Digital Footprint & SERP Audit',
       'Website, Funnel & Conversion Review',
     ],
-    tools: ['Google Search Console', 'Meta Ads Library', 'Google Analytics', 'Local Market Insights'],
-    outcomeMetric: 'Clear Local Market & Competitive Roadmap',
+    tools: ['Google Search Console', 'Meta Ads Library', 'Google Analytics', 'Audience Intent Insights'],
+    outcomeMetric: 'Clear Market & Competitive Roadmap',
   },
   {
     num: '02',
@@ -457,14 +457,14 @@ const operatingPhases = [
     num: '03',
     name: 'Creating Content That Connects',
     time: '',
-    focus: 'Local Content & Campaign Testing',
-    desc: 'We create SEO content, social media creatives, ad campaigns, and local messaging designed to connect with your target customers and strengthen your brand presence in Bhubaneswar.',
+    focus: 'Content & Campaign Testing',
+    desc: 'We create SEO content, social media creatives, ad campaigns, and messaging designed to connect with your target customers and strengthen your brand presence across your target Indian markets.',
     color: '#EC4899',
     deliverables: [
       'Targeted SEO Articles & High-Intent Copy',
       'High-Impact Social Media Visuals & Video Reels',
       'Multi-Channel Paid Ad Campaigns & Testing',
-      'Local Bhubaneswar Trust & Credibility Messaging',
+      'Brand Trust & High-Converting Value Messaging',
     ],
     tools: ['Creative Design Lab', 'Meta Ads Manager', 'Short-Form Video', 'Search Intent Engine'],
     outcomeMetric: 'Compelling Brand Presence & High Customer Enquiries',
@@ -490,15 +490,15 @@ const operatingPhases = [
     name: 'Building Long-Term Digital Growth',
     time: '',
     focus: 'Continuous Growth & Optimisation',
-    desc: 'We continuously improve your SEO, local search presence, content, social media, and paid campaigns to help your Bhubaneswar business build sustainable online growth.',
+    desc: 'We continuously improve your SEO, search presence, content, social media, and paid campaigns to help your business build sustainable online growth across its target market.',
     color: '#10B981',
     deliverables: [
-      'Long-Term Technical & Local Search Dominance',
+      'Long-Term Technical & Search Dominance',
       'Ongoing High-Value Content & Social Expansion',
       'Systematic Paid Channel Refinement',
       'Sustained Brand Equity & Market Leadership',
     ],
-    tools: ['SEO Intelligence', 'Local Map Pack Suite', 'Growth Dashboard', 'Continuous Optimization'],
+    tools: ['SEO Intelligence', 'Search Console Suite', 'Growth Dashboard', 'Continuous Optimization'],
     outcomeMetric: 'Compounding Visibility & Long-Term Revenue Growth',
   },
 ];
@@ -521,8 +521,8 @@ const revenuePipelineStages = [
     num: '02',
     title: 'Our Vision',
     category: 'FUTURE HORIZON',
-    badge: 'BHUBANESWAR & BEYOND',
-    desc: 'Our vision is to become a trusted digital marketing partner for growing businesses in Bhubaneswar and beyond. Our goal is to develop compelling digital moments that enable brands to engage customers, earn trust, remain competitive, and be confident in a changing digital landscape.',
+    badge: 'ACROSS INDIA & BEYOND',
+    desc: 'Our vision is to become a trusted digital marketing partner for growing businesses across India. Our goal is to develop compelling digital moments that enable brands to engage customers, earn trust, remain competitive, and be confident in a changing digital landscape.',
     metrics: 'Trusted Growth Partner · Compelling Digital Moments',
     tech: ['Customer Engagement', 'Brand Trust', 'Market Confidence', 'Digital Excellence'],
     color: '#0284C7',
@@ -562,24 +562,24 @@ const telemetryNumbers = [
 // ─── Data: About Us FAQs ───
 const aboutFaqs = [
   {
-    q: 'How is your digital marketing company in Bhubaneswar different from traditional agencies?',
-    a: 'We aim to provide businesses in Bhubaneswar with practical solutions, measurable outcomes, and clear visibility, rather than a one-size-fits-all approach, and help them achieve leads and online growth.',
+    q: 'How is Marketing Copilot different from traditional agencies?',
+    a: 'We provide businesses across India with practical solutions, measurable outcomes, and transparent performance telemetry rather than vanity impressions, helping you achieve high-quality leads and scalable growth.',
   },
   {
-    q: 'Do you require a long-term contract for digital marketing services in Bhubaneswar?',
-    a: 'Our digital marketing services in Bhubaneswar are based on your business requirements. Clear scope, goals, timelines, and deliverables are discussed beforehand and are flexible.',
+    q: 'Do you require a long-term contract for digital marketing services?',
+    a: 'No. Our digital marketing services operate on flexible, sprint-based scopes aligned with your business goals. We believe our attributed revenue and performance should be the reason you stay with us.',
   },
   {
-    q: 'What industries does your digital marketing company in Bhubaneswar work with?',
-    a: 'We work with businesses across different industries, creating customized SEO, social media, content marketing, and performance marketing strategies based on their audience, goals, and market.',
+    q: 'What industries does Marketing Copilot work with across India?',
+    a: 'We work with ambitious businesses across India in IT, SaaS, healthcare, real estate, education, e-commerce, D2C brands, and professional services, building customized multi-channel strategies.',
   },
   {
     q: 'Can we meet your digital marketing team in Bhubaneswar?',
-    a: 'Yes, you can reach out to our team in Bhubaneswar to discuss your business vision, marketing needs, existing pain points, and possible digital marketing strategies for your brand.',
+    a: 'Yes, absolutely. Our physical office is located at Mallick Complex, Unit 3, Kharvela Nagar, Bhubaneswar. We welcome in-person meetings with founders, while actively serving clients across India.',
   },
   {
-    q: 'How soon can we expect results from digital marketing in Bhubaneswar?',
-    a: 'The results you receive are based on your objectives, industry, competition, and services selected. Generally, SEO takes longer to deliver results and build traction, but paid campaigns can deliver earlier.',
+    q: 'How soon can we expect results from our digital marketing campaigns?',
+    a: 'Paid advertising campaigns (Google Ads, Meta Ads) typically begin driving qualified leads within 48 to 72 hours. Organic SEO and authority building compound sustainably over 60 to 90 days.',
   },
 ];
 
@@ -587,13 +587,13 @@ const heroSlides = [
   {
     id: 'slide-1',
     src: '/images/About us page.png',
-    alt: 'Marketing Copilot digital marketing company strategy and campaigns in Bhubaneswar',
+    alt: 'Marketing Copilot digital marketing company strategy and campaigns across India',
     caption: 'Strategic Growth & Execution',
   },
   {
     id: 'slide-2',
     src: '/images/Agency Feature_.jpg',
-    alt: 'Marketing Copilot digital marketing agency operations and executive war-room in Bhubaneswar',
+    alt: 'Marketing Copilot digital marketing agency operations and executive growth war-room',
     caption: 'Executive Growth War-Room',
   },
 ];
@@ -729,17 +729,17 @@ export default function AboutPage() {
               <ScrollReveal direction="up">
                 <div className={styles.heroEyebrow}>
                   <span className={styles.heroEyebrowDot} />
-                  <span>BHUBANESWAR’S DIGITAL GROWTH PARTNER</span>
+                  <span>DIGITAL GROWTH PARTNER FOR BUSINESSES ACROSS INDIA</span>
                 </div>
 
                 <h1 className={`display-hero ${styles.heroTitle}`}>
                   Your Growth Partner for{' '}
-                  <span className={`accent-gradient ${styles.heroAccent}`}>Digital Marketing in Bhubaneswar.</span>
+                  <span className={`accent-gradient ${styles.heroAccent}`}>Digital Marketing in India.</span>
                 </h1>
 
                 <div className={styles.heroSub}>
                   <p>
-                    We help brands in Bhubaneswar grow with practical, data-driven digital marketing strategies that turn online attention into real leads, customers, and high revenue.
+                    We help businesses across India grow with practical, data-driven digital marketing strategies that turn online attention into leads, customers, and measurable revenue.
                   </p>
                 </div>
 
@@ -947,14 +947,14 @@ export default function AboutPage() {
           <ScrollReveal className="text-center">
             <div className="eyebrow" style={{ margin: '0 auto 12px' }}>
               <span className="eyebrow-dot" />
-              <span>THE NOVA SPARK STORY · OUR BEGINNING</span>
+              <span>THE MARKETING COPILOT STORY · OUR BEGINNING</span>
             </div>
             <h2 className={`display-lg ${styles.cleanStoryHeadline}`}>
-              Why We Started Nova Spark:{' '}
+              Why We Started Marketing Copilot:{' '}
               <span className="accent-gradient">A Better Way to Do Digital Marketing</span>
             </h2>
             <p className={`body-lg ${styles.cleanStorySub}`}>
-              Nova Spark began in late 2025 with a simple idea: businesses deserve digital marketing that is practical, transparent, and focused on real growth, not just reports, reach, and vanity numbers.
+              Marketing Copilot began with a simple idea: businesses deserve digital marketing that is practical, transparent, and focused on real growth, not just reports, reach, and vanity numbers.
             </p>
           </ScrollReveal>
 
@@ -1368,14 +1368,14 @@ export default function AboutPage() {
       <ScrollReveal className="text-center">
         <div className="eyebrow" style={{ margin: '0 auto 12px' }}>
           <span className="eyebrow-dot" />
-          <span>THE NOVA SPARK GROWTH PROCESS</span>
+          <span>THE MARKETING COPILOT GROWTH PROCESS</span>
         </div>
         <h2 className={`display-lg ${styles.sectionHeadline}`}>
-          How We Help Bhubaneswar Brands{' '}
+          How We Help Indian Brands{' '}
           <span className="accent-gradient">Grow Online</span>
         </h2>
         <p className={`body-lg ${styles.sectionSub}`}>
-          As a digital marketing company in Bhubaneswar, we understand the local market, customer behaviour, and competitive landscape. Our five-step process turns your digital presence into a focused growth channel.
+          As a results-driven digital marketing company serving businesses across India, we tailor each phase to your target market, audience behaviour, and industry landscape to build a high-performance growth engine.
         </p>
       </ScrollReveal>
 
@@ -1596,7 +1596,7 @@ export default function AboutPage() {
       </div>
 
       <div style={{ display: 'flex', justifyContent: 'center', marginTop: 40 }}>
-        <BeamButton href="/contact" label="Start Growing With Nova Spark" size="md" />
+        <BeamButton href="/contact" label="Start Growing With Marketing Copilot" size="md" />
       </div>
     </div>
       </section >
@@ -1732,7 +1732,7 @@ export default function AboutPage() {
           <div className={styles.finaleBadgeWrap}>
             <span className={styles.finaleBadge}>
               <span className={styles.finaleBadgeDot} />
-              <span>TAILORED GROWTH STRATEGY · BHUBANESWAR &amp; BEYOND</span>
+              <span>TAILORED GROWTH STRATEGY · BUILT FOR BUSINESSES ACROSS INDIA</span>
             </span>
           </div>
 

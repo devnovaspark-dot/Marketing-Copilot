@@ -26,7 +26,7 @@ const services: ServiceItem[] = [
     category: 'Paid Search & PPC',
     title: 'Google Ads Management',
     tagline: 'Reach High-Intent Customers with Google Ads',
-    desc: 'Run Google Ads campaigns that can help you grow your business with relevant traffic, leads, and sales. As a digital marketing company in India, we manage search, Performance Max, display, shopping, and YouTube campaigns. Digital marketing services are built around the right visitors, improved ad performance, and the smart allocation of advertising dollars.',
+    desc: 'Run Google Ads campaigns that can help you grow your business with relevant traffic, leads, and sales. As a digital marketing company in India, we manage Search, Performance Max, Display, Shopping, and YouTube campaigns for businesses across multiple industries. Digital marketing services are built around the right visitors, improved ad performance, and the smart allocation of advertising dollars.',
     tags: [
       'Search Ads',
       'Performance Max',
@@ -48,7 +48,7 @@ const services: ServiceItem[] = [
     category: 'Meta & Paid Social',
     title: 'Facebook & Instagram Ads',
     tagline: 'Connect with Customers on Social Media',
-    desc: "Effective Facebook and Instagram ads to reach your target market. Our digital marketing agency designs your campaigns for lead generation, sales, remarketing, and brand awareness. Our marketing services are created to reach out to the right audience, spark inquiries, and foster deeper connections with customers via social channels, irrespective of whether you're serving clients in Bhubaneswar or India.",
+    desc: 'Effective Facebook and Instagram ads to reach your target market. Our digital marketing agency designs your campaigns for lead generation, sales, remarketing, and brand awareness. Our marketing services are created to reach out to the right audience, spark inquiries, and foster deeper connections with customers via social channels for brands across India.',
     tags: [
       'Facebook Ads',
       'Instagram Ads',
@@ -70,7 +70,7 @@ const services: ServiceItem[] = [
     category: 'SEO & Organic Growth',
     title: 'Search Engine Optimization',
     tagline: 'Get Found Where Customers Search',
-    desc: 'Gain better rankings in Google and reach out to potential customers who are actively looking for your services. Our SEO services in India encompass technical SEO, local SEO, AEO, and GEO. As a digital marketing agency, we provide pragmatic digital marketing solutions to increase search visibility, drive targeted traffic, and help your business rank well online.',
+    desc: 'Gain better rankings in Google and reach out to potential customers who are actively looking for your services. Our SEO services in India encompass technical SEO, local SEO, AEO, GEO, keyword strategy, content optimization, and authority building. As a digital marketing agency, we provide pragmatic digital marketing solutions to increase search visibility, drive targeted traffic, and help your business rank well online.',
     tags: [
       'Technical SEO',
       'Local SEO',
@@ -92,7 +92,7 @@ const services: ServiceItem[] = [
     category: 'Social Media & Content',
     title: 'Social Media Marketing',
     tagline: 'Build a Stronger Brand on Social',
-    desc: 'Be more prominent on social media with consistency and engaging content. Our social media marketing solutions involve account administration, branding, reels, content creation, and creative posts. At Digital Marketing Company in India, we aim to assist local businesses in reaching out to their audience, promoting their services, and establishing a robust social footprint that fosters their future success.',
+    desc: 'Be more prominent on social media with consistency and engaging content. Our social media marketing solutions involve account administration, branding, reels, content creation, and creative posts. At Marketing Copilot, we help businesses across India reach their target audiences, promote their services, and build a stronger social presence.',
     tags: [
       'Account Administration',
       'Branding & Identity',
@@ -155,24 +155,24 @@ const services: ServiceItem[] = [
   },
   {
     num: '07',
-    category: 'Hyper-Local Marketing',
-    title: 'Bhubaneswar Digital Marketing',
-    tagline: 'Grow Your Business Across Bhubaneswar',
-    desc: 'Connect with a larger customer base in your area using location-based digital marketing services. Local SEO, Google Maps optimization, and geo-targeted marketing are the best ways to make you visible throughout Bhubaneswar. Digital marketing solutions can help nearby customers find your business and choose you at any and every restaurant, clinic, retail outlet, service business, and expanding company.',
+    category: 'Pan-India & Hyper-Local Marketing',
+    title: 'Pan-India Digital Marketing',
+    tagline: 'Grow Your Business Across India',
+    desc: 'Connect with a larger customer base across your target markets using location-based and pan-India digital marketing services. Local SEO, Google Maps optimization, and geo-targeted marketing are the best ways to make you visible across India. Digital marketing solutions can help nearby and national customers find your business and choose you across multiple industries and expanding companies.',
     tags: [
-      'Local SEO',
+      'Pan-India SEO',
       'Google Maps Optimization',
       'Geo-Targeted Marketing',
       'Location-Based Ads',
       'Foot Traffic Growth',
       'Customer Acquisition',
       'Local Citations',
-      'Regional Visibility',
+      'Pan-India Visibility',
     ],
     href: '/digital-marketing-company-in-india',
     color: '#10B981',
     stat: '#1',
-    statLabel: 'Local Market Share',
+    statLabel: 'Market Visibility',
     iconSrc: '/images/icons/digital-marketing.svg',
   },
   {
@@ -350,7 +350,7 @@ export default function ServicesSection() {
               <div className={styles.ctaBadgeWrap}>
                 <div className={styles.ctaBadge}>
                   <span className={styles.badgeDot} />
-                  <span>Tailored Growth Strategy · Bhubaneswar &amp; Beyond</span>
+                  <span>Tailored Growth Strategy · Built for Businesses Across India</span>
                 </div>
               </div>
 

@@ -13,7 +13,7 @@ const heroSlides = [
   {
     id: 'slide-1',
     src: '/images/Faq_slide1.png',
-    alt: 'Growth Questions & Marketing Strategy Solutions for Odisha Businesses',
+    alt: 'Growth Questions & Marketing Strategy Solutions for Businesses Across India',
     caption: 'Strategic Questions & Answers',
   },
   {
@@ -56,57 +56,62 @@ const faqGroups: FAQGroup[] = [
     id: 'general',
     title: 'General Questions',
     badge: 'AGENCY & SCOPE',
-    highlight: 'Hyperlocal Bhubaneswar Intelligence + Tailored Digital Growth Strategies',
+    highlight: 'Pan-India Market Intelligence + Tailored Digital Growth Strategies',
     collage: {
       mainImage: '/images/faq_agency_scope.png',
       subImage: '',
       caption: 'Strategy Command Center • Kharvela Nagar, Unit 3',
-      tag: '🏢 LOCAL EXECUTIVE TEAM',
+      tag: '🏢 EXECUTIVE GROWTH TEAM',
     },
     faqs: [
       {
-        q: 'What digital marketing services are provided by Nova Spark in India?',
-        a: 'Nova Spark provides SEO, local SEO, Google Ads, Meta Ads, social media marketing, content marketing, website development, and tailored digital growth services for businesses across India and Odisha.',
-        takeaway: 'Comprehensive full-service digital growth tailored for Odisha businesses.',
+        q: 'What digital marketing services does Marketing Copilot provide in India?',
+        a: 'Marketing Copilot provides SEO, local SEO, Google Ads, Meta Ads, social media marketing, content marketing, website development, AI-powered automation, and tailored digital growth services for businesses across India.',
+        takeaway: 'Comprehensive full-service digital growth tailored for businesses across India.',
       },
       {
-        q: 'Why work with a Bhubaneswar-based digital marketing agency?',
-        a: 'A local team will have a better grasp of the market, customer behavior, neighborhoods, competition, and business environment in Bhubaneswar. This enables the development of campaigns and content that are more relevant to local audiences.',
-        takeaway: 'Hyperlocal market intelligence combined with strategic digital execution.',
+        q: 'Why should I choose Marketing Copilot as my digital marketing agency?',
+        a: 'Marketing Copilot combines strategic depth, rapid technical execution, creative storytelling, and transparent performance telemetry. We treat your marketing budget like our own investment, focusing exclusively on qualified pipeline and measurable revenue.',
+        takeaway: 'Dedicated growth partnership combined with data-driven execution.',
       },
       {
-        q: 'Does Nova Spark work with small and local businesses?',
-        a: 'Yes. We collaborate with businesses of various sizes, including single-location businesses. Our approach and scope are flexible and can be tailored to your objectives, target group, budget, and current growth phase.',
+        q: 'Does Marketing Copilot work with small and growing businesses?',
+        a: 'Yes. We collaborate with businesses of various sizes, from growing startups to scaling enterprises. Our approach and scope are flexible and tailored to your objectives, target audience, budget, and current growth phase.',
         takeaway: 'Flexible scope and strategies tailored to your specific growth stage.',
       },
       {
         q: 'How quickly can I expect results from digital marketing?',
-        a: 'The time frame will vary with the service and your starting point. Paid campaigns can generate data quickly, while SEO, local SEO, and organic social growth generally require consistent effort over time.',
+        a: 'The time frame will vary with the service and your starting point. Paid campaigns can generate data and leads within 48 to 72 hours, while SEO, local SEO, and organic social growth compound sustainably over 60 to 90 days.',
         takeaway: 'Fast feedback from paid ads; compounding authority through SEO.',
       },
       {
-        q: 'How does Nova Spark create a strategy for a new client?',
-        a: 'We first learn your business, audience, competition, existing digital footprint, objectives, and budget. Next, we determine which channels are most relevant and develop a viable strategy based on your priorities.',
+        q: 'How does Marketing Copilot create a strategy for a new client?',
+        a: 'We first learn your business, audience, competition, existing digital footprint, objectives, and budget. Next, we determine which channels are most relevant and develop a viable strategy based on your commercial priorities.',
         takeaway: 'Custom discovery and channel selection tailored to your business priorities.',
       },
       {
-        q: 'Do you provide digital marketing services outside Bhubaneswar?',
-        a: 'Yes. Nova Spark is based in Bhubaneswar, but we can collaborate remotely and communicate via digital methods with businesses located in Odisha and clients from other areas.',
-        takeaway: 'Seamless digital collaboration across Odisha and nationwide.',
+        q: 'Do you provide digital marketing services across India?',
+        a: 'Yes. Marketing Copilot works with businesses across India and develops strategies based on industry, target audience, competition, location, and business objectives.',
+        takeaway: 'Seamless digital collaboration with businesses across all Indian states and metro hubs.',
       },
       {
-        q: 'Can Nova Spark manage all our digital marketing under one team?',
+        q: 'Can we meet the Marketing Copilot team in Bhubaneswar?',
+        a: 'Yes, absolutely. Our physical headquarters is located at Mallick Complex, Unit 3, Kharvela Nagar, Bhubaneswar, Odisha. We welcome founders and marketing leaders for in-person strategy reviews while actively working with clients across India.',
+        takeaway: 'Physical studio headquarters with remote collaboration nationwide.',
+      },
+      {
+        q: 'Can Marketing Copilot manage all our digital marketing under one team?',
         a: 'Yes. All of these can be brought together in one strategy and simplified so that we can keep our messaging consistent and coordinated across various marketing activities.',
         takeaway: 'Unified multi-channel execution with consistent brand messaging.',
       },
       {
         q: 'Will we receive regular updates about our campaigns?',
-        a: 'Yes. Regular performance updates are sent on services you choose. Reports may include details about the performance of the campaign, site traffic, SEO improvements, leads, inquiries, and additional agreed-to business metrics.',
+        a: 'Yes. Regular performance updates are sent on services you choose. Reports include live Looker Studio telemetry showing campaign performance, site traffic, SEO improvements, leads, inquiries, and agreed business metrics.',
         takeaway: 'Transparent regular updates covering traffic, leads, and business metrics.',
       },
       {
         q: 'Can you work with our existing marketing team?',
-        a: 'Yes. Nova Spark can collaborate with your existing staff, freelance personnel, or other experts. Take responsibility for specific channels or work together on parts of your overall digital strategy.',
+        a: 'Yes. Marketing Copilot can collaborate with your existing staff, freelance personnel, or other experts, taking responsibility for specific channels or partnering on parts of your overall digital strategy.',
         takeaway: 'Collaborative partnership supporting your in-house talent.',
       },
     ],
@@ -115,42 +120,42 @@ const faqGroups: FAQGroup[] = [
     id: 'seo',
     title: 'SEO & Local Search',
     badge: 'ORGANIC DOMINANCE',
-    highlight: 'Rank #1 in Google Maps Across Bhubaneswar & High-Intent Search Corridors',
+    highlight: 'Rank in Top Search Positions Across High-Intent Indian Corridors',
     collage: {
       mainImage: '/images/faq_seo_local_search.png',
       subImage: '',
-      caption: 'Local 3-Pack Dominance • Patia & Saheed Nagar',
-      tag: '📍 GEO-FENCED SEO ENGINE',
+      caption: 'Targeted Search Dominance Across Key Indian Markets',
+      tag: '📍 HIGH-INTENT SEO ENGINE',
     },
     faqs: [
       {
-        q: 'What is the advantage of SEO for my business in India?',
-        a: 'SEO can make your business visible when potential customers look around for the products/services that you offer. We enhance your website, content, technical SEO, and local visibility to boost visibility for relevant organic traffic.',
+        q: 'What are the benefits of SEO for my business in India?',
+        a: 'SEO makes your business visible when potential customers look for the products or services that you offer. We enhance your website, content, technical SEO, and authority building to drive sustainable, qualified inbound traffic and sales enquiries across India.',
         takeaway: 'Compounds long-term organic visibility and qualified inbound traffic.',
       },
       {
         q: 'What is local SEO, and why does my business need it?',
-        a: "Local SEO is all about improving your business's visibility in local search results and Google Maps. This is especially relevant for businesses that cater to customers in certain neighborhoods in Bhubaneswar or a nearby area.",
+        a: "Local SEO focuses on improving your business's visibility in local search results and Google Maps. This is especially relevant for businesses that cater to customers in specific commercial corridors, cities, or multi-location territories.",
         takeaway: 'Captures customers searching near your physical location or service area.',
       },
       {
-        q: 'What does Nova Spark do to make Google Business Profile more visible?',
-        a: 'We work on important local search factors, including business information, categories, services, content, reviews, local relevance, and profile optimization, to strengthen your presence in relevant Google Search and Maps results.',
+        q: 'What does Marketing Copilot do to make Google Business Profile more visible?',
+        a: 'We work on key local search signals, including accurate business schema, category mapping, geo-relevance, customer review velocity, and profile optimization to maximize your visibility in Google Maps 3-Pack rankings.',
         takeaway: 'Comprehensive GBP optimization driving calls, directions, and visits.',
       },
       {
         q: 'How long does it take to see SEO results?',
-        a: 'SEO is a long-term effort, and timelines can differ based on industry, competition, website health, location, and starting visibility. We monitor progress in rankings, organic traffic, inquiries, and other mutually agreed KPIs.',
+        a: 'SEO is a long-term compounding asset. Initial indexation and technical fixes show traction within 30 to 45 days, while competitive organic keyword dominance compounds over 60 to 90+ days.',
         takeaway: 'Progress monitored across rankings, organic traffic, and qualified inquiries.',
       },
       {
-        q: 'Can Nova Spark handle both technical SEO and content SEO?',
-        a: 'Yes. Our SEO work can cover technical improvements, keyword research, on-page optimization, content planning, internal linking, website structure, local SEO, and other areas relevant to your search growth strategy.',
+        q: 'Can Marketing Copilot handle both technical SEO and content SEO?',
+        a: 'Yes. Our SEO work covers sub-second Core Web Vitals, technical crawl health, topical cluster architecture, keyword research, on-page optimization, Schema.org markup, and authority building.',
         takeaway: 'End-to-end SEO execution covering code, content, structure, and maps.',
       },
       {
-        q: 'Is it possible to target a specific area in Bhubaneswar and Odisha for SEO?',
-        a: 'Yes. We can build location-focused SEO strategies around relevant service areas, neighborhoods, and cities while avoiding unnecessary location pages that provide little value to users or search engines.',
+        q: 'Can SEO target specific cities, states, or regions in India?',
+        a: 'Yes. We build location-focused SEO strategies and geo-targeted authority architectures for specific cities, regions, or nationwide markets across India, capturing high-intent searchers without duplicate keyword-stuffed pages.',
         takeaway: 'High-value localized targeting without keyword-stuffed duplicate pages.',
       },
       {
@@ -183,7 +188,7 @@ const faqGroups: FAQGroup[] = [
         takeaway: 'Google captures active intent; Meta creates demand and retargets prospects.',
       },
       {
-        q: 'How does Nova Spark determine which platform is best for our business?',
+        q: 'How does Marketing Copilot determine which platform is best for our business?',
         a: 'We analyze your customer journey, search demand, industry, competition, location, offer, and conversion path. Depending on these, we can suggest Google Ads, Meta Ads, or both.',
         takeaway: 'Data-driven channel allocation aligned with your target audience behavior.',
       },
@@ -198,12 +203,12 @@ const faqGroups: FAQGroup[] = [
         takeaway: 'Immediate traffic deployment followed by systematic optimization.',
       },
       {
-        q: 'Does Nova Spark make ads and copy?',
+        q: 'Does Marketing Copilot make ads and copy?',
         a: 'Yes. For your engagement, we can build concepts, headlines, primary copy, static creatives, and even short-form video concepts around your goal and target audience.',
         takeaway: 'Complete creative production covering copy, visuals, and video concepts.',
       },
       {
-        q: 'How does Nova Spark optimize campaigns after they go live?',
+        q: 'How does Marketing Copilot optimize campaigns after they go live?',
         a: 'Campaign data is reviewed regularly, and the targeting, keywords, audiences, placements, creatives, bidding, budgets, landing pages, and conversion tracking are adjusted based on performance and agreed business goals.',
         takeaway: 'Continuous iterative testing of bidding, targeting, and landing pages.',
       },
@@ -222,32 +227,32 @@ const faqGroups: FAQGroup[] = [
     },
     faqs: [
       {
-        q: 'How much does a business website from Nova Spark cost in India?',
-        a: 'Website pricing is dependent on different pages, design, features, integrations, technology, and project scope. Nova Spark gives a clear quotation as per the actual needs of the business.',
+        q: 'How much does a business website from Marketing Copilot cost in India?',
+        a: 'Website pricing is dependent on different pages, design, features, integrations, technology, and project scope. Marketing Copilot gives a clear quotation as per the actual needs of the business.',
         takeaway: 'Transparent quotations tailored to your exact scope and functionality needs.',
       },
       {
-        q: 'Why does Nova Spark use Next.js for business websites?',
+        q: 'Why does Marketing Copilot use Next.js for business websites?',
         a: 'Next.js is used when there is a project that demands performance, scalability, technical SEO, and a custom user experience. For simpler requirements, we suggest the best technology for the project.',
         takeaway: 'Next.js delivers sub-second speed, scalability, and built-in technical SEO advantages.',
       },
       {
-        q: 'How long will it take Nova Spark to create and deploy a website?',
+        q: 'How long will it take Marketing Copilot to create and deploy a website?',
         a: 'Most business websites require a few weeks to be operational. This depends on the design, content, number of pages, custom development, revisions, and integrations required.',
         takeaway: 'Structured development sprints with clear milestones from wireframe to launch.',
       },
       {
-        q: 'Will Nova Spark optimize my website for Google?',
+        q: 'Will Marketing Copilot optimize my website for Google?',
         a: 'Yes. We create with SEO basics in mind: site structure, page speed, metadata, mobile responsiveness, clean URLs, content organization, and technical elements that enhance searchability.',
         takeaway: 'Built-in technical SEO, clean code, and fast Core Web Vitals.',
       },
       {
-        q: 'Can Nova Spark update my current business website?',
+        q: 'Can Marketing Copilot update my current business website?',
         a: 'Yes. We can completely reengineer your current site to enhance its visual appeal, speed, mobile usability, content organization, search engine optimization, and conversion path while preserving valuable business information.',
         takeaway: 'Modern re-engineering that improves speed and conversion while preserving rankings.',
       },
       {
-        q: 'Can Nova Spark link my website to WhatsApp and to lead tracking?',
+        q: 'Can Marketing Copilot link my website to WhatsApp and to lead tracking?',
         a: 'Yes. We can customize WhatsApp, inquiry forms, analytics, tracking, booking, CRM, and more to manage and track leads based on your requirements.',
         takeaway: 'Direct WhatsApp integration and automated lead routing into your workflow.',
       },
@@ -266,17 +271,17 @@ const faqGroups: FAQGroup[] = [
     },
     faqs: [
       {
-        q: 'How does Nova Spark build a social media strategy for a business?',
+        q: 'How does Marketing Copilot build a social media strategy for a business?',
         a: 'We begin with your business objectives, audience, competition, positioning, and what you have. We then develop a platform-specific strategy, including content pillars, formats, campaigns, posting frequency, and growth goals.',
         takeaway: 'Custom platform-specific roadmap built around clear content pillars.',
       },
       {
-        q: 'How does Nova Spark decide what content our brand should publish?',
+        q: 'How does Marketing Copilot decide what content our brand should publish?',
         a: 'We use audience research, industry trends, competitor analysis, search behavior, and your business know-how to find out what topics are relevant. It has a goal of awareness, trust, engagement, consideration, and conversion that is planned for in content.',
         takeaway: 'Full-funnel content planned for awareness, trust, and conversion.',
       },
       {
-        q: 'Can Nova Spark manage both organic social media and paid campaigns?',
+        q: 'Can Marketing Copilot manage both organic social media and paid campaigns?',
         a: 'Yes. Meta ads can be paired with organic content so your brand can become visible consistently, while your ads are directed to specific audiences, offers, products, services, or lead generation targets.',
         takeaway: 'Organic brand presence paired synchronously with hyper-targeted paid ads.',
       },
@@ -286,7 +291,7 @@ const faqGroups: FAQGroup[] = [
         takeaway: 'Audience segmentation addressing real buyer pain points and motivations.',
       },
       {
-        q: 'How does Nova Spark measure whether social media is generating business value?',
+        q: 'How does Marketing Copilot measure whether social media is generating business value?',
         a: "We don't just consider followers and likes. We measure reach, engagement, profile actions, website traffic, inquiries, leads, campaign performance, and other agreed business KPIs, depending on the objectives.",
         takeaway: 'Real business impact tracked via website clicks, inquiries, and conversions.',
       },
@@ -296,7 +301,7 @@ const faqGroups: FAQGroup[] = [
         takeaway: 'Cross-channel synchronization amplifying message reach and SEO signals.',
       },
       {
-        q: 'How does Nova Spark handle negative comments and customer responses?',
+        q: 'How does Marketing Copilot handle negative comments and customer responses?',
         a: 'We build a response approach according to your brand style and industry. Common comments and queries can be dealt with systematically, and sensitive complaints and issues are referred to your team as needed.',
         takeaway: 'Structured brand voice guidelines ensuring swift, professional community management.',
       },
@@ -315,7 +320,7 @@ const faqGroups: FAQGroup[] = [
     },
     faqs: [
       {
-        q: 'How does Nova Spark determine the pricing for its digital marketing services?',
+        q: 'How does Marketing Copilot determine the pricing for its digital marketing services?',
         a: 'The cost of pricing varies based on various business objectives, services required, audience, competition, and scope of work. We tailor our plan to your specific needs, not a set one.',
         takeaway: 'Custom pricing built around your specific objectives and scope of work.',
       },
@@ -687,15 +692,15 @@ export default function FAQPage() {
               <ScrollReveal>
                 <div className={styles.heroEyebrow}>
                   <span className={styles.heroEyebrowDot} />
-                  <span>FREQUENTLY ASKED QUESTIONS &bull; ODISHA GROWTH INTELLIGENCE</span>
+                  <span>FREQUENTLY ASKED QUESTIONS &bull; INDIA GROWTH INTELLIGENCE</span>
                 </div>
                 <h1 className={`display-hero ${styles.heroTitle}`}>
                   The Complete Digital Growth Guide for{' '}
-                  <span className={`accent-gradient ${styles.heroAccent}`}>Bhubaneswar Businesses</span>
+                  <span className={`accent-gradient ${styles.heroAccent}`}>Businesses in India</span>
                 </h1>
                 <div className={styles.heroSub}>
                   <p>
-                    From Google &amp; Meta Ads to Local SEO and high-performance web infrastructure, discover the strategies, costs, technology, and decisions that shape digital growth in Odisha.
+                    From Google &amp; Meta Ads to SEO and high-performance web infrastructure, discover the strategies, costs, technology, and decisions that shape digital growth across India.
                   </p>
                 </div>
 
@@ -940,11 +945,11 @@ export default function FAQPage() {
             <div className={styles.storyHeader}>
               <div className="eyebrow" style={{ marginBottom: 12 }}>
                 <span className="eyebrow-dot" />
-                FROM VISIBILITY TO REVENUE &bull; BHUBANESWAR &amp; ODISHA
+                FROM VISIBILITY TO REVENUE &bull; PAN-INDIA GROWTH
               </div>
               <h2 className={`display-md ${styles.storyMainTitle}`}>
                 From Visibility to Revenue:<br />
-                <span className="accent-gradient">How Odisha Businesses Can Build Digital Growth That Actually Scales?</span>
+                <span className="accent-gradient">How Indian Businesses Can Build Digital Growth That Actually Scales?</span>
               </h2>
               <p className={styles.storyLeadText}>
                 Your customers are already searching, comparing, and discovering brands online. The opportunity is to build a digital presence that captures that demand through SEO, paid advertising, content, social media, and high-performing websites.
@@ -966,23 +971,23 @@ export default function FAQPage() {
               <div className={styles.chapterCardPlate}>
                 <div className={styles.chapterMeta}>
                   <span className={styles.chapterPhaseBadge}>PHASE 01: FINDING THE GAP</span>
-                  <span className={styles.chapterAnchorTag}>📍 Patia, Saheed Nagar, Nayapalli &amp; Beyond</span>
+                  <span className={styles.chapterAnchorTag}>📍 Target Indian Markets &amp; Regional Hubs</span>
                 </div>
                 <h3 className={styles.chapterHeading}>
                   Your Customers Are Searching. Can They Find You?
                 </h3>
                 <div className={styles.chapterNarrative}>
                   <p>
-                    People all over Bhubaneswar look for information online before they go to the clinic, contact a business, book a service, or make a purchase. They compare their choices using Google Search, Google Maps, Instagram, and other digital platforms.
+                    People all across India look for information online before they go to the clinic, contact a business, book a service, or make a purchase. They compare their choices using Google Search, Google Maps, Instagram, and other digital platforms.
                   </p>
                   <p>
-                    But many local businesses still depend mainly on referrals, walk-ins, and traditional advertising.
+                    But many growing businesses still depend mainly on referrals, word of mouth, and traditional advertising.
                   </p>
                   <p>
-                    At Nova Spark, we help businesses build a stronger online presence so they can reach customers when they are actively looking for their products or services.
+                    At Marketing Copilot, we help businesses build a stronger online presence so they can reach customers when they are actively looking for their products or services.
                   </p>
                   <p>
-                    From local SEO and Google Business Profile optimization to Google Ads, Meta Ads, and content marketing, we focus on making your business easier to discover and easier to contact.
+                    From national &amp; local SEO and Google Business Profile optimization to Google Ads, Meta Ads, and content marketing, we focus on making your business easier to discover and easier to contact.
                   </p>
                 </div>
                 <div className={styles.chapterInlineMetric}>
@@ -1015,7 +1020,7 @@ export default function FAQPage() {
                     If it takes a long time to load, is outdated, is hard to use on mobile, or makes it hard to reach you, you risk losing potential customers before they even know what you offer.
                   </p>
                   <p>
-                    Nova Spark creates websites that are speedy, mobile responsive, and conversion optimized, built around how your customers really use the site.
+                    Marketing Copilot creates websites that are speedy, mobile responsive, and conversion optimized, built around how your customers really use the site.
                   </p>
                   <p>
                     If you need a business website, landing page website, service website or a scalable Next.js website, we are focused on clean design, performance, SEO and simple user experience.
@@ -1051,7 +1056,7 @@ export default function FAQPage() {
                     You need to be aware of where leads are coming from, what campaigns are working, what you are paying for, and how you can do better.
                   </p>
                   <p>
-                    At Nova Spark, we leverage campaign data, website analytics, SEO information and lead data to determine what works and what doesn&apos;t.
+                    At Marketing Copilot, we leverage campaign data, website analytics, SEO information and lead data to determine what works and what doesn&apos;t.
                   </p>
                   <p>
                     Our goal is not to chase impressive-looking numbers. It is about creating a marketing system that is continually optimized with the data we learn from.
@@ -1087,7 +1092,7 @@ export default function FAQPage() {
                     You should know where your leads are coming from, which campaigns are performing, what you are spending, and where there is room to improve.
                   </p>
                   <p>
-                    At Nova Spark, we use campaign data, website analytics, SEO insights and lead information to understand what is working and what needs to change.
+                    At Marketing Copilot, we use campaign data, website analytics, SEO insights and lead information to understand what is working and what needs to change.
                   </p>
                   <p>
                     Our goal is not to chase impressive-looking numbers. It is to build a marketing system that becomes more efficient as we learn from the data.
@@ -1395,7 +1400,7 @@ export default function FAQPage() {
                 <div className={styles.strategistDeskHeader}>
                   <span className={styles.liveStatusPill}>
                     <span className={styles.liveDot} />
-                    STRATEGIST ON-DUTY &bull; BHUBANESWAR
+                    STRATEGIST ON-DUTY &bull; INDIA DESK
                   </span>
                 </div>
 
@@ -1413,7 +1418,7 @@ export default function FAQPage() {
                   <div className={styles.strategistMeta}>
                     <h3 className={styles.strategistName}>Aarav Sharma</h3>
                     <span className={styles.strategistRole}>Principal Revenue Architect</span>
-                    <span className={styles.strategistCorridor}>📍 Patia, Bhubaneswar</span>
+                    <span className={styles.strategistCorridor}>📍 Bhubaneswar HQ · Serving Businesses Across India</span>
                   </div>
                 </div>
 
@@ -1429,7 +1434,7 @@ export default function FAQPage() {
                   </div>
                   <div className={styles.pillarItem}>
                     <span className={styles.pillarIcon}>📊</span>
-                    <span className={styles.pillarText}>Free Odisha Competitor Audit</span>
+                    <span className={styles.pillarText}>Free Pan-India Competitor Audit</span>
                   </div>
                 </div>
 

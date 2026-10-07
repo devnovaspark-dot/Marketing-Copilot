@@ -116,7 +116,7 @@ export default function CreativeBrandingPage() {
               </h1>
 
               <p className={styles.heroSub}>
-                Stop competing in race-to-the-bottom price wars. We craft golden-ratio vector brandmarks, tokenized design systems, physical packaging, and brand bibles that give Bhubaneswar businesses unquestioned pricing power.
+                Stop competing in race-to-the-bottom price wars. We craft golden-ratio vector brandmarks, tokenized design systems, physical packaging, and brand bibles that help Indian businesses build distinctive brand identities, stronger market positioning, and greater perceived value.
               </p>
 
               <div className={styles.heroActions}>
@@ -136,7 +136,7 @@ export default function CreativeBrandingPage() {
                 </div>
                 <div className={styles.trustStars}>★★★★★</div>
                 <span className={styles.trustLabel}>
-                  Crafted 80+ Luxury &amp; Corporate Brand Systems Across Odisha
+                  Crafted 80+ Luxury &amp; Corporate Brand Systems
                 </span>
               </div>
             </ScrollReveal>
@@ -412,7 +412,7 @@ export default function CreativeBrandingPage() {
                   +91 98765 43210
                 </a>
                 <span>·</span>
-                <span>Bhubaneswar Creative Studio (Saheed Nagar)</span>
+                <span>Bhubaneswar HQ · Serving Businesses Across India</span>
               </div>
             </div>
 

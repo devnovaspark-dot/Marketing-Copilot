@@ -1453,36 +1453,39 @@ export default function DigitalGrowthPartnerPage() {
               );
             })}
 
-            {/* Tactile Skeuomorphic VIP Concierge War Room Console */}
-            <div className={styles.faqFooterHelp}>
-              <div className={styles.faqHelpMeta}>
-                <div className={styles.faqHelpStatusPill}>
-                  <span className={styles.pulsingLed} />
-                  <span>LIVE FOUNDER DISPATCH</span>
+            {/* Interactive Circular / Round Halo Concierge Hub */}
+            <div className={styles.faqConciergeHalo}>
+              <div className={styles.faqHaloLeft}>
+                <div className={styles.faqRadarOrb}>
+                  <div className={styles.faqRadarOrbDot} />
                 </div>
-                <h3 className={styles.faqHelpHeadline}>
-                  Have a specific question about your market or budget?
-                </h3>
-                <p className={styles.faqHelpSubCopy}>
-                  Connect directly with our senior founding partners. Audited response SLA &lt; 15 mins.
-                </p>
+                <div className={styles.faqHaloMeta}>
+                  <div className={styles.faqHaloTag}>
+                    <span>● LIVE FOUNDER DISPATCH</span>
+                  </div>
+                  <span className={styles.faqHaloTagSub}>
+                    Got a question about budgets or timelines? Chat with leadership directly
+                  </span>
+                </div>
               </div>
 
-              <a
-                href="https://wa.me/919437168434?text=Hi%20Marketing%20Copilot%2C%20I%20have%20a%20question%20regarding%20the%20digital%20growth%20partnership"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.faqHelpWhatsAppBtn}
-                aria-label="Chat directly with founder on WhatsApp"
-              >
-                <div className={styles.faqWhatsAppIconWrap}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              {/* Compact Revolving Glowing Border Beam WhatsApp Button (Navbar Style, Green) */}
+              <div className={styles.compactGreenBeamWrapper}>
+                <div className={styles.compactGreenBeamSpin} />
+                <a
+                  href="https://wa.me/919437168434?text=Hi%20Marketing%20Copilot%2C%20I%20have%20a%20question%20regarding%20the%20digital%20growth%20partnership"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.compactGreenBeamBtn}
+                  aria-label="Direct founder chat on WhatsApp"
+                >
+                  <svg className={styles.compactWhatsAppIcon} viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12.031 2C6.495 2 2 6.495 2 12.031c0 1.77.464 3.499 1.345 5.025L2 22l5.086-1.334a10.009 10.009 0 0 0 4.945 1.365h.004c5.535 0 10.03-4.495 10.03-10.031C22.065 6.495 17.568 2 12.031 2zm0 18.375c-1.505 0-2.98-.405-4.267-1.168l-.306-.182-3.17.832.846-3.09-.2-.317A8.324 8.324 0 0 1 3.688 12.03c0-4.6 3.743-8.343 8.343-8.343 4.601 0 8.344 3.743 8.344 8.343 0 4.601-3.743 8.344-8.344 8.344zm4.573-6.248c-.25-.125-1.482-.731-1.712-.815-.23-.083-.396-.125-.563.125-.167.25-.646.815-.792.982-.146.167-.292.188-.542.063-.25-.125-1.056-.39-2.012-1.242-.744-.664-1.247-1.484-1.393-1.734-.146-.25-.016-.385.109-.51.113-.112.25-.292.375-.438.125-.146.167-.25.25-.417.083-.167.042-.313-.021-.438-.063-.125-.563-1.356-.771-1.856-.203-.487-.41-.421-.563-.429l-.48-.008c-.166 0-.437.063-.666.313-.23.25-.875.856-.875 2.087s.896 2.42 1.021 2.587c.125.167 1.764 2.694 4.275 3.778.597.258 1.064.412 1.428.528.6.191 1.146.164 1.578.1.48-.072 1.482-.605 1.69-1.189.208-.584.208-1.085.146-1.189-.063-.104-.23-.167-.48-.292z"/>
                   </svg>
-                </div>
-                <span>DIRECT FOUNDER WHATSAPP</span>
-                <span className={styles.faqWhatsAppSlaPill}>&lt; 15 MIN SLA</span>
-              </a>
+                  <span>Chat on WhatsApp →</span>
+                  <span className={styles.compactSlaBadge}>&lt; 15m SLA</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>

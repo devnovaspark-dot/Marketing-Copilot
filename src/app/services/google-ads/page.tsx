@@ -19,7 +19,7 @@ const googleAdsArsenal = [
   {
     name: 'Google Search Ads',
     category: 'High-Intent Inbound Capture',
-    desc: 'Exact match single-theme ad groups capturing buyers at the exact moment of search intent across Bhubaneswar.',
+    desc: 'Exact match single-theme ad groups capturing buyers at the exact moment of search intent across target Indian markets.',
     status: 'EXACT INTENT',
     icon: '🔍',
   },
@@ -62,8 +62,8 @@ const googleAdsArsenal = [
 
 const googleAdsFaqs = [
   {
-    q: 'What starting monthly Google Ads budget is recommended for Bhubaneswar businesses?',
-    a: 'We recommend starting with an ad budget between ₹25,000 and ₹60,000 for local Bhubaneswar services (healthcare, legal, real estate, education). This provides enough daily click volume to test high-intent keywords, establish baseline Cost-Per-Lead (CPL), and calibrate Google’s Smart Bidding algorithms.',
+    q: 'What starting monthly Google Ads budget is recommended for businesses in India?',
+    a: 'We recommend starting with an ad budget between ₹25,000 and ₹75,000 for service and retail businesses. This provides enough daily click volume to test high-intent keywords, establish baseline Cost-Per-Lead (CPL), and calibrate Google’s Smart Bidding algorithms.',
     takeaway: 'Adequate daily click volume enables Smart Bidding algorithms to identify genuine paying buyers quickly.',
   },
   {
@@ -73,7 +73,7 @@ const googleAdsFaqs = [
   },
   {
     q: 'How do you prevent our budget from being wasted on accidental clicks or job seekers?',
-    a: 'We implement 400+ pre-compiled Odisha negative keywords on Day 1 (blocking terms like "jobs", "syllabus", "free", "internship", "vacancy"). We also geo-fence campaigns strictly to Bhubaneswar pin codes and run daily search term scrubbing.',
+    a: 'We implement 400+ pre-compiled negative keywords on Day 1 (blocking terms like "jobs", "syllabus", "free", "internship", "vacancy"). We also geo-fence campaigns strictly to your target service locations and run daily search term scrubbing.',
     takeaway: 'Proactive negative keyword shields protect up to 40% of advertising budget from wasteful clicks.',
   },
   {
@@ -136,7 +136,7 @@ export default function GoogleAdsPage() {
                 </div>
                 <div className={styles.trustStars}>★★★★★</div>
                 <span className={styles.trustLabel}>
-                  Rated 4.9/5 by 60+ Bhubaneswar &amp; Odisha Service Leaders
+                  Rated 4.9/5 by 60+ Businesses
                 </span>
               </div>
             </ScrollReveal>
@@ -212,7 +212,7 @@ export default function GoogleAdsPage() {
               Traditional PPC Agencies vs. Our Search Engine
             </h2>
             <p style={{ fontSize: '15px', color: '#475569', marginTop: '12px' }}>
-              Why leading healthcare practices, real estate developers, and B2B firms in Odisha partner with Marketing Copilot for transparent search outcomes.
+              Why leading healthcare practices, real estate developers, and high-growth brands partner with Marketing Copilot for transparent search outcomes.
             </p>
           </div>
           <GoogleAdsComparisonMatrix />
@@ -232,7 +232,7 @@ export default function GoogleAdsPage() {
               The 30-Day Inbound Search Sprint
             </h2>
             <p style={{ fontSize: '15px', color: '#475569', marginTop: '12px' }}>
-              A phased roadmap to eliminate non-converting ad waste, launch high-speed landing pages, and scale verified phone leads across Odisha.
+              A phased roadmap to eliminate non-converting ad waste, launch high-speed landing pages, and scale verified customer leads across India.
             </p>
           </div>
           <GoogleAdsSprintRoadmap />
@@ -404,15 +404,15 @@ export default function GoogleAdsPage() {
                 Ready to Stop Wasting Budget on Unqualified Clicks?
               </h2>
               <p className={styles.termSub}>
-                Get a forensic audit of your search keywords, competitor impression shares, and negative keyword leaks. Our certified Google Ads specialists will map an exact-match acquisition plan for Bhubaneswar.
+                Get a forensic audit of your search keywords, competitor impression shares, and negative keyword leaks. Our certified Google Ads specialists will map an exact-match acquisition plan for your target market.
               </p>
               <div className={styles.termContact}>
                 <span>Direct Line:</span>
-                <a href="tel:+919876543210" className={styles.termPhone}>
-                  +91 98765 43210
+                <a href="tel:+918280788689" className={styles.termPhone}>
+                  +91 82807 88689
                 </a>
                 <span>·</span>
-                <span>Bhubaneswar HQ (Kharvela Nagar Corridor)</span>
+                <span>Bhubaneswar HQ · Serving Businesses Across India</span>
               </div>
             </div>
 

@@ -36,7 +36,7 @@ export default function WebDevSpeedSimulator() {
       bounceRate: '68%',
       conversionLift: '-45%',
       architecture: 'Legacy PHP 8 · 28 Bloated Plugins · Shared Server Hosting',
-      summary: 'Heavy render-blocking CSS, slow database SQL queries, and bloated JavaScript causing 68% of Bhubaneswar mobile visitors to bounce before the page loads.',
+      summary: 'Heavy render-blocking CSS, slow database SQL queries, and bloated JavaScript causing 68% of mobile visitors to bounce before the page loads.',
     },
     ecommerce: {
       score: 98,
@@ -63,7 +63,7 @@ export default function WebDevSpeedSimulator() {
             <span>Interactive Speed &amp; Architecture Lab</span>
           </div>
           <h2 className={`display-md ${styles.headline}`}>
-            Sub-Second Speed That <span className="accent-gradient">Captures Bhubaneswar Buyers</span>
+            Sub-Second Speed That <span className="accent-gradient">Captures High-Intent Buyers</span>
           </h2>
           <p className={styles.subhead}>
             Every 100ms of latency costs 7% in sales. Compare how Marketing Copilot Next.js architecture outperforms traditional bloated WordPress agency templates.
@@ -132,12 +132,12 @@ export default function WebDevSpeedSimulator() {
                 </div>
 
                 <div className={styles.heroMock}>
-                  <span className={styles.heroPillMock}>BHUBANESWAR EXPANSION</span>
+                  <span className={styles.heroPillMock}>NATIONAL EXPANSION</span>
                   <div className={styles.heroTitleMock}>
                     {activeStack === 'wordpress' ? (
                       'Loading assets... please wait (4.8s)'
                     ) : (
-                      'Capture High-Value Clients Across Odisha with Instant Speed'
+                      'Capture High-Value Clients Across India with Instant Speed'
                     )}
                   </div>
                   <div className={styles.heroSubMock}>

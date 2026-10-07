@@ -164,7 +164,7 @@ export default function SEOCorridorExplorer() {
 
             <div className={styles.paneFooter}>
               <Link href="/contact" className={styles.paneCtaBtn}>
-                <span>Target {activeCorridor.name} with Nova Spark</span>
+                <span>Target {activeCorridor.name} with Marketing Copilot</span>
                 <span>→</span>
               </Link>
             </div>

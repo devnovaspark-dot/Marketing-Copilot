@@ -111,8 +111,8 @@ export default function LocalSeoPage() {
               </div>
 
               <h1 className={styles.heroTitle}>
-                Dominate the Google Map 3-Pack Across{' '}
-                <span className="accent-gradient">Every Bhubaneswar Pin Code</span>
+                Dominate Google Maps &amp; Local Search Across{' '}
+                <span className="accent-gradient">Your Target Indian Locations</span>
               </h1>
 
               <p className={styles.heroSub}>
@@ -136,7 +136,7 @@ export default function LocalSeoPage() {
                 </div>
                 <div className={styles.trustStars}>★★★★★</div>
                 <span className={styles.trustLabel}>
-                  Ranking #1 for 75+ Clinics, Retail Stores &amp; Showrooms in Odisha
+                  Ranking #1 for 75+ Clinics, Retail Stores &amp; Showrooms Across India
                 </span>
               </div>
             </ScrollReveal>
@@ -455,11 +455,11 @@ export default function LocalSeoPage() {
               </p>
               <div className={styles.termContact}>
                 <span>Direct Line:</span>
-                <a href="tel:+919876543210" className={styles.termPhone}>
-                  +91 98765 43210
+                <a href="tel:+918280788689" className={styles.termPhone}>
+                  +91 82807 88689
                 </a>
                 <span>·</span>
-                <span>Bhubaneswar HQ (Patia Corridor)</span>
+                <span>Bhubaneswar HQ · Serving Businesses Across India</span>
               </div>
             </div>
 
@@ -469,7 +469,7 @@ export default function LocalSeoPage() {
                 <span>→</span>
               </a>
               <a
-                href="https://wa.me/919876543210?text=Hi%20Marketing%20Copilot,%20I%20want%20to%20audit%20our%20Google%20Map%203-Pack%20ranking."
+                href="https://wa.me/918280788689?text=Hi%20Marketing%20Copilot,%20I%20want%20to%20audit%20our%20Google%20Map%203-Pack%20ranking."
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.termWhatsAppBtn}

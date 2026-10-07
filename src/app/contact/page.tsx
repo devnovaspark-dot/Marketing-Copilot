@@ -172,17 +172,17 @@ export default function ContactPage() {
             <ScrollReveal>
               <div className={styles.heroEyebrow}>
                 <span className={styles.heroEyebrowDot} />
-                <span>GET IN TOUCH &bull; BHUBANESWAR</span>
+                <span>GET IN TOUCH &bull; BHUBANESWAR HQ &bull; SERVING BUSINESSES ACROSS INDIA</span>
               </div>
 
               <h1 className={`display-hero ${styles.title}`}>
                 Build a Stronger Digital{' '}
-                <span className={`accent-gradient ${styles.heroAccent}`}>Presence in Bhubaneswar</span>
+                <span className={`accent-gradient ${styles.heroAccent}`}>Presence Across India</span>
               </h1>
 
               <div className={styles.sub}>
                 <p className={styles.subLead}>
-                  Partner with Bhubaneswar&apos;s results-driven growth team to scale your brand&apos;s visibility, leads, and revenue.
+                  Partner with a results-driven digital growth team to scale your brand&apos;s visibility, leads, and revenue across India.
                 </p>
               </div>
 
@@ -197,8 +197,8 @@ export default function ContactPage() {
                   </div>
                   <div className={styles.detailContent}>
                     <span className={styles.detailLabel}>Email</span>
-                    <a href="mailto:connect@novasparkdigitalmarketingagency.com" className={styles.detailVal}>
-                      connect@novasparkdigitalmarketingagency.com
+                    <a href="mailto:info@marketingcopilot.in" className={styles.detailVal}>
+                      info@marketingcopilot.in
                     </a>
                   </div>
                 </div>
@@ -211,8 +211,8 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div className={styles.detailContent}>
-                    <span className={styles.detailLabel}>Office</span>
-                    <span className={styles.detailVal}>Mallick Complex, Unit 3, Kharvela Nagar, Bhubaneswar</span>
+                    <span className={styles.detailLabel}>Office (HQ)</span>
+                    <span className={styles.detailVal}>Mallick Complex, Unit 3, Kharvela Nagar, Bhubaneswar, Odisha 751001</span>
                   </div>
                 </div>
 
@@ -499,7 +499,7 @@ export default function ContactPage() {
                   </h3>
 
                   <p className={styles.successDesc}>
-                    Thank you{form.name ? `, ${form.name}` : ''}! Our senior growth team in Bhubaneswar has received your project details. We will analyze your requirements and reach out within <strong>2 hours</strong> with a bespoke preliminary growth blueprint.
+                    Thank you{form.name ? `, ${form.name}` : ''}! Our senior growth team has received your project details. We will analyze your requirements and reach out within <strong>2 hours</strong> with a bespoke preliminary growth blueprint.
                   </p>
 
                   <div className={styles.successActions}>

@@ -19,7 +19,7 @@ const founders = [
     dept: 'Executive Leadership',
     image: '/images/team/exec_1.png',
     imagePosition: '50% 10%',
-    bio: 'Founder of Marketing Copilot, a digital marketing agency in Bhubaneswar, driving innovation, digital transformation, and sustainable business growth through strategy, creativity, and measurable results.',
+    bio: 'Founder of Marketing Copilot, a digital marketing agency serving businesses across India, driving innovation, digital transformation, and sustainable business growth through strategy, creativity, and measurable results.',
     quote: 'We drive innovation, digital transformation, and sustainable business growth through strategy, creativity, and measurable results.',
     linkedin: 'https://linkedin.com',
   },

@@ -76,7 +76,7 @@ const diagnosticSectors = [
 const diagnosticBottlenecks = [
   { id: 'high-cpl', label: 'High Cost Per Lead (CPL)', impact: 'Reduce CPL by 45–62% via negative keyword shields & direct funnels' },
   { id: 'poor-quality', label: 'Unverified / Duplicate Leads', impact: 'Eliminate tire-kickers with 2-step OTP qualification & budget filters' },
-  { id: 'maps-rank', label: 'Zero Google Maps 3-Pack Rank', impact: 'Dominate local searches across 12 geo-fenced Bhubaneswar pin codes' },
+  { id: 'maps-rank', label: 'Zero Google Maps 3-Pack Rank', impact: 'Dominate local searches across your designated target market pin codes' },
   { id: 'slow-site', label: 'Slow Website / Low Conversion', impact: 'Upgrade to Next.js 15 loading in <0.8s with interactive micro-commitments' },
 ];
 
@@ -105,7 +105,7 @@ const sectorSimulations: Record<string, {
     name: 'Real Estate & Builders',
     icon: '🏢',
     category: 'Property & Living',
-    tagline: 'High-ticket luxury apartment & villa buyers across Patia, Nayapalli & Pahala',
+    tagline: 'High-ticket luxury apartment & villa buyers across key urban real estate markets',
     baseCpl: 380,
     closeRate: '4% – 7%',
     avgDealValue: '₹65L – ₹2.5Cr',
@@ -113,17 +113,17 @@ const sectorSimulations: Record<string, {
     pipelineMultiplier: 85000,
     primaryChannels: ['Google Search (Exact-Match)', 'Meta 3D Tour Retargeting', 'WhatsApp OTP Routing'],
     stages: [
-      { step: '01', title: 'High-Intent Search Shield', desc: 'Capture active Bhubaneswar buyers searching "3 BHK in Patia" while negative keywords block brokers.' },
+      { step: '01', title: 'High-Intent Search Shield', desc: 'Capture active buyers searching for luxury properties while negative keywords block brokers.' },
       { step: '02', title: 'Sub-Second Virtual Tour', desc: 'Next.js 15 interactive 3D floor plan loads in 0.7s, collecting verified OTP phone numbers.' },
       { step: '03', title: 'Instant Sales Concierge', desc: 'Direct WhatsApp CRM bridge sends site visit calendar invite within 90 seconds of inquiry.' },
     ],
-    verifiedAnchor: 'Utkal Heights & DN Homes Corridors',
+    verifiedAnchor: 'Premium Real Estate Corridors',
   },
   'healthcare': {
     name: 'Healthcare & Clinics',
     icon: '🏥',
     category: 'Healthcare & Wellness',
-    tagline: 'Patient footfall & specialist OP consultations across Saheed Nagar & Khandagiri',
+    tagline: 'Patient footfall & specialist OP consultations across high-intent local health hubs',
     baseCpl: 210,
     closeRate: '22% – 35%',
     avgDealValue: '₹1,500 – ₹45,000',
@@ -131,7 +131,7 @@ const sectorSimulations: Record<string, {
     pipelineMultiplier: 12000,
     primaryChannels: ['Google Maps 3-Pack SEO', 'Doctor Video Ads', 'Automated Slot Booking Bot'],
     stages: [
-      { step: '01', title: 'Local Maps Dominance', desc: 'Rank #1 in Google Local 3-Pack across 12 Bhubaneswar pin codes for "Best Clinic near me".' },
+      { step: '01', title: 'Local Maps Dominance', desc: 'Rank #1 in Google Local 3-Pack across high-density target areas for "Best Clinic near me".' },
       { step: '02', title: 'Doctor Trust Architecture', desc: 'Video case-studies & patient recovery proof build instant clinical authority.' },
       { step: '03', title: 'Automated OP Scheduler', desc: 'WhatsApp bot confirms appointment slot, sends location pin, and eliminates no-shows.' },
     ],
@@ -273,7 +273,7 @@ export default function IndustriesPage() {
   // Simulator State
   const [simSector, setSimSector] = useState<string>('real-estate');
   const [simSpend, setSimSpend] = useState<number>(75000);
-  const [simCorridor, setSimCorridor] = useState<string>('Patia & Infocity');
+  const [simCorridor, setSimCorridor] = useState<string>('Pan-India');
 
   const activeSim = sectorSimulations[simSector] || sectorSimulations['real-estate'];
   const simLeadsMin = Math.max(1, Math.round((simSpend / activeSim.baseCpl) * 0.85));
@@ -295,14 +295,14 @@ export default function IndustriesPage() {
               <ScrollReveal>
                 <div className={styles.heroEyebrow}>
                   <span className={styles.heroEyebrowDot} />
-                  <span>BHUBANESWAR DIGITAL GROWTH</span>
+                  <span>DIGITAL MARKETING SERVICES FOR INDUSTRIES ACROSS INDIA</span>
                 </div>
                 <h1 className={`display-hero ${styles.heroTitle}`}>
-                  Marketing Strategies Built Around How Your Industry Grows
+                  Digital Marketing Services for Industries Across India
                 </h1>
                 <div className={styles.heroSub}>
                   <p>
-                    Every industry has different customers, sales cycles, challenges, and opportunities. At Nova Spark, we build tailored digital marketing campaigns designed around your industry and focused on measurable business growth.
+                    Every industry has different customers, sales cycles, challenges, and opportunities. At Marketing Copilot, we build tailored digital marketing campaigns designed around your industry and focused on measurable business growth.
                   </p>
                 </div>
 
@@ -409,15 +409,15 @@ export default function IndustriesPage() {
             <div className={styles.sectionEyebrowCenter}>
               <div className="eyebrow eyebrow-center">
                 <span className="eyebrow-dot" />
-                BUILT FOR BHUBANESWAR BUSINESSES
+                DRIVING BUSINESS GROWTH WITH DIGITAL MARKETING IN INDIA
               </div>
             </div>
             <h2 className={`display-md ${styles.sectionHeading}`}>
               Industry-Specific Marketing for{' '}
-              <span className="accent-gradient">Bhubaneswar&apos;s Growing Businesses</span>
+              <span className="accent-gradient">Businesses Across India</span>
             </h2>
             <p className={styles.sectionSub}>
-              Different industries need different digital strategies. Nova Spark understands the local market and builds customised marketing systems around your audience, services, competition, and commercial goals.
+              Different industries need different digital strategies. Marketing Copilot understands industry dynamics and builds customised marketing systems around your audience, services, competition, and commercial goals.
             </p>
 
             {/* Interactive Category Filter Pills */}
@@ -557,7 +557,7 @@ export default function IndustriesPage() {
               <span className="accent-gradient">Live CPL &amp; Pipeline Projection Engine.</span>
             </h2>
             <p className={styles.sectionSub}>
-              Select your commercial vertical, adjust your monthly ad spend, and instantly model your verified inbound lead volume, target CPL ceiling, and pipeline value in India.
+              Select your commercial vertical, adjust your monthly ad spend, and project your potential inbound lead volume and pipeline value based on your industry, target market, and monthly marketing investment.
             </p>
           </ScrollReveal>
 
@@ -567,7 +567,7 @@ export default function IndustriesPage() {
               <div className={styles.simTopBar}>
                 <div className={styles.simTopBarTitleWrap}>
                   <span className={styles.simLivePulse} />
-                  <span className={styles.simTopBarTitle}>ODISHA SECTOR SIMULATOR v2.4</span>
+                  <span className={styles.simTopBarTitle}>INDIA INDUSTRY GROWTH SIMULATOR v2.4</span>
                 </div>
                 <div className={styles.simSectorTabs}>
                   {Object.entries(sectorSimulations).map(([secKey, secData]) => {
@@ -640,19 +640,24 @@ export default function IndustriesPage() {
                     </div>
                   </div>
 
-                  {/* Target Corridor Picker */}
+                  {/* Target Market / Location Picker */}
                   <div className={styles.simControlCard}>
                     <div className={styles.simControlHeader}>
-                      <span className={styles.simControlLabel}>TARGET BHUBANESWAR CORRIDOR</span>
+                      <span className={styles.simControlLabel}>TARGET MARKET / LOCATION</span>
                       <span className={styles.simCorridorCurrent}>📍 {simCorridor}</span>
                     </div>
                     <div className={styles.simCorridorChips}>
                       {[
-                        'Patia & Infocity',
-                        'Saheed Nagar',
-                        'Chandrasekharpur',
-                        'Khandagiri & Nayapalli',
-                        'All Bhubaneswar & Cuttack',
+                        'Pan-India',
+                        'Mumbai',
+                        'Delhi NCR',
+                        'Bangalore',
+                        'Hyderabad',
+                        'Pune',
+                        'Chennai',
+                        'Kolkata',
+                        'Ahmedabad',
+                        'Bhubaneswar',
                       ].map(corridor => (
                         <button
                           key={corridor}
@@ -974,13 +979,13 @@ export default function IndustriesPage() {
             <div className={styles.bespokeBannerCard}>
               <div className={styles.bannerGlow} />
               <div className={styles.bannerBadge}>
-                THE NOVA SPARK GROWTH SESSION
+                THE COPILOT GROWTH SESSION
               </div>
               <h2 className={styles.bannerTitle}>
                 Know Where Your Business Can Grow Next
               </h2>
               <p className={styles.bannerSub}>
-                Let&apos;s identify what’s working, what’s holding your digital growth back, and where your biggest opportunities are. Nova Spark will assess your current marketing, competitors, audience, and channels before mapping out your next 90 days.
+                Let&apos;s identify what’s working, what’s holding your digital growth back, and where your biggest opportunities are. Marketing Copilot will assess your current marketing, competitors, audience, and channels before mapping out your next 90 days.
               </p>
 
               <div className={styles.bannerButtonsRow}>

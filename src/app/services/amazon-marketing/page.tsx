@@ -10,7 +10,7 @@ import QuickConnectMapSection from '@/app/_components/QuickConnectMapSection';
 
 import styles from './amazon-marketing-page.module.css';
 
-// 4 Pillars of Why Choose Nova Spark Digital
+// 4 Pillars of Why Choose Marketing Copilot
 const whyChoosePillars = [
   {
     icon: '📊',
@@ -87,7 +87,7 @@ const amazonFaqs = [
   },
   {
     q: 'Do you manage Amazon PPC campaigns?',
-    a: 'Yes. Nova Spark Digital can help with Amazon PPC campaign setup, keyword research, targeting, bid optimization, search-term analysis, negative keywords, monitoring, and reporting.',
+    a: 'Yes. Marketing Copilot can help with Amazon PPC campaign setup, keyword research, targeting, bid optimization, search-term analysis, negative keywords, monitoring, and reporting.',
   },
   {
     q: 'Can you help with a new Amazon product launch?',
@@ -114,7 +114,7 @@ export default function AmazonMarketingPage() {
             <ScrollReveal>
               <div className={styles.heroEyebrowPill}>
                 <span className={styles.emeraldPulseDot} />
-                <span>Amazon Growth &amp; PPC · Bhubaneswar</span>
+                <span>Amazon Marketing &amp; PPC for Indian Brands</span>
               </div>
 
               <h1 className={styles.heroTitle}>
@@ -286,17 +286,17 @@ export default function AmazonMarketingPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          4. WHY CHOOSE NOVA SPARK DIGITAL FOR AMAZON MARKETING?
+          4. WHY CHOOSE MARKETING COPILOT FOR AMAZON MARKETING?
          ══════════════════════════════════════════════════ */}
       <section className={styles.whyChooseSection}>
         <div className="container">
           <ScrollReveal className={styles.whyChooseHeader}>
             <div className={styles.sectionHeaderBadge}>
               <span className={styles.badgeDot} />
-              <span>THE NOVA SPARK ADVANTAGE</span>
+              <span>THE COPILOT ADVANTAGE</span>
             </div>
             <h2 className={styles.sectionHeading}>
-              Why Choose Nova Spark Digital for Amazon Marketing?
+              Why Choose Marketing Copilot for Amazon Marketing?
             </h2>
             <p className={styles.narrativeParagraph}>
               Choosing the right marketing partner can make a difference when managing a competitive ecommerce marketplace.
@@ -337,13 +337,13 @@ export default function AmazonMarketingPage() {
                   Amazon Marketing Agency in India
                 </h2>
                 <p className={styles.narrativeParagraph}>
-                  Nova Spark Digital is an Amazon marketing agency in India that can help you make a stronger presence on Amazon.
+                  Marketing Copilot is an Amazon marketing agency in India that can help you build an unquestioned category presence on Amazon.
                 </p>
                 <p className={styles.narrativeParagraph}>
                   We handle businesses looking to boost product visibility, optimize their Amazon listing, and leverage Amazon advertising more effectively.
                 </p>
                 <p className={styles.narrativeParagraph}>
-                  Being based in Bhubaneswar, we know the needs of local businesses, and our digital marketing strategy can work well for brands that target customers from all over India and the world.
+                  With our studio roots in Bhubaneswar and national client footprint, we understand the nuances of manufacturing and D2C brands, scaling them into nationwide leaders across Amazon India and global marketplaces.
                 </p>
                 <p className={styles.narrativeParagraph}>
                   Our Amazon marketing strategies are designed for startups, expanding e-commerce businesses, and established brands alike, depending on your current stage and growth objectives.
@@ -358,8 +358,8 @@ export default function AmazonMarketingPage() {
                 <div className={styles.agencyMiniCard}>
                   <div className={styles.miniIconBox}>🏙️</div>
                   <div>
-                    <div className={styles.agencyMiniTitle}>Bhubaneswar Local Insight</div>
-                    <div className={styles.agencyMiniSub}>Hands-on regional support tailored to regional manufacturers &amp; founders.</div>
+                    <div className={styles.agencyMiniTitle}>Indian Market Insight</div>
+                    <div className={styles.agencyMiniSub}>Hands-on regional understanding combined with nationwide marketplace playbooks.</div>
                   </div>
                 </div>
 
@@ -406,7 +406,7 @@ export default function AmazonMarketingPage() {
                   Amazon PPC is far more than automated bidding. It is your most powerful intelligence engine. When managed with surgical accuracy, paid campaigns reveal exact shopper intent, harvest high-converting search queries, and drive the sales velocity needed to dominate Page 1 organic placements.
                 </p>
                 <p className={styles.narrativeParagraph}>
-                  At Nova Spark Digital, our Amazon specialists structure strict keyword silos, continuous negative match pruning, and automated dayparting schedules to maintain aggressive Top-of-Search visibility at the lowest possible ACoS.
+                  At Marketing Copilot, our Amazon specialists structure strict keyword silos, continuous negative match pruning, and automated dayparting schedules to maintain aggressive Top-of-Search visibility at the lowest possible ACoS.
                 </p>
 
                 <div className={styles.showcasePoints}>
@@ -577,7 +577,7 @@ export default function AmazonMarketingPage() {
                 </h3>
                 <p className={styles.caseSummary}>
                   Heed Organics had high-quality organic formulations but suffered from 42% ACoS bleed under an
-                  unsegmented auto-campaign agency. Nova Spark Digital restructured their catalog into single-ASIN exact match silos,
+                  unsegmented auto-campaign agency. Marketing Copilot restructured their catalog into single-ASIN exact match silos,
                   optimized listing keywords, and unlocked #1 Best Seller status.
                 </p>
 
@@ -597,7 +597,7 @@ export default function AmazonMarketingPage() {
                 </div>
 
                 <div className={styles.caseQuote}>
-                  &ldquo;Nova Spark Digital completely transformed our Amazon presence. The new listing optimization and negative keyword targeting slashed our ad spend in half while tripling our monthly sales.&rdquo;
+                  &ldquo;Marketing Copilot completely transformed our Amazon presence. The new listing optimization and negative keyword targeting slashed our ad spend in half while tripling our monthly sales.&rdquo;
                   <span className={styles.quoteAuthor}>— Pratik S., Founder, Heed Organics</span>
                 </div>
               </div>
@@ -669,11 +669,11 @@ export default function AmazonMarketingPage() {
                 </p>
                 <div className={styles.termContact}>
                   <span>Direct Line:</span>
-                  <a href="tel:+919876543210" className={styles.termPhone}>
-                    +91 98765 43210
+                  <a href="tel:+918280788689" className={styles.termPhone}>
+                    +91 82807 88689
                   </a>
                   <span>·</span>
-                  <span>Bhubaneswar HQ (Patia Corridor)</span>
+                  <span>Bhubaneswar HQ · Serving Brands Across India</span>
                 </div>
               </div>
 

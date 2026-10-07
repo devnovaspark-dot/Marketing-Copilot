@@ -16,13 +16,13 @@ const PHASES: RoadmapPhase[] = [
   {
     phase: 1,
     timeline: 'Days 1 – 7',
-    title: 'Competitor Recon, Keyword Architecture & Negative Shield',
-    description: 'We audit Bhubaneswar search query auction data, extract competitor CPCs and ad copy, and deploy our pre-compiled 400+ Odisha negative keyword library.',
-    deliverable: 'Bhubaneswar Intent Map + Negative Shield Installed',
+    title: 'Market Recon, Keyword Architecture & Negative Shield',
+    description: 'We audit search query auction data across your target Indian markets, extract competitor CPCs and ad copy, and deploy our pre-compiled negative keyword library.',
+    deliverable: 'India Market Intent Map + Negative Shield Installed',
     items: [
-      'Auction Insights competitor analysis (Patia, Saheed Nagar, Nayapalli)',
+      'Auction Insights competitor analysis across target metro & regional hubs',
       'Single-Theme Ad Group (STAG) keyword mapping',
-      'Negative keyword list deployment to prevent student/free search waste',
+      'Negative keyword list deployment to prevent low-intent search waste',
       'CallRail Dynamic Number Insertion & GA4 sGTM container setup',
     ],
   },
@@ -34,7 +34,7 @@ const PHASES: RoadmapPhase[] = [
     deliverable: 'Custom High-Speed Landers + 15 RSA Headlines',
     items: [
       'Sub-800ms mobile Next.js landing page with one-tap calling',
-      'Headline and description testing tailored for Bhubaneswar buyers',
+      'Headline and description testing tailored for high-intent buyers',
       'Sitelinks, callouts, and local showroom structured snippet extensions',
       'Click-to-WhatsApp direct sales closing channel activation',
     ],

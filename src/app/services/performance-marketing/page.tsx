@@ -63,13 +63,13 @@ const performanceServices = [
   },
 ];
 
-// 4 Pillars of Why Choose Nova Spark
+// 4 Pillars of Why Choose Marketing Copilot
 const whyPillars = [
   {
     icon: '🏙️',
-    tag: 'BHUBANESWAR & REGIONAL EXPERTISE',
-    title: 'Local Market Understanding',
-    desc: 'We know the different business landscape of Bhubaneswar, ranging from start-ups, education, healthcare, real estate, retail, to hospitality. When creating campaigns for your business, we take your audience, location, competition and customer behaviour into consideration.',
+    tag: 'INDIAN MARKET INTELLIGENCE & EXPERTISE',
+    title: 'Market Understanding',
+    desc: 'We understand the diverse business landscape across India, ranging from startups, education, healthcare, real estate, retail, to hospitality and D2C brands. When creating campaigns for your business, we take your audience, location, competition, and customer behaviour into consideration.',
   },
   {
     icon: '🔄',
@@ -139,7 +139,7 @@ const performanceFaqs = [
   },
   {
     q: 'Do you provide Google Ads management in India?',
-    a: 'Yes. Nova Spark can handle Google Ads ads for businesses in India, as well as businesses globally.',
+    a: 'Yes. Marketing Copilot manages high-impact Google Ads campaigns for businesses across India and internationally.',
   },
   {
     q: 'Do you provide Meta Ads management?',
@@ -236,7 +236,7 @@ export default function PerformanceMarketingPage() {
               <span className="accent-gradient">Measurable Growth Opportunity</span>
             </h2>
             <p className={styles.sectionDesc}>
-              Instead of running isolated campaigns across different platforms, Nova Spark creates a full-funnel performance marketing system that connects awareness, consideration, conversion, and retention.
+              Instead of running isolated campaigns across different platforms, Marketing Copilot creates a full-funnel performance marketing system that connects awareness, consideration, conversion, and retention.
             </p>
           </ScrollReveal>
 
@@ -264,7 +264,7 @@ export default function PerformanceMarketingPage() {
               <div className={styles.funnelBannerImgWrap}>
                 <Image
                   src="/images/Funnel Architecture.jpg"
-                  alt="Nova Spark Full-Funnel Performance Architecture"
+                  alt="Marketing Copilot Full-Funnel Performance Architecture"
                   fill
                   sizes="(max-width: 1024px) 100vw, 550px"
                   className={styles.bannerImg}
@@ -330,7 +330,7 @@ export default function PerformanceMarketingPage() {
               <div className={styles.visualImgWrapper}>
                 <Image
                   src="/images/Cross-Network_.jpg"
-                  alt="Nova Spark Google Ads & Meta Ads Performance Engine Bhubaneswar"
+                  alt="Marketing Copilot Google Ads & Meta Ads Performance Engine"
                   fill
                   sizes="(max-width: 1024px) 100vw, 600px"
                   className={styles.showcaseImg}
@@ -373,20 +373,20 @@ export default function PerformanceMarketingPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          5. WHY CHOOSE NOVA SPARK FOR PERFORMANCE MARKETING
+          5. WHY CHOOSE MARKETING COPILOT FOR PERFORMANCE MARKETING
          ══════════════════════════════════════════════════ */}
       <section className={styles.whySection}>
         <div className="container">
           <ScrollReveal className={styles.sectionHeader}>
             <div className={styles.eyebrow}>
-              <span>Why Choose Nova Spark for Performance Marketing in India?</span>
+              <span>Performance Marketing for Businesses Across India</span>
             </div>
             <h2 className={styles.sectionTitle}>
               Smart Strategy Backed by{' '}
               <span className="accent-gradient">Performance Data</span>
             </h2>
             <p className={styles.sectionDesc}>
-              A disciplined, data-first acquisition methodology built for the realities of Bhubaneswar and national scaling.
+              A disciplined, data-first acquisition methodology built for the realities of Indian markets and national scaling.
             </p>
           </ScrollReveal>
 
@@ -412,13 +412,13 @@ export default function PerformanceMarketingPage() {
             <div className={styles.whyImageBanner}>
               <div className={styles.whyBannerContent}>
                 <div className={styles.whyBannerBadge}>
-                  <span>🏛️ BHUBANESWAR PERFORMANCE GROWTH LAB</span>
+                  <span>⚡ HIGH-GROWTH PERFORMANCE LAB</span>
                 </div>
                 <h3 className={styles.whyBannerTitle}>
-                  Local Market Mastery Backed by Quantitative Ad Intelligence
+                  Market Intelligence Backed by Quantitative Ad Analytics
                 </h3>
                 <p className={styles.whyBannerDesc}>
-                  From Saheed Nagar and Patia to high-growth regional hubs across Odisha, we test, refine, and scale conversion funnels with complete transparency and zero wasted ad spend.
+                  From metro corridors to high-growth regional hubs across India, we test, refine, and scale conversion funnels with complete transparency and zero wasted ad spend.
                 </p>
                 <div style={{ marginTop: '8px' }}>
                   <BeamButton href="/contact" label="Schedule a Strategy Consultation →" size="md" />
@@ -427,7 +427,7 @@ export default function PerformanceMarketingPage() {
               <div className={styles.whyBannerImgWrap}>
                 <Image
                   src="/images/Growth Banner.jpg"
-                  alt="Nova Spark Performance Marketing Agency Bhubaneswar Growth Mastery"
+                  alt="Marketing Copilot Performance Marketing Agency Growth Mastery"
                   fill
                   sizes="(max-width: 1024px) 100vw, 550px"
                   className={styles.bannerImg}
@@ -455,7 +455,7 @@ export default function PerformanceMarketingPage() {
               </h2>
 
               <p className={styles.analyticsLead}>
-                Without accurate tracking, it is difficult to understand which campaigns, audiences, and channels are generating meaningful business outcomes. Nova Spark helps businesses establish a clear measurement framework across their digital campaigns.
+                Without accurate tracking, it is difficult to understand which campaigns, audiences, and channels are generating meaningful business outcomes. Marketing Copilot helps businesses establish a clear measurement framework across their digital campaigns.
               </p>
 
               {/* Measurement Stack Pills */}
@@ -554,7 +554,7 @@ export default function PerformanceMarketingPage() {
               <span className="accent-gradient">Scale Architecture</span>
             </h2>
             <p className={styles.sectionDesc}>
-              Real-time campaign telemetry tracking blended ROAS, customer acquisition costs, and qualified conversions across Odisha.
+              Real-time campaign telemetry tracking blended ROAS, customer acquisition costs, and qualified conversions across India.
             </p>
           </ScrollReveal>
 
@@ -566,7 +566,7 @@ export default function PerformanceMarketingPage() {
                 <div className={styles.dashboardImgWrap}>
                   <Image
                     src="/images/Dashboard Telemetry_.jpg"
-                    alt="Nova Spark Performance Marketing Live Dashboard Telemetry"
+                    alt="Marketing Copilot Performance Marketing Live Dashboard Telemetry"
                     fill
                     sizes="(max-width: 1024px) 100vw, 650px"
                     className={styles.dashboardImg}
@@ -596,7 +596,7 @@ export default function PerformanceMarketingPage() {
                 <div className={styles.dashboardImgWrap}>
                   <Image
                     src="/images/hero_performance_scale.jpg"
-                    alt="Nova Spark Performance Marketing Scaling Architecture Bhubaneswar"
+                    alt="Marketing Copilot Performance Marketing Scaling Architecture"
                     fill
                     sizes="(max-width: 1024px) 100vw, 650px"
                     className={styles.dashboardImg}
@@ -749,7 +749,7 @@ export default function PerformanceMarketingPage() {
               </h2>
 
               <p className={styles.homeCtaSub}>
-                Ready to eliminate wasted ad budget and scale revenue predictably? Claim your free performance audit and strategic roadmap from Nova Spark today.
+                Ready to eliminate wasted ad budget and scale revenue predictably? Claim your free performance audit and strategic roadmap from Marketing Copilot today.
               </p>
 
               <div className={styles.homeCtaActions}>
