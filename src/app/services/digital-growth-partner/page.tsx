@@ -138,211 +138,241 @@ const metroHubDetails: Record<
   },
 };
 
-interface StoryChapter {
+interface GrowthCapability {
   id: string;
-  stageNumber: string;
-  stageTitle: string;
-  stageShortTitle: string;
   icon: string;
-  timelineLabel: string;
-  traditional: {
-    badge: string;
-    headline: string;
-    storyText: string;
-    diagnosticLabel: string;
-    metrics: { label: string; value: string }[];
-    realityQuote: string;
-  };
-  copilot: {
-    badge: string;
-    headline: string;
-    storyText: string;
-    diagnosticLabel: string;
-    metrics: { label: string; value: string }[];
-    growthPromise: string;
-  };
+  title: string;
+  category: string;
+  stage: string;
+  shortDesc: string;
+  metricNum: string;
+  metricLabel: string;
+  turnaround: string;
+  techStack: string[];
+  workflow: { step: string; title: string; desc: string }[];
 }
 
-const storyChapters: StoryChapter[] = [
+const growthStackCapabilities: GrowthCapability[] = [
   {
-    id: 'assets',
-    stageNumber: '01',
-    stageTitle: 'Asset & Data Sovereignty',
-    stageShortTitle: 'Asset Sovereignty',
-    icon: '🔐',
-    timelineLabel: 'Day 1 Root Access',
-    traditional: {
-      badge: '⚠️ THE RETAINER TRAP: LOCKED IN AGENCY BLACK-BOX',
-      headline: 'Proprietary Pixel Hostage & Lost Data History',
-      storyText:
-        'Conventional agencies configure Google Ads and Meta Pixels inside their private agency Business Managers. If you ever leave or dispute fees, you lose years of ad pixel training, lookalike audience data, and custom conversion events.',
-      diagnosticLabel: 'AGENCY HOSTAGE AUDIT',
-      metrics: [
-        { label: 'Pixel & Ad Account', value: 'Agency Locked (No Root Access)' },
-        { label: 'Audience Portability', value: '0% (Non-Transferable)' },
-        { label: 'Exit Penalty', value: 'Years of Optimization Erased' },
-      ],
-      realityQuote:
-        '“We invested ₹35 Lakhs over 18 months, but when we parted ways, the agency locked our ad manager and refused access.”',
-    },
-    copilot: {
-      badge: '👑 THE COPILOT ADVANTAGE: 100% ENTERPRISE SOVEREIGNTY',
-      headline: 'You Own Every Pixel, Codebase & Audience From Day 1',
-      storyText:
-        'We set up everything directly under your corporate domain and organization IDs. You hold root super-admin ownership over all ad accounts, GA4 telemetry, Meta CAPI credentials, and Next.js repositories. Your enterprise equity stays with you forever.',
-      diagnosticLabel: 'CO-PILOT SOVEREIGNTY PROTOCOL',
-      metrics: [
-        { label: 'Pixel & Ad Account', value: '100% Client Super-Admin' },
-        { label: 'Audience Portability', value: 'Instant 1-Click Root Access' },
-        { label: 'Asset Retention', value: 'Permanent Client IP Ownership' },
-      ],
-      growthPromise:
-        'Zero hostage traps. Every single rupee of ad spend builds compounding algorithmic equity in accounts you permanently control.',
-    },
+    id: 'seo',
+    icon: '⚡',
+    title: 'Search Engine Optimization',
+    category: 'Demand Capture',
+    stage: 'Top-Funnel Influx',
+    shortDesc: 'Technical SEO audits, semantic schema, and topic cluster architecture to secure #1 rankings for high-intent queries.',
+    metricNum: '+187%',
+    metricLabel: 'Organic Search Lift',
+    turnaround: 'Continuous Sprints',
+    techStack: ['Schema Entity Graph', 'Core Web Vitals < 0.8s', 'Programmatic Topic Hubs'],
+    workflow: [
+      { step: '01', title: 'Technical & Entity Audit', desc: 'Fix crawl budget, duplicate canonicals & structured JSON-LD data.' },
+      { step: '02', title: 'Commercial Keyword Fortress', desc: 'Target bottom-funnel transactional queries with high buyer intent.' },
+      { step: '03', title: 'Authority & Link Graph', desc: 'Distribute PageRank to high-margin pages to outrank legacy competitors.' },
+    ],
   },
   {
-    id: 'leadership',
-    stageNumber: '02',
-    stageTitle: 'War Room Leadership',
-    stageShortTitle: 'Founder-Led War Room',
+    id: 'google-ads',
     icon: '🎯',
-    timelineLabel: 'Direct Strategic Pod',
-    traditional: {
-      badge: '⚠️ THE JUNIOR BAIT-AND-SWITCH',
-      headline: 'Pitched by Charismatic Execs, Managed by Interns',
-      storyText:
-        'You are charmed during sales calls by agency directors and senior strategists. But within 14 days of signing, your brand is handed down to fresh junior interns juggling 12 other client accounts. Strategic questions get lost in slow support ticket queues.',
-      diagnosticLabel: 'ALLOCATION REALITY AUDIT',
-      metrics: [
-        { label: 'Account Handler', value: 'Junior Interns (12+ Accounts)' },
-        { label: 'Response Protocol', value: '48-72h Generic Ticketing' },
-        { label: 'Sprint Oversight', value: 'Passive Out-of-the-Box Templates' },
-      ],
-      realityQuote:
-        '“Our cost-per-lead tripled in festive season, but our account manager was on leave and nobody else had context on our campaigns.”',
-    },
-    copilot: {
-      badge: '👑 THE COPILOT ADVANTAGE: FOUNDER-LED EXECUTION POD',
-      headline: 'Direct War Room With Senior Founders & Growth Architects',
-      storyText:
-        'You collaborate directly with seasoned growth engineers and founding partners who have scaled multi-crore pipelines. Dedicated WhatsApp and Slack war rooms give you immediate strategic pivots with sub-2-hour turnaround and zero telephone-game friction.',
-      diagnosticLabel: 'CO-PILOT EXECUTION POD',
-      metrics: [
-        { label: 'Account Handler', value: 'Senior Founders & Lead Operators' },
-        { label: 'Response Protocol', value: '< 2 Hours Direct WhatsApp SLA' },
-        { label: 'Sprint Oversight', value: 'Daily Bid & Funnel Optimization' },
-      ],
-      growthPromise:
-        'Real operators with skin in the game. You work directly with the strategists who architect and deploy your campaigns.',
-    },
+    title: 'Google Ads & Performance Max',
+    category: 'Demand Capture',
+    stage: 'Immediate High-Intent',
+    shortDesc: 'High-ROAS search, Shopping, and Performance Max campaigns with precision negative keyword shields and smart bidding.',
+    metricNum: '4.2X',
+    metricLabel: 'Blended ROAS Target',
+    turnaround: '48-Hour Live Kickoff',
+    techStack: ['Exact-Match Negative Shields', 'Enhanced Conversions API', 'Value-Based Smart Bidding'],
+    workflow: [
+      { step: '01', title: 'Negative Keyword Shield', desc: 'Eliminate 30-40% wasted spend on irrelevant, junk, and competitor terms.' },
+      { step: '02', title: 'High-Intent SKAG Matrix', desc: 'Align ad copy tightly with specific high-converting customer searches.' },
+      { step: '03', title: 'CAPI Server Attribution', desc: 'Feed real purchase and lead quality signals back to Google algorithms.' },
+    ],
   },
   {
-    id: 'scoreboard',
-    stageNumber: '03',
-    stageTitle: 'The True Scoreboard',
-    stageShortTitle: 'Bankable GMV & ROAS',
-    icon: '📊',
-    timelineLabel: 'Audited Financials',
-    traditional: {
-      badge: '⚠️ THE VANITY METRIC ILLUSION',
-      headline: '40-Page PDF Reports of Meaningless Impressions',
-      storyText:
-        'End-of-month reviews are dominated by vanity numbers: "2.4 Million Impressions!", "80,000 Reach!", "15,000 Clicks!". But when your executive leadership looks at your bank account and CRM qualified leads, net revenue remains stagnant.',
-      diagnosticLabel: 'REPORTING TRANSPARENCY AUDIT',
-      metrics: [
-        { label: 'North Star Metric', value: 'Vanity Impressions & Clicks' },
-        { label: 'Attribution Model', value: 'Vague Disconnected Spreadsheets' },
-        { label: 'CRM Alignment', value: 'Zero Integration With Sales CRM' },
-      ],
-      realityQuote:
-        '“The agency kept celebrating reaching 1M impressions, while our actual sales pipeline was starving for qualified leads.”',
-    },
-    copilot: {
-      badge: '👑 THE COPILOT ADVANTAGE: REVENUE ATTRIBUTION',
-      headline: 'Bankable GMV, Qualified Pipeline & Net Cash Margin',
-      storyText:
-        'We throw vanity metrics into the trash. Every ad dollar is tracked through server-side Meta CAPI and Google Enhanced Conversions directly into your CRM or e-commerce gateway. We evaluate performance purely on verified revenue, CAC, and bottom-line margin.',
-      diagnosticLabel: 'CO-PILOT REVENUE TELEMETRY',
-      metrics: [
-        { label: 'North Star Metric', value: 'Audited Pipeline, ROAS & GMV' },
-        { label: 'Attribution Model', value: 'First-Party Server-Side CAPI' },
-        { label: 'CRM Alignment', value: 'Live 2-Way CRM & Webhook Sync' },
-      ],
-      growthPromise:
-        'No smoke and mirrors. We measure success by whether your business deposits grow and your customer acquisition scales profitably.',
-    },
+    id: 'meta-ads',
+    icon: '🚀',
+    title: 'Meta Ads & Advantage+',
+    category: 'Demand Capture',
+    stage: 'Viral Paid Scale',
+    shortDesc: 'Full-funnel Facebook & Instagram advertising powered by Advantage+ budgeting, UGC creatives, and Conversions API.',
+    metricNum: '-42%',
+    metricLabel: 'Cost Per Acquisition',
+    turnaround: '48-Hour Live Kickoff',
+    techStack: ['Meta CAPI First-Party Pixel', '12 UGC Hook Variations / Mo', 'Advantage+ Shopping Engine'],
+    workflow: [
+      { step: '01', title: 'UGC Creative Lab', desc: 'Produce native short-form video hooks that bypass banner blindness.' },
+      { step: '02', title: 'Server-Side CAPI Sync', desc: 'Bypass iOS ad blockers with direct server-to-server event telemetry.' },
+      { step: '03', title: 'Dynamic Retargeting Funnel', desc: 'Re-engage cart drop-offs and high-value visitors with social proof.' },
+    ],
+  },
+  {
+    id: 'social',
+    icon: '📱',
+    title: 'Social Media & Creator Authority',
+    category: 'Brand Resonance',
+    stage: 'Community Velocity',
+    shortDesc: 'Thumb-stopping short-form Reels, community building, and founder authority that turns casual viewers into brand advocates.',
+    metricNum: '10X',
+    metricLabel: 'Engagement Amplification',
+    turnaround: 'Weekly Content Pods',
+    techStack: ['Short-Form Video Production', 'Founder Personal Branding', 'Community DM Funnels'],
+    workflow: [
+      { step: '01', title: 'Content Calendar Blueprint', desc: 'Map viral cultural hooks and customer pain-point solutions.' },
+      { step: '02', title: 'High-Fidelity Post-Production', desc: 'Subtitles, pacing, and visual graphics optimized for mobile retention.' },
+      { step: '03', title: 'Automated DM Lead Influx', desc: 'Trigger automated WhatsApp / Instagram DM conversation flows on comment.' },
+    ],
+  },
+  {
+    id: 'geo-aeo',
+    icon: '🤖',
+    title: 'GEO / AEO (AI Search Engine Optimization)',
+    category: 'Brand Resonance',
+    stage: 'Next-Gen Discovery',
+    shortDesc: 'Be the primary cited authority inside ChatGPT, Perplexity, Claude, and Google AI Overviews using entity-rich content graphs.',
+    metricNum: 'Top 3',
+    metricLabel: 'AI Engine Citations',
+    turnaround: '30-Day Entity Sprint',
+    techStack: ['Entity Vector Graphs', 'Knowledge Graph Schema', 'Citation Ingestion Architecture'],
+    workflow: [
+      { step: '01', title: 'Entity Disambiguation', desc: 'Structure your brand, founders, and services in Wikidata and schema.' },
+      { step: '02', title: 'AI Answer Extraction Format', desc: 'Format core content with direct, factual Q&As optimized for LLM scrapers.' },
+      { step: '03', title: 'Authoritative Co-Citation Network', desc: 'Earn citations in industry publications referenced by AI training datasets.' },
+    ],
+  },
+  {
+    id: 'web-dev',
+    icon: '💻',
+    title: 'High-Conversion Next.js Web Engineering',
+    category: 'Conversion Infrastructure',
+    stage: 'Sub-Second Speed',
+    shortDesc: 'Sub-second speed Next.js websites built with responsive tactile skeuomorphic design, zero bloat, and CAPI hooks.',
+    metricNum: '< 0.8s',
+    metricLabel: 'Largest Contentful Paint',
+    turnaround: '14-Day Rapid Deployment',
+    techStack: ['Next.js 16 App Router', 'Turbopack Edge CDN', 'Zero-Bloat Vanilla CSS'],
+    workflow: [
+      { step: '01', title: 'High-Converting Wireframes', desc: 'Eliminate friction, shorten form fields, and introduce trust proof cues.' },
+      { step: '02', title: 'Edge-Rendered Engineering', desc: 'Deploy on serverless edge nodes for instant nationwide loading speed.' },
+      { step: '03', title: 'Built-in Tracking Architecture', desc: 'Wired with GA4, Tag Manager, and Meta CAPI webhooks from day one.' },
+    ],
+  },
+  {
+    id: 'content',
+    icon: '✍️',
+    title: 'High-Authority Content Marketing',
+    category: 'Brand Resonance',
+    stage: 'Trust Compounding',
+    shortDesc: 'In-depth industry whitepapers, teardowns, buyer guides, and lead magnets that establish category leadership.',
+    metricNum: '+240%',
+    metricLabel: 'Organic Lead Inflow',
+    turnaround: 'Bi-Weekly Publications',
+    techStack: ['Original Teardowns', 'Gated ROI Calculators', 'Buyer Journey Alignment'],
+    workflow: [
+      { step: '01', title: 'High-Intent Content Mapping', desc: 'Pinpoint exact questions decision-makers research before purchasing.' },
+      { step: '02', title: 'Original Data & Teardowns', desc: 'Produce data-backed articles and case studies competitors cannot replicate.' },
+      { step: '03', title: 'Lead Magnet Conversions', desc: 'Capture email and WhatsApp contact details with high-value templates.' },
+    ],
+  },
+  {
+    id: 'cro',
+    icon: '🧪',
+    title: 'Conversion Rate Optimization (CRO)',
+    category: 'Conversion Infrastructure',
+    stage: 'Multiplier Engine',
+    shortDesc: 'Continuous multivariate testing of headlines, checkout friction, form fields, and trust proof to double conversion rate.',
+    metricNum: '+54%',
+    metricLabel: 'Conversion Rate Lift',
+    turnaround: 'Continuous 14-Day Sprints',
+    techStack: ['Hotjar Heatmaps', 'Multivariate Split Testing', 'Post-Click Funnel Tuning'],
+    workflow: [
+      { step: '01', title: 'Friction & Drop-Off Diagnostics', desc: 'Analyze session recordings to identify where users hesitate and abandon.' },
+      { step: '02', title: 'Hypothesis A/B Testing', desc: 'Test bold headline variations, streamlined forms, and localized trust proof.' },
+      { step: '03', title: 'Compounded Implementation', desc: 'Permanently bake winning variants into core codebase for compounded gains.' },
+    ],
+  },
+];
+
+interface ComparisonPoint {
+  id: string;
+  dimension: string;
+  category: 'all' | 'ownership' | 'team' | 'speed';
+  traditionalTitle: string;
+  traditionalDesc: string;
+  copilotTitle: string;
+  copilotDesc: string;
+}
+
+const comparisonPoints: ComparisonPoint[] = [
+  {
+    id: 'team',
+    dimension: 'Account Leadership',
+    category: 'team',
+    traditionalTitle: 'Junior Account Managers & Fresh Interns',
+    traditionalDesc: 'Handed off to 22-year-old account managers juggling 12+ other brands simultaneously. Communication gets lost in slow support ticket queues.',
+    copilotTitle: 'Founders & Lead Growth Architects Directly',
+    copilotDesc: 'Direct WhatsApp and Slack war room with seasoned growth engineers and founding partners. Live strategic pivots with a sub-2-hour response SLA.',
+  },
+  {
+    id: 'metrics',
+    dimension: 'North Star Metric',
+    category: 'all',
+    traditionalTitle: 'Vanity Impressions & Click Reports',
+    traditionalDesc: '40-page PDF decks touting impressions and clicks while your executive team is left wondering why actual net sales and cash margin remain flat.',
+    copilotTitle: 'Bankable GMV Pipeline & Blended ROAS',
+    copilotDesc: 'Every rupee is tracked through server-side Meta CAPI and Google Enhanced Conversions directly to your CRM. Success is judged purely on verified revenue.',
+  },
+  {
+    id: 'ownership',
+    dimension: 'Data & Asset Ownership',
+    category: 'ownership',
+    traditionalTitle: 'Held Hostage in Agency Ad Manager',
+    traditionalDesc: 'Pixels and ad accounts configured inside proprietary agency accounts. If you leave or dispute retainers, you lose years of ad pixel training.',
+    copilotTitle: '100% Root Client Admin Ownership',
+    copilotDesc: 'Root super-admin ownership over all ad accounts, GA4, Meta pixels, and Next.js repositories registered in your corporate name from Day 1.',
   },
   {
     id: 'speed',
-    stageNumber: '04',
-    stageTitle: 'Execution Velocity',
-    stageShortTitle: 'Full-Stack Pod',
-    icon: '⚡',
-    timelineLabel: '48-Hour Live Sprints',
-    traditional: {
-      badge: '⚠️ THE 3-VENDOR FINGER-POINTING TRAP',
-      headline: 'Endless Delays Between Devs, Designers & Media Buyers',
-      storyText:
-        'Your SEO agency complains that your website developer is too slow. Your website developer takes 3 weeks to change a landing page headline. The media buying team blames the creative designer for ad fatigue. Sprints stall while you play full-time mediator.',
-      diagnosticLabel: 'ORGANIZATIONAL FRICTION AUDIT',
-      metrics: [
-        { label: 'Landing Page Deployment', value: '3 to 4 Weeks Per Variant' },
-        { label: 'Creative Velocity', value: '1-2 Generic Creatives / Month' },
-        { label: 'Vendor Coordination', value: '3 Disconnected Third Parties' },
-      ],
-      realityQuote:
-        '“Testing a simple promotional landing page took a whole month because three different agencies couldn’t agree on tracking tags.”',
-    },
-    copilot: {
-      badge: '👑 THE COPILOT ADVANTAGE: SYNCHRONIZED POD',
-      headline: 'Sub-Second Next.js Code, Viral Creatives & Ad Bids in Sync',
-      storyText:
-        'A single synchronized growth pod where high-converting engineering, viral UGC video production, and algorithmic ad buying operate in lockstep. A new sub-second landing page with 12 video creative hooks is designed, coded, and live within 48 hours.',
-      diagnosticLabel: 'CO-PILOT VELOCITY ENGINE',
-      metrics: [
-        { label: 'Landing Page Deployment', value: 'Sub-48 Hours (Next.js Native)' },
-        { label: 'Creative Velocity', value: '12+ Fresh UGC Variations / Mo' },
-        { label: 'Vendor Coordination', value: 'One Unified Full-Stack Pod' },
-      ],
-      growthPromise:
-        'Rapid execution beats delayed perfection. We test, iterate, and compound conversion wins faster than any traditional agency can write a brief.',
-    },
+    dimension: 'Execution Synergy',
+    category: 'speed',
+    traditionalTitle: '3 Fractured Vendors Pointing Fingers',
+    traditionalDesc: 'SEO agency blames website devs, devs take 3 weeks to change a landing page, ad buyers complain about broken tracking scripts.',
+    copilotTitle: 'Unified Full-Stack Pod (Code + Creatives + Ads)',
+    copilotDesc: 'Sub-second Next.js code, viral UGC video production, and algorithmic media buying operate in lockstep. New high-converting pages live within 48 hours.',
   },
   {
-    id: 'agility',
-    stageNumber: '05',
-    stageTitle: 'Commercial Freedom',
-    stageShortTitle: 'Zero Lock-In Agility',
-    icon: '🤝',
-    timelineLabel: 'Month-to-Month Agility',
-    traditional: {
-      badge: '⚠️ THE 12-MONTH RETAINER HANDCUFF',
-      headline: 'Locked Into Minimum Spend Traps & Hefty Break Fees',
-      storyText:
-        'Traditional agencies demand 6 to 12-month ironclad contracts with mandatory retainer minimums, spend percentage escalators, and 60-to-90-day termination notices. Even when campaigns flounder, you are legally forced to keep paying.',
-      diagnosticLabel: 'CONTRACTUAL FREEDOM AUDIT',
-      metrics: [
-        { label: 'Contract Commitment', value: '6 to 12 Month Lock-In Trap' },
-        { label: 'Termination Notice', value: '60 to 90 Days Punitive Delay' },
-        { label: 'Incentive Alignment', value: 'Fixed Fee Regardless of Profit' },
-      ],
-      realityQuote:
-        '“We realized in month 2 that the strategy wasn’t working, but our contract legally compelled us to pay for 10 more months.”',
-    },
-    copilot: {
-      badge: '👑 THE COPILOT ADVANTAGE: MERIT-BASED AGILITY',
-      headline: 'Month-to-Month Sprints Earned Through Compounded Growth',
-      storyText:
-        'We never hide behind restrictive legal handcuffs. Our partnerships operate on flexible, month-to-month performance sprints. We earn our seat at your strategy table every single 30 days through transparent execution, verified pipeline, and mutual trust.',
-      diagnosticLabel: 'CO-PILOT MERIT PACT',
-      metrics: [
-        { label: 'Contract Commitment', value: 'Zero Lock-In Handcuffs' },
-        { label: 'Termination Notice', value: 'Flexible 30-Day Agility' },
-        { label: 'Incentive Alignment', value: 'Skin in the Game Partnership' },
-      ],
-      growthPromise:
-        'True partnership. We retain clients by generating tangible revenue and enterprise value, never through contractual traps.',
-    },
+    id: 'contracts',
+    dimension: 'Contract Agility',
+    category: 'speed',
+    traditionalTitle: '6 to 12-Month Lock-In Retainers',
+    traditionalDesc: 'Punitive minimum spend clauses and 60 to 90-day cancellation notices legally forcing you to keep paying even when campaigns flounder.',
+    copilotTitle: 'Zero Lock-In; Month-to-Month Agility',
+    copilotDesc: 'Month-to-month performance sprints. We earn our seat at your strategy table every single 30 days through audited revenue expansion.',
+  },
+];
+
+const growthPartnerFaqs = [
+  {
+    q: 'How does a Digital Growth Partner differ from a traditional marketing agency?',
+    a: 'Traditional agencies operate on siloed retainers, passing your ad budget to junior interns and reporting vanity clicks. As your Digital Growth Partner, our senior founders manage your campaigns directly, integrate custom Next.js engineering with algorithmic media buying, provide 100% account root ownership, and align incentives strictly with bottom-line net revenue and verified pipeline.',
+  },
+  {
+    q: 'Do you require long-term contracts or lock-in retainers?',
+    a: 'No. We operate with zero lock-in handcuffs. Our partnerships run on flexible, month-to-month performance sprints. We earn our seat at your strategy table every single 30 days through audited revenue expansion and relentless accountability.',
+  },
+  {
+    q: 'Who actually manages and optimizes my ad campaigns day-to-day?',
+    a: 'You collaborate directly with our senior founders and lead performance architects. We maintain a dedicated WhatsApp and Slack war room for your brand with a strict sub-2-hour response turnaround during market hours. No telephone-game ticketing delays.',
+  },
+  {
+    q: 'Who owns the ad accounts, conversion pixels, and creative assets?',
+    a: 'You own 100% of everything from Day 1. All Google Ads accounts, Meta Pixels, Google Tag Manager containers, GA4 properties, and Next.js code repositories remain permanently registered under your company’s organizational credentials. If you ever leave, your data stays with you.',
+  },
+  {
+    q: 'What monthly ad budget is required to work with Marketing Copilot?',
+    a: 'Most growing businesses partnering with us deploy ₹50,000 to ₹5,00,000+ in monthly paid media spend across Google Ads and Meta. We calibrate ad spend based on your unit economics, profit margins, and current customer acquisition cost (CAC) to ensure positive cash compounding.',
+  },
+  {
+    q: 'What is included in the Complimentary 360° Growth Audit?',
+    a: 'Within 2 hours, our senior team conducts a forensic teardown of your ad accounts, search visibility, competitor positioning, and conversion drop-off points. We deliver an actionable 90-day growth roadmap and hop on a 20-minute direct founder walkthrough.',
   },
 ];
 
@@ -383,8 +413,15 @@ export default function DigitalGrowthPartnerPage() {
   // Interactive Active Metro Hub State for Operations Command Center
   const [activeHub, setActiveHub] = useState<string>('bhubaneswar');
 
-  // Interactive Storytelling Stage State for The Copilot Advantage
-  const [activeStoryStage, setActiveStoryStage] = useState<number>(0);
+  // Interactive Capability State for End-to-End Growth Stack
+  const [activeStackService, setActiveStackService] = useState<number>(0);
+
+  // Interactive Filter & Hover State for The Copilot Advantage
+  const [activeAdvantageFilter, setActiveAdvantageFilter] = useState<'all' | 'ownership' | 'team' | 'speed'>('all');
+  const [hoveredAdvantageRow, setHoveredAdvantageRow] = useState<number | null>(null);
+
+  // Interactive FAQ Accordion State (First item open by default)
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   // Service toggle helper
   const toggleService = (formType: 'hero' | 'final', service: string) => {
@@ -906,6 +943,12 @@ export default function DigitalGrowthPartnerPage() {
       />
 
       {/* ═════════════════════════════════════════════════════════════════
+          CLIENT SPOTLIGHT • CASE STUDY IN ACTION
+          Positioned directly above MEASURABLE BUSINESS IMPACT per user instruction
+      ═════════════════════════════════════════════ */}
+      <BrandSpotlightSection />
+
+      {/* ═════════════════════════════════════════════════════════════════
           SECTION 3: RESULTS THAT MATTER — 3 PERFECTLY ALIGNED GAUGES
       ═════════════════════════════════════════════ */}
       <section className={`${styles.container} ${styles.performanceCockpit}`}>
@@ -1023,12 +1066,6 @@ export default function DigitalGrowthPartnerPage() {
           </ScrollReveal>
         </div>
       </section>
-
-      {/* ═════════════════════════════════════════════════════════════════
-          CLIENT SPOTLIGHT • CASE STUDY IN ACTION
-          Positioned directly above Real clients, Real results we are proud of
-      ═════════════════════════════════════════════ */}
-      <BrandSpotlightSection />
 
       {/* ═════════════════════════════════════════════════════════════════
           REAL CAMPAIGNS. REAL RESULTS — 3 PERFECTLY ALIGNED CASE STUDIES
@@ -1203,261 +1240,235 @@ export default function DigitalGrowthPartnerPage() {
           </p>
         </div>
 
-        <div className={styles.capabilitiesBentoGrid}>
-          {/* 1. SEO */}
-          <div className={styles.capabilityCard}>
-            <div className={styles.capabilityIconFrame}>⚡</div>
-            <h3 className={styles.capabilityH3}>Search Engine Optimization</h3>
-            <p className={styles.capabilityText}>
-              Technical SEO audits, semantic schema, and topic cluster architecture to secure #1 rankings for high-intent queries.
-            </p>
-            <span className={styles.capabilityTag}>Organic Pipeline</span>
-          </div>
-
-          {/* 2. Google Ads */}
-          <div className={styles.capabilityCard}>
-            <div className={styles.capabilityIconFrame}>🎯</div>
-            <h3 className={styles.capabilityH3}>Google Ads &amp; PPC</h3>
-            <p className={styles.capabilityText}>
-              High-ROAS search, Shopping, and Performance Max campaigns with precision negative keyword shields and smart bidding.
-            </p>
-            <span className={styles.capabilityTag}>Immediate Demand</span>
-          </div>
-
-          {/* 3. Meta Ads */}
-          <div className={styles.capabilityCard}>
-            <div className={styles.capabilityIconFrame}>🚀</div>
-            <h3 className={styles.capabilityH3}>Meta Ads</h3>
-            <p className={styles.capabilityText}>
-              Full-funnel Facebook &amp; Instagram advertising powered by Advantage+ budgeting, UGC creatives, and Conversions API.
-            </p>
-            <span className={styles.capabilityTag}>Viral Scale</span>
-          </div>
-
-          {/* 4. Social Media */}
-          <div className={styles.capabilityCard}>
-            <div className={styles.capabilityIconFrame}>📱</div>
-            <h3 className={styles.capabilityH3}>Social Media Growth</h3>
-            <p className={styles.capabilityText}>
-              Thumb-stopping short-form Reels, community building, and brand authority that turns casual viewers into brand advocates.
-            </p>
-            <span className={styles.capabilityTag}>Brand Resonance</span>
-          </div>
-
-          {/* 5. GEO / AEO */}
-          <div className={styles.capabilityCard}>
-            <div className={styles.capabilityIconFrame}>🤖</div>
-            <h3 className={styles.capabilityH3}>GEO / AEO Optimization</h3>
-            <p className={styles.capabilityText}>
-              Be the cited authority inside ChatGPT, Perplexity, Claude, and Google AI Overviews using entity-rich content graphs.
-            </p>
-            <span className={styles.capabilityTag}>AI Search Ready</span>
-          </div>
-
-          {/* 6. Websites */}
-          <div className={styles.capabilityCard}>
-            <div className={styles.capabilityIconFrame}>💻</div>
-            <h3 className={styles.capabilityH3}>High-Conversion Websites</h3>
-            <p className={styles.capabilityText}>
-              Sub-second speed Next.js websites built with responsive skeuomorphic design, clean code, and zero page bloat.
-            </p>
-            <span className={styles.capabilityTag}>Sub-Second Speed</span>
-          </div>
-
-          {/* 7. Content Marketing */}
-          <div className={styles.capabilityCard}>
-            <div className={styles.capabilityIconFrame}>✍️</div>
-            <h3 className={styles.capabilityH3}>Content Marketing</h3>
-            <p className={styles.capabilityText}>
-              In-depth industry whitepapers, teardowns, buyer guides, and lead magnets that establish category leadership.
-            </p>
-            <span className={styles.capabilityTag}>Authority Building</span>
-          </div>
-
-          {/* 8. CRO */}
-          <div className={styles.capabilityCard}>
-            <div className={styles.capabilityIconFrame}>🧪</div>
-            <h3 className={styles.capabilityH3}>Conversion Rate Optimization</h3>
-            <p className={styles.capabilityText}>
-              Continuous multivariate testing of headlines, checkout friction, form fields, and trust proof to double your conversion rate.
-            </p>
-            <span className={styles.capabilityTag}>Multiplier Effect</span>
-          </div>
+        {/* Interactive Capability Ribbon Track */}
+        <div className={styles.engineRibbonTrack}>
+          {growthStackCapabilities.map((cap, idx) => {
+            const isActive = activeStackService === idx;
+            return (
+              <button
+                type="button"
+                key={cap.id}
+                onClick={() => setActiveStackService(idx)}
+                className={`${styles.engineRibbonTab} ${isActive ? styles.engineRibbonTabActive : ''}`}
+              >
+                {isActive && <span className={styles.engineTabPulseGlow} />}
+                <span className={styles.engineTabIcon}>{cap.icon}</span>
+                <div className={styles.engineTabMeta}>
+                  <span className={styles.engineTabTitle}>{cap.title}</span>
+                  <span className={styles.engineTabStage}>{cap.stage}</span>
+                </div>
+              </button>
+            );
+          })}
         </div>
+
+        {/* Live Active Capability Cockpit Chassis */}
+        {(() => {
+          const activeCap = growthStackCapabilities[activeStackService] || growthStackCapabilities[0];
+          return (
+            <div className={styles.engineCockpitChassis}>
+              {/* Cockpit Header with Telemetry Metric */}
+              <div className={styles.cockpitTopBar}>
+                <div className={styles.cockpitIdentity}>
+                  <div className={styles.cockpitIconFrame}>{activeCap.icon}</div>
+                  <div>
+                    <div className={styles.cockpitMetaRow}>
+                      <span className={styles.cockpitCategoryTag}>{activeCap.category}</span>
+                      <span className={styles.cockpitStageTag}>{activeCap.stage}</span>
+                    </div>
+                    <h3 className={styles.cockpitTitleH3}>{activeCap.title}</h3>
+                  </div>
+                </div>
+
+                <div className={styles.cockpitMetricGauge}>
+                  <div className={styles.gaugeNumber}>{activeCap.metricNum}</div>
+                  <div className={styles.gaugeSubText}>{activeCap.metricLabel}</div>
+                  <div className={styles.gaugeSlaTag}>⚡ {activeCap.turnaround}</div>
+                </div>
+              </div>
+
+              {/* Capability Description */}
+              <p className={styles.cockpitDescription}>{activeCap.shortDesc}</p>
+
+              {/* 3-Step Deliverable Workflow Triad */}
+              <div className={styles.cockpitWorkflowArea}>
+                <div className={styles.workflowSectionLabel}>
+                  <span>⚙️ SPRINT EXECUTION WORKFLOW</span>
+                </div>
+                <div className={styles.workflowTriadGrid}>
+                  {activeCap.workflow.map((w, wIdx) => (
+                    <div key={wIdx} className={styles.workflowStepTile}>
+                      <div className={styles.workflowStepTop}>
+                        <span className={styles.workflowStepNum}>{w.step}</span>
+                        <h4 className={styles.workflowStepH4}>{w.title}</h4>
+                      </div>
+                      <p className={styles.workflowStepDesc}>{w.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Deployed Tech Stack Bar */}
+              <div className={styles.cockpitFooterTech}>
+                <span className={styles.techBarLabel}>DEPLOYED STACK:</span>
+                <div className={styles.techTagsCluster}>
+                  {activeCap.techStack.map((tech, tIdx) => (
+                    <span key={tIdx} className={styles.techTagPill}>
+                      <span className={styles.techDot} />
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          );
+        })()}
       </section>
 
       {/* ═════════════════════════════════════════════════════════════════
-          THE COPILOT ADVANTAGE — INTERACTIVE STORYTELLING COCKPIT & TRANSFORMATION THEATER
+          THE COPILOT ADVANTAGE — HEAD-TO-HEAD BATTLE ARENA
       ═════════════════════════════════════════════ */}
-      <section className={styles.storytellingCockpitSection}>
+      <section className={styles.advantageBattleSection}>
         <div className={styles.container}>
           {/* Section Header */}
           <div className={styles.headerCenter}>
             <div className={styles.eyebrowBadge}>
               <span className={styles.pulsingLed} />
-              <span>THE COPILOT ADVANTAGE · INTERACTIVE STORYTELLING</span>
+              <span>THE COPILOT ADVANTAGE · HEAD-TO-HEAD AUDIT</span>
             </div>
             <h2 className={styles.titlePrimary}>
-              The Retainer Trap vs.<br />
-              <span className={styles.titleAccent}>The Copilot Transformation</span>
+              The Traditional Agency Trap vs.<br />
+              <span className={styles.titleAccent}>The Marketing Copilot Standard</span>
             </h2>
             <p className={styles.subtitle}>
-              Experience how partnering with a dedicated digital growth partner feels across 5 critical growth milestones. Click each chapter below to contrast reality:
+              Why leading enterprises partner with a dedicated growth partner instead of outsourcing to bloated, slow-moving agencies.
             </p>
           </div>
 
-          {/* Interactive Chapter Stepper Nav */}
-          <div className={styles.storyChapterNav}>
-            {/* Nav Controls Bar */}
-            <div className={styles.storyNavControlsBar}>
-              <div className={styles.storyCounterPill}>
-                <span>📖 CHAPTER {activeStoryStage + 1} OF {storyChapters.length}</span>
-                <span>•</span>
-                <span>{storyChapters[activeStoryStage].stageTitle}</span>
-              </div>
-
-              <div className={styles.storyArrowBtns}>
-                <button
-                  type="button"
-                  onClick={() => setActiveStoryStage((prev) => Math.max(0, prev - 1))}
-                  disabled={activeStoryStage === 0}
-                  className={styles.storyArrowBtn}
-                  aria-label="Previous Chapter"
-                >
-                  ← Prev Chapter
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setActiveStoryStage((prev) => Math.min(storyChapters.length - 1, prev + 1))}
-                  disabled={activeStoryStage === storyChapters.length - 1}
-                  className={styles.storyArrowBtn}
-                  aria-label="Next Chapter"
-                >
-                  Next Chapter →
-                </button>
-              </div>
-            </div>
-
-            {/* 5 Chapter Tabs Track */}
-            <div className={styles.storyStageTrack}>
-              {storyChapters.map((chapter, idx) => {
-                const isActive = activeStoryStage === idx;
-                return (
-                  <button
-                    type="button"
-                    key={chapter.id}
-                    onClick={() => setActiveStoryStage(idx)}
-                    className={`${styles.storyStageStepBtn} ${
-                      isActive ? styles.storyStageStepBtnActive : ''
-                    }`}
-                  >
-                    <div className={styles.stepTopRow}>
-                      <span className={styles.stepStageBadge}>Chapter {chapter.stageNumber}</span>
-                      <span className={styles.stepIconBubble}>{chapter.icon}</span>
-                    </div>
-                    <div className={styles.stepStageTitle}>{chapter.stageShortTitle}</div>
-                    <div className={styles.stepTimelinePill}>{chapter.timelineLabel}</div>
-                    {isActive && <div className={styles.stepActiveIndicatorLine} />}
-                  </button>
-                );
-              })}
-            </div>
+          {/* Interactive Dimension Filter Bar */}
+          <div className={styles.battleFilterBar}>
+            <button
+              type="button"
+              onClick={() => setActiveAdvantageFilter('all')}
+              className={`${styles.battleFilterBtn} ${activeAdvantageFilter === 'all' ? styles.battleFilterBtnActive : ''}`}
+            >
+              All Dimensions ({comparisonPoints.length})
+            </button>
+            <button
+              type="button"
+              onClick={() => setActiveAdvantageFilter('ownership')}
+              className={`${styles.battleFilterBtn} ${activeAdvantageFilter === 'ownership' ? styles.battleFilterBtnActive : ''}`}
+            >
+              Root Ownership
+            </button>
+            <button
+              type="button"
+              onClick={() => setActiveAdvantageFilter('team')}
+              className={`${styles.battleFilterBtn} ${activeAdvantageFilter === 'team' ? styles.battleFilterBtnActive : ''}`}
+            >
+              Executive Leadership
+            </button>
+            <button
+              type="button"
+              onClick={() => setActiveAdvantageFilter('speed')}
+              className={`${styles.battleFilterBtn} ${activeAdvantageFilter === 'speed' ? styles.battleFilterBtnActive : ''}`}
+            >
+              Speed &amp; Agility
+            </button>
           </div>
 
-          {/* Split-Screen Battle Theater Arena */}
+          {/* Dual-Terminal Battle Arena */}
           {(() => {
-            const currentStory = storyChapters[activeStoryStage];
+            const visiblePoints = activeAdvantageFilter === 'all'
+              ? comparisonPoints
+              : comparisonPoints.filter((cp) => cp.category === activeAdvantageFilter);
+
             return (
-              <div className={styles.storyBattleTheater}>
-                {/* Left Side: The Traditional Agency Experience */}
-                <div className={styles.traditionalStoryPanel}>
-                  <div>
-                    <div className={styles.panelTopBar}>
-                      <span className={styles.traditionalAlertTag}>
-                        {currentStory.traditional.badge}
-                      </span>
-                      <div className={styles.panelSymbolRow} title="Interactive 3D Friction Indicator">
-                        <span className={styles.symbol3DCross}>✕</span>
-                      </div>
-                    </div>
-
-                    <h3 className={styles.panelHeadlineTraditional}>
-                      {currentStory.traditional.headline}
-                    </h3>
-                    <p className={styles.panelStoryTextTraditional}>
-                      {currentStory.traditional.storyText}
-                    </p>
-
-                    {/* Diagnostic Telemetry Inset Box */}
-                    <div className={`${styles.storyDiagnosticBox} ${styles.diagnosticBoxTraditional}`}>
-                      <div className={`${styles.diagnosticHeaderTitle} ${styles.diagnosticTitleTraditional}`}>
-                        <span>⚙️ {currentStory.traditional.diagnosticLabel}</span>
-                        <span>[HIGH FRICTION]</span>
-                      </div>
-                      <div className={styles.diagnosticMetricsList}>
-                        {currentStory.traditional.metrics.map((m, i) => (
-                          <div key={i} className={styles.diagnosticMetricRow}>
-                            <span className={styles.metricRowLabelTraditional}>{m.label}:</span>
-                            <span className={styles.metricRowValueTraditional}>
-                              ✕ {m.value}
-                            </span>
-                          </div>
-                        ))}
-                      </div>
+              <div className={styles.battleArenaChassis}>
+                {/* Left Terminal: Traditional Agency */}
+                <div className={styles.battlePanelTraditional}>
+                  <div className={styles.battlePanelTopHeader}>
+                    <span className={styles.traditionalWarningBadge}>
+                      ⚠️ THE STATUS QUO TRAP
+                    </span>
+                    <div className={styles.symbol3DItem}>
+                      <span>Traditional Agency</span>
+                      <button
+                        type="button"
+                        className={styles.symbol3DCross}
+                        title="Friction Indicator (Interactable)"
+                        aria-label="Traditional friction symbol"
+                      >
+                        ✕
+                      </button>
                     </div>
                   </div>
 
-                  {/* Reality Quote Callout */}
-                  <div className={styles.storyRealityQuote}>
-                    {currentStory.traditional.realityQuote}
+                  <div className={styles.battleRowsContainer}>
+                    {visiblePoints.map((point, pIdx) => {
+                      const isHovered = hoveredAdvantageRow === pIdx;
+                      return (
+                        <div
+                          key={point.id}
+                          className={`${styles.battleRowItem} ${styles.battleRowItemTraditional} ${
+                            isHovered ? styles.battleRowHoverSync : ''
+                          }`}
+                          onMouseEnter={() => setHoveredAdvantageRow(pIdx)}
+                          onMouseLeave={() => setHoveredAdvantageRow(null)}
+                        >
+                          <div className={styles.rowDimensionChip}>{point.dimension}</div>
+                          <div className={styles.rowLeadTitleBad}>
+                            <span className={styles.rowIconBad}>✕</span>
+                            <span>{point.traditionalTitle}</span>
+                          </div>
+                          <p className={styles.rowDescTextBad}>{point.traditionalDesc}</p>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
 
-                {/* Right Side: The Copilot Advantage */}
-                <div className={styles.copilotStoryPanel}>
-                  <div>
-                    <div className={styles.panelTopBar}>
-                      <span className={styles.copilotCrownTag}>
-                        <span className={styles.pulsingLed} />
-                        {currentStory.copilot.badge}
-                      </span>
-                      <div className={styles.panelSymbolRow} title="Interactive 3D Verified Indicator">
-                        <span className={styles.symbol3DCheck}>✓</span>
-                      </div>
-                    </div>
-
-                    <h3 className={styles.panelHeadlineCopilot}>
-                      {currentStory.copilot.headline}
-                    </h3>
-                    <p className={styles.panelStoryTextCopilot}>
-                      {currentStory.copilot.storyText}
-                    </p>
-
-                    {/* Diagnostic Telemetry Inset Box */}
-                    <div className={`${styles.storyDiagnosticBox} ${styles.diagnosticBoxCopilot}`}>
-                      <div className={`${styles.diagnosticHeaderTitle} ${styles.diagnosticTitleCopilot}`}>
-                        <span>⚡ {currentStory.copilot.diagnosticLabel}</span>
-                        <span>[VERIFIED AUDIT]</span>
-                      </div>
-                      <div className={styles.diagnosticMetricsList}>
-                        {currentStory.copilot.metrics.map((m, i) => (
-                          <div key={i} className={styles.diagnosticMetricRow}>
-                            <span className={styles.metricRowLabelCopilot}>{m.label}:</span>
-                            <span className={styles.metricRowValueCopilot}>
-                              ✓ {m.value}
-                            </span>
-                          </div>
-                        ))}
-                      </div>
+                {/* Right Terminal: The Marketing Copilot */}
+                <div className={styles.battlePanelCopilot}>
+                  <div className={styles.battlePanelTopHeader}>
+                    <span className={styles.copilotCrownBadge}>
+                      <span className={styles.pulsingLed} />
+                      👑 DEDICATED GROWTH PARTNER
+                    </span>
+                    <div className={styles.symbol3DItem}>
+                      <span className={styles.copilotText}>Marketing Copilot</span>
+                      <button
+                        type="button"
+                        className={styles.symbol3DCheck}
+                        title="Verified Advantage Indicator (Interactable)"
+                        aria-label="Verified Copilot advantage symbol"
+                      >
+                        ✓
+                      </button>
                     </div>
                   </div>
 
-                  {/* Growth Promise Covenant */}
-                  <div className={styles.storyGrowthPromise}>
-                    <div className={styles.growthPromiseBadge}>
-                      🛡️ THE PARTNER COVENANT
-                    </div>
-                    {currentStory.copilot.growthPromise}
+                  <div className={styles.battleRowsContainer}>
+                    {visiblePoints.map((point, pIdx) => {
+                      const isHovered = hoveredAdvantageRow === pIdx;
+                      return (
+                        <div
+                          key={point.id}
+                          className={`${styles.battleRowItem} ${styles.battleRowItemCopilot} ${
+                            isHovered ? styles.battleRowHoverSync : ''
+                          }`}
+                          onMouseEnter={() => setHoveredAdvantageRow(pIdx)}
+                          onMouseLeave={() => setHoveredAdvantageRow(null)}
+                        >
+                          <div className={styles.rowDimensionChipCopilot}>{point.dimension}</div>
+                          <div className={styles.rowLeadTitleGood}>
+                            <span className={styles.rowIconGood}>✓</span>
+                            <span>{point.copilotTitle}</span>
+                          </div>
+                          <p className={styles.rowDescTextGood}>{point.copilotDesc}</p>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
@@ -1465,7 +1476,7 @@ export default function DigitalGrowthPartnerPage() {
           })()}
 
           {/* 4 Foundational Strategic Pillars */}
-          <div className={styles.storyPillarsHeader}>
+          <div className={styles.storyPillarsHeader} style={{ marginTop: '54px' }}>
             <h3 className={styles.storyPillarsSubTitle}>
               Four Immutable Pillars of Growth
             </h3>
@@ -1502,6 +1513,66 @@ export default function DigitalGrowthPartnerPage() {
               <p className={styles.pillarBody}>
                 Dedicated WhatsApp war room with real-time sprint updates, transparent metrics, and 0 lock-in contracts.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═════════════════════════════════════════════════════════════════
+          SECTION: FREQUENTLY ASKED QUESTIONS (ACCORDION)
+      ═════════════════════════════════════════════ */}
+      <section className={styles.faqSection} id="growth-faq">
+        <div className={styles.container}>
+          <div className={styles.headerCenter}>
+            <div className={styles.eyebrowBadge}>
+              <span className={styles.pulsingLed} />
+              <span>GROWTH PARTNERSHIP · FREQUENTLY ASKED QUESTIONS</span>
+            </div>
+            <h2 className={styles.titlePrimary}>Got Questions? We Have Direct Answers.</h2>
+            <p className={styles.subtitle}>
+              Everything ambitious founders and marketing leaders ask before partnering with our performance team.
+            </p>
+          </div>
+
+          <div className={styles.faqAccordionContainer}>
+            {growthPartnerFaqs.map((faq, idx) => {
+              const isOpen = openFaq === idx;
+              return (
+                <div
+                  key={idx}
+                  className={`${styles.faqItemCard} ${isOpen ? styles.faqItemCardOpen : ''}`}
+                >
+                  <button
+                    type="button"
+                    onClick={() => setOpenFaq(isOpen ? null : idx)}
+                    className={styles.faqQuestionBtn}
+                    aria-expanded={isOpen}
+                  >
+                    <span className={styles.faqQuestionText}>{faq.q}</span>
+                    <span className={styles.faqToggleBadge}>+</span>
+                  </button>
+                  {isOpen && (
+                    <div className={styles.faqAnswerPanel}>
+                      <p className={styles.faqAnswerText}>{faq.a}</p>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+
+            {/* Direct Helpline Banner */}
+            <div className={styles.faqFooterHelp}>
+              <span className={styles.faqHelpPrompt}>
+                Have a specific question about your market or budget?
+              </span>
+              <a
+                href="https://wa.me/919437168434?text=Hi%20Marketing%20Copilot%2C%20I%20have%20a%20question%20regarding%20the%20digital%20growth%20partnership"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.faqHelpWhatsAppLink}
+              >
+                <span>💬 Ask on WhatsApp</span>
+              </a>
             </div>
           </div>
         </div>
