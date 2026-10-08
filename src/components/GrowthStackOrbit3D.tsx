@@ -147,14 +147,16 @@ export default function GrowthStackOrbit3D() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Smooth continuous rotation loop with fluid delta time
+  // Smooth continuous rotation loop with clamped delta time for zero-stutter revolution
   const animateOrbit = useCallback(
     (time: number) => {
       if (lastTimeRef.current !== null) {
-        const delta = time - lastTimeRef.current;
+        // Clamp delta to prevent abrupt skipping when tab resumes or during micro-jank
+        const rawDelta = time - lastTimeRef.current;
+        const delta = Math.min(Math.max(rawDelta, 0), 32);
         if (isPlaying) {
-          // Constant silky-smooth rotational velocity
-          setRotationAngle((prev) => (prev + delta * 0.024) % 360);
+          // Constant silky-smooth rotational velocity (~18 seconds per majestic 360° revolution)
+          setRotationAngle((prev) => (prev + delta * 0.020) % 360);
         }
       }
       lastTimeRef.current = time;

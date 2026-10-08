@@ -298,17 +298,24 @@ export default function StrategistDeskCta({
                     </div>
                   )}
 
-                  {/* Submit Button & Trust Strip */}
+                  {/* Submit Button & Trust Strip (Navbar-style spinning beam animation, warm orange color) */}
                   <div className={styles.cockpitActionBar}>
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className={styles.cockpitSubmitBtn}
-                    >
-                      <span>
-                        {isSubmitting ? 'Transmitting to Desk...' : 'Send Question to Strategists →'}
-                      </span>
-                    </button>
+                    <div className={styles.beamSubmitWrapper}>
+                      <div className={styles.beamAmbientGlow} />
+                      <div className={styles.beamConicSpin} />
+                      <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className={styles.beamSubmitBtn}
+                      >
+                        <span className={styles.btnShimmer} />
+                        <span className={styles.btnGloss} />
+                        <span className={styles.btnLabel}>
+                          {isSubmitting ? 'Transmitting to Desk...' : 'Send Question to Strategists'}
+                        </span>
+                        <span className={styles.btnArrow}>→</span>
+                      </button>
+                    </div>
 
                     <div className={styles.trustMiniRow}>
                       <span>🔒 100% Confidential</span>
