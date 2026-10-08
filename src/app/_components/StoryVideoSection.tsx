@@ -26,43 +26,52 @@ export default function StoryVideoSection() {
   const sectionRef = useRef<HTMLElement | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const ambientVideoRef = useRef<HTMLVideoElement | null>(null);
+  const userPausedRef = useRef<boolean>(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
   const [isSectionVisible, setIsSectionVisible] = useState(false);
 
-  // 3D Play/Pause & Audio Toggle Handler
+  // Rock-Solid Play / Pause Toggle Handler
   const handlePlayToggle = useCallback(() => {
     const video = videoRef.current;
     const ambient = ambientVideoRef.current;
     if (!video) return;
 
-    if (video.paused) {
-      video.muted = false;
-      video.volume = 0.85;
+    if (!video.paused) {
+      // User clicked while playing -> STRICTLY PAUSE FILM
+      userPausedRef.current = true;
+      video.pause();
+      if (ambient) ambient.pause();
+      setIsPlaying(false);
+    } else {
+      // User clicked while paused -> RESUME PLAYBACK
+      userPausedRef.current = false;
       video.play().then(() => {
         setIsPlaying(true);
-        setIsMuted(false);
         if (ambient) ambient.play().catch(() => {});
       }).catch(() => {
-        // Fallback if browser requires muted gesture
+        // Fallback for strict browser autoplay permissions
         video.muted = true;
         video.play().catch(() => {});
         if (ambient) ambient.play().catch(() => {});
         setIsPlaying(true);
       });
+    }
+  }, []);
+
+  // Separate Audio Mute / Unmute Toggle Handler
+  const handleAudioToggle = useCallback((e: React.MouseEvent) => {
+    e.stopPropagation();
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (isMuted) {
+      video.muted = false;
+      video.volume = 0.85;
+      setIsMuted(false);
     } else {
-      if (isMuted) {
-        // Was running silently -> activate full unmuted sound
-        video.muted = false;
-        video.volume = 0.85;
-        setIsMuted(false);
-        setIsPlaying(true);
-      } else {
-        // Was playing with audio -> pause playback
-        video.pause();
-        if (ambient) ambient.pause();
-        setIsPlaying(false);
-      }
+      video.muted = true;
+      setIsMuted(true);
     }
   }, [isMuted]);
 
@@ -77,13 +86,15 @@ export default function StoryVideoSection() {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsSectionVisible(true);
-          if (video && video.paused && !isPlaying) {
+          // Only auto-play if user has NOT explicitly paused the video
+          if (video && video.paused && !userPausedRef.current) {
             video.play().then(() => {
               setIsPlaying(true);
               if (ambient) ambient.play().catch(() => {});
             }).catch(() => {});
           }
         } else {
+          // Pause when completely out of view to save GPU / battery
           if (video && !video.paused) {
             video.pause();
             if (ambient) ambient.pause();
@@ -96,7 +107,7 @@ export default function StoryVideoSection() {
 
     observer.observe(el);
     return () => observer.disconnect();
-  }, [isPlaying]);
+  }, []);
 
   return (
     <section className={styles.section} id="company-story" ref={sectionRef}>
@@ -184,7 +195,7 @@ export default function StoryVideoSection() {
                       handlePlayToggle();
                     }
                   }}
-                  aria-label={isPlaying && !isMuted ? 'Pause commercial film' : 'Play film with sound'}
+                  aria-label={isPlaying ? 'Pause commercial film' : 'Play commercial film'}
                 >
                   {/* Ambient Blurred Video Background (Fills card with live footage colors, zero ugly black bars) */}
                   <video
@@ -234,14 +245,26 @@ export default function StoryVideoSection() {
                     <track kind="captions" srcLang="en" label="English" />
                   </video>
 
+                  {/* Floating Audio Sound Pill */}
+                  <button
+                    type="button"
+                    onClick={handleAudioToggle}
+                    className={styles.soundTogglePill}
+                    aria-label={isMuted ? 'Unmute audio' : 'Mute audio'}
+                    title={isMuted ? 'Click to turn sound on' : 'Click to mute sound'}
+                  >
+                    <span>{isMuted ? '🔇' : '🔊'}</span>
+                    <span>{isMuted ? 'Sound Off' : 'Sound On'}</span>
+                  </button>
+
                   {/* 3D Tactile Play / Pause Controller (Neo-Skeuomorphic Glassmorphic Center Stage) */}
                   <div
                     className={`${styles.playOverlay3D} ${
-                      isPlaying && !isMuted ? styles.overlayPlaying : styles.overlayVisible
+                      isPlaying ? styles.overlayPlaying : styles.overlayVisible
                     }`}
                   >
-                    {/* Concentric 3D Acoustic Resonance Radar Waves (active when paused or muted) */}
-                    {(!isPlaying || isMuted) && (
+                    {/* Concentric 3D Acoustic Resonance Radar Waves (active when paused) */}
+                    {!isPlaying && (
                       <div className={styles.radarWavesWrapper}>
                         <span className={styles.radarRing1} />
                         <span className={styles.radarRing2} />
@@ -257,10 +280,10 @@ export default function StoryVideoSection() {
                           handlePlayToggle();
                         }}
                         className={`${styles.playBtn3D} ${
-                          isPlaying && !isMuted ? styles.playBtn3DActive : ''
+                          isPlaying ? styles.playBtn3DActive : ''
                         }`}
-                        aria-label={isPlaying && !isMuted ? 'Pause commercial film' : 'Play film with audio'}
-                        title={isPlaying && !isMuted ? 'Click to pause film' : 'Click to play film with sound'}
+                        aria-label={isPlaying ? 'Pause commercial film' : 'Play commercial film'}
+                        title={isPlaying ? 'Click to pause film' : 'Click to play film'}
                       >
                         {/* 3D Curved Specular Glass Glare Arc */}
                         <span className={styles.specularGlareArc} />
@@ -268,7 +291,7 @@ export default function StoryVideoSection() {
                         <span className={styles.bevelRimGlow} />
 
                         {/* Sculpted 3D Icon Glyphs */}
-                        {isPlaying && !isMuted ? (
+                        {isPlaying ? (
                           /* 3D Pause Glyph */
                           <div className={styles.glyph3DPause}>
                             <span className={styles.pauseBar3D} />
