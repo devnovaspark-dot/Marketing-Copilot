@@ -22,7 +22,7 @@ export default function QuickConnectMapSection({
       <span className={styles.titleAccent}>Growing Businesses</span>
     </>
   ),
-  subtitle = 'As a digital marketing company in India, we combine SEO, social media, content, and performance marketing to help brands grow online.',
+  subtitle = "We are a digital marketing agency, in India. We combine SEO, paid ads, content marketing, social media and conversion engineering. Our goal is to create growth systems. These systems help attract customers who're ready to buy. They also improve conversion rates. Allow brands to grow in a steady predictable way.",
   headingTag = 'h2',
 }: QuickConnectMapSectionProps = {}) {
   const [copiedField, setCopiedField] = useState<string | null>(null);

@@ -300,28 +300,28 @@ const growthStackCapabilities: GrowthCapability[] = [
 
 const growthPartnerFaqs = [
   {
-    q: 'How does a Digital Growth Partner differ from a traditional marketing agency?',
-    a: 'Traditional agencies operate on siloed retainers, passing your ad budget to junior interns and reporting vanity clicks. As your Digital Growth Partner, our senior founders manage your campaigns directly, integrate custom Next.js engineering with algorithmic media buying, provide 100% account root ownership, and align incentives strictly with bottom-line net revenue and verified pipeline.',
+    q: 'How does a Digital Growth Partner differ from a marketing company?',
+    a: 'Traditional agencies often work with contracts, separate campaigns and reports that focus on numbers that look good but don’t really matter. As your Digital Growth Partner we take a connected way—bringing together strategy, performance marketing, technology and ways to improve results to create a full growth system. Our senior team is directly involved in your campaigns and custom technology smart buying of ads and clear ownership of your account make sure every action helps your business make money and get real leads.',
   },
   {
-    q: 'Do you require long-term contracts or lock-in retainers?',
-    a: 'No. We operate with zero lock-in handcuffs. Our partnerships run on flexible, month-to-month performance sprints. We earn our seat at your strategy table every single 30 days through audited revenue expansion and relentless accountability.',
+    q: 'Do you need long-term contracts or fixed money every month?',
+    a: 'No. We think a good partnership should be built on results not on long-term promises. Our digital marketing services work with month-to-month goals letting us keep improving your plan based on real business data. Every 30 days we try to show why we should stay at your table by showing growth clear reports and always being responsible.',
   },
   {
-    q: 'Who actually manages and optimizes my ad campaigns day-to-day?',
-    a: 'You collaborate directly with our senior founders and lead performance architects. We maintain a dedicated WhatsApp and Slack war room for your brand with a strict sub-2-hour response turnaround during market hours. No telephone-game ticketing delays.',
+    q: 'Who actually improves your ad campaigns every day?',
+    a: 'You work directly with our founders and top performance experts—not through many layers of managers or a system where you have to ask for help. We have a WhatsApp and Slack channel for your brand and we promise to reply within two hours during business hours. This helps us find chances to grow, fix problems with campaigns and make choices without waiting too long.',
   },
   {
-    q: 'Who owns the ad accounts, conversion pixels, and creative assets?',
-    a: 'You own 100% of everything from Day 1. All Google Ads accounts, Meta Pixels, Google Tag Manager containers, GA4 properties, and Next.js code repositories remain permanently registered under your company’s organizational credentials. If you ever leave, your data stays with you.',
+    q: 'Who owns the ad accounts, tracking tools and creative work?',
+    a: 'You own everything from the day. Google Ads accounts, Meta Pixels, Google Tag Manager containers, GA4 properties, creative work and Next.js code files are all registered under your company’s name. We think a trustworthy Digital Growth Partner should build your setup not keep it for themselves. If you ever decide to leave all your accounts, data, tracking tools and ideas stay with you.',
   },
   {
-    q: 'What monthly ad budget is required to work with Marketing Copilot?',
-    a: 'Most growing businesses partnering with us deploy ₹50,000 to ₹5,00,000+ in monthly paid media spend across Google Ads and Meta. We calibrate ad spend based on your unit economics, profit margins, and current customer acquisition cost (CAC) to ensure positive cash compounding.',
+    q: 'What kind of money is needed to work with Marketing Copilot?',
+    a: "Most businesses that work with us spend between ₹50,000 and ₹5,00,000+ every month on Google Ads and Meta Ads depending on their goals, the market and where they're in their growth. There is no amount that fits everyone. We adjust your spending based on your costs, profits how much it costs to get a customer how many people buy from you and how money you can make. We build a plan that helps your business grow in a way—not just spend more on ads.",
   },
   {
-    q: 'What is included in the Complimentary 360° Growth Audit?',
-    a: 'Within 2 hours, our senior team conducts a forensic teardown of your ad accounts, search visibility, competitor positioning, and conversion drop-off points. We deliver an actionable 90-day growth roadmap and hop on a 20-minute direct founder walkthrough.',
+    q: 'What is in the Complimentary 360° Growth Audit?',
+    a: "Our Complimentary 360° Growth Audit looks closely at the things that affect your growth. Our senior team checks your paid ads, how visible you're in search, where you stand against your competition how customers move through your site how you track things and where you might be losing money. Then we find the chances to grow and give you a clear 90-day growth plan followed by a 20-minute meeting, with our senior team to talk about what we found and what to do next.",
   },
 ];
 
@@ -505,9 +505,9 @@ export default function DigitalGrowthPartnerPage() {
             </div>
 
             <h1 className={styles.heroDisplayH1}>
-              READY TO GROW YOUR BUSINESS{' '}
+              READY TO SCALE YOUR BUSINESS{' '}
               <span className={styles.heroShimmerAccent}>
-                WITH DIGITAL MARKETING?
+                WITH A DIGITAL GROWTH PARTNER?
               </span>
             </h1>
 
@@ -527,7 +527,7 @@ export default function DigitalGrowthPartnerPage() {
             </div>
 
             <p className={styles.heroLeadParagraph}>
-              Stop burning your growth capital on isolated campaigns and vanity impressions. As your dedicated Digital Growth Partner, we engineer end-to-end customer acquisition systems that connect high-intent search, paid performance, and conversion architecture directly to revenue.
+              Stop wasting growth capital on campaigns that only bring vanity impressions. As your Digital Growth Partner, in India I build complete customer acquisition systems that link high‑intent search, paid performance and conversion design straight to revenue. My digital marketing services are made to match strategy, execution and real growth. Growth capital matters; customer acquisition drives results; digital marketing services turn ideas into profit.
             </p>
 
             {/* 3 Hero Metrics Requested By User */}
@@ -770,11 +770,10 @@ export default function DigitalGrowthPartnerPage() {
                 <span>STRATEGIC DELIVERY NETWORK &bull; PAN-INDIA CAMPAIGN RADAR</span>
               </div>
               <h2 className={styles.titlePrimary}>
-                Command Center in Bhubaneswar.{' '}
-                <span className={styles.titleAccent}>Scaling High-Growth Brands Pan-India.</span>
+                Scaling Brands Across India
               </h2>
               <p className={styles.subtitle}>
-                Centralized strategy, technical engineering, and multi-channel performance media buying governed from Odisha — powering live campaigns across 12+ high-velocity metro corridors and Northeast India.
+                Meet our senior partners in person for focused strategy sprints at our corporate office, or collaborate seamlessly through a dedicated WhatsApp war room from anywhere across India. Wherever your business is based, we bring together strategy, digital marketing services, and growth-focused execution to help you scale with confidence.
               </p>
             </div>
           </ScrollReveal>
@@ -910,19 +909,19 @@ export default function DigitalGrowthPartnerPage() {
       ═════════════════════════════════════════════ */}
       <QuickConnectMapSection
         id="direct-connect"
-        eyebrow="FASTEST PATH TO GROWTH · CONFIDENTIAL ASSESSMENT"
+        eyebrow="GROWTH SYSTEMS · PREDICTABLE REVENUE"
         title={
           <>
-            Turn Your Marketing Into a<br />
+            Smart Digital Marketing for<br />
             <span style={{
               background: 'linear-gradient(135deg, #FFB800 0%, #EA580C 50%, #B45309 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               display: 'inline-block'
-            }}>Growth Engine</span>
+            }}>Growing Businesses</span>
           </>
         }
-        subtitle="Let’s find your fastest path to growth. Send us your question or growth goals for a complimentary, confidential strategic review."
+        subtitle="We are a digital marketing agency, in India. We combine SEO, paid ads, content marketing, social media and conversion engineering. Our goal is to create growth systems. These systems help attract customers who're ready to buy. They also improve conversion rates. Allow brands to grow in a steady predictable way."
       />
 
       {/* ═════════════════════════════════════════════════════════════════
@@ -942,7 +941,7 @@ export default function DigitalGrowthPartnerPage() {
           </div>
           <h2 className={styles.titlePrimary}>Results That Matter</h2>
           <p className={styles.subtitle}>
-            We measure success in net margin, verified leads, and compounded enterprise value—not clicks or vanity metrics.
+            We look at success through margin verified leads and compounded enterprise value—not, through clicks or fake numbers. Our digital marketing services are designed to create growth, better customer acquisition and long-term business results.
           </p>
         </div>
 
@@ -1073,7 +1072,7 @@ export default function DigitalGrowthPartnerPage() {
             </div>
             <h2 className={styles.titlePrimary}>Why Work With Us?</h2>
             <p className={styles.subtitle}>
-              See how partnering with a dedicated growth partner differs fundamentally from traditional agency retainer models.
+              See how working with a Digital Growth Partner is completely different, from old-style agency retainer setups. We bring together strategy, technology, creative work and results-driven marketing into one growth system that is centered on your business goals.
             </p>
           </div>
 
@@ -1083,28 +1082,28 @@ export default function DigitalGrowthPartnerPage() {
               <div className={styles.pillarNum}>01</div>
               <h3 className={styles.pillarTitleH3}>Direct Account Ownership</h3>
               <p className={styles.pillarBody}>
-                You own 100% of your Google Ads accounts, Meta pixels, and creative IP from Day 1. Never held hostage by agency logins.
+                You own 100% of your Google Ads accounts, Meta pixels, data, and creative IP from Day 1. Your digital assets stay under your control — never locked behind agency logins or third-party access.
               </p>
             </div>
             <div className={styles.pillarCardAligned}>
               <div className={styles.pillarNum}>02</div>
               <h3 className={styles.pillarTitleH3}>Founder-Led Execution</h3>
               <p className={styles.pillarBody}>
-                Direct strategy and sprint oversight by our senior founders. No junior interns managing your ad spend.
+                Get direct strategy and sprint oversight from our senior founders and growth strategists. No junior interns managing your ad spend — your campaigns are guided by experienced decision-makers focused on measurable business growth.
               </p>
             </div>
             <div className={styles.pillarCardAligned}>
               <div className={styles.pillarNum}>03</div>
               <h3 className={styles.pillarTitleH3}>Integrated Tech Stack</h3>
               <p className={styles.pillarBody}>
-                We align high-converting engineering, creative velocity, and algorithmic media buying into one synchronized pod.
+                We bring high-converting website engineering, creative production, digital marketing services, and algorithmic media buying together in one synchronized growth pod. Every channel works together instead of operating in isolated silos.
               </p>
             </div>
             <div className={styles.pillarCardAligned}>
               <div className={styles.pillarNum}>04</div>
               <h3 className={styles.pillarTitleH3}>Sub-2-Hour Response SLA</h3>
               <p className={styles.pillarBody}>
-                Dedicated WhatsApp war room with real-time sprint updates, transparent metrics, and 0 lock-in contracts.
+                Stay connected through a dedicated WhatsApp war room with real-time sprint updates, transparent performance metrics, and rapid communication. No unnecessary delays, no rigid lock-ins — just an agile partnership focused on continuous growth.
               </p>
             </div>
           </div>
@@ -1218,7 +1217,7 @@ export default function DigitalGrowthPartnerPage() {
             </div>
             <h2 className={styles.titlePrimary}>Got Questions? We Have Direct Answers.</h2>
             <p className={styles.subtitle}>
-              Everything ambitious founders and marketing leaders ask before partnering with our performance team.
+              Everything ambitious founders and marketing leaders need to know before partnering with a Digital Growth Partner to build, scale, and optimize their digital growth strategy.
             </p>
           </div>
 
@@ -1449,7 +1448,16 @@ export default function DigitalGrowthPartnerPage() {
       </section>
 
       {/* Global Bottom CTA */}
-      <CTASection />
+      <CTASection
+        eyebrow="TAKE THE NEXT LEAP · ACCELERATE REVENUE"
+        title={
+          <>
+            Ready for Marketing <span className="accent-gradient">That Drives Revenue?</span>
+          </>
+        }
+        subtitle="Your Next Stage of Growth Starts Here. Let’s talk about your growth — send us your question for a free, confidential growth assessment."
+        primaryBtnText="Let’s Find Your Fastest Path to Growth →"
+      />
     </div>
   );
 }

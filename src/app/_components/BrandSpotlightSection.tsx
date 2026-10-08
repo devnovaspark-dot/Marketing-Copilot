@@ -56,7 +56,7 @@ const spotlightBrands: BrandSpotlightData[] = [
     videoTag: '9:16 CINEMA REEL',
     headlineHighlight: 'Ekatraa',
     narrative:
-      'From brand visual architecture and cinema-grade videography to full-funnel ad campaigns and local search dominance — explore how Marketing Copilot partnered with Ekatraa to convert market attention into verified commercial growth.',
+      'Marketing Copilot worked closely with Ekatraa to turn market attention into proven growth. From designing brand visuals and shooting high‑quality videos to running all parts of ad campaigns and mastering search Marketing Copilot and Ekatraa made a big difference.',
     metrics: [
       { value: '+340%', label: 'Reach & Footfall Lift' },
       { value: '5.2X', label: 'Measured ROAS' },
