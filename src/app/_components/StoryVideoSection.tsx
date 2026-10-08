@@ -8,17 +8,17 @@ const storyPillars = [
   {
     icon: '🎯',
     title: 'Diagnostic Strategy & Moats',
-    desc: 'Funnel audits, unit economics modeling, and custom omnichannel growth architecture.',
+    desc: 'Deep funnel audits, unit economics modeling, and custom omnichannel growth roadmaps built to win.',
   },
   {
     icon: '🎨',
     title: 'High-Impact Creative & Media',
-    desc: 'Commercial videography, AI-accelerated copy, and landing pages engineered to convert.',
+    desc: 'Commercial videography, high-converting copy, and speed-engineered landing pages designed to sell.',
   },
   {
     icon: '📈',
-    title: 'Compounding Algorithmic Scale',
-    desc: 'Omnichannel Meta Ads, Google search SERP dominance, and automated lead pipelines.',
+    title: 'Compounding Revenue & Scale',
+    desc: 'Synchronized Meta Ads, Google search intent capture, and automated pipelines delivering verified ROI.',
   },
 ];
 
@@ -114,7 +114,7 @@ export default function StoryVideoSection() {
               <div className={styles.paneHeader}>
                 <div className={styles.eyebrow}>
                   <span className={styles.eyebrowDot} />
-                  <span>COMPANY INTRODUCTION</span>
+                  <span>WHO WE ARE · COMPANY OVERVIEW</span>
                 </div>
 
                 <h3 className={styles.headline}>
@@ -125,11 +125,11 @@ export default function StoryVideoSection() {
                 </h3>
 
                 <p className={styles.leadText}>
-                  At <strong>Marketing Copilot</strong>, we engineer full-funnel digital acquisition engines, high-converting creative campaigns, and automated revenue systems that turn customer attention into compounding scale.
+                  At <strong>Marketing Copilot</strong>, we partner directly with ambitious founders to engineer predictable revenue engines, high-converting creative assets, and multi-channel acquisition funnels that scale.
                 </p>
               </div>
 
-              {/* 3 Larger & Aligned Feature Cards */}
+              {/* 3 Compact Feature Cards */}
               <div className={styles.pillarsList}>
                 {storyPillars.map((item, idx) => (
                   <div key={idx} className={styles.pillarCard}>
@@ -147,25 +147,25 @@ export default function StoryVideoSection() {
           </ScrollReveal>
 
           {/* ══════════════════════════════════════════════════
-              RIGHT PANE: OUR WORKING PROCESS & EQUAL VIDEO
+              RIGHT PANE: OUR WORKING PROCESS & COMPACT REEL
              ══════════════════════════════════════════════════ */}
           <ScrollReveal delay={100} className={styles.revealCol}>
             <div className={styles.paneCard}>
               <div className={styles.paneHeader}>
                 <div className={styles.eyebrow}>
                   <span className={styles.eyebrowDotIndigo} />
-                  <span>OUR WORKING PROCESS</span>
+                  <span>HOW WE OPERATE · EXECUTION BLUEPRINT</span>
                 </div>
 
                 <h3 className={styles.headline}>
-                  See How We Turn Ideas<br />
+                  See How We Turn Strategy<br />
                   <span className={`accent-gradient ${styles.headlineHighlight}`}>
-                    Into Compounding Results.
+                    Into Measurable Growth.
                   </span>
                 </h3>
 
                 <p className={styles.leadText}>
-                  Take an inside look at how our team moves from strategy and creative planning through to live execution and business growth you can actually measure.
+                  Take an inside look at how our senior in-house team moves from deep diagnostic planning to live campaign execution and business growth you can actually measure.
                 </p>
               </div>
 

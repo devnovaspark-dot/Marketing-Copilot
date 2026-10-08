@@ -14,6 +14,7 @@ import RealGrowthSection from '@/app/_components/RealGrowthSection';
 import CTASection from '@/app/_components/CTASection';
 import IndiaMap3D from '@/components/IndiaMap3D';
 import GrowthStackOrbit3D from '@/components/GrowthStackOrbit3D';
+import ProofShowcaseSection from '@/app/_components/ProofShowcaseSection';
 import StrategistDeskCta from '@/components/StrategistDeskCta';
 import styles from './digital-growth-partner.module.css';
 
@@ -888,6 +889,12 @@ export default function DigitalGrowthPartnerPage() {
       </section>
 
       {/* ═════════════════════════════════════════════════════════════════
+          49 LIVE PROOF TELEMETRY DASHBOARDS
+          (Positioned directly above Our Growth Framework per user instruction)
+      ═════════════════════════════════════════════ */}
+      <ProofShowcaseSection />
+
+      {/* ═════════════════════════════════════════════════════════════════
           SECTION 5: OUR GROWTH FRAMEWORK · EXECUTION BLUEPRINT
           (Positioned directly above END-TO-END GROWTH STACK per user instruction)
       ═════════════════════════════════════════════ */}
@@ -899,23 +906,23 @@ export default function DigitalGrowthPartnerPage() {
       <GrowthStackOrbit3D />
 
       {/* ═════════════════════════════════════════════════════════════════
-          INTERACTIVE MAP SECTION
+          INTERACTIVE CONNECT & STRATEGIC ASSESSMENT CTA SECTION
       ═════════════════════════════════════════════ */}
       <QuickConnectMapSection
         id="direct-connect"
-        eyebrow="Driving Business Growth With Digital Marketing in India"
+        eyebrow="FASTEST PATH TO GROWTH · CONFIDENTIAL ASSESSMENT"
         title={
           <>
-            Smart Digital Marketing for<br />
+            Turn Your Marketing Into a<br />
             <span style={{
               background: 'linear-gradient(135deg, #FFB800 0%, #EA580C 50%, #B45309 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               display: 'inline-block'
-            }}>Growing Businesses</span>
+            }}>Growth Engine</span>
           </>
         }
-        subtitle="As a leading digital marketing partner in India, we combine SEO, paid ads, content, and conversion engineering to help brands scale predictably."
+        subtitle="Let’s find your fastest path to growth. Send us your question or growth goals for a complimentary, confidential strategic review."
       />
 
       {/* ═════════════════════════════════════════════════════════════════
@@ -1294,13 +1301,13 @@ export default function DigitalGrowthPartnerPage() {
           <div className={styles.grandCardChassis}>
             <div className={styles.grandHeader}>
               <div className={styles.grandEyebrow}>
-                <span>360° GROWTH AUDIT</span>
+                <span>COMPLIMENTARY STRATEGIC REVIEW</span>
               </div>
               <h2 className={styles.grandTitleH2}>
-                Ready to Accelerate Your Growth?
+                Get Direct Answers From Our Strategists.
               </h2>
               <p className={styles.grandSubtitle}>
-                Get your custom 90-day growth blueprint within 2 hours.
+                Share your challenge below for a complimentary strategic review. Your next stage of growth starts here.
               </p>
             </div>
 

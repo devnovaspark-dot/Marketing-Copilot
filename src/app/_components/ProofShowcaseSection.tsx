@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect, useCallback } from 'react';
+import Image from 'next/image';
 import ScrollReveal from '@/components/ScrollReveal';
 import AutoZoomImage from '@/components/AutoZoomImage';
 import { PROOF_ITEMS, ProofItem } from '@/data/proofManifest';
@@ -21,6 +22,8 @@ export default function ProofShowcaseSection() {
   const [activeTab, setActiveTab] = useState<CategoryFilter>('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [visibleCount, setVisibleCount] = useState(9);
+  const [activeModalItem, setActiveModalItem] = useState<ProofItem | null>(null);
+  const [modalZoom, setModalZoom] = useState<number>(1);
 
   // Compute category counts
   const categoryCounts = useMemo(() => {
@@ -56,6 +59,28 @@ export default function ProofShowcaseSection() {
     setVisibleCount(9);
   };
 
+  const openModal = (item: ProofItem) => {
+    setActiveModalItem(item);
+    setModalZoom(1);
+  };
+
+  const closeModal = useCallback(() => {
+    setActiveModalItem(null);
+    setModalZoom(1);
+  }, []);
+
+  // Keyboard navigation for modal
+  useEffect(() => {
+    if (!activeModalItem) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') closeModal();
+      if (e.key === '+' || e.key === '=') setModalZoom((z) => Math.min(3, z + 0.25));
+      if (e.key === '-') setModalZoom((z) => Math.max(0.75, z - 0.25));
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [activeModalItem, closeModal]);
+
   return (
     <section className={styles.section} id="verified-proof">
       <div className={styles.bgGlow1} />
@@ -67,7 +92,7 @@ export default function ProofShowcaseSection() {
           <ScrollReveal className="text-center">
             <div className={styles.eyebrow}>
               <span className={styles.eyebrowDot} />
-              <span>49 Live Proof Telemetry Dashboards</span>
+              <span>49 LIVE PROOF TELEMETRY DASHBOARDS</span>
             </div>
 
             <h2 className={`display-lg ${styles.title}`}>
@@ -77,7 +102,7 @@ export default function ProofShowcaseSection() {
 
             <p className={styles.subtitle}>
               Actual client dashboards showing real ROAS, revenue spikes, phone call surges, and #1 local rankings.
-              <strong> Hover on any dashboard to auto-zoom into numbers</strong>, or click <em>Deep Zoom</em> for high-resolution inspection.
+              <strong> Double-click any card to view the full-resolution screenshot</strong>, or hover to scan numbers with 60fps GPU lens.
             </p>
           </ScrollReveal>
         </div>
@@ -117,35 +142,57 @@ export default function ProofShowcaseSection() {
           </div>
         </div>
 
-        {/* Proof Grid */}
+        {/* Proof Grid with Skeuomorphic Tactile Depth */}
         <div className={styles.grid}>
           {displayedItems.map((item, idx) => (
-            <ScrollReveal key={item.file} delay={(idx % 3) * 60} className={styles.card}>
-              <div className={styles.cardVisualWrapper}>
-                <AutoZoomImage
-                  src={item.file}
-                  webpSrc={item.webpFile}
-                  alt={item.title}
-                  title={item.title}
-                  category={item.category}
-                  description={item.description}
-                  aspectRatio="16 / 10"
-                  zoomScale={2.2}
-                />
-              </div>
-
-              <div className={styles.cardBody}>
-                <div className={styles.cardMetaRow}>
-                  <span className={styles.categoryTag}>{item.category.replace(/-/g, ' ')}</span>
-                  <span className={styles.verifiedPill}>✓ Real Client Telemetry</span>
+            <ScrollReveal key={item.file} delay={(idx % 3) * 60} className={styles.cardWrapper}>
+              <div
+                className={styles.skeuomorphicCard}
+                onDoubleClick={() => openModal(item)}
+                title="Double click to expand full-resolution image"
+              >
+                {/* Visual Lens Chamber */}
+                <div className={styles.cardVisualWrapper}>
+                  <AutoZoomImage
+                    src={item.file}
+                    webpSrc={item.webpFile}
+                    alt={item.title}
+                    title={item.title}
+                    category={item.category}
+                    description={item.description}
+                    aspectRatio="16 / 10"
+                    zoomScale={2.2}
+                  />
+                  {/* Subtle overlay pill for double click hint */}
+                  <div className={styles.doubleClickHintPill}>
+                    <span>⚡ Double-Click to Expand</span>
+                  </div>
                 </div>
 
-                <h3 className={styles.cardTitle}>{item.title}</h3>
-                <p className={styles.cardDesc}>{item.description}</p>
+                {/* Tactile Beveled Card Body */}
+                <div className={styles.cardBody}>
+                  <div className={styles.cardMetaRow}>
+                    <span className={styles.categoryTag}>{item.category.replace(/-/g, ' ')}</span>
+                    <span className={styles.verifiedPill}>
+                      <span className={styles.verifiedDot} />
+                      Verified Telemetry
+                    </span>
+                  </div>
 
-                <div className={styles.cardFooter}>
-                  <span>60fps GPU Zoom Lens</span>
-                  <span className={styles.inspectHint}>🔍 Click to Inspect</span>
+                  <h3 className={styles.cardTitle}>{item.title}</h3>
+                  <p className={styles.cardDesc}>{item.description}</p>
+
+                  <div className={styles.cardFooter}>
+                    <span className={styles.telemetryTag}>60fps GPU Lens</span>
+                    <button
+                      type="button"
+                      className={styles.inspectBtn}
+                      onClick={() => openModal(item)}
+                      title="Inspect full image"
+                    >
+                      <span>🔍 Full Size</span>
+                    </button>
+                  </div>
                 </div>
               </div>
             </ScrollReveal>
@@ -166,6 +213,107 @@ export default function ProofShowcaseSection() {
           </div>
         )}
       </div>
+
+      {/* ═════════════════════════════════════════════════════════════════
+          HIGH-DEFINITION LIGHTBOX MODAL (DOUBLE CLICK INSPECTOR)
+      ═════════════════════════════════════════════════════════════════ */}
+      {activeModalItem && (
+        <div
+          className={styles.modalBackdrop}
+          onClick={closeModal}
+          role="dialog"
+          aria-modal="true"
+        >
+          <div
+            className={styles.modalContainer}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className={styles.modalHeader}>
+              <div className={styles.modalHeaderLeft}>
+                <span className={styles.modalCategoryBadge}>
+                  {activeModalItem.category.replace(/-/g, ' ').toUpperCase()}
+                </span>
+                <h3 className={styles.modalTitle}>{activeModalItem.title}</h3>
+              </div>
+
+              <div className={styles.modalHeaderRight}>
+                <div className={styles.modalZoomControls}>
+                  <button
+                    type="button"
+                    onClick={() => setModalZoom((z) => Math.max(0.75, z - 0.25))}
+                    className={styles.zoomCtrlBtn}
+                    title="Zoom Out"
+                  >
+                    −
+                  </button>
+                  <span className={styles.zoomLevelText}>{Math.round(modalZoom * 100)}%</span>
+                  <button
+                    type="button"
+                    onClick={() => setModalZoom((z) => Math.min(3, z + 0.25))}
+                    className={styles.zoomCtrlBtn}
+                    title="Zoom In"
+                  >
+                    +
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setModalZoom(1)}
+                    className={styles.zoomCtrlBtn}
+                    title="Reset Zoom"
+                  >
+                    100%
+                  </button>
+                </div>
+
+                <button
+                  type="button"
+                  onClick={closeModal}
+                  className={styles.modalCloseBtn}
+                  aria-label="Close image inspection"
+                >
+                  ✕
+                </button>
+              </div>
+            </div>
+
+            {/* Modal Image Viewport */}
+            <div className={styles.modalImageStage}>
+              <div
+                className={styles.modalImageTransformWrap}
+                style={{ transform: `scale(${modalZoom})` }}
+              >
+                <Image
+                  src={activeModalItem.webpFile || activeModalItem.file}
+                  alt={activeModalItem.title}
+                  width={1400}
+                  height={900}
+                  className={styles.modalImage}
+                  quality={95}
+                  priority
+                />
+              </div>
+            </div>
+
+            {/* Modal Footer */}
+            <div className={styles.modalFooter}>
+              <p className={styles.modalDesc}>{activeModalItem.description}</p>
+              <div className={styles.modalFooterActions}>
+                <a
+                  href={`https://wa.me/919437168434?text=${encodeURIComponent(
+                    `Hi Marketing Copilot, I am interested in achieving similar results as shown in your ${activeModalItem.title} dashboard.`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.modalConsultBtn}
+                >
+                  <span>Discuss Similar Strategy on WhatsApp ↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

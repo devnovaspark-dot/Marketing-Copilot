@@ -11,18 +11,17 @@ export default function CTASection() {
           <ScrollReveal className="text-center">
             <div className="eyebrow">
               <span className="eyebrow-dot" />
-              Get Started
+              CONFIDENTIAL STRATEGIC REVIEW
             </div>
             <h2 className={`display-xl ${styles.headline}`}>
-              Ready to Scale <span className="accent-gradient">With a Dedicated Growth Partner?</span>
+              Ready for Marketing <span className="accent-gradient">That Drives Revenue?</span>
             </h2>
-            <p className={`body-lg ${styles.sub}`} style={{ maxWidth: 760, margin: '0 auto 32px' }}>
-              Whether you want to improve search engine rankings, generate leads, connect with more customers using paid ads, or create a stronger online presence, Marketing Copilot can help you build a plan that matches your business goals.<br /><br />
-              Understand where your business stands online and find chances to grow.
+            <p className={`body-lg ${styles.sub}`} style={{ maxWidth: 760, margin: '0 auto 30px' }}>
+              Let’s talk about your growth. Send us your question for a free, confidential growth assessment and 90-day execution blueprint tailored to your industry.
             </p>
             <div className={styles.actions}>
-              <BeamButton href="/contact" label="Grow Your Business With Us" size="lg" />
-              <BeamButton href="/portfolio" label="View Our Work" size="lg" variant="outline" />
+              <BeamButton href="/contact" label="Find Your Fastest Path to Growth →" size="lg" />
+              <BeamButton href="/portfolio" label="Explore Verified Case Studies" size="lg" variant="outline" />
             </div>
           </ScrollReveal>
         </div>

@@ -58,9 +58,9 @@
 .paneHeader {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  margin-bottom: 24px;
-  min-height: 168px;
+  gap: 8px;
+  margin-bottom: 16px;
+  min-height: auto;
 }
 
 .eyebrow {
@@ -68,12 +68,12 @@
   align-items: center;
   gap: 6px;
   font-family: var(--font-display);
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.06em;
   color: #B45309;
   text-transform: uppercase;
-  height: 20px;
+  height: 18px;
 }
 
 .eyebrowDot {
@@ -94,9 +94,9 @@
 
 .headline {
   font-family: var(--font-display);
-  font-size: clamp(26px, 2.7vw, 36px);
+  font-size: clamp(22px, 2.3vw, 30px);
   font-weight: 800;
-  line-height: 1.2;
+  line-height: 1.22;
   letter-spacing: -0.025em;
   color: #000000;
   margin: 0;
@@ -111,9 +111,9 @@
 }
 
 .leadText {
-  font-size: 15px;
+  font-size: 13.5px;
   color: #475569;
-  line-height: 1.62;
+  line-height: 1.5;
   margin: 0;
 }
 
@@ -122,84 +122,84 @@
   font-weight: 700;
 }
 
-/* ── Left Pane: Larger & Prominent Pillar Cards ── */
+/* ── Left Pane: Compact & Sleek Pillar Cards ── */
 .pillarsList {
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  flex: 1;
+  gap: 10px;
 }
 
 .pillarCard {
   display: flex;
   align-items: center;
-  gap: 20px;
-  padding: 24px 26px;
+  gap: 14px;
+  padding: 12px 18px;
   background: #FFFFFF;
   border: 1.5px solid #E2E8F0;
-  border-radius: var(--radius-xl);
-  box-shadow: inset 0 1px 0 #FFFFFF, 0 4px 12px rgba(15, 23, 42, 0.03);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  flex: 1;
+  border-radius: 14px;
+  box-shadow: inset 0 1px 0 #FFFFFF, 0 3px 8px rgba(15, 23, 42, 0.03);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .pillarCard:hover {
   border-color: rgba(11, 32, 147, 0.45);
-  transform: translateY(-2.5px);
-  box-shadow: inset 0 1px 0 #FFFFFF, 0 12px 28px rgba(11, 32, 147, 0.09);
+  transform: translateY(-2px);
+  box-shadow: inset 0 1px 0 #FFFFFF, 0 8px 20px rgba(11, 32, 147, 0.08);
 }
 
 .pillarIconBox {
-  width: 54px;
-  height: 54px;
-  border-radius: 14px;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
   background: #F8FAFC;
   border: 1.5px solid #E2E8F0;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 25px;
+  font-size: 20px;
   flex-shrink: 0;
 }
 
 .pillarContent {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
 }
 
 .pillarTitle {
   font-family: var(--font-display);
-  font-size: 17.5px;
+  font-size: 14.5px;
   font-weight: 800;
   color: #000000;
+  margin: 0;
 }
 
 .pillarDesc {
-  font-size: 14px;
+  font-size: 12.5px;
   color: #64748B;
-  line-height: 1.52;
+  line-height: 1.45;
+  margin: 0;
 }
 
-/* ── Right Pane: Video Viewport (Stretches to match exact height of Left Pillars) ── */
+/* ── Right Pane: Compact Video Viewport ── */
 .videoContainer {
   position: relative;
   width: 100%;
-  flex: 1;
   display: flex;
   flex-direction: column;
-  min-height: 440px;
-  height: 100%;
-  border-radius: var(--radius-2xl);
+  height: 360px;
+  max-height: 380px;
+  min-height: 320px;
+  border-radius: 18px;
   isolation: isolate;
 }
 
 .videoBackdrop {
   position: absolute;
   inset: -6px;
-  border-radius: calc(var(--radius-2xl) + 6px);
-  background: linear-gradient(135deg, rgba(11, 32, 147, 0.18) 0%, rgba(13, 0, 127, 0.12) 100%);
-  filter: blur(16px);
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(11, 32, 147, 0.16) 0%, rgba(13, 0, 127, 0.1) 100%);
+  filter: blur(14px);
   opacity: 0.65;
   z-index: -1;
   transition: opacity 0.3s ease;
@@ -212,10 +212,10 @@
 .videoWrapper {
   position: relative;
   width: 100%;
-  flex: 1;
   height: 100%;
-  min-height: 440px;
-  border-radius: var(--radius-2xl);
+  max-height: 380px;
+  min-height: 320px;
+  border-radius: 18px;
   overflow: hidden;
   background: #090D16;
   border: 1.5px solid rgba(226, 232, 240, 0.95);
@@ -224,7 +224,7 @@
   justify-content: center;
   box-shadow: 
     inset 0 1px 0 rgba(255, 255, 255, 0.2),
-    0 24px 54px -10px rgba(15, 23, 42, 0.16),
+    0 18px 40px -8px rgba(15, 23, 42, 0.16),
     0 2px 8px rgba(15, 23, 42, 0.04);
 }
 
