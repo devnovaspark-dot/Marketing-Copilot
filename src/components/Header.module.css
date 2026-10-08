@@ -447,11 +447,9 @@
 .spotlightGraphicBox {
   position: relative;
   width: 100%;
-  aspect-ratio: 1371 / 1147;
-  max-height: 115px;
   border-radius: 8px;
   overflow: hidden;
-  margin: 3px 0 7px;
+  margin: 4px 0 8px;
   background: #091330;
   border: 1px solid rgba(255, 255, 255, 0.25);
   box-shadow: 
@@ -460,6 +458,9 @@
 }
 
 .spotlightGraphicImg {
+  width: 100%;
+  height: auto;
+  display: block;
   object-fit: contain;
   object-position: center;
   transition: transform 0.35s ease;

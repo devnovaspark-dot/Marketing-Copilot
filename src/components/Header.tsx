@@ -299,13 +299,13 @@ export default function Header() {
                         <span className={styles.spotlightRating}>★ 4.9/5</span>
                       </div>
 
-                      {/* Full-view Graphics Visual Frame */}
+                      {/* Full-view Graphics Visual Frame — 100% Uncropped Native Aspect Ratio */}
                       <div className={styles.spotlightGraphicBox}>
                         <Image
                           src="/images/ns_services_graphic.png"
                           alt="India 360 Digital Marketing Growth Architecture"
-                          fill
-                          sizes="240px"
+                          width={400}
+                          height={335}
                           className={styles.spotlightGraphicImg}
                           priority
                         />
