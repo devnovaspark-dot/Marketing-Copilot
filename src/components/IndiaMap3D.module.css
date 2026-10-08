@@ -1,383 +1,180 @@
-.mapChassis {
+.mapCanvasWrapper {
   position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
   background: transparent;
-  border: none;
-  box-shadow: none;
-  padding: 8px 4px;
-  color: #0F172A;
-  overflow: visible;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  min-height: auto;
-  transition: all 0.3s ease;
+  user-select: none;
 }
 
-/* Ambient Radial Glows (Disabled to keep pure clean light canvas) */
-.ambientRadialGlow,
-.ambientSecondaryGlow {
-  display: none;
-}
-
-/* Header Area (Minimal & Crisp) */
-.mapHeader {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-bottom: 8px;
-}
-
-.headerTopRow {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.radarBadge {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 4px 12px;
-  border-radius: 999px;
-  background: #EFF6FF;
-  border: 1px solid #DBEAFE;
-  font-family: var(--font-display, sans-serif);
-  font-size: 10.5px;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  color: #1D4ED8;
-  text-transform: uppercase;
-}
-
-.radarPulseDot {
-  width: 6.5px;
-  height: 6.5px;
-  border-radius: 50%;
-  background: #2563EB;
-  box-shadow: 0 0 6px #2563EB;
-  animation: radarDotPing 2s infinite ease-in-out;
-}
-
-@keyframes radarDotPing {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.35);
-    opacity: 0.55;
-  }
-}
-
-.perspectiveBadge {
-  font-size: 10.5px;
-  font-weight: 700;
-  color: #64748B;
-  background: #F1F5F9;
-  padding: 3px 10px;
-  border-radius: 999px;
-  border: 1px solid #E2E8F0;
-}
-
-.mapTitle {
-  font-family: var(--font-display, sans-serif);
-  font-size: 20px;
-  font-weight: 900;
-  color: #0F172A;
-  margin: 0;
-  letter-spacing: -0.02em;
-  line-height: 1.25;
-}
-
-.mapSubtitle {
-  font-size: 12px;
-  color: #64748B;
-  line-height: 1.45;
-  margin: 0;
-}
-
-/* Compact City Selector Chips */
-.cityFilterBar {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  overflow-x: auto;
-  padding: 6px 0 8px;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.cityFilterBar::-webkit-scrollbar {
-  display: none;
-}
-
-.cityFilterChip {
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  padding: 3.5px 10px;
-  border-radius: 999px;
-  background: #F8FAFC;
-  border: 1px solid #CBD5E1;
-  color: #475569;
-  font-size: 11px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.18s ease;
-  white-space: nowrap;
-}
-
-.cityFilterChip:hover {
-  background: #EFF6FF;
-  border-color: #93C5FD;
-  color: #1D4ED8;
-  transform: translateY(-1px);
-}
-
-.cityFilterChipActive {
-  background: #0B2093;
-  border-color: #0B2093;
-  color: #FFFFFF;
-  box-shadow: 0 2px 8px rgba(11, 32, 147, 0.25);
-}
-
-.hqFilterChip {
-  background: #FFFBEB;
-  border-color: #FCD34D;
-  color: #B45309;
-}
-
-.hqFilterChip.cityFilterChipActive {
-  background: #D97706;
-  border-color: #D97706;
-  color: #FFFFFF;
-}
-
-.neFilterChip {
-  background: #ECFDF5;
-  border-color: #A7F3D0;
-  color: #065F46;
-}
-
-.neFilterChip.cityFilterChipActive {
-  background: #059669;
-  border-color: #059669;
-  color: #FFFFFF;
-}
-
-/* 3D Map Viewport Stage */
+/* 100% Stable Viewport Stage (Zero Tilt, Zero Wobble on Hover) */
 .stageContainer {
   position: relative;
-  z-index: 1;
   width: 100%;
-  height: 380px;
-  perspective: 1100px;
+  max-width: 520px;
+  height: 480px;
   display: flex;
   align-items: center;
   justify-content: center;
-  user-select: none;
-  margin: 2px 0 6px;
 }
 
-.stageMesh3D {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  max-width: 440px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform-style: preserve-3d;
-  transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+@media (max-width: 640px) {
+  .stageContainer {
+    max-width: 100%;
+    height: 380px;
+  }
 }
 
-/* SVG Vector Canvas */
+/* Crisp Vector SVG Map */
 .svgCanvas {
   width: 100%;
   height: 100%;
-  max-height: 380px;
+  max-height: 480px;
   overflow: visible;
-  filter: drop-shadow(0 10px 24px rgba(15, 23, 42, 0.1));
+  filter: drop-shadow(0 8px 24px rgba(15, 23, 42, 0.08));
 }
 
-/* State Geometries (Clean Light Theme) */
+/* India State Boundaries (Crisp, High-Contrast Light Cartography) */
 .statePath {
-  fill: #F1F5F9;
-  stroke: #CBD5E1;
+  fill: #F8FAFC;
+  stroke: #94A3B8;
   stroke-width: 0.95;
-  transition: fill 0.22s ease, stroke 0.22s ease;
+  transition: fill 0.2s ease, stroke 0.2s ease;
 }
 
 .statePath:hover {
-  fill: #EEF2FF;
-  stroke: #818CF8;
+  fill: #EFF6FF;
+  stroke: #3B82F6;
 }
 
 /* Telemetry Connecting Arcs */
 .telemetryArc {
   fill: none;
-  stroke: url(#arcGradientLight);
+  stroke: url(#arcGradClean);
   stroke-width: 1.4;
   stroke-dasharray: 5 5;
-  opacity: 0.7;
-  animation: arcTravel 24s linear infinite;
+  opacity: 0.75;
+  animation: arcDashFlow 22s linear infinite;
 }
 
-@keyframes arcTravel {
-  to {
-    stroke-dashoffset: -250;
-  }
+.telemetryArcNE {
+  stroke: url(#arcGradNE);
+  stroke-dasharray: 4 4;
+  opacity: 0.9;
 }
 
 .telemetryArcActive {
   stroke: #F59E0B;
   stroke-width: 2.2;
   opacity: 1;
-  filter: drop-shadow(0 0 5px rgba(245, 158, 11, 0.5));
+  filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.6));
 }
 
-.telemetryArcNE {
-  stroke: url(#arcGradientNE);
-  stroke-dasharray: 4 4;
-  opacity: 0.85;
+@keyframes arcDashFlow {
+  to {
+    stroke-dashoffset: -280;
+  }
 }
 
-/* City Pins & Beacons (NO STICKY TEXT) */
+/* City Pins & Beacons (Interactive Hover) */
 .cityPinGroup {
   cursor: pointer;
-  transition: transform 0.18s ease;
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.cityPinGroup:hover {
+  transform: scale(1.25);
+}
+
+/* Standard Metro Beacon (Royal Blue) */
 .pinBeaconOuter {
-  fill: rgba(37, 99, 235, 0.18);
-  stroke: rgba(37, 99, 235, 0.65);
+  fill: rgba(37, 99, 235, 0.15);
+  stroke: rgba(37, 99, 235, 0.7);
   stroke-width: 1;
-  animation: beaconPulseLight 2.2s infinite ease-out;
+  animation: beaconPulse 2.4s infinite ease-out;
   transform-origin: center;
-}
-
-.pinBeaconOuterHQ {
-  fill: rgba(245, 158, 11, 0.25);
-  stroke: rgba(245, 158, 11, 0.85);
-  animation: beaconPulseHQLight 1.9s infinite ease-out;
-}
-
-.pinBeaconOuterNE {
-  fill: rgba(16, 185, 129, 0.25);
-  stroke: rgba(16, 185, 129, 0.85);
-  animation: beaconPulseNELight 2s infinite ease-out;
-}
-
-@keyframes beaconPulseLight {
-  0% {
-    r: 4;
-    opacity: 1;
-  }
-  100% {
-    r: 16;
-    opacity: 0;
-  }
-}
-
-@keyframes beaconPulseHQLight {
-  0% {
-    r: 6;
-    opacity: 1;
-  }
-  100% {
-    r: 22;
-    opacity: 0;
-  }
-}
-
-@keyframes beaconPulseNELight {
-  0% {
-    r: 5;
-    opacity: 1;
-  }
-  100% {
-    r: 20;
-    opacity: 0;
-  }
 }
 
 .pinCore {
   fill: #2563EB;
   stroke: #FFFFFF;
   stroke-width: 1.8;
-  filter: drop-shadow(0 2px 4px rgba(37, 99, 235, 0.35));
+  filter: drop-shadow(0 2px 4px rgba(37, 99, 235, 0.4));
   transition: all 0.2s ease;
+}
+
+/* Bhubaneswar HQ Beacon (Golden Amber) */
+.pinBeaconOuterHQ {
+  fill: rgba(245, 158, 11, 0.22);
+  stroke: rgba(245, 158, 11, 0.9);
+  stroke-width: 1.2;
+  animation: beaconPulseHQ 1.9s infinite ease-out;
+  transform-origin: center;
 }
 
 .pinCoreHQ {
   fill: #D97706;
   stroke: #FFFFFF;
   stroke-width: 2.2;
-  filter: drop-shadow(0 2px 6px rgba(217, 119, 6, 0.45));
+  filter: drop-shadow(0 2px 8px rgba(217, 119, 6, 0.55));
+}
+
+/* Northeast Guwahati Beacon (Emerald Teal) */
+.pinBeaconOuterNE {
+  fill: rgba(16, 185, 129, 0.22);
+  stroke: rgba(16, 185, 129, 0.9);
+  stroke-width: 1.2;
+  animation: beaconPulseNE 2.1s infinite ease-out;
+  transform-origin: center;
 }
 
 .pinCoreNE {
   fill: #059669;
   stroke: #FFFFFF;
   stroke-width: 2;
-  filter: drop-shadow(0 2px 6px rgba(5, 150, 105, 0.45));
+  filter: drop-shadow(0 2px 7px rgba(5, 150, 105, 0.5));
 }
 
-.cityPinGroup:hover .pinCore,
-.cityPinActive .pinCore {
-  fill: #0B2093;
-  stroke: #60A5FA;
-  stroke-width: 2.5;
-  transform: scale(1.3);
-  transform-origin: center;
+@keyframes beaconPulse {
+  0% { r: 4.5; opacity: 1; }
+  100% { r: 17; opacity: 0; }
 }
 
-.cityPinGroup:hover .pinCoreHQ,
-.cityPinActive .pinCoreHQ {
-  fill: #B45309;
-  stroke: #FBBF24;
-  stroke-width: 3;
-  transform: scale(1.35);
-  transform-origin: center;
+@keyframes beaconPulseHQ {
+  0% { r: 6.5; opacity: 1; }
+  100% { r: 23; opacity: 0; }
 }
 
-.cityPinGroup:hover .pinCoreNE,
-.cityPinActive .pinCoreNE {
-  fill: #047857;
-  stroke: #6EE7B7;
-  stroke-width: 2.8;
-  transform: scale(1.35);
-  transform-origin: center;
+@keyframes beaconPulseNE {
+  0% { r: 5.5; opacity: 1; }
+  100% { r: 20; opacity: 0; }
 }
 
-/* Compact Floating Hover Tooltip (NO STICKY TEXT on map; only shows on hover) */
-.floatingTooltip {
+/* Minimal Floating HUD Tooltip — Appears ONLY when pin is hovered */
+.floatingPinTooltip {
   position: absolute;
-  z-index: 20;
+  z-index: 30;
   pointer-events: none;
   transform: translate(-50%, -125%);
   background: rgba(15, 23, 42, 0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-  padding: 6px 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 12px;
+  padding: 8px 14px;
+  box-shadow: 
+    0 12px 30px rgba(0, 0, 0, 0.3),
+    0 2px 6px rgba(0, 0, 0, 0.1);
   white-space: nowrap;
-  animation: tooltipPop 0.16s ease-out forwards;
+  animation: tooltipFadeIn 0.15s ease-out forwards;
 }
 
-@keyframes tooltipPop {
+@keyframes tooltipFadeIn {
   from {
     opacity: 0;
-    transform: translate(-50%, -115%) scale(0.95);
+    transform: translate(-50%, -115%) scale(0.96);
   }
   to {
     opacity: 1;
@@ -385,87 +182,50 @@
   }
 }
 
-.tooltipTitle {
-  font-family: var(--font-display, sans-serif);
-  font-size: 12px;
-  font-weight: 800;
-  color: #FFFFFF;
-  margin: 0;
+.tooltipPillHeader {
   display: flex;
   align-items: center;
   gap: 6px;
+  margin-bottom: 2px;
 }
 
-.tooltipBadgeNE {
-  font-size: 9px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 1px 6px;
-  border-radius: 4px;
-  background: rgba(16, 185, 129, 0.25);
-  color: #6EE7B7;
-  border: 1px solid rgba(16, 185, 129, 0.4);
+.tooltipIcon {
+  font-size: 13px;
+  line-height: 1;
 }
 
-.tooltipBadgeHQ {
+.tooltipName {
+  font-family: var(--font-display, sans-serif);
+  font-size: 13px;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: -0.01em;
+}
+
+.badgeHQ {
   font-size: 9px;
   font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
   padding: 1px 6px;
   border-radius: 4px;
-  background: rgba(245, 158, 11, 0.25);
+  background: rgba(245, 158, 11, 0.3);
   color: #FCD34D;
-  border: 1px solid rgba(245, 158, 11, 0.4);
+  border: 1px solid rgba(245, 158, 11, 0.5);
+  text-transform: uppercase;
+}
+
+.badgeNE {
+  font-size: 9px;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: rgba(16, 185, 129, 0.3);
+  color: #6EE7B7;
+  border: 1px solid rgba(16, 185, 129, 0.5);
+  text-transform: uppercase;
 }
 
 .tooltipSub {
-  font-size: 10px;
+  font-size: 11px;
   color: #93C5FD;
-  margin: 2px 0 0 0;
-}
-
-/* Minimal Bottom Status Bar */
-.miniStatusBar {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 8px 14px;
-  border-radius: 12px;
-  background: #F8FAFC;
-  border: 1px solid #E2E8F0;
-  font-size: 11.5px;
-  color: #475569;
-}
-
-.miniStatusCity {
-  font-weight: 800;
-  color: #0B2093;
-}
-
-.miniStatusLink {
-  color: #16A34A;
-  font-weight: 700;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.miniStatusLink:hover {
-  text-decoration: underline;
-}
-
-@media (max-width: 640px) {
-  .mapChassis {
-    padding: 16px 14px;
-    min-height: auto;
-  }
-
-  .stageContainer {
-    height: 320px;
-  }
+  line-height: 1.35;
 }

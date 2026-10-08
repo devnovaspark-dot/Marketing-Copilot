@@ -8,11 +8,13 @@ export interface GrowthService {
   id: string;
   icon: string;
   title: string;
+  shortName: string;
   category: string;
   stage: string;
   shortDesc: string;
   metricNum: string;
   metricLabel: string;
+  glowColor: string;
 }
 
 export const CORE_GROWTH_SERVICES: GrowthService[] = [
@@ -20,81 +22,97 @@ export const CORE_GROWTH_SERVICES: GrowthService[] = [
     id: 'seo',
     icon: '⚡',
     title: 'Search Engine Optimization',
+    shortName: 'SEO & Search',
     category: 'Demand Capture',
     stage: 'Top-Funnel Influx',
-    shortDesc: 'Technical audits, semantic schema, and topic cluster fortress for #1 search rank.',
+    shortDesc: 'Technical architecture, semantic schema, and topic cluster fortress for #1 search rank.',
     metricNum: '+187% Organic Lift',
     metricLabel: 'Organic Search Growth',
+    glowColor: '#3B82F6',
   },
   {
     id: 'google-ads',
     icon: '🎯',
-    title: 'Google Ads & P-Max',
+    title: 'Google Ads & Performance Max',
+    shortName: 'Google Ads',
     category: 'High-Intent Acquisition',
     stage: 'Immediate Intent',
-    shortDesc: 'High-ROAS search & Performance Max with negative keyword shields and smart bidding.',
+    shortDesc: 'High-ROAS search & P-Max campaigns with negative keyword shields and automated bidding.',
     metricNum: '4.2X Blended ROAS',
     metricLabel: 'ROAS Target',
+    glowColor: '#F59E0B',
   },
   {
     id: 'meta-ads',
     icon: '🚀',
     title: 'Meta Ads & Advantage+',
+    shortName: 'Meta Advantage+',
     category: 'Paid Social Scale',
     stage: 'Viral Revenue Scale',
-    shortDesc: 'Advantage+ budgeting, native UGC video creative velocity, and first-party CAPI.',
+    shortDesc: 'Advantage+ budget optimization, native UGC video creative velocity, and first-party CAPI.',
     metricNum: '-42% Lower CPA',
     metricLabel: 'Acquisition Cost',
+    glowColor: '#EC4899',
   },
   {
     id: 'local-seo',
     icon: '📍',
     title: 'Local SEO & Maps 3-Pack',
+    shortName: 'Local Maps 3-Pack',
     category: 'Local Dominance',
     stage: 'Near-Me Influx',
     shortDesc: 'Google Business Profile dominance, geo-citations, and local search call influx.',
     metricNum: '3.8X Local Calls',
     metricLabel: 'Inbound Growth',
+    glowColor: '#10B981',
   },
   {
     id: 'web-dev',
     icon: '💻',
     title: 'Next.js Web Engineering',
+    shortName: 'Next.js Speed',
     category: 'Conversion Tech',
     stage: 'Sub-0.8s Speed',
-    shortDesc: 'Sub-second speed Next.js websites built with zero bloat and high conversion UX.',
+    shortDesc: 'Sub-second speed Next.js websites built with zero bloat and high-converting UX architecture.',
     metricNum: '< 0.8s LCP Load',
     metricLabel: 'Page Speed',
+    glowColor: '#6366F1',
   },
   {
     id: 'ecommerce',
     icon: '🛍️',
     title: 'E-Commerce & D2C Scaling',
+    shortName: 'E-Commerce & D2C',
     category: 'Revenue Acceleration',
     stage: 'LTV Multiplier',
     shortDesc: 'Shopify Plus & headless stores with 1-click checkout and automated WhatsApp recovery.',
     metricNum: '3.4X GMV Scale',
     metricLabel: 'Revenue Expansion',
+    glowColor: '#8B5CF6',
   },
   {
     id: 'geo-aeo',
     icon: '🤖',
     title: 'GEO & AEO (AI Search SEO)',
+    shortName: 'GEO & AI Search',
     category: 'Next-Gen Discovery',
     stage: 'LLM Citations',
     shortDesc: 'Primary citation authority inside ChatGPT, Perplexity, Claude, and Google AI Overviews.',
     metricNum: 'Top 3 AI Rank',
     metricLabel: 'AI Citations',
+    glowColor: '#06B6D4',
   },
   {
     id: 'cro',
     icon: '🧪',
     title: 'Conversion Rate Optimization',
+    shortName: 'CRO Optimization',
     category: 'Multiplier Pod',
     stage: 'Funnel Tuning',
     shortDesc: 'Multivariate split testing of headlines, checkout friction, and localized trust proof.',
     metricNum: '+54% CR Lift',
     metricLabel: 'Conversion Lift',
+    glowColor: '#14B8A6',
   },
 ];
 
@@ -107,12 +125,13 @@ export default function GrowthStackOrbit3D() {
   const requestRef = useRef<number | null>(null);
   const lastTimeRef = useRef<number | null>(null);
 
-  // Smooth continuous rotation loop
+  // Smooth continuous rotation loop with fluid delta time
   const animateOrbit = useCallback((time: number) => {
     if (lastTimeRef.current !== null) {
       const delta = time - lastTimeRef.current;
       if (isPlaying && !isHovered) {
-        setRotationAngle((prev) => (prev + delta * 0.01) % 360);
+        // Silky smooth constant rotational velocity
+        setRotationAngle((prev) => (prev + delta * 0.012) % 360);
       }
     }
     lastTimeRef.current = time;
@@ -126,9 +145,14 @@ export default function GrowthStackOrbit3D() {
     };
   }, [animateOrbit]);
 
-  const rotateStep = (direction: 'left' | 'right') => {
-    const step = 360 / CORE_GROWTH_SERVICES.length;
-    setRotationAngle((prev) => (direction === 'left' ? prev - step : prev + step));
+  const activeService = CORE_GROWTH_SERVICES[activeIdx] || CORE_GROWTH_SERVICES[0];
+
+  const focusService = (idx: number) => {
+    setActiveIdx(idx);
+    // Smoothly calculate target angle to bring selected pod to the front (90 deg)
+    const total = CORE_GROWTH_SERVICES.length;
+    const target = 90 - idx * (360 / total);
+    setRotationAngle((target + 360) % 360);
   };
 
   return (
@@ -153,95 +177,47 @@ export default function GrowthStackOrbit3D() {
           </div>
         </ScrollReveal>
 
-        {/* Orbit Interactive Controls */}
-        <div className={styles.orbitControlsBar}>
-          <button
-            type="button"
-            onClick={() => setIsPlaying(!isPlaying)}
-            className={`${styles.orbitControlBtn} ${isPlaying ? styles.orbitControlBtnActive : ''}`}
-            title="Toggle orbit animation"
-          >
-            <span>{isPlaying ? '⏸ Pause Orbit' : '▶ Resume Orbit'}</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={() => rotateStep('left')}
-            className={styles.orbitControlBtn}
-            title="Rotate counter-clockwise"
-          >
-            <span>◀ Prev</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={() => rotateStep('right')}
-            className={styles.orbitControlBtn}
-            title="Rotate clockwise"
-          >
-            <span>Next ▶</span>
-          </button>
-
-          <span className={styles.orbitStatusHint}>
-            💡 Hover any card to pause rotation
-          </span>
-        </div>
-
-        {/* Quick Chiclets Jump Bar */}
-        <div className={styles.dockChicletsBar}>
+        {/* Orbit Filter Quick Jump Chips */}
+        <div className={styles.orbitChicletsBar}>
           {CORE_GROWTH_SERVICES.map((service, idx) => {
             const isSelected = activeIdx === idx;
             return (
               <button
                 key={service.id}
                 type="button"
-                onClick={() => {
-                  setActiveIdx(idx);
-                  // Rotate selected card to front (angle 90deg / front-facing)
-                  const targetAngle = 90 - idx * (360 / CORE_GROWTH_SERVICES.length);
-                  setRotationAngle((targetAngle + 360) % 360);
-                }}
-                className={`${styles.dockChicletBtn} ${
-                  isSelected ? styles.dockChicletBtnActive : ''
+                onClick={() => focusService(idx)}
+                className={`${styles.orbitChicletBtn} ${
+                  isSelected ? styles.orbitChicletBtnActive : ''
                 }`}
               >
                 <span>{service.icon}</span>
-                <span>{service.title.split(' (')[0]}</span>
+                <span>{service.shortName}</span>
               </button>
             );
           })}
         </div>
 
-        {/* 3D Orbit Stage (No Giant Card Underneath!) */}
+        {/* 3D Orbit Stage (Satellite Pods — ZERO Clunky Cards!) */}
         <div
           className={styles.orbitArena}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
           <div className={styles.orbitStage3D}>
-            {/* SVG Elliptical Guide Tracks */}
-            <svg className={styles.orbitTrackSvg} viewBox="0 0 940 480">
-              <defs>
-                <linearGradient id="trackGlow" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#3B82F6" stopOpacity="0.3" />
-                  <stop offset="50%" stopColor="#0B2093" stopOpacity="0.1" />
-                  <stop offset="100%" stopColor="#10B981" stopOpacity="0.3" />
-                </linearGradient>
-              </defs>
-
+            {/* SVG Elliptical Orbital Path Guides */}
+            <svg className={styles.orbitTrackSvg} viewBox="0 0 1000 500">
               <ellipse
-                cx="470"
-                cy="240"
-                rx="380"
-                ry="180"
+                cx="500"
+                cy="250"
+                rx="420"
+                ry="165"
                 className={styles.orbitEllipseTrack}
               />
-
               <ellipse
-                cx="470"
-                cy="240"
-                rx="260"
-                ry="120"
+                cx="500"
+                cy="250"
+                rx="300"
+                ry="110"
                 className={styles.orbitInnerGuide}
               />
             </svg>
@@ -249,7 +225,7 @@ export default function GrowthStackOrbit3D() {
             {/* Central Marketing Copilot Growth Core */}
             <div
               className={styles.centralCoreChassis}
-              onClick={() => setActiveIdx(0)}
+              onClick={() => focusService(0)}
               title="Marketing Copilot Central Growth Engine"
             >
               <div className={styles.coreRingsAura} />
@@ -258,68 +234,94 @@ export default function GrowthStackOrbit3D() {
               <div className={styles.coreEngineTag}>GROWTH CORE</div>
             </div>
 
-            {/* Orbiting 3D Service Cards */}
+            {/* Orbiting Luminous Satellite Pods (Sleek Frosted Glass Capsules) */}
             {CORE_GROWTH_SERVICES.map((service, idx) => {
               const total = CORE_GROWTH_SERVICES.length;
               const angleDeg = (idx * (360 / total) + rotationAngle) % 360;
               const angleRad = (angleDeg * Math.PI) / 180;
 
-              const radiusX = 380;
-              const radiusY = 180;
-              const depthZ = 50;
+              const radiusX = 420;
+              const radiusY = 165;
+              const depthZ = 60;
 
               const x = Math.cos(angleRad) * radiusX;
               const y = Math.sin(angleRad) * radiusY;
               const z = Math.sin(angleRad) * depthZ;
 
-              // Front nodes are larger, more prominent and higher z-index
-              const scale = 0.88 + ((y + radiusY) / (radiusY * 2)) * 0.22;
-              const opacity = 0.8 + ((y + radiusY) / (radiusY * 2)) * 0.2;
-              const zIndex = Math.round(y + radiusY) + 10;
+              // Depth perspective physics
+              const normalizedY = (y + radiusY) / (radiusY * 2); // 0 (back) to 1 (front)
+              const scale = 0.84 + normalizedY * 0.28;
+              const opacity = 0.65 + normalizedY * 0.35;
+              const zIndex = Math.round(normalizedY * 35) + 10;
               const isSelected = activeIdx === idx;
 
               return (
                 <div
                   key={service.id}
-                  className={styles.orbitNodeWrapper}
+                  className={styles.satelliteNode}
                   style={{
                     transform: `translate3d(${x}px, ${y}px, ${z}px) scale(${scale})`,
                     zIndex,
                     opacity,
                   }}
-                  onClick={() => setActiveIdx(idx)}
+                  onClick={() => focusService(idx)}
                 >
                   <div
-                    className={`${styles.orbitCardChassis} ${
-                      isSelected ? styles.orbitCardChassisActive : ''
+                    className={`${styles.satelliteCapsule} ${
+                      isSelected ? styles.satelliteCapsuleActive : ''
                     }`}
                   >
-                    <div className={styles.cardTopRow}>
-                      <div className={styles.cardIconFrame}>{service.icon}</div>
-                      <span className={styles.cardStageBadge}>{service.stage}</span>
+                    <div
+                      className={styles.satelliteIconBubble}
+                      style={{
+                        boxShadow: isSelected
+                          ? `0 0 16px ${service.glowColor}`
+                          : `0 2px 8px rgba(0,0,0,0.06)`,
+                      }}
+                    >
+                      {service.icon}
                     </div>
-
-                    <h4 className={styles.cardTitle}>{service.title}</h4>
-                    <p className={styles.cardShortDesc}>{service.shortDesc}</p>
-
-                    <div className={styles.cardBottomStrip}>
-                      <span className={styles.cardMetricBadge}>{service.metricNum}</span>
-                      <a
-                        href={`https://wa.me/919437168434?text=${encodeURIComponent(
-                          `Hi Marketing Copilot, I would like to discuss deploying your ${service.title} capability.`
-                        )}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={styles.cardActionLink}
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        <span>Deploy ↗</span>
-                      </a>
+                    <div className={styles.satelliteMeta}>
+                      <span className={styles.satelliteTitle}>{service.shortName}</span>
+                      <span className={styles.satelliteMetricBadge}>
+                        {service.metricNum}
+                      </span>
                     </div>
                   </div>
                 </div>
               );
             })}
+          </div>
+        </div>
+
+        {/* Sleek Focal Spotlight Stream Bar (Clean, Minimal Single-Line Display) */}
+        <div className={styles.focalSpotlightChassis}>
+          <div className={styles.focalLeft}>
+            <span className={styles.focalIcon}>{activeService.icon}</span>
+            <div className={styles.focalCopyBlock}>
+              <span className={styles.focalTitle}>
+                {activeService.title} <span className={styles.focalStageTag}>&bull; {activeService.stage}</span>
+              </span>
+              <p className={styles.focalDesc}>{activeService.shortDesc}</p>
+            </div>
+          </div>
+
+          <div className={styles.focalRight}>
+            <div className={styles.focalMetricBox}>
+              <span className={styles.focalMetricVal}>{activeService.metricNum}</span>
+              <span className={styles.focalMetricLbl}>{activeService.metricLabel}</span>
+            </div>
+
+            <a
+              href={`https://wa.me/919437168434?text=${encodeURIComponent(
+                `Hi Marketing Copilot, I would like to discuss deploying your ${activeService.title} capability.`
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.focalDeployBtn}
+            >
+              <span>Deploy Pod ↗</span>
+            </a>
           </div>
         </div>
       </div>
