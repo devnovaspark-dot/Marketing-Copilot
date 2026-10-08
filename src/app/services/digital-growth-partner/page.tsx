@@ -888,6 +888,16 @@ export default function DigitalGrowthPartnerPage() {
       </section>
 
       {/* ═════════════════════════════════════════════════════════════════
+          CTA CARD REPEAT #1 (After Section 3)
+      ═════════════════════════════════════════════ */}
+      <StrategistDeskCta
+        id="desk-cta-1"
+        defaultTopic="🎯 Google & Meta Ads"
+        title="Ask Our Strategists Directly."
+        subtitle="Submit your question below for a free, confidential strategic breakdown."
+      />
+
+      {/* ═════════════════════════════════════════════════════════════════
           49 LIVE PROOF TELEMETRY DASHBOARDS
           (Positioned directly above Our Growth Framework per user instruction)
       ═════════════════════════════════════════════ */}
@@ -903,6 +913,16 @@ export default function DigitalGrowthPartnerPage() {
           SECTION 6: END-TO-END GROWTH STACK — 3D MOVING CIRCULAR ORBIT
       ═════════════════════════════════════════════ */}
       <GrowthStackOrbit3D />
+
+      {/* ═════════════════════════════════════════════════════════════════
+          CTA CARD REPEAT #2 (After Section 6)
+      ═════════════════════════════════════════════ */}
+      <StrategistDeskCta
+        id="desk-cta-2"
+        defaultTopic="⚡ Next.js Web Speed"
+        title="Let’s Talk About Your Growth."
+        subtitle="Send us your question for a free, confidential growth assessment."
+      />
 
       {/* ═════════════════════════════════════════════════════════════════
           INTERACTIVE CONNECT & STRATEGIC ASSESSMENT CTA SECTION
@@ -1048,6 +1068,16 @@ export default function DigitalGrowthPartnerPage() {
           </ScrollReveal>
         </div>
       </section>
+
+      {/* ═════════════════════════════════════════════════════════════════
+          CTA CARD REPEAT #3 (After Section 9)
+      ═════════════════════════════════════════════ */}
+      <StrategistDeskCta
+        id="desk-cta-3"
+        defaultTopic="📍 Local SEO 3-Pack"
+        title="Let’s Find Your Fastest Path to Growth."
+        subtitle="Get direct answers from our senior revenue architects on how to scale profitably."
+      />
 
       {/* ═════════════════════════════════════════════════════════════════
           PROVEN RESULTS & CASE STUDIES (FROM HOMEPAGE WITH AUTO-ZOOM)
@@ -1200,10 +1230,14 @@ export default function DigitalGrowthPartnerPage() {
       </section>
 
       {/* ═════════════════════════════════════════════════════════════════
-          STRATEGIST CONSULTATION DESK (PREMIER MID-PAGE CONVERSION POSITION)
-          Placed directly following the Proof & Comparison sections
+          CTA CARD REPEAT #4 (After Section 12)
       ═════════════════════════════════════════════ */}
-      <StrategistDeskCta id="mid-strategist-desk" defaultTopic="🎯 Google & Meta Ads" />
+      <StrategistDeskCta
+        id="mid-strategist-desk"
+        defaultTopic="💰 Retainer & Pricing"
+        title="Ready for Marketing That Drives Revenue?"
+        subtitle="Your next stage of growth starts here. Connect directly with our on-duty strategist."
+      />
 
       {/* ═════════════════════════════════════════════════════════════════
           SECTION: FREQUENTLY ASKED QUESTIONS (SKEUOMORPHIC ACCORDION)

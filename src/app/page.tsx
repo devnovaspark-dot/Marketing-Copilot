@@ -6,6 +6,7 @@ import ClientsSection from './_components/ClientsSection';
 const QuickConnectMapSection = dynamic(() => import('./_components/QuickConnectMapSection'));
 const StoryVideoSection = dynamic(() => import('./_components/StoryVideoSection'));
 const MetricsSection = dynamic(() => import('./_components/MetricsSection'));
+const ProofShowcaseSection = dynamic(() => import('./_components/ProofShowcaseSection'));
 const BrandSpotlightSection = dynamic(() => import('./_components/BrandSpotlightSection'));
 const ServicesSection = dynamic(() => import('./_components/ServicesSection'));
 const StrategySection = dynamic(() => import('./_components/StrategySection'));
@@ -49,6 +50,7 @@ export default function HomePage() {
       <BrandSpotlightSection />
       <StoryVideoSection />
       <MetricsSection />
+      <ProofShowcaseSection />
       <ServicesSection />
       <StrategySection />
       <QuotesSection />

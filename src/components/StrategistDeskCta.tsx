@@ -8,11 +8,17 @@ import styles from './StrategistDeskCta.module.css';
 interface StrategistDeskCtaProps {
   id?: string;
   defaultTopic?: string;
+  title?: string;
+  subtitle?: string;
+  eyebrow?: string;
 }
 
 export default function StrategistDeskCta({
   id = 'ask-strategist',
   defaultTopic = '🎯 Google & Meta Ads',
+  title = 'Ask Our Strategists Directly.',
+  subtitle = 'Submit your question below for a free, confidential strategic breakdown.',
+  eyebrow = 'CONFIDENTIAL STRATEGY DISPATCH • NO PRESSURE',
 }: StrategistDeskCtaProps) {
   const [selectedTopic, setSelectedTopic] = useState(defaultTopic);
   const [formState, setFormState] = useState({
@@ -193,13 +199,13 @@ export default function StrategistDeskCta({
                 <div className={styles.intakeHeader}>
                   <div className={styles.eyebrow}>
                     <span className={styles.eyebrowDot} />
-                    CONFIDENTIAL STRATEGY DISPATCH &bull; NO PRESSURE
+                    {eyebrow}
                   </div>
                   <h2 className={styles.intakeTitle}>
-                    Ask Our Strategists Directly.
+                    {title}
                   </h2>
                   <p className={styles.intakeSub}>
-                    Submit your question below for a free, confidential strategic breakdown.
+                    {subtitle}
                   </p>
                 </div>
 

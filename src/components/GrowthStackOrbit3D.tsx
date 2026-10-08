@@ -171,8 +171,6 @@ export default function GrowthStackOrbit3D() {
     };
   }, [animateOrbit]);
 
-  const activeService = CORE_GROWTH_SERVICES[activeIdx] || CORE_GROWTH_SERVICES[0];
-
   const focusService = (idx: number) => {
     setActiveIdx(idx);
     const total = CORE_GROWTH_SERVICES.length;
@@ -222,41 +220,19 @@ export default function GrowthStackOrbit3D() {
           </div>
         </ScrollReveal>
 
-        {/* Tactical 3D Orbit Console Chassis (Balanced, Proportioned, Skeuomorphic Frame) */}
-        <div className={styles.consoleChassis}>
-          {/* Orbit Filter Quick Jump Chiclets */}
-          <div className={styles.orbitChicletsBar}>
-            {CORE_GROWTH_SERVICES.map((service, idx) => {
-              const isSelected = activeIdx === idx;
-              return (
-                <button
-                  key={service.id}
-                  type="button"
-                  onClick={() => focusService(idx)}
-                  className={`${styles.orbitChicletBtn} ${
-                    isSelected ? styles.orbitChicletBtnActive : ''
-                  }`}
-                >
-                  <span className={styles.chicletIcon}>{service.icon}</span>
-                  <span>{service.shortName}</span>
-                </button>
-              );
-            })}
-          </div>
+        {/* 3D Orbit Arena (Open, Spacious Skeuomorphic 3D Stage) */}
+        <div
+          ref={arenaRef}
+          className={styles.orbitArena}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          {/* 3D Orbital Plane Rings (True Stereoscopic Gravitational Planes) */}
+          <div className={styles.orbitalDiscPlane} />
+          <div className={styles.orbitalDiscInner} />
+          <div className={styles.gravitationalHalo} />
 
-          {/* 3D Orbit Arena */}
-          <div
-            ref={arenaRef}
-            className={styles.orbitArena}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-          >
-            {/* 3D Orbital Plane Rings (True Stereoscopic Gravitational Planes) */}
-            <div className={styles.orbitalDiscPlane} />
-            <div className={styles.orbitalDiscInner} />
-            <div className={styles.gravitationalHalo} />
-
-            <div className={styles.orbitStage3D}>
+          <div className={styles.orbitStage3D}>
             {/* Central Marketing Copilot Growth Engine Core */}
             <div
               className={styles.centralCoreChassis}
@@ -265,6 +241,7 @@ export default function GrowthStackOrbit3D() {
             >
               <div className={styles.coreVolumetricAura} />
               <div className={styles.coreOuterPulseRing} />
+              <div className={styles.coreSpecularSheen} />
               <div className={styles.coreIconFrame}>🚀</div>
               <div className={styles.coreBrandTitle}>Marketing Copilot</div>
               <div className={styles.coreEngineTag}>
@@ -378,71 +355,7 @@ export default function GrowthStackOrbit3D() {
             </button>
           </div>
         </div>
-
-        {/* Executive Focal Spotlight Showcase (Full Capability Detail & Deliverables) */}
-        <div className={styles.focalSpotlightChassis}>
-          <div className={styles.focalLeft}>
-            <div
-              className={styles.focalIcon}
-              style={{
-                background: `linear-gradient(145deg, ${activeService.glowColor}15 0%, ${activeService.glowColor}25 100%)`,
-                borderColor: `${activeService.glowColor}50`,
-                boxShadow: `0 8px 24px ${activeService.glowColor}30`,
-              }}
-            >
-              {activeService.icon}
-            </div>
-            <div className={styles.focalCopyBlock}>
-              <div className={styles.focalCategoryTagRow}>
-                <span className={styles.focalCategoryPill}>
-                  {activeService.category}
-                </span>
-                <span className={styles.focalStageTag}>
-                  &bull; {activeService.stage}
-                </span>
-              </div>
-              <h3 className={styles.focalTitle}>{activeService.title}</h3>
-              <p className={styles.focalDesc}>{activeService.shortDesc}</p>
-
-              {/* 3 Concrete Deliverables Sprints */}
-              <div className={styles.focalDeliverablesList}>
-                {activeService.deliverables.map((item, dIdx) => (
-                  <span key={dIdx} className={styles.focalDeliverableBadge}>
-                    <span className={styles.deliverableCheck}>✓</span>
-                    <span>{item}</span>
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          <div className={styles.focalRight}>
-            <div className={styles.focalMetricBox}>
-              <span
-                className={styles.focalMetricVal}
-                style={{ color: activeService.glowColor }}
-              >
-                {activeService.metricNum}
-              </span>
-              <span className={styles.focalMetricLbl}>
-                {activeService.metricLabel}
-              </span>
-            </div>
-
-            <a
-              href={`https://wa.me/919437168434?text=${encodeURIComponent(
-                `Hi Marketing Copilot, I would like to discuss deploying your ${activeService.title} capability for our brand.`
-              )}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.focalDeployBtn}
-            >
-              <span>Deploy {activeService.shortName} ↗</span>
-            </a>
-          </div>
-        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
 }

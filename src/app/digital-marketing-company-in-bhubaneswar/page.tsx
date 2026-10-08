@@ -13,6 +13,8 @@ import RealGrowthSection from '../_components/RealGrowthSection';
 import FAQSection from '../_components/FAQSection';
 import CTASection from '../_components/CTASection';
 
+import StrategistDeskCta from '@/components/StrategistDeskCta';
+
 export const metadata: Metadata = {
   title: 'Digital Marketing Company in India',
   description: 'India’s leading digital marketing company. Drive revenue, high-intent leads, and top Google rankings with Marketing Copilot.',
@@ -27,12 +29,30 @@ export default function DigitalMarketingBhubaneswarPage() {
       <HeroSection />
       <ClientsSection />
       <QuickConnectMapSection />
+      <StrategistDeskCta
+        id="desk-cta-in-1"
+        defaultTopic="🎯 Google & Meta Ads"
+        title="Ask Our Strategists Directly."
+        subtitle="Submit your question below for a free, confidential strategic breakdown."
+      />
       <StoryVideoSection />
       <MetricsSection />
       <ServicesSection />
+      <StrategistDeskCta
+        id="desk-cta-in-2"
+        defaultTopic="📍 Local SEO 3-Pack"
+        title="Let’s Talk About Your Growth."
+        subtitle="Send us your question for a free, confidential growth assessment."
+      />
       <StrategySection />
       <QuotesSection />
       <TeamPreview />
+      <StrategistDeskCta
+        id="desk-cta-in-3"
+        defaultTopic="⚡ Next.js Web Speed"
+        title="Let’s Find Your Fastest Path to Growth."
+        subtitle="Get direct answers from our senior revenue architects on how to scale profitably."
+      />
       <WhyChooseSection />
       <RealGrowthSection />
       <FAQSection />
