@@ -13,6 +13,7 @@ const QuotesSection = dynamic(() => import('./_components/QuotesSection'));
 const TeamPreview = dynamic(() => import('./_components/TeamPreview'));
 const WhyChooseSection = dynamic(() => import('./_components/WhyChooseSection'));
 const RealGrowthSection = dynamic(() => import('./_components/RealGrowthSection'));
+const ProofShowcaseSection = dynamic(() => import('./_components/ProofShowcaseSection'));
 const FAQSection = dynamic(() => import('./_components/FAQSection'));
 const CTASection = dynamic(() => import('./_components/CTASection'));
 
@@ -55,6 +56,7 @@ export default function HomePage() {
       <TeamPreview />
       <WhyChooseSection />
       <RealGrowthSection />
+      <ProofShowcaseSection />
       <FAQSection />
       <CTASection />
     </>

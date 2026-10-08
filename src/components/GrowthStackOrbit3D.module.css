@@ -1,0 +1,745 @@
+.orbitSection {
+  position: relative;
+  padding: 80px 0 90px;
+  background: radial-gradient(circle at 50% 20%, rgba(11, 32, 147, 0.06) 0%, transparent 60%), #FFFFFF;
+  border-top: 1px solid rgba(226, 232, 240, 0.9);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+  overflow: hidden;
+}
+
+/* Ambient Backdrops */
+.ambientOrbLeft {
+  position: absolute;
+  top: 15%;
+  left: -10%;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(11, 32, 147, 0.08) 0%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.ambientOrbRight {
+  position: absolute;
+  bottom: 10%;
+  right: -10%;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.07) 0%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+/* Section Header */
+.headerCenter {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.eyebrowBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #FFFFFF 0%, #EFF6FF 100%);
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  box-shadow: 
+    inset 0 1.5px 0 #FFFFFF,
+    0 2px 8px rgba(37, 99, 235, 0.08);
+  margin-bottom: 16px;
+  font-family: var(--font-display, sans-serif);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #0B2093;
+  text-transform: uppercase;
+}
+
+.pulsingLed {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #3B82F6;
+  box-shadow: 0 0 8px #3B82F6;
+  animation: ledPulse 2s infinite ease-in-out;
+}
+
+@keyframes ledPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.5;
+  }
+}
+
+.titlePrimary {
+  font-family: var(--font-display, sans-serif);
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 900;
+  color: #0F172A;
+  margin: 0 0 14px 0;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+
+.subtitle {
+  font-size: 15.5px;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Orbit Controls Bar */
+.orbitControlsBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.orbitControlBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #FFFFFF;
+  border: 1.5px solid #CBD5E1;
+  color: #334155;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease;
+}
+
+.orbitControlBtn:hover {
+  border-color: #0B2093;
+  color: #0B2093;
+  transform: translateY(-1px);
+}
+
+.orbitControlBtnActive {
+  background: #0B2093;
+  border-color: #0B2093;
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(11, 32, 147, 0.25);
+}
+
+.orbitStatusText {
+  font-size: 11.5px;
+  color: #64748B;
+  font-weight: 600;
+  margin-left: 6px;
+}
+
+/* ══════════════════════════════════════════
+   3D ORBIT ARENA & STAGE
+   ══════════════════════════════════════════ */
+.orbitArena {
+  position: relative;
+  width: 100%;
+  max-width: 980px;
+  height: 520px;
+  margin: 0 auto 36px;
+  perspective: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.orbitStage3D {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+}
+
+/* SVG Orbit Track Guides */
+.orbitTrackSvg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 860px;
+  height: 440px;
+  pointer-events: none;
+}
+
+.orbitEllipseTrack {
+  fill: none;
+  stroke: rgba(11, 32, 147, 0.14);
+  stroke-width: 1.8;
+  stroke-dasharray: 6 6;
+  animation: orbitTrackSpin 60s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes orbitTrackSpin {
+  to {
+    stroke-dashoffset: -400;
+  }
+}
+
+.orbitInnerGuide {
+  fill: none;
+  stroke: rgba(59, 130, 246, 0.1);
+  stroke-width: 1;
+}
+
+/* Central Core: Marketing Copilot Engine */
+.centralCoreChassis {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #09196E 0%, #0B2093 50%, #050E42 100%);
+  border: 3px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 
+    inset 0 2px 4px rgba(255, 255, 255, 0.4),
+    inset 0 -4px 10px rgba(0, 0, 0, 0.5),
+    0 16px 40px -8px rgba(11, 32, 147, 0.4),
+    0 0 35px rgba(59, 130, 246, 0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #FFFFFF;
+  padding: 16px;
+  z-index: 5;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.centralCoreChassis:hover {
+  transform: translate(-50%, -50%) scale(1.05);
+  box-shadow: 
+    inset 0 2px 4px rgba(255, 255, 255, 0.5),
+    0 22px 50px -8px rgba(11, 32, 147, 0.55),
+    0 0 45px rgba(59, 130, 246, 0.5);
+}
+
+.coreRingsAura {
+  position: absolute;
+  inset: -14px;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(59, 130, 246, 0.4);
+  animation: auraRotate 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes auraRotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.coreIconFrame {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 6px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.coreBrandTitle {
+  font-family: var(--font-display, sans-serif);
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  color: #FFFFFF;
+  line-height: 1.2;
+}
+
+.coreEngineTag {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #93C5FD;
+  text-transform: uppercase;
+  margin-top: 3px;
+}
+
+/* ══════════════════════════════════════════
+   ORBITING SATELLITE NODES
+   ══════════════════════════════════════════ */
+.orbitNodeWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  cursor: pointer;
+  transition: transform 0.1s linear;
+}
+
+.orbitNodeCard {
+  width: 175px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #FFFFFF 0%, #FAFCFF 60%, #F1F5F9 100%);
+  border: 1.5px solid #CBD5E1;
+  box-shadow: 
+    inset 0 1.5px 0 #FFFFFF,
+    0 10px 24px -6px rgba(11, 32, 147, 0.1),
+    0 2px 6px rgba(0, 0, 0, 0.03);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transform: translate(-50%, -50%);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: left;
+}
+
+.orbitNodeCard:hover {
+  transform: translate(-50%, -50%) scale(1.08) translateY(-4px);
+  border-color: #2563EB;
+  box-shadow: 
+    inset 0 1.5px 0 #FFFFFF,
+    0 18px 36px -8px rgba(11, 32, 147, 0.22),
+    0 0 16px rgba(37, 99, 235, 0.2);
+  z-index: 50;
+}
+
+.orbitNodeCardActive {
+  background: linear-gradient(145deg, #0B2093 0%, #071561 100%);
+  border-color: #60A5FA;
+  box-shadow: 
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.35),
+    0 18px 36px -8px rgba(11, 32, 147, 0.35),
+    0 0 20px rgba(59, 130, 246, 0.4);
+}
+
+.nodeIconFrame {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #EFF6FF;
+  border: 1px solid #DBEAFE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.orbitNodeCardActive .nodeIconFrame {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.nodeTextMeta {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.nodeStageLabel {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #2563EB;
+  margin-bottom: 2px;
+}
+
+.orbitNodeCardActive .nodeStageLabel {
+  color: #93C5FD;
+}
+
+.nodeTitleH4 {
+  font-family: var(--font-display, sans-serif);
+  font-size: 11.5px;
+  font-weight: 900;
+  color: #0F172A;
+  margin: 0 0 2px 0;
+  line-height: 1.25;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.orbitNodeCardActive .nodeTitleH4 {
+  color: #FFFFFF;
+}
+
+.nodeMetricPill {
+  font-size: 10px;
+  font-weight: 800;
+  color: #059669;
+}
+
+.orbitNodeCardActive .nodeMetricPill {
+  color: #34D399;
+}
+
+/* ══════════════════════════════════════════
+   DOCK: Bottom Chiclets (For Quick Direct Pick)
+   ══════════════════════════════════════════ */
+.dockChicletsBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 0 auto 32px;
+  max-width: 960px;
+}
+
+.dockChicletBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: #FFFFFF;
+  border: 1.5px solid #CBD5E1;
+  color: #475569;
+  font-family: var(--font-display, sans-serif);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.dockChicletBtn:hover {
+  border-color: #0B2093;
+  color: #0B2093;
+  background: #F8FAFC;
+  transform: translateY(-1px);
+}
+
+.dockChicletBtnActive {
+  background: #0B2093;
+  border-color: #0B2093;
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(11, 32, 147, 0.25);
+}
+
+/* ══════════════════════════════════════════
+   ACTIVE CAPABILITY TELEMETRY COCKPIT CHASSIS
+   ══════════════════════════════════════════ */
+.telemetryCockpitChassis {
+  max-width: 980px;
+  margin: 0 auto;
+  border-radius: 24px;
+  background: linear-gradient(165deg, #FFFFFF 0%, #FAFCFF 60%, #F8FAFD 100%);
+  border: 1.5px solid #CBD5E1;
+  box-shadow: 
+    inset 0 2px 0 #FFFFFF,
+    0 24px 60px -12px rgba(11, 32, 147, 0.12),
+    0 2px 8px rgba(0, 0, 0, 0.02);
+  padding: 34px 36px;
+  transition: all 0.3s ease;
+}
+
+.cockpitTopBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-bottom: 22px;
+  border-bottom: 1.5px solid #E2E8F0;
+  margin-bottom: 24px;
+}
+
+.cockpitIdentity {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.cockpitIconFrame {
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+  border: 1.5px solid #93C5FD;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.12);
+}
+
+.cockpitMetaRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.cockpitCategoryTag {
+  font-family: var(--font-display, sans-serif);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #0B2093;
+  background: #EEF2FF;
+  border: 1px solid #C7D2FE;
+  padding: 3px 9px;
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+
+.cockpitStageTag {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #64748B;
+}
+
+.cockpitTitleH3 {
+  font-family: var(--font-display, sans-serif);
+  font-size: 22px;
+  font-weight: 900;
+  color: #0F172A;
+  margin: 0;
+  letter-spacing: -0.015em;
+}
+
+.cockpitMetricGauge {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.metricCol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.metricNumBig {
+  font-family: var(--font-display, sans-serif);
+  font-size: 26px;
+  font-weight: 900;
+  color: #16A34A;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.metricLabelSub {
+  font-size: 11px;
+  font-weight: 700;
+  color: #64748B;
+  margin-top: 3px;
+}
+
+.cockpitBodyDesc {
+  font-size: 14.5px;
+  color: #334155;
+  line-height: 1.6;
+  margin: 0 0 24px 0;
+}
+
+/* 3-Step Execution Workflow Grid */
+.workflowSection {
+  margin-bottom: 24px;
+}
+
+.workflowHeaderLabel {
+  font-family: var(--font-display, sans-serif);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #64748B;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.workflowGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.workflowCard {
+  padding: 16px 14px;
+  border-radius: 14px;
+  background: #FFFFFF;
+  border: 1.5px solid #E2E8F0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.stepNumBadge {
+  font-family: monospace;
+  font-size: 11px;
+  font-weight: 900;
+  color: #2563EB;
+  background: #EFF6FF;
+  border: 1px solid #DBEAFE;
+  padding: 2px 7px;
+  border-radius: 6px;
+  align-self: flex-start;
+}
+
+.stepTitle {
+  font-family: var(--font-display, sans-serif);
+  font-size: 12.5px;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0;
+}
+
+.stepDesc {
+  font-size: 11.5px;
+  color: #64748B;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* Integrated Tech Stack & Action Footer */
+.cockpitFooterStrip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-top: 20px;
+  border-top: 1.5px dashed #CBD5E1;
+}
+
+.techStackChipsWrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.techStackTitle {
+  font-family: var(--font-display, sans-serif);
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #64748B;
+  text-transform: uppercase;
+}
+
+.techChip {
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: #F1F5F9;
+  border: 1px solid #E2E8F0;
+  font-size: 11px;
+  font-weight: 700;
+  color: #334155;
+}
+
+.cockpitActionBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 12px;
+  background: #0B2093;
+  color: #FFFFFF;
+  font-family: var(--font-display, sans-serif);
+  font-size: 12.5px;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(11, 32, 147, 0.25);
+  transition: all 0.2s ease;
+}
+
+.cockpitActionBtn:hover {
+  background: #1D4ED8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(11, 32, 147, 0.35);
+}
+
+@media (max-width: 900px) {
+  .orbitArena {
+    height: 480px;
+  }
+
+  .workflowGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .telemetryCockpitChassis {
+    padding: 24px 20px;
+  }
+
+  .cockpitTopBar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cockpitMetricGauge {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .metricCol {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .orbitArena {
+    height: 440px;
+  }
+
+  .orbitNodeCard {
+    width: 140px;
+    padding: 8px 10px;
+  }
+
+  .nodeIconFrame {
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+  }
+
+  .nodeTitleH4 {
+    font-size: 10.5px;
+  }
+
+  .centralCoreChassis {
+    width: 130px;
+    height: 130px;
+    padding: 10px;
+  }
+
+  .coreIconFrame {
+    width: 34px;
+    height: 34px;
+    font-size: 16px;
+  }
+
+  .coreBrandTitle {
+    font-size: 11px;
+  }
+}

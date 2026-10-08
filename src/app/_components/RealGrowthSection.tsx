@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import BeamButton from '@/components/BeamButton';
 import ScrollReveal from '@/components/ScrollReveal';
+import AutoZoomImage from '@/components/AutoZoomImage';
 import styles from './RealGrowthSection.module.css';
 
 interface CaseStudy {
@@ -125,13 +126,14 @@ export default function RealGrowthSection() {
               <div className={styles.card} style={{ '--accent-color': study.color } as React.CSSProperties}>
                 {/* Visual Header with Image (Full 1200x500 Aspect Ratio) */}
                 <div className={styles.cardVisual}>
-                  <Image
+                  <AutoZoomImage
                     src={study.image}
                     alt={study.client}
-                    fill
-                    className={styles.cardImg}
-                    sizes="(max-width: 900px) 100vw, 600px"
-                    loading="lazy"
+                    title={`${study.client} — ${study.category}`}
+                    category={study.category}
+                    description={study.overview}
+                    aspectRatio="1200 / 500"
+                    zoomScale={1.9}
                   />
                 </div>
 

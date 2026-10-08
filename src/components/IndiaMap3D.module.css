@@ -1,0 +1,564 @@
+.mapChassis {
+  position: relative;
+  border-radius: 26px;
+  background: linear-gradient(165deg, #071038 0%, #0B1C63 50%, #040924 100%);
+  border: 1.5px solid rgba(59, 130, 246, 0.28);
+  box-shadow: 
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.15),
+    inset 0 -2px 10px rgba(0, 0, 0, 0.4),
+    0 24px 60px -15px rgba(11, 32, 147, 0.35),
+    0 4px 16px rgba(0, 0, 0, 0.2);
+  padding: 28px 24px 22px;
+  color: #FFFFFF;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 720px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mapChassis:hover {
+  border-color: rgba(96, 165, 250, 0.5);
+  box-shadow: 
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.25),
+    0 28px 70px -12px rgba(11, 32, 147, 0.45);
+}
+
+/* Ambient Radial Backlights */
+.ambientRadialGlow {
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.18) 0%, rgba(14, 165, 233, 0.08) 45%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ambientSecondaryGlow {
+  position: absolute;
+  bottom: 10%;
+  right: 15%;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.14) 0%, transparent 65%);
+  filter: blur(50px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Header Area */
+.mapHeader {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.headerTopRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.radarBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 13px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-family: var(--font-display, sans-serif);
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #93C5FD;
+  text-transform: uppercase;
+}
+
+.radarPulseDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #38BDF8;
+  box-shadow: 0 0 10px #38BDF8;
+  animation: radarDotPing 1.8s infinite ease-in-out;
+}
+
+@keyframes radarDotPing {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.6;
+  }
+}
+
+.perspectiveBadge {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #94A3B8;
+  background: rgba(15, 23, 42, 0.6);
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.mapTitle {
+  font-family: var(--font-display, sans-serif);
+  font-size: 22px;
+  font-weight: 900;
+  color: #FFFFFF;
+  margin: 0;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.mapSubtitle {
+  font-size: 12.5px;
+  color: #CBD5E1;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Quick City Filter Bar */
+.cityFilterBar {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow-x: auto;
+  padding: 6px 0 10px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.cityFilterBar::-webkit-scrollbar {
+  display: none;
+}
+
+.cityFilterChip {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 11px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #CBD5E1;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.cityFilterChip:hover {
+  background: rgba(59, 130, 246, 0.2);
+  border-color: rgba(96, 165, 250, 0.4);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+.cityFilterChipActive {
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+  border-color: #60A5FA;
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+}
+
+.hqFilterChip {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.2) 0%, rgba(217, 119, 6, 0.2) 100%);
+  border-color: rgba(245, 158, 11, 0.5);
+  color: #FDE68A;
+}
+
+.hqFilterChip.cityFilterChipActive {
+  background: linear-gradient(135deg, #D97706 0%, #B45309 100%);
+  border-color: #FBBF24;
+  color: #FFFFFF;
+}
+
+/* 3D Map Viewport & Stage */
+.stageContainer {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 420px;
+  perspective: 1100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 4px 0 12px;
+  user-select: none;
+}
+
+.stageMesh3D {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+  transition: transform 0.18s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* SVG Vector Canvas */
+.svgCanvas {
+  width: 100%;
+  height: 100%;
+  max-height: 420px;
+  overflow: visible;
+  filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.45));
+}
+
+/* State Geometries */
+.statePath {
+  fill: #0B2475;
+  stroke: rgba(96, 165, 250, 0.35);
+  stroke-width: 0.85;
+  transition: fill 0.25s ease, stroke 0.25s ease;
+}
+
+.statePath:hover {
+  fill: #1435A0;
+  stroke: rgba(147, 197, 253, 0.7);
+}
+
+/* Active Telemetry Arcs */
+.telemetryArc {
+  fill: none;
+  stroke: url(#arcGradient);
+  stroke-width: 1.5;
+  stroke-dasharray: 6 6;
+  opacity: 0.75;
+  animation: telemetryArcFlow 25s linear infinite;
+}
+
+@keyframes telemetryArcFlow {
+  to {
+    stroke-dashoffset: -300;
+  }
+}
+
+.telemetryArcActive {
+  stroke: #F59E0B;
+  stroke-width: 2.2;
+  opacity: 1;
+  filter: drop-shadow(0 0 6px #F59E0B);
+}
+
+/* Map Nodes / City Pins */
+.cityPinGroup {
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pinBeaconOuter {
+  fill: rgba(56, 189, 248, 0.2);
+  stroke: rgba(56, 189, 248, 0.6);
+  stroke-width: 1;
+  animation: beaconPulse 2.4s infinite ease-out;
+  transform-origin: center;
+}
+
+.pinBeaconOuterHQ {
+  fill: rgba(245, 158, 11, 0.25);
+  stroke: rgba(245, 158, 11, 0.8);
+  animation: beaconPulseHQ 2s infinite ease-out;
+}
+
+@keyframes beaconPulse {
+  0% {
+    r: 5;
+    opacity: 1;
+  }
+  100% {
+    r: 18;
+    opacity: 0;
+  }
+}
+
+@keyframes beaconPulseHQ {
+  0% {
+    r: 7;
+    opacity: 1;
+  }
+  100% {
+    r: 24;
+    opacity: 0;
+  }
+}
+
+.pinCore {
+  fill: #38BDF8;
+  stroke: #FFFFFF;
+  stroke-width: 1.5;
+  filter: drop-shadow(0 0 5px #38BDF8);
+  transition: all 0.2s ease;
+}
+
+.pinCoreHQ {
+  fill: #F59E0B;
+  stroke: #FFFFFF;
+  stroke-width: 2;
+  filter: drop-shadow(0 0 8px #F59E0B);
+}
+
+.cityPinGroup:hover .pinCore,
+.cityPinActive .pinCore {
+  fill: #FFFFFF;
+  stroke: #38BDF8;
+  stroke-width: 2.5;
+  transform: scale(1.3);
+  transform-origin: center;
+}
+
+.cityPinGroup:hover .pinCoreHQ,
+.cityPinActive .pinCoreHQ {
+  fill: #FEF3C7;
+  stroke: #D97706;
+  stroke-width: 3;
+  transform: scale(1.35);
+  transform-origin: center;
+}
+
+/* Floating Hover HUD Tooltip (NO STICKY TEXT on map; only on hover!) */
+.floatingTooltip {
+  position: absolute;
+  z-index: 10;
+  pointer-events: none;
+  transform: translate(-50%, -125%);
+  background: rgba(11, 20, 55, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(96, 165, 250, 0.5);
+  border-radius: 12px;
+  padding: 10px 14px;
+  box-shadow: 
+    0 16px 36px -8px rgba(0, 0, 0, 0.6),
+    0 0 20px rgba(56, 189, 248, 0.25);
+  min-width: 190px;
+  max-width: 240px;
+  white-space: normal;
+  animation: tooltipFadeIn 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes tooltipFadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -115%) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -125%) scale(1);
+  }
+}
+
+.tooltipHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.tooltipCityName {
+  font-family: var(--font-display, sans-serif);
+  font-size: 13.5px;
+  font-weight: 900;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.tooltipBadge {
+  font-size: 9px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(56, 189, 248, 0.2);
+  color: #7DD3FC;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.tooltipBadgeHQ {
+  background: rgba(245, 158, 11, 0.25);
+  color: #FDE68A;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.tooltipSpec {
+  font-size: 11px;
+  color: #CBD5E1;
+  line-height: 1.35;
+  margin: 0 0 6px 0;
+}
+
+.tooltipFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 10px;
+  color: #94A3B8;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 5px;
+}
+
+.tooltipStatusDot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #10B981;
+  margin-right: 4px;
+}
+
+.tooltipSpeed {
+  color: #38BDF8;
+  font-weight: 700;
+}
+
+/* Bottom Active Hub Dossier Console */
+.activeHubDossier {
+  position: relative;
+  z-index: 2;
+  margin-top: 10px;
+  padding: 16px 18px;
+  border-radius: 18px;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.dossierTopRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.dossierCityTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dossierCityName {
+  font-family: var(--font-display, sans-serif);
+  font-size: 16px;
+  font-weight: 900;
+  color: #FFFFFF;
+}
+
+.dossierStateBadge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(56, 189, 248, 0.15);
+  color: #93C5FD;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.dossierLiveStatus {
+  font-size: 11px;
+  font-weight: 700;
+  color: #34D399;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.dossierHighlight {
+  font-size: 12px;
+  color: #E2E8F0;
+  line-height: 1.45;
+  margin: 0 0 12px 0;
+}
+
+.dossierGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.dossierTile {
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dossierMetaLabel {
+  font-size: 9.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #94A3B8;
+  margin-bottom: 3px;
+}
+
+.dossierValText {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.25;
+}
+
+/* Footer Assurance Strip */
+.assuranceStrip {
+  position: relative;
+  z-index: 2;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 11px;
+  color: #93C5FD;
+  font-weight: 700;
+}
+
+.assuranceItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+@media (max-width: 640px) {
+  .mapChassis {
+    padding: 20px 16px;
+    min-height: auto;
+  }
+
+  .stageContainer {
+    height: 340px;
+  }
+
+  .dossierGrid {
+    grid-template-columns: 1fr;
+  }
+}
