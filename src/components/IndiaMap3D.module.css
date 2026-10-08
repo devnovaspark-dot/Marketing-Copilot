@@ -1,68 +1,87 @@
 /* ═════════════════════════════════════════════════════════════════
-   UNBOXED 3D PAN-INDIA DEPLOYMENT STAGE (NO CARD CONTAINER)
+   SKEUOMORPHIC PAN-INDIA PERFORMANCE DEPLOYMENT MAP CARD
+   (Equal-Height, Proportioned, Skeuomorphic Tactical Chassis)
    ═════════════════════════════════════════════════════════════════ */
-.mapStageRoot {
+.mapCardChassis {
   width: 100%;
+  height: 100%;
+  min-height: 540px;
+  padding: 26px 22px;
+  border-radius: 24px;
+  background: linear-gradient(165deg, #FFFFFF 0%, #FAFCFF 45%, #F4F8FD 100%);
+  border: 1.5px solid #CBD5E1;
+  border-top: 2.5px solid #FFFFFF;
+  box-shadow: 
+    inset 0 1.5px 0 #FFFFFF,
+    0 18px 44px -12px rgba(11, 32, 147, 0.08),
+    0 2px 8px rgba(0, 0, 0, 0.02);
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  justify-content: space-between;
+  gap: 14px;
+  position: relative;
+  transition: all 0.28s ease;
   user-select: none;
 }
 
-/* ═════════════════════════════════════════════════════════════════
-   STRATEGIC MAP MEANING NARRATIVE
-   ═════════════════════════════════════════════════════════════════ */
-.mapMeaningBlock {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+.mapCardChassis:hover {
+  border-color: #94A3B8;
+  box-shadow: 
+    inset 0 2.5px 0 #FFFFFF,
+    0 26px 60px -16px rgba(11, 32, 147, 0.14);
 }
 
-.meaningHeaderRow {
+/* Header Row (Mirrors Left Card Header Row) */
+.mapCardHeaderRow {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  flex-wrap: wrap;
+  margin-bottom: 4px;
 }
 
-.meaningBadge {
+.mapLiveBadge {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  padding: 4px 12px;
+  gap: 8px;
+  padding: 5px 12px;
   border-radius: 999px;
-  background: #EFF6FF;
-  border: 1px solid #BFDBFE;
-  font-family: var(--font-display, sans-serif);
-  font-size: 10.5px;
+  background: #FFFFFF;
+  border: 1.5px solid #CBD5E1;
+  font-size: 10px;
   font-weight: 800;
-  letter-spacing: 0.08em;
-  color: #1D4ED8;
+  color: #1E293B;
   text-transform: uppercase;
+  letter-spacing: 0.07em;
+  box-shadow: 
+    inset 0 1px 0 #FFFFFF,
+    0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
-.meaningLedLive {
-  width: 6px;
-  height: 6px;
+.statusLedLive {
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   background: #3B82F6;
-  box-shadow: 0 0 8px #3B82F6;
-  animation: ledPulse 2s infinite ease-in-out;
+  box-shadow: 0 0 6px #3B82F6;
+  animation: radarPulse 2s infinite ease-in-out;
 }
 
-.meaningGridCount {
+.mapCorridorsCount {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-family: var(--font-mono, monospace);
-  font-size: 10px;
-  font-weight: 700;
-  color: #475569;
+  font-family: var(--font-display, sans-serif);
+  font-size: 9.5px;
+  font-weight: 800;
   letter-spacing: 0.06em;
+  color: #1D4ED8;
+  background: #EFF6FF;
+  border: 1px solid #BFDBFE;
+  padding: 3px 8px;
+  border-radius: 6px;
 }
 
-.corridorPulseDot {
+.countPulseDot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
@@ -70,326 +89,250 @@
   box-shadow: 0 0 6px #10B981;
 }
 
-@keyframes ledPulse {
+@keyframes radarPulse {
   0%, 100% {
     transform: scale(1);
     opacity: 1;
   }
   50% {
-    transform: scale(1.4);
-    opacity: 0.5;
+    transform: scale(1.35);
+    opacity: 0.6;
   }
 }
 
-.mapMeaningTitle {
-  font-family: var(--font-display, sans-serif);
-  font-size: clamp(20px, 2.4vw, 24px);
-  font-weight: 900;
-  color: #0F172A;
-  margin: 0;
-  letter-spacing: -0.02em;
-  line-height: 1.25;
-}
-
-.mapMeaningDesc {
-  font-size: 13.5px;
-  color: #475569;
-  line-height: 1.6;
-  margin: 0;
-}
-
-.mapMeaningDesc strong {
-  color: #0B2093;
-}
-
-/* Legend: Clear, interactive node explanation */
-.mapLegendBar {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-top: 4px;
-}
-
-.legendItem {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 5px 12px;
-  border-radius: 999px;
-  background: #FFFFFF;
-  border: 1px solid #E2E8F0;
-  font-size: 11px;
-  color: #475569;
-  cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
-}
-
-.legendItem:hover {
-  background: #F8FAFC;
-  border-color: #CBD5E1;
-  transform: translateY(-1px);
-}
-
-.legendItemActive {
-  background: #EFF6FF;
-  border-color: #3B82F6;
-  color: #1D4ED8;
-  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.15);
-}
-
-.legendDotHQ {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: #D97706;
-  box-shadow: 0 0 8px #F59E0B;
-  flex-shrink: 0;
-}
-
-.legendDotMetro {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: #2563EB;
-  box-shadow: 0 0 8px #3B82F6;
-  flex-shrink: 0;
-}
-
-.legendDotNE {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: #059669;
-  box-shadow: 0 0 8px #10B981;
-  flex-shrink: 0;
-}
-
 /* ═════════════════════════════════════════════════════════════════
-   UNBOXED MAP STAGE (NO CARD BOX / FLOATING VECTOR CARTOGRAPHY)
+   MAP CANVAS VIEWPORT
    ═════════════════════════════════════════════════════════════════ */
-.unboxedMapStage {
+.mapCanvasWrapper {
   position: relative;
   width: 100%;
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 0;
   overflow: visible;
+  padding: 6px 0;
 }
 
-.ambientSubcontinentGlow {
+.subcontinentAura {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 480px;
-  height: 520px;
+  width: 380px;
+  height: 380px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, rgba(245, 158, 11, 0.035) 45%, transparent 72%);
-  filter: blur(40px);
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.06) 0%, rgba(245, 158, 11, 0.025) 45%, transparent 70%);
+  filter: blur(30px);
   pointer-events: none;
 }
 
-.stageContainer {
-  position: relative;
-  width: 100%;
-  max-width: 530px;
-  aspect-ratio: 600 / 680;
-  height: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-}
-
-@media (max-width: 640px) {
-  .stageContainer {
-    max-width: 100%;
-  }
-}
-
-/* Crisp Vector SVG Map */
 .svgCanvas {
   width: 100%;
-  height: 100%;
+  max-width: 440px;
+  height: auto;
+  max-height: 380px;
+  aspect-ratio: 600 / 680;
+  display: block;
   overflow: visible;
-  filter: drop-shadow(0 14px 28px rgba(15, 23, 42, 0.09));
 }
 
-/* Radar Distance Monospace Text */
-.radarDistanceText {
-  font-family: var(--font-mono, monospace);
-  font-size: 8px;
-  font-weight: 700;
-  fill: #94A3B8;
-  letter-spacing: 0.08em;
+/* India State Outlines */
+.statesLayer {
+  transition: opacity 0.3s ease;
 }
 
-/* India State Boundaries (Crisp High-Contrast Cartography) */
 .statePath {
-  fill: #FFFFFF;
-  stroke: #94A3B8;
-  stroke-width: 0.95;
-  transition: fill 0.2s ease, stroke 0.2s ease;
+  fill: #F1F5F9;
+  stroke: #CBD5E1;
+  stroke-width: 0.85;
+  stroke-linejoin: round;
+  transition: fill 0.25s ease, stroke 0.25s ease;
 }
 
-/* Telemetry Connecting Arcs */
+/* Connecting Telemetry Arcs */
+.arcsLayer {
+  pointer-events: none;
+}
+
 .telemetryArc {
   fill: none;
   stroke: url(#arcGradClean);
-  stroke-width: 1.4;
-  stroke-dasharray: 5 5;
+  stroke-width: 1.5;
+  stroke-dasharray: 6 5;
+  animation: arcStream 24s linear infinite;
   opacity: 0.75;
-  animation: arcDashFlow 22s linear infinite;
+  transition: stroke-width 0.25s ease, opacity 0.25s ease;
 }
 
 .telemetryArcNE {
   stroke: url(#arcGradNE);
-  stroke-dasharray: 4 4;
+  stroke-width: 1.8;
   opacity: 0.9;
 }
 
 .telemetryArcActive {
-  stroke: #F59E0B;
+  stroke: #EA580C;
   stroke-width: 2.4;
   opacity: 1;
-  filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.7));
+  stroke-dasharray: none;
+  filter: drop-shadow(0 0 6px rgba(234, 88, 12, 0.6));
 }
 
-@keyframes arcDashFlow {
+@keyframes arcStream {
   to {
-    stroke-dashoffset: -280;
+    stroke-dashoffset: -320;
   }
 }
 
-/* City Pins: Fixed Position, Rock-Solid Hit Area — ZERO Jitter or Vibration */
+/* ═════════════════════════════════════════════════════════════════
+   CITY PINS & LABELS
+   ═════════════════════════════════════════════ */
+.pinsLayer {
+  cursor: pointer;
+}
+
 .cityPinGroup {
-  pointer-events: none;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .hitTarget {
   fill: transparent;
   cursor: pointer;
-  pointer-events: all;
 }
 
-/* Standard Metro Beacon (Royal Blue) */
+/* Outer Pulsing Beacon Rings */
 .pinBeaconOuter {
-  fill: rgba(37, 99, 235, 0.12);
-  stroke: rgba(37, 99, 235, 0.6);
-  stroke-width: 1;
+  fill: none;
+  stroke: rgba(37, 99, 235, 0.35);
+  stroke-width: 1.5;
   animation: beaconPulse 2.4s infinite ease-out;
-  transform-box: fill-box;
-  transform-origin: center;
-  pointer-events: none;
 }
 
+.pinBeaconOuterHQ {
+  fill: none;
+  stroke: rgba(217, 119, 6, 0.5);
+  stroke-width: 2;
+  animation: beaconPulseHQ 1.8s infinite ease-out;
+}
+
+.pinBeaconOuterNE {
+  fill: none;
+  stroke: rgba(5, 150, 105, 0.45);
+  stroke-width: 1.5;
+  animation: beaconPulse 2.2s infinite ease-out;
+}
+
+@keyframes beaconPulse {
+  0% {
+    r: 6;
+    opacity: 0.9;
+  }
+  100% {
+    r: 18;
+    opacity: 0;
+  }
+}
+
+@keyframes beaconPulseHQ {
+  0% {
+    r: 8;
+    opacity: 1;
+  }
+  100% {
+    r: 22;
+    opacity: 0;
+  }
+}
+
+/* Core Pin Dots */
 .pinCore {
   fill: #2563EB;
   stroke: #FFFFFF;
-  stroke-width: 1.8;
-  filter: drop-shadow(0 2px 4px rgba(37, 99, 235, 0.4));
-  transition: filter 0.2s ease, stroke-width 0.2s ease;
-  pointer-events: none;
-}
-
-/* Bhubaneswar HQ Beacon (Golden Amber) */
-.pinBeaconOuterHQ {
-  fill: rgba(245, 158, 11, 0.18);
-  stroke: rgba(245, 158, 11, 0.85);
-  stroke-width: 1.2;
-  animation: beaconPulse 2.0s infinite ease-out;
-  transform-box: fill-box;
-  transform-origin: center;
-  pointer-events: none;
+  stroke-width: 1.5;
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.6);
+  transition: fill 0.2s ease, transform 0.2s ease;
 }
 
 .pinCoreHQ {
   fill: #D97706;
   stroke: #FFFFFF;
-  stroke-width: 2.2;
-  filter: drop-shadow(0 2px 8px rgba(217, 119, 6, 0.55));
-  transition: filter 0.2s ease, stroke-width 0.2s ease;
-  pointer-events: none;
-}
-
-/* Northeast Guwahati Beacon (Emerald Teal) */
-.pinBeaconOuterNE {
-  fill: rgba(16, 185, 129, 0.18);
-  stroke: rgba(16, 185, 129, 0.85);
-  stroke-width: 1.2;
-  animation: beaconPulse 2.2s infinite ease-out;
-  transform-box: fill-box;
-  transform-origin: center;
-  pointer-events: none;
+  stroke-width: 2;
+  filter: drop-shadow(0 0 6px rgba(217, 119, 6, 0.7));
 }
 
 .pinCoreNE {
   fill: #059669;
   stroke: #FFFFFF;
-  stroke-width: 2;
-  filter: drop-shadow(0 2px 7px rgba(5, 150, 105, 0.5));
-  transition: filter 0.2s ease, stroke-width 0.2s ease;
-  pointer-events: none;
+  stroke-width: 1.5;
+  filter: drop-shadow(0 0 6px rgba(5, 150, 105, 0.6));
 }
 
-/* Active Pin Glow States */
 .cityPinActive .pinCore {
-  filter: drop-shadow(0 0 10px #2563EB);
-  stroke-width: 2.6;
+  fill: #EA580C;
+  stroke-width: 2;
+  transform: scale(1.3);
 }
 
-.cityPinActive .pinCoreHQ {
-  filter: drop-shadow(0 0 14px #F59E0B);
-  stroke-width: 3;
+/* SVG City Labels */
+.cityLabelSvg {
+  font-family: var(--font-display, sans-serif);
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  user-select: none;
+  text-shadow: 0 1px 2px #FFFFFF, 0 0 4px #FFFFFF;
+  transition: fill 0.2s ease, font-size 0.2s ease;
 }
 
-.cityPinActive .pinCoreNE {
-  filter: drop-shadow(0 0 14px #10B981);
-  stroke-width: 3;
+.cityLabelMetro {
+  fill: #334155;
 }
 
-/* GPU Accelerated Scale Pulse */
-@keyframes beaconPulse {
-  0% {
-    transform: scale(0.6);
-    opacity: 0.95;
-  }
-  100% {
-    transform: scale(2.0);
-    opacity: 0;
-  }
+.cityLabelHQ {
+  fill: #B45309;
+  font-weight: 900;
+  font-size: 9.5px;
 }
 
-/* Minimal Floating HUD Tooltip — Appears ONLY when pin is hovered */
+.cityLabelNE {
+  fill: #047857;
+  font-weight: 800;
+}
+
+.cityLabelActive {
+  fill: #EA580C;
+  font-weight: 900;
+  font-size: 10px;
+}
+
+/* ═════════════════════════════════════════════════════════════════
+   FLOATING HOVER TOOLTIP
+   ═════════════════════════════════════════════ */
 .floatingPinTooltip {
   position: absolute;
-  z-index: 50;
-  pointer-events: none;
   transform: translate(-50%, -125%);
-  background: rgba(15, 23, 42, 0.95);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  border-radius: 12px;
-  padding: 8px 14px;
-  box-shadow: 
-    0 12px 30px rgba(0, 0, 0, 0.3),
-    0 2px 6px rgba(0, 0, 0, 0.1);
+  background: rgba(15, 23, 42, 0.94);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 8px 12px;
+  color: #FFFFFF;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+  z-index: 50;
   white-space: nowrap;
-  animation: tooltipFadeIn 0.15s ease-out forwards;
+  animation: tooltipFade 0.2s ease;
 }
 
-@keyframes tooltipFadeIn {
+@keyframes tooltipFade {
   from {
     opacity: 0;
-    transform: translate(-50%, -115%) scale(0.96);
+    transform: translate(-50%, -115%);
   }
   to {
     opacity: 1;
-    transform: translate(-50%, -125%) scale(1);
+    transform: translate(-50%, -125%);
   }
 }
 
@@ -401,205 +344,90 @@
 }
 
 .tooltipIcon {
-  font-size: 13px;
-  line-height: 1;
+  font-size: 11px;
 }
 
 .tooltipName {
-  font-family: var(--font-display, sans-serif);
-  font-size: 13px;
+  font-size: 11.5px;
   font-weight: 800;
   color: #FFFFFF;
-  letter-spacing: -0.01em;
 }
 
 .badgeHQ {
-  font-size: 9px;
+  font-size: 8px;
   font-weight: 800;
-  padding: 1px 6px;
+  padding: 1px 5px;
   border-radius: 4px;
-  background: rgba(245, 158, 11, 0.3);
-  color: #FCD34D;
-  border: 1px solid rgba(245, 158, 11, 0.5);
-  text-transform: uppercase;
+  background: #D97706;
+  color: #FFFFFF;
 }
 
 .badgeNE {
-  font-size: 9px;
+  font-size: 8px;
   font-weight: 800;
-  padding: 1px 6px;
+  padding: 1px 5px;
   border-radius: 4px;
-  background: rgba(16, 185, 129, 0.3);
-  color: #6EE7B7;
-  border: 1px solid rgba(16, 185, 129, 0.5);
-  text-transform: uppercase;
+  background: #059669;
+  color: #FFFFFF;
 }
 
 .tooltipSub {
-  font-size: 11px;
-  color: #93C5FD;
-  line-height: 1.35;
+  font-size: 10px;
+  color: #94A3B8;
+  line-height: 1.3;
 }
 
 /* ═════════════════════════════════════════════════════════════════
-   CORRIDOR TELEMETRY DECK & ARCHITECTURAL MEANING PILLARS
-   ═════════════════════════════════════════════════════════════════ */
-.corridorTelemetryDeck {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-/* Interactive Corridor Readout Box */
-.activeCorridorInspector {
-  padding: 16px 20px;
-  border-radius: 16px;
-  background: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%);
-  border: 1.5px solid #CBD5E1;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  transition: all 0.25s ease;
-}
-
-.inspectorTopLine {
+   BOTTOM CORRIDOR STRIP
+   ═════════════════════════════════════════════ */
+.mapCardFooterStrip {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: #FFFFFF;
+  border: 1.5px solid #E2E8F0;
+  box-shadow: inset 0 1px 0 #FFFFFF, 0 1px 3px rgba(0, 0, 0, 0.02);
 }
 
-.inspectorStatusLeft {
+.corridorPill {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  font-size: 10.5px;
+  color: #475569;
 }
 
-.inspectorLiveLed {
-  width: 6px;
-  height: 6px;
+.footerDotHq {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #D97706;
+  box-shadow: 0 0 6px #F59E0B;
+}
+
+.footerDotMetro {
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   background: #2563EB;
-  box-shadow: 0 0 6px #2563EB;
+  box-shadow: 0 0 6px #3B82F6;
 }
 
-.inspectorLabel {
-  font-family: var(--font-mono, monospace);
-  font-size: 9.5px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  color: #1E40AF;
-  text-transform: uppercase;
+.footerDotNe {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #059669;
+  box-shadow: 0 0 6px #10B981;
 }
 
-.inspectorSlaTag {
-  font-family: var(--font-mono, monospace);
-  font-size: 9.5px;
-  font-weight: 700;
-  color: #059669;
-  letter-spacing: 0.04em;
-}
-
-.inspectorMainInfo {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.inspectorTitleRow {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.inspectorTargetCity {
-  font-family: var(--font-display, sans-serif);
-  font-size: 15px;
-  font-weight: 900;
-  color: #0F172A;
-}
-
-.inspectorZoneBadge {
-  font-size: 9.5px;
-  font-weight: 800;
-  padding: 2px 7px;
-  border-radius: 4px;
-  background: #DBEAFE;
-  color: #1D4ED8;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-.inspectorNarrative {
-  font-size: 12.5px;
-  color: #475569;
-  line-height: 1.5;
-  margin: 0;
-}
-
-/* 3 Core Architecture Pillars */
-.architecturePillarsGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-}
-
-@media (max-width: 768px) {
-  .architecturePillarsGrid {
-    grid-template-columns: 1fr;
-    gap: 10px;
+@media (max-width: 600px) {
+  .mapCardFooterStrip {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
   }
-}
-
-.archPillarCard {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  padding: 14px 14px;
-  border-radius: 14px;
-  background: #FFFFFF;
-  border: 1px solid #E2E8F0;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
-  transition: all 0.2s ease;
-}
-
-.archPillarCard:hover {
-  border-color: #CBD5E1;
-  box-shadow: 0 4px 12px rgba(11, 32, 147, 0.06);
-  transform: translateY(-1px);
-}
-
-.pillarIconBubble {
-  width: 32px;
-  height: 32px;
-  border-radius: 10px;
-  background: #F1F5F9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  flex-shrink: 0;
-}
-
-.pillarContent {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.pillarTitle {
-  font-family: var(--font-display, sans-serif);
-  font-size: 12px;
-  font-weight: 800;
-  color: #0F172A;
-  margin: 0;
-  line-height: 1.25;
-}
-
-.pillarDesc {
-  font-size: 11px;
-  color: #64748B;
-  line-height: 1.4;
-  margin: 0;
 }

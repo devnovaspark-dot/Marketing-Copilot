@@ -3,7 +3,6 @@
 import React, { useState, useMemo, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import ScrollReveal from '@/components/ScrollReveal';
-import AutoZoomImage from '@/components/AutoZoomImage';
 import { PROOF_ITEMS, ProofItem } from '@/data/proofManifest';
 import styles from './ProofShowcaseSection.module.css';
 
@@ -23,7 +22,6 @@ export default function ProofShowcaseSection() {
   const [searchQuery, setSearchQuery] = useState('');
   const [visibleCount, setVisibleCount] = useState(9);
   const [activeModalItem, setActiveModalItem] = useState<ProofItem | null>(null);
-  const [modalZoom, setModalZoom] = useState<number>(1);
 
   // Compute category counts
   const categoryCounts = useMemo(() => {
@@ -61,12 +59,10 @@ export default function ProofShowcaseSection() {
 
   const openModal = (item: ProofItem) => {
     setActiveModalItem(item);
-    setModalZoom(1);
   };
 
   const closeModal = useCallback(() => {
     setActiveModalItem(null);
-    setModalZoom(1);
   }, []);
 
   // Keyboard navigation for modal
@@ -74,8 +70,6 @@ export default function ProofShowcaseSection() {
     if (!activeModalItem) return;
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') closeModal();
-      if (e.key === '+' || e.key === '=') setModalZoom((z) => Math.min(3, z + 0.25));
-      if (e.key === '-') setModalZoom((z) => Math.max(0.75, z - 0.25));
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
@@ -102,7 +96,7 @@ export default function ProofShowcaseSection() {
 
             <p className={styles.subtitle}>
               Actual client dashboards showing real ROAS, revenue spikes, phone call surges, and #1 local rankings.
-              <strong> Double-click any card to view the full-resolution screenshot</strong>, or hover to scan numbers with 60fps GPU lens.
+              Hover any card to inspect and click to view full resolution.
             </p>
           </ScrollReveal>
         </div>
@@ -148,24 +142,28 @@ export default function ProofShowcaseSection() {
             <ScrollReveal key={item.file} delay={(idx % 3) * 60} className={styles.cardWrapper}>
               <div
                 className={styles.skeuomorphicCard}
-                onDoubleClick={() => openModal(item)}
-                title="Double click to expand full-resolution image"
+                onClick={() => openModal(item)}
+                title="Click to view full-resolution dashboard"
               >
-                {/* Visual Lens Chamber */}
+                {/* Visual Image Chassis — Zero text above image; Clean hover overlay */}
                 <div className={styles.cardVisualWrapper}>
-                  <AutoZoomImage
-                    src={item.file}
-                    webpSrc={item.webpFile}
-                    alt={item.title}
-                    title={item.title}
-                    category={item.category}
-                    description={item.description}
-                    aspectRatio="16 / 10"
-                    zoomScale={2.2}
-                  />
-                  {/* Subtle overlay pill for double click hint */}
-                  <div className={styles.doubleClickHintPill}>
-                    <span>⚡ Double-Click to Expand</span>
+                  <div className={styles.imageInnerFrame}>
+                    <Image
+                      src={item.webpFile || item.file}
+                      alt={item.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      quality={92}
+                      className={styles.proofCardImg}
+                    />
+
+                    {/* Interactive Hover Overlay: Click to see impact */}
+                    <div className={styles.hoverImpactOverlay}>
+                      <span className={styles.hoverImpactBadge}>
+                        <span className={styles.hoverImpactDot} />
+                        Click to see impact
+                      </span>
+                    </div>
                   </div>
                 </div>
 
@@ -183,11 +181,14 @@ export default function ProofShowcaseSection() {
                   <p className={styles.cardDesc}>{item.description}</p>
 
                   <div className={styles.cardFooter}>
-                    <span className={styles.telemetryTag}>60fps GPU Lens</span>
+                    <span className={styles.telemetryTag}>Direct Platform Capture</span>
                     <button
                       type="button"
                       className={styles.inspectBtn}
-                      onClick={() => openModal(item)}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        openModal(item);
+                      }}
                       title="Inspect full image"
                     >
                       <span>🔍 Full Size</span>
@@ -215,8 +216,8 @@ export default function ProofShowcaseSection() {
       </div>
 
       {/* ═════════════════════════════════════════════════════════════════
-          HIGH-DEFINITION LIGHTBOX MODAL (DOUBLE CLICK INSPECTOR)
-      ═════════════════════════════════════════════════════════════════ */}
+          HIGH-DEFINITION LIGHTBOX MODAL (CLEAN FULL RESOLUTION)
+      ═════════════════════════════════════════════ */}
       {activeModalItem && (
         <div
           className={styles.modalBackdrop}
@@ -237,52 +238,19 @@ export default function ProofShowcaseSection() {
                 <h3 className={styles.modalTitle}>{activeModalItem.title}</h3>
               </div>
 
-              <div className={styles.modalHeaderRight}>
-                <div className={styles.modalZoomControls}>
-                  <button
-                    type="button"
-                    onClick={() => setModalZoom((z) => Math.max(0.75, z - 0.25))}
-                    className={styles.zoomCtrlBtn}
-                    title="Zoom Out"
-                  >
-                    −
-                  </button>
-                  <span className={styles.zoomLevelText}>{Math.round(modalZoom * 100)}%</span>
-                  <button
-                    type="button"
-                    onClick={() => setModalZoom((z) => Math.min(3, z + 0.25))}
-                    className={styles.zoomCtrlBtn}
-                    title="Zoom In"
-                  >
-                    +
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setModalZoom(1)}
-                    className={styles.zoomCtrlBtn}
-                    title="Reset Zoom"
-                  >
-                    100%
-                  </button>
-                </div>
-
-                <button
-                  type="button"
-                  onClick={closeModal}
-                  className={styles.modalCloseBtn}
-                  aria-label="Close image inspection"
-                >
-                  ✕
-                </button>
-              </div>
+              <button
+                type="button"
+                onClick={closeModal}
+                className={styles.modalCloseBtn}
+                aria-label="Close image inspection"
+              >
+                ✕
+              </button>
             </div>
 
             {/* Modal Image Viewport */}
             <div className={styles.modalImageStage}>
-              <div
-                className={styles.modalImageTransformWrap}
-                style={{ transform: `scale(${modalZoom})` }}
-              >
+              <div className={styles.modalImageTransformWrap}>
                 <Image
                   src={activeModalItem.webpFile || activeModalItem.file}
                   alt={activeModalItem.title}

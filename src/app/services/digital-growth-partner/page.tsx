@@ -764,16 +764,16 @@ export default function DigitalGrowthPartnerPage() {
         <div className={styles.container}>
           {/* Section Header */}
           <ScrollReveal>
-            <div className={styles.headerCenter} style={{ marginBottom: '44px' }}>
+            <div className={styles.headerCenter} style={{ marginBottom: '36px' }}>
               <div className={styles.eyebrowBadge}>
                 <span className={styles.pulsingLed} />
-                <span>STRATEGIC DELIVERY NETWORK &bull; PAN-INDIA CAMPAIGN RADAR</span>
+                <span>PAN-INDIA CAMPAIGN RADAR</span>
               </div>
               <h2 className={styles.titlePrimary}>
                 Scaling Brands Across India
               </h2>
-              <p className={styles.subtitle}>
-                Meet our senior partners in person for focused strategy sprints at our corporate office, or collaborate seamlessly through a dedicated WhatsApp war room from anywhere across India. Wherever your business is based, we bring together strategy, digital marketing services, and growth-focused execution to help you scale with confidence.
+              <p className={styles.subtitle} style={{ maxWidth: '680px', margin: '0 auto' }}>
+                Meet our senior partners in person for focused strategy sprints at our corporate office, or collaborate seamlessly through a dedicated WhatsApp war room from anywhere across India.
               </p>
             </div>
           </ScrollReveal>

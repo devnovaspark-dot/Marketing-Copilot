@@ -315,7 +315,7 @@ export default function Header() {
                         Need a Tailored Growth Architecture?
                       </div>
                       <p className={styles.spotlightSubtext}>
-                        Get a free 30-min forensic audit of your Google rankings, Meta ROAS, and conversion funnel.
+                        Get a free 30-min audit of your Google rankings, Meta ROAS, and conversion funnel.
                       </p>
 
                       <Link

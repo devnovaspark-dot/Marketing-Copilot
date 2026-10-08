@@ -224,7 +224,7 @@
     inset 0 2px 0 #FFFFFF,
     0 24px 60px -10px rgba(11, 32, 147, 0.16),
     0 4px 18px rgba(0, 0, 0, 0.05);
-  padding: 13px 16px 8px;
+  padding: 15px 18px 14px;
 
   /* Silky smooth physics-based spring animation */
   opacity: 0;
@@ -243,8 +243,8 @@
 
 .megaMenuContainer {
   display: grid;
-  grid-template-columns: 1fr 220px;
-  gap: 14px;
+  grid-template-columns: 1fr 240px;
+  gap: 16px;
   align-items: stretch;
 }
 
@@ -539,8 +539,8 @@
 
 /* Mega Menu Bottom Bar */
 .dropdownFooter {
-  margin-top: 8px;
-  padding-top: 7px;
+  margin-top: 10px;
+  padding-top: 9px;
   border-top: 1px solid #E2E8F0;
   display: flex;
   align-items: center;
