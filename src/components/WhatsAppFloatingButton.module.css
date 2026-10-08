@@ -347,3 +347,26 @@
     display: none;
   }
 }
+
+@media (max-width: 480px) {
+  .floatingContainer {
+    bottom: 14px;
+    right: 12px;
+    gap: 8px;
+  }
+
+  .btnBody {
+    width: 44px;
+    height: 44px;
+  }
+
+  .whatsappIcon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .phoneIcon {
+    width: 19px;
+    height: 19px;
+  }
+}

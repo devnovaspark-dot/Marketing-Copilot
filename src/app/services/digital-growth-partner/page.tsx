@@ -1029,81 +1029,111 @@ export default function DigitalGrowthPartnerPage() {
 
             {/* Row 1 */}
             <div className={styles.matrixRowItem}>
-              <div>
+              <div className={styles.matrixFeatureBlock}>
                 <div className={styles.matrixFeatureName}>1. Account Leadership</div>
                 <div className={styles.matrixFeatureSub}>Who actually manages your growth</div>
               </div>
-              <div className={styles.symbol3DItem}>
+              <div className={`${styles.symbol3DItem} ${styles.matrixTradCol}`}>
                 <span className={styles.symbol3DCross}>✕</span>
-                <span>Junior account managers &amp; interns</span>
+                <div className={styles.matrixOutcomeText}>
+                  <span className={styles.matrixColTagTrad}>Traditional: </span>
+                  <span className={styles.tradText}>Junior account managers &amp; interns</span>
+                </div>
               </div>
-              <div className={styles.symbol3DItem}>
+              <div className={`${styles.symbol3DItem} ${styles.matrixCopilotCol}`}>
                 <span className={styles.symbol3DCheck}>✓</span>
-                <span className={styles.copilotText}>Founders &amp; Senior Strategists directly</span>
+                <div className={styles.matrixOutcomeText}>
+                  <span className={styles.matrixColTagCopilot}>Marketing Copilot: </span>
+                  <span className={styles.copilotText}>Founders &amp; Senior Strategists directly</span>
+                </div>
               </div>
             </div>
 
             {/* Row 2 */}
             <div className={styles.matrixRowItem}>
-              <div>
+              <div className={styles.matrixFeatureBlock}>
                 <div className={styles.matrixFeatureName}>2. Focus Metric</div>
                 <div className={styles.matrixFeatureSub}>How success is judged and measured</div>
               </div>
-              <div className={styles.symbol3DItem}>
+              <div className={`${styles.symbol3DItem} ${styles.matrixTradCol}`}>
                 <span className={styles.symbol3DCross}>✕</span>
-                <span>Impressions, clicks &amp; vanity reports</span>
+                <div className={styles.matrixOutcomeText}>
+                  <span className={styles.matrixColTagTrad}>Traditional: </span>
+                  <span className={styles.tradText}>Impressions, clicks &amp; vanity reports</span>
+                </div>
               </div>
-              <div className={styles.symbol3DItem}>
+              <div className={`${styles.symbol3DItem} ${styles.matrixCopilotCol}`}>
                 <span className={styles.symbol3DCheck}>✓</span>
-                <span className={styles.copilotText}>Net Pipeline, ROAS &amp; Bankable GMV</span>
+                <div className={styles.matrixOutcomeText}>
+                  <span className={styles.matrixColTagCopilot}>Marketing Copilot: </span>
+                  <span className={styles.copilotText}>Net Pipeline, ROAS &amp; Bankable GMV</span>
+                </div>
               </div>
             </div>
 
             {/* Row 3 */}
             <div className={styles.matrixRowItem}>
-              <div>
+              <div className={styles.matrixFeatureBlock}>
                 <div className={styles.matrixFeatureName}>3. Account Ownership</div>
                 <div className={styles.matrixFeatureSub}>Pixels, ad accounts, and creative IP</div>
               </div>
-              <div className={styles.symbol3DItem}>
+              <div className={`${styles.symbol3DItem} ${styles.matrixTradCol}`}>
                 <span className={styles.symbol3DCross}>✕</span>
-                <span>Held hostage in agency ad manager</span>
+                <div className={styles.matrixOutcomeText}>
+                  <span className={styles.matrixColTagTrad}>Traditional: </span>
+                  <span className={styles.tradText}>Held hostage in agency ad manager</span>
+                </div>
               </div>
-              <div className={styles.symbol3DItem}>
+              <div className={`${styles.symbol3DItem} ${styles.matrixCopilotCol}`}>
                 <span className={styles.symbol3DCheck}>✓</span>
-                <span className={styles.copilotText}>100% Owned by you from Day 1</span>
+                <div className={styles.matrixOutcomeText}>
+                  <span className={styles.matrixColTagCopilot}>Marketing Copilot: </span>
+                  <span className={styles.copilotText}>100% Owned by you from Day 1</span>
+                </div>
               </div>
             </div>
 
             {/* Row 4 */}
             <div className={styles.matrixRowItem}>
-              <div>
+              <div className={styles.matrixFeatureBlock}>
                 <div className={styles.matrixFeatureName}>4. Execution Synergy</div>
                 <div className={styles.matrixFeatureSub}>Integration of code, ads, and design</div>
               </div>
-              <div className={styles.symbol3DItem}>
+              <div className={`${styles.symbol3DItem} ${styles.matrixTradCol}`}>
                 <span className={styles.symbol3DCross}>✕</span>
-                <span>Fragmented across 3 different vendors</span>
+                <div className={styles.matrixOutcomeText}>
+                  <span className={styles.matrixColTagTrad}>Traditional: </span>
+                  <span className={styles.tradText}>Fragmented across 3 different vendors</span>
+                </div>
               </div>
-              <div className={styles.symbol3DItem}>
+              <div className={`${styles.symbol3DItem} ${styles.matrixCopilotCol}`}>
                 <span className={styles.symbol3DCheck}>✓</span>
-                <span className={styles.copilotText}>One Unified Synchronized Growth Pod</span>
+                <div className={styles.matrixOutcomeText}>
+                  <span className={styles.matrixColTagCopilot}>Marketing Copilot: </span>
+                  <span className={styles.copilotText}>One Unified Synchronized Growth Pod</span>
+                </div>
               </div>
             </div>
 
             {/* Row 5 */}
             <div className={styles.matrixRowItem}>
-              <div>
+              <div className={styles.matrixFeatureBlock}>
                 <div className={styles.matrixFeatureName}>5. Contract Flexibility</div>
                 <div className={styles.matrixFeatureSub}>Commitment requirements</div>
               </div>
-              <div className={styles.symbol3DItem}>
+              <div className={`${styles.symbol3DItem} ${styles.matrixTradCol}`}>
                 <span className={styles.symbol3DCross}>✕</span>
-                <span>6 to 12 month rigid lock-in traps</span>
+                <div className={styles.matrixOutcomeText}>
+                  <span className={styles.matrixColTagTrad}>Traditional: </span>
+                  <span className={styles.tradText}>6 to 12 month rigid lock-in traps</span>
+                </div>
               </div>
-              <div className={styles.symbol3DItem}>
+              <div className={`${styles.symbol3DItem} ${styles.matrixCopilotCol}`}>
                 <span className={styles.symbol3DCheck}>✓</span>
-                <span className={styles.copilotText}>Zero Lock-In; month-to-month agility</span>
+                <div className={styles.matrixOutcomeText}>
+                  <span className={styles.matrixColTagCopilot}>Marketing Copilot: </span>
+                  <span className={styles.copilotText}>Zero Lock-In; month-to-month agility</span>
+                </div>
               </div>
             </div>
           </div>

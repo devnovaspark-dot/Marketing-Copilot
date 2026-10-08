@@ -563,14 +563,206 @@
   .strategistDeskPane {
     border-right: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    padding: 30px 24px;
+    padding: 24px 20px;
   }
 
   .formIntakePane {
-    padding: 30px 24px;
+    padding: 24px 20px;
   }
 
   .formFieldsGrid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 28px 0;
+  }
+
+  .dispatchCockpit {
+    border-radius: 18px;
+    margin: 0 8px;
+  }
+
+  .strategistDeskPane {
+    padding: 14px 12px;
+  }
+
+  .strategistDeskHeader {
+    margin-bottom: 8px;
+  }
+
+  .liveStatusPill {
+    font-size: 8.5px;
+    padding: 3px 9px;
+    gap: 5px;
+  }
+
+  .liveDot {
+    width: 5px;
+    height: 5px;
+  }
+
+  .strategistProfileCard {
+    padding: 8px 10px;
+    gap: 10px;
+    margin-bottom: 8px;
+    border-radius: 12px;
+  }
+
+  .strategistAvatarWrap {
+    width: 38px;
+    height: 38px;
+  }
+
+  .verifiedCheckBadge {
+    width: 14px;
+    height: 14px;
+    font-size: 8px;
+  }
+
+  .strategistName {
+    font-size: 13.5px;
+    margin: 0;
+  }
+
+  .strategistRole {
+    font-size: 10px;
+    margin-bottom: 1px;
+  }
+
+  .strategistCorridor {
+    font-size: 9px;
+    line-height: 1.25;
+  }
+
+  .strategistPillarsList {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-bottom: 8px;
+  }
+
+  .pillarItem {
+    padding: 3px 6px;
+    font-size: 9px;
+    border-radius: 6px;
+    gap: 5px;
+  }
+
+  .pillarIcon {
+    font-size: 10px;
+  }
+
+  .deskSlaFoot {
+    margin-top: 6px;
+    font-size: 9px;
+    gap: 6px;
+  }
+
+  .formIntakePane {
+    padding: 14px 12px;
+  }
+
+  .formIntakeHeader {
+    margin-bottom: 8px;
+  }
+
+  .eyebrowChip {
+    font-size: 9.5px;
+    margin-bottom: 4px;
+  }
+
+  .intakeTitle {
+    font-size: 16px;
+    margin: 0 0 3px 0;
+    line-height: 1.25;
+  }
+
+  .intakeSub {
+    font-size: 11px;
+    line-height: 1.35;
+  }
+
+  .topicSelectorWrap {
+    margin-bottom: 10px;
+  }
+
+  .topicChipsGrid {
+    gap: 5px;
+  }
+
+  .topicChip {
+    padding: 4px 8px;
+    font-size: 10px;
+    border-radius: 999px;
+  }
+
+  .cockpitForm {
+    gap: 10px;
+  }
+
+  .formFieldsGrid {
+    gap: 8px;
+  }
+
+  .fieldGroup {
+    gap: 3px;
+  }
+
+  .fieldLabel {
+    font-size: 9.5px;
+  }
+
+  .cockpitInput {
+    padding: 8px 10px 8px 30px;
+    font-size: 12.5px;
+    border-radius: 9px;
+  }
+
+  .fieldIcon {
+    left: 10px;
+    font-size: 12px;
+  }
+
+  .countryFlagPill {
+    left: 6px;
+    padding: 2px 5px;
+    font-size: 9.5px;
+  }
+
+  .fieldGroup:has(.countryFlagPill) .cockpitInput {
+    padding-left: 54px;
+  }
+
+  .cockpitTextarea {
+    padding: 8px 10px;
+    font-size: 12.5px;
+    min-height: 48px;
+    border-radius: 9px;
+  }
+
+  .cockpitActionBar {
+    gap: 8px;
+    margin-top: 4px;
+  }
+
+  .cockpitSubmitBtn {
+    padding: 10px 16px;
+    font-size: 12px;
+    border-radius: 10px;
+  }
+
+  .fastTrackWaBtn {
+    padding: 8px 12px;
+    font-size: 11px;
+    border-radius: 10px;
+  }
+
+  .formGuaranteesFoot {
+    margin-top: 6px;
+    font-size: 9px;
+    gap: 6px;
   }
 }

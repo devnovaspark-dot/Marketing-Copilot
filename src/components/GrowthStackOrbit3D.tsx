@@ -192,9 +192,18 @@ export default function GrowthStackOrbit3D() {
 
   // Dynamically calculate responsive orbit radii with guaranteed side proportion margins
   const availableWidth = Math.max(320, stageWidth);
-  const radiusX = Math.min(345, Math.max(130, (availableWidth - 260) * 0.44));
-  const radiusY = Math.min(130, Math.max(65, radiusX * 0.36));
-  const depthZ = 55;
+  const isMobile = stageWidth < 640;
+  const isSmallMobile = stageWidth < 430;
+
+  const radiusX = isMobile
+    ? Math.min(145, Math.max(110, (availableWidth - 36) * 0.44))
+    : Math.min(345, Math.max(130, (availableWidth - 260) * 0.44));
+
+  const radiusY = isMobile
+    ? (isSmallMobile ? 96 : 108)
+    : Math.min(130, Math.max(65, radiusX * 0.36));
+
+  const depthZ = isMobile ? 32 : 55;
 
   return (
     <section className={styles.orbitSection} id="growth-stack">
@@ -264,8 +273,12 @@ export default function GrowthStackOrbit3D() {
               // Foreground pods (sin > 0) are larger, crisp, and vivid;
               // Background pods (sin < 0) are softly scaled and muted.
               const normalizedY = (y + radiusY) / (radiusY * 2); // 0 (back) to 1 (front)
-              const scale = 0.82 + normalizedY * 0.32;
-              const opacity = 0.65 + normalizedY * 0.35;
+              const scale = isMobile
+                ? (activeIdx === idx ? 1.12 : 0.78 + normalizedY * 0.26)
+                : (0.82 + normalizedY * 0.32);
+              const opacity = isMobile
+                ? (activeIdx === idx ? 1 : 0.65 + normalizedY * 0.35)
+                : (0.65 + normalizedY * 0.35);
               const zIndex = Math.round(normalizedY * 40) + 10;
               const isSelected = activeIdx === idx;
 
@@ -324,6 +337,25 @@ export default function GrowthStackOrbit3D() {
                 </div>
               );
             })}
+          </div>
+
+          {/* Active Focused Pod Intelligence Banner on Mobile/Desktop */}
+          <div
+            className={styles.activeServiceBanner}
+            style={{
+              borderColor: `${CORE_GROWTH_SERVICES[activeIdx].glowColor}50`,
+            }}
+          >
+            <span className={styles.activeServiceIcon}>{CORE_GROWTH_SERVICES[activeIdx].icon}</span>
+            <div className={styles.activeServiceMeta}>
+              <span className={styles.activeServiceTitle}>{CORE_GROWTH_SERVICES[activeIdx].title}</span>
+              <span
+                className={styles.activeServiceMetric}
+                style={{ color: CORE_GROWTH_SERVICES[activeIdx].glowColor }}
+              >
+                {CORE_GROWTH_SERVICES[activeIdx].metricNum} &bull; {CORE_GROWTH_SERVICES[activeIdx].metricLabel}
+              </span>
+            </div>
           </div>
 
           {/* Tactile Orbit Control Bar (Step Prev / Play-Pause / Step Next) */}

@@ -463,23 +463,71 @@
   box-shadow: 0 0 6px currentColor;
 }
 
+/* ══════════════════════════════════════════
+   FOCUSED ACTIVE SERVICE BANNER (DESKTOP & MOBILE)
+   ══════════════════════════════════════════ */
+.activeServiceBanner {
+  position: absolute;
+  bottom: 46px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(11, 32, 147, 0.15);
+  box-shadow: 
+    inset 0 1px 0 #FFFFFF,
+    0 8px 24px -4px rgba(11, 32, 147, 0.12);
+  z-index: 31;
+  max-width: 90%;
+  pointer-events: none;
+  transition: all 0.25s ease;
+}
+
+.activeServiceIcon {
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+.activeServiceMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.activeServiceTitle {
+  font-family: var(--font-display, sans-serif);
+  font-size: 12px;
+  font-weight: 800;
+  color: #0F172A;
+}
+
+.activeServiceMetric {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
 @media (max-width: 768px) {
   .orbitArena {
-    height: 440px;
+    height: 430px;
   }
 
   .orbitalDiscPlane {
     width: 95%;
-    height: 380px;
+    height: 360px;
   }
 
   .satelliteCapsule {
-    padding: 6px 12px 6px 8px;
-    gap: 7px;
+    padding: 5px 10px 5px 6px;
+    gap: 6px;
   }
 
   .satelliteTitle {
-    font-size: 11px;
+    font-size: 10.5px;
   }
 
   .satelliteMetricBadge {
@@ -487,28 +535,132 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
+  .orbitSection {
+    padding: 56px 0 64px;
+  }
+
   .orbitArena {
     height: 390px;
+    margin-top: 14px;
   }
 
+  .orbitalDiscPlane {
+    width: 96%;
+    height: 280px;
+  }
+
+  .orbitalDiscInner {
+    width: 76%;
+    height: 190px;
+  }
+
+  /* Compact central sphere on mobile so satellite capsules have wide clearance */
   .centralCoreChassis {
-    width: 128px;
-    height: 128px;
+    width: 82px;
+    height: 82px;
+    border-width: 2.5px;
+    padding: 4px;
+    box-shadow: 
+      0 16px 36px -6px rgba(11, 32, 147, 0.4),
+      0 0 28px rgba(59, 130, 246, 0.35),
+      inset 0 2px 4px rgba(255, 255, 255, 0.7);
   }
 
+  .coreIconFrame {
+    width: 22px;
+    height: 22px;
+    font-size: 12px;
+    margin-bottom: 2px;
+  }
+
+  .coreBrandTitle {
+    font-size: 8px;
+    line-height: 1.1;
+  }
+
+  .coreEngineTag {
+    font-size: 6px;
+    gap: 3px;
+    margin-top: 1px;
+  }
+
+  .coreLivePing {
+    width: 4px;
+    height: 4px;
+  }
+
+  /* Ultra-sleek, non-colliding satellite capsules */
   .satelliteCapsule {
-    padding: 5px 10px 5px 6px;
+    padding: 3.5px 7px 3.5px 3.5px;
     gap: 5px;
+    border-width: 1px;
+    box-shadow: 0 4px 12px rgba(11, 32, 147, 0.08);
   }
 
   .satelliteIconBubble {
-    width: 26px;
-    height: 26px;
-    font-size: 13px;
+    width: 22px;
+    height: 22px;
+    font-size: 11px;
   }
 
   .satelliteTitle {
+    font-size: 9.5px;
+    max-width: 60px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .satelliteMetricBadge {
+    display: none;
+  }
+
+  .satelliteCapsuleActive {
+    padding: 4px 8px 4px 4px;
+  }
+
+  .satelliteCapsuleActive .satelliteMetricBadge {
+    display: inline-block;
+    font-size: 8px;
+    margin-left: 2px;
+  }
+
+  .activeServiceBanner {
+    bottom: 42px;
+    padding: 4px 12px;
+    gap: 6px;
+  }
+
+  .activeServiceIcon {
+    font-size: 13px;
+  }
+
+  .activeServiceTitle {
     font-size: 10px;
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .activeServiceMetric {
+    font-size: 9px;
+  }
+
+  .orbitControlsRow {
+    bottom: 2px;
+    padding: 3px 8px;
+    gap: 5px;
+  }
+
+  .controlBtnIcon {
+    width: 24px;
+    height: 24px;
+    font-size: 11px;
+  }
+
+  .controlBtnToggle {
+    font-size: 9.5px;
+    padding: 3px 8px;
   }
 }

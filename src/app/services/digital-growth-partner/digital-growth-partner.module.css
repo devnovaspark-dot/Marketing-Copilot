@@ -347,9 +347,10 @@
     0 6px 18px rgba(0, 0, 0, 0.03);
 }
 
-@media (max-width: 520px) {
+@media (max-width: 640px) {
   .auditConsole {
-    padding: 22px 16px;
+    padding: 16px 12px;
+    border-radius: 18px;
   }
 }
 
@@ -363,7 +364,8 @@
 @media (max-width: 540px) {
   .inputGridDouble {
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 8px;
+    margin-bottom: 8px;
   }
 }
 
@@ -545,6 +547,47 @@
   gap: 8px;
 }
 
+@media (max-width: 640px) {
+  .fieldGroup {
+    gap: 3px;
+    margin-bottom: 7px;
+  }
+
+  .fieldLabel {
+    font-size: 11px;
+  }
+
+  .tactileField,
+  .tactileTextarea {
+    padding: 7px 10px;
+    font-size: 13px;
+    border-radius: 9px;
+  }
+
+  .tactileTextarea {
+    min-height: 48px;
+  }
+
+  .servicePillBtn {
+    padding: 3px 8px;
+    font-size: 10px;
+    border-radius: 6px;
+  }
+
+  .budgetPillBtn {
+    padding: 3px 8px;
+    font-size: 10px;
+    border-radius: 6px;
+  }
+
+  .consoleFooterGuarantees {
+    margin-top: 8px;
+    padding-top: 8px;
+    font-size: 9.5px;
+    gap: 6px;
+  }
+}
+
 /* ═════════════════════════════════════════════════════════════════
    SECTION: SLIDING BRAND ICONS (COLORFUL & VIBRANT HOME PAGE STYLE)
 ═════════════════════════════════════════════ */
@@ -680,6 +723,56 @@
 
 .marqueeLogoCard:hover .marqueeLogoImg {
   transform: scale(1.06);
+}
+
+@media (max-width: 768px) {
+  .slidingBrandSection {
+    padding: 22px 0 28px;
+  }
+
+  .marqueeHeader {
+    margin-bottom: 12px;
+    padding: 0 12px;
+  }
+
+  .marqueeHeaderLabel {
+    font-size: 10.5px;
+    padding: 5px 12px;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.35;
+    letter-spacing: 0.04em;
+  }
+
+  .marqueeContainer {
+    width: 100%;
+    left: 0;
+    transform: none;
+    padding: 4px 0;
+  }
+
+  /* Narrow gradient fades so logos are clearly visible on small mobile screens */
+  .marqueeFadeLeft,
+  .marqueeFadeRight {
+    width: 28px;
+  }
+
+  .marqueeTrack {
+    gap: 12px;
+    animation: scrollMarquee 26s linear infinite;
+  }
+
+  .marqueeLogoCard {
+    height: 48px;
+    min-width: 115px;
+    padding: 6px 14px;
+    border-radius: 12px;
+  }
+
+  .marqueeLogoImg {
+    max-height: 28px;
+    max-width: 90px;
+  }
 }
 
 /* ═════════════════════════════════════════════════════════════════
@@ -1573,16 +1666,6 @@
   align-items: center;
 }
 
-@media (max-width: 768px) {
-  .matrixRowHeader {
-    grid-template-columns: 1fr 1fr;
-    padding: 16px 20px;
-  }
-  .matrixColTraditional {
-    display: none;
-  }
-}
-
 .matrixRowItem {
   display: grid;
   grid-template-columns: 1.15fr 1fr 1.1fr;
@@ -1593,13 +1676,6 @@
   position: relative;
 }
 
-@media (max-width: 768px) {
-  .matrixRowItem {
-    grid-template-columns: 1fr 1fr;
-    padding: 18px 20px;
-  }
-}
-
 .matrixRowItem:hover {
   background: linear-gradient(90deg, #F8FAFD 0%, #FFFFFF 50%, #F8FAFD 100%);
   box-shadow: inset 0 1px 0 rgba(11, 32, 147, 0.04), inset 0 -1px 0 rgba(11, 32, 147, 0.04);
@@ -1607,6 +1683,11 @@
 
 .matrixRowItem:last-child {
   border-bottom: none;
+}
+
+.matrixFeatureBlock {
+  display: flex;
+  flex-direction: column;
 }
 
 .matrixFeatureName {
@@ -1620,6 +1701,133 @@
   font-size: 12px;
   color: #64748B;
   margin-top: 2px;
+}
+
+.matrixOutcomeText {
+  display: inline;
+}
+
+.matrixColTagTrad,
+.matrixColTagCopilot {
+  display: none;
+}
+
+.tradText {
+  color: #334155;
+  font-size: 13.5px;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .comparisonTableWrap {
+    border-radius: 20px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .matrixRowHeader {
+    display: none;
+  }
+
+  .matrixRowItem {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px 14px;
+    border-radius: 18px;
+    background: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    box-shadow: 
+      inset 0 1.5px 0 #FFFFFF,
+      0 4px 16px rgba(11, 32, 147, 0.05);
+  }
+
+  .matrixRowItem:hover {
+    background: #FFFFFF;
+    box-shadow: 
+      inset 0 1.5px 0 #FFFFFF,
+      0 6px 20px rgba(11, 32, 147, 0.08);
+  }
+
+  .matrixFeatureBlock {
+    margin-bottom: 2px;
+  }
+
+  .matrixFeatureName {
+    font-size: 14.5px;
+  }
+
+  .matrixFeatureSub {
+    font-size: 11.5px;
+  }
+
+  .matrixTradCol {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+    padding: 10px 12px !important;
+    background: #FEF2F2 !important;
+    border: 1.5px solid #FECACA !important;
+    border-radius: 12px !important;
+    width: 100% !important;
+  }
+
+  .matrixCopilotCol {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+    padding: 10px 12px !important;
+    background: #F0FDF4 !important;
+    border: 1.5px solid #86EFAC !important;
+    border-radius: 12px !important;
+    width: 100% !important;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.08);
+  }
+
+  .matrixOutcomeText {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2px !important;
+  }
+
+  .matrixColTagTrad {
+    display: block !important;
+    font-family: var(--font-display, inherit);
+    font-size: 9.5px !important;
+    font-weight: 800 !important;
+    text-transform: uppercase;
+    color: #DC2626 !important;
+    letter-spacing: 0.05em;
+  }
+
+  .matrixColTagCopilot {
+    display: block !important;
+    font-family: var(--font-display, inherit);
+    font-size: 9.5px !important;
+    font-weight: 800 !important;
+    text-transform: uppercase;
+    color: #16A34A !important;
+    letter-spacing: 0.05em;
+  }
+
+  .tradText {
+    color: #991B1B !important;
+    font-size: 12.5px !important;
+    font-weight: 600 !important;
+    line-height: 1.35;
+  }
+
+  .copilotText {
+    color: #065F46 !important;
+    font-size: 13px !important;
+    font-weight: 800 !important;
+    line-height: 1.35;
+  }
 }
 
 /* ── 3D Interactive Symbols That Move On Hover/Touch ── */
@@ -2743,9 +2951,35 @@
     0 4px 14px rgba(0, 0, 0, 0.03);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 640px) {
+  .grandCtaSection {
+    padding: 36px 0 48px;
+  }
+
   .grandCardChassis {
-    padding: 24px 18px;
+    padding: 18px 14px;
+    border-radius: 18px;
+    max-width: 96%;
+  }
+
+  .grandHeader {
+    margin-bottom: 12px;
+  }
+
+  .grandEyebrow {
+    font-size: 9.5px;
+    padding: 3px 10px;
+    margin-bottom: 5px;
+  }
+
+  .grandTitleH2 {
+    font-size: 19px;
+    margin-bottom: 4px;
+  }
+
+  .grandSubtitle {
+    font-size: 11.5px;
+    line-height: 1.4;
   }
 }
 
