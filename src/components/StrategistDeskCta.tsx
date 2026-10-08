@@ -8,15 +8,11 @@ import styles from './StrategistDeskCta.module.css';
 interface StrategistDeskCtaProps {
   id?: string;
   defaultTopic?: string;
-  title?: string;
-  subtitle?: string;
 }
 
 export default function StrategistDeskCta({
   id = 'ask-strategist',
   defaultTopic = '🎯 Google & Meta Ads',
-  title = 'Let’s Talk About Your Growth.',
-  subtitle = 'Send us your question for a free, confidential growth assessment.',
 }: StrategistDeskCtaProps) {
   const [selectedTopic, setSelectedTopic] = useState(defaultTopic);
   const [formState, setFormState] = useState({
@@ -200,10 +196,10 @@ export default function StrategistDeskCta({
                     CONFIDENTIAL STRATEGY DISPATCH &bull; NO PRESSURE
                   </div>
                   <h2 className={styles.intakeTitle}>
-                    {title}
+                    Ask Our Strategists Directly.
                   </h2>
                   <p className={styles.intakeSub}>
-                    {subtitle}
+                    Submit your question below for a free, confidential strategic breakdown.
                   </p>
                 </div>
 

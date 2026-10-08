@@ -44,9 +44,9 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
+      <ClientsSection />
       <QuickConnectMapSection />
       <BrandSpotlightSection />
-      <ClientsSection />
       <StoryVideoSection />
       <MetricsSection />
       <ServicesSection />

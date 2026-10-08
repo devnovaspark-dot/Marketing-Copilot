@@ -1448,16 +1448,7 @@ export default function DigitalGrowthPartnerPage() {
       </section>
 
       {/* Global Bottom CTA */}
-      <CTASection
-        eyebrow="TAKE THE NEXT LEAP · ACCELERATE REVENUE"
-        title={
-          <>
-            Ready for Marketing <span className="accent-gradient">That Drives Revenue?</span>
-          </>
-        }
-        subtitle="Your Next Stage of Growth Starts Here. Let’s talk about your growth — send us your question for a free, confidential growth assessment."
-        primaryBtnText="Let’s Find Your Fastest Path to Growth →"
-      />
+      <CTASection />
     </div>
   );
 }
