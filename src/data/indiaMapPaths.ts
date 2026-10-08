@@ -5,6 +5,7 @@ export interface CityHub {
   state: string;
   region: string;
   isHQ?: boolean;
+  isNorthEast?: boolean;
   x: number;
   y: number;
   status: string;
@@ -37,6 +38,21 @@ export const INDIA_CITIES: CityHub[] = [
     "activePods": "Direct Founder War Room",
     "highlight": "Mallick Complex Corporate HQ — In-Person & Pan-India Influx",
     "badge": "★ REGISTERED HEADQUARTERS"
+  },
+  {
+    "id": "guwahati",
+    "name": "Guwahati (Assam)",
+    "state": "Assam / North East",
+    "region": "Northeast Zone Gateway",
+    "isNorthEast": true,
+    "x": 465.0,
+    "y": 256.0,
+    "status": "Northeast Commercial Hub",
+    "specialization": "E-Commerce Logistics & Regional Search Dominance",
+    "speed": "Sub-2hr Strategy SLA",
+    "activePods": "6 Active Brand Pods",
+    "highlight": "Gateway to the Seven Sisters with Pan-India Inbound Delivery",
+    "badge": "NORTHEAST GATEWAY"
   },
   {
     "id": "delhi",

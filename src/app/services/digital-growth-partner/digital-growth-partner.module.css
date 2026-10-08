@@ -1816,9 +1816,9 @@
 
 .hqSectionGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 28px;
-  align-items: stretch;
+  grid-template-columns: 360px 1fr;
+  gap: 32px;
+  align-items: center;
 }
 
 @media (max-width: 980px) {
@@ -1830,19 +1830,17 @@
 
 .hqCardChassis,
 .metroRadarCard {
-  padding: 34px 30px;
-  border-radius: 26px;
+  padding: 24px 22px;
+  border-radius: 22px;
   background: linear-gradient(160deg, #FFFFFF 0%, #FAFCFF 50%, #F8FAFD 100%);
-  border: 2px solid #CBD5E1;
+  border: 1.5px solid #CBD5E1;
   box-shadow: 
-    inset 0 2.5px 0 #FFFFFF,
-    inset 0 -2px 3px rgba(11, 32, 147, 0.02),
-    0 16px 45px -12px rgba(11, 32, 147, 0.08),
-    0 2px 8px rgba(0, 0, 0, 0.02);
+    inset 0 2px 0 #FFFFFF,
+    0 12px 32px -10px rgba(11, 32, 147, 0.07),
+    0 2px 6px rgba(0, 0, 0, 0.02);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
   position: relative;
   transition: all 0.28s ease;
 }
@@ -1888,16 +1886,16 @@
 .executiveChannelGrid {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin: 22px 0 16px;
+  gap: 10px;
+  margin: 16px 0 12px;
 }
 
 .executiveOfficeCard {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding: 16px 18px;
-  border-radius: 18px;
+  gap: 5px;
+  padding: 12px 14px;
+  border-radius: 14px;
   background: #FFFFFF;
   border: 1.5px solid #CBD5E1;
   box-shadow: 

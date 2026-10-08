@@ -7,7 +7,7 @@ import styles from './IndiaMap3D.module.css';
 export default function IndiaMap3D() {
   const [activeCityId, setActiveCityId] = useState<string>('bhubaneswar');
   const [hoveredCityId, setHoveredCityId] = useState<string | null>(null);
-  const [tilt, setTilt] = useState<{ x: number; y: number }>({ x: 6, y: -4 });
+  const [tilt, setTilt] = useState<{ x: number; y: number }>({ x: 5, y: -3 });
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   const activeCity = useMemo(() => {
@@ -18,7 +18,6 @@ export default function IndiaMap3D() {
     return INDIA_CITIES.find((c) => c.isHQ) || INDIA_CITIES[0];
   }, []);
 
-  // 3D Perspective Tilt on Mouse Move
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!containerRef.current) return;
     const rect = containerRef.current.getBoundingClientRect();
@@ -26,20 +25,18 @@ export default function IndiaMap3D() {
     const y = e.clientY - rect.top;
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
-    // Moderate tilt angles for realistic 3D elevation
-    const rotateY = ((x - centerX) / centerX) * 9;
-    const rotateX = -((y - centerY) / centerY) * 9;
+    const rotateY = ((x - centerX) / centerX) * 8;
+    const rotateX = -((y - centerY) / centerY) * 8;
     setTilt({ x: Number(rotateX.toFixed(2)), y: Number(rotateY.toFixed(2)) });
   };
 
   const handleMouseLeave = () => {
-    setTilt({ x: 6, y: -4 });
+    setTilt({ x: 5, y: -3 });
     setHoveredCityId(null);
   };
 
   return (
     <div className={styles.mapChassis}>
-      {/* Ambient Radial Lighting Glows */}
       <div className={styles.ambientRadialGlow} />
       <div className={styles.ambientSecondaryGlow} />
 
@@ -48,10 +45,10 @@ export default function IndiaMap3D() {
         <div className={styles.headerTopRow}>
           <div className={styles.radarBadge}>
             <span className={styles.radarPulseDot} />
-            <span>PAN-INDIA CAMPAIGN RADAR &bull; 3D METRO MESH</span>
+            <span>PAN-INDIA CAMPAIGN RADAR &bull; 3D LIVE MESH</span>
           </div>
           <span className={styles.perspectiveBadge}>
-            Interactive 3D View &bull; Hover Pins
+            Interactive 3D &bull; Hover Pins
           </span>
         </div>
 
@@ -59,10 +56,10 @@ export default function IndiaMap3D() {
           Active Commercial Hubs &amp; National Corridors
         </h3>
         <p className={styles.mapSubtitle}>
-          Real-time delivery footprint connecting our Bhubaneswar HQ to premier business corridors across India. Hover any pin to inspect metro telemetry.
+          Real-time performance delivery footprint connecting our Bhubaneswar HQ to major metro corridors &amp; Northeast India.
         </p>
 
-        {/* Quick City Selector Bar */}
+        {/* Compact City Chiclets (Prominently featuring Bhubaneswar HQ & Northeast / Guwahati) */}
         <div className={styles.cityFilterBar}>
           {INDIA_CITIES.map((city) => {
             const isSelected = activeCity.id === city.id;
@@ -76,17 +73,17 @@ export default function IndiaMap3D() {
                 }}
                 onMouseEnter={() => setHoveredCityId(city.id)}
                 className={`${styles.cityFilterChip} ${city.isHQ ? styles.hqFilterChip : ''} ${
-                  isSelected ? styles.cityFilterChipActive : ''
-                }`}
+                  city.isNorthEast ? styles.neFilterChip : ''
+                } ${isSelected ? styles.cityFilterChipActive : ''}`}
               >
-                {city.isHQ ? '📍' : '⚡'} {city.name}
+                {city.isHQ ? '📍' : city.isNorthEast ? '🌿' : '⚡'} {city.name.split(' (')[0]}
               </button>
             );
           })}
         </div>
       </div>
 
-      {/* 3D Map Viewport Stage */}
+      {/* 3D Map Viewport (Open Canvas, Not Trapped in a Card) */}
       <div
         className={styles.stageContainer}
         ref={containerRef}
@@ -105,27 +102,24 @@ export default function IndiaMap3D() {
             xmlns="http://www.w3.org/2000/svg"
           >
             <defs>
-              {/* Telemetry Arc Gradient */}
-              <linearGradient id="arcGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#38BDF8" stopOpacity="0.85" />
-                <stop offset="50%" stopColor="#60A5FA" stopOpacity="0.6" />
-                <stop offset="100%" stopColor="#F59E0B" stopOpacity="0.9" />
+              <linearGradient id="arcGradientLight" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#2563EB" stopOpacity="0.75" />
+                <stop offset="60%" stopColor="#60A5FA" stopOpacity="0.6" />
+                <stop offset="100%" stopColor="#D97706" stopOpacity="0.85" />
               </linearGradient>
-
-              {/* Holographic Radar Radial Ring */}
-              <radialGradient id="radarField" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stopColor="#1E3A8A" stopOpacity="0.4" />
-                <stop offset="70%" stopColor="#0B1C63" stopOpacity="0.1" />
-                <stop offset="100%" stopColor="#040924" stopOpacity="0" />
-              </radialGradient>
+              <linearGradient id="arcGradientNE" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#D97706" stopOpacity="0.85" />
+                <stop offset="50%" stopColor="#10B981" stopOpacity="0.75" />
+                <stop offset="100%" stopColor="#059669" stopOpacity="0.9" />
+              </linearGradient>
             </defs>
 
-            {/* Depth Grid & Radar Concentric Rings */}
-            <circle cx="357.6" cy="374.6" r="90" fill="none" stroke="rgba(56, 189, 248, 0.08)" strokeDasharray="3 3" />
-            <circle cx="357.6" cy="374.6" r="170" fill="none" stroke="rgba(56, 189, 248, 0.07)" strokeDasharray="4 4" />
-            <circle cx="357.6" cy="374.6" r="260" fill="none" stroke="rgba(56, 189, 248, 0.05)" strokeDasharray="4 6" />
+            {/* Depth Concentric Radar Guides */}
+            <circle cx="357.6" cy="374.6" r="80" fill="none" stroke="rgba(37, 99, 235, 0.08)" strokeDasharray="3 3" />
+            <circle cx="357.6" cy="374.6" r="160" fill="none" stroke="rgba(37, 99, 235, 0.06)" strokeDasharray="4 4" />
+            <circle cx="357.6" cy="374.6" r="240" fill="none" stroke="rgba(37, 99, 235, 0.04)" strokeDasharray="4 6" />
 
-            {/* India States Contours */}
+            {/* India States Contours (Clean Light Minimal Theme) */}
             <g className={styles.statesLayer}>
               {INDIA_STATE_PATHS.map((state) => (
                 <path
@@ -140,25 +134,28 @@ export default function IndiaMap3D() {
             <g className={styles.arcsLayer}>
               {INDIA_CITIES.filter((c) => !c.isHQ).map((city) => {
                 const isActive = activeCity.id === city.id;
-                // Quadratic bezier arc bowing upward/sideways
-                const midX = (hqCity.x + city.x) / 2 + (hqCity.y - city.y) * 0.15;
-                const midY = (hqCity.y + city.y) / 2 - Math.abs(hqCity.x - city.x) * 0.15;
+                const midX = (hqCity.x + city.x) / 2 + (hqCity.y - city.y) * 0.12;
+                const midY = (hqCity.y + city.y) / 2 - Math.abs(hqCity.x - city.x) * 0.12;
                 const pathD = `M ${hqCity.x} ${hqCity.y} Q ${midX} ${midY} ${city.x} ${city.y}`;
 
                 return (
                   <path
                     key={`arc-${city.id}`}
                     d={pathD}
-                    className={`${styles.telemetryArc} ${isActive ? styles.telemetryArcActive : ''}`}
+                    className={`${styles.telemetryArc} ${
+                      city.isNorthEast ? styles.telemetryArcNE : ''
+                    } ${isActive ? styles.telemetryArcActive : ''}`}
                   />
                 );
               })}
             </g>
 
-            {/* City Nodes / Pins (NO STICKY TEXT ON MAP per user prompt!) */}
+            {/* City Nodes (NO STICKY TEXT ON MAP per prompt!) */}
             <g className={styles.pinsLayer}>
               {INDIA_CITIES.map((city) => {
                 const isSelected = activeCity.id === city.id;
+                const isHQ = city.isHQ;
+                const isNE = city.isNorthEast;
 
                 return (
                   <g
@@ -172,29 +169,36 @@ export default function IndiaMap3D() {
                     onMouseLeave={() => setHoveredCityId(null)}
                     transform={`translate(${city.x}, ${city.y})`}
                   >
-                    {/* Pulsing Outer Ping Ring */}
                     <circle
                       cx="0"
                       cy="0"
-                      className={city.isHQ ? styles.pinBeaconOuterHQ : styles.pinBeaconOuter}
+                      className={
+                        isHQ
+                          ? styles.pinBeaconOuterHQ
+                          : isNE
+                          ? styles.pinBeaconOuterNE
+                          : styles.pinBeaconOuter
+                      }
                     />
 
-                    {/* Interactive Core Target Pin */}
                     <circle
                       cx="0"
                       cy="0"
-                      r={city.isHQ ? 6.5 : 4.5}
-                      className={city.isHQ ? styles.pinCoreHQ : styles.pinCore}
+                      r={isHQ ? 6 : isNE ? 5 : 4}
+                      className={
+                        isHQ
+                          ? styles.pinCoreHQ
+                          : isNE
+                          ? styles.pinCoreNE
+                          : styles.pinCore
+                      }
                     />
 
-                    {/* Extra Star indicator for Bhubaneswar Registered HQ */}
-                    {city.isHQ && (
-                      <circle
-                        cx="0"
-                        cy="0"
-                        r="2"
-                        fill="#FFFFFF"
-                      />
+                    {isHQ && (
+                      <circle cx="0" cy="0" r="1.8" fill="#FFFFFF" />
+                    )}
+                    {isNE && (
+                      <circle cx="0" cy="0" r="1.5" fill="#FFFFFF" />
                     )}
                   </g>
                 );
@@ -202,7 +206,7 @@ export default function IndiaMap3D() {
             </g>
           </svg>
 
-          {/* Dynamic Floating HUD Tooltip (Only shown on hover or active node) */}
+          {/* Minimal Floating HUD Tooltip on Hover */}
           {activeCity && (
             <div
               className={styles.floatingTooltip}
@@ -211,69 +215,41 @@ export default function IndiaMap3D() {
                 top: `${(activeCity.y / 680) * 100}%`,
               }}
             >
-              <div className={styles.tooltipHeader}>
-                <h4 className={styles.tooltipCityName}>
-                  {activeCity.isHQ ? '📍 ' : '⚡ '}
-                  {activeCity.name}
-                </h4>
-                <span className={`${styles.tooltipBadge} ${activeCity.isHQ ? styles.tooltipBadgeHQ : ''}`}>
-                  {activeCity.state}
-                </span>
-              </div>
-              <p className={styles.tooltipSpec}>{activeCity.specialization}</p>
-              <div className={styles.tooltipFooter}>
-                <span>
-                  <span className={styles.tooltipStatusDot} />
-                  {activeCity.activePods}
-                </span>
-                <span className={styles.tooltipSpeed}>{activeCity.speed}</span>
-              </div>
+              <h4 className={styles.tooltipTitle}>
+                {activeCity.isHQ ? '📍 ' : activeCity.isNorthEast ? '🌿 ' : '⚡ '}
+                {activeCity.name}
+                {activeCity.isNorthEast && (
+                  <span className={styles.tooltipBadgeNE}>Northeast</span>
+                )}
+                {activeCity.isHQ && (
+                  <span className={styles.tooltipBadgeHQ}>HQ</span>
+                )}
+              </h4>
+              <p className={styles.tooltipSub}>
+                {activeCity.specialization} &bull; {activeCity.speed}
+              </p>
             </div>
           )}
         </div>
       </div>
 
-      {/* Selected Hub Telemetry Dossier Console */}
-      <div className={styles.activeHubDossier}>
-        <div className={styles.dossierTopRow}>
-          <div className={styles.dossierCityTitle}>
-            <span className={styles.dossierCityName}>
-              {activeCity.isHQ ? '🏢' : '⚡'} {activeCity.name}
-            </span>
-            <span className={styles.dossierStateBadge}>{activeCity.badge}</span>
-          </div>
-          <span className={styles.dossierLiveStatus}>
-            ● {activeCity.status}
-          </span>
+      {/* Minimal Bottom Status Bar */}
+      <div className={styles.miniStatusBar}>
+        <div>
+          <span>Selected Corridor: </span>
+          <strong className={styles.miniStatusCity}>{activeCity.name}</strong>
+          <span> &bull; {activeCity.specialization}</span>
         </div>
-
-        <p className={styles.dossierHighlight}>{activeCity.highlight}</p>
-
-        <div className={styles.dossierGrid}>
-          <div className={styles.dossierTile}>
-            <div className={styles.dossierMetaLabel}>Core Deployment</div>
-            <div className={styles.dossierValText}>{activeCity.specialization}</div>
-          </div>
-          <div className={styles.dossierTile}>
-            <div className={styles.dossierMetaLabel}>Response &amp; Delivery SLA</div>
-            <div className={styles.dossierValText} style={{ color: '#38BDF8' }}>
-              ⚡ {activeCity.speed}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Trust & Direct Ownership Strip */}
-      <div className={styles.assuranceStrip}>
-        <span className={styles.assuranceItem}>
-          ✓ First-Party Server CAPI Tracking
-        </span>
-        <span className={styles.assuranceItem}>
-          • Direct Root Ad Account Ownership
-        </span>
-        <span className={styles.assuranceItem}>
-          • Dedicated Pan-India War Room
-        </span>
+        <a
+          href={`https://wa.me/919437168434?text=${encodeURIComponent(
+            `Hi Marketing Copilot, I would like to discuss campaigns in ${activeCity.name}`
+          )}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.miniStatusLink}
+        >
+          <span>Chat Desk ↗</span>
+        </a>
       </div>
     </div>
   );

@@ -762,25 +762,23 @@ export default function DigitalGrowthPartnerPage() {
       <section className={styles.commandCenterSection}>
         <div className={styles.container}>
           <div className={styles.hqSectionGrid}>
-            {/* Left Card: Headquarters & Strategic Channels */}
+            {/* Left Card: Compact Operations Hub */}
             <div className={styles.hqCardChassis}>
               <div>
                 <div className={styles.hqLiveStatusTag}>
                   <span className={styles.statusLedNeutral} />
-                  <span>CLIENT DISPATCH &amp; OPERATIONS</span>
+                  <span>BHUBANESWAR HQ · PAN-INDIA</span>
                 </div>
-                <h2 className={styles.titlePrimary} style={{ textAlign: 'left', marginBottom: '10px' }}>
-                  Strategic Hub in Bhubaneswar.<br />
-                  <span className={styles.titleAccent}>Scaling Brands Across India.</span>
+                <h2 className={styles.titlePrimary} style={{ textAlign: 'left', marginBottom: '8px', fontSize: '22px' }}>
+                  National Growth Corridors
                 </h2>
-                <p className={styles.subtitle} style={{ textAlign: 'left', margin: 0, fontSize: '14px' }}>
-                  Meet our senior partners in-person for strategy sprints at our corporate office, or collaborate seamlessly through a dedicated WhatsApp war room from anywhere across India.
+                <p className={styles.subtitle} style={{ textAlign: 'left', margin: 0, fontSize: '13px', color: '#64748B', lineHeight: '1.5' }}>
+                  Operations centralized in Bhubaneswar, delivering active revenue campaigns across 12+ major metro corridors and Northeast India.
                 </p>
               </div>
 
-              {/* High-End Tactical Channel Grid */}
+              {/* Compact Channels */}
               <div className={styles.executiveChannelGrid}>
-                {/* Physical Office Card */}
                 <a
                   href="https://www.google.com/maps/search/?api=1&query=Mallick+Complex,+Unit+3,+Kharvela+Nagar,+Bhubaneswar,+Odisha+751001"
                   target="_blank"
@@ -788,21 +786,17 @@ export default function DigitalGrowthPartnerPage() {
                   className={styles.executiveOfficeCard}
                 >
                   <div className={styles.executiveCardTop}>
-                    <div className={styles.channelIconBubble}>📍</div>
+                    <span style={{ fontSize: '14px' }}>📍</span>
                     <span className={styles.channelSmallLabel}>Registered Corporate Office</span>
                   </div>
-                  <div className={styles.channelValueText}>
-                    Mallick Complex, Unit 3, Kharvela Nagar, Bhubaneswar, Odisha 751001
-                  </div>
-                  <div className={styles.cardActionFooter}>
-                    <span>Open in Google Maps ↗</span>
+                  <div className={styles.channelValueText} style={{ fontSize: '12px' }}>
+                    Mallick Complex, Kharvela Nagar, Bhubaneswar 751001 ↗
                   </div>
                 </a>
 
-                {/* Direct Communications Dual-Column */}
                 <div className={styles.executiveCommsDouble}>
                   <a href="tel:+919437168434" className={styles.executiveCommTile}>
-                    <div className={styles.channelIconBubbleSmall}>📞</div>
+                    <span style={{ fontSize: '13px' }}>📞</span>
                     <div>
                       <span className={styles.channelMicroLabel}>Direct Line</span>
                       <div className={styles.channelValueBold}>+91 94371 68434</div>
@@ -815,9 +809,7 @@ export default function DigitalGrowthPartnerPage() {
                     rel="noopener noreferrer"
                     className={`${styles.executiveCommTile} ${styles.executiveWhatsAppTile}`}
                   >
-                    <div className={styles.channelIconBubbleSmall} style={{ background: '#DCFCE7', color: '#16A34A', border: '1px solid #86EFAC' }}>
-                      💬
-                    </div>
+                    <span style={{ fontSize: '13px' }}>💬</span>
                     <div>
                       <span className={styles.channelMicroLabel}>WhatsApp Desk</span>
                       <div className={styles.channelValueBold} style={{ color: '#16A34A' }}>
@@ -829,9 +821,9 @@ export default function DigitalGrowthPartnerPage() {
               </div>
 
               <div className={styles.hqFooterSla}>
-                <span>⚡ 2-Hour Audit Response Turnaround</span>
+                <span>⚡ 15m WhatsApp SLA</span>
                 <span>•</span>
-                <span>48-Hour Sprint Kickoff Guaranteed</span>
+                <span>48h Sprint Kickoff</span>
               </div>
             </div>
 
@@ -1148,6 +1140,12 @@ export default function DigitalGrowthPartnerPage() {
       </section>
 
       {/* ═════════════════════════════════════════════════════════════════
+          STRATEGIST CONSULTATION DESK (PREMIER MID-PAGE CONVERSION POSITION)
+          Placed directly following the Proof & Comparison sections
+      ═════════════════════════════════════════════ */}
+      <StrategistDeskCta id="mid-strategist-desk" defaultTopic="🎯 Google & Meta Ads" />
+
+      {/* ═════════════════════════════════════════════════════════════════
           SECTION: FREQUENTLY ASKED QUESTIONS (SKEUOMORPHIC ACCORDION)
       ═════════════════════════════════════════════ */}
       <section className={styles.faqSection} id="growth-faq">
@@ -1388,11 +1386,6 @@ export default function DigitalGrowthPartnerPage() {
           </div>
         </div>
       </section>
-
-      {/* ═════════════════════════════════════════════════════════════════
-          ASK OUR STRATEGISTS DIRECTLY — DUAL-PANE EXECUTIVE DISPATCH COCKPIT
-      ═════════════════════════════════════════════ */}
-      <StrategistDeskCta id="ask-strategists" />
 
       {/* Global Bottom CTA */}
       <CTASection />
