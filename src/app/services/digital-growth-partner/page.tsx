@@ -761,23 +761,60 @@ export default function DigitalGrowthPartnerPage() {
       ═════════════════════════════════════════════ */}
       <section className={styles.commandCenterSection}>
         <div className={styles.container}>
+          {/* Section Header */}
+          <ScrollReveal>
+            <div className={styles.headerCenter} style={{ marginBottom: '44px' }}>
+              <div className={styles.eyebrowBadge}>
+                <span className={styles.pulsingLed} />
+                <span>STRATEGIC DELIVERY NETWORK &bull; PAN-INDIA CAMPAIGN RADAR</span>
+              </div>
+              <h2 className={styles.titlePrimary}>
+                Command Center in Bhubaneswar.{' '}
+                <span className={styles.titleAccent}>Scaling High-Growth Brands Pan-India.</span>
+              </h2>
+              <p className={styles.subtitle}>
+                Centralized strategy, technical engineering, and multi-channel performance media buying governed from Odisha — powering live campaigns across 12+ high-velocity metro corridors and Northeast India.
+              </p>
+            </div>
+          </ScrollReveal>
+
           <div className={styles.hqSectionGrid}>
-            {/* Left Card: Compact Operations Hub */}
+            {/* Left Card: Executive Operations Cockpit */}
             <div className={styles.hqCardChassis}>
               <div>
-                <div className={styles.hqLiveStatusTag}>
-                  <span className={styles.statusLedNeutral} />
-                  <span>BHUBANESWAR HQ · PAN-INDIA</span>
+                <div className={styles.hqCardHeaderRow}>
+                  <div className={styles.hqLiveStatusTag}>
+                    <span className={styles.statusLedLive} />
+                    <span>BHUBANESWAR HQ · PAN-INDIA</span>
+                  </div>
+                  <span className={styles.hqActivePill}>ACTIVE DESK</span>
                 </div>
-                <h2 className={styles.titlePrimary} style={{ textAlign: 'left', marginBottom: '8px', fontSize: '22px' }}>
+
+                <h3 className={styles.hqCardTitle}>
                   National Growth Corridors
-                </h2>
-                <p className={styles.subtitle} style={{ textAlign: 'left', margin: 0, fontSize: '13px', color: '#64748B', lineHeight: '1.5' }}>
-                  Operations centralized in Bhubaneswar, delivering active revenue campaigns across 12+ major metro corridors and Northeast India.
+                </h3>
+                <p className={styles.hqCardSubtitle}>
+                  Centralized strategic orchestration, high-ROAS performance engineering, and full-funnel CRO managed directly from our registered corporate headquarters in Odisha.
                 </p>
+
+                {/* Tactical Metric Ticker */}
+                <div className={styles.hqStatsTriplet}>
+                  <div className={styles.hqStatItem}>
+                    <div className={styles.hqStatValue}>12+</div>
+                    <div className={styles.hqStatLabel}>Active Metros</div>
+                  </div>
+                  <div className={styles.hqStatItem}>
+                    <div className={styles.hqStatValue}>100%</div>
+                    <div className={styles.hqStatLabel}>In-House Ops</div>
+                  </div>
+                  <div className={styles.hqStatItem}>
+                    <div className={styles.hqStatValue}>&lt;15m</div>
+                    <div className={styles.hqStatLabel}>Founder SLA</div>
+                  </div>
+                </div>
               </div>
 
-              {/* Compact Channels */}
+              {/* Tactical Communication Channels */}
               <div className={styles.executiveChannelGrid}>
                 <a
                   href="https://www.google.com/maps/search/?api=1&query=Mallick+Complex,+Unit+3,+Kharvela+Nagar,+Bhubaneswar,+Odisha+751001"
@@ -786,20 +823,27 @@ export default function DigitalGrowthPartnerPage() {
                   className={styles.executiveOfficeCard}
                 >
                   <div className={styles.executiveCardTop}>
-                    <span style={{ fontSize: '14px' }}>📍</span>
-                    <span className={styles.channelSmallLabel}>Registered Corporate Office</span>
+                    <div className={styles.channelIconBadge}>📍</div>
+                    <div>
+                      <span className={styles.channelSmallLabel}>Registered Corporate Office</span>
+                      <div className={styles.channelValueText}>
+                        Mallick Complex, Kharvela Nagar, Bhubaneswar 751001
+                      </div>
+                    </div>
                   </div>
-                  <div className={styles.channelValueText} style={{ fontSize: '12px' }}>
-                    Mallick Complex, Kharvela Nagar, Bhubaneswar 751001 ↗
+                  <div className={styles.officeMapLink}>
+                    <span>View on Google Maps</span>
+                    <span style={{ fontSize: '13px' }}>↗</span>
                   </div>
                 </a>
 
                 <div className={styles.executiveCommsDouble}>
                   <a href="tel:+919437168434" className={styles.executiveCommTile}>
-                    <span style={{ fontSize: '13px' }}>📞</span>
+                    <div className={styles.commIconBubble}>📞</div>
                     <div>
                       <span className={styles.channelMicroLabel}>Direct Line</span>
                       <div className={styles.channelValueBold}>+91 94371 68434</div>
+                      <span className={styles.commMetaSub}>Priority Hotline</span>
                     </div>
                   </a>
 
@@ -809,21 +853,31 @@ export default function DigitalGrowthPartnerPage() {
                     rel="noopener noreferrer"
                     className={`${styles.executiveCommTile} ${styles.executiveWhatsAppTile}`}
                   >
-                    <span style={{ fontSize: '13px' }}>💬</span>
+                    <div className={`${styles.commIconBubble} ${styles.commIconBubbleWa}`}>💬</div>
                     <div>
                       <span className={styles.channelMicroLabel}>WhatsApp Desk</span>
                       <div className={styles.channelValueBold} style={{ color: '#16A34A' }}>
                         Chat Founder ↗
                       </div>
+                      <span className={styles.commMetaSub} style={{ color: '#059669' }}>Fastest Reply</span>
                     </div>
                   </a>
                 </div>
               </div>
 
               <div className={styles.hqFooterSla}>
-                <span>⚡ 15m WhatsApp SLA</span>
-                <span>•</span>
-                <span>48h Sprint Kickoff</span>
+                <div className={styles.hqSlaBadge}>
+                  <span className={styles.slaDotAmber} />
+                  <span>15m WhatsApp SLA</span>
+                </div>
+                <div className={styles.hqSlaBadge}>
+                  <span className={styles.slaDotBlue} />
+                  <span>48h Sprint Kickoff</span>
+                </div>
+                <div className={styles.hqSlaBadge}>
+                  <span className={styles.slaDotGreen} />
+                  <span>100% In-House</span>
+                </div>
               </div>
             </div>
 

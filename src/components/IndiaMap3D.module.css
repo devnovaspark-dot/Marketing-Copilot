@@ -2,28 +2,159 @@
   position: relative;
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0;
-  background: transparent;
+  padding: 40px 20px 36px;
+  border-radius: 26px;
+  background-color: #FAFCFF;
+  background-image: 
+    radial-gradient(circle at 60% 55%, rgba(37, 99, 235, 0.07) 0%, rgba(245, 158, 11, 0.035) 45%, transparent 72%),
+    radial-gradient(rgba(148, 163, 184, 0.28) 1px, transparent 1px);
+  background-size: 100% 100%, 22px 22px;
+  border: 1.5px solid #CBD5E1;
+  box-shadow: 
+    inset 0 2px 0 #FFFFFF,
+    0 16px 40px -12px rgba(11, 32, 147, 0.07),
+    0 2px 8px rgba(0, 0, 0, 0.02);
   user-select: none;
+  overflow: hidden;
 }
 
-/* 100% Stable Viewport Stage (Zero Tilt, Zero Wobble on Hover) */
+/* Precision Tech Corner Brackets */
+.cornerBracketTL,
+.cornerBracketTR,
+.cornerBracketBL,
+.cornerBracketBR {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.cornerBracketTL {
+  top: 10px;
+  left: 10px;
+  border-top: 2px solid #94A3B8;
+  border-left: 2px solid #94A3B8;
+}
+
+.cornerBracketTR {
+  top: 10px;
+  right: 10px;
+  border-top: 2px solid #94A3B8;
+  border-right: 2px solid #94A3B8;
+}
+
+.cornerBracketBL {
+  bottom: 10px;
+  left: 10px;
+  border-bottom: 2px solid #94A3B8;
+  border-left: 2px solid #94A3B8;
+}
+
+.cornerBracketBR {
+  bottom: 10px;
+  right: 10px;
+  border-bottom: 2px solid #94A3B8;
+  border-right: 2px solid #94A3B8;
+}
+
+/* Cartographic Telemetry Watermark Rows */
+.telemetryTopRow {
+  position: absolute;
+  top: 14px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.telemetryBottomRow {
+  position: absolute;
+  bottom: 14px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.telemetryTagLeft,
+.telemetryTagRight {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  color: #475569;
+  text-transform: uppercase;
+}
+
+.telemetryMonoLabel {
+  color: #2563EB;
+  font-weight: 800;
+}
+
+.telemetryLiveDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 6px #10B981;
+}
+
+.telemetryLiveDotBlue {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #2563EB;
+  box-shadow: 0 0 6px #2563EB;
+}
+
+.telemetryCorridorCount {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono, monospace);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  color: #334155;
+}
+
+.telemetryStatusNorm {
+  font-family: var(--font-mono, monospace);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #64748B;
+}
+
+/* 100% Stable Viewport Stage (Exact Match with 600/680 SVG Aspect Ratio) */
 .stageContainer {
   position: relative;
   width: 100%;
-  max-width: 520px;
-  height: 480px;
+  max-width: 530px;
+  aspect-ratio: 600 / 680;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0 auto;
 }
 
 @media (max-width: 640px) {
   .stageContainer {
     max-width: 100%;
-    height: 380px;
   }
 }
 
@@ -31,22 +162,25 @@
 .svgCanvas {
   width: 100%;
   height: 100%;
-  max-height: 480px;
   overflow: visible;
-  filter: drop-shadow(0 8px 24px rgba(15, 23, 42, 0.08));
+  filter: drop-shadow(0 10px 24px rgba(15, 23, 42, 0.08));
+}
+
+/* Radar Distance Monospace Text */
+.radarDistanceText {
+  font-family: var(--font-mono, monospace);
+  font-size: 8px;
+  font-weight: 700;
+  fill: #94A3B8;
+  letter-spacing: 0.08em;
 }
 
 /* India State Boundaries (Crisp, High-Contrast Light Cartography) */
 .statePath {
-  fill: #F8FAFC;
+  fill: #FFFFFF;
   stroke: #94A3B8;
   stroke-width: 0.95;
   transition: fill 0.2s ease, stroke 0.2s ease;
-}
-
-.statePath:hover {
-  fill: #EFF6FF;
-  stroke: #3B82F6;
 }
 
 /* Telemetry Connecting Arcs */
@@ -78,23 +212,26 @@
   }
 }
 
-/* City Pins & Beacons (Interactive Hover) */
+/* City Pins: Fixed Position, Rock-Solid Hit Area — ZERO Jitter or Vibration */
 .cityPinGroup {
-  cursor: pointer;
-  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
 }
 
-.cityPinGroup:hover {
-  transform: scale(1.25);
+.hitTarget {
+  fill: transparent;
+  cursor: pointer;
+  pointer-events: all;
 }
 
 /* Standard Metro Beacon (Royal Blue) */
 .pinBeaconOuter {
-  fill: rgba(37, 99, 235, 0.15);
-  stroke: rgba(37, 99, 235, 0.7);
+  fill: rgba(37, 99, 235, 0.12);
+  stroke: rgba(37, 99, 235, 0.6);
   stroke-width: 1;
   animation: beaconPulse 2.4s infinite ease-out;
+  transform-box: fill-box;
   transform-origin: center;
+  pointer-events: none;
 }
 
 .pinCore {
@@ -102,16 +239,19 @@
   stroke: #FFFFFF;
   stroke-width: 1.8;
   filter: drop-shadow(0 2px 4px rgba(37, 99, 235, 0.4));
-  transition: all 0.2s ease;
+  transition: filter 0.2s ease, stroke-width 0.2s ease;
+  pointer-events: none;
 }
 
 /* Bhubaneswar HQ Beacon (Golden Amber) */
 .pinBeaconOuterHQ {
-  fill: rgba(245, 158, 11, 0.22);
-  stroke: rgba(245, 158, 11, 0.9);
+  fill: rgba(245, 158, 11, 0.16);
+  stroke: rgba(245, 158, 11, 0.85);
   stroke-width: 1.2;
-  animation: beaconPulseHQ 1.9s infinite ease-out;
+  animation: beaconPulse 2.0s infinite ease-out;
+  transform-box: fill-box;
   transform-origin: center;
+  pointer-events: none;
 }
 
 .pinCoreHQ {
@@ -119,15 +259,19 @@
   stroke: #FFFFFF;
   stroke-width: 2.2;
   filter: drop-shadow(0 2px 8px rgba(217, 119, 6, 0.55));
+  transition: filter 0.2s ease, stroke-width 0.2s ease;
+  pointer-events: none;
 }
 
 /* Northeast Guwahati Beacon (Emerald Teal) */
 .pinBeaconOuterNE {
-  fill: rgba(16, 185, 129, 0.22);
-  stroke: rgba(16, 185, 129, 0.9);
+  fill: rgba(16, 185, 129, 0.16);
+  stroke: rgba(16, 185, 129, 0.85);
   stroke-width: 1.2;
-  animation: beaconPulseNE 2.1s infinite ease-out;
+  animation: beaconPulse 2.2s infinite ease-out;
+  transform-box: fill-box;
   transform-origin: center;
+  pointer-events: none;
 }
 
 .pinCoreNE {
@@ -135,30 +279,45 @@
   stroke: #FFFFFF;
   stroke-width: 2;
   filter: drop-shadow(0 2px 7px rgba(5, 150, 105, 0.5));
+  transition: filter 0.2s ease, stroke-width 0.2s ease;
+  pointer-events: none;
 }
 
+/* Active Pin Glow States */
+.cityPinActive .pinCore {
+  filter: drop-shadow(0 0 10px #2563EB);
+  stroke-width: 2.4;
+}
+
+.cityPinActive .pinCoreHQ {
+  filter: drop-shadow(0 0 12px #F59E0B);
+  stroke-width: 2.8;
+}
+
+.cityPinActive .pinCoreNE {
+  filter: drop-shadow(0 0 12px #10B981);
+  stroke-width: 2.8;
+}
+
+/* GPU Accelerated Scale Pulse — Zero Attribute/Layout Reflow */
 @keyframes beaconPulse {
-  0% { r: 4.5; opacity: 1; }
-  100% { r: 17; opacity: 0; }
-}
-
-@keyframes beaconPulseHQ {
-  0% { r: 6.5; opacity: 1; }
-  100% { r: 23; opacity: 0; }
-}
-
-@keyframes beaconPulseNE {
-  0% { r: 5.5; opacity: 1; }
-  100% { r: 20; opacity: 0; }
+  0% {
+    transform: scale(0.6);
+    opacity: 0.95;
+  }
+  100% {
+    transform: scale(2.0);
+    opacity: 0;
+  }
 }
 
 /* Minimal Floating HUD Tooltip — Appears ONLY when pin is hovered */
 .floatingPinTooltip {
   position: absolute;
-  z-index: 30;
+  z-index: 50;
   pointer-events: none;
   transform: translate(-50%, -125%);
-  background: rgba(15, 23, 42, 0.92);
+  background: rgba(15, 23, 42, 0.95);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border: 1px solid rgba(255, 255, 255, 0.22);
@@ -229,3 +388,4 @@
   color: #93C5FD;
   line-height: 1.35;
 }
+

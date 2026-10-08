@@ -1830,17 +1830,19 @@
 
 .hqCardChassis,
 .metroRadarCard {
-  padding: 24px 22px;
-  border-radius: 22px;
-  background: linear-gradient(160deg, #FFFFFF 0%, #FAFCFF 50%, #F8FAFD 100%);
+  padding: 26px 22px;
+  border-radius: 24px;
+  background: linear-gradient(165deg, #FFFFFF 0%, #FAFCFF 45%, #F4F8FD 100%);
   border: 1.5px solid #CBD5E1;
+  border-top: 2.5px solid #FFFFFF;
   box-shadow: 
-    inset 0 2px 0 #FFFFFF,
-    0 12px 32px -10px rgba(11, 32, 147, 0.07),
-    0 2px 6px rgba(0, 0, 0, 0.02);
+    inset 0 1.5px 0 #FFFFFF,
+    0 18px 44px -12px rgba(11, 32, 147, 0.08),
+    0 2px 8px rgba(0, 0, 0, 0.02);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 16px;
   position: relative;
   transition: all 0.28s ease;
 }
@@ -1850,25 +1852,31 @@
   border-color: #94A3B8;
   box-shadow: 
     inset 0 2.5px 0 #FFFFFF,
-    0 22px 55px -12px rgba(11, 32, 147, 0.12);
+    0 26px 60px -16px rgba(11, 32, 147, 0.14);
 }
 
-/* Neutral Monochrome Header Tags (No Loud Colors!) */
+.hqCardHeaderRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+/* Neutral Monochrome Header Tags */
 .hqLiveStatusTag,
 .radarNeutralTag {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 5px 14px;
+  padding: 5px 12px;
   border-radius: 999px;
   background: #FFFFFF;
   border: 1.5px solid #CBD5E1;
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: 800;
   color: #1E293B;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 12px;
+  letter-spacing: 0.07em;
   box-shadow: 
     inset 0 1px 0 #FFFFFF,
     0 1px 3px rgba(0, 0, 0, 0.04);
@@ -1882,19 +1890,88 @@
   box-shadow: 0 0 3px rgba(100, 116, 139, 0.4);
 }
 
+.statusLedLive {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 6px #10B981;
+}
+
+.hqActivePill {
+  font-family: var(--font-display, inherit);
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #15803D;
+  background: #DCFCE7;
+  border: 1px solid #BBF7D0;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.hqCardTitle {
+  font-family: var(--font-display, inherit);
+  font-size: 21px;
+  font-weight: 900;
+  color: #0B2093;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+
+.hqCardSubtitle {
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: #64748B;
+  margin-bottom: 14px;
+}
+
+/* Tactical Stats Triplet */
+.hqStatsTriplet {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  background: #FFFFFF;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 10px 8px;
+  box-shadow: inset 0 1px 0 #FFFFFF, 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.hqStatItem {
+  text-align: center;
+}
+
+.hqStatValue {
+  font-family: var(--font-display, inherit);
+  font-size: 16px;
+  font-weight: 900;
+  color: #0B2093;
+  line-height: 1.1;
+  margin-bottom: 2px;
+}
+
+.hqStatLabel {
+  font-size: 9px;
+  font-weight: 700;
+  color: #64748B;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
 /* ── Left Card: Tactical Channel Directory ── */
 .executiveChannelGrid {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin: 16px 0 12px;
 }
 
 .executiveOfficeCard {
   display: flex;
   flex-direction: column;
-  gap: 5px;
-  padding: 12px 14px;
+  gap: 8px;
+  padding: 13px 14px;
   border-radius: 14px;
   background: #FFFFFF;
   border: 1.5px solid #CBD5E1;
@@ -1917,8 +1994,34 @@
 
 .executiveCardTop {
   display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.channelIconBadge {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: #FEF3C7;
+  border: 1px solid #FDE68A;
+  display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.officeMapLink {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  font-size: 10.5px;
+  font-weight: 800;
+  color: #2563EB;
+  border-top: 1px dashed #E2E8F0;
+  padding-top: 6px;
+  margin-top: 2px;
 }
 
 .channelIconBubble {
@@ -1951,15 +2054,17 @@
 }
 
 .channelSmallLabel {
-  font-size: 10px;
+  font-size: 9.5px;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.07em;
   color: #64748B;
+  display: block;
+  margin-bottom: 2px;
 }
 
 .channelMicroLabel {
-  font-size: 9.5px;
+  font-size: 9px;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -1969,16 +2074,24 @@
 }
 
 .channelValueText {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
   color: #1E293B;
   line-height: 1.4;
 }
 
 .channelValueBold {
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 900;
   color: #0F172A;
+}
+
+.commMetaSub {
+  font-size: 9px;
+  font-weight: 700;
+  color: #94A3B8;
+  display: block;
+  margin-top: 1px;
 }
 
 .cardActionFooter {
@@ -2008,7 +2121,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 12px 14px;
+  padding: 11px 12px;
   border-radius: 14px;
   background: #FFFFFF;
   border: 1.5px solid #CBD5E1;
@@ -2026,20 +2139,64 @@
   box-shadow: 0 6px 14px rgba(11, 32, 147, 0.08);
 }
 
+.commIconBubble {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: #EFF6FF;
+  border: 1px solid #DBEAFE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.commIconBubbleWa {
+  background: #DCFCE7;
+  border-color: #BBF7D0;
+}
+
 .executiveWhatsAppTile:hover {
   border-color: #10B981;
   box-shadow: 0 6px 14px rgba(16, 185, 129, 0.12);
 }
 
 .hqFooterSla {
-  padding-top: 14px;
+  padding-top: 13px;
   border-top: 1.5px dashed #CBD5E1;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 11px;
+  font-size: 10.5px;
   font-weight: 800;
   color: #475569;
+}
+
+.hqSlaBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.slaDotAmber,
+.slaDotBlue,
+.slaDotGreen {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+}
+
+.slaDotAmber {
+  background: #F59E0B;
+}
+
+.slaDotBlue {
+  background: #2563EB;
+}
+
+.slaDotGreen {
+  background: #10B981;
 }
 
 /* ── Right Card: Metro Radar Console ── */
