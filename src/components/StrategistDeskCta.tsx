@@ -359,11 +359,10 @@ export default function StrategistDeskCta({
                 <h3 className={styles.thankYouTitle}>Let’s Get Growing</h3>
 
                 <p className={styles.thankYouSubtitle}>
-                  We’ve safely received your request, <strong>{formState.fullName}</strong>. One of our expert growth strategists is reviewing your question regarding <strong>{selectedTopic}</strong> to assemble your custom roadmap.
+                  Request received. An expert growth strategist will connect with you within 4 hours.
                 </p>
 
                 <div className={styles.thankYouMetaStrip}>
-                  <span>📱 Callback / WhatsApp: <strong>+91 {formState.phone}</strong></span>
                   <span>⚡ Priority SLA: <strong>Within 4 Hours Guaranteed</strong></span>
                 </div>
 
@@ -371,7 +370,7 @@ export default function StrategistDeskCta({
                 <div className={styles.thankYouActions}>
                   <a
                     href={`https://wa.me/918763570630?text=${encodeURIComponent(
-                      `Hi Aarav, I just submitted an inquiry on ${selectedTopic} for my business (+91 ${formState.phone}).`
+                      `Hi Aarav, I just submitted a growth inquiry for my business.`
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"

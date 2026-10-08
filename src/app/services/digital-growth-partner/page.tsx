@@ -582,7 +582,7 @@ export default function DigitalGrowthPartnerPage() {
                 <h3 className={styles.thankYouHeadline}>Let’s Get Growing</h3>
 
                 <p className={styles.thankYouCopy}>
-                  We’ve safely received your request, <strong>{heroForm.name}</strong>. One of our expert growth strategists will be in touch with you through your custom roadmap.
+                  Request received. An expert growth strategist will connect with you within 4 hours.
                 </p>
 
                 <a
