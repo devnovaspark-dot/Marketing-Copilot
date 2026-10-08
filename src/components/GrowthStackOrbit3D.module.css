@@ -1,13 +1,25 @@
 .orbitSection {
   position: relative;
   padding: 88px 0 96px;
-  background: radial-gradient(circle at 50% 25%, rgba(11, 32, 147, 0.04) 0%, transparent 65%), #FFFFFF;
+  background: radial-gradient(circle at 50% 30%, rgba(37, 99, 235, 0.05) 0%, rgba(248, 250, 252, 0.98) 55%, #FFFFFF 100%);
   border-top: 1px solid rgba(226, 232, 240, 0.85);
   border-bottom: 1px solid rgba(226, 232, 240, 0.85);
   overflow: hidden;
 }
 
 /* Ambient Backdrops */
+.ambientGlowCenter {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 720px;
+  height: 520px;
+  background: radial-gradient(ellipse at center, rgba(37, 99, 235, 0.08) 0%, rgba(245, 158, 11, 0.03) 45%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+}
+
 .ambientOrbLeft {
   position: absolute;
   top: 15%;
@@ -104,7 +116,7 @@
   justify-content: center;
   gap: 6px;
   flex-wrap: wrap;
-  margin: 0 auto 30px;
+  margin: 0 auto 28px;
   max-width: 980px;
 }
 
@@ -139,19 +151,32 @@
 }
 
 /* ══════════════════════════════════════════
-   3D ORBIT ARENA & REVOLVING STAGE
+   3D ORBIT ARENA (CLEAN 3D SPACE — ZERO TRACK LINES)
    ══════════════════════════════════════════ */
 .orbitArena {
   position: relative;
   width: 100%;
   max-width: 1060px;
-  height: 440px;
+  height: 420px;
   margin: 0 auto;
-  perspective: 1300px;
+  perspective: 1200px;
   display: flex;
   align-items: center;
   justify-content: center;
   user-select: none;
+}
+
+.gravitationalHalo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 440px;
+  height: 240px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.12) 0%, rgba(37, 99, 235, 0.04) 50%, transparent 75%);
+  filter: blur(28px);
+  pointer-events: none;
 }
 
 .orbitStage3D {
@@ -164,55 +189,22 @@
   transform-style: preserve-3d;
 }
 
-/* Orbit Track Guide Lines */
-.orbitTrackSvg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  max-width: 1000px;
-  height: 480px;
-  pointer-events: none;
-}
-
-.orbitEllipseTrack {
-  fill: none;
-  stroke: rgba(11, 32, 147, 0.12);
-  stroke-width: 1.6;
-  stroke-dasharray: 6 6;
-  animation: orbitTrackDash 60s linear infinite;
-  transform-origin: center;
-}
-
-@keyframes orbitTrackDash {
-  to {
-    stroke-dashoffset: -360;
-  }
-}
-
-.orbitInnerGuide {
-  fill: none;
-  stroke: rgba(59, 130, 246, 0.08);
-  stroke-width: 1;
-}
-
 /* Central Marketing Copilot Hub */
 .centralCoreChassis {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 150px;
-  height: 150px;
+  width: 148px;
+  height: 148px;
   border-radius: 50%;
-  background: linear-gradient(145deg, #09196E 0%, #0B2093 50%, #050E42 100%);
-  border: 3px solid rgba(255, 255, 255, 0.9);
+  background: linear-gradient(145deg, #09196E 0%, #0B2093 50%, #061148 100%);
+  border: 3px solid rgba(255, 255, 255, 0.95);
   box-shadow: 
-    inset 0 2px 5px rgba(255, 255, 255, 0.4),
-    inset 0 -3px 8px rgba(0, 0, 0, 0.5),
-    0 16px 40px -8px rgba(11, 32, 147, 0.38),
-    0 0 30px rgba(59, 130, 246, 0.35);
+    inset 0 2px 6px rgba(255, 255, 255, 0.45),
+    inset 0 -4px 10px rgba(0, 0, 0, 0.5),
+    0 18px 44px -8px rgba(11, 32, 147, 0.4),
+    0 0 35px rgba(59, 130, 246, 0.35);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -220,7 +212,7 @@
   text-align: center;
   color: #FFFFFF;
   padding: 12px;
-  z-index: 15;
+  z-index: 25;
   cursor: pointer;
   transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease;
 }
@@ -228,24 +220,38 @@
 .centralCoreChassis:hover {
   transform: translate(-50%, -50%) scale(1.06);
   box-shadow: 
-    inset 0 2px 5px rgba(255, 255, 255, 0.5),
-    0 22px 50px -8px rgba(11, 32, 147, 0.5),
-    0 0 40px rgba(59, 130, 246, 0.5);
+    inset 0 2px 6px rgba(255, 255, 255, 0.55),
+    0 24px 54px -8px rgba(11, 32, 147, 0.5),
+    0 0 45px rgba(59, 130, 246, 0.5);
 }
 
-.coreRingsAura {
+.coreVolumetricAura {
   position: absolute;
-  inset: -12px;
+  inset: -18px;
   border-radius: 50%;
-  border: 1.5px dashed rgba(59, 130, 246, 0.35);
-  animation: auraRotate 24s linear infinite;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, rgba(37, 99, 235, 0.1) 60%, transparent 80%);
+  filter: blur(10px);
   pointer-events: none;
+  animation: coreAuraBreathe 4s infinite ease-in-out;
 }
 
-@keyframes auraRotate {
-  to {
-    transform: rotate(360deg);
+@keyframes coreAuraBreathe {
+  0%, 100% {
+    transform: scale(0.95);
+    opacity: 0.6;
   }
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+}
+
+.coreOuterPulseRing {
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 1px solid rgba(147, 197, 253, 0.35);
+  pointer-events: none;
 }
 
 .coreIconFrame {
@@ -253,7 +259,7 @@
   height: 38px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -263,23 +269,34 @@
 
 .coreBrandTitle {
   font-family: var(--font-display, sans-serif);
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: 900;
   color: #FFFFFF;
   line-height: 1.2;
 }
 
 .coreEngineTag {
-  font-size: 8.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 8px;
   font-weight: 800;
   letter-spacing: 0.08em;
   color: #93C5FD;
   text-transform: uppercase;
-  margin-top: 2px;
+  margin-top: 3px;
+}
+
+.coreLivePing {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 6px #10B981;
 }
 
 /* ══════════════════════════════════════════
-   LUMINOUS SATELLITE CAPSULES (COMPACT & NO OVERLAP!)
+   LUMINOUS SATELLITE CAPSULES (FLOATING 3D DEPTH)
    ══════════════════════════════════════════ */
 .satelliteNode {
   position: absolute;
@@ -293,16 +310,16 @@
 .satelliteCapsule {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 9px;
   padding: 6px 14px 6px 8px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.94);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border: 1.5px solid rgba(203, 213, 225, 0.9);
+  border: 1.5px solid rgba(203, 213, 225, 0.95);
   box-shadow: 
     inset 0 1px 0 #FFFFFF,
-    0 8px 24px -4px rgba(11, 32, 147, 0.12),
+    0 10px 26px -4px rgba(11, 32, 147, 0.13),
     0 2px 6px rgba(0, 0, 0, 0.03);
   white-space: nowrap;
   transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
@@ -310,21 +327,17 @@
 
 .satelliteCapsule:hover {
   border-color: #0B2093;
-  transform: translateY(-2px) scale(1.04);
+  transform: translateY(-2px) scale(1.05);
   box-shadow: 
     inset 0 1px 0 #FFFFFF,
-    0 14px 32px -4px rgba(11, 32, 147, 0.22),
-    0 0 18px rgba(59, 130, 246, 0.2);
+    0 16px 36px -4px rgba(11, 32, 147, 0.24),
+    0 0 20px rgba(59, 130, 246, 0.25);
 }
 
 .satelliteCapsuleActive {
   background: #FFFFFF;
   border-color: #0B2093;
-  box-shadow: 
-    inset 0 1.5px 0 #FFFFFF,
-    0 14px 34px -4px rgba(11, 32, 147, 0.25),
-    0 0 20px rgba(37, 99, 235, 0.25);
-  transform: scale(1.08);
+  transform: scale(1.1);
 }
 
 .satelliteIconBubble {
@@ -332,7 +345,7 @@
   height: 32px;
   border-radius: 50%;
   background: linear-gradient(145deg, #EFF6FF 0%, #DBEAFE 100%);
-  border: 1px solid rgba(59, 130, 246, 0.3);
+  border: 1.5px solid rgba(59, 130, 246, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -358,28 +371,93 @@
 .satelliteMetricBadge {
   font-size: 10px;
   font-weight: 800;
-  color: #059669;
   letter-spacing: 0.02em;
 }
 
+/* Tactile Arena Orbit Controls */
+.orbitControlsRow {
+  position: absolute;
+  bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 30;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid #CBD5E1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.controlBtnIcon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #F1F5F9;
+  border: 1px solid #CBD5E1;
+  color: #334155;
+  font-size: 13px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.controlBtnIcon:hover {
+  background: #0B2093;
+  color: #FFFFFF;
+  border-color: #0B2093;
+}
+
+.controlBtnToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: transparent;
+  border: none;
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+  font-weight: 700;
+  color: #475569;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.controlBtnToggle:hover {
+  color: #0B2093;
+}
+
+.controlLed {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  box-shadow: 0 0 6px currentColor;
+}
+
 /* ══════════════════════════════════════════
-   FOCAL SPOTLIGHT CHASSIS (ELEGANT DOCK BAR)
+   FOCAL SPOTLIGHT CHASSIS (RICH CAPABILITY SHOWCASE)
    ══════════════════════════════════════════ */
 .focalSpotlightChassis {
-  max-width: 940px;
-  margin: 36px auto 0;
-  padding: 18px 24px;
-  border-radius: 20px;
+  max-width: 980px;
+  margin: 32px auto 0;
+  padding: 24px 28px;
+  border-radius: 22px;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 252, 0.95) 100%);
   border: 1.5px solid #CBD5E1;
   box-shadow: 
     inset 0 2px 0 #FFFFFF,
-    0 16px 40px -10px rgba(11, 32, 147, 0.09),
+    0 18px 44px -10px rgba(11, 32, 147, 0.1),
     0 2px 8px rgba(0, 0, 0, 0.02);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 24px;
   transition: all 0.3s ease;
 }
 
@@ -387,68 +465,111 @@
   .focalSpotlightChassis {
     flex-direction: column;
     align-items: flex-start;
-    gap: 16px;
+    gap: 20px;
     padding: 20px;
   }
 }
 
 .focalLeft {
   display: flex;
-  align-items: center;
-  gap: 14px;
+  align-items: flex-start;
+  gap: 18px;
   flex: 1;
 }
 
 .focalIcon {
-  width: 44px;
-  height: 44px;
-  border-radius: 14px;
-  background: linear-gradient(145deg, #EFF6FF 0%, #DBEAFE 100%);
-  border: 1px solid #BFDBFE;
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  border: 1.5px solid;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
+  font-size: 26px;
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.12);
+  transition: all 0.3s ease;
 }
 
 .focalCopyBlock {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 6px;
 }
 
-.focalTitle {
-  font-family: var(--font-display, sans-serif);
-  font-size: 16px;
-  font-weight: 800;
-  color: #0F172A;
+.focalCategoryTagRow {
   display: flex;
   align-items: center;
   gap: 8px;
   flex-wrap: wrap;
 }
 
+.focalCategoryPill {
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #EFF6FF;
+  border: 1px solid #BFDBFE;
+  color: #1D4ED8;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
 .focalStageTag {
   font-size: 11px;
   font-weight: 700;
-  color: #0B2093;
+  color: #64748B;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
+}
+
+.focalTitle {
+  font-family: var(--font-display, sans-serif);
+  font-size: 18px;
+  font-weight: 900;
+  color: #0F172A;
+  margin: 0;
+  line-height: 1.25;
 }
 
 .focalDesc {
-  font-size: 13px;
-  color: #64748B;
-  line-height: 1.45;
+  font-size: 13.5px;
+  color: #475569;
+  line-height: 1.5;
   margin: 0;
+}
+
+/* 3 Deliverables Checklist Badges */
+.focalDeliverablesList {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.focalDeliverableBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: 6px;
+  background: #F1F5F9;
+  border: 1px solid #E2E8F0;
+  font-size: 11px;
+  font-weight: 700;
+  color: #334155;
+}
+
+.deliverableCheck {
+  color: #10B981;
+  font-weight: 900;
 }
 
 .focalRight {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 18px;
   flex-shrink: 0;
 }
 
@@ -473,32 +594,34 @@
 
 .focalMetricVal {
   font-family: var(--font-display, sans-serif);
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 900;
-  color: #059669;
+  line-height: 1.1;
 }
 
 .focalMetricLbl {
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: 700;
   color: #94A3B8;
   text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 2px;
 }
 
 .focalDeployBtn {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 10px 18px;
+  padding: 11px 20px;
   border-radius: 999px;
   background: linear-gradient(145deg, #0B2093 0%, #2563EB 100%);
   color: #FFFFFF;
   font-family: var(--font-display, sans-serif);
-  font-size: 12.5px;
+  font-size: 13px;
   font-weight: 800;
   text-decoration: none;
   box-shadow: 
-    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35),
     0 4px 14px rgba(11, 32, 147, 0.28);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   white-space: nowrap;
@@ -507,24 +630,36 @@
 .focalDeployBtn:hover {
   transform: translateY(-1.5px);
   box-shadow: 
-    inset 0 1px 0 rgba(255, 255, 255, 0.4),
-    0 8px 20px rgba(11, 32, 147, 0.35);
+    inset 0 1px 0 rgba(255, 255, 255, 0.45),
+    0 8px 22px rgba(11, 32, 147, 0.35);
 }
 
 @media (max-width: 640px) {
   .orbitArena {
-    height: 380px;
+    height: 360px;
   }
   
   .satelliteCapsule {
     padding: 4px 10px 4px 6px;
+    gap: 6px;
   }
   
   .satelliteTitle {
-    font-size: 10.5px;
+    font-size: 10px;
   }
   
   .satelliteMetricBadge {
-    font-size: 9px;
+    font-size: 8.5px;
+  }
+
+  .focalLeft {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .focalIcon {
+    width: 44px;
+    height: 44px;
+    font-size: 22px;
   }
 }

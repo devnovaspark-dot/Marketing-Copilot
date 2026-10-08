@@ -1,110 +1,68 @@
-.mapCanvasWrapper {
-  position: relative;
+/* ═════════════════════════════════════════════════════════════════
+   UNBOXED 3D PAN-INDIA DEPLOYMENT STAGE (NO CARD CONTAINER)
+   ═════════════════════════════════════════════════════════════════ */
+.mapStageRoot {
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 40px 20px 36px;
-  border-radius: 26px;
-  background-color: #FAFCFF;
-  background-image: 
-    radial-gradient(circle at 60% 55%, rgba(37, 99, 235, 0.07) 0%, rgba(245, 158, 11, 0.035) 45%, transparent 72%),
-    radial-gradient(rgba(148, 163, 184, 0.28) 1px, transparent 1px);
-  background-size: 100% 100%, 22px 22px;
-  border: 1.5px solid #CBD5E1;
-  box-shadow: 
-    inset 0 2px 0 #FFFFFF,
-    0 16px 40px -12px rgba(11, 32, 147, 0.07),
-    0 2px 8px rgba(0, 0, 0, 0.02);
+  gap: 24px;
   user-select: none;
-  overflow: hidden;
 }
 
-/* Precision Tech Corner Brackets */
-.cornerBracketTL,
-.cornerBracketTR,
-.cornerBracketBL,
-.cornerBracketBR {
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  pointer-events: none;
-  z-index: 3;
-}
-
-.cornerBracketTL {
-  top: 10px;
-  left: 10px;
-  border-top: 2px solid #94A3B8;
-  border-left: 2px solid #94A3B8;
-}
-
-.cornerBracketTR {
-  top: 10px;
-  right: 10px;
-  border-top: 2px solid #94A3B8;
-  border-right: 2px solid #94A3B8;
-}
-
-.cornerBracketBL {
-  bottom: 10px;
-  left: 10px;
-  border-bottom: 2px solid #94A3B8;
-  border-left: 2px solid #94A3B8;
-}
-
-.cornerBracketBR {
-  bottom: 10px;
-  right: 10px;
-  border-bottom: 2px solid #94A3B8;
-  border-right: 2px solid #94A3B8;
-}
-
-/* Cartographic Telemetry Watermark Rows */
-.telemetryTopRow {
-  position: absolute;
-  top: 14px;
-  left: 20px;
-  right: 20px;
+/* ═════════════════════════════════════════════════════════════════
+   STRATEGIC MAP MEANING NARRATIVE
+   ═════════════════════════════════════════════════════════════════ */
+.mapMeaningBlock {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  pointer-events: none;
-  z-index: 2;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.telemetryBottomRow {
-  position: absolute;
-  bottom: 14px;
-  left: 20px;
-  right: 20px;
+.meaningHeaderRow {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  pointer-events: none;
-  z-index: 2;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
-.telemetryTagLeft,
-.telemetryTagRight {
+.meaningBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: #EFF6FF;
+  border: 1px solid #BFDBFE;
+  font-family: var(--font-display, sans-serif);
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #1D4ED8;
+  text-transform: uppercase;
+}
+
+.meaningLedLive {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #3B82F6;
+  box-shadow: 0 0 8px #3B82F6;
+  animation: ledPulse 2s infinite ease-in-out;
+}
+
+.meaningGridCount {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   font-family: var(--font-mono, monospace);
   font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.07em;
   color: #475569;
-  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 
-.telemetryMonoLabel {
-  color: #2563EB;
-  font-weight: 800;
-}
-
-.telemetryLiveDot {
+.corridorPulseDot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
@@ -112,34 +70,128 @@
   box-shadow: 0 0 6px #10B981;
 }
 
-.telemetryLiveDotBlue {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #2563EB;
-  box-shadow: 0 0 6px #2563EB;
+@keyframes ledPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.5;
+  }
 }
 
-.telemetryCorridorCount {
+.mapMeaningTitle {
+  font-family: var(--font-display, sans-serif);
+  font-size: clamp(20px, 2.4vw, 24px);
+  font-weight: 900;
+  color: #0F172A;
+  margin: 0;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.mapMeaningDesc {
+  font-size: 13.5px;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.mapMeaningDesc strong {
+  color: #0B2093;
+}
+
+/* Legend: Clear, interactive node explanation */
+.mapLegendBar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.legendItem {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-family: var(--font-mono, monospace);
-  font-size: 9.5px;
-  font-weight: 700;
-  letter-spacing: 0.07em;
-  color: #334155;
+  gap: 7px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  font-size: 11px;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
 }
 
-.telemetryStatusNorm {
-  font-family: var(--font-mono, monospace);
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: #64748B;
+.legendItem:hover {
+  background: #F8FAFC;
+  border-color: #CBD5E1;
+  transform: translateY(-1px);
 }
 
-/* 100% Stable Viewport Stage (Exact Match with 600/680 SVG Aspect Ratio) */
+.legendItemActive {
+  background: #EFF6FF;
+  border-color: #3B82F6;
+  color: #1D4ED8;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.15);
+}
+
+.legendDotHQ {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #D97706;
+  box-shadow: 0 0 8px #F59E0B;
+  flex-shrink: 0;
+}
+
+.legendDotMetro {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #2563EB;
+  box-shadow: 0 0 8px #3B82F6;
+  flex-shrink: 0;
+}
+
+.legendDotNE {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #059669;
+  box-shadow: 0 0 8px #10B981;
+  flex-shrink: 0;
+}
+
+/* ═════════════════════════════════════════════════════════════════
+   UNBOXED MAP STAGE (NO CARD BOX / FLOATING VECTOR CARTOGRAPHY)
+   ═════════════════════════════════════════════════════════════════ */
+.unboxedMapStage {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  overflow: visible;
+}
+
+.ambientSubcontinentGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 480px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, rgba(245, 158, 11, 0.035) 45%, transparent 72%);
+  filter: blur(40px);
+  pointer-events: none;
+}
+
 .stageContainer {
   position: relative;
   width: 100%;
@@ -163,7 +215,7 @@
   width: 100%;
   height: 100%;
   overflow: visible;
-  filter: drop-shadow(0 10px 24px rgba(15, 23, 42, 0.08));
+  filter: drop-shadow(0 14px 28px rgba(15, 23, 42, 0.09));
 }
 
 /* Radar Distance Monospace Text */
@@ -175,7 +227,7 @@
   letter-spacing: 0.08em;
 }
 
-/* India State Boundaries (Crisp, High-Contrast Light Cartography) */
+/* India State Boundaries (Crisp High-Contrast Cartography) */
 .statePath {
   fill: #FFFFFF;
   stroke: #94A3B8;
@@ -201,9 +253,9 @@
 
 .telemetryArcActive {
   stroke: #F59E0B;
-  stroke-width: 2.2;
+  stroke-width: 2.4;
   opacity: 1;
-  filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.6));
+  filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.7));
 }
 
 @keyframes arcDashFlow {
@@ -245,7 +297,7 @@
 
 /* Bhubaneswar HQ Beacon (Golden Amber) */
 .pinBeaconOuterHQ {
-  fill: rgba(245, 158, 11, 0.16);
+  fill: rgba(245, 158, 11, 0.18);
   stroke: rgba(245, 158, 11, 0.85);
   stroke-width: 1.2;
   animation: beaconPulse 2.0s infinite ease-out;
@@ -265,7 +317,7 @@
 
 /* Northeast Guwahati Beacon (Emerald Teal) */
 .pinBeaconOuterNE {
-  fill: rgba(16, 185, 129, 0.16);
+  fill: rgba(16, 185, 129, 0.18);
   stroke: rgba(16, 185, 129, 0.85);
   stroke-width: 1.2;
   animation: beaconPulse 2.2s infinite ease-out;
@@ -286,20 +338,20 @@
 /* Active Pin Glow States */
 .cityPinActive .pinCore {
   filter: drop-shadow(0 0 10px #2563EB);
-  stroke-width: 2.4;
+  stroke-width: 2.6;
 }
 
 .cityPinActive .pinCoreHQ {
-  filter: drop-shadow(0 0 12px #F59E0B);
-  stroke-width: 2.8;
+  filter: drop-shadow(0 0 14px #F59E0B);
+  stroke-width: 3;
 }
 
 .cityPinActive .pinCoreNE {
-  filter: drop-shadow(0 0 12px #10B981);
-  stroke-width: 2.8;
+  filter: drop-shadow(0 0 14px #10B981);
+  stroke-width: 3;
 }
 
-/* GPU Accelerated Scale Pulse — Zero Attribute/Layout Reflow */
+/* GPU Accelerated Scale Pulse */
 @keyframes beaconPulse {
   0% {
     transform: scale(0.6);
@@ -389,3 +441,165 @@
   line-height: 1.35;
 }
 
+/* ═════════════════════════════════════════════════════════════════
+   CORRIDOR TELEMETRY DECK & ARCHITECTURAL MEANING PILLARS
+   ═════════════════════════════════════════════════════════════════ */
+.corridorTelemetryDeck {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Interactive Corridor Readout Box */
+.activeCorridorInspector {
+  padding: 16px 20px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%);
+  border: 1.5px solid #CBD5E1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: all 0.25s ease;
+}
+
+.inspectorTopLine {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.inspectorStatusLeft {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.inspectorLiveLed {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #2563EB;
+  box-shadow: 0 0 6px #2563EB;
+}
+
+.inspectorLabel {
+  font-family: var(--font-mono, monospace);
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #1E40AF;
+  text-transform: uppercase;
+}
+
+.inspectorSlaTag {
+  font-family: var(--font-mono, monospace);
+  font-size: 9.5px;
+  font-weight: 700;
+  color: #059669;
+  letter-spacing: 0.04em;
+}
+
+.inspectorMainInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.inspectorTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.inspectorTargetCity {
+  font-family: var(--font-display, sans-serif);
+  font-size: 15px;
+  font-weight: 900;
+  color: #0F172A;
+}
+
+.inspectorZoneBadge {
+  font-size: 9.5px;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 4px;
+  background: #DBEAFE;
+  color: #1D4ED8;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.inspectorNarrative {
+  font-size: 12.5px;
+  color: #475569;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* 3 Core Architecture Pillars */
+.architecturePillarsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 768px) {
+  .architecturePillarsGrid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+.archPillarCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 14px 14px;
+  border-radius: 14px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+  transition: all 0.2s ease;
+}
+
+.archPillarCard:hover {
+  border-color: #CBD5E1;
+  box-shadow: 0 4px 12px rgba(11, 32, 147, 0.06);
+  transform: translateY(-1px);
+}
+
+.pillarIconBubble {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: #F1F5F9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.pillarContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pillarTitle {
+  font-family: var(--font-display, sans-serif);
+  font-size: 12px;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0;
+  line-height: 1.25;
+}
+
+.pillarDesc {
+  font-size: 11px;
+  color: #64748B;
+  line-height: 1.4;
+  margin: 0;
+}
