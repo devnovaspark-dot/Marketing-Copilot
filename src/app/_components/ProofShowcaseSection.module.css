@@ -467,17 +467,17 @@
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background: rgba(10, 15, 30, 0.88);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: rgba(8, 12, 24, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 24px;
-  animation: modalFadeIn 0.2s ease-out;
+  animation: modalBackdropFade 0.28s ease-out;
 }
 
-@keyframes modalFadeIn {
+@keyframes modalBackdropFade {
   from {
     opacity: 0;
   }
@@ -489,17 +489,31 @@
 .modalContainer {
   position: relative;
   width: 100%;
-  max-width: 1100px;
+  max-width: 1060px;
   max-height: 90vh;
-  background: #0F172A;
-  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  background: #0B1120;
+  border: 1.5px solid rgba(255, 255, 255, 0.16);
   border-radius: 24px;
   box-shadow: 
-    0 24px 70px rgba(0, 0, 0, 0.6),
-    0 0 40px rgba(37, 99, 235, 0.2);
+    0 28px 80px -12px rgba(0, 0, 0, 0.85),
+    0 0 45px rgba(37, 99, 235, 0.2);
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  animation: modalPopSmooth 0.32s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes modalPopSmooth {
+  0% {
+    opacity: 0;
+    transform: scale(0.94) translateY(16px);
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+  }
 }
 
 .modalHeader {
@@ -628,52 +642,16 @@
 
 .modalFooter {
   padding: 16px 24px;
-  background: rgba(15, 23, 42, 0.95);
+  background: rgba(11, 17, 32, 0.96);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
+  justify-content: center;
 }
 
-.modalDesc {
-  font-size: 13.5px;
-  color: #CBD5E1;
-  margin: 0;
-  line-height: 1.5;
-  flex: 1;
-}
-
-.modalConsultBtn {
-  display: inline-flex;
+.modalFooterActions {
+  display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 10px 18px;
-  border-radius: 999px;
-  background: linear-gradient(145deg, #059669 0%, #10B981 100%);
-  color: #FFFFFF;
-  font-family: var(--font-display, sans-serif);
-  font-size: 12.5px;
-  font-weight: 800;
-  text-decoration: none;
-  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
-  white-space: nowrap;
-  transition: all 0.2s ease;
-}
-
-.modalConsultBtn:hover {
-  transform: translateY(-1.5px);
-  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.45);
-}
-
-@media (max-width: 768px) {
-  .modalFooter {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .modalConsultBtn {
-    width: 100%;
-    justify-content: center;
-  }
+  justify-content: center;
+  width: 100%;
 }

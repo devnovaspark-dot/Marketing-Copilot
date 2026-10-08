@@ -3,6 +3,7 @@
 import React, { useState, useMemo, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import ScrollReveal from '@/components/ScrollReveal';
+import BeamButton from '@/components/BeamButton';
 import { PROOF_ITEMS, ProofItem } from '@/data/proofManifest';
 import styles from './ProofShowcaseSection.module.css';
 
@@ -263,20 +264,18 @@ export default function ProofShowcaseSection() {
               </div>
             </div>
 
-            {/* Modal Footer */}
+            {/* Modal Footer — Clean, zero boring text walls; illuminated navbar-style animated BeamButton */}
             <div className={styles.modalFooter}>
-              <p className={styles.modalDesc}>{activeModalItem.description}</p>
               <div className={styles.modalFooterActions}>
-                <a
+                <BeamButton
                   href={`https://wa.me/919437168434?text=${encodeURIComponent(
-                    `Hi Marketing Copilot, I am interested in achieving similar results as shown in your ${activeModalItem.title} dashboard.`
+                    `Hi Marketing Copilot, I saw your ${activeModalItem.title} telemetry dashboard and want to achieve similar results for my brand.`
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={styles.modalConsultBtn}
-                >
-                  <span>Discuss Similar Strategy on WhatsApp ↗</span>
-                </a>
+                  label="Discuss This Growth Strategy"
+                  size="md"
+                />
               </div>
             </div>
           </div>

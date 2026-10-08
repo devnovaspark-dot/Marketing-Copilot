@@ -192,10 +192,10 @@ export default function GrowthStackOrbit3D() {
     focusService(prevIdx);
   };
 
-  // Dynamically calculate responsive orbit radii
-  // Zero overlapping, zero cut-off pods on any device screen!
-  const radiusX = Math.min(390, Math.max(150, stageWidth * 0.38));
-  const radiusY = Math.min(150, Math.max(80, radiusX * 0.38));
+  // Dynamically calculate responsive orbit radii with guaranteed side proportion margins
+  const availableWidth = Math.max(320, stageWidth);
+  const radiusX = Math.min(345, Math.max(130, (availableWidth - 260) * 0.44));
+  const radiusY = Math.min(130, Math.max(65, radiusX * 0.36));
   const depthZ = 55;
 
   return (
@@ -222,37 +222,41 @@ export default function GrowthStackOrbit3D() {
           </div>
         </ScrollReveal>
 
-        {/* Orbit Filter Quick Jump Chiclets */}
-        <div className={styles.orbitChicletsBar}>
-          {CORE_GROWTH_SERVICES.map((service, idx) => {
-            const isSelected = activeIdx === idx;
-            return (
-              <button
-                key={service.id}
-                type="button"
-                onClick={() => focusService(idx)}
-                className={`${styles.orbitChicletBtn} ${
-                  isSelected ? styles.orbitChicletBtnActive : ''
-                }`}
-              >
-                <span>{service.icon}</span>
-                <span>{service.shortName}</span>
-              </button>
-            );
-          })}
-        </div>
+        {/* Tactical 3D Orbit Console Chassis (Balanced, Proportioned, Skeuomorphic Frame) */}
+        <div className={styles.consoleChassis}>
+          {/* Orbit Filter Quick Jump Chiclets */}
+          <div className={styles.orbitChicletsBar}>
+            {CORE_GROWTH_SERVICES.map((service, idx) => {
+              const isSelected = activeIdx === idx;
+              return (
+                <button
+                  key={service.id}
+                  type="button"
+                  onClick={() => focusService(idx)}
+                  className={`${styles.orbitChicletBtn} ${
+                    isSelected ? styles.orbitChicletBtnActive : ''
+                  }`}
+                >
+                  <span className={styles.chicletIcon}>{service.icon}</span>
+                  <span>{service.shortName}</span>
+                </button>
+              );
+            })}
+          </div>
 
-        {/* 3D Orbit Arena (Clean Floating Gravitational Pods — NO Orbit Track Lines!) */}
-        <div
-          ref={arenaRef}
-          className={styles.orbitArena}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
-          {/* Gravitational Atmospheric Ambient Core Glow */}
-          <div className={styles.gravitationalHalo} />
+          {/* 3D Orbit Arena */}
+          <div
+            ref={arenaRef}
+            className={styles.orbitArena}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            {/* 3D Orbital Plane Rings (True Stereoscopic Gravitational Planes) */}
+            <div className={styles.orbitalDiscPlane} />
+            <div className={styles.orbitalDiscInner} />
+            <div className={styles.gravitationalHalo} />
 
-          <div className={styles.orbitStage3D}>
+            <div className={styles.orbitStage3D}>
             {/* Central Marketing Copilot Growth Engine Core */}
             <div
               className={styles.centralCoreChassis}
@@ -438,6 +442,7 @@ export default function GrowthStackOrbit3D() {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </div>
+  </section>
+);
 }

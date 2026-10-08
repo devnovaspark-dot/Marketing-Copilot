@@ -443,15 +443,16 @@
   color: #FCD34D;
 }
 
-/* Sample Graphics Preview Box - Clean Edge-to-Edge Fit */
+/* Sample Graphics Preview Box - Clean Full-Fidelity Uncropped Fit */
 .spotlightGraphicBox {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
-  max-height: 100px;
+  aspect-ratio: 1371 / 1147;
+  max-height: 115px;
   border-radius: 8px;
   overflow: hidden;
   margin: 3px 0 7px;
+  background: #091330;
   border: 1px solid rgba(255, 255, 255, 0.25);
   box-shadow: 
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
@@ -459,13 +460,13 @@
 }
 
 .spotlightGraphicImg {
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   transition: transform 0.35s ease;
 }
 
 .spotlightCard:hover .spotlightGraphicImg {
-  transform: scale(1.03);
+  transform: scale(1.02);
 }
 
 .spotlightHeadline {
