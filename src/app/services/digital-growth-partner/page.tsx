@@ -356,8 +356,6 @@ export default function DigitalGrowthPartnerPage() {
   const [finalSuccess, setFinalSuccess] = useState(false);
   const [finalError, setFinalError] = useState('');
 
-  // Interactive timeframe switcher for Results Section
-  const [timeframe, setTimeframe] = useState<'90d' | '1y' | 'all'>('90d');
 
   // Interactive Active Metro Hub State for Operations Command Center
   const [activeHub, setActiveHub] = useState<string>('bhubaneswar');
@@ -950,124 +948,7 @@ export default function DigitalGrowthPartnerPage() {
       ═════════════════════════════════════════════ */}
       <BrandSpotlightSection />
 
-      {/* ═════════════════════════════════════════════════════════════════
-          SECTION 3: RESULTS THAT MATTER — 3 PERFECTLY ALIGNED GAUGES
-      ═════════════════════════════════════════════ */}
-      <section className={`${styles.container} ${styles.performanceCockpit}`}>
-        <div className={styles.headerCenter}>
-          <div className={styles.eyebrowBadge}>
-            <span className={styles.pulsingLed} />
-            <span>MEASURABLE BUSINESS IMPACT</span>
-          </div>
-          <h2 className={styles.titlePrimary}>Results That Matter</h2>
-          <p className={styles.subtitle}>
-            We look at success through margin verified leads and compounded enterprise value—not, through clicks or fake numbers. Our digital marketing services are designed to create growth, better customer acquisition and long-term business results.
-          </p>
-        </div>
 
-        {/* Timeframe Switcher */}
-        <div className={styles.timeframeSwitchBar}>
-          <button
-            type="button"
-            onClick={() => setTimeframe('90d')}
-            className={`${styles.timeframeBtn} ${
-              timeframe === '90d' ? styles.timeframeBtnActive : ''
-            }`}
-          >
-            Last 90 Days
-          </button>
-          <button
-            type="button"
-            onClick={() => setTimeframe('1y')}
-            className={`${styles.timeframeBtn} ${
-              timeframe === '1y' ? styles.timeframeBtnActive : ''
-            }`}
-          >
-            1 Year Scale
-          </button>
-          <button
-            type="button"
-            onClick={() => setTimeframe('all')}
-            className={`${styles.timeframeBtn} ${
-              timeframe === 'all' ? styles.timeframeBtnActive : ''
-            }`}
-          >
-            Lifetime Compounding
-          </button>
-        </div>
-
-        {/* 3 High-Impact Equal-Height Aligned Instrument Gauges */}
-        <div className={styles.gaugesTriadGrid}>
-          {/* Gauge 1: Traffic */}
-          <ScrollReveal delay={100}>
-            <div className={styles.gaugeChassis}>
-              <div className={styles.instrumentBezel}>
-                <div className={styles.instrumentDialFace}>
-                  <div className={styles.instrumentValueBig}>
-                    {timeframe === '90d' ? '+187%' : timeframe === '1y' ? '+340%' : '+612%'}
-                  </div>
-                  <div className={styles.instrumentMetricSub}>ORGANIC TRAFFIC</div>
-                </div>
-              </div>
-              <h3 className={styles.gaugeHeading}>High-Intent Search Traffic</h3>
-              <p className={styles.gaugeDescription}>
-                Compounded growth in commercial &amp; transactional search volume via technical SEO, entity hubs, and AI search presence.
-              </p>
-              <div className={styles.gaugeProofBadge}>
-                <span>Industry Avg: +22%</span>
-                <span>•</span>
-                <strong style={{ color: '#0B2093' }}>8.5X Outperformance</strong>
-              </div>
-            </div>
-          </ScrollReveal>
-
-          {/* Gauge 2: ROAS */}
-          <ScrollReveal delay={200}>
-            <div className={styles.gaugeChassis}>
-              <div className={styles.instrumentBezel}>
-                <div className={styles.instrumentDialFace}>
-                  <div className={styles.instrumentValueBig}>
-                    {timeframe === '90d' ? '3.4X' : timeframe === '1y' ? '3.8X' : '4.2X'}
-                  </div>
-                  <div className={styles.instrumentMetricSub}>BLENDED ROAS</div>
-                </div>
-              </div>
-              <h3 className={styles.gaugeHeading}>Paid Ad Return on Spend</h3>
-              <p className={styles.gaugeDescription}>
-                Cross-channel paid media return across Google Search, Shopping, and Meta Advantage+ campaigns with verified CAPI attribution.
-              </p>
-              <div className={styles.gaugeProofBadge}>
-                <span>Target: 2.2X</span>
-                <span>•</span>
-                <strong style={{ color: '#059669' }}>+54% Margin Boost</strong>
-              </div>
-            </div>
-          </ScrollReveal>
-
-          {/* Gauge 3: CPL */}
-          <ScrollReveal delay={300}>
-            <div className={styles.gaugeChassis}>
-              <div className={styles.instrumentBezel}>
-                <div className={styles.instrumentDialFace}>
-                  <div className={styles.instrumentValueBig}>
-                    {timeframe === '90d' ? '-34%' : timeframe === '1y' ? '-46%' : '-58%'}
-                  </div>
-                  <div className={styles.instrumentMetricSub}>LOWER CPL</div>
-                </div>
-              </div>
-              <h3 className={styles.gaugeHeading}>Cost Per Qualified Lead</h3>
-              <p className={styles.gaugeDescription}>
-                Systematic reduction in acquisition costs through landing page conversion rate optimization, negative keyword fortresses, and CRM filtering.
-              </p>
-              <div className={styles.gaugeProofBadge}>
-                <span>Baseline: ₹1,450</span>
-                <span>•</span>
-                <strong style={{ color: '#0B2093' }}>Now: ₹957 Avg CPL</strong>
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
 
       {/* ═════════════════════════════════════════════════════════════════
           CTA CARD REPEAT #3 (After Section 9)

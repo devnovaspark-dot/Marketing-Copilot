@@ -28,7 +28,6 @@ export default function StoryVideoSection() {
   const ambientVideoRef = useRef<HTMLVideoElement | null>(null);
   const userPausedRef = useRef<boolean>(false);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isMuted, setIsMuted] = useState(true);
   const [isSectionVisible, setIsSectionVisible] = useState(false);
 
   // Rock-Solid Play / Pause Toggle Handler
@@ -59,21 +58,7 @@ export default function StoryVideoSection() {
     }
   }, []);
 
-  // Separate Audio Mute / Unmute Toggle Handler
-  const handleAudioToggle = useCallback((e: React.MouseEvent) => {
-    e.stopPropagation();
-    const video = videoRef.current;
-    if (!video) return;
 
-    if (isMuted) {
-      video.muted = false;
-      video.volume = 0.85;
-      setIsMuted(false);
-    } else {
-      video.muted = true;
-      setIsMuted(true);
-    }
-  }, [isMuted]);
 
   // Scroll into view detection: Only stream video & load poster when user scrolls near this section
   useEffect(() => {
@@ -217,7 +202,7 @@ export default function StoryVideoSection() {
                     className={styles.videoPlayer}
                     src="/videos/home_story_reel.mp4"
                     loop
-                    muted={isMuted}
+                    muted
                     playsInline
                     preload="none"
                     poster={isSectionVisible ? '/images/home_reel_poster.webp' : undefined}
@@ -244,18 +229,6 @@ export default function StoryVideoSection() {
                   >
                     <track kind="captions" srcLang="en" label="English" />
                   </video>
-
-                  {/* Floating Audio Sound Pill */}
-                  <button
-                    type="button"
-                    onClick={handleAudioToggle}
-                    className={styles.soundTogglePill}
-                    aria-label={isMuted ? 'Unmute audio' : 'Mute audio'}
-                    title={isMuted ? 'Click to turn sound on' : 'Click to mute sound'}
-                  >
-                    <span>{isMuted ? '🔇' : '🔊'}</span>
-                    <span>{isMuted ? 'Sound Off' : 'Sound On'}</span>
-                  </button>
 
                   {/* 3D Tactile Play / Pause Controller (Neo-Skeuomorphic Glassmorphic Center Stage) */}
                   <div
