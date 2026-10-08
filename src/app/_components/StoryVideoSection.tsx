@@ -179,12 +179,12 @@ export default function StoryVideoSection() {
                   <video
                     ref={videoRef}
                     className={styles.videoPlayer}
-                    src="/videos/ns_reel_optimized.mp4"
+                    src="/videos/home_story_reel.mp4"
                     loop
                     muted={isMuted}
                     playsInline
                     preload="none"
-                    poster={isSectionVisible ? '/images/hero_performance_scale.webp' : undefined}
+                    poster={isSectionVisible ? '/images/home_reel_poster.webp' : undefined}
                     onPlay={() => setIsPlaying(true)}
                     onPause={() => setIsPlaying(false)}
                   >
