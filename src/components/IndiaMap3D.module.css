@@ -111,7 +111,8 @@
   align-items: center;
   justify-content: center;
   overflow: visible;
-  padding: 6px 0;
+  padding: 8px 0;
+  min-height: 420px;
 }
 
 .subcontinentAura {
@@ -119,35 +120,41 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 380px;
-  height: 380px;
+  width: 420px;
+  height: 420px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(37, 99, 235, 0.06) 0%, rgba(245, 158, 11, 0.025) 45%, transparent 70%);
-  filter: blur(30px);
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, rgba(245, 158, 11, 0.04) 45%, transparent 70%);
+  filter: blur(28px);
   pointer-events: none;
 }
 
 .svgCanvas {
   width: 100%;
-  max-width: 440px;
+  max-width: 490px;
   height: auto;
-  max-height: 380px;
+  max-height: 440px;
   aspect-ratio: 600 / 680;
   display: block;
   overflow: visible;
 }
 
-/* India State Outlines */
+/* India State Outlines (High-Contrast Cartography) */
 .statesLayer {
+  filter: drop-shadow(0 6px 16px rgba(15, 23, 42, 0.08));
   transition: opacity 0.3s ease;
 }
 
 .statePath {
-  fill: #F1F5F9;
-  stroke: #CBD5E1;
-  stroke-width: 0.85;
+  fill: #DBE4EE;
+  stroke: #8CA0BA;
+  stroke-width: 1;
   stroke-linejoin: round;
-  transition: fill 0.25s ease, stroke 0.25s ease;
+  transition: fill 0.2s ease, stroke 0.2s ease;
+}
+
+.statePath:hover {
+  fill: #CBD8E7;
+  stroke: #64748B;
 }
 
 /* Connecting Telemetry Arcs */
@@ -158,25 +165,25 @@
 .telemetryArc {
   fill: none;
   stroke: url(#arcGradClean);
-  stroke-width: 1.5;
+  stroke-width: 1.8;
   stroke-dasharray: 6 5;
   animation: arcStream 24s linear infinite;
-  opacity: 0.75;
+  opacity: 0.85;
   transition: stroke-width 0.25s ease, opacity 0.25s ease;
 }
 
 .telemetryArcNE {
   stroke: url(#arcGradNE);
-  stroke-width: 1.8;
-  opacity: 0.9;
+  stroke-width: 2;
+  opacity: 0.95;
 }
 
 .telemetryArcActive {
   stroke: #EA580C;
-  stroke-width: 2.4;
+  stroke-width: 2.6;
   opacity: 1;
   stroke-dasharray: none;
-  filter: drop-shadow(0 0 6px rgba(234, 88, 12, 0.6));
+  filter: drop-shadow(0 0 6px rgba(234, 88, 12, 0.65));
 }
 
 @keyframes arcStream {
@@ -249,61 +256,71 @@
 .pinCore {
   fill: #2563EB;
   stroke: #FFFFFF;
-  stroke-width: 1.5;
-  box-shadow: 0 0 8px rgba(37, 99, 235, 0.6);
+  stroke-width: 2;
+  filter: drop-shadow(0 0 4px rgba(37, 99, 235, 0.55));
   transition: fill 0.2s ease, transform 0.2s ease;
 }
 
 .pinCoreHQ {
   fill: #D97706;
   stroke: #FFFFFF;
-  stroke-width: 2;
+  stroke-width: 2.5;
   filter: drop-shadow(0 0 6px rgba(217, 119, 6, 0.7));
 }
 
 .pinCoreNE {
   fill: #059669;
   stroke: #FFFFFF;
-  stroke-width: 1.5;
-  filter: drop-shadow(0 0 6px rgba(5, 150, 105, 0.6));
+  stroke-width: 2;
+  filter: drop-shadow(0 0 4px rgba(5, 150, 105, 0.55));
 }
 
 .cityPinActive .pinCore {
   fill: #EA580C;
-  stroke-width: 2;
+  stroke-width: 2.2;
   transform: scale(1.3);
 }
 
-/* SVG City Labels */
+/* SVG City Labels (High-Visibility with crisp white outline halo) */
 .cityLabelSvg {
-  font-family: var(--font-display, sans-serif);
-  font-size: 8.5px;
+  font-family: var(--font-display, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.02em;
+  letter-spacing: -0.01em;
   user-select: none;
-  text-shadow: 0 1px 2px #FFFFFF, 0 0 4px #FFFFFF;
-  transition: fill 0.2s ease, font-size 0.2s ease;
+  paint-order: stroke fill;
+  stroke: #FFFFFF;
+  stroke-width: 3.5px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 1px 2px rgba(15, 23, 42, 0.1));
+  transition: all 0.2s ease;
 }
 
 .cityLabelMetro {
-  fill: #334155;
+  fill: #0F172A;
 }
 
 .cityLabelHQ {
   fill: #B45309;
   font-weight: 900;
-  font-size: 9.5px;
+  font-size: 12.5px;
+  stroke-width: 4px;
+  filter: drop-shadow(0 1px 3px rgba(180, 83, 9, 0.2));
 }
 
 .cityLabelNE {
   fill: #047857;
   font-weight: 800;
+  font-size: 11.5px;
 }
 
+.cityPinActive .cityLabelSvg,
 .cityLabelActive {
   fill: #EA580C;
   font-weight: 900;
-  font-size: 10px;
+  font-size: 12.5px;
+  stroke-width: 4px;
 }
 
 /* ═════════════════════════════════════════════════════════════════

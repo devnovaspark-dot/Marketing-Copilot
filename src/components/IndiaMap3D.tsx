@@ -109,6 +109,9 @@ export default function IndiaMap3D() {
               const isCityActive = activeCity?.id === city.id;
               const isHQ = city.isHQ;
               const isNE = city.isNorthEast;
+              const labelDx = city.labelDx ?? 0;
+              const labelDy = city.labelDy ?? (isHQ ? 16 : isNE ? 15 : 13);
+              const labelAnchor = city.labelAnchor ?? 'middle';
 
               return (
                 <g
@@ -121,7 +124,7 @@ export default function IndiaMap3D() {
                   <circle
                     cx="0"
                     cy="0"
-                    r="14"
+                    r="16"
                     className={styles.hitTarget}
                     onMouseEnter={() => setHoveredCityId(city.id)}
                     onMouseLeave={() =>
@@ -133,7 +136,7 @@ export default function IndiaMap3D() {
                   <circle
                     cx="0"
                     cy="0"
-                    r={isHQ ? 16 : isNE ? 13 : 11}
+                    r={isHQ ? 18 : isNE ? 14 : 12}
                     pointerEvents="none"
                     className={
                       isHQ
@@ -147,7 +150,7 @@ export default function IndiaMap3D() {
                   <circle
                     cx="0"
                     cy="0"
-                    r={isHQ ? 6.5 : isNE ? 5.5 : 4.5}
+                    r={isHQ ? 7.5 : isNE ? 6 : 5}
                     pointerEvents="none"
                     className={
                       isHQ
@@ -161,15 +164,15 @@ export default function IndiaMap3D() {
                   <circle
                     cx="0"
                     cy="0"
-                    r={isHQ ? 2.5 : 1.8}
+                    r={isHQ ? 3 : 2}
                     fill="#FFFFFF"
                     pointerEvents="none"
                   />
 
                   <text
-                    x={0}
-                    y={isHQ ? 16 : isNE ? 15 : 13}
-                    textAnchor="middle"
+                    x={labelDx}
+                    y={labelDy}
+                    textAnchor={labelAnchor}
                     className={`${styles.cityLabelSvg} ${
                       isHQ
                         ? styles.cityLabelHQ
@@ -179,7 +182,7 @@ export default function IndiaMap3D() {
                     } ${isCityActive ? styles.cityLabelActive : ''}`}
                     pointerEvents="none"
                   >
-                    {city.name}
+                    {isHQ ? `★ ${city.name} (HQ)` : city.name}
                   </text>
                 </g>
               );
