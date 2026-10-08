@@ -25,6 +25,7 @@ const storyPillars = [
 export default function StoryVideoSection() {
   const sectionRef = useRef<HTMLElement | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
+  const ambientVideoRef = useRef<HTMLVideoElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
   const [isSectionVisible, setIsSectionVisible] = useState(false);
@@ -32,6 +33,7 @@ export default function StoryVideoSection() {
   // 3D Play/Pause & Audio Toggle Handler
   const handlePlayToggle = useCallback(() => {
     const video = videoRef.current;
+    const ambient = ambientVideoRef.current;
     if (!video) return;
 
     if (video.paused) {
@@ -40,10 +42,12 @@ export default function StoryVideoSection() {
       video.play().then(() => {
         setIsPlaying(true);
         setIsMuted(false);
+        if (ambient) ambient.play().catch(() => {});
       }).catch(() => {
         // Fallback if browser requires muted gesture
         video.muted = true;
         video.play().catch(() => {});
+        if (ambient) ambient.play().catch(() => {});
         setIsPlaying(true);
       });
     } else {
@@ -56,6 +60,7 @@ export default function StoryVideoSection() {
       } else {
         // Was playing with audio -> pause playback
         video.pause();
+        if (ambient) ambient.pause();
         setIsPlaying(false);
       }
     }
@@ -65,6 +70,7 @@ export default function StoryVideoSection() {
   useEffect(() => {
     const el = sectionRef.current;
     const video = videoRef.current;
+    const ambient = ambientVideoRef.current;
     if (!el) return;
 
     const observer = new IntersectionObserver(
@@ -72,11 +78,15 @@ export default function StoryVideoSection() {
         if (entry.isIntersecting) {
           setIsSectionVisible(true);
           if (video && video.paused && !isPlaying) {
-            video.play().then(() => setIsPlaying(true)).catch(() => {});
+            video.play().then(() => {
+              setIsPlaying(true);
+              if (ambient) ambient.play().catch(() => {});
+            }).catch(() => {});
           }
         } else {
           if (video && !video.paused) {
             video.pause();
+            if (ambient) ambient.pause();
             setIsPlaying(false);
           }
         }
@@ -176,6 +186,21 @@ export default function StoryVideoSection() {
                   }}
                   aria-label={isPlaying && !isMuted ? 'Pause commercial film' : 'Play film with sound'}
                 >
+                  {/* Ambient Blurred Video Background (Fills card with live footage colors, zero ugly black bars) */}
+                  <video
+                    ref={ambientVideoRef}
+                    className={styles.ambientVideo}
+                    src="/videos/home_story_reel.mp4"
+                    loop
+                    muted
+                    playsInline
+                    preload="none"
+                    poster={isSectionVisible ? '/images/home_reel_poster.webp' : undefined}
+                    aria-hidden="true"
+                    tabIndex={-1}
+                  />
+
+                  {/* Primary Foreground Crisp Video (100% Totally Visible, Never Cropped) */}
                   <video
                     ref={videoRef}
                     className={styles.videoPlayer}
@@ -185,8 +210,26 @@ export default function StoryVideoSection() {
                     playsInline
                     preload="none"
                     poster={isSectionVisible ? '/images/home_reel_poster.webp' : undefined}
-                    onPlay={() => setIsPlaying(true)}
-                    onPause={() => setIsPlaying(false)}
+                    onPlay={() => {
+                      setIsPlaying(true);
+                      if (ambientVideoRef.current && ambientVideoRef.current.paused) {
+                        ambientVideoRef.current.play().catch(() => {});
+                      }
+                    }}
+                    onPause={() => {
+                      setIsPlaying(false);
+                      if (ambientVideoRef.current && !ambientVideoRef.current.paused) {
+                        ambientVideoRef.current.pause();
+                      }
+                    }}
+                    onTimeUpdate={() => {
+                      if (videoRef.current && ambientVideoRef.current) {
+                        const diff = Math.abs(videoRef.current.currentTime - ambientVideoRef.current.currentTime);
+                        if (diff > 0.3) {
+                          ambientVideoRef.current.currentTime = videoRef.current.currentTime;
+                        }
+                      }
+                    }}
                   >
                     <track kind="captions" srcLang="en" label="English" />
                   </video>
