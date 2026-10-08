@@ -505,7 +505,7 @@ export default function MetaAdsPage() {
                   className={styles.visualImg}
                 />
                 <div className={styles.localMapBadge}>
-                  <span>📍 Bhubaneswar &amp; Pan-Odisha Coverage</span>
+                  <span>📍 Pan-India &amp; Regional Growth Coverage</span>
                 </div>
               </div>
             </ScrollReveal>

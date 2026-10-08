@@ -551,19 +551,48 @@ export default function DigitalGrowthPartnerPage() {
           {/* Right Column: Interactive Skeuomorphic Audit Console */}
           <div className={styles.auditConsole}>
             {heroSuccess ? (
-              <div className={styles.successBannerBox}>
-                <div className={styles.successCheckIcon}>✓</div>
-                <h3 className={styles.successHeadline}>Blueprint Initiated!</h3>
-                <p className={styles.successCopy}>
-                  Thank you, <strong>{heroForm.name}</strong>! Our senior growth team is reviewing your project details. We will email your preliminary 90-day growth blueprint within <strong>2 hours</strong>.
+              <div className={styles.thankYouSuccessCard}>
+                {/* Realistic Physics 3D Bouncing Emerald Checkmark */}
+                <div className={styles.checkStage}>
+                  <div className={styles.checkSphere}>
+                    <div className={styles.sphereGlossTop} />
+                    <div className={styles.sphereGlossCrescent} />
+                    <svg
+                      className={styles.checkIcon}
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#FFFFFF"
+                      strokeWidth="3.6"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <polyline points="20 6 9 17 4 12" className={styles.checkStroke} />
+                    </svg>
+                  </div>
+                  {/* Dynamic Ground Contact Shadow */}
+                  <div className={styles.sphereShadow} />
+                </div>
+
+                {/* Minimalist Status Badge */}
+                <div className={styles.statusBadge}>
+                  <span className={styles.statusDot} />
+                  <span>INQUIRY RECEIVED</span>
+                </div>
+
+                <h3 className={styles.thankYouHeadline}>Let’s Get Growing</h3>
+
+                <p className={styles.thankYouCopy}>
+                  We’ve safely received your request, <strong>{heroForm.name}</strong>. One of our expert growth strategists will be in touch with you through your custom roadmap.
                 </p>
+
                 <a
                   href={`https://wa.me/919437168434?text=Hi%20Marketing%20Copilot%2C%20I%20just%20submitted%20the%20growth%20consultation%20form%20for%20${encodeURIComponent(heroForm.company || 'my company')}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={styles.successWhatsAppBtn}
+                  className={styles.thankYouWhatsAppBtn}
                 >
-                  <span>💬 Fast-Track on WhatsApp</span>
+                  <span className={styles.waDot} />
+                  <span>Fast-Track on WhatsApp ↗</span>
                 </a>
               </div>
             ) : (
@@ -1256,19 +1285,48 @@ export default function DigitalGrowthPartnerPage() {
             </div>
 
             {finalSuccess ? (
-              <div className={styles.successBannerBox}>
-                <div className={styles.successCheckIcon}>✓</div>
-                <h3 className={styles.successHeadline}>Request Confirmed!</h3>
-                <p className={styles.successCopy}>
-                  Thank you, <strong>{finalForm.name}</strong>! Our senior growth team is analyzing your domain and will email you the full breakdown within <strong>2 hours</strong>.
+              <div className={styles.thankYouSuccessCard}>
+                {/* Realistic Physics 3D Bouncing Emerald Checkmark */}
+                <div className={styles.checkStage}>
+                  <div className={styles.checkSphere}>
+                    <div className={styles.sphereGlossTop} />
+                    <div className={styles.sphereGlossCrescent} />
+                    <svg
+                      className={styles.checkIcon}
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#FFFFFF"
+                      strokeWidth="3.6"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <polyline points="20 6 9 17 4 12" className={styles.checkStroke} />
+                    </svg>
+                  </div>
+                  {/* Dynamic Ground Contact Shadow */}
+                  <div className={styles.sphereShadow} />
+                </div>
+
+                {/* Minimalist Status Badge */}
+                <div className={styles.statusBadge}>
+                  <span className={styles.statusDot} />
+                  <span>REQUEST RECEIVED</span>
+                </div>
+
+                <h3 className={styles.thankYouHeadline}>Let’s Get Growing</h3>
+
+                <p className={styles.thankYouCopy}>
+                  Thank you, <strong>{finalForm.name}</strong>! Our senior growth team is analyzing your domain and will prepare your 90-day growth roadmap within <strong>2 hours</strong>.
                 </p>
+
                 <a
                   href={`https://wa.me/919437168434?text=Hi%20Marketing%20Copilot%2C%20I%20just%20submitted%20the%20growth%20audit%20request%20for%20${encodeURIComponent(finalForm.company || 'my company')}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={styles.successWhatsAppBtn}
+                  className={styles.thankYouWhatsAppBtn}
                 >
-                  <span>Connect Instantly on WhatsApp →</span>
+                  <span className={styles.waDot} />
+                  <span>Fast-Track on WhatsApp ↗</span>
                 </a>
               </div>
             ) : (

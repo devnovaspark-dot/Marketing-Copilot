@@ -195,68 +195,42 @@ export default function StrategistDeskCta({
 
             {/* Right Pane: Interactive Strategy Ingestion Form */}
             <div className={styles.formIntakePane}>
-              <div>
-                <div className={styles.intakeHeader}>
-                  <div className={styles.eyebrow}>
-                    <span className={styles.eyebrowDot} />
-                    {eyebrow}
-                  </div>
-                  <h2 className={styles.intakeTitle}>
-                    {title}
-                  </h2>
-                  <p className={styles.intakeSub}>
-                    {subtitle}
-                  </p>
-                </div>
+              {!isSubmitted ? (
+                <>
+                  <div>
+                    <div className={styles.intakeHeader}>
+                      <div className={styles.eyebrow}>
+                        <span className={styles.eyebrowDot} />
+                        {eyebrow}
+                      </div>
+                      <h2 className={styles.intakeTitle}>
+                        {title}
+                      </h2>
+                      <p className={styles.intakeSub}>
+                        {subtitle}
+                      </p>
+                    </div>
 
-                {/* Topic Selector Chips */}
-                <div className={styles.topicSelectorWrap}>
-                  <div className={styles.topicChipsGrid}>
-                    {topics.map((topic) => (
-                      <button
-                        key={topic}
-                        type="button"
-                        className={`${styles.topicChip} ${
-                          selectedTopic === topic ? styles.topicChipActive : ''
-                        }`}
-                        onClick={() => setSelectedTopic(topic)}
-                      >
-                        {topic}
-                      </button>
-                    ))}
+                    {/* Topic Selector Chips */}
+                    <div className={styles.topicSelectorWrap}>
+                      <div className={styles.topicChipsGrid}>
+                        {topics.map((topic) => (
+                          <button
+                            key={topic}
+                            type="button"
+                            className={`${styles.topicChip} ${
+                              selectedTopic === topic ? styles.topicChipActive : ''
+                            }`}
+                            onClick={() => setSelectedTopic(topic)}
+                          >
+                            {topic}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
 
-              {isSubmitted ? (
-                <div className={styles.cockpitSuccessBox}>
-                  <div className={styles.successTicketTop}>
-                    <span className={styles.successBadge}>✓ INTAKE DISPATCHED TO STRATEGIST</span>
-                    <span className={styles.ticketId}>ID: MC-8492</span>
-                  </div>
-                  <h3 className={styles.successTitle}>Diagnostic Request Received</h3>
-                  <p className={styles.successText}>
-                    Thank you, <strong>{formState.fullName}</strong>. Your inquiry under{' '}
-                    <strong>{selectedTopic}</strong> has been routed directly to Aarav Sharma&apos;s desk at
-                    our Bhubaneswar headquarters and dispatched to <strong>novasdmagency@gmail.com</strong>.
-                  </p>
-                  <div className={styles.successMetaStrip}>
-                    <span>📱 Callback / WhatsApp: <strong>+91 {formState.phone}</strong></span>
-                    <span>⏱ Turnaround: <strong>Within 4 Hours Guaranteed</strong></span>
-                  </div>
-                  <button
-                    type="button"
-                    className={styles.newQuestionBtn}
-                    onClick={() => {
-                      setIsSubmitted(false);
-                      setFormState({ fullName: '', phone: '', businessName: '', question: '' });
-                    }}
-                  >
-                    Submit Another Question →
-                  </button>
-                </div>
-              ) : (
-                <form onSubmit={handleFormSubmit} className={styles.cockpitForm}>
+                  <form onSubmit={handleFormSubmit} className={styles.cockpitForm}>
                   <div className={styles.formFieldsGrid}>
                     {/* Full Name */}
                     <div className={styles.fieldGroup}>
@@ -345,7 +319,74 @@ export default function StrategistDeskCta({
                     </div>
                   </div>
                 </form>
-              )}
+              </>
+            ) : (
+              <div className={styles.thankYouCard}>
+                {/* Realistic Physics 3D Bouncing Emerald Checkmark */}
+                <div className={styles.checkStage}>
+                  <div className={styles.checkSphere}>
+                    <div className={styles.sphereGlossTop} />
+                    <div className={styles.sphereGlossCrescent} />
+                    <svg
+                      className={styles.checkIcon}
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#FFFFFF"
+                      strokeWidth="3.6"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <polyline points="20 6 9 17 4 12" className={styles.checkStroke} />
+                    </svg>
+                  </div>
+                  {/* Dynamic Ground Contact Shadow */}
+                  <div className={styles.sphereShadow} />
+                </div>
+
+                {/* Minimalist Status Badge */}
+                <div className={styles.statusBadge}>
+                  <span className={styles.statusDot} />
+                  <span>INQUIRY DISPATCHED &bull; 4-HR SLA</span>
+                </div>
+
+                <h3 className={styles.thankYouTitle}>Let’s Get Growing</h3>
+
+                <p className={styles.thankYouSubtitle}>
+                  We’ve safely received your request, <strong>{formState.fullName}</strong>. One of our expert growth strategists is reviewing your question regarding <strong>{selectedTopic}</strong> to assemble your custom roadmap.
+                </p>
+
+                <div className={styles.thankYouMetaStrip}>
+                  <span>📱 Callback / WhatsApp: <strong>+91 {formState.phone}</strong></span>
+                  <span>⚡ Priority SLA: <strong>Within 4 Hours Guaranteed</strong></span>
+                </div>
+
+                {/* Action Buttons styled like Thank You Page */}
+                <div className={styles.thankYouActions}>
+                  <a
+                    href={`https://wa.me/918763570630?text=${encodeURIComponent(
+                      `Hi Aarav, I just submitted an inquiry on ${selectedTopic} for my business (+91 ${formState.phone}).`
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.thankYouWaBtn}
+                  >
+                    <span className={styles.waDot} />
+                    <span>Fast-Track on WhatsApp ↗</span>
+                  </a>
+
+                  <button
+                    type="button"
+                    className={styles.thankYouResetBtn}
+                    onClick={() => {
+                      setIsSubmitted(false);
+                      setFormState({ fullName: '', phone: '', businessName: '', question: '' });
+                    }}
+                  >
+                    Ask Another Question →
+                  </button>
+                </div>
+              </div>
+            )}
             </div>
           </div>
         </ScrollReveal>

@@ -129,7 +129,6 @@ export default function GrowthStackOrbit3D() {
   const [activeIdx, setActiveIdx] = useState<number>(0);
   const [rotationAngle, setRotationAngle] = useState<number>(0);
   const [isPlaying, setIsPlaying] = useState<boolean>(true);
-  const [isHovered, setIsHovered] = useState<boolean>(false);
   const [stageWidth, setStageWidth] = useState<number>(900);
 
   const arenaRef = useRef<HTMLDivElement>(null);
@@ -153,15 +152,15 @@ export default function GrowthStackOrbit3D() {
     (time: number) => {
       if (lastTimeRef.current !== null) {
         const delta = time - lastTimeRef.current;
-        if (isPlaying && !isHovered) {
+        if (isPlaying) {
           // Constant silky-smooth rotational velocity
-          setRotationAngle((prev) => (prev + delta * 0.014) % 360);
+          setRotationAngle((prev) => (prev + delta * 0.024) % 360);
         }
       }
       lastTimeRef.current = time;
       requestRef.current = requestAnimationFrame(animateOrbit);
     },
-    [isPlaying, isHovered]
+    [isPlaying]
   );
 
   useEffect(() => {
@@ -233,8 +232,6 @@ export default function GrowthStackOrbit3D() {
         <div
           ref={arenaRef}
           className={styles.orbitArena}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
         >
           {/* 3D Orbital Plane Rings (True Stereoscopic Gravitational Planes) */}
           <div className={styles.orbitalDiscPlane} />
@@ -287,7 +284,7 @@ export default function GrowthStackOrbit3D() {
                   key={service.id}
                   className={styles.satelliteNode}
                   style={{
-                    transform: `translate3d(${x}px, ${y}px, ${z}px) scale(${scale})`,
+                    transform: `translate(-50%, -50%) translate3d(${x}px, ${y}px, ${z}px) scale(${scale})`,
                     zIndex,
                     opacity,
                   }}

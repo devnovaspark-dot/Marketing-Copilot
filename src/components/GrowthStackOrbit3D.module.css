@@ -317,8 +317,8 @@
   top: 50%;
   left: 50%;
   cursor: pointer;
-  transition: transform 0.12s ease-out;
   transform-origin: center center;
+  will-change: transform;
 }
 
 .satelliteCapsule {
