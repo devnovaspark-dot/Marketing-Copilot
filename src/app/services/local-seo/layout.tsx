@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Local SEO Services in India | Google Maps Top 3 Ranking',
+  title: 'Local SEO Services in India | Marketing Copilot',
   description: 'Dominate Google Local Map Pack across India. Google Business Profile optimization, review acceleration, local citations, and geo-targeted authority.',
   alternates: {
     canonical: 'https://marketingcopilot.in/services/local-seo-services-in-india',
   },
   openGraph: {
-    title: 'Local SEO Services in India | Google Maps Top 3 Ranking',
-    description: 'Dominate Google Local Map Pack across India. Google Business Profile optimization and review acceleration.',
+    title: 'Local SEO Services in India | Marketing Copilot',
+    description: 'Dominate Google Local Map Pack across India. Google Business Profile optimization, review acceleration, local citations, and geo-targeted authority.',
     url: 'https://marketingcopilot.in/services/local-seo-services-in-india',
     siteName: 'Marketing Copilot',
     locale: 'en_IN',
@@ -16,8 +16,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Local SEO Services in India | Google Maps Top 3 Ranking',
-    description: 'Dominate Google Local Map Pack across India with top local SEO agency.',
+    title: 'Local SEO Services in India | Marketing Copilot',
+    description: 'Dominate Google Local Map Pack across India. Google Business Profile optimization, review acceleration, local citations, and geo-targeted authority.',
   },
 };
 

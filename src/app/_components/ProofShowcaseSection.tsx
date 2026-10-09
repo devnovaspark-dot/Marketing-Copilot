@@ -268,7 +268,7 @@ export default function ProofShowcaseSection() {
             <div className={styles.modalFooter}>
               <div className={styles.modalFooterActions}>
                 <BeamButton
-                  href={`https://wa.me/919437168434?text=${encodeURIComponent(
+                  href={`https://wa.me/918280788689?text=${encodeURIComponent(
                     `Hi Marketing Copilot, I saw your ${activeModalItem.title} telemetry dashboard and want to achieve similar results for my brand.`
                   )}`}
                   target="_blank"

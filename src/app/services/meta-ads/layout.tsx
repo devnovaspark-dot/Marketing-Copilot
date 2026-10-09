@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Meta Ads Agency In India | Facebook & Instagram Ads Growth | Marketing Copilot',
-  description: 'Make every Meta ad work harder. Targeted Facebook and Instagram ad campaigns across India that generate qualified leads and measurable growth.',
+  title: 'Meta Ads Services in India | Marketing Copilot',
+  description: 'Discover effective Meta Ads services in India with Marketing Copilot. Maximize your online presence and reach your target audience today!',
   alternates: {
     canonical: 'https://marketingcopilot.in/services/meta-ads-services-in-india',
   },
   openGraph: {
-    title: 'Meta Ads Agency In India | Facebook & Instagram Ads Growth | Marketing Copilot',
-    description: 'Make every Meta ad work harder. Targeted Facebook and Instagram ad campaigns across India that generate qualified leads and measurable growth.',
+    title: 'Meta Ads Services in India | Marketing Copilot',
+    description: 'Discover effective Meta Ads services in India with Marketing Copilot. Maximize your online presence and reach your target audience today!',
     url: 'https://marketingcopilot.in/services/meta-ads-services-in-india',
     siteName: 'Marketing Copilot',
     locale: 'en_IN',
@@ -16,8 +16,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Meta Ads Agency In India | Facebook & Instagram Ads Growth | Marketing Copilot',
-    description: 'Make every Meta ad work harder. Targeted Facebook and Instagram ad campaigns across India that generate qualified leads and measurable growth.',
+    title: 'Meta Ads Services in India | Marketing Copilot',
+    description: 'Discover effective Meta Ads services in India with Marketing Copilot. Maximize your online presence and reach your target audience today!',
   },
 };
 

@@ -1,16 +1,16 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Performance Marketing Agency in India | Marketing Copilot',
+  title: 'Performance Marketing in India | Marketing Copilot',
   description:
-    'From Google Ads and Meta Ads to landing page optimisation, remarketing, audience targeting, and conversion tracking, we build performance-driven campaigns focused on qualified leads, sales, and revenue growth across India.',
+    'Elevate your business with expert performance marketing in India. Marketing Copilot offers tailored strategies to maximize your online presence.',
   alternates: {
     canonical: 'https://marketingcopilot.in/services/performance-marketing-in-india',
   },
   openGraph: {
-    title: 'Performance Marketing Agency in India | Marketing Copilot',
+    title: 'Performance Marketing in India | Marketing Copilot',
     description:
-      'From Google Ads and Meta Ads to landing page optimisation, remarketing, audience targeting, and conversion tracking, we build performance-driven campaigns focused on qualified leads, sales, and revenue growth across India.',
+      'Elevate your business with expert performance marketing in India. Marketing Copilot offers tailored strategies to maximize your online presence.',
     url: 'https://marketingcopilot.in/services/performance-marketing-in-india',
     siteName: 'Marketing Copilot',
     locale: 'en_IN',
@@ -18,9 +18,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Performance Marketing Agency in India | Marketing Copilot',
+    title: 'Performance Marketing in India | Marketing Copilot',
     description:
-      'From Google Ads and Meta Ads to landing page optimisation, remarketing, audience targeting, and conversion tracking, we build performance-driven campaigns focused on qualified leads, sales, and revenue growth across India.',
+      'Elevate your business with expert performance marketing in India. Marketing Copilot offers tailored strategies to maximize your online presence.',
   },
 };
 

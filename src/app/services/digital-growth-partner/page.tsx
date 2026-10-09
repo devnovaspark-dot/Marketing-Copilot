@@ -525,7 +525,7 @@ export default function DigitalGrowthPartnerPage() {
             </div>
 
             <p className={styles.heroLeadParagraph}>
-              Stop wasting growth capital on campaigns that only bring vanity impressions. As your Digital Growth Partner, in India I build complete customer acquisition systems that link high‑intent search, paid performance and conversion design straight to revenue. My digital marketing services are made to match strategy, execution and real growth. Growth capital matters; customer acquisition drives results; digital marketing services turn ideas into profit.
+              Stop spending growth capital on campaigns that deliver vanity metrics instead of real business results. As a Digital Growth Partner in India, our company builds end-to-end customer acquisition systems that connect high-intent search, paid campaigns, and conversion-focused design directly to revenue. Our digital marketing services align strategy, execution, and measurable growth to help businesses achieve their goals. Every investment matters, customer acquisition fuels performance, and our digital marketing services turn business objectives into profitable outcomes.
             </p>
 
             {/* 3 Hero Metrics Requested By User */}
@@ -586,7 +586,7 @@ export default function DigitalGrowthPartnerPage() {
                 </p>
 
                 <a
-                  href={`https://wa.me/919437168434?text=Hi%20Marketing%20Copilot%2C%20I%20just%20submitted%20the%20growth%20consultation%20form%20for%20${encodeURIComponent(heroForm.company || 'my company')}`}
+                  href={`https://wa.me/918280788689?text=Hi%20Marketing%20Copilot%2C%20I%20just%20submitted%20the%20growth%20consultation%20form%20for%20${encodeURIComponent(heroForm.company || 'my company')}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.thankYouWhatsAppBtn}
@@ -799,8 +799,11 @@ export default function DigitalGrowthPartnerPage() {
               <h2 className={styles.titlePrimary}>
                 Scaling Brands Across India
               </h2>
-              <p className={styles.subtitle} style={{ maxWidth: '680px', margin: '0 auto' }}>
-                Meet our senior partners in person for focused strategy sprints at our corporate office, or collaborate seamlessly through a dedicated WhatsApp war room from anywhere across India.
+              <p className={styles.subtitle} style={{ maxWidth: '760px', margin: '0 auto' }}>
+                We help businesses across India scale with data‑driven marketing strategies, high‑performance campaigns and conversion‑focused solutions that fit each business’s growth goals.
+                <span style={{ display: 'block', marginTop: '10px' }}>
+                  From strategy, to execution we combine performance marketing, SEO and technology to deliver results and sustainable business growth across the nation.
+                </span>
               </p>
             </div>
           </ScrollReveal>
@@ -865,17 +868,17 @@ export default function DigitalGrowthPartnerPage() {
                 </a>
 
                 <div className={styles.executiveCommsDouble}>
-                  <a href="tel:+919437168434" className={styles.executiveCommTile}>
+                  <a href="tel:+918280788689" className={styles.executiveCommTile}>
                     <div className={styles.commIconBubble}>📞</div>
                     <div>
                       <span className={styles.channelMicroLabel}>Direct Line</span>
-                      <div className={styles.channelValueBold}>+91 94371 68434</div>
+                      <div className={styles.channelValueBold}>+91 82807 88689</div>
                       <span className={styles.commMetaSub}>Priority Hotline</span>
                     </div>
                   </a>
 
                   <a
-                    href="https://wa.me/919437168434?text=Hi%20Marketing%20Copilot%2C%20I%20would%20like%20to%20discuss%20a%20digital%20growth%20partnership"
+                    href="https://wa.me/918280788689?text=Hi%20Marketing%20Copilot%2C%20I%20would%20like%20to%20discuss%20a%20digital%20growth%20partnership"
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`${styles.executiveCommTile} ${styles.executiveWhatsAppTile}`}
@@ -1248,7 +1251,7 @@ export default function DigitalGrowthPartnerPage() {
               <div className={styles.compactGreenBeamWrapper}>
                 <div className={styles.compactGreenBeamSpin} />
                 <a
-                  href="https://wa.me/919437168434?text=Hi%20Marketing%20Copilot%2C%20I%20have%20a%20question%20regarding%20the%20digital%20growth%20partnership"
+                  href="https://wa.me/918280788689?text=Hi%20Marketing%20Copilot%2C%20I%20have%20a%20question%20regarding%20the%20digital%20growth%20partnership"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.compactGreenBeamBtn}
@@ -1320,7 +1323,7 @@ export default function DigitalGrowthPartnerPage() {
                 </p>
 
                 <a
-                  href={`https://wa.me/919437168434?text=Hi%20Marketing%20Copilot%2C%20I%20just%20submitted%20the%20growth%20audit%20request%20for%20${encodeURIComponent(finalForm.company || 'my company')}`}
+                  href={`https://wa.me/918280788689?text=Hi%20Marketing%20Copilot%2C%20I%20just%20submitted%20the%20growth%20audit%20request%20for%20${encodeURIComponent(finalForm.company || 'my company')}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.thankYouWhatsAppBtn}
@@ -1436,12 +1439,12 @@ export default function DigitalGrowthPartnerPage() {
                 <div className={styles.grandFooterBypass}>
                   <span>Need an immediate audit?</span>
                   <a
-                    href="https://wa.me/919437168434?text=Hi%20Marketing%20Copilot%2C%20I%20need%20an%20urgent%20growth%20audit%20consultation"
+                    href="https://wa.me/918280788689?text=Hi%20Marketing%20Copilot%2C%20I%20need%20an%20urgent%20growth%20audit%20consultation"
                     target="_blank"
                     rel="noopener noreferrer"
                     className={styles.grandFooterBypassLink}
                   >
-                    WhatsApp Shankarsan directly at +91 94371 68434 →
+                    WhatsApp directly at +91 82807 88689 →
                   </a>
                 </div>
               </form>

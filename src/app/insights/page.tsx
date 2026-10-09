@@ -8,20 +8,26 @@ export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: 'Insights & Research | Marketing Copilot',
+  title: 'Marketing Insights & Strategies | Marketing Copilot',
   description:
     'Strategic marketing playbooks, technical SEO benchmarks, paid media breakdowns, and growth research from senior operators at Marketing Copilot.',
   alternates: {
     canonical: 'https://marketingcopilot.in/insights',
   },
   openGraph: {
-    title: 'Insights & Research | Marketing Copilot',
+    title: 'Marketing Insights & Strategies | Marketing Copilot',
     description:
       'Strategic marketing playbooks, technical SEO benchmarks, paid media breakdowns, and growth research from senior operators at Marketing Copilot.',
     url: 'https://marketingcopilot.in/insights',
     siteName: 'Marketing Copilot',
     locale: 'en_IN',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Marketing Insights & Strategies | Marketing Copilot',
+    description:
+      'Strategic marketing playbooks, technical SEO benchmarks, paid media breakdowns, and growth research from senior operators at Marketing Copilot.',
   },
 };
 

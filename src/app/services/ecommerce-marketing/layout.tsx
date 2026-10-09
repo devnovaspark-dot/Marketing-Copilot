@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'E-Commerce Marketing Agency in India | D2C Scaling & ROAS',
-  description: 'Scale your D2C or online store revenue. Shopify optimization, high-converting funnel design, catalog ads, and retention email flows.',
+  title: 'E-commerce Marketing in India | Marketing Copilot',
+  description: 'Elevate your e-commerce business in India with expert marketing solutions from Marketing Copilot. Drive traffic and increase conversions now!',
   alternates: {
     canonical: 'https://marketingcopilot.in/services/ecommerce-marketing-services-in-india',
   },
   openGraph: {
-    title: 'E-Commerce Marketing Agency in India | D2C Scaling & ROAS',
-    description: 'Scale your D2C or online store revenue with expert performance marketing.',
+    title: 'E-commerce Marketing in India | Marketing Copilot',
+    description: 'Elevate your e-commerce business in India with expert marketing solutions from Marketing Copilot. Drive traffic and increase conversions now!',
     url: 'https://marketingcopilot.in/services/ecommerce-marketing-services-in-india',
     siteName: 'Marketing Copilot',
     locale: 'en_IN',
@@ -16,8 +16,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'E-Commerce Marketing Agency in India | D2C Scaling & ROAS',
-    description: 'Scale your D2C or online store revenue with expert performance marketing.',
+    title: 'E-commerce Marketing in India | Marketing Copilot',
+    description: 'Elevate your e-commerce business in India with expert marketing solutions from Marketing Copilot. Drive traffic and increase conversions now!',
   },
 };
 

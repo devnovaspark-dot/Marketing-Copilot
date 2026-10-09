@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Digital Marketing Insights, Guides & Growth Strategies',
-  description: 'Actionable performance marketing breakdowns, SEO research, branding frameworks, and algorithmic updates from the operators at Marketing Copilot in India.',
+  title: 'Marketing Insights & Strategies | Marketing Copilot',
+  description: 'Strategic marketing playbooks, technical SEO benchmarks, paid media breakdowns, and growth research from senior operators at Marketing Copilot.',
   alternates: {
     canonical: 'https://marketingcopilot.in/insights',
   },
   openGraph: {
-    title: 'Digital Marketing Insights, Guides & Growth Strategies | Marketing Copilot',
-    description: 'Actionable performance marketing breakdowns, SEO research, and growth frameworks.',
+    title: 'Marketing Insights & Strategies | Marketing Copilot',
+    description: 'Strategic marketing playbooks, technical SEO benchmarks, paid media breakdowns, and growth research from senior operators at Marketing Copilot.',
     url: 'https://marketingcopilot.in/insights',
     siteName: 'Marketing Copilot',
     locale: 'en_IN',
@@ -16,8 +16,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Digital Marketing Insights, Guides & Growth Strategies | Marketing Copilot',
-    description: 'Actionable performance marketing breakdowns and SEO research.',
+    title: 'Marketing Insights & Strategies | Marketing Copilot',
+    description: 'Strategic marketing playbooks, technical SEO benchmarks, paid media breakdowns, and growth research from senior operators at Marketing Copilot.',
   },
 };
 

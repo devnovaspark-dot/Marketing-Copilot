@@ -334,7 +334,7 @@ export default function Header() {
                       <div className={styles.spotlightDivider} />
 
                       <a
-                        href="https://wa.me/919437168434?text=Hi%20Marketing%20Copilot%2C%20I%20want%20to%20discuss%20a%20digital%20marketing%20growth%20strategy"
+                        href="https://wa.me/918280788689?text=Hi%20Marketing%20Copilot%2C%20I%20want%20to%20discuss%20a%20digital%20marketing%20growth%20strategy"
                         target="_blank"
                         rel="noopener noreferrer"
                         className={styles.spotlightWhatsAppBtn}

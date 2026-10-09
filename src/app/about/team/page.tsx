@@ -5,10 +5,23 @@ import CTASection from '@/app/_components/CTASection';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: 'Executive Leadership & Team — Marketing Copilot',
-  description: 'Meet the executive leadership, growth strategists, operations leads, and engineers building scalable brands at Marketing Copilot in Bhubaneswar.',
+  title: 'Meet Our Digital Marketing Team in India | Marketing Copilot',
+  description: 'Meet the Marketing Copilot team of digital marketing strategists, SEO specialists, and growth experts driving business growth through innovative digital strategies.',
   alternates: {
     canonical: 'https://marketingcopilot.in/about/team',
+  },
+  openGraph: {
+    title: 'Meet Our Digital Marketing Team in India | Marketing Copilot',
+    description: 'Meet the Marketing Copilot team of digital marketing strategists, SEO specialists, and growth experts driving business growth through innovative digital strategies.',
+    url: 'https://marketingcopilot.in/about/team',
+    siteName: 'Marketing Copilot',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Meet Our Digital Marketing Team in India | Marketing Copilot',
+    description: 'Meet the Marketing Copilot team of digital marketing strategists, SEO specialists, and growth experts driving business growth through innovative digital strategies.',
   },
 };
 

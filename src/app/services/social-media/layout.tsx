@@ -1,16 +1,16 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Strategic Social Media Marketing for Business Growth | Marketing Copilot',
+  title: 'Social Media Marketing in India | Marketing Copilot',
   description:
-    'From planning and content creation to advertising and daily management, we handle your social media presence with a clear focus on growth and engagement across India.',
+    'Unlock the potential of your business with our social media marketing services in India. Partner with Marketing Copilot for impactful results.',
   alternates: {
     canonical: 'https://marketingcopilot.in/services/social-media-marketing-in-india',
   },
   openGraph: {
-    title: 'Strategic Social Media Marketing for Business Growth | Marketing Copilot',
+    title: 'Social Media Marketing in India | Marketing Copilot',
     description:
-      'From planning and content creation to advertising and daily management, we handle your social media presence with a clear focus on growth and engagement across India.',
+      'Unlock the potential of your business with our social media marketing services in India. Partner with Marketing Copilot for impactful results.',
     url: 'https://marketingcopilot.in/services/social-media-marketing-in-india',
     siteName: 'Marketing Copilot',
     locale: 'en_IN',
@@ -18,9 +18,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Strategic Social Media Marketing for Business Growth | Marketing Copilot',
+    title: 'Social Media Marketing in India | Marketing Copilot',
     description:
-      'From planning and content creation to advertising and daily management, we handle your social media presence with a clear focus on growth and engagement across India.',
+      'Unlock the potential of your business with our social media marketing services in India. Partner with Marketing Copilot for impactful results.',
   },
 };
 

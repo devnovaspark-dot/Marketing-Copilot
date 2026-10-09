@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'AI Marketing & Workflow Automation in India | Growth Ops',
-  description: 'Automate marketing operations and customer nurturing with AI. CRM integrations, automated lead routing, and predictive analytics for businesses in India.',
+  title: 'AI Marketing & Workflow Automation in India | Marketing Copilot',
+  description: 'Discover how AI marketing and workflow automation can transform your business in India. Boost efficiency and drive results with Marketing Copilot today!',
   alternates: {
     canonical: 'https://marketingcopilot.in/services/ai-automation-services-in-india',
   },
   openGraph: {
-    title: 'AI Marketing & Workflow Automation in India | Growth Ops',
-    description: 'Automate marketing operations and customer nurturing with AI.',
+    title: 'AI Marketing & Workflow Automation in India | Marketing Copilot',
+    description: 'Discover how AI marketing and workflow automation can transform your business in India. Boost efficiency and drive results with Marketing Copilot today!',
     url: 'https://marketingcopilot.in/services/ai-automation-services-in-india',
     siteName: 'Marketing Copilot',
     locale: 'en_IN',
@@ -16,8 +16,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Marketing & Workflow Automation in India | Growth Ops',
-    description: 'Automate marketing operations and customer nurturing with AI.',
+    title: 'AI Marketing & Workflow Automation in India | Marketing Copilot',
+    description: 'Discover how AI marketing and workflow automation can transform your business in India. Boost efficiency and drive results with Marketing Copilot today!',
   },
 };
 

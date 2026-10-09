@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Digital Marketing Portfolio & Projects in India',
+  title: 'Digital Marketing Portfolio & Case Studies | Marketing Copilot',
   description:
-    'Explore our digital marketing portfolio and successful projects across SEO, social media, paid ads, web development, branding, and AI-powered marketing.',
+    'Explore Marketing Copilot’s portfolio, campaign strategies, and project highlights across SEO, paid ads, social media, and digital growth.',
   keywords: [
     'digital marketing portfolio India',
     'digital marketing case studies India',
@@ -16,9 +16,9 @@ export const metadata: Metadata = {
     canonical: 'https://marketingcopilot.in/portfolio',
   },
   openGraph: {
-    title: 'Digital Marketing Portfolio & Projects in India | Marketing Copilot',
+    title: 'Digital Marketing Portfolio & Case Studies | Marketing Copilot',
     description:
-      'Explore our digital marketing portfolio and successful projects across SEO, social media, paid ads, web development, branding, and AI-powered marketing.',
+      'Explore Marketing Copilot’s portfolio, campaign strategies, and project highlights across SEO, paid ads, social media, and digital growth.',
     url: 'https://marketingcopilot.in/portfolio',
     siteName: 'Marketing Copilot',
     locale: 'en_IN',
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Digital Marketing Portfolio & Projects in India | Marketing Copilot',
+    title: 'Digital Marketing Portfolio & Case Studies | Marketing Copilot',
     description:
-      'Explore our digital marketing portfolio and successful projects across SEO, social media, paid ads, web development, branding, and AI-powered marketing.',
+      'Explore Marketing Copilot’s portfolio, campaign strategies, and project highlights across SEO, paid ads, social media, and digital growth.',
   },
 };
 

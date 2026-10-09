@@ -958,8 +958,8 @@ export default function ServicePageTemplate({
                 </p>
                 <div className={styles.termContact}>
                   <span>📞 Direct Hotline:</span>
-                  <a href="tel:+919437168434" className={styles.termPhone}>
-                    +91 94371 68434
+                  <a href="tel:+918280788689" className={styles.termPhone}>
+                    +91 82807 88689
                   </a>
                   <span>·</span>
                   <span>HQ: Kharvela Nagar, Unit 3, Bhubaneswar</span>
@@ -973,7 +973,7 @@ export default function ServicePageTemplate({
                 </Link>
 
                 <a
-                  href="https://wa.me/919437168434?text=Hi%20Marketing%20Copilot%2C%20I%20want%20to%20audit%20my%20business%20growth"
+                  href="https://wa.me/918280788689?text=Hi%20Marketing%20Copilot%2C%20I%20want%20to%20audit%20my%20business%20growth"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.termWhatsAppBtn}

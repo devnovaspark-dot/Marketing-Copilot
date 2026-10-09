@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Google Ads & PPC Agency in India | High-ROAS Search Campaigns',
-  description: 'Certified Google Ads company in India. High-intent search, Performance Max, zero ad waste negative keyword shielding, and proven ROI scaling.',
+  title: 'Google Ads Service in India | Marketing Copilot',
+  description: 'Discover powerful Google Ads solutions in India with Marketing Copilot. Maximize your ROI and grow your business with our expert strategies.',
   alternates: {
     canonical: 'https://marketingcopilot.in/services/google-ads-services-in-india',
   },
   openGraph: {
-    title: 'Google Ads & PPC Agency in India | High-ROAS Search Campaigns',
-    description: 'Certified Google Ads company in India. High-intent search, Performance Max, zero ad waste, and proven ROI scaling.',
+    title: 'Google Ads Service in India | Marketing Copilot',
+    description: 'Discover powerful Google Ads solutions in India with Marketing Copilot. Maximize your ROI and grow your business with our expert strategies.',
     url: 'https://marketingcopilot.in/services/google-ads-services-in-india',
     siteName: 'Marketing Copilot',
     locale: 'en_IN',
@@ -16,8 +16,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Google Ads & PPC Agency in India | High-ROAS Search Campaigns',
-    description: 'Certified Google Ads company in India. High-intent search, Performance Max, zero ad waste, and proven ROI scaling.',
+    title: 'Google Ads Service in India | Marketing Copilot',
+    description: 'Discover powerful Google Ads solutions in India with Marketing Copilot. Maximize your ROI and grow your business with our expert strategies.',
   },
 };
 

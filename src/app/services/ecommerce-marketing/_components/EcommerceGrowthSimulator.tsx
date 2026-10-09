@@ -139,7 +139,7 @@ export default function EcommerceGrowthSimulator() {
                 <div className={styles.autoFilledRow}>
                   <div className={styles.inputMock}>
                     <span className={styles.inputLabel}>Mobile Phone</span>
-                    <span className={styles.inputValue}>+91 94371 XXXXX</span>
+                    <span className={styles.inputValue}>+91 82807 XXXXX</span>
                   </div>
                   <div className={styles.inputMock}>
                     <span className={styles.inputLabel}>Delivery Pin Code</span>

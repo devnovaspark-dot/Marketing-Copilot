@@ -449,7 +449,7 @@ export default function SocialMediaPage() {
 
               <div className={styles.homeCtaActions}>
                 <BeamButton
-                  href="https://wa.me/919437168434?text=Hi%20Marketing%20Copilot%2C%20I%20want%20to%20audit%20my%20business%20social%20media"
+                  href="https://wa.me/918280788689?text=Hi%20Marketing%20Copilot%2C%20I%20want%20to%20audit%20my%20business%20social%20media"
                   label="Get Your Free Social Media Audit →"
                   size="lg"
                 />

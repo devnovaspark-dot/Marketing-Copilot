@@ -75,7 +75,7 @@ Keywords: ["organic groceries", "nayapalli market", "bhubaneswar fresh vegetable
   "@context": "https://schema.org",
   "@type": "GroceryStore",
   "name": "Sri Panduranga Divine Fresh",
-  "telephone": "+91-94371-68434",
+  "telephone": "+91-82807-88689",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Plot No 482, Nayapalli Spine",

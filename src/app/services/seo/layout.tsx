@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'SEO Marketing Agency in India | Marketing Copilot',
-  description: 'Make Google your growth channel. Build stronger search visibility with SEO strategies designed to attract relevant customers, improve rankings and generate sustainable organic traffic.',
+  title: 'Best SEO Company in India | Marketing Copilot',
+  description: 'Looking for expert SEO in India? Marketing Copilot delivers results-driven solutions to improve your search rankings and grow your business.',
   alternates: {
     canonical: 'https://marketingcopilot.in/services/seo-services-in-india',
   },
   openGraph: {
-    title: 'SEO Marketing Agency in India | Marketing Copilot',
-    description: 'Make Google your growth channel. Build stronger search visibility with SEO strategies designed to attract relevant customers, improve rankings and generate sustainable organic traffic.',
+    title: 'Best SEO Company in India | Marketing Copilot',
+    description: 'Looking for expert SEO in India? Marketing Copilot delivers results-driven solutions to improve your search rankings and grow your business.',
     url: 'https://marketingcopilot.in/services/seo-services-in-india',
     siteName: 'Marketing Copilot',
     locale: 'en_IN',
@@ -16,8 +16,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'SEO Marketing Agency in India | Marketing Copilot',
-    description: 'Make Google your growth channel. Build stronger search visibility with SEO strategies designed to attract relevant customers, improve rankings and generate sustainable organic traffic.',
+    title: 'Best SEO Company in India | Marketing Copilot',
+    description: 'Looking for expert SEO in India? Marketing Copilot delivers results-driven solutions to improve your search rankings and grow your business.',
   },
 };
 

@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'FAQ – Digital Marketing Questions Answered | India',
+  title: 'Digital Marketing FAQs: Expert Answers | Marketing Copilot',
   description:
-    'FAQ covering digital marketing, SEO, social media, paid ads, web development, branding, AI automation, and other services for businesses in India.',
+    'Find answers to common digital marketing questions about SEO, Google Ads, Meta Ads, pricing, website development, and business growth.',
   keywords: [
     'FAQ digital marketing India',
     'digital marketing questions India',
@@ -16,9 +16,9 @@ export const metadata: Metadata = {
     canonical: 'https://marketingcopilot.in/faq',
   },
   openGraph: {
-    title: 'FAQ – Digital Marketing Questions Answered | India | Marketing Copilot',
+    title: 'Digital Marketing FAQs: Expert Answers | Marketing Copilot',
     description:
-      'FAQ covering digital marketing, SEO, social media, paid ads, web development, branding, AI automation, and other services for businesses in India.',
+      'Find answers to common digital marketing questions about SEO, Google Ads, Meta Ads, pricing, website development, and business growth.',
     url: 'https://marketingcopilot.in/faq',
     siteName: 'Marketing Copilot',
     locale: 'en_IN',
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'FAQ – Digital Marketing Questions Answered | India | Marketing Copilot',
+    title: 'Digital Marketing FAQs: Expert Answers | Marketing Copilot',
     description:
-      'FAQ covering digital marketing, SEO, social media, paid ads, web development, branding, AI automation, and other services for businesses in India.',
+      'Find answers to common digital marketing questions about SEO, Google Ads, Meta Ads, pricing, website development, and business growth.',
   },
 };
 

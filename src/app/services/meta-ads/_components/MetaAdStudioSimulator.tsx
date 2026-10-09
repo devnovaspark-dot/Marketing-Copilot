@@ -203,7 +203,7 @@ export default function MetaAdStudioSimulator() {
 
                       <div className={styles.inputGroup}>
                         <label className={styles.inputLabel}>WhatsApp Number</label>
-                        <div className={styles.inputMock}>+91 94371 XXXXX</div>
+                        <div className={styles.inputMock}>+91 82807 XXXXX</div>
                       </div>
 
                       <div className={styles.inputGroup}>

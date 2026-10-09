@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'About Our Digital Marketing Company in India',
+  title: 'About Marketing Copilot | Digital Growth Experts',
   description:
     'Discover who we are, what we do, and how our digital marketing company in India helps businesses grow with SEO, ads, branding, web development, and AI.',
   keywords: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     canonical: 'https://marketingcopilot.in/about',
   },
   openGraph: {
-    title: 'About Our Digital Marketing Company in India | Marketing Copilot',
+    title: 'About Marketing Copilot | Digital Growth Experts',
     description:
       'Discover who we are, what we do, and how our digital marketing company in India helps businesses grow with SEO, ads, branding, web development, and AI.',
     url: 'https://marketingcopilot.in/about',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About Our Digital Marketing Company in India | Marketing Copilot',
+    title: 'About Marketing Copilot | Digital Growth Experts',
     description:
       'Discover who we are, what we do, and how our digital marketing company in India helps businesses grow with SEO, ads, branding, web development, and AI.',
   },

@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Digital Marketing Services for Industries in India',
+  title: 'Digital Marketing Services for Industries in India | Marketing Copilot',
   description:
-    'Explore industry-specific digital marketing solutions in India, from SEO and paid ads to social media, branding, web development, and AI automation.',
+    'Explore industry-specific digital marketing services in India for healthcare, real estate, education, eCommerce, and more. Drive leads and business growth.',
   keywords: [
     'digital marketing services for industries India',
     'industry digital marketing India',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Digital Marketing Services for Industries in India | Marketing Copilot',
     description:
-      'Explore industry-specific digital marketing solutions in India, from SEO and paid ads to social media, branding, web development, and AI automation.',
+      'Explore industry-specific digital marketing services in India for healthcare, real estate, education, eCommerce, and more. Drive leads and business growth.',
     url: 'https://marketingcopilot.in/industries',
     siteName: 'Marketing Copilot',
     locale: 'en_IN',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Digital Marketing Services for Industries in India | Marketing Copilot',
     description:
-      'Explore industry-specific digital marketing solutions in India, from SEO and paid ads to social media, branding, web development, and AI automation.',
+      'Explore industry-specific digital marketing services in India for healthcare, real estate, education, eCommerce, and more. Drive leads and business growth.',
   },
 };
 
