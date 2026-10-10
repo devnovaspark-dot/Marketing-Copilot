@@ -5,13 +5,14 @@ export const metadata: Metadata = {
   description:
     'Explore industry-specific digital marketing services in India for healthcare, real estate, education, eCommerce, and more. Drive leads and business growth.',
   keywords: [
-    'digital marketing services for industries India',
-    'industry digital marketing India',
-    'real estate digital marketing India',
-    'healthcare marketing India',
-    'education digital marketing India',
-    'hospitality marketing India',
-    'e-commerce marketing Odisha',
+    'Digital Marketing Services for Industries India',
+    'Industry Digital Marketing India',
+    'Real Estate Digital Marketing India',
+    'Healthcare Marketing India',
+    'Education Digital Marketing India',
+    'Hospitality Marketing India',
+    'E-commerce Marketing India',
+    'B2B Digital Marketing India',
   ],
   alternates: {
     canonical: 'https://marketingcopilot.in/industries',

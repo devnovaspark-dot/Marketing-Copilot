@@ -6,8 +6,14 @@ import CTASection from '../_components/CTASection';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: 'Our Work — Case Studies & Portfolio',
+  title: 'Our Work — Case Studies & Portfolio | Marketing Copilot',
   description: 'Selected case studies showing how we\'ve helped brands achieve measurable growth through strategy, creative, and performance marketing.',
+  keywords: [
+    'Digital Marketing Portfolio India',
+    'Marketing Case Studies India',
+    'Client Growth Results',
+    'Performance Marketing Case Studies',
+  ],
   alternates: {
     canonical: 'https://marketingcopilot.in/work',
   },

@@ -5,12 +5,12 @@ export const metadata: Metadata = {
   description:
     'Find answers to common digital marketing questions about SEO, Google Ads, Meta Ads, pricing, website development, and business growth.',
   keywords: [
-    'FAQ digital marketing India',
-    'digital marketing questions India',
-    'digital marketing cost India',
+    'Digital Marketing FAQ India',
+    'Digital Marketing Questions Answered',
+    'Digital Marketing Cost India',
     'SEO FAQ India',
-    'Google ads questions India',
-    'social media marketing questions India',
+    'Google Ads Questions India',
+    'Social Media Marketing Questions India',
   ],
   alternates: {
     canonical: 'https://marketingcopilot.in/faq',

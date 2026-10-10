@@ -7,6 +7,14 @@ import styles from './page.module.css';
 export const metadata: Metadata = {
   title: 'Meet Our Digital Marketing Team in India | Marketing Copilot',
   description: 'Meet the Marketing Copilot team of digital marketing strategists, SEO specialists, and growth experts driving business growth through innovative digital strategies.',
+  keywords: [
+    'Digital Marketing Team India',
+    'Marketing Strategists India',
+    'SEO Specialists India',
+    'Growth Experts Marketing Copilot',
+    'Marketing Copilot Leadership',
+    'Sankarsan Nayak',
+  ],
   alternates: {
     canonical: 'https://marketingcopilot.in/about/team',
   },
@@ -27,7 +35,7 @@ export const metadata: Metadata = {
 
 const founders = [
   {
-    name: 'Shankarsan Nayak',
+    name: 'Sankarsan Nayak',
     role: 'Founder & CEO',
     dept: 'Executive Leadership',
     image: '/images/team/exec_1.png',

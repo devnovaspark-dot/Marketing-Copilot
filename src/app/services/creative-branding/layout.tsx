@@ -3,6 +3,14 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Creative Branding Agency in India | Marketing Copilot',
   description: 'Build memorable brand recall. Brand positioning, visual design systems, packaging, and high-converting storytelling crafted in India.',
+  keywords: [
+    'Creative Branding Agency in India',
+    'Brand Positioning India',
+    'Visual Identity Design',
+    'Corporate Branding Services',
+    'Brand Storytelling Agency',
+    'Packaging Design India',
+  ],
   alternates: {
     canonical: 'https://marketingcopilot.in/services/creative-branding-services-in-india',
   },

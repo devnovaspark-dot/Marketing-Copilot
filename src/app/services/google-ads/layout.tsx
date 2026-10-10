@@ -3,6 +3,14 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Google Ads Service in India | Marketing Copilot',
   description: 'Discover powerful Google Ads solutions in India with Marketing Copilot. Maximize your ROI and grow your business with our expert strategies.',
+  keywords: [
+    'Google Ads Service in India',
+    'Google Ads Agency India',
+    'PPC Management Services India',
+    'Google PPC Experts',
+    'Performance Max Campaigns India',
+    'Search Engine Advertising Agency',
+  ],
   alternates: {
     canonical: 'https://marketingcopilot.in/services/google-ads-services-in-india',
   },

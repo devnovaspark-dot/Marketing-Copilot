@@ -3,6 +3,13 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Contact Us — Strategy Session & Inquiries | Marketing Copilot',
   description: 'Get in touch with Marketing Copilot, the leading digital marketing agency in India. Schedule a strategy session and get your custom growth roadmap.',
+  keywords: [
+    'Contact Marketing Copilot',
+    'Digital Marketing Agency Contact India',
+    'Digital Marketing Strategy Session',
+    'Hire Digital Marketing Agency India',
+    'Digital Growth Consultation',
+  ],
   alternates: {
     canonical: 'https://marketingcopilot.in/contact',
   },

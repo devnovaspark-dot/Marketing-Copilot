@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   title: {
     default: "Digital Marketing Company in India | Marketing Copilot",
-    template: "%s | Marketing Copilot"
+    template: "%s"
   },
   description: "Top-rated digital marketing agency in India. SEO, Google Ads, Meta Ads, web development and compounding revenue growth for businesses across India.",
   keywords: [
@@ -52,7 +52,8 @@ export const metadata: Metadata = {
     "Social Media Marketing",
     "Bhubaneswar"
   ],
-  authors: [{ name: "Marketing Copilot" }],
+  authors: [{ name: "Sankarsan Nayak", url: "https://marketingcopilot.in/about/team" }],
+  creator: "Sankarsan Nayak",
   openGraph: {
     title: "Digital Marketing Company in India | Marketing Copilot",
     description: "Top-rated digital marketing agency in India. SEO, Google Ads, Meta Ads, web development and compounding revenue growth for businesses across India.",
@@ -117,6 +118,12 @@ const organizationSchema = {
       "description": "Marketing Copilot is a digital marketing company in India providing SEO, Google Ads, Meta Ads, social media marketing, web solutions, creative services and AI-powered digital marketing solutions.",
       "telephone": "+91 8280788689",
       "email": "info@marketingcopilot.in",
+      "founder": {
+        "@type": "Person",
+        "name": "Sankarsan Nayak",
+        "jobTitle": "Founder & CEO",
+        "url": "https://marketingcopilot.in/about/team"
+      },
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Mallick Complex, Unit 3, Kharvela Nagar",

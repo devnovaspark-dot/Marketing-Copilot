@@ -58,7 +58,7 @@ const foundingStoryEpochs: FoundingStoryEpoch[] = [
       'Marketing Copilot was founded with the mission of being a digital marketing agency that really learns about a business before crafting marketing strategies around the business\'s goals.',
     quote:
       'We founded Marketing Copilot on a simple premise: deeply understand each business first, then architect strategies around real commercial objectives rather than vanity numbers.',
-    author: 'Shankarsan Nayak',
+    author: 'Sankarsan Nayak',
     authorRole: 'Founder & CEO',
     authorAvatar: '/images/team/exec_1.png',
     color: '#0B2093',
@@ -172,7 +172,7 @@ const foundingStoryEpochs: FoundingStoryEpoch[] = [
       'Marketing Copilot is a results-driven digital marketing agency serving businesses across India, empowering brands with targeted strategies, innovative marketing solutions, and sustained digital growth.',
     quote:
       'Today, we partner with leading businesses across India, delivering data-driven strategies and innovative marketing solutions that produce real business growth.',
-    author: 'Shankarsan Nayak',
+    author: 'Sankarsan Nayak',
     authorRole: 'Founder & CEO',
     authorAvatar: '/images/team/exec_1.png',
     color: '#10B981',
@@ -363,7 +363,7 @@ const comparisonRows = [
 // ─── Data: Real Executive Leadership Team ───
 const executiveArchitects = [
   {
-    name: 'Shankarsan Nayak',
+    name: 'Sankarsan Nayak',
     role: 'Founder & Chief Executive Officer',
     dept: 'EXECUTIVE LEADERSHIP & VISION',
     bio: 'Founder driving quantitative innovation, digital transformation, and sustainable business growth through mathematically rigorous strategy, creative prestige, and audited cash flow.',

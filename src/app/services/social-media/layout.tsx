@@ -4,6 +4,14 @@ export const metadata: Metadata = {
   title: 'Social Media Marketing in India | Marketing Copilot',
   description:
     'Unlock the potential of your business with our social media marketing services in India. Partner with Marketing Copilot for impactful results.',
+  keywords: [
+    'Social Media Marketing in India',
+    'Social Media Marketing Agency India',
+    'SMM Services India',
+    'Social Media Management India',
+    'Brand Social Media Growth',
+    'Content Creation and Distribution',
+  ],
   alternates: {
     canonical: 'https://marketingcopilot.in/services/social-media-marketing-in-india',
   },

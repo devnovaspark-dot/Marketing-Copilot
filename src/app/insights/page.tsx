@@ -11,6 +11,13 @@ export const metadata: Metadata = {
   title: 'Marketing Insights & Strategies | Marketing Copilot',
   description:
     'Strategic marketing playbooks, technical SEO benchmarks, paid media breakdowns, and growth research from senior operators at Marketing Copilot.',
+  keywords: [
+    'Marketing Insights and Strategies',
+    'Digital Marketing Insights India',
+    'Technical SEO Benchmarks',
+    'Paid Media Breakdowns',
+    'Growth Marketing Playbooks',
+  ],
   alternates: {
     canonical: 'https://marketingcopilot.in/insights',
   },
@@ -94,11 +101,11 @@ export default async function InsightsPage() {
       readTime: '7 min read',
       date: formattedDate,
       image: imageUrl,
-      author: p.author?.name || 'Aarav Mohapatra',
-      authorRole: p.author?.role || 'Lead Growth Strategist',
+      author: p.author?.name || 'Sankarsan Nayak',
+      authorRole: p.author?.role || 'Founder & CEO',
       authorImage: p.author?.image?.asset
         ? urlForImage(p.author.image)?.width(100).height(100).url()
-        : '/images/ceo_aarav.jpg',
+        : '/images/team/exec_1.png',
       featured: idx === 0,
     };
   });

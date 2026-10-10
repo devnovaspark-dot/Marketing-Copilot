@@ -16,8 +16,14 @@ import CTASection from '../_components/CTASection';
 import StrategistDeskCta from '@/components/StrategistDeskCta';
 
 export const metadata: Metadata = {
-  title: 'Digital Marketing Company in India',
+  title: 'Digital Marketing Company in India | Marketing Copilot',
   description: 'India’s leading digital marketing company. Drive revenue, high-intent leads, and top Google rankings with Marketing Copilot.',
+  keywords: [
+    'Digital Marketing Company in India',
+    'Marketing Copilot India',
+    'Best Digital Marketing Agency India',
+    'Full Stack Digital Marketing',
+  ],
   alternates: {
     canonical: 'https://marketingcopilot.in/digital-marketing-company-in-india',
   },

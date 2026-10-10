@@ -4,6 +4,14 @@ export const metadata: Metadata = {
   title: 'Performance Marketing in India | Marketing Copilot',
   description:
     'Elevate your business with expert performance marketing in India. Marketing Copilot offers tailored strategies to maximize your online presence.',
+  keywords: [
+    'Performance Marketing in India',
+    'Performance Marketing Agency India',
+    'ROAS Optimization Agency',
+    'Paid Media Marketing India',
+    'Lead Generation Agency India',
+    'Conversion Rate Optimization',
+  ],
   alternates: {
     canonical: 'https://marketingcopilot.in/services/performance-marketing-in-india',
   },

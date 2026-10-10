@@ -4,8 +4,14 @@ import CTASection from '../_components/CTASection';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: 'Our Process — From Idea to Impact',
+  title: 'Our Process — From Idea to Impact | Marketing Copilot',
   description: 'A proven 5-step growth framework: Discover, Strategize, Create, Launch, and Optimize. See how we turn ambition into results.',
+  keywords: [
+    'Digital Marketing Process',
+    'Growth Framework India',
+    'Marketing Strategy and Execution',
+    'Digital Transformation Process',
+  ],
   alternates: {
     canonical: 'https://marketingcopilot.in/process',
   },

@@ -20,6 +20,17 @@ const CTASection = dynamic(() => import('./_components/CTASection'));
 export const metadata: Metadata = {
   title: 'Digital Marketing Company in India | Marketing Copilot',
   description: 'Top-rated digital marketing agency in India. SEO, Google Ads, Meta Ads, web development and compounding revenue growth for businesses across India.',
+  keywords: [
+    'Digital Marketing Company in India',
+    'Marketing Copilot',
+    'Digital Marketing Agency India',
+    'Best Digital Marketing Company in India',
+    'Digital Marketing Services India',
+    'SEO Company India',
+    'Google Ads Agency India',
+    'Meta Ads Agency India',
+    'Performance Marketing India',
+  ],
   verification: {
     google: '79f0bLLJO5DmUzDFyrPHZ1vouQGfmYsHB5NZ594DHww',
   },

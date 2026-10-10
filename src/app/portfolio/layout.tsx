@@ -5,12 +5,12 @@ export const metadata: Metadata = {
   description:
     'Explore Marketing Copilot’s portfolio, campaign strategies, and project highlights across SEO, paid ads, social media, and digital growth.',
   keywords: [
-    'digital marketing portfolio India',
-    'digital marketing case studies India',
-    'SEO portfolio India',
-    'marketing projects India',
-    'client results India',
-    'performance marketing case studies Odisha',
+    'Digital Marketing Portfolio India',
+    'Digital Marketing Case Studies India',
+    'SEO Portfolio India',
+    'Marketing Projects India',
+    'Client Growth Results India',
+    'Performance Marketing Case Studies India',
   ],
   alternates: {
     canonical: 'https://marketingcopilot.in/portfolio',
