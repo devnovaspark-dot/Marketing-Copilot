@@ -2,6 +2,7 @@ import { PortableText, PortableTextComponents } from '@portabletext/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { urlForImage } from '@/sanity/image';
+import BlogTable from '@/components/BlogTable';
 import styles from './PortableTextRenderer.module.css';
 
 export function slugifyHeading(text: string): string {
@@ -62,6 +63,8 @@ const components: PortableTextComponents = {
         </figure>
       );
     },
+    table: ({ value }: { value: any }) => <BlogTable value={value} />,
+    tableBlock: ({ value }: { value: any }) => <BlogTable value={value} />,
   },
   marks: {
     link: ({ children, value }) => {

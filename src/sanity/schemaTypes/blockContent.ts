@@ -66,5 +66,13 @@ export const blockContent = defineType({
         },
       ],
     }),
+    defineArrayMember({
+      type: 'table',
+      title: 'Quick Table',
+    }),
+    defineArrayMember({
+      type: 'tableBlock',
+      title: 'Table with Header & Caption',
+    }),
   ],
 });
