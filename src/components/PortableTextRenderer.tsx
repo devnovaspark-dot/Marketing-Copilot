@@ -1,4 +1,4 @@
-import { PortableText, PortableTextComponents } from '@portabletext/react';
+import { PortableText, PortableTextComponents, toPlainText } from '@portabletext/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { urlForImage } from '@/sanity/image';
@@ -15,20 +15,44 @@ export function slugifyHeading(text: string): string {
     .replace(/\-\-+/g, '-');
 }
 
+export function extractTextFromBlock(value: any, children: any): string {
+  if (value) {
+    try {
+      const plain = toPlainText(value);
+      if (plain && plain.trim()) return plain.trim();
+    } catch {
+      // fallback below
+    }
+    if (Array.isArray(value.children)) {
+      const text = value.children.map((c: any) => c.text || '').join('').trim();
+      if (text) return text;
+    }
+  }
+  if (typeof children === 'string') return children.trim();
+  if (Array.isArray(children)) {
+    const str = children
+      .map((c: any) => (typeof c === 'string' ? c : c?.props?.text || ''))
+      .join('')
+      .trim();
+    if (str) return str;
+  }
+  return '';
+}
+
 const components: PortableTextComponents = {
   block: {
-    h2: ({ children }) => {
-      const text = Array.isArray(children) ? children.join('') : String(children || '');
+    h2: ({ children, value }) => {
+      const text = extractTextFromBlock(value, children);
       const id = slugifyHeading(text);
       return <h2 id={id}>{children}</h2>;
     },
-    h3: ({ children }) => {
-      const text = Array.isArray(children) ? children.join('') : String(children || '');
+    h3: ({ children, value }) => {
+      const text = extractTextFromBlock(value, children);
       const id = slugifyHeading(text);
       return <h3 id={id}>{children}</h3>;
     },
-    h4: ({ children }) => {
-      const text = Array.isArray(children) ? children.join('') : String(children || '');
+    h4: ({ children, value }) => {
+      const text = extractTextFromBlock(value, children);
       const id = slugifyHeading(text);
       return <h4 id={id}>{children}</h4>;
     },

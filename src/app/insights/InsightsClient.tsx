@@ -292,7 +292,7 @@ export default function InsightsClient({ articles = [] }: { articles: Article[] 
                     <ScrollReveal>
                       <article className={styles.featuredCard}>
                         <Link
-                          href={`/insights/${featuredArticle.slug}`}
+                          href={`/blog/${featuredArticle.slug}`}
                           className={styles.featuredVisual}
                           aria-label={featuredArticle.title}
                         >
@@ -312,7 +312,7 @@ export default function InsightsClient({ articles = [] }: { articles: Article[] 
                           </div>
 
                           <h2 className={styles.featuredTitle}>
-                            <Link href={`/insights/${featuredArticle.slug}`} className={styles.titleLink}>
+                            <Link href={`/blog/${featuredArticle.slug}`} className={styles.titleLink}>
                               {featuredArticle.title}
                             </Link>
                           </h2>
@@ -344,7 +344,7 @@ export default function InsightsClient({ articles = [] }: { articles: Article[] 
 
                             {/* Same BeamButton animation as navbar */}
                             <BeamButton
-                              href={`/insights/${featuredArticle.slug}`}
+                              href={`/blog/${featuredArticle.slug}`}
                               label="Read More"
                               size="sm"
                             />
@@ -365,7 +365,7 @@ export default function InsightsClient({ articles = [] }: { articles: Article[] 
                           <ScrollReveal key={article.slug} delay={idx * 60}>
                             <article className={styles.storyCard}>
                               <Link
-                                href={`/insights/${article.slug}`}
+                                href={`/blog/${article.slug}`}
                                 className={styles.storyVisual}
                                 aria-label={article.title}
                               >
@@ -384,7 +384,7 @@ export default function InsightsClient({ articles = [] }: { articles: Article[] 
                                 </div>
 
                                 <h3 className={styles.storyTitle}>
-                                  <Link href={`/insights/${article.slug}`} className={styles.titleLink}>
+                                  <Link href={`/blog/${article.slug}`} className={styles.titleLink}>
                                     {article.title}
                                   </Link>
                                 </h3>
@@ -440,7 +440,7 @@ export default function InsightsClient({ articles = [] }: { articles: Article[] 
                                       </svg>
                                     </button>
                                     <BeamButton
-                                      href={`/insights/${article.slug}`}
+                                      href={`/blog/${article.slug}`}
                                       label="Read Story"
                                       size="sm"
                                     />

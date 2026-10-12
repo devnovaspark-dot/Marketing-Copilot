@@ -22,7 +22,7 @@ export default function PillarPostCard({ pillar }: PillarPostCardProps) {
       <h4 className={styles.pillarTitle}>{pillar.title}</h4>
       {pillar.excerpt && <p className={styles.pillarExcerpt}>{pillar.excerpt}</p>}
       <div style={{ marginTop: '0.5rem' }}>
-        <BeamButton href={`/insights/${pillar.slug}`} label="Read Core Pillar Guide" size="sm" />
+        <BeamButton href={`/blog/${pillar.slug}`} label="Read Core Pillar Guide" size="sm" />
       </div>
     </aside>
   );

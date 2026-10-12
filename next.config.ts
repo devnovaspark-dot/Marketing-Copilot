@@ -28,10 +28,6 @@ const nextConfig: NextConfig = {
   async rewrites() {
     return [
       {
-        source: '/blog/:slug',
-        destination: '/insights/:slug',
-      },
-      {
         source: '/llm.txt',
         destination: '/llms.txt',
       },
@@ -246,6 +242,16 @@ const nextConfig: NextConfig = {
       {
         source: '/digital-marketing-company-in-bhubaneswar',
         destination: '/digital-marketing-company-in-india',
+        permanent: true,
+      },
+      {
+        source: '/insights',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/insights/:slug',
+        destination: '/blog/:slug',
         permanent: true,
       },
     ];

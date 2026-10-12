@@ -56,6 +56,9 @@ export default function TableOfContents({
       const y = el.getBoundingClientRect().top + window.scrollY - 100;
       window.scrollTo({ top: y, behavior: 'smooth' });
       setActiveId(id);
+      if (typeof window !== 'undefined' && window.history?.pushState) {
+        window.history.pushState(null, '', `#${id}`);
+      }
       if (isMobileCollapsible) {
         setIsExpanded(false);
       }

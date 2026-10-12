@@ -61,12 +61,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/insights`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
       url: `${baseUrl}/blog`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
@@ -125,7 +119,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  // Insights Articles
+  // Blog Articles
   const articles = [
     'future-of-performance-marketing',
     'seo-in-2026',
@@ -136,7 +130,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const articleRoutes: MetadataRoute.Sitemap = articles.map((slug) => ({
-    url: `${baseUrl}/insights/${slug}`,
+    url: `${baseUrl}/blog/${slug}`,
     lastModified: currentDate,
     changeFrequency: 'monthly',
     priority: 0.7,

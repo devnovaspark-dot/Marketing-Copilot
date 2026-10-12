@@ -74,7 +74,7 @@ export default function ArticleHero({
                 Home
               </Link>
               <span className={styles.breadcrumbSeparator}>›</span>
-              <Link href="/insights" className={styles.breadcrumbLink}>
+              <Link href="/blog" className={styles.breadcrumbLink}>
                 Blog
               </Link>
               <span className={styles.breadcrumbSeparator}>›</span>
@@ -88,9 +88,6 @@ export default function ArticleHero({
 
           {/* Title */}
           <h1 className={styles.title}>{title}</h1>
-
-          {/* Excerpt */}
-          {excerpt && <p className={styles.excerpt}>{excerpt}</p>}
 
           {/* Author Bar & Share */}
           <div className={styles.metaRow}>

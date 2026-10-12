@@ -1,5 +1,8 @@
 import type { Metadata } from 'next';
-import InsightsPage from '@/app/insights/page';
+import BlogClient, { Article } from './BlogClient';
+import { sanityFetch } from '@/sanity/client';
+import { postsQuery } from '@/sanity/queries';
+import { urlForImage } from '@/sanity/image';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -36,4 +39,77 @@ export const metadata: Metadata = {
   },
 };
 
-export default InsightsPage;
+interface SanityPostRecord {
+  slug: string;
+  title: string;
+  category?: string | { title?: string };
+  excerpt?: string;
+  publishedAt?: string;
+  _createdAt?: string;
+  bannerImage?: {
+    asset?: {
+      _ref?: string;
+    };
+  };
+  author?: {
+    name?: string;
+    role?: string;
+    image?: {
+      asset?: {
+        _ref?: string;
+      };
+    };
+  };
+}
+
+export default async function BlogPage() {
+  const sanityPosts = await sanityFetch<SanityPostRecord[]>({
+    query: postsQuery,
+    revalidate: 0,
+  }).catch(() => []);
+
+  const articles: Article[] = (sanityPosts || []).map((p, idx) => {
+    const rawDate = p.publishedAt || p._createdAt;
+    const formattedDate = rawDate
+      ? new Date(rawDate).toLocaleDateString('en-US', {
+          month: 'short',
+          day: 'numeric',
+          year: 'numeric',
+        })
+      : 'Recently published';
+
+    let imageUrl = '/images/dashboard_hero.jpg';
+    if (p.bannerImage?.asset) {
+      try {
+        imageUrl =
+          urlForImage(p.bannerImage)?.width(1200).fit('max').url() ||
+          '/images/dashboard_hero.jpg';
+      } catch {
+        imageUrl = '/images/dashboard_hero.jpg';
+      }
+    }
+
+    const categoryTitle =
+      typeof p.category === 'object' && p.category !== null
+        ? p.category.title || 'Digital Marketing'
+        : p.category || 'Digital Marketing';
+
+    return {
+      slug: p.slug,
+      category: categoryTitle,
+      title: p.title,
+      excerpt: p.excerpt || '',
+      readTime: '7 min read',
+      date: formattedDate,
+      image: imageUrl,
+      author: p.author?.name || 'Sankarsan Nayak',
+      authorRole: p.author?.role || 'Founder & CEO',
+      authorImage: p.author?.image?.asset
+        ? urlForImage(p.author.image)?.width(100).height(100).url()
+        : '/images/team/exec_1.png',
+      featured: idx === 0,
+    };
+  });
+
+  return <BlogClient articles={articles} />;
+}

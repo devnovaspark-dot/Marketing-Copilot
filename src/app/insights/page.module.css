@@ -428,26 +428,30 @@
 .featuredVisual {
   position: relative;
   width: 100%;
-  min-height: 250px;
-  background: #F8FAFC;
+  aspect-ratio: 16 / 10;
+  background: #FFFFFF;
   overflow: hidden;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (min-width: 768px) {
   .featuredVisual {
-    width: 48%;
-    min-height: 290px;
+    width: 50%;
+    min-height: 280px;
+    background: #FFFFFF;
   }
 }
 
 .featuredImg {
-  object-fit: cover;
-  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  object-fit: contain;
+  object-position: center center;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .featuredCard:hover .featuredImg {
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 .featuredBody {

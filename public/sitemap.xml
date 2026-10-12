@@ -47,7 +47,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://marketingcopilot.in/insights</loc>
+    <loc>https://marketingcopilot.in/blog</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -156,34 +156,34 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Insights & Articles -->
+  <!-- Blog Articles -->
   <url>
-    <loc>https://marketingcopilot.in/insights/future-of-performance-marketing</loc>
+    <loc>https://marketingcopilot.in/blog/future-of-performance-marketing</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://marketingcopilot.in/insights/seo-in-2026</loc>
+    <loc>https://marketingcopilot.in/blog/seo-in-2026</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://marketingcopilot.in/insights/building-brand-recall</loc>
+    <loc>https://marketingcopilot.in/blog/building-brand-recall</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://marketingcopilot.in/insights/social-media-strategy-2026</loc>
+    <loc>https://marketingcopilot.in/blog/social-media-strategy-2026</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://marketingcopilot.in/insights/roas-myths</loc>
+    <loc>https://marketingcopilot.in/blog/roas-myths</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://marketingcopilot.in/insights/website-conversion-rate</loc>
+    <loc>https://marketingcopilot.in/blog/website-conversion-rate</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

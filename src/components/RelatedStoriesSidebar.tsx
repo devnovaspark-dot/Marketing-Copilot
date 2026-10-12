@@ -20,7 +20,7 @@ interface RelatedStoriesSidebarProps {
 export default function RelatedStoriesSidebar({
   stories,
   title = 'Related Stories',
-  viewAllLink = '/insights',
+  viewAllLink = '/blog',
 }: RelatedStoriesSidebarProps) {
   if (!stories || stories.length === 0) return null;
 
@@ -41,7 +41,7 @@ export default function RelatedStoriesSidebar({
         {stories.map((story) => (
           <Link
             key={story.slug}
-            href={`/insights/${story.slug}`}
+            href={`/blog/${story.slug}`}
             className={styles.storyItem}
           >
             <div className={styles.thumbnailWrap}>
