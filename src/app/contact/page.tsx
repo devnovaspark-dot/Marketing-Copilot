@@ -233,7 +233,7 @@ export default function ContactPage() {
 
               <div className={styles.socials}>
                 <a
-                  href="https://www.linkedin.com/company/nova-spark-digital-marketing-agency/"
+                  href="https://www.linkedin.com/company/marketingcopilot-in/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.social}
@@ -245,7 +245,7 @@ export default function ContactPage() {
                   <span>LinkedIn</span>
                 </a>
                 <a
-                  href="https://www.instagram.com/nsdigitalmarketing.agency?stkn=aWZpOWwzZWdzcG1j"
+                  href="https://www.instagram.com/marketingcopilot.in?xtok=dG04ems2NzZwNWxo"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.social}
@@ -259,7 +259,7 @@ export default function ContactPage() {
                   <span>Instagram</span>
                 </a>
                 <a
-                  href="https://www.facebook.com/share/19cD1qU1cV/"
+                  href="https://www.facebook.com/share/19FJ8jPnnw/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.social}
@@ -271,7 +271,7 @@ export default function ContactPage() {
                   <span>Facebook</span>
                 </a>
                 <a
-                  href="https://youtube.com/@ns-digitalmarketingagency?si=E5vtm6XamnVtQ-tB"
+                  href="https://youtube.com/@marketingcopilotbynsdma?si=qb4vYjHyxxp5NiMt"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.social}
@@ -282,6 +282,18 @@ export default function ContactPage() {
                     <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#FFFFFF"/>
                   </svg>
                   <span>YouTube</span>
+                </a>
+                <a
+                  href="https://x.com/Marketingcopilo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.social}
+                  aria-label="X (Twitter)"
+                >
+                  <svg className={styles.socialIcon} width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>
+                  <span>Twitter (X)</span>
                 </a>
               </div>
             </ScrollReveal>

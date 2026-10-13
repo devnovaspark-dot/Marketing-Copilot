@@ -14,7 +14,7 @@ const founders = [
     bio: 'Founder of Marketing Copilot, driving innovation, digital transformation, and sustainable business growth through strategy, creativity, and measurable results.',
     quote: 'We drive innovation, digital transformation, and sustainable business growth through strategy, creativity, and measurable results.',
     color: '#38BDF8',
-    linkedin: 'https://linkedin.com',
+    linkedin: 'https://www.linkedin.com/in/shankarsan-nayak-74191a1b1/?isSelfProfile=true',
   },
   {
     name: 'Pranjal Sharma',

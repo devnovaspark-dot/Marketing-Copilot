@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     "Social Media Marketing",
     "Bhubaneswar"
   ],
-  authors: [{ name: "Sankarsan Nayak", url: "https://marketingcopilot.in/about/team" }],
+  authors: [{ name: "Sankarsan Nayak", url: "https://www.linkedin.com/in/shankarsan-nayak-74191a1b1/?isSelfProfile=true" }],
   creator: "Sankarsan Nayak",
   openGraph: {
     title: "Digital Marketing Company in India | Marketing Copilot",
@@ -73,7 +73,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Digital Marketing Company in India | Marketing Copilot",
     description: "Top-rated digital marketing agency in India. SEO, Google Ads, Meta Ads, web development and compounding revenue growth for businesses across India.",
-    images: ["/images/marketing-copilot-logo.png"]
+    images: ["/images/marketing-copilot-logo.png"],
+    creator: "@Marketingcopilo",
+    site: "@Marketingcopilo"
   },
   icons: {
     icon: [
@@ -265,9 +267,11 @@ const localBusinessSchema = {
     }
   ],
   "sameAs": [
-    "https://www.facebook.com/share/19cD1qU1cV/",
-    "https://www.instagram.com/nsdigitalmarketing.agency?stkn=aWZpOWwzZWdzcG1j",
-    "https://www.linkedin.com/company/nova-spark-digital-marketing-agency/"
+    "https://www.facebook.com/share/19FJ8jPnnw/",
+    "https://www.instagram.com/marketingcopilot.in?xtok=dG04ems2NzZwNWxo",
+    "https://www.linkedin.com/company/marketingcopilot-in/",
+    "https://youtube.com/@marketingcopilotbynsdma?si=qb4vYjHyxxp5NiMt",
+    "https://x.com/Marketingcopilo"
   ],
   "knowsAbout": [
     "Digital Marketing",

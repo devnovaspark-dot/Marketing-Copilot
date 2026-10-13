@@ -42,7 +42,7 @@ const founders = [
     imagePosition: '50% 10%',
     bio: 'Founder of Marketing Copilot, a digital marketing agency serving businesses across India, driving innovation, digital transformation, and sustainable business growth through strategy, creativity, and measurable results.',
     quote: 'We drive innovation, digital transformation, and sustainable business growth through strategy, creativity, and measurable results.',
-    linkedin: 'https://linkedin.com',
+    linkedin: 'https://www.linkedin.com/in/shankarsan-nayak-74191a1b1/?isSelfProfile=true',
   },
   {
     name: 'Pranjal Sharma',

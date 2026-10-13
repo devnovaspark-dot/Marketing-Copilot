@@ -371,7 +371,7 @@ const executiveArchitects = [
     image: '/images/team/exec_1.png',
     imagePosition: '50% 10%',
     color: '#38BDF8',
-    linkedin: 'https://linkedin.com',
+    linkedin: 'https://www.linkedin.com/in/shankarsan-nayak-74191a1b1/?isSelfProfile=true',
   },
   {
     name: 'Pranjal Sharma',
