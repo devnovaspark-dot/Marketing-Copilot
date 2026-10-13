@@ -9,31 +9,33 @@ import QuickConnectMapSection from '@/app/_components/QuickConnectMapSection';
 import LinkedInCampaignSimulator from './_components/LinkedInCampaignSimulator';
 import styles from './linkedin-marketing-page.module.css';
 
-// Section 2: 5 Common LinkedIn Marketing Challenges
-const challengesList = [
-  {
-    icon: '⚡',
-    badge: 'Engagement Void',
-    title: 'Low Engagement',
-    solution:
-      'Improve the relevance and consistency of your content to encourage meaningful professional interactions.',
-    fix: 'Topical authority & thought leadership cadence',
-  },
+// Section 2: 5 Common LinkedIn Marketing Challenges (Balanced Bento Architecture)
+const heroChallenge = {
+  badge: 'Critical Bottleneck',
+  title: 'Low Engagement & Blind Scrolling',
+  solution:
+    'Improve the relevance and consistency of your content to encourage meaningful professional interactions.',
+  fix: 'Executive thought leadership, native carousels & pattern-interrupt hooks',
+  statVal: '3.4X',
+  statLabel: 'Higher Interaction on Value Posts',
+};
+
+const subChallengesList = [
   {
     icon: '🎯',
-    badge: 'Targeting Miss',
+    badge: 'Targeting Friction',
     title: 'Difficulty Reaching Decision-Makers',
     solution:
       'Develop audience targeting strategies based on professional roles, industries, company sizes, and business interests.',
-    fix: 'Zero-waste Matched Audiences & C-Suite filters',
+    fix: 'C-Suite & Matched Audience filters',
   },
   {
     icon: '💸',
-    badge: 'Budget Drain',
+    badge: 'Ad Spend Burn',
     title: 'High Advertising Costs',
     solution:
       'Monitor campaign performance and optimise targeting, creatives, and conversion paths to improve efficiency.',
-    fix: 'CPA compression & bid cap architecture',
+    fix: 'Bid-cap guardrails & CPA compression',
   },
   {
     icon: '🏢',
@@ -41,7 +43,7 @@ const challengesList = [
     title: 'Inconsistent Brand Presence',
     solution:
       'Maintain a clear brand voice and a consistent publishing schedule across company pages and leadership profiles.',
-    fix: 'Structured weekly editorial calendars',
+    fix: 'Weekly multi-format editorial calendars',
   },
   {
     icon: '📉',
@@ -53,148 +55,193 @@ const challengesList = [
   },
 ];
 
-// Section 3: 6 Services Offered
+// Section 3: 6 Services Offered with Specific Deliverables
 const servicesOffered = [
   {
     icon: '🎯',
     tag: 'SPONSORED MEDIA & ADS',
     title: 'LinkedIn Ads Management',
     desc: 'Reach relevant professional audiences through strategically planned LinkedIn advertising campaigns. We help with campaign setup, audience selection, ad creative coordination, budget management, testing, and ongoing optimisation based on campaign objectives.',
+    deliverables: ['Sponsored Content & Video Ads', 'Precision Matched Audiences', 'Bid Caps & CPA Guardrails'],
   },
   {
     icon: '📋',
     tag: 'QUALIFIED B2B PIPELINE',
     title: 'LinkedIn Lead Generation',
     desc: 'Build a structured approach to attracting potential business customers through targeted campaigns, relevant offers, lead generation forms, and conversion-focused landing pages. Our focus is on helping you attract prospects who fit your business objectives rather than simply increasing lead volume.',
+    deliverables: ['Zero-Friction Native Lead Forms', 'Real-Time CRM & WhatsApp Sync', 'High-Intent B2B Landing Pages'],
   },
   {
     icon: '🏢',
     tag: 'COMPANY PAGE BRANDING',
     title: 'LinkedIn Company Page Management',
     desc: 'Strengthen your company\'s professional presence with an optimised LinkedIn company page, consistent brand messaging, relevant updates, and audience-focused content. We help communicate your expertise, services, and business value to potential customers and partners.',
+    deliverables: ['Page SEO & Tagline Optimization', 'Custom Life & Showcase Tabs', 'Consistent Weekly Updates Cadence'],
   },
   {
     icon: '✍️',
     tag: 'AUTHORITY & THOUGHT LEADERSHIP',
     title: 'LinkedIn Content Marketing',
     desc: 'Develop useful and engaging content that demonstrates your expertise and builds professional credibility. Depending on your audience, content may include educational posts, industry insights, company updates, case studies, carousels, and thought leadership content.',
+    deliverables: ['High-Retention Visual Slide Decks', 'Founder Personal Branding Frameworks', 'In-Depth B2B Case Study Breakdowns'],
   },
   {
     icon: '🤝',
     tag: 'SALES ENABLEMENT & ABM',
     title: 'LinkedIn B2B Marketing',
     desc: 'Connect your marketing activities with your business development goals. We help define target audiences, develop relevant messaging, and coordinate content and campaigns to reach potential clients, industry partners, and decision-makers.',
+    deliverables: ['Account-Based Marketing (ABM) Playbooks', 'Named Enterprise Target Lists', 'Multi-Touch Executive Outreach'],
   },
   {
     icon: '📊',
     tag: 'DATA & ATTRIBUTION',
     title: 'LinkedIn Campaign Analytics and Reporting',
     desc: 'Understand how your LinkedIn marketing activities are performing through relevant metrics and regular reporting. We monitor available data such as impressions, engagement, clicks, leads, conversion rates, and cost per lead to identify opportunities for improvement.',
+    deliverables: ['Full Downstream SQL Attribution', 'Cost-Per-Acquisition Optimization', 'Transparent Bi-Weekly Executive Reviews'],
   },
 ];
 
-// Section 4: Who Can Benefit (6 Business Types)
+// Section 4: Who Can Benefit (6 Industry Segments)
 const industriesBenefiting = [
   {
     icon: '🏢',
+    sector: 'ENTERPRISE & B2B',
     title: 'B2B Companies and Enterprise Businesses',
     desc: 'Reach relevant business professionals, communicate your expertise, and support longer sales cycles with targeted campaigns and informative content.',
+    roles: 'CEOs, Board Members & Procurement Heads',
+    focus: 'Enterprise Retainers & Strategic Deals',
   },
   {
     icon: '💻',
+    sector: 'SOFTWARE & CLOUD',
     title: 'IT and SaaS Companies',
     desc: 'Promote software solutions, share product insights, reach relevant business buyers, and generate interest among professionals evaluating technology solutions.',
+    roles: 'CTOs, VP Engineering & Product Directors',
+    focus: 'Software Trials & Tech Pilots',
   },
   {
     icon: '⚖️',
+    sector: 'ADVISORY & SERVICES',
     title: 'Consultants and Professional Service Providers',
     desc: 'Showcase expertise, publish thought leadership content, and build credibility with businesses looking for specialised services.',
+    roles: 'Managing Partners & Corporate Executives',
+    focus: 'Advisory Retainers & Specialized Consults',
   },
   {
     icon: '👥',
+    sector: 'TALENT & WORKFORCE',
     title: 'Recruitment and Staffing Companies',
     desc: 'Strengthen employer visibility, communicate recruitment expertise, and reach relevant professional audiences through suitable content and advertising campaigns.',
+    roles: 'CHROs, Talent Heads & HR Leaders',
+    focus: 'Executive Search & Employer Authority',
   },
   {
     icon: '🏭',
+    sector: 'MANUFACTURING & SUPPLY',
     title: 'Manufacturers and Industrial Businesses',
     desc: 'Present your products, capabilities, and industry knowledge to relevant business audiences, procurement professionals, and potential distribution partners.',
+    roles: 'Supply Chain Directors & Plant Heads',
+    focus: 'Commercial Distribution & B2B Supply',
   },
   {
     icon: '🚀',
+    sector: 'SCALEUPS & CAPITAL',
     title: 'Startups and Growing Businesses',
     desc: 'Build professional brand awareness, introduce your solutions to target markets, and support business development with a focused LinkedIn marketing strategy.',
+    roles: 'Founders, Angel Investors & Early Adopters',
+    focus: 'Category Creation & Early Revenue',
   },
 ];
 
-// Section 5: 5-Step LinkedIn Marketing Process
+// Section 5: 5-Step Approach Roadmap
 const approachSteps = [
   {
     step: '01',
+    phase: 'PHASE 1: DISCOVERY & ICP',
     title: 'Step 1: Business and Audience Research',
     desc: 'We begin by understanding your services, target market, competitors, ideal customer profile, and business objectives. This helps establish a clear direction for your LinkedIn marketing strategy.',
+    deliverable: 'Ideal Customer Profile (ICP) & Competitor Gap Analysis',
   },
   {
     step: '02',
+    phase: 'PHASE 2: AUDIT & POSITIONING',
     title: 'Step 2: LinkedIn Presence and Competitor Audit',
     desc: 'We review your company page, existing content, advertising activities where applicable, and competitor positioning. The findings help identify opportunities to improve messaging, content quality, and audience engagement.',
+    deliverable: 'Company Page UX Audit & Benchmark Scorecard',
   },
   {
     step: '03',
+    phase: 'PHASE 3: STRATEGY & BUDGETS',
     title: 'Step 3: Strategy and Campaign Planning',
     desc: 'We develop a plan covering campaign objectives, target audiences, content themes, advertising requirements, budgets, and conversion goals. The strategy is aligned with your business priorities and available resources.',
+    deliverable: 'Multi-Week Editorial Calendar & Paid Media Blueprint',
   },
   {
     step: '04',
+    phase: 'PHASE 4: EXECUTION & SCALE',
     title: 'Step 4: Campaign Execution and Optimisation',
     desc: 'We implement the agreed activities, which may include company page management, content publishing, LinkedIn Ads, and lead generation campaigns. Performance data helps guide adjustments to targeting, creative assets, messaging, and budgets.',
+    deliverable: 'Live Sponsored Campaigns & Form Integration',
   },
   {
     step: '05',
+    phase: 'PHASE 5: ATTRIBUTION & CONTINUOUS ROI',
     title: 'Step 5: Reporting and Continuous Improvement',
     desc: 'We review campaign performance and share actionable insights. Where tracking is available, we evaluate lead quality and downstream conversions to help identify which activities contribute most effectively to your business objectives.',
+    deliverable: 'Monthly Closed-Loop Sales Pipeline Attribution',
   },
 ];
 
-// Section 6: Results Metrics
-const reportingMetrics = [
+// Section 6: Results Metrics (Bento Architecture: 1 Hero Metric + 6 KPI Tiles = 7 Symmetrical Items)
+const heroResultMetric = {
+  tag: 'PRIMARY COMMERCIAL NORTH STAR',
+  title: 'Lead Quality and Sales Pipeline Contribution',
+  desc: 'Where CRM and sales data are available, we assess whether leads match your ideal customer profile and contribute to verified business opportunities. We track pipeline value, closing rates, and downstream contract revenue.',
+  statVal: '100%',
+  statLabel: 'Attributed Pipeline',
+};
+
+const subResultMetrics = [
   {
+    category: 'REACH & FREQUENCY',
     title: 'Audience Reach and Impressions',
-    desc: 'Understand how frequently your content and advertisements reach professional audiences.',
+    desc: 'Understand how frequently your content and advertisements reach professional audiences in your target industries.',
   },
   {
+    category: 'AUDIENCE INTERACTION',
     title: 'Engagement Rate',
-    desc: 'Evaluate interactions with your posts and campaigns.',
+    desc: 'Evaluate interactions with your posts and campaigns, including comments, reposts, clicks, and page follows.',
   },
   {
+    category: 'TRAFFIC INTENT',
     title: 'Click-Through Rate (CTR)',
-    desc: 'Assess how effectively your ads and content encourage people to visit the intended destination.',
+    desc: 'Assess how effectively your ads and content encourage people to visit your landing pages or book consultations.',
   },
   {
+    category: 'COMMERCIAL INBOUND',
     title: 'Lead Generation',
-    desc: 'Monitor enquiries and leads captured through LinkedIn campaigns.',
+    desc: 'Monitor qualified enquiries and leads captured through native LinkedIn forms and dedicated conversion landers.',
   },
   {
+    category: 'BUDGET EFFICIENCY',
     title: 'Cost Per Lead (CPL)',
-    desc: 'Understand the advertising cost associated with acquiring a lead.',
+    desc: 'Understand the advertising cost associated with acquiring each verified business lead to maintain strict unit economics.',
   },
   {
+    category: 'FUNNEL VELOCITY',
     title: 'Conversion Rate',
-    desc: 'Evaluate how effectively clicks and landing-page visits translate into enquiries or other desired actions.',
-  },
-  {
-    title: 'Lead Quality and Sales Pipeline',
-    desc: 'Where CRM and sales data are available, assess whether leads match your ideal customer profile and contribute to business opportunities.',
+    desc: 'Evaluate how effectively clicks and landing-page visits translate into enquiries, demo bookings, or signed contracts.',
   },
 ];
 
-// Section 7: Why Choose Marketing Copilot
-const whyPillars = [
-  {
-    step: 'PILLAR 01',
-    title: 'Business-Focused Strategy',
-    desc: 'We align LinkedIn marketing activities with your business objectives, whether you want to increase professional visibility, generate B2B leads, or support a longer sales cycle.',
-  },
+// Section 7: Why Marketing Copilot (Bento Architecture: 1 Hero Pillar + 4 Pillars = 5 Symmetrical Items)
+const heroWhyPillar = {
+  step: 'FOUNDATIONAL PILLAR 01',
+  title: 'Business-Focused Strategy: Objectives First, Spend Second',
+  desc: 'We align LinkedIn marketing activities with your business objectives, whether you want to increase professional visibility, generate B2B leads, or support a longer sales cycle. Every campaign is designed with pipeline ROI in mind rather than superficial vanity likes.',
+};
+
+const subWhyPillars = [
   {
     step: 'PILLAR 02',
     title: 'Integrated Marketing Approach',
@@ -217,35 +264,50 @@ const whyPillars = [
   },
 ];
 
-// Section 8: FAQs (Closed by default per specifications)
+// Section 8: FAQs (with Takeaways)
 const faqsList = [
   {
+    num: '01',
     q: 'What do LinkedIn marketing services include?',
     a: 'LinkedIn marketing services may include company page management, content creation, LinkedIn Ads management, audience targeting, B2B lead generation, campaign optimisation, and performance reporting. The exact scope depends on your business requirements and selected service package.',
+    takeaway: 'Custom scopes tailored to whether you need paid ads, organic company page authority, or a combined growth engine.',
   },
   {
+    num: '02',
     q: 'How can LinkedIn marketing generate B2B leads?',
     a: 'LinkedIn marketing can help businesses reach relevant professionals based on factors such as job role, industry, company, and seniority. Through useful content, targeted advertising, relevant offers, and clear conversion paths, businesses can attract potential customers and encourage enquiries.',
+    takeaway: 'Precision seniority and job-title filtering ensures your marketing spend only targets decision-makers.',
   },
   {
+    num: '03',
     q: 'How much do LinkedIn marketing services cost in India?',
     a: 'The cost depends on the scope of work, campaign complexity, content requirements, advertising budget, and reporting needs. Agency fees and advertising spend may be charged separately. Contact Marketing Copilot to discuss a plan suited to your objectives and budget.',
+    takeaway: 'Flexible engagement plans designed for emerging startups to multinational enterprise brands.',
   },
   {
+    num: '04',
     q: 'What is the difference between LinkedIn organic marketing and LinkedIn Ads?',
     a: 'Organic marketing focuses on company page content, professional engagement, and brand credibility without paying for each advertisement placement. LinkedIn Ads use paid campaigns to reach selected audiences and support objectives such as website visits, lead generation, and brand awareness. Both approaches can complement each other.',
+    takeaway: 'Organic compounds brand prestige; LinkedIn Ads delivers immediate, predictable pipeline velocity.',
   },
   {
+    num: '05',
     q: 'How long does it take to see results from LinkedIn marketing?',
     a: 'The timeline varies by objective, audience, budget, offer, and execution. Paid campaigns can generate early engagement or enquiries after launch, while building brand authority and a consistent organic presence generally requires sustained effort. Performance should be evaluated against agreed objectives over time.',
+    takeaway: 'Paid ads begin generating inquiries within days; organic topical authority builds compounding trust over 60–90 days.',
   },
   {
+    num: '06',
+    Can: 'Can small businesses and startups benefit from LinkedIn marketing?',
     q: 'Can small businesses and startups benefit from LinkedIn marketing?',
     a: 'Yes. Small businesses and startups can use LinkedIn to reach professional audiences, demonstrate expertise, build relevant connections, and test demand for their services. The strategy should match the company\'s target market, budget, and available resources.',
+    takeaway: 'Startups can punch above their weight by positioning founders as industry leaders and running lean, hyper-targeted campaigns.',
   },
   {
+    num: '07',
     q: 'How do you measure LinkedIn marketing performance?',
     a: 'Performance can be measured using relevant metrics such as reach, engagement, clicks, leads, conversion rate, and cost per lead. When CRM and sales data are available, lead quality and pipeline contribution can also be assessed.',
+    takeaway: 'We report real sales pipeline value and qualified MQLs rather than superficial vanity impressions.',
   },
 ];
 
@@ -291,7 +353,6 @@ export default function LinkedInMarketingPage() {
       if (res.ok) {
         setIsSubmitted(true);
       } else {
-        // Fallback FormSubmit
         await fetch('https://formsubmit.co/ajax/novasdmagency@gmail.com', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -326,7 +387,7 @@ export default function LinkedInMarketingPage() {
             <ScrollReveal>
               <div className={styles.heroEyebrowPill}>
                 <span className={styles.pulseDot} />
-                <span>LinkedIn Marketing Agency · India</span>
+                <span>Premier B2B LinkedIn Marketing Agency · India</span>
               </div>
 
               <h1 className={styles.heroTitle}>
@@ -354,7 +415,7 @@ export default function LinkedInMarketingPage() {
               </div>
             </ScrollReveal>
 
-            {/* Telemetry Performance Ribbon */}
+            {/* Skeuomorphic Telemetry Performance Ribbon */}
             <div className={styles.telemetryRibbon}>
               <div className={styles.telemetryCell}>
                 <span className={styles.tVal}>85%+</span>
@@ -378,12 +439,12 @@ export default function LinkedInMarketingPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          REGIONAL OFFICE & ASSURANCE MAP STRIP
+          REGIONAL ASSURANCE MAP STRIP
          ══════════════════════════════════════════════════ */}
       <QuickConnectMapSection />
 
       {/* ══════════════════════════════════════════════════
-          SECTION 2: BUSINESS CHALLENGES
+          SECTION 2: BUSINESS CHALLENGES (BENTO ARCHITECTURE)
          ══════════════════════════════════════════════════ */}
       <section className={styles.challengesSection} id="business-challenges">
         <div className="container">
@@ -397,14 +458,11 @@ export default function LinkedInMarketingPage() {
               <span className="accent-gradient">LinkedIn?</span>
             </h2>
             <p className={styles.sectionDesc}>
-              Simply publishing posts or running advertisements does not guarantee meaningful engagement or qualified leads.
+              LinkedIn offers businesses an opportunity to reach professionals, decision-makers, and potential customers. However, simply publishing posts or running advertisements does not guarantee meaningful engagement or qualified leads.
             </p>
           </ScrollReveal>
 
-          <div className={styles.challengesNarrative}>
-            <p>
-              LinkedIn offers businesses an opportunity to reach professionals, decision-makers, and potential customers. However, simply publishing posts or running advertisements does not guarantee meaningful engagement or qualified leads.
-            </p>
+          <div className={styles.challengesNarrativeBox}>
             <p>
               Without a clear strategy, businesses may struggle to reach the right audience, communicate their value, or convert professional engagement into business opportunities.
             </p>
@@ -413,14 +471,32 @@ export default function LinkedInMarketingPage() {
             </p>
           </div>
 
-          <div className={styles.challengesGrid}>
-            {challengesList.map((item, idx) => (
+          {/* Symmetrical Bento Grid: 1 Hero Card + 4 Sub-Cards */}
+          <div className={styles.bentoChallengesGrid}>
+            {/* Hero Card: Low Engagement */}
+            <ScrollReveal className={styles.challengeCardHero}>
+              <div className={styles.challengeHeroContent}>
+                <span className={styles.challengeHeroBadge}>{heroChallenge.badge}</span>
+                <h3 className={styles.challengeHeroTitle}>{heroChallenge.title}</h3>
+                <p className={styles.challengeHeroDesc}>{heroChallenge.solution}</p>
+                <div className={styles.challengeHeroFix}>
+                  <span>✓ Solution:</span> {heroChallenge.fix}
+                </div>
+              </div>
+              <div className={styles.challengeHeroStatBox}>
+                <div className={styles.heroStatVal}>{heroChallenge.statVal}</div>
+                <div className={styles.heroStatLabel}>{heroChallenge.statLabel}</div>
+              </div>
+            </ScrollReveal>
+
+            {/* 4 Balanced Complementary Cards */}
+            {subChallengesList.map((item, idx) => (
               <ScrollReveal key={item.title} delay={idx * 0.08}>
                 <div className={styles.challengeCard}>
                   <div>
                     <div className={styles.challengeHeader}>
                       <div className={styles.challengeIconBowl}>{item.icon}</div>
-                      <span className={styles.challengeBadge}>{item.badge}</span>
+                      <span className={styles.challengeStatusPill}>{item.badge}</span>
                     </div>
                     <h3 className={styles.challengeTitle}>{item.title}</h3>
                     <p className={styles.challengeSolution}>{item.solution}</p>
@@ -448,7 +524,7 @@ export default function LinkedInMarketingPage() {
           <ScrollReveal className={styles.sectionHeaderCenter}>
             <div className={styles.eyebrowBadge}>
               <span className={styles.pulseDot} />
-              <span>Tailored B2B Capabilities</span>
+              <span>Full-Spectrum Practice</span>
             </div>
             <h2 className={styles.sectionTitle}>
               Our LinkedIn Marketing <span className="accent-gradient">Services</span>
@@ -458,6 +534,7 @@ export default function LinkedInMarketingPage() {
             </p>
           </ScrollReveal>
 
+          {/* 6 Services in 3x2 Grid */}
           <div className={styles.servicesGrid}>
             {servicesOffered.map((svc, idx) => (
               <ScrollReveal key={svc.title} delay={idx * 0.07}>
@@ -469,6 +546,14 @@ export default function LinkedInMarketingPage() {
                     </div>
                     <h3 className={styles.serviceCardTitle}>{svc.title}</h3>
                     <p className={styles.serviceCardDesc}>{svc.desc}</p>
+                  </div>
+                  <div className={styles.serviceDeliverables}>
+                    {svc.deliverables.map((d) => (
+                      <div key={d} className={styles.deliverableRow}>
+                        <span className={styles.checkBullet}>✓</span>
+                        <span>{d}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </ScrollReveal>
@@ -518,7 +603,7 @@ export default function LinkedInMarketingPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          SECTION 4: WHO CAN BENEFIT?
+          SECTION 4: WHO CAN BENEFIT? (6 SECTORS)
          ══════════════════════════════════════════════════ */}
       <section className={styles.industriesSection} id="who-can-benefit">
         <div className="container">
@@ -540,11 +625,22 @@ export default function LinkedInMarketingPage() {
             {industriesBenefiting.map((ind, idx) => (
               <ScrollReveal key={ind.title} delay={idx * 0.08}>
                 <div className={styles.industryCard}>
-                  <div className={styles.industryCardHeader}>
-                    <span className={styles.industryIcon}>{ind.icon}</span>
+                  <div>
+                    <div className={styles.industryCardTop}>
+                      <div className={styles.industryIconBowl}>{ind.icon}</div>
+                      <span className={styles.industrySectorPill}>{ind.sector}</span>
+                    </div>
                     <h3 className={styles.industryTitle}>{ind.title}</h3>
+                    <p className={styles.industryDesc}>{ind.desc}</p>
                   </div>
-                  <p className={styles.industryDesc}>{ind.desc}</p>
+                  <div className={styles.industryMetaRow}>
+                    <div className={styles.industryMetaItem}>
+                      <strong>Key Roles:</strong> {ind.roles}
+                    </div>
+                    <div className={styles.industryMetaItem}>
+                      <strong>Focus:</strong> {ind.focus}
+                    </div>
+                  </div>
                 </div>
               </ScrollReveal>
             ))}
@@ -557,7 +653,7 @@ export default function LinkedInMarketingPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          SECTION 5: APPROACH (PROCESS)
+          SECTION 5: APPROACH (CONNECTED ROADMAP)
          ══════════════════════════════════════════════════ */}
       <section className={styles.processSection} id="our-process">
         <div className="container">
@@ -578,12 +674,16 @@ export default function LinkedInMarketingPage() {
             {approachSteps.map((step, idx) => (
               <ScrollReveal key={step.step} delay={idx * 0.08}>
                 <div className={styles.processStepCard}>
-                  <div className={stepNumCol(step.step)}>
+                  <div className={styles.stepNumCol}>
                     <div className={styles.stepNumBowl}>{step.step}</div>
                   </div>
                   <div className={styles.stepContentCol}>
+                    <span className={styles.stepPhasePill}>{step.phase}</span>
                     <h3 className={styles.stepTitle}>{step.title}</h3>
                     <p className={styles.stepDesc}>{step.desc}</p>
+                    <div className={styles.stepDeliverableTag}>
+                      <span>✓ Deliverable:</span> {step.deliverable}
+                    </div>
                   </div>
                 </div>
               </ScrollReveal>
@@ -593,7 +693,7 @@ export default function LinkedInMarketingPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          SECTION 6: RESULTS (MEASURE WHAT MATTERS)
+          SECTION 6: RESULTS (BENTO TELEMETRY)
          ══════════════════════════════════════════════════ */}
       <section className={styles.resultsSection} id="results">
         <div className="container">
@@ -611,15 +711,33 @@ export default function LinkedInMarketingPage() {
             </p>
           </ScrollReveal>
 
-          <div className={styles.metricsGridCards}>
-            {reportingMetrics.map((metric, idx) => (
+          {/* Symmetrical Bento Grid: 1 Hero Result Card + 6 KPI Tiles = 7 Items */}
+          <div className={styles.resultsBentoGrid}>
+            <ScrollReveal className={styles.heroResultCard}>
+              <div>
+                <div className={styles.heroResultHeader}>
+                  <span className={styles.heroResultTag}>{heroResultMetric.tag}</span>
+                </div>
+                <h3 className={styles.heroResultTitle}>{heroResultMetric.title}</h3>
+                <p className={styles.heroResultDesc}>{heroResultMetric.desc}</p>
+              </div>
+              <div className={styles.heroResultBadgePill}>
+                <strong>{heroResultMetric.statVal}</strong>
+                <span>{heroResultMetric.statLabel}</span>
+              </div>
+            </ScrollReveal>
+
+            {subResultMetrics.map((metric, idx) => (
               <ScrollReveal key={metric.title} delay={idx * 0.06}>
                 <div className={styles.metricCard}>
-                  <div className={styles.metricCardHeader}>
-                    <span className={styles.metricDot} />
+                  <div>
+                    <div className={styles.metricCardTop}>
+                      <span className={styles.metricDot} />
+                      <span className={styles.metricCategoryPill}>{metric.category}</span>
+                    </div>
                     <h3 className={styles.metricCardTitle}>{metric.title}</h3>
+                    <p className={styles.metricCardDesc}>{metric.desc}</p>
                   </div>
-                  <p className={styles.metricCardDesc}>{metric.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -637,7 +755,7 @@ export default function LinkedInMarketingPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          SECTION 7: WHY MARKETING COPILOT?
+          SECTION 7: WHY MARKETING COPILOT? (BENTO ARCHITECTURE)
          ══════════════════════════════════════════════════ */}
       <section className={styles.whySection} id="why-marketing-copilot">
         <div className="container">
@@ -655,8 +773,15 @@ export default function LinkedInMarketingPage() {
             </p>
           </ScrollReveal>
 
-          <div className={styles.whyGrid}>
-            {whyPillars.map((pillar, idx) => (
+          {/* Symmetrical Bento Grid: 1 Hero Pillar + 4 Sub-Pillars = 5 Items */}
+          <div className={styles.whyBentoGrid}>
+            <ScrollReveal className={styles.whyCardHero}>
+              <div className={styles.whyCardHeroStep}>{heroWhyPillar.step}</div>
+              <h3 className={styles.whyCardHeroTitle}>{heroWhyPillar.title}</h3>
+              <p className={styles.whyCardHeroDesc}>{heroWhyPillar.desc}</p>
+            </ScrollReveal>
+
+            {subWhyPillars.map((pillar, idx) => (
               <ScrollReveal key={pillar.step} delay={idx * 0.08}>
                 <div className={styles.whyCard}>
                   <div className={styles.whyStep}>{pillar.step}</div>
@@ -703,7 +828,10 @@ export default function LinkedInMarketingPage() {
                     id={`faq-btn-${idx}`}
                     aria-controls={`faq-pane-${idx}`}
                   >
-                    <span className={styles.faqQuestion}>{faq.q}</span>
+                    <div className={styles.faqQuestionRow}>
+                      <span className={styles.faqNumPill}>{faq.num}</span>
+                      <span className={styles.faqQuestion}>{faq.q}</span>
+                    </div>
                     <span className={styles.faqIconBowl}>
                       {isOpen ? '−' : '+'}
                     </span>
@@ -717,6 +845,9 @@ export default function LinkedInMarketingPage() {
                       aria-labelledby={`faq-btn-${idx}`}
                     >
                       <p className={styles.faqAnswer}>{faq.a}</p>
+                      <div className={styles.faqTakeaway}>
+                        <span>💡 Key Takeaway:</span> {faq.takeaway}
+                      </div>
                     </div>
                   )}
                 </div>
@@ -727,7 +858,7 @@ export default function LinkedInMarketingPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          SECTION 9: FINAL CTA & SIMPLE ENQUIRY FORM
+          SECTION 9: FINAL CTA & ENQUIRY FORM
          ══════════════════════════════════════════════════ */}
       <section className={styles.ctaSection} id="enquiry-section">
         <div className="container">
@@ -901,8 +1032,4 @@ export default function LinkedInMarketingPage() {
       </section>
     </div>
   );
-}
-
-function stepNumCol(step: string) {
-  return styles.stepNumCol;
 }
