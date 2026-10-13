@@ -183,6 +183,16 @@ const nextConfig: NextConfig = {
         destination: '/services/local-seo-services-in-india',
         permanent: true,
       },
+      {
+        source: '/services/linkedin-marketing',
+        destination: '/services/linkedin-marketing-services-in-india',
+        permanent: true,
+      },
+      {
+        source: '/services/linkedin-ads',
+        destination: '/services/linkedin-marketing-services-in-india',
+        permanent: true,
+      },
       // Redirect legacy -in-bhubaneswar URLs to -in-india
       {
         source: '/services/seo-services-in-bhubaneswar',

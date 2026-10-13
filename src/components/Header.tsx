@@ -33,6 +33,7 @@ const serviceClusters: HeaderServiceCluster[] = [
       { href: '/services/seo-services-in-india', label: 'SEO Services', shortLabel: 'SEO', icon: '⚡', desc: 'Rank #1 on Google in India', badge: 'High Intent' },
       { href: '/services/google-ads-services-in-india', label: 'Google Ads / PPC', shortLabel: 'Google Ads', icon: '🎯', desc: 'High-ROI paid search campaigns', badge: 'Top ROAS' },
       { href: '/services/meta-ads-services-in-india', label: 'Meta Ads', shortLabel: 'Meta Ads', icon: '🚀', desc: 'Facebook, Instagram & WhatsApp ads', badge: 'CAPI Ready' },
+      { href: '/services/linkedin-marketing-services-in-india', label: 'LinkedIn Marketing', shortLabel: 'LinkedIn', icon: '💼', desc: 'B2B lead generation & targeted ads', badge: 'B2B Leads' },
       { href: '/services/performance-marketing-in-india', label: 'Performance Marketing', shortLabel: 'Performance', icon: '📈', desc: 'Revenue attribution & unit economics', badge: 'Full-Funnel' },
     ],
   },

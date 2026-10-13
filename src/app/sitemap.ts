@@ -92,6 +92,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'creative-branding-services-in-india',
     'ecommerce-marketing-services-in-india',
     'local-seo-services-in-india',
+    'linkedin-marketing-services-in-india',
     'digital-growth-partner',
   ];
 

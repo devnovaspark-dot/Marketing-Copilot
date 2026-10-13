@@ -186,6 +186,22 @@ const serviceCatalog: ServiceItem[] = [
     color: '#0B2093',
     href: '/services/ai-automation-services-in-india',
   },
+  {
+    id: 'linkedin-marketing',
+    num: '11',
+    category: 'B2B LEAD GEN & EXECUTIVE REACH',
+    categoryGroup: 'paid',
+    shortCategory: 'LinkedIn Growth',
+    title: 'LinkedIn Marketing & B2B Lead Gen',
+    tagline: 'Connect directly with decision-makers, establish industry authority, and turn LinkedIn into a strategic pipeline for qualified B2B customer acquisition.',
+    image: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1000&auto=format&fit=crop',
+    iconSrc: '/images/icons/social-media.svg',
+    deliverables: ['Targeted Decision-Maker Ads', 'Instant B2B Lead Forms', 'Company Page Authority Management'],
+    metric: '4.8X',
+    metricLabel: 'Pipeline Velocity',
+    color: '#0A66C2',
+    href: '/services/linkedin-marketing-services-in-india',
+  },
 ];
 
 const heroSlides = [

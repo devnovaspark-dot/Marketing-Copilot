@@ -31,6 +31,7 @@ export default function Footer() {
     { label: 'Digital Growth Partner', href: '/services/digital-growth-partner' },
     { label: 'SEO & Search', href: '/services/seo-services-in-india' },
     { label: 'Google & Meta Ads', href: '/services/google-ads-services-in-india' },
+    { label: 'LinkedIn Marketing', href: '/services/linkedin-marketing-services-in-india' },
     { label: 'Social Media', href: '/services/social-media-marketing-in-india' },
     { label: 'Creative & Branding', href: '/services/creative-branding-services-in-india' },
     { label: 'Web Development', href: '/services/web-development-in-india' },
