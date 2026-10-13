@@ -1368,20 +1368,20 @@
 }
 
 /* ══════════════════════════════════════════════════
-   9. SECTION 9: FINAL CTA & SIMPLE ENQUIRY FORM
-   Aligned with Marketing Copilot homeStyleCtaBox
+   9. SECTION 9: FINAL PRE-FOOTER CTA CARD
+   Exact match to Home Page CTA Section / .innerBox
    ══════════════════════════════════════════════════ */
 .homeStyleCtaSection {
-  padding: clamp(60px, 8vw, 96px) 0;
+  padding: 56px 0 72px;
   background: #F8FAFC;
   position: relative;
 }
 
 .homeStyleCtaBox {
   background: linear-gradient(145deg, #FFFFFF 0%, #F8FAFC 50%, #F1F5F9 100%);
-  border: 1.5px solid #CBD5E1;
-  border-radius: 28px;
-  padding: clamp(36px, 5vw, 56px) clamp(24px, 4vw, 48px);
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  border-radius: var(--radius-2xl, 32px);
+  padding: clamp(48px, 6vw, 64px) clamp(24px, 5vw, 48px);
   box-shadow: 
     inset 0 2px 0 #FFFFFF,
     inset 0 -1px 0 rgba(15, 23, 42, 0.04),
@@ -1389,7 +1389,10 @@
     0 4px 12px rgba(15, 23, 42, 0.03);
   position: relative;
   overflow: hidden;
-  transition: all 0.3s ease;
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .homeStyleCtaBox:hover {
@@ -1400,246 +1403,35 @@
     0 0 0 1px rgba(11, 32, 147, 0.15);
 }
 
-.ctaInnerGrid {
-  display: grid;
-  grid-template-columns: 1.15fr 1fr;
-  gap: 40px;
-  align-items: start;
-}
-
-@media (max-width: 900px) {
-  .ctaInnerGrid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-}
-
-.ctaInfoCol {
-  display: flex;
-  flex-direction: column;
-}
-
-.ctaEyebrowBadge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: #EFF6FF;
-  border: 1px solid #BFDBFE;
-  padding: 6px 18px;
-  border-radius: 999px;
-  font-family: var(--font-display, inherit);
-  font-size: 12.5px;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  color: #0B2093;
+.homeCtaHeadline {
+  margin-top: 14px;
   margin-bottom: 18px;
-  width: fit-content;
-}
-
-.ctaHeadline {
-  font-family: var(--font-display, inherit);
-  font-size: clamp(2rem, 3.8vw, 3rem);
-  font-weight: 800;
+  color: #000000;
   line-height: 1.15;
-  color: #0F172A;
-  margin-bottom: 16px;
-  letter-spacing: -0.025em;
 }
 
-.ctaParagraph {
-  font-family: var(--font-body, inherit);
-  font-size: 16px;
-  line-height: 1.68;
+.homeCtaSub {
   color: #475569;
+  max-width: 760px;
+  margin: 0 auto 32px;
+  line-height: 1.7;
+}
+
+.ctaActions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
   margin-bottom: 24px;
 }
 
-.contactDetailsList {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 20px;
-}
-
-.contactDetailItem {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  background: #FFFFFF;
-  border: 1.5px solid #CBD5E1;
-  border-radius: 14px;
-  padding: 12px 18px;
-  text-decoration: none;
-  color: #0F172A;
-  transition: all 0.22s ease;
-  box-shadow: inset 0 1px 0 #FFFFFF, 0 2px 6px rgba(0, 0, 0, 0.03);
-}
-
-.contactDetailItem:hover {
-  background: #EFF6FF;
-  border-color: #0B2093;
-  transform: translateX(3px);
-}
-
-.contactDetailIcon {
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
-  border: 1px solid #BFDBFE;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #0B2093;
-  flex-shrink: 0;
-}
-
-.contactDetailText {
-  display: flex;
-  flex-direction: column;
-}
-
-.contactDetailLabel {
-  font-size: 11px;
-  color: #64748B;
+.ctaBrandPunchline {
+  font-family: var(--font-display, inherit);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  font-weight: 750;
-  letter-spacing: 0.04em;
-}
-
-.contactDetailVal {
-  font-size: 15px;
-  font-weight: 750;
-  color: #0F172A;
-}
-
-/* Form Container on White/Ivory Card */
-.formCol {
-  background: #FFFFFF;
-  border: 1.5px solid #CBD5E1;
-  border-radius: 20px;
-  padding: 30px;
-  box-shadow: 
-    inset 0 1.5px 0 #FFFFFF,
-    0 12px 28px -6px rgba(11, 32, 147, 0.08);
-}
-
-.formHeader {
-  margin-bottom: 20px;
-}
-
-.formTitle {
-  font-family: var(--font-display, inherit);
-  font-size: 20px;
-  font-weight: 800;
-  color: #0F172A;
-  margin-bottom: 4px;
-}
-
-.formSub {
-  font-size: 14px;
-  color: #64748B;
-}
-
-.simpleForm {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.inputField {
-  width: 100%;
-  padding: 13px 16px;
-  border-radius: 10px;
-  border: 1.5px solid #CBD5E1;
-  background: #F8FAFC;
-  color: #0F172A;
-  font-family: inherit;
-  font-size: 15px;
-  outline: none;
-  transition: all 0.2s ease;
-}
-
-.inputField:focus {
-  border-color: #0B2093;
-  background: #FFFFFF;
-  box-shadow: 0 0 0 3px rgba(11, 32, 147, 0.12);
-}
-
-.inputField::placeholder {
-  color: #94A3B8;
-}
-
-.selectField {
-  width: 100%;
-  padding: 13px 16px;
-  border-radius: 10px;
-  border: 1.5px solid #CBD5E1;
-  background: #F8FAFC;
-  color: #0F172A;
-  font-family: inherit;
-  font-size: 15px;
-  outline: none;
-  cursor: pointer;
-}
-
-.selectField:focus {
-  border-color: #0B2093;
-  background: #FFFFFF;
-  box-shadow: 0 0 0 3px rgba(11, 32, 147, 0.12);
-}
-
-.textareaField {
-  width: 100%;
-  padding: 13px 16px;
-  border-radius: 10px;
-  border: 1.5px solid #CBD5E1;
-  background: #F8FAFC;
-  color: #0F172A;
-  font-family: inherit;
-  font-size: 15px;
-  outline: none;
-  min-height: 85px;
-  resize: vertical;
-}
-
-.textareaField:focus {
-  border-color: #0B2093;
-  background: #FFFFFF;
-  box-shadow: 0 0 0 3px rgba(11, 32, 147, 0.12);
-}
-
-.submitBtn {
-  width: 100%;
-  padding: 15px;
-  border-radius: 10px;
-  border: none;
-  background: linear-gradient(135deg, #122E9E 0%, #0B2093 50%, #0D007F 100%);
-  color: #FFFFFF;
-  font-family: var(--font-display, inherit);
-  font-size: 16px;
-  font-weight: 800;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  box-shadow: 
-    inset 0 1.5px 0 rgba(255, 255, 255, 0.35),
-    0 8px 24px rgba(11, 32, 147, 0.4);
-}
-
-.submitBtn:hover {
-  transform: translateY(-2px);
-  box-shadow: 
-    inset 0 2px 0 rgba(255, 255, 255, 0.5),
-    0 12px 28px rgba(11, 32, 147, 0.55);
-}
-
-.formSuccessAlert {
-  background: #ECFDF5;
-  border: 1px solid #10B981;
-  border-radius: 12px;
-  padding: 18px;
-  text-align: center;
-  color: #047857;
-  font-size: 15px;
-  font-weight: 700;
+  color: #0B2093;
+  opacity: 0.85;
 }

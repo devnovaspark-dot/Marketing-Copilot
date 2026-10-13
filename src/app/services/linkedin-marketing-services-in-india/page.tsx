@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import ScrollReveal from '@/components/ScrollReveal';
 import BeamButton from '@/components/BeamButton';
 import QuickConnectMapSection from '@/app/_components/QuickConnectMapSection';
@@ -313,65 +312,8 @@ const faqsList = [
 export default function LinkedInMarketingPage() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
-  // Simple Enquiry Form State
-  const [form, setForm] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    company: '',
-    budget: '₹50,000 – ₹1,50,000 / month',
-    message: '',
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
   const toggleFaq = (index: number) => {
     setOpenFaqIndex((prev) => (prev === index ? null : index));
-  };
-
-  const handleFormSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!form.name.trim() || !form.email.trim()) return;
-
-    setIsSubmitting(true);
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: form.name.trim(),
-          email: form.email.trim(),
-          phone: form.phone.trim(),
-          company: form.company.trim(),
-          budget: form.budget,
-          services: ['LinkedIn Marketing Services in India'],
-          message: form.message.trim() || 'LinkedIn marketing plan inquiry',
-        }),
-      });
-
-      if (res.ok) {
-        setIsSubmitted(true);
-      } else {
-        await fetch('https://formsubmit.co/ajax/novasdmagency@gmail.com', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            'Full Name': form.name,
-            'Email': form.email,
-            'Phone': form.phone,
-            'Company': form.company,
-            'Budget': form.budget,
-            'Service': 'LinkedIn Marketing Services in India',
-            'Message': form.message,
-          }),
-        });
-        setIsSubmitted(true);
-      }
-    } catch {
-      setIsSubmitted(true);
-    } finally {
-      setIsSubmitting(false);
-    }
   };
 
   return (
@@ -859,178 +801,45 @@ export default function LinkedInMarketingPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          SECTION 9: FINAL CTA & ENQUIRY FORM
-          Aligned 100% with Marketing Copilot homeStyleCtaBox
+          SECTION 9: FINAL PRE-FOOTER CTA CARD
+          * Matches Homepage CTASection / .innerBox *
          ══════════════════════════════════════════════════ */}
       <section className={styles.homeStyleCtaSection} id="enquiry-section">
         <div className="container">
           <div className={styles.homeStyleCtaBox}>
-            <div className={styles.ctaInnerGrid}>
-              {/* Left Column: Business Invitation & Contact Details */}
-              <div className={styles.ctaInfoCol}>
-                <ScrollReveal>
-                  <div className={styles.ctaEyebrowBadge}>
-                    <span className={styles.bluePulseDot} />
-                    <span>Turn Connections Into Clients</span>
-                  </div>
-                  <h2 className={styles.ctaHeadline}>
-                    Ready to Turn LinkedIn Into a <span className="accent-gradient">B2B Growth Channel?</span>
-                  </h2>
-                  <p className={styles.ctaParagraph}>
-                    Discuss your target audience, lead-generation objectives, and marketing budget with our specialist team. We build custom campaigns aligned with your sales pipeline.
-                  </p>
-                </ScrollReveal>
-
-                {/* Verified Business Contact Details */}
-                <div className={styles.contactDetailsList}>
-                  <a href="tel:+918280788689" className={styles.contactDetailItem} title="Call us directly">
-                    <div className={styles.contactDetailIcon}>
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                      </svg>
-                    </div>
-                    <div className={styles.contactDetailText}>
-                      <span className={styles.contactDetailLabel}>Call Strategist Directly</span>
-                      <span className={styles.contactDetailVal}>+91 82807 88689</span>
-                    </div>
-                  </a>
-
-                  <a href="mailto:info@marketingcopilot.in" className={styles.contactDetailItem} title="Send an email">
-                    <div className={styles.contactDetailIcon}>
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                        <rect width="20" height="16" x="2" y="4" rx="2" />
-                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                      </svg>
-                    </div>
-                    <div className={styles.contactDetailText}>
-                      <span className={styles.contactDetailLabel}>Official Work Email</span>
-                      <span className={styles.contactDetailVal}>info@marketingcopilot.in</span>
-                    </div>
-                  </a>
-
-                  <a
-                    href="https://wa.me/918280788689?text=Hi%20Marketing%20Copilot%2C%20I%20want%20to%20discuss%20a%20LinkedIn%20marketing%20growth%20strategy"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.contactDetailItem}
-                    title="WhatsApp consultation"
-                  >
-                    <div className={styles.contactDetailIcon}>
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
-                      </svg>
-                    </div>
-                    <div className={styles.contactDetailText}>
-                      <span className={styles.contactDetailLabel}>WhatsApp Strategist</span>
-                      <span className={styles.contactDetailVal}>Chat Instantly Online</span>
-                    </div>
-                  </a>
-
-                  <div className={styles.contactDetailItem}>
-                    <div className={styles.contactDetailIcon}>
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
-                        <circle cx="12" cy="10" r="3" />
-                      </svg>
-                    </div>
-                    <div className={styles.contactDetailText}>
-                      <span className={styles.contactDetailLabel}>Verified Headquarters</span>
-                      <span className={styles.contactDetailVal}>Mallick Complex, Kharvela Nagar, Bhubaneswar, Odisha</span>
-                    </div>
-                  </div>
-                </div>
+            <ScrollReveal className="text-center">
+              <div className="eyebrow eyebrow-center">
+                <span className="eyebrow-dot" />
+                <span>Turn Connections Into Clients</span>
               </div>
 
-              {/* Right Column: Clean White/Slate Form */}
-              <div className={styles.formCol}>
-                <div className={styles.formHeader}>
-                  <h3 className={styles.formTitle}>Get Your LinkedIn Marketing Plan</h3>
-                  <p className={styles.formSub}>
-                    Fill in your details below for a tailored proposal and consultation.
-                  </p>
-                </div>
+              <h2 className={`display-xl ${styles.homeCtaHeadline}`}>
+                Ready to Turn LinkedIn Into a{' '}
+                <span className="accent-gradient">B2B Growth Channel?</span>
+              </h2>
 
-                {isSubmitted ? (
-                  <div className={styles.formSuccessAlert}>
-                    ✓ Thank you! Your LinkedIn marketing plan request has been received. Our senior B2B strategist will reach out within 2 hours.
-                  </div>
-                ) : (
-                  <form className={styles.simpleForm} onSubmit={handleFormSubmit}>
-                    <div>
-                      <input
-                        type="text"
-                        required
-                        placeholder="Your Full Name *"
-                        className={styles.inputField}
-                        value={form.name}
-                        onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      />
-                    </div>
+              <p className={`body-lg ${styles.homeCtaSub}`}>
+                Discuss your target audience, lead-generation objectives, and marketing budget with our specialist team. We build custom campaigns aligned with your sales pipeline.
+              </p>
 
-                    <div>
-                      <input
-                        type="email"
-                        required
-                        placeholder="Work Email Address *"
-                        className={styles.inputField}
-                        value={form.email}
-                        onChange={(e) => setForm({ ...form, email: e.target.value })}
-                      />
-                    </div>
-
-                    <div>
-                      <input
-                        type="tel"
-                        placeholder="Phone / WhatsApp Number *"
-                        className={styles.inputField}
-                        value={form.phone}
-                        onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                      />
-                    </div>
-
-                    <div>
-                      <input
-                        type="text"
-                        placeholder="Company Name &amp; Website"
-                        className={styles.inputField}
-                        value={form.company}
-                        onChange={(e) => setForm({ ...form, company: e.target.value })}
-                      />
-                    </div>
-
-                    <div>
-                      <select
-                        className={styles.selectField}
-                        value={form.budget}
-                        onChange={(e) => setForm({ ...form, budget: e.target.value })}
-                      >
-                        <option value="₹50,000 – ₹1,50,000 / month">Budget: ₹50,000 – ₹1,50,000 / mo</option>
-                        <option value="₹1,50,000 – ₹3,00,000 / month">Budget: ₹1,50,000 – ₹3,00,000 / mo</option>
-                        <option value="₹3,00,000 – ₹5,00,000 / month">Budget: ₹3,00,000 – ₹5,00,000 / mo</option>
-                        <option value="₹5,00,000+ / month">Budget: ₹5,00,000+ / month (Enterprise)</option>
-                      </select>
-                    </div>
-
-                    <div>
-                      <textarea
-                        placeholder="Briefly describe your audience &amp; lead-generation goals..."
-                        className={styles.textareaField}
-                        value={form.message}
-                        onChange={(e) => setForm({ ...form, message: e.target.value })}
-                      />
-                    </div>
-
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className={styles.submitBtn}
-                    >
-                      {isSubmitting ? 'Submitting Request...' : 'Get Your LinkedIn Marketing Plan →'}
-                    </button>
-                  </form>
-                )}
+              <div className={styles.ctaActions}>
+                <BeamButton
+                  href="/contact"
+                  label="Get Your LinkedIn Marketing Plan →"
+                  size="lg"
+                />
+                <BeamButton
+                  href="tel:+918280788689"
+                  label="Talk to Our Team (+91 82807 88689)"
+                  size="lg"
+                  variant="outline"
+                />
               </div>
-            </div>
+
+              <div className={styles.ctaBrandPunchline}>
+                Marketing Copilot — Strategy. Connections. Pipeline.
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
