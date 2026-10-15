@@ -1,6 +1,14 @@
 import type { MetadataRoute } from 'next';
+import { sanityFetch } from '@/sanity/client';
 
-export default function sitemap(): MetadataRoute.Sitemap {
+interface SanityPostSitemapItem {
+  slug: string;
+  publishedAt?: string;
+  _createdAt?: string;
+  noIndex?: boolean;
+}
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://marketingcopilot.in';
   const currentDate = new Date();
 
@@ -120,22 +128,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  // Blog Articles
-  const articles = [
-    'future-of-performance-marketing',
-    'seo-in-2026',
-    'building-brand-recall',
-    'social-media-strategy-2026',
-    'roas-myths',
-    'website-conversion-rate',
-  ];
+  // Fetch real published blog articles dynamically from Sanity CMS
+  const sanityPosts = await sanityFetch<SanityPostSitemapItem[]>({
+    query: `*[_type == "post" && defined(slug.current) && noIndex != true] | order(coalesce(publishedAt, _createdAt) desc) {
+      "slug": slug.current,
+      publishedAt,
+      _createdAt
+    }`,
+    revalidate: 3600,
+  }).catch(() => []);
 
-  const articleRoutes: MetadataRoute.Sitemap = articles.map((slug) => ({
-    url: `${baseUrl}/blog/${slug}`,
-    lastModified: currentDate,
-    changeFrequency: 'monthly',
-    priority: 0.7,
-  }));
+  const articleRoutes: MetadataRoute.Sitemap = (sanityPosts || []).map((post) => {
+    const postDate = post.publishedAt || post._createdAt;
+    return {
+      url: `${baseUrl}/blog/${post.slug}`,
+      lastModified: postDate ? new Date(postDate) : currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    };
+  });
 
   return [
     ...coreRoutes,

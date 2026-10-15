@@ -163,33 +163,15 @@
 
   <!-- Blog Articles -->
   <url>
-    <loc>https://marketingcopilot.in/blog/future-of-performance-marketing</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://marketingcopilot.in/blog/what-is-the-3-3-3-rule-for-marketing</loc>
+    <lastmod>2026-10-13T14:46:51.255Z</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://marketingcopilot.in/blog/seo-in-2026</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://marketingcopilot.in/blog/building-brand-recall</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://marketingcopilot.in/blog/social-media-strategy-2026</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://marketingcopilot.in/blog/roas-myths</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://marketingcopilot.in/blog/website-conversion-rate</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://marketingcopilot.in/blog/how-do-you-choose-the-right-digital-marketing-service</loc>
+    <lastmod>2026-10-10T13:31:00.000Z</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 </urlset>

@@ -20,7 +20,10 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://marketingcopilot.in"),
   verification: {
-    google: "79f0bLLJO5DmUzDFyrPHZ1vouQGfmYsHB5NZ594DHww",
+    google: [
+      "79f0bLLJO5DmUzDFyrPHZ1vouQGfmYsHB5NZ594DHww",
+      "5D3X40W6rfGnfD9IlLM8_VrqEc5qRHBROY1_WrByEBs",
+    ],
   },
   robots: {
     index: true,
@@ -295,6 +298,19 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${plusJakartaSans.variable} ${inter.variable}`}>
       <head>
+        {/* Google tag (gtag.js) */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-4C849ZR6BL"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-4C849ZR6BL');`,
+          }}
+        />
         {/* Google Tag Manager */}
         <script
           dangerouslySetInnerHTML={{
@@ -307,6 +323,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         />
         {/* End Google Tag Manager */}
         <meta name="google-site-verification" content="79f0bLLJO5DmUzDFyrPHZ1vouQGfmYsHB5NZ594DHww" />
+        <meta name="google-site-verification" content="5D3X40W6rfGnfD9IlLM8_VrqEc5qRHBROY1_WrByEBs" />
         <link rel="describedby" href="/llms.txt" />
         <script
           type="application/ld+json"
