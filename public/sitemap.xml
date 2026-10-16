@@ -160,18 +160,5 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
-  <!-- Blog Articles -->
-  <url>
-    <loc>https://marketingcopilot.in/blog/what-is-the-3-3-3-rule-for-marketing</loc>
-    <lastmod>2026-10-13T14:46:51.255Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://marketingcopilot.in/blog/how-do-you-choose-the-right-digital-marketing-service</loc>
-    <lastmod>2026-10-10T13:31:00.000Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
 </urlset>
+

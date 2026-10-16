@@ -3,3 +3,4 @@ Allow: /
 Disallow: /thank-you
 
 Sitemap: https://marketingcopilot.in/sitemap.xml
+Sitemap: https://marketingcopilot.in/blog/sitemap.xml
