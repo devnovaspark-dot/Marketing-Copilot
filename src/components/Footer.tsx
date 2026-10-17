@@ -269,12 +269,6 @@ export default function Footer() {
             </p>
 
             <div className={styles.legalAndTop}>
-              <div className={styles.legalLinks}>
-                <Link href="/privacy" className={styles.legalAnchor}>Privacy Policy</Link>
-                <span className={styles.legalDivider}>•</span>
-                <Link href="/terms" className={styles.legalAnchor}>Terms &amp; Conditions</Link>
-              </div>
-
               <button
                 type="button"
                 onClick={scrollToTop}
