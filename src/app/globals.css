@@ -517,13 +517,18 @@ ul, ol {
 /* ── Ultra-Smooth Scroll Animations ── */
 .reveal {
   opacity: 0;
-  transform: translate3d(0, 32px, 0);
-  filter: blur(6px);
-  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
-              filter 0.85s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform, filter;
+  transform: translate3d(0, 20px, 0);
+  transition: opacity 0.45s ease-out, transform 0.45s ease-out;
   box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
 }
 
 /* Grids where cards wrapped in reveal need to take full column height */
@@ -570,8 +575,7 @@ ul, ol {
 
 .reveal.visible {
   opacity: 1;
-  transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0deg);
-  filter: blur(0);
+  transform: translate3d(0, 0, 0);
 }
 
 /* ── Skeuomorphic Card System & Equal-Height Stretch ── */
