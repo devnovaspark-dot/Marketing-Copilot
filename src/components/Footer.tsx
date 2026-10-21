@@ -70,7 +70,7 @@ export default function Footer() {
                     <div className={styles.footerBrandTaglineCol}>
                       <span className={styles.footerBrandPrimaryText}>Your Business, Our Strategies</span>
                       <span className={styles.footerBrandSubText}>
-                        <span className={styles.footerBrandSparkle}>✦</span> Powered by Marketing Copilot
+                        <span className={styles.footerBrandSparkle}>✦</span> Powered by NovaSpark
                       </span>
                     </div>
                   </div>

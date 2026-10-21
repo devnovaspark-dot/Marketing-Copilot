@@ -553,10 +553,16 @@
   transition: opacity 0.5s ease-in-out;
 }
 
+/* Ensure the first slide is immediately visible with zero transition delay for optimal LCP */
+.slideItem:first-child {
+  opacity: 1;
+  z-index: 1;
+}
+
 .slideActive {
   opacity: 1;
   pointer-events: auto;
-  z-index: 1;
+  z-index: 2;
 }
 
 .slideImage {
@@ -932,12 +938,11 @@
   .splashCyan,
   .splashViolet,
   .splashAmber {
-    animation: none !important;
-    filter: blur(40px) !important;
-    opacity: 0.35 !important;
+    display: none !important;
   }
 
   .hero {
+    background: radial-gradient(circle at 85% 15%, rgba(2, 132, 199, 0.08) 0%, transparent 55%), #FFFFFF;
     padding-top: calc(var(--nav-height) + 16px);
     padding-bottom: 44px;
   }

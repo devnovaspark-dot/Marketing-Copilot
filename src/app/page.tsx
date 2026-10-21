@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import HeroSection from './_components/HeroSection';
-import ClientsSection from './_components/ClientsSection';
+
+const ClientsSection = dynamic(() => import('./_components/ClientsSection'));
 
 const QuickConnectMapSection = dynamic(() => import('./_components/QuickConnectMapSection'));
 const StoryVideoSection = dynamic(() => import('./_components/StoryVideoSection'));

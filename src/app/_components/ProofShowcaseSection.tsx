@@ -150,7 +150,7 @@ export default function ProofShowcaseSection() {
                 <div className={styles.cardVisualWrapper}>
                   <div className={styles.imageInnerFrame}>
                     <Image
-                      src={item.webpFile || item.file}
+                      src={(item.webpFile || item.file).replace(/\\/g, '/')}
                       alt={item.title}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -253,7 +253,7 @@ export default function ProofShowcaseSection() {
             <div className={styles.modalImageStage}>
               <div className={styles.modalImageTransformWrap}>
                 <Image
-                  src={activeModalItem.webpFile || activeModalItem.file}
+                  src={(activeModalItem.webpFile || activeModalItem.file).replace(/\\/g, '/')}
                   alt={activeModalItem.title}
                   width={1400}
                   height={900}

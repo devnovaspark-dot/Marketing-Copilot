@@ -163,9 +163,8 @@ export default function Header() {
             className={styles.logoImg}
           />
           <div className={styles.brandTaglineCol}>
-            <span className={styles.brandPrimaryText}>Your Business, Our Strategies</span>
             <span className={styles.brandSubText}>
-              <span className={styles.brandSparkle}>✦</span> Powered by Marketing Copilot
+              <span className={styles.brandSparkle}>✦</span> Powered by NovaSpark
             </span>
           </div>
         </Link>
@@ -308,7 +307,7 @@ export default function Header() {
                           width={400}
                           height={335}
                           className={styles.spotlightGraphicImg}
-                          priority
+                          loading="lazy"
                         />
                       </div>
 

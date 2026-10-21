@@ -1,6 +1,6 @@
 User-agent: *
-Allow: /
 Disallow: /thank-you
+Disallow: /insights/
 
 Sitemap: https://marketingcopilot.in/sitemap.xml
 Sitemap: https://marketingcopilot.in/blog/sitemap.xml
