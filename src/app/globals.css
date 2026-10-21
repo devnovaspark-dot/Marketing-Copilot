@@ -531,6 +531,12 @@ ul, ol {
   }
 }
 
+/* ── Deep Offscreen Section Rendering Optimization ── */
+.section-cv {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 700px;
+}
+
 /* Grids where cards wrapped in reveal need to take full column height */
 .grid > .reveal,
 .topGrid > .reveal,

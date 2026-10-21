@@ -61,11 +61,26 @@ export default function StrategySection() {
   const [mobileStep, setMobileStep] = useState<number>(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState<boolean>(true);
 
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const [isSectionVisible, setIsSectionVisible] = useState<boolean>(false);
   const touchStartX = useRef<number | null>(null);
   const touchEndX = useRef<number | null>(null);
   const resumeTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   const activeMobileStage = stages[mobileStep];
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsSectionVisible(entry.isIntersecting);
+      },
+      { rootMargin: '200px' }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   const handlePrev = useCallback(() => {
     setMobileStep((prev) => (prev === 0 ? stages.length - 1 : prev - 1));
@@ -83,16 +98,16 @@ export default function StrategySection() {
     }, durationMs);
   }, []);
 
-  // Automatic progression for mobile carousel & circular nodes
+  // Automatic progression for mobile carousel & circular nodes (only when section visible)
   useEffect(() => {
-    if (!isAutoPlaying) return;
+    if (!isSectionVisible || !isAutoPlaying) return;
 
     const interval = setInterval(() => {
       setMobileStep((prev) => (prev + 1) % stages.length);
     }, 3800);
 
     return () => clearInterval(interval);
-  }, [isAutoPlaying]);
+  }, [isSectionVisible, isAutoPlaying]);
 
   useEffect(() => {
     return () => {
@@ -123,7 +138,7 @@ export default function StrategySection() {
   };
 
   return (
-    <section className={styles.section} id="growth-framework">
+    <section className={styles.section} id="growth-framework" ref={sectionRef}>
       <div className={styles.bgGlow} />
 
       <div className="container">

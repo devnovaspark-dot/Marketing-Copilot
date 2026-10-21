@@ -58,19 +58,19 @@ export default function HomePage() {
     <>
       <HeroSection />
       <ClientsSection />
-      <QuickConnectMapSection />
-      <BrandSpotlightSection />
-      <StoryVideoSection />
-      <MetricsSection />
-      <ProofShowcaseSection />
-      <ServicesSection />
-      <StrategySection />
-      <QuotesSection />
-      <TeamPreview />
-      <WhyChooseSection />
-      <RealGrowthSection />
-      <FAQSection />
-      <CTASection />
+      <div className="section-cv"><QuickConnectMapSection /></div>
+      <div className="section-cv"><BrandSpotlightSection /></div>
+      <div className="section-cv"><StoryVideoSection /></div>
+      <div className="section-cv"><MetricsSection /></div>
+      <div className="section-cv"><ProofShowcaseSection /></div>
+      <div className="section-cv"><ServicesSection /></div>
+      <div className="section-cv"><StrategySection /></div>
+      <div className="section-cv"><QuotesSection /></div>
+      <div className="section-cv"><TeamPreview /></div>
+      <div className="section-cv"><WhyChooseSection /></div>
+      <div className="section-cv"><RealGrowthSection /></div>
+      <div className="section-cv"><FAQSection /></div>
+      <div className="section-cv"><CTASection /></div>
     </>
   );
 }

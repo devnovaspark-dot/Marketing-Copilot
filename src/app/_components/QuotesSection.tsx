@@ -62,9 +62,24 @@ const testimonials = [
 export default function QuotesSection() {
   const [current, setCurrent] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement | null>(null);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
   const touchStartX = useRef<number | null>(null);
   const touchEndX = useRef<number | null>(null);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { rootMargin: '200px' }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   const handleNext = useCallback(() => {
     setCurrent((prev) => (prev + 1) % testimonials.length);
@@ -74,9 +89,9 @@ export default function QuotesSection() {
     setCurrent((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   }, []);
 
-  // Smooth Auto-Slide every 5.5 seconds (pauses on interaction)
+  // Smooth Auto-Slide every 5.5 seconds (only when visible, pauses on interaction)
   useEffect(() => {
-    if (isPaused) return;
+    if (!isVisible || isPaused) return;
 
     timerRef.current = setInterval(() => {
       handleNext();
@@ -85,7 +100,7 @@ export default function QuotesSection() {
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
-  }, [isPaused, handleNext]);
+  }, [isVisible, isPaused, handleNext]);
 
   // Touch Swipe Handlers
   const onTouchStart = (e: React.TouchEvent) => {
@@ -115,6 +130,7 @@ export default function QuotesSection() {
 
   return (
     <section 
+      ref={sectionRef}
       className={styles.section}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}

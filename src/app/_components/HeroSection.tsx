@@ -35,15 +35,15 @@ export default function HeroSection() {
   useEffect(() => {
     setIsMounted(true);
 
-    // Warm up slides 2 & 3 right before first transition (after critical LCP window)
+    // Warm up slides 2 & 3 well after critical initial LCP measurement window
     const warmupTimer = setTimeout(() => {
       setLoadSecondarySlides(true);
-    }, 2800);
+    }, 5000);
 
     timerRef.current = setInterval(() => {
       setLoadSecondarySlides(true);
       setCurrent((prev) => (prev + 1) % heroSlides.length);
-    }, 4500);
+    }, 7000);
 
     return () => {
       clearTimeout(warmupTimer);

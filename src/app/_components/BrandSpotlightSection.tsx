@@ -509,14 +509,14 @@ export default function BrandSpotlightSection() {
     return () => observer.disconnect();
   }, []);
 
-  // Carousel auto-advance (every 4.5s, pauses on hover)
+  // Carousel auto-advance (every 4.5s, pauses on hover, only when section is visible)
   useEffect(() => {
-    if (isHovered) return;
+    if (!isSectionVisible || isHovered) return;
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % activeBrand.slides.length);
     }, 4500);
     return () => clearInterval(interval);
-  }, [isHovered, activeBrand.slides.length]);
+  }, [isSectionVisible, isHovered, activeBrand.slides.length]);
 
   const handlePrevSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev - 1 + activeBrand.slides.length) % activeBrand.slides.length);

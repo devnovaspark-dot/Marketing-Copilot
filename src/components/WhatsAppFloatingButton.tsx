@@ -1,16 +1,34 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import styles from './WhatsAppFloatingButton.module.css';
 
 export default function WhatsAppFloatingButton() {
   const pathname = usePathname();
-  if (pathname?.startsWith('/studio')) {
-    return null;
-  }
-
+  const [mounted, setMounted] = useState(false);
   const [isWaClicked, setIsWaClicked] = useState(false);
   const [isPhoneClicked, setIsPhoneClicked] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    if ('requestIdleCallback' in window) {
+      const handle = (window as unknown as { requestIdleCallback: (cb: () => void, opts: { timeout: number }) => number }).requestIdleCallback(() => {
+        setMounted(true);
+      }, { timeout: 2500 });
+      return () => {
+        if ('cancelIdleCallback' in window) {
+          (window as unknown as { cancelIdleCallback: (id: number) => void }).cancelIdleCallback(handle);
+        }
+      };
+    } else {
+      const timer = setTimeout(() => setMounted(true), 1500);
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
+  if (!mounted || pathname?.startsWith('/studio')) {
+    return null;
+  }
 
   const whatsappUrl = 'https://wa.me/918280788689?text=Hi%20Marketing%20Copilot%2C%20I%20would%20like%20to%20know%20more%20about%20your%20digital%20marketing%20services.';
   const phoneUrl = 'tel:+918280788689';
