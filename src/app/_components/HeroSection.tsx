@@ -130,7 +130,7 @@ export default function HeroSection() {
                       priority={idx === 0}
                       fetchPriority={idx === 0 ? 'high' : 'auto'}
                       loading={idx === 0 ? 'eager' : 'lazy'}
-                      quality={75}
+                      quality={70}
                       sizes="(max-width: 640px) calc(100vw - 28px), (max-width: 1024px) 50vw, 680px"
                       className={styles.slideImage}
                     />

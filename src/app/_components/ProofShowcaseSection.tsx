@@ -154,7 +154,8 @@ export default function ProofShowcaseSection() {
                       alt={item.title}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      quality={92}
+                      quality={75}
+                      loading="lazy"
                       className={styles.proofCardImg}
                     />
 

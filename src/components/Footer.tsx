@@ -60,10 +60,11 @@ export default function Footer() {
                 <Link href="/" className={styles.logoAnchor}>
                   <div className={styles.logoPlate}>
                     <Image
-                      src="/images/marketing-copilot-brand.png"
+                      src="/images/marketing-copilot-brand.webp"
                       alt="Marketing Copilot Digital Marketing Agency"
-                      width={200}
-                      height={68}
+                      width={160}
+                      height={44}
+                      loading="lazy"
                       style={{ width: 'auto', height: '42px' }}
                       className={styles.logoImg}
                     />

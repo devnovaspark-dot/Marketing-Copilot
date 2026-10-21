@@ -154,10 +154,10 @@ export default function Header() {
         {/* Logo Lockup (Stacked) */}
         <Link href="/" className={styles.logo} aria-label="Marketing Copilot Homepage">
           <Image
-            src="/images/marketing-copilot-brand.png"
+            src="/images/marketing-copilot-brand.webp"
             alt="Marketing Copilot — Digital Marketing Agency India"
-            width={200}
-            height={68}
+            width={160}
+            height={44}
             loading="lazy"
             style={{ width: 'auto', height: '32px' }}
             className={styles.logoImg}
