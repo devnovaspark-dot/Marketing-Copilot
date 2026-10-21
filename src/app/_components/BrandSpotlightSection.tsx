@@ -478,6 +478,11 @@ export default function BrandSpotlightSection() {
   };
 
   const [isSectionVisible, setIsSectionVisible] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   // Pause video when out of viewport & load poster when near viewport
   useEffect(() => {
@@ -627,6 +632,7 @@ export default function BrandSpotlightSection() {
         {/* ══════════════════════════════════════════════════
             DYNAMIC SHOWCASE CONTAINER (SIDE-BY-SIDE EQUAL HEIGHT)
            ══════════════════════════════════════════════════ */}
+        {isMounted && (
         <div
           key={`showcase-${activeBrand.id}-${showVideo ? 'video' : 'editorial'}`}
           className={showVideo ? styles.showcaseGrid : styles.dualPaneEditorialGrid}
@@ -959,6 +965,7 @@ export default function BrandSpotlightSection() {
             </div>
           </ScrollReveal>
         </div>
+        )}
 
         {/* Bottom Deliverables & CTA Strip */}
         <ScrollReveal direction="up" delay={0.15}>

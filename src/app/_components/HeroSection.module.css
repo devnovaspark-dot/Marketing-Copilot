@@ -557,6 +557,7 @@
 .slideItem:first-child {
   opacity: 1;
   z-index: 1;
+  transition: none !important;
 }
 
 .slideActive {

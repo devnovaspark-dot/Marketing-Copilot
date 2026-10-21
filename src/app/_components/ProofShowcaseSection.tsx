@@ -23,6 +23,11 @@ export default function ProofShowcaseSection() {
   const [searchQuery, setSearchQuery] = useState('');
   const [visibleCount, setVisibleCount] = useState(9);
   const [activeModalItem, setActiveModalItem] = useState<ProofItem | null>(null);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   // Compute category counts
   const categoryCounts = useMemo(() => {
@@ -139,7 +144,7 @@ export default function ProofShowcaseSection() {
 
         {/* Proof Grid with Skeuomorphic Tactile Depth */}
         <div className={styles.grid}>
-          {displayedItems.map((item, idx) => (
+          {isMounted && displayedItems.map((item, idx) => (
             <ScrollReveal key={item.file} delay={(idx % 3) * 60} className={styles.cardWrapper}>
               <div
                 className={styles.skeuomorphicCard}
