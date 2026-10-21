@@ -16,6 +16,7 @@ const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-body",
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -327,14 +328,14 @@ export default function RootLayout({
         </noscript>
         {/* End Google Tag Manager (noscript) */}
 
-        {/* Google tag (gtag.js) - Loaded after interactive to eliminate render-blocking resources */}
+        {/* Google tag (gtag.js) - Loaded on idle to eliminate render-blocking resources */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-4C849ZR6BL"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
         <Script
           id="google-analytics"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
@@ -344,10 +345,10 @@ export default function RootLayout({
             `,
           }}
         />
-        {/* Google Tag Manager */}
+        {/* Google Tag Manager - Loaded on idle */}
         <Script
           id="google-tag-manager"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

@@ -158,7 +158,7 @@ export default function Header() {
             alt="Marketing Copilot — Digital Marketing Agency India"
             width={200}
             height={68}
-            priority
+            loading="lazy"
             style={{ width: 'auto', height: '32px' }}
             className={styles.logoImg}
           />
