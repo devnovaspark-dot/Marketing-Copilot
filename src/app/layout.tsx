@@ -328,34 +328,48 @@ export default function RootLayout({
         </noscript>
         {/* End Google Tag Manager (noscript) */}
 
-        {/* Google tag (gtag.js) - Loaded on idle to eliminate render-blocking resources */}
+        {/* Unified High-Performance Analytics & GTM Loader (Prevents TBT spikes on mobile) */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-4C849ZR6BL"
-          strategy="lazyOnload"
-        />
-        <Script
-          id="google-analytics"
-          strategy="lazyOnload"
+          id="tracking-manager"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', 'G-4C849ZR6BL');
-            `,
-          }}
-        />
-        {/* Google Tag Manager - Loaded on idle */}
-        <Script
-          id="google-tag-manager"
-          strategy="lazyOnload"
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-              })(window,document,'script','dataLayer','GTM-5V4M4RFK');
+
+              function loadTrackingScripts() {
+                if (window.__trackingLoaded) return;
+                window.__trackingLoaded = true;
+
+                // Load GTM
+                (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                })(window,document,'script','dataLayer','GTM-5V4M4RFK');
+
+                // Load Google Analytics (gtag.js)
+                var ga = document.createElement('script');
+                ga.async = true;
+                ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-4C849ZR6BL';
+                document.head.appendChild(ga);
+              }
+
+              // Load instantly on first real user activity
+              ['touchstart', 'scroll', 'mousemove', 'click', 'keydown'].forEach(function(evt) {
+                window.addEventListener(evt, loadTrackingScripts, { once: true, passive: true });
+              });
+
+              // Idle fallback when no user activity occurs
+              if ('requestIdleCallback' in window) {
+                requestIdleCallback(function() {
+                  setTimeout(loadTrackingScripts, 3500);
+                });
+              } else {
+                setTimeout(loadTrackingScripts, 4000);
+              }
             `,
           }}
         />
