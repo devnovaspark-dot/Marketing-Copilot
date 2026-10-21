@@ -30,8 +30,8 @@ export default function ClientsSection() {
       <div className={styles.marqueeWrapper}>
         <div className={styles.fadeLeft} />
         <div className={styles.marqueeTrack}>
-          {/* Quadruple array for seamless, jitter-free continuous loop */}
-          {[...clientLogos, ...clientLogos, ...clientLogos, ...clientLogos].map((c, i) => (
+          {/* Duplicate array for seamless, continuous loop */}
+          {[...clientLogos, ...clientLogos].map((c, i) => (
             <div key={i} className={styles.clientItem} title={c.name}>
               <div className={styles.logoCard}>
                 <Image

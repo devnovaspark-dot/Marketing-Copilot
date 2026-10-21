@@ -29,19 +29,36 @@ const heroSlides = [
 export default function HeroSection() {
   const [current, setCurrent] = useState(0);
   const [isMounted, setIsMounted] = useState(false);
+  const [loadSecondarySlides, setLoadSecondarySlides] = useState(false);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Smooth auto-slide interval (3.5 seconds per slide for faster transition)
   useEffect(() => {
     setIsMounted(true);
+
+    // Warm up slides 2 & 3 right before first transition (after critical LCP window)
+    const warmupTimer = setTimeout(() => {
+      setLoadSecondarySlides(true);
+    }, 2800);
+
     timerRef.current = setInterval(() => {
+      setLoadSecondarySlides(true);
       setCurrent((prev) => (prev + 1) % heroSlides.length);
-    }, 3500);
+    }, 4500);
 
     return () => {
+      clearTimeout(warmupTimer);
       if (timerRef.current) clearInterval(timerRef.current);
     };
   }, []);
+
+  const handleDotClick = (idx: number) => {
+    setLoadSecondarySlides(true);
+    setCurrent(idx);
+    if (timerRef.current) clearInterval(timerRef.current);
+    timerRef.current = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % heroSlides.length);
+    }, 4500);
+  };
 
   return (
     <section className={styles.hero}>
@@ -100,7 +117,7 @@ export default function HeroSection() {
           <div className={styles.imageCard}>
             <div className={styles.imageViewport}>
               {heroSlides.map((slide, idx) => {
-                if (!isMounted && idx !== 0) return null;
+                if (idx !== 0 && !loadSecondarySlides && current === 0) return null;
                 return (
                   <div
                     key={slide.id}
@@ -114,7 +131,7 @@ export default function HeroSection() {
                       fetchPriority={idx === 0 ? 'high' : 'auto'}
                       loading={idx === 0 ? 'eager' : 'lazy'}
                       quality={75}
-                      sizes="(max-width: 640px) 480px, (max-width: 1024px) 600px, 680px"
+                      sizes="(max-width: 640px) calc(100vw - 28px), (max-width: 1024px) 50vw, 680px"
                       className={styles.slideImage}
                     />
                     <div className={styles.slideOverlay} />
@@ -134,7 +151,7 @@ export default function HeroSection() {
                   <button
                     key={idx}
                     className={`${styles.dot} ${idx === current ? styles.dotActive : ''}`}
-                    onClick={() => setCurrent(idx)}
+                    onClick={() => handleDotClick(idx)}
                     aria-label={`Switch to slide ${idx + 1}`}
                   />
                 ))}
