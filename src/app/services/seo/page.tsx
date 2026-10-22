@@ -156,8 +156,8 @@ const allInOneSolutions = [
   },
 ];
 
-// Why Businesses Choose Nova Spark for SEO Growth
-const whyChooseNovaSpark = [
+// Why Businesses Choose Marketing Copilot for SEO Growth
+const whyChooseMarketingCopilot = [
   {
     num: '01',
     title: 'Experience That Supports Long-Term Growth',
@@ -180,7 +180,7 @@ const whyChooseNovaSpark = [
   },
 ];
 
-// The Nova Spark SEO Growth Process (6 Steps)
+// The Marketing Copilot SEO Growth Process (6 Steps)
 const growthProcessSteps = [
   {
     step: '01',
@@ -284,11 +284,11 @@ export default function SEOPage() {
                 SEO That Drives Traffic, Leads, and <span className="accent-gradient">Business Growth</span>
               </h2>
 
-              <p className={styles.heroSub} style={{ marginBottom: 16 }}>
-                Search engine optimisation helps your website appear in relevant search results and connect with potential customers. At Nova Spark, we focus on improving online visibility, attracting quality traffic, and supporting long-term business growth.
+              <p className={styles.heroSub} style={{ marginBottom: 14 }}>
+                Search engine optimisation helps your website appear in relevant search results and connect with potential customers. At Marketing Copilot, we focus on improving online visibility, attracting quality traffic, and supporting long-term business growth.
               </p>
 
-              <p className={styles.heroSub} style={{ marginTop: 0, marginBottom: 28, fontSize: '16px' }}>
+              <p className={styles.heroSub} style={{ marginTop: 0, marginBottom: 28 }}>
                 Our SEO approach combines technical optimisation, keyword research, content creation, and link building to help businesses strengthen their search presence. We create strategies based on your goals, audience, and industry competition to improve website performance and generate meaningful results.
               </p>
 
@@ -327,7 +327,7 @@ export default function SEOPage() {
                   Ready to Improve Your Google Rankings?
                 </h3>
                 <p className={styles.heroReadyText}>
-                  Partner with Nova Spark for SEO strategies tailored to your business goals. Contact our team today to discuss your website&apos;s SEO needs and discover opportunities to grow organic traffic, generate leads, and reach more customers.
+                  Partner with Marketing Copilot for SEO strategies tailored to your business goals. Contact our team today to discuss your website&apos;s SEO needs and discover opportunities to grow organic traffic, generate leads, and reach more customers.
                 </p>
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
                   <BeamButton
@@ -637,7 +637,7 @@ export default function SEOPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          6. OUR PROCESS — THE NOVA SPARK SEO GROWTH PROCESS
+          6. OUR PROCESS — THE MARKETING COPILOT SEO GROWTH PROCESS
          ══════════════════════════════════════════════════ */}
       <section id="process" className={styles.processSection}>
         <div className="container">
@@ -647,7 +647,7 @@ export default function SEOPage() {
                 <span>Our Process</span>
               </div>
               <h2 className={styles.sectionTitle}>
-                The Nova Spark SEO <span className="accent-gradient">Growth Process</span>
+                The Marketing Copilot SEO <span className="accent-gradient">Growth Process</span>
               </h2>
               <p className={styles.sectionSub}>
                 We take a holistic approach to SEO that includes six key steps for sustainable organic growth: website analysis, strategic planning, technical optimization, content creation, authority building, and performance tracking.
@@ -671,20 +671,20 @@ export default function SEOPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          7. WHY BUSINESSES CHOOSE NOVA SPARK FOR SEO GROWTH
+          7. WHY BUSINESSES CHOOSE MARKETING COPILOT FOR SEO GROWTH
          ══════════════════════════════════════════════════ */}
       <section className={styles.specialSection}>
         <div className="container">
           <ScrollReveal>
             <div className="text-center" style={{ maxWidth: 880, margin: '0 auto' }}>
               <div className={styles.sectionEyebrow}>
-                <span>The Nova Spark Advantage</span>
+                <span>The Marketing Copilot Advantage</span>
               </div>
               <h2 className={styles.sectionTitle}>
-                Why Businesses Choose Nova Spark for <span className="accent-gradient">SEO Growth</span>
+                Why Businesses Choose Marketing Copilot for <span className="accent-gradient">SEO Growth</span>
               </h2>
               <p className={styles.sectionSub}>
-                At Nova Spark, we focus on practical SEO strategies, quality content, and measurable improvements to help businesses strengthen online visibility and attract relevant customers.
+                At Marketing Copilot, we focus on practical SEO strategies, quality content, and measurable improvements to help businesses strengthen online visibility and attract relevant customers.
               </p>
             </div>
 
@@ -693,7 +693,7 @@ export default function SEOPage() {
               <div className={styles.specialImgWrapper}>
                 <Image
                   src="/images/SEO strategy_team.jpg"
-                  alt="Nova Spark SEO Strategy Team"
+                  alt="Marketing Copilot SEO Strategy Team"
                   fill
                   sizes="(max-width: 1024px) 100vw, 480px"
                   className={styles.specialImg}
@@ -703,14 +703,14 @@ export default function SEOPage() {
                     &quot;Practical SEO strategies, quality content, and measurable improvements for sustainable business growth.&quot;
                   </p>
                   <span className={styles.specialImgSub}>
-                    Nova Spark Digital Strategy Lab · Bhubaneswar HQ
+                    Marketing Copilot Digital Strategy Lab · Bhubaneswar HQ
                   </span>
                 </div>
               </div>
 
               {/* 4 Skeuomorphic Core Philosophy Cards */}
               <div className={styles.specialGrid}>
-                {whyChooseNovaSpark.map((c) => (
+                {whyChooseMarketingCopilot.map((c) => (
                   <div key={c.title} className={styles.specialCard}>
                     <span className={styles.specialNumber}>{c.num}</span>
                     <h3 className={styles.specialTitle}>{c.title}</h3>
@@ -797,15 +797,15 @@ export default function SEOPage() {
 
               <h2 className={styles.ctaHeadline}>
                 Get Found Faster with{' '}
-                <span className="accent-gradient">Nova Spark SEO Services</span>
+                <span className="accent-gradient">Marketing Copilot SEO Services</span>
               </h2>
 
               <p className={styles.ctaDescription}>
-                Get in touch with Nova Spark and start building a stronger organic presence that drives traffic, leads, and business growth.
+                Get in touch with Marketing Copilot and start building a stronger organic presence that drives traffic, leads, and business growth.
               </p>
 
               <div className={styles.ctaBrandPunchline}>
-                Nova Spark — SEO That Drives Traffic, Leads, and Business Growth
+                Marketing Copilot — SEO That Drives Traffic, Leads, and Business Growth
               </div>
 
               <div className={styles.ctaActions}>
