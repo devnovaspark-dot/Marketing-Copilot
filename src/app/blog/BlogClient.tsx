@@ -31,8 +31,14 @@ export default function BlogClient({ articles = [] }: { articles: Article[] }) {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
   const [bookmarkedSlugs, setBookmarkedSlugs] = useState<Set<string>>(new Set());
+  const [visibleCount, setVisibleCount] = useState(4);
 
   const sortRef = useRef<HTMLDivElement>(null);
+
+  // Reset pagination to 4 cards when category or search changes
+  useEffect(() => {
+    setVisibleCount(4);
+  }, [activeCategory, searchQuery]);
 
   // Close sort dropdown when clicking outside
   useEffect(() => {
@@ -86,6 +92,8 @@ export default function BlogClient({ articles = [] }: { articles: Article[] }) {
   // Featured article is the first one in the filtered list
   const featuredArticle = filteredArticles[0];
   const secondaryArticles = filteredArticles.slice(1);
+  const visibleSecondaryArticles = secondaryArticles.slice(0, visibleCount);
+  const hasMore = secondaryArticles.length > visibleCount;
 
   const toggleBookmark = (slug: string, e: React.MouseEvent) => {
     e.preventDefault();
@@ -355,103 +363,120 @@ export default function BlogClient({ articles = [] }: { articles: Article[] }) {
                   )}
 
                   {/* ======================================================= */}
-                  {/* Secondary 3-Column Stories Grid (When more articles exist)*/}
+                  {/* Secondary 2-Column Stories Grid (When more articles exist)*/}
                   {/* ======================================================= */}
                   {secondaryArticles.length > 0 && (
-                    <div className={styles.storiesSubGrid}>
-                      {secondaryArticles.map((article, idx) => {
-                        const isBookmarked = bookmarkedSlugs.has(article.slug);
-                        return (
-                          <ScrollReveal key={article.slug} delay={idx * 60}>
-                            <article className={styles.storyCard}>
-                              <Link
-                                href={`/blog/${article.slug}`}
-                                className={styles.storyVisual}
-                                aria-label={article.title}
-                              >
-                                <Image
-                                  src={article.image}
-                                  alt={article.title}
-                                  fill
-                                  className={styles.storyImg}
-                                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                                />
-                              </Link>
+                    <>
+                      <div className={styles.storiesSubGrid}>
+                        {visibleSecondaryArticles.map((article, idx) => {
+                          const isBookmarked = bookmarkedSlugs.has(article.slug);
+                          return (
+                            <ScrollReveal
+                              key={article.slug}
+                              delay={idx * 60}
+                              className={styles.storyRevealWrap}
+                            >
+                              <article className={styles.storyCard}>
+                                <Link
+                                  href={`/blog/${article.slug}`}
+                                  className={styles.storyVisual}
+                                  aria-label={article.title}
+                                >
+                                  <Image
+                                    src={article.image}
+                                    alt={article.title}
+                                    fill
+                                    className={styles.storyImg}
+                                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 42vw"
+                                  />
+                                </Link>
 
-                              <div className={styles.storyBody}>
-                                <div className={styles.storyCategory}>
-                                  {article.category}
-                                </div>
-
-                                <h3 className={styles.storyTitle}>
-                                  <Link href={`/blog/${article.slug}`} className={styles.titleLink}>
-                                    {article.title}
-                                  </Link>
-                                </h3>
-
-                                <p className={styles.storyExcerpt}>
-                                  {article.excerpt}
-                                </p>
-
-                                <div className={styles.storyFooter}>
-                                  <div className={styles.authorMetaCompact}>
-                                    <div className={styles.authorAvatarSm}>
-                                      {article.authorImage ? (
-                                        <Image
-                                          src={article.authorImage}
-                                          alt={article.author}
-                                          width={30}
-                                          height={30}
-                                          className={styles.authorAvatarImg}
-                                        />
-                                      ) : (
-                                        article.author.charAt(0).toUpperCase()
-                                      )}
-                                    </div>
-                                    <div className={styles.authorInfoCompact}>
-                                      <span className={styles.authorNameCompact}>
-                                        {article.author.toUpperCase()}
-                                      </span>
-                                      <span className={styles.publishMetaCompact}>
-                                        {article.date} • {article.readTime}
-                                      </span>
-                                    </div>
+                                <div className={styles.storyBody}>
+                                  <div className={styles.storyCategory}>
+                                    {article.category}
                                   </div>
 
-                                  <div className={styles.storyCardActions}>
-                                    <button
-                                      type="button"
-                                      className={`${styles.bookmarkBtn} ${
-                                        isBookmarked ? styles.bookmarkBtnActive : ''
-                                      }`}
-                                      onClick={(e) => toggleBookmark(article.slug, e)}
-                                      aria-label="Save story"
-                                      title={isBookmarked ? 'Bookmarked' : 'Bookmark story'}
-                                    >
-                                      <svg
-                                        width="15"
-                                        height="15"
-                                        viewBox="0 0 24 24"
-                                        fill={isBookmarked ? 'currentColor' : 'none'}
-                                        stroke="currentColor"
-                                        strokeWidth="2"
+                                  <h3 className={styles.storyTitle}>
+                                    <Link href={`/blog/${article.slug}`} className={styles.titleLink}>
+                                      {article.title}
+                                    </Link>
+                                  </h3>
+
+                                  <p className={styles.storyExcerpt}>
+                                    {article.excerpt}
+                                  </p>
+
+                                  <div className={styles.storyFooter}>
+                                    <div className={styles.authorMetaCompact}>
+                                      <div className={styles.authorAvatarSm}>
+                                        {article.authorImage ? (
+                                          <Image
+                                            src={article.authorImage}
+                                            alt={article.author}
+                                            width={30}
+                                            height={30}
+                                            className={styles.authorAvatarImg}
+                                          />
+                                        ) : (
+                                          article.author.charAt(0).toUpperCase()
+                                        )}
+                                      </div>
+                                      <div className={styles.authorInfoCompact}>
+                                        <span className={styles.authorNameCompact}>
+                                          {article.author.toUpperCase()}
+                                        </span>
+                                        <span className={styles.publishMetaCompact}>
+                                          {article.date} • {article.readTime}
+                                        </span>
+                                      </div>
+                                    </div>
+
+                                    <div className={styles.storyCardActions}>
+                                      <button
+                                        type="button"
+                                        className={`${styles.bookmarkBtn} ${
+                                          isBookmarked ? styles.bookmarkBtnActive : ''
+                                        }`}
+                                        onClick={(e) => toggleBookmark(article.slug, e)}
+                                        aria-label="Save story"
+                                        title={isBookmarked ? 'Bookmarked' : 'Bookmark story'}
                                       >
-                                        <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
-                                      </svg>
-                                    </button>
-                                    <BeamButton
-                                      href={`/blog/${article.slug}`}
-                                      label="Read Story"
-                                      size="sm"
-                                    />
+                                        <svg
+                                          width="15"
+                                          height="15"
+                                          viewBox="0 0 24 24"
+                                          fill={isBookmarked ? 'currentColor' : 'none'}
+                                          stroke="currentColor"
+                                          strokeWidth="2"
+                                        >
+                                          <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
+                                        </svg>
+                                      </button>
+                                      <BeamButton
+                                        href={`/blog/${article.slug}`}
+                                        label="Read Story"
+                                        size="sm"
+                                      />
+                                    </div>
                                   </div>
                                 </div>
-                              </div>
-                            </article>
-                          </ScrollReveal>
-                        );
-                      })}
-                    </div>
+                              </article>
+                            </ScrollReveal>
+                          );
+                        })}
+                      </div>
+
+                      {/* View More Stories — Sleek Navbar-Style Glowing Beam Button */}
+                      {hasMore && (
+                        <div className={styles.viewMoreRow}>
+                          <BeamButton
+                            onClick={() => setVisibleCount((prev) => prev + 4)}
+                            label="View More Stories"
+                            size="md"
+                          />
+                        </div>
+                      )}
+                    </>
                   )}
 
                   {/* Clean Skeuomorphic Editorial Notice (When only 1 article exists) */}
