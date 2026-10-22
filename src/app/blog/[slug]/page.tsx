@@ -28,11 +28,13 @@ interface PortableTextBlockItem {
 }
 
 interface SanityPostDetail {
+  _id?: string;
+  _createdAt?: string;
+  _updatedAt?: string;
   title: string;
   metaTitle?: string;
   category?: string | { title?: string };
   publishedAt?: string;
-  _createdAt?: string;
   bannerImage?: {
     asset?: {
       _ref?: string;
@@ -100,6 +102,24 @@ function extractHeadingsFromPortableText(blocks?: PortableTextBlockItem[]): Head
   return headings;
 }
 
+const CURATED_DESCRIPTIONS: Record<string, string> = {
+  'how-do-you-choose-the-right-digital-marketing-service':
+    'Learn how to choose the right digital marketing services for your business based on your goals, target audience, budget, and growth objectives.',
+  'what-is-the-3-3-3-rule-for-marketing':
+    'Understand the 3-3-3 rule for marketing, how the framework works, and how businesses can use it to improve marketing communication and audience engagement.',
+  'what-is-better-for-my-business-ppc-or-seo':
+    'Compare PPC and SEO to understand their costs, benefits, timeframes, and potential business outcomes, and choose the right strategy for your growth goals.',
+};
+
+const CURATED_HEADLINES: Record<string, string> = {
+  'how-do-you-choose-the-right-digital-marketing-service':
+    'How Do You Choose the Right Digital Marketing Service?',
+  'what-is-the-3-3-3-rule-for-marketing':
+    'What Is the 3-3-3 Rule for Marketing?',
+  'what-is-better-for-my-business-ppc-or-seo':
+    'What Is Better for My Business: PPC or SEO?',
+};
+
 async function getArticle(slug: string) {
   try {
     const sanityPost = await sanityFetch<SanityPostDetail>({
@@ -122,7 +142,20 @@ async function getArticle(slug: string) {
         ? urlForImage(sanityPost.author.image)?.width(120).height(120).url()
         : undefined;
 
-      const rawDate = sanityPost.publishedAt || sanityPost._createdAt;
+      const cleanTitle = (sanityPost.title || '')
+        .replace(/[\u200B-\u200D\uFEFF]/g, '')
+        .trim();
+
+      const headline = CURATED_HEADLINES[slug] || cleanTitle;
+      const description =
+        CURATED_DESCRIPTIONS[slug] ||
+        (sanityPost.excerpt ? sanityPost.excerpt.trim() : '');
+
+      const rawPublishedAt = sanityPost.publishedAt || sanityPost._createdAt;
+      const rawModifiedAt =
+        sanityPost._updatedAt || sanityPost.publishedAt || sanityPost._createdAt;
+
+      const rawDate = rawPublishedAt;
       const publishedDate = rawDate
         ? new Date(rawDate).toLocaleDateString('en-US', {
             year: 'numeric',
@@ -130,6 +163,12 @@ async function getArticle(slug: string) {
             day: 'numeric',
           })
         : 'Recently published';
+
+      const featuredImageUrl = bannerUrl
+        ? bannerUrl.startsWith('http')
+          ? bannerUrl
+          : `https://marketingcopilot.in${bannerUrl}`
+        : 'https://marketingcopilot.in/images/dashboard_hero.jpg';
 
       const extractedHeadings = extractHeadingsFromPortableText(sanityPost.body);
 
@@ -145,18 +184,21 @@ async function getArticle(slug: string) {
       const faqs = sanityPost.faqItems || [];
 
       return {
-        title: sanityPost.title,
-        metaTitle: sanityPost.metaTitle || sanityPost.title,
+        title: headline,
+        metaTitle: sanityPost.metaTitle || headline,
         category: categoryName,
         readTime: '6 min read',
         date: publishedDate,
+        rawPublishedAt,
+        rawModifiedAt,
         image: bannerUrl || '/images/dashboard_hero.jpg',
-        imageAlt: sanityPost.bannerImage?.alt || sanityPost.title,
+        featuredImageUrl,
+        imageAlt: sanityPost.bannerImage?.alt || headline,
         author: sanityPost.author?.name || 'Sankarsan Nayak',
         authorRole: sanityPost.author?.role || 'Founder & CEO',
         authorImage: authorImageUrl || '/images/team/exec_1.png',
         authorBio: sanityPost.author?.bio,
-        summary: sanityPost.excerpt || '',
+        summary: description,
         takeaways,
         body: sanityPost.body,
         faqItems: faqs,
@@ -208,12 +250,18 @@ export async function generateMetadata({
       url: `https://marketingcopilot.in/blog/${slug}`,
       images: [
         {
-          url: article.image,
+          url: article.featuredImageUrl,
           width: 1200,
           height: 630,
           alt: article.imageAlt,
         },
       ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${article.metaTitle} | Marketing Copilot`,
+      description: article.summary,
+      images: [article.featuredImageUrl],
     },
   };
 }
@@ -277,10 +325,48 @@ export default async function ArticlePage({
         }
       : null;
 
+  // Generate BlogPosting schema for Google Search & Rich Results
+  const blogPostingSchema: Record<string, any> = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    '@id': `https://marketingcopilot.in/blog/${slug}#blogposting`,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://marketingcopilot.in/blog/${slug}`,
+    },
+    headline: article.title,
+    description: article.summary,
+    image: article.featuredImageUrl,
+    author: {
+      '@type': 'Organization',
+      name: 'Marketing Copilot',
+      url: 'https://marketingcopilot.in/',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Marketing Copilot',
+      url: 'https://marketingcopilot.in/',
+    },
+    inLanguage: 'en-IN',
+  };
+
+  if (article.rawPublishedAt) {
+    blogPostingSchema.datePublished = article.rawPublishedAt;
+  }
+  if (article.rawModifiedAt) {
+    blogPostingSchema.dateModified = article.rawModifiedAt;
+  }
+
   return (
     <>
       {/* Scroll Reading Progress Indicator */}
       <ReadingProgressBar />
+
+      {/* BlogPosting Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }}
+      />
 
       {faqSchema && (
         <script

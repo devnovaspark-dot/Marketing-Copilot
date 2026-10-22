@@ -107,79 +107,116 @@ const searchPresets = [
   },
 ];
 
-// What Can SEO Do for Your Business
-const seoBenefits = [
-  {
-    icon: '🎯',
-    badge: 'TARGETED VISIBILITY',
-    title: 'Get Found by the Right People',
-    desc: 'SEO helps your website appear when people search for products, services or solutions you offer. By targeting relevant keywords and search intent, you can attract visitors who are already interested in what your business provides.',
-  },
-  {
-    icon: '📈',
-    badge: 'QUALIFIED TRAFFIC',
-    title: 'Bring More Relevant Traffic',
-    desc: 'More website visitors are not always better. Our SEO approach focuses on bringing relevant, high-intent traffic to your website. This means reaching people who are more likely to explore your services, contact your team or make a purchase.',
-  },
-  {
-    icon: '🛡️',
-    badge: 'COMPOUNDING ASSET',
-    title: 'Build Long-Term Online Visibility',
-    desc: 'Unlike paid campaigns that stop when your budget ends, SEO can build lasting organic visibility. With consistent optimisation, useful content and technical improvements, your website can continue attracting search traffic and creating opportunities over the long term.',
-  },
-  {
-    icon: '💼',
-    badge: 'COMMERCIAL IMPACT',
-    title: 'Turn Searches Into Business Growth',
-    desc: 'SEO can support more than rankings. A well-optimised website can improve visibility, attract qualified visitors and increase enquiries. We connect SEO with your business goals to help turn organic search activity into meaningful growth and potential customers.',
-  },
+// SEO Checklist Pills for Hero
+const seoChecklist = [
+  'Technical SEO',
+  'Keyword Research',
+  'Content Optimisation',
+  'Link Building',
+  'Local SEO',
 ];
 
-// What Makes Our SEO Marketing Different
-const seoDifferentPillars = [
-  {
-    badge: 'PILLAR 01 · INTENT DISCOVERY',
-    title: 'Business-Focused Keyword Research',
-    desc: 'Not all of the most popular keywords attract customers. Our SEO marketing service in India emphasizes keywords that align with your business, audience, and goals. We research search volume, intent, competition, location, and commercial value to discover terms that can bring in relevant traffic and real business possibilities.',
-  },
-  {
-    badge: 'PILLAR 02 · ON-PAGE OPTIMIZATION',
-    title: 'On-Page SEO That Makes Sense',
-    desc: 'Our SEO marketing agency in India optimizes content, internal links, images, URLs, headings, and meta descriptions. Each page is user-friendly, easy to understand, and easy to read, making your site relevant, useful, and search-friendly.',
-  },
-  {
-    badge: 'PILLAR 03 · TECHNICAL ARCHITECTURE',
-    title: 'Technical SEO',
-    desc: 'Even a good web page can fail due to technical issues. The SEO Marketing Service in India ensures crawlability, indexing, broken links, redirects, sitemaps, mobile experience, Core Web Vitals, duplicate content, and site structure, forming a solid technical foundation.',
-  },
-  {
-    badge: 'PILLAR 04 · CONTENT AUTHORITY',
-    title: 'Content SEO',
-    desc: "Good SEO needs content that people actually want to read. Our SEO marketing company in India develops and optimizes service pages, blogs, landing pages, FAQs, location pages, and guides based on real search intent. We're here to provide you with useful information, not keyword-stuffing or content just to hit word counts.",
-  },
-];
-
-// What Makes Marketing Copilot So Special
-const specialCards = [
+// All-in-One SEO Solutions for Business Growth
+const allInOneSolutions = [
   {
     num: '01',
-    title: 'Strategy Before Execution',
-    desc: "We don't begin with a random blog published first. First, we know your business, audience, competition, and objectives. Then, we create an SEO strategy that focuses on the right keywords, pages, and improvements to build meaningful search visibility.",
+    icon: '⚙️',
+    title: 'Fix Technical Issues for Better Rankings',
+    desc: 'We identify website errors, improve page speed, fix indexing problems, and optimize website structure to help search engines crawl and understand your pages.',
   },
   {
     num: '02',
-    title: 'Data With Context',
-    desc: "There's more to the story than SEO numbers. We research rankings, traffic, impressions, clicks, and conversions in concert. This will give us a picture of what is working, what isn't, and where your website has the best opportunities for organic growth.",
+    icon: '🔍',
+    title: 'Find Keywords That Bring Customers',
+    desc: 'Customers, competitors, and search intent are all analyzed when researching for valuable keywords to attract relevant visitors and create leads for your business.',
   },
   {
     num: '03',
-    title: 'Content That Sounds Human',
-    desc: 'Your customers read your content, NOT Google. We produce valuable, easy-to-read, and natural content that addresses actual questions and aligns to search intent. Avoid the use of awkward keyword stuffing, overly complicated language, and content that sounds like a robot.',
+    icon: '✍️',
+    title: 'Create Content That Attracts and Converts',
+    desc: 'We create helpful blogs, landing pages, product descriptions, and FAQs that solve customer queries, increase search ranking, and motivate them to act.',
   },
   {
     num: '04',
-    title: 'Sustainable Growth',
-    desc: 'SEO is a long-term process and requires a lot of work. We are not looking for quick hacks but rather building your website, content, authority, and search ranking over time. The aim is sustainable organic growth, which keeps adding value to your business.',
+    icon: '🔗',
+    title: 'Build Website Authority with Quality Links',
+    desc: "We improve your website's credibility, build its backlinks' authority, and help rank it for long-term benefit by linking your site to relevant websites with credibility.",
+  },
+  {
+    num: '05',
+    icon: '📍',
+    title: 'Be Discovered by Shoppers Close By',
+    desc: 'We optimize your Google Business Profile, polish up your business listing and reviews, and develop localized pages to boost your visibility in local search results.',
+  },
+  {
+    num: '06',
+    icon: '🌐',
+    title: 'Grow Your Website Across Markets',
+    desc: 'Multilingual SEO, regional targeting, and enhanced website structures ensure that big sites and international platforms are optimized for visitors from other countries.',
+  },
+];
+
+// Why Businesses Choose Nova Spark for SEO Growth
+const whyChooseNovaSpark = [
+  {
+    num: '01',
+    title: 'Experience That Supports Long-Term Growth',
+    desc: 'We combine SEO knowledge with practical strategies to improve website performance, adapt to search engine changes, and help businesses build lasting organic visibility.',
+  },
+  {
+    num: '02',
+    title: 'Skilled Professionals and Personalized Strategies',
+    desc: 'Our team creates SEO strategies based on your business objectives and targets, industry competition, and website needs to ensure that you get the desired and relevant outcomes.',
+  },
+  {
+    num: '03',
+    title: 'SEO Strategies Focused on Your Industry',
+    desc: 'We study your market, competitors, and customer behavior to create tailored SEO strategies that improve search visibility and connect your business with potential customers.',
+  },
+  {
+    num: '04',
+    title: 'Transparent Reporting and Ethical SEO Practices',
+    desc: 'We follow ethical SEO practices, track campaign performance, and share clear reports to help you understand progress, identify opportunities, and make informed marketing decisions.',
+  },
+];
+
+// The Nova Spark SEO Growth Process (6 Steps)
+const growthProcessSteps = [
+  {
+    step: '01',
+    icon: '📊',
+    title: 'Website Analysis & Research',
+    desc: 'Research your website, rival sites, keywords, and current search rankings, and recommend fixes to technical problems, content deficiencies, and organic potential.',
+  },
+  {
+    step: '02',
+    icon: '🗺️',
+    title: 'Strategic SEO Planning',
+    desc: 'We create a customized SEO roadmap based on your business goals, target audience, competition, and keyword opportunities, with clear priorities and measurable objectives.',
+  },
+  {
+    step: '03',
+    icon: '⚡',
+    title: 'Website Optimization',
+    desc: 'We improve website structure, page speed, mobile usability, indexing, and on-page elements to help search engines understand your website and deliver better user experiences.',
+  },
+  {
+    step: '04',
+    icon: '📝',
+    title: 'Content Planning and Creation',
+    desc: 'We create keyword-focused website pages, blogs, and useful resources that match search intent, answer customer questions, strengthen topical relevance, and attract organic traffic.',
+  },
+  {
+    step: '05',
+    icon: '🛡️',
+    title: 'Building Online Authority',
+    desc: 'You build website authority through link-building prospects, content quality, digital marketing outreach, and industry credibility strategies.',
+  },
+  {
+    step: '06',
+    icon: '📈',
+    title: 'Performance Tracking and Improvement',
+    desc: 'Track progress on keyword rankings, organic traffic, engagement, and conversions to optimize your SEO strategy for ongoing growth and identify new opportunities.',
   },
 ];
 
@@ -240,16 +277,30 @@ export default function SEOPage() {
             <ScrollReveal>
               <h1 className={styles.heroEyebrowPill}>
                 <span className={styles.emeraldPulseDot} />
-                <span>SEO Marketing Agency in India</span>
+                <span>SEO That Drives Traffic, Leads, and Business Growth</span>
               </h1>
 
               <h2 className={styles.heroTitle}>
-                Make Google Your <span className="accent-gradient">Growth Channel</span>
+                SEO That Drives Traffic, Leads, and <span className="accent-gradient">Business Growth</span>
               </h2>
 
-              <p className={styles.heroSub}>
-                Build stronger search visibility with SEO strategies designed to attract relevant customers, improve rankings and generate sustainable organic traffic for your business.
+              <p className={styles.heroSub} style={{ marginBottom: 16 }}>
+                Search engine optimisation helps your website appear in relevant search results and connect with potential customers. At Nova Spark, we focus on improving online visibility, attracting quality traffic, and supporting long-term business growth.
               </p>
+
+              <p className={styles.heroSub} style={{ marginTop: 0, marginBottom: 28, fontSize: '16px' }}>
+                Our SEO approach combines technical optimisation, keyword research, content creation, and link building to help businesses strengthen their search presence. We create strategies based on your goals, audience, and industry competition to improve website performance and generate meaningful results.
+              </p>
+
+              {/* Feature Checklist Strip */}
+              <div className={styles.heroChecklist}>
+                {seoChecklist.map((item) => (
+                  <span key={item} className={styles.heroCheckPill}>
+                    <span className={styles.heroCheckIcon}>✓</span>
+                    <span>{item}</span>
+                  </span>
+                ))}
+              </div>
 
               <div className={styles.heroActions}>
                 <BeamButton
@@ -258,8 +309,8 @@ export default function SEOPage() {
                   size="lg"
                 />
                 <BeamButton
-                  href="#industries"
-                  label="Grow on Google"
+                  href="#solutions"
+                  label="Explore SEO Solutions"
                   variant="outline"
                   size="lg"
                   arrow={false}
@@ -267,7 +318,27 @@ export default function SEOPage() {
                 />
               </div>
 
-              <div className={styles.trustStrip}>
+              {/* Ready to Improve Your Google Rankings Card */}
+              <div className={styles.heroReadyCard}>
+                <div className={styles.heroReadyBadge}>
+                  <span>Actionable SEO Strategy</span>
+                </div>
+                <h3 className={styles.heroReadyTitle}>
+                  Ready to Improve Your Google Rankings?
+                </h3>
+                <p className={styles.heroReadyText}>
+                  Partner with Nova Spark for SEO strategies tailored to your business goals. Contact our team today to discuss your website&apos;s SEO needs and discover opportunities to grow organic traffic, generate leads, and reach more customers.
+                </p>
+                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                  <BeamButton
+                    href="/contact"
+                    label="Contact Our SEO Team"
+                    size="md"
+                  />
+                </div>
+              </div>
+
+              <div className={styles.trustStrip} style={{ marginTop: 34 }}>
                 <div className={styles.trustAvatars}>
                   <span className={styles.trustAvatar}>NS</span>
                   <span className={styles.trustAvatar}>MC</span>
@@ -530,65 +601,34 @@ export default function SEOPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          5. BENEFITS SECTION (WHAT CAN SEO DO)
+          5. ALL-IN-ONE SEO SOLUTIONS FOR BUSINESS GROWTH
          ══════════════════════════════════════════════════ */}
-      <section className={styles.benefitsSection}>
-        <div className="container">
-          <ScrollReveal>
-            <div className="text-center" style={{ maxWidth: 840, margin: '0 auto' }}>
-              <div className={styles.sectionEyebrow}>
-                <span>Real Business Impact</span>
-              </div>
-              <h2 className={styles.sectionTitle}>
-                What Can SEO Do for <span className="accent-gradient">Your Business?</span>
-              </h2>
-              <p className={styles.sectionSub}>
-                A well-planned SEO strategy can help your business
-              </p>
-            </div>
-
-            <div className={styles.benefitsGrid}>
-              {seoBenefits.map((b) => (
-                <div key={b.title} className={styles.benefitCard}>
-                  <div className={styles.benefitTopRow}>
-                    <div className={styles.benefitIconBox}>
-                      <span>{b.icon}</span>
-                    </div>
-                    <span className={styles.benefitBadge}>{b.badge}</span>
-                  </div>
-                  <h3 className={styles.benefitTitle}>{b.title}</h3>
-                  <p className={styles.benefitText}>{b.desc}</p>
-                </div>
-              ))}
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════════════
-          6. DIFFERENT SECTION (WHAT MAKES SEO DIFFERENT)
-         ══════════════════════════════════════════════════ */}
-      <section className={styles.differentSection}>
+      <section id="solutions" className={styles.solutionsSection}>
         <div className="container">
           <ScrollReveal>
             <div className="text-center" style={{ maxWidth: 880, margin: '0 auto' }}>
               <div className={styles.sectionEyebrow}>
-                <span>Practical Execution</span>
+                <span>Complete Search Engine Optimization</span>
               </div>
               <h2 className={styles.sectionTitle}>
-                What Makes Our <span className="accent-gradient">SEO Marketing Different?</span>
+                All-in-One SEO Solutions for <span className="accent-gradient">Business Growth</span>
               </h2>
               <p className={styles.sectionSub}>
-                SEO shouldn&apos;t be a black art that leaves people with a monthly report that is hard to read and difficult to understand. At Marketing Copilot, we don&apos;t get caught up in theory. Our SEO marketing agency in India combines technical SEO, content strategy, keyword research, local optimization, and ongoing performance analysis.
+                From technical SEO to content optimisation and topical authority, we cover every essential factor to improve visibility and drive organic growth.
               </p>
             </div>
 
-            <div className={styles.differentGrid}>
-              {seoDifferentPillars.map((p) => (
-                <div key={p.title} className={styles.differentCard}>
-                  <span className={styles.differentBadge}>{p.badge}</span>
-                  <h3 className={styles.differentTitle}>{p.title}</h3>
-                  <p className={styles.differentText}>{p.desc}</p>
+            <div className={styles.solutionsGrid}>
+              {allInOneSolutions.map((sol) => (
+                <div key={sol.title} className={styles.solutionCard}>
+                  <div className={styles.solutionCardTop}>
+                    <div className={styles.solutionIconBox}>
+                      <span>{sol.icon}</span>
+                    </div>
+                    <span className={styles.solutionNumBadge}>{sol.num}</span>
+                  </div>
+                  <h3 className={styles.solutionTitle}>{sol.title}</h3>
+                  <p className={styles.solutionDesc}>{sol.desc}</p>
                 </div>
               ))}
             </div>
@@ -597,20 +637,54 @@ export default function SEOPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          7. SPECIAL SECTION (WHAT MAKES MARKETING COPILOT SPECIAL)
+          6. OUR PROCESS — THE NOVA SPARK SEO GROWTH PROCESS
+         ══════════════════════════════════════════════════ */}
+      <section id="process" className={styles.processSection}>
+        <div className="container">
+          <ScrollReveal>
+            <div className="text-center" style={{ maxWidth: 880, margin: '0 auto' }}>
+              <div className={styles.sectionEyebrow}>
+                <span>Our Process</span>
+              </div>
+              <h2 className={styles.sectionTitle}>
+                The Nova Spark SEO <span className="accent-gradient">Growth Process</span>
+              </h2>
+              <p className={styles.sectionSub}>
+                We take a holistic approach to SEO that includes six key steps for sustainable organic growth: website analysis, strategic planning, technical optimization, content creation, authority building, and performance tracking.
+              </p>
+            </div>
+
+            <div className={styles.processGrid}>
+              {growthProcessSteps.map((step) => (
+                <div key={step.title} className={styles.processCard}>
+                  <div className={styles.processCardTop}>
+                    <span className={styles.processStepPill}>Step {step.step}</span>
+                    <span className={styles.processIconBox}>{step.icon}</span>
+                  </div>
+                  <h3 className={styles.processTitle}>{step.title}</h3>
+                  <p className={styles.processDesc}>{step.desc}</p>
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════
+          7. WHY BUSINESSES CHOOSE NOVA SPARK FOR SEO GROWTH
          ══════════════════════════════════════════════════ */}
       <section className={styles.specialSection}>
         <div className="container">
           <ScrollReveal>
-            <div className="text-center" style={{ maxWidth: 860, margin: '0 auto' }}>
+            <div className="text-center" style={{ maxWidth: 880, margin: '0 auto' }}>
               <div className={styles.sectionEyebrow}>
-                <span>The Marketing Copilot Advantage</span>
+                <span>The Nova Spark Advantage</span>
               </div>
               <h2 className={styles.sectionTitle}>
-                What makes Marketing Copilot <span className="accent-gradient">so special?</span>
+                Why Businesses Choose Nova Spark for <span className="accent-gradient">SEO Growth</span>
               </h2>
               <p className={styles.sectionSub}>
-                It&apos;s not enough of an SEO partner merely to know keywords. You need a team that understands business, customers, and digital marketing as a whole. Our Marketing Copilot SEO strategy emphasizes:
+                At Nova Spark, we focus on practical SEO strategies, quality content, and measurable improvements to help businesses strengthen online visibility and attract relevant customers.
               </p>
             </div>
 
@@ -619,24 +693,24 @@ export default function SEOPage() {
               <div className={styles.specialImgWrapper}>
                 <Image
                   src="/images/SEO strategy_team.jpg"
-                  alt="Marketing Copilot SEO Strategy Team in India"
+                  alt="Nova Spark SEO Strategy Team"
                   fill
                   sizes="(max-width: 1024px) 100vw, 480px"
                   className={styles.specialImg}
                 />
                 <div className={styles.specialImgOverlay}>
                   <p className={styles.specialImgQuote}>
-                    &quot;Strategy first. Data with context. Human content. Compounding growth for Indian brands.&quot;
+                    &quot;Practical SEO strategies, quality content, and measurable improvements for sustainable business growth.&quot;
                   </p>
                   <span className={styles.specialImgSub}>
-                    Marketing Copilot Digital Strategy Lab · Bhubaneswar HQ
+                    Nova Spark Digital Strategy Lab · Bhubaneswar HQ
                   </span>
                 </div>
               </div>
 
               {/* 4 Skeuomorphic Core Philosophy Cards */}
               <div className={styles.specialGrid}>
-                {specialCards.map((c) => (
+                {whyChooseNovaSpark.map((c) => (
                   <div key={c.title} className={styles.specialCard}>
                     <span className={styles.specialNumber}>{c.num}</span>
                     <h3 className={styles.specialTitle}>{c.title}</h3>
@@ -723,15 +797,15 @@ export default function SEOPage() {
 
               <h2 className={styles.ctaHeadline}>
                 Get Found Faster with{' '}
-                <span className="accent-gradient">SEO Marketing Service in India</span>
+                <span className="accent-gradient">Nova Spark SEO Services</span>
               </h2>
 
               <p className={styles.ctaDescription}>
-                Get in touch with Marketing Copilot and start building a stronger organic presence in India and beyond.
+                Get in touch with Nova Spark and start building a stronger organic presence that drives traffic, leads, and business growth.
               </p>
 
               <div className={styles.ctaBrandPunchline}>
-                Marketing Copilot — Strategy. Search. Growth.
+                Nova Spark — SEO That Drives Traffic, Leads, and Business Growth
               </div>
 
               <div className={styles.ctaActions}>

@@ -1,33 +1,37 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Best SEO Company in India | Marketing Copilot',
-  description: 'Looking for expert SEO in India? Marketing Copilot delivers results-driven solutions to improve your search rankings and grow your business.',
+  title: 'SEO That Drives Traffic, Leads, and Business Growth | Nova Spark',
+  description:
+    'Search engine optimisation helps your website appear in relevant search results and connect with potential customers. At Nova Spark, we focus on improving online visibility, attracting quality traffic, and supporting long-term business growth.',
   keywords: [
+    'SEO That Drives Traffic Leads and Business Growth',
+    'Nova Spark SEO',
+    'Technical SEO',
+    'Keyword Research',
+    'Content Optimisation',
+    'Link Building',
+    'Local SEO',
     'Best SEO Company in India',
-    'SEO services in India',
-    'Search Engine Optimization Agency India',
-    'Organic Ranking Services India',
-    'Technical SEO Company',
-    'Enterprise SEO Services',
-    'On-Page SEO India',
-    'Off-Page SEO India',
+    'SEO Services in India',
   ],
   alternates: {
     canonical: 'https://marketingcopilot.in/services/seo-services-in-india',
   },
   openGraph: {
-    title: 'Best SEO Company in India | Marketing Copilot',
-    description: 'Looking for expert SEO in India? Marketing Copilot delivers results-driven solutions to improve your search rankings and grow your business.',
+    title: 'SEO That Drives Traffic, Leads, and Business Growth | Nova Spark',
+    description:
+      'Search engine optimisation helps your website appear in relevant search results and connect with potential customers. At Nova Spark, we focus on improving online visibility, attracting quality traffic, and supporting long-term business growth.',
     url: 'https://marketingcopilot.in/services/seo-services-in-india',
-    siteName: 'Marketing Copilot',
+    siteName: 'Nova Spark · Marketing Copilot',
     locale: 'en_IN',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Best SEO Company in India | Marketing Copilot',
-    description: 'Looking for expert SEO in India? Marketing Copilot delivers results-driven solutions to improve your search rankings and grow your business.',
+    title: 'SEO That Drives Traffic, Leads, and Business Growth | Nova Spark',
+    description:
+      'Search engine optimisation helps your website appear in relevant search results and connect with potential customers. Tailored SEO strategies by Nova Spark.',
   },
 };
 
