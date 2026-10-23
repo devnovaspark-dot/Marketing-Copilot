@@ -9,13 +9,13 @@ import WhatsAppFloatingButton from "@/components/WhatsAppFloatingButton";
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-display",
+  variable: "--font-plus-jakarta",
 });
 
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-body",
+  variable: "--font-inter",
   preload: false,
 });
 

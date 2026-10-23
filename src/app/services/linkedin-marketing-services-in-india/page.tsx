@@ -363,22 +363,18 @@ export default function LinkedInMarketingPage() {
               </h1>
 
               <p className={styles.heroSub}>
-                Reach the right professionals, build meaningful business connections, and generate quality leads with strategic LinkedIn marketing. Marketing Copilot helps businesses strengthen their professional presence, connect with decision-makers, and create targeted marketing campaigns aligned with their business objectives.
-              </p>
-
-              <p className={styles.heroSecondaryText}>
-                From LinkedIn company page management and content marketing to paid advertising and lead generation, we help you turn LinkedIn into a strategic channel for business growth.
+                Reach the right professionals, build meaningful business connections, and generate quality leads with strategic LinkedIn marketing. From executive thought leadership and company page management to high-converting LinkedIn Ads and instant lead forms, we turn LinkedIn into a strategic pipeline for business growth.
               </p>
 
               <div className={styles.heroActions}>
                 <BeamButton
                   href="#enquiry-section"
-                  label="Get Your LinkedIn Marketing Strategy →"
+                  label="Get Your LinkedIn Marketing Strategy"
                   size="lg"
                 />
                 <BeamButton
                   href="tel:+918280788689"
-                  label="Talk to Our Team →"
+                  label="Talk to Our Team"
                   size="lg"
                   variant="outline"
                 />
