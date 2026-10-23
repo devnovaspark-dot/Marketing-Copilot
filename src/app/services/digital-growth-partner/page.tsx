@@ -493,21 +493,21 @@ export default function DigitalGrowthPartnerPage() {
           {/* Left Column: Vision & Proposition */}
           <div className={styles.heroColLeft}>
             <div className={styles.heroBadgeCluster}>
-              <div className={styles.heroBadgeFlagship}>
+              <h1 className={styles.heroBadgeFlagship}>
                 <span className={styles.pulsingLed} />
-                <span>DIGITAL GROWTH PARTNER</span>
-              </div>
+                <span>Digital Growth Partner in India</span>
+              </h1>
               <div className={styles.heroBadgeNation}>
                 <span>🇮🇳 Scaling Brands Across India</span>
               </div>
             </div>
 
-            <h1 className={styles.heroDisplayH1}>
+            <h2 className={styles.heroDisplayH1}>
               READY TO SCALE YOUR BUSINESS{' '}
               <span className={styles.heroShimmerAccent}>
                 WITH A DIGITAL GROWTH PARTNER?
               </span>
-            </h1>
+            </h2>
 
             {/* Tactile Channel Chiclets */}
             <div className={styles.heroChicletsRow}>

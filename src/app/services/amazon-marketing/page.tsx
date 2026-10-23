@@ -112,15 +112,15 @@ export default function AmazonMarketingPage() {
         <div className="container">
           <div className={styles.heroCenter}>
             <ScrollReveal>
-              <div className={styles.heroEyebrowPill}>
+              <h1 className={styles.heroEyebrowPill}>
                 <span className={styles.emeraldPulseDot} />
-                <span>Amazon Marketing &amp; PPC for Indian Brands</span>
-              </div>
+                <span>Amazon Marketing Services in India</span>
+              </h1>
 
-              <h1 className={styles.heroTitle}>
+              <h2 className={styles.heroTitle}>
                 Turn Amazon Searches Into{' '}
                 <span className="accent-gradient">More Sales</span>
-              </h1>
+              </h2>
 
               <p className={styles.heroSub}>
                 We combine Amazon SEO, keyword targeting, product listing optimisation, and performance-focused PPC campaigns to put your products in front of relevant shoppers and create more opportunities for profitable growth.

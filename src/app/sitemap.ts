@@ -90,6 +90,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     'ai-automation-services-in-india',
     'amazon-marketing-services-in-india',
     'creative-branding-services-in-india',
+    'meta-ads-services-in-india',
     'ecommerce-marketing-services-in-india',
     'local-seo-services-in-india',
     'linkedin-marketing-services-in-india',

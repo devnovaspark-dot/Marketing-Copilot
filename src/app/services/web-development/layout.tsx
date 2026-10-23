@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   description: 'Discover top-notch website development in India with Marketing Copilot. We create stunning, user-friendly sites that drive engagement and growth.',
   keywords: [
     'Best Website Development Agency in India',
+    'Website Development Company',
+    'Website Development Services',
+    'Website Design and Development Services',
     'Website Development Company India',
     'Next.js Website Development',
     'Custom Web Development India',

@@ -60,7 +60,7 @@ export default function AiAutomationPage() {
           <div className={styles.heroCenter}>
             <h1 className={styles.heroEyebrowPill}>
               <div className={styles.emeraldPulseDot} />
-              Enterprise AI &amp; Workflow Infrastructure &middot; India
+              <span>AI Automation Services in India</span>
             </h1>
 
             <h2 className={styles.heroTitle}>

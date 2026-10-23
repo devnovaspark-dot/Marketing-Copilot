@@ -1,27 +1,27 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'SEO That Drives Traffic, Leads, and Business Growth | Marketing Copilot',
+  title: 'Best SEO Services in India| Marketing Copilot',
   description:
-    'Search engine optimisation helps your website appear in relevant search results and connect with potential customers. At Marketing Copilot, we focus on improving online visibility, attracting quality traffic, and supporting long-term business growth.',
+    'Looking for expert SEO in India? Marketing Copilot delivers results-driven solutions to improve your search rankings and grow your business.',
   keywords: [
-    'SEO That Drives Traffic Leads and Business Growth',
-    'Marketing Copilot SEO',
+    'SEO Services in India',
+    'SEO Agency in India',
+    'Local SEO Services in India',
+    'Best SEO comapny in India',
+    'Best SEO Company in India',
     'Technical SEO',
     'Keyword Research',
     'Content Optimisation',
     'Link Building',
-    'Local SEO',
-    'Best SEO Company in India',
-    'SEO Services in India',
   ],
   alternates: {
     canonical: 'https://marketingcopilot.in/services/seo-services-in-india',
   },
   openGraph: {
-    title: 'SEO That Drives Traffic, Leads, and Business Growth | Marketing Copilot',
+    title: 'Best SEO Services in India| Marketing Copilot',
     description:
-      'Search engine optimisation helps your website appear in relevant search results and connect with potential customers. At Marketing Copilot, we focus on improving online visibility, attracting quality traffic, and supporting long-term business growth.',
+      'Looking for expert SEO in India? Marketing Copilot delivers results-driven solutions to improve your search rankings and grow your business.',
     url: 'https://marketingcopilot.in/services/seo-services-in-india',
     siteName: 'Marketing Copilot',
     locale: 'en_IN',
@@ -29,9 +29,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'SEO That Drives Traffic, Leads, and Business Growth | Marketing Copilot',
+    title: 'Best SEO Services in India| Marketing Copilot',
     description:
-      'Search engine optimisation helps your website appear in relevant search results and connect with potential customers. Tailored SEO strategies by Marketing Copilot.',
+      'Looking for expert SEO in India? Marketing Copilot delivers results-driven solutions to improve your search rankings and grow your business.',
   },
 };
 

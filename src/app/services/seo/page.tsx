@@ -258,6 +258,9 @@ export default function SEOPage() {
   // Active SERP query preview
   const [activePresetIndex, setActivePresetIndex] = useState<number>(0);
 
+  // Opportunities section visual tab (live SERP simulator vs framework blueprint)
+  const [oppVisualTab, setOppVisualTab] = useState<'serp' | 'framework'>('serp');
+
   const toggleFaq = (idx: number) => {
     setOpenFaqIndex(openFaqIndex === idx ? null : idx);
   };
@@ -277,7 +280,7 @@ export default function SEOPage() {
             <ScrollReveal>
               <h1 className={styles.heroEyebrowPill}>
                 <span className={styles.emeraldPulseDot} />
-                <span>SEO That Drives Traffic, Leads, and Business Growth</span>
+                <span>Best SEO Services in India</span>
               </h1>
 
               <h2 className={styles.heroTitle}>
@@ -376,6 +379,38 @@ export default function SEOPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
+          IN-SECTION STICKY NAVBAR STRIP WITH BEAM CTA
+         ══════════════════════════════════════════════════ */}
+      <nav className={styles.sectionNavRibbon} aria-label="SEO Service Navigation">
+        <div className="container">
+          <div className={styles.sectionNavInner}>
+            <div className={styles.sectionNavBrand}>
+              <span className={styles.navPulseDot} />
+              <span className={styles.navBrandText}>SEO Playbook</span>
+            </div>
+
+            <div className={styles.sectionNavLinks}>
+              <a href="#industries" className={styles.navLink}>Industries</a>
+              <a href="#opportunities" className={styles.navLink}>Revenue Model</a>
+              <a href="#solutions" className={styles.navLink}>Solutions</a>
+              <a href="#process" className={styles.navLink}>6-Step Process</a>
+              <a href="#why-us" className={styles.navLink}>Why Us</a>
+              <a href="#audit" className={styles.navLink}>SERP Console</a>
+              <a href="#faq" className={styles.navLink}>FAQs</a>
+            </div>
+
+            <div className={styles.sectionNavCta}>
+              <BeamButton
+                href="/contact"
+                label="Free SEO Audit"
+                size="sm"
+              />
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* ══════════════════════════════════════════════════
           2. DRIVING BUSINESS GROWTH WITH DIGITAL MARKETING IN INDIA
           (Replaces the image down the hero as requested)
          ══════════════════════════════════════════════════ */}
@@ -459,52 +494,37 @@ export default function SEOPage() {
                   </div>
                 </div>
               </div>
-              <Link
-                href="/contact"
-                style={{
-                  fontSize: 12.5,
-                  fontWeight: 800,
-                  color: '#0B2093',
-                  background: '#EFF6FF',
-                  border: '1px solid #BFDBFE',
-                  padding: '8px 16px',
-                  borderRadius: 8,
-                  textDecoration: 'none',
-                  boxShadow: 'inset 0 1px 0 #FFFFFF',
-                }}
-              >
-                Request {activeInd.name.split('&')[0]} SEO Plan →
-              </Link>
+              <div className={styles.industryDrawerCta}>
+                <BeamButton
+                  href="/contact"
+                  label={`Request ${activeInd.name.split('&')[0].trim()} Plan`}
+                  size="sm"
+                />
+              </div>
             </div>
           </ScrollReveal>
         </div>
       </section>
 
       {/* ══════════════════════════════════════════════════
-          4. OPPORTUNITIES SECTION
+          4. OPPORTUNITIES SECTION (DARK SKEUOMORPHIC CONTRAST)
          ══════════════════════════════════════════════════ */}
-      <section className={styles.opportunitiesSection}>
+      <section id="opportunities" className={styles.opportunitiesSection}>
         <div className="container">
           <ScrollReveal>
             <div className={styles.oppContainer}>
               <div className={styles.oppContent}>
-                <div className={styles.sectionEyebrow}>
+                <div className={styles.sectionEyebrowDark}>
                   <span>Search Intent to Revenue</span>
                 </div>
-                <h2 className={styles.sectionTitle}>
+                <h2 className={styles.sectionTitleDark}>
                   Turn Google Searches Into <span className="accent-gradient">Business Opportunities</span>
                 </h2>
                 <p className={styles.oppText}>
-                  Users are already looking for products, services, and solutions that you provide; they&apos;re looking at Google. But the question is, are they really finding your website or your competitors?
+                  Users are already actively searching on Google for products, services, and solutions that you provide. An effective SEO approach ensures your business stands out when high-intent prospects are researching, comparing, and ready to act.
                 </p>
                 <p className={styles.oppText}>
-                  An effective SEO approach enables your company to stand out when viewers are searching for the services you offer. In fact, when a user is searching for an SEO agency in India, a coaching institution, a healthcare service, or even a digital marketing firm or a web development company, they are likely to be serious about it.
-                </p>
-                <p className={styles.oppText}>
-                  Organic search allows you to connect with people at the right time, when they are researching, comparing, or ready to act.
-                </p>
-                <p className={styles.oppText}>
-                  We’ll ensure your website is optimized for relevant searches, improved visibility, and quality traffic, which will all lead to more of your customers becoming inquiries, customers, and long-term clients.
+                  We optimize your technical architecture, keyword clusters, and Google 3-Pack authority—turning search traffic into qualified inquiries, paying customers, and long-term business growth.
                 </p>
 
                 <div className={styles.oppHighlights}>
@@ -525,75 +545,100 @@ export default function SEOPage() {
                     <span>Direct WhatsApp &amp; Call Inquiries</span>
                   </div>
                 </div>
+
+                <div className={styles.oppCtaRow}>
+                  <BeamButton
+                    href="/contact"
+                    label="Audit Your Google Rankings Now"
+                    size="md"
+                  />
+                  <span className={styles.oppCtaTrust}>
+                    ✓ 100% Confidential • Zero Spam Guaranteed
+                  </span>
+                </div>
               </div>
 
-              {/* Opportunities Visual Stack with Graphic & Interactive SERP Mockup */}
-              <div className={styles.oppVisualStack}>
-                <div className={styles.oppImageFrame}>
-                  <Image
-                    src="/images/SEO framework.jpg"
-                    alt="SEO & Local Search Optimization Framework in India"
-                    fill
-                    sizes="(max-width: 900px) 100vw, 480px"
-                    className={styles.oppFeaturedImg}
-                  />
+              {/* Opportunities Visual Unified Terminal Card */}
+              <div className={styles.serpMockupCard}>
+                {/* Visual Tab Switcher: Live Simulation vs Framework */}
+                <div className={styles.oppVisualTabRow}>
+                  <button
+                    type="button"
+                    onClick={() => setOppVisualTab('serp')}
+                    className={`${styles.oppVisualTabBtn} ${oppVisualTab === 'serp' ? styles.oppVisualTabBtnActive : ''}`}
+                  >
+                    <span>🔍 Live SERP Preview</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setOppVisualTab('framework')}
+                    className={`${styles.oppVisualTabBtn} ${oppVisualTab === 'framework' ? styles.oppVisualTabBtnActive : ''}`}
+                  >
+                    <span>📐 6-Step Framework</span>
+                  </button>
                 </div>
 
-                {/* Interactive Simulated SERP Card */}
-                <div className={styles.serpMockupCard}>
-                  {/* Preset Pills */}
-                  <div style={{ display: 'flex', gap: 6, marginBottom: 14, flexWrap: 'wrap' }}>
-                    {searchPresets.map((preset, pIdx) => (
-                      <button
-                        key={preset.query}
-                        type="button"
-                        onClick={() => setActivePresetIndex(pIdx)}
-                        style={{
-                          fontSize: 11,
-                          fontWeight: 700,
-                          padding: '4px 10px',
-                          borderRadius: 6,
-                          border: activePresetIndex === pIdx ? '1px solid #0B2093' : '1px solid #CBD5E1',
-                          background: activePresetIndex === pIdx ? '#0B2093' : '#FFFFFF',
-                          color: activePresetIndex === pIdx ? '#FFFFFF' : '#475569',
-                          cursor: 'pointer',
-                          transition: 'all 0.2s',
-                        }}
-                      >
-                        {preset.query}
-                      </button>
-                    ))}
-                  </div>
-
-                  <div className={styles.serpSearchInput}>
-                    <span>🔍</span>
-                    <span>{currentPreset.query}</span>
-                  </div>
-
-                  <div className={styles.serpSnippet}>
-                    <div className={styles.serpUrl}>
-                      <span>🌐</span>
-                      <span>https://marketingcopilot.in &gt; services &gt; seo</span>
+                {oppVisualTab === 'serp' ? (
+                  <>
+                    {/* Preset Query Switcher Pills */}
+                    <div className={styles.presetPillsRow}>
+                      {searchPresets.map((preset, pIdx) => (
+                        <button
+                          key={preset.query}
+                          type="button"
+                          onClick={() => setActivePresetIndex(pIdx)}
+                          className={`${styles.presetPill} ${activePresetIndex === pIdx ? styles.presetPillActive : ''}`}
+                        >
+                          {preset.query}
+                        </button>
+                      ))}
                     </div>
-                    <h4 className={styles.serpResultTitle}>
-                      {currentPreset.title}
-                    </h4>
-                    <p className={styles.serpResultDesc}>
-                      Top-ranked SEO marketing agency in India. Technical SEO, Google Maps 3-Pack optimization, and high-intent organic traffic that converts visitors into paying customers.
-                    </p>
-                  </div>
 
-                  <div className={styles.serpStatsPills}>
-                    <div className={styles.serpPillItem}>
-                      <span className={styles.serpPillVal}>#1 Position</span>
-                      <span className={styles.serpPillLbl}>{currentPreset.intent}</span>
+                    <div className={styles.serpSearchInput}>
+                      <span>🔍</span>
+                      <span>{currentPreset.query}</span>
                     </div>
-                    <div className={styles.serpPillItem}>
-                      <span className={styles.serpPillVal}>{currentPreset.ctr}</span>
-                      <span className={styles.serpPillLbl}>Organic Search Velocity</span>
+
+                    <div className={styles.serpSnippet}>
+                      <div className={styles.serpUrl}>
+                        <span>🌐</span>
+                        <span>https://marketingcopilot.in &gt; services &gt; seo</span>
+                      </div>
+                      <h4 className={styles.serpResultTitle}>
+                        {currentPreset.title}
+                      </h4>
+                      <p className={styles.serpResultDesc}>
+                        Top-ranked SEO marketing agency in India. Technical SEO, Google Maps 3-Pack optimization, and high-intent organic traffic that converts visitors into paying customers.
+                      </p>
+                    </div>
+
+                    <div className={styles.serpStatsPills}>
+                      <div className={styles.serpPillItem}>
+                        <span className={styles.serpPillVal}>#1 Position</span>
+                        <span className={styles.serpPillLbl}>{currentPreset.intent}</span>
+                      </div>
+                      <div className={styles.serpPillItem}>
+                        <span className={styles.serpPillVal}>{currentPreset.ctr}</span>
+                        <span className={styles.serpPillLbl}>Organic Search Velocity</span>
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <div className={styles.oppFrameworkPane}>
+                    <div className={styles.oppFrameworkImgWrapper}>
+                      <Image
+                        src="/images/SEO framework.jpg"
+                        alt="SEO & Local Search Optimization Framework in India"
+                        fill
+                        sizes="(max-width: 900px) 100vw, 480px"
+                        className={styles.oppFeaturedImg}
+                      />
+                    </div>
+                    <div className={styles.oppFrameworkNote}>
+                      <strong>Proprietary Architecture:</strong> Combines technical indexing, topic clusters, high-authority backlink signals, and Google Maps geo-grid domination.
                     </div>
                   </div>
-                </div>
+                )}
               </div>
             </div>
           </ScrollReveal>
@@ -632,6 +677,20 @@ export default function SEOPage() {
                 </div>
               ))}
             </div>
+
+            <div className={styles.sectionCtaStrip}>
+              <div className={styles.sectionCtaStripCard}>
+                <div className={styles.stripText}>
+                  <h4>Need a customized multi-channel search roadmap?</h4>
+                  <p>We craft bespoke SEO, local 3-pack, and technical architectures for high-growth enterprises.</p>
+                </div>
+                <BeamButton
+                  href="/contact"
+                  label="Request Custom SEO Package"
+                  size="md"
+                />
+              </div>
+            </div>
           </ScrollReveal>
         </div>
       </section>
@@ -666,24 +725,38 @@ export default function SEOPage() {
                 </div>
               ))}
             </div>
+
+            <div className={styles.sectionCtaStrip}>
+              <div className={styles.sectionCtaStripCard}>
+                <div className={styles.stripText}>
+                  <h4>Ready to implement this 6-step growth framework?</h4>
+                  <p>Get a comprehensive technical baseline audit and keyword roadmap within 48 hours.</p>
+                </div>
+                <BeamButton
+                  href="/contact"
+                  label="Deploy 6-Step SEO Engine"
+                  size="md"
+                />
+              </div>
+            </div>
           </ScrollReveal>
         </div>
       </section>
 
       {/* ══════════════════════════════════════════════════
-          7. WHY BUSINESSES CHOOSE MARKETING COPILOT FOR SEO GROWTH
+          7. WHY BUSINESSES CHOOSE MARKETING COPILOT FOR SEO GROWTH (DARK CONTRAST)
          ══════════════════════════════════════════════════ */}
-      <section className={styles.specialSection}>
+      <section id="why-us" className={styles.specialSection}>
         <div className="container">
           <ScrollReveal>
             <div className="text-center" style={{ maxWidth: 880, margin: '0 auto' }}>
-              <div className={styles.sectionEyebrow}>
+              <div className={styles.sectionEyebrowDark}>
                 <span>The Marketing Copilot Advantage</span>
               </div>
-              <h2 className={styles.sectionTitle}>
+              <h2 className={styles.sectionTitleDark}>
                 Why Businesses Choose Marketing Copilot for <span className="accent-gradient">SEO Growth</span>
               </h2>
-              <p className={styles.sectionSub}>
+              <p className={styles.sectionSubDark}>
                 At Marketing Copilot, we focus on practical SEO strategies, quality content, and measurable improvements to help businesses strengthen online visibility and attract relevant customers.
               </p>
             </div>
@@ -719,6 +792,18 @@ export default function SEOPage() {
                 ))}
               </div>
             </div>
+
+            <div className={styles.specialCtaRow}>
+              <div className={styles.specialCtaText}>
+                <h4>Partner with SEO specialists focused on revenue, not vanity traffic.</h4>
+                <p>Direct communication with senior search architects and transparent live weekly telemetry.</p>
+              </div>
+              <BeamButton
+                href="/contact"
+                label="Partner With Our SEO Specialists"
+                size="md"
+              />
+            </div>
           </ScrollReveal>
         </div>
       </section>
@@ -726,14 +811,14 @@ export default function SEOPage() {
       {/* ══════════════════════════════════════════════════
           8. INTERACTIVE SERP SIMULATOR
          ══════════════════════════════════════════════════ */}
-      <div id="audit">
+      <div id="audit" style={{ scrollMarginTop: 80 }}>
         <SERPSimulator />
       </div>
 
       {/* ══════════════════════════════════════════════════
           9. FAQ SECTION (THE 6 EXACT QUESTIONS - CLOSED BY DEFAULT)
          ══════════════════════════════════════════════════ */}
-      <section className={styles.faqSection}>
+      <section id="faq" className={styles.faqSection}>
         <div className="container">
           <ScrollReveal className="text-center">
             <div className={styles.sectionEyebrow} style={{ margin: '0 auto 12px' }}>

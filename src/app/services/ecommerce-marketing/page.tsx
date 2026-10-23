@@ -123,14 +123,14 @@ export default function EcommerceMarketingPage() {
         <div className="container">
           <div className={styles.heroCenter}>
             <ScrollReveal>
-              <div className={styles.heroEyebrowPill}>
+              <h1 className={styles.heroEyebrowPill}>
                 <span className={styles.emeraldPulseDot} />
-                <span>Ecommerce Marketing That Drives Traffic, Sales &amp; Brand Growth</span>
-              </div>
-
-              <h1 className={styles.heroTitle}>
-                Scale Your <span className="accent-gradient">Online Store</span>
+                <span>E-commerce Marketing Services in India</span>
               </h1>
+
+              <h2 className={styles.heroTitle}>
+                Scale Your <span className="accent-gradient">Online Store</span>
+              </h2>
 
               <p className={styles.heroSub}>
                 We combine e-commerce SEO, Google Shopping, Meta Ads, content, and conversion optimisation to help Indian businesses and D2C brands reach high-intent customers and grow online revenue.

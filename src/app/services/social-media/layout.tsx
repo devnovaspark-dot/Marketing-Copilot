@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Social Media Marketing in India | Marketing Copilot',
+  title: 'Social Media Marketing Agency in India | Marketing Copilot',
   description:
     'Unlock the potential of your business with our social media marketing services in India. Partner with Marketing Copilot for impactful results.',
   keywords: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     canonical: 'https://marketingcopilot.in/services/social-media-marketing-in-india',
   },
   openGraph: {
-    title: 'Social Media Marketing in India | Marketing Copilot',
+    title: 'Social Media Marketing Agency in India | Marketing Copilot',
     description:
       'Unlock the potential of your business with our social media marketing services in India. Partner with Marketing Copilot for impactful results.',
     url: 'https://marketingcopilot.in/services/social-media-marketing-in-india',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Social Media Marketing in India | Marketing Copilot',
+    title: 'Social Media Marketing Agency in India | Marketing Copilot',
     description:
       'Unlock the potential of your business with our social media marketing services in India. Partner with Marketing Copilot for impactful results.',
   },

@@ -105,15 +105,15 @@ export default function GoogleAdsPage() {
         <div className="container">
           <div className={styles.heroCenter}>
             <ScrollReveal>
-              <div className={styles.heroEyebrowPill}>
+              <h1 className={styles.heroEyebrowPill}>
                 <span className={styles.emeraldPulseDot} />
-                <span>#1 Google Ads &amp; Search PPC Agency in India</span>
-              </div>
+                <span>Google Ads Service in India</span>
+              </h1>
 
-              <h1 className={styles.heroTitle}>
+              <h2 className={styles.heroTitle}>
                 Capture High-Intent Customers When They{' '}
                 <span className="accent-gradient">Search in India</span>
-              </h1>
+              </h2>
 
               <p className={styles.heroSub}>
                 No wasted budget on generic clicks. We engineer exact-match Google Search funnels, 400+ negative keyword firewalls, and 10/10 Quality Score landing pages that convert searches into confirmed phone calls and walk-in consultations.

@@ -105,15 +105,15 @@ export default function LocalSeoPage() {
         <div className="container">
           <div className={styles.heroCenter}>
             <ScrollReveal>
-              <div className={styles.heroEyebrowPill}>
+              <h1 className={styles.heroEyebrowPill}>
                 <span className={styles.emeraldPulseDot} />
-                <span>#1 Google Map 3-Pack &amp; Local SEO Agency in India</span>
-              </div>
+                <span>Local SEO Services in India</span>
+              </h1>
 
-              <h1 className={styles.heroTitle}>
+              <h2 className={styles.heroTitle}>
                 Dominate Google Maps &amp; Local Search Across{' '}
                 <span className="accent-gradient">Your Target Indian Locations</span>
-              </h1>
+              </h2>
 
               <p className={styles.heroSub}>
                 Over 72% of local customers choose businesses from the top 3 Google Maps results. We deploy geo-tagged EXIF media, 60+ citation lockdowns, and automated 5-star review funnels to make your business the undisputed #1 choice.

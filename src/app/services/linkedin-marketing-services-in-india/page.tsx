@@ -157,37 +157,52 @@ const approachSteps = [
   {
     step: '01',
     phase: 'PHASE 1: DISCOVERY & ICP',
-    title: 'Step 1: Business and Audience Research',
+    tag: 'Foundation & Research',
+    title: 'Business and Audience Research',
     desc: 'We begin by understanding your services, target market, competitors, ideal customer profile, and business objectives. This helps establish a clear direction for your LinkedIn marketing strategy.',
     deliverable: 'Ideal Customer Profile (ICP) & Competitor Gap Analysis',
+    duration: 'Week 1',
+    highlights: ['Competitor Benchmark', 'Decision-Maker Personas', 'Goal Alignment'],
   },
   {
     step: '02',
     phase: 'PHASE 2: AUDIT & POSITIONING',
-    title: 'Step 2: LinkedIn Presence and Competitor Audit',
+    tag: 'Audits & Creative Angle',
+    title: 'LinkedIn Presence and Competitor Audit',
     desc: 'We review your company page, existing content, advertising activities where applicable, and competitor positioning. The findings help identify opportunities to improve messaging, content quality, and audience engagement.',
     deliverable: 'Company Page UX Audit & Benchmark Scorecard',
+    duration: 'Week 2',
+    highlights: ['Page Scorecard', 'Content Teardown', 'Positioning White Space'],
   },
   {
     step: '03',
     phase: 'PHASE 3: STRATEGY & BUDGETS',
-    title: 'Step 3: Strategy and Campaign Planning',
+    tag: 'Blueprint & Architecture',
+    title: 'Strategy and Campaign Planning',
     desc: 'We develop a plan covering campaign objectives, target audiences, content themes, advertising requirements, budgets, and conversion goals. The strategy is aligned with your business priorities and available resources.',
     deliverable: 'Multi-Week Editorial Calendar & Paid Media Blueprint',
+    duration: 'Week 3',
+    highlights: ['Editorial Calendar', 'Budget Modeling', 'Ad Funnel Architecture'],
   },
   {
     step: '04',
     phase: 'PHASE 4: EXECUTION & SCALE',
-    title: 'Step 4: Campaign Execution and Optimisation',
+    tag: 'Go-to-Market & Inbound',
+    title: 'Campaign Execution and Optimisation',
     desc: 'We implement the agreed activities, which may include company page management, content publishing, LinkedIn Ads, and lead generation campaigns. Performance data helps guide adjustments to targeting, creative assets, messaging, and budgets.',
     deliverable: 'Live Sponsored Campaigns & Form Integration',
+    duration: 'Weeks 4+',
+    highlights: ['Lead Form Ads', 'Thought Leadership Posts', 'Bid & Creative Testing'],
   },
   {
     step: '05',
     phase: 'PHASE 5: ATTRIBUTION & CONTINUOUS ROI',
-    title: 'Step 5: Reporting and Continuous Improvement',
+    tag: 'Pipeline & Scaling',
+    title: 'Reporting and Continuous Improvement',
     desc: 'We review campaign performance and share actionable insights. Where tracking is available, we evaluate lead quality and downstream conversions to help identify which activities contribute most effectively to your business objectives.',
     deliverable: 'Monthly Closed-Loop Sales Pipeline Attribution',
+    duration: 'Ongoing',
+    highlights: ['CRM Match Reports', 'Cost Per Opportunity', 'Iterative Scaling'],
   },
 ];
 
@@ -242,24 +257,36 @@ const heroWhyPillar = {
 
 const subWhyPillars = [
   {
+    icon: '🔄',
     step: 'PILLAR 02',
+    tag: 'Multi-Channel Synergy',
     title: 'Integrated Marketing Approach',
     desc: 'LinkedIn can work alongside SEO, paid advertising, content marketing, and website optimisation. Coordinating these channels helps maintain consistent messaging across your customer journey.',
+    highlight: 'Unified B2B Touchpoints & Cross-Channel Attribution',
   },
   {
+    icon: '🎯',
     step: 'PILLAR 03',
+    tag: 'Decision-Maker Focus',
     title: 'Audience-Centred Campaigns',
     desc: 'We focus on defining relevant audiences and communicating value through appropriate content, creative assets, and campaign messaging.',
+    highlight: 'C-Suite & Matched Account Intent Filtering',
   },
   {
+    icon: '⚡',
     step: 'PILLAR 04',
+    tag: 'Downstream Velocity',
     title: 'Conversion-Focused Execution',
     desc: 'We consider what happens after a prospect clicks or submits a form, including landing-page relevance, enquiry handling, and conversion tracking where available.',
+    highlight: 'Friction-Free Inbound Lead Handover',
   },
   {
+    icon: '📊',
     step: 'PILLAR 05',
+    tag: 'Honest Telemetry',
     title: 'Transparent Performance Reporting',
     desc: 'We use relevant campaign metrics to explain performance, identify challenges, and recommend next steps. Our goal is to support informed decisions rather than rely on vanity metrics alone.',
+    highlight: 'Real Pipeline Value Over Vanity Likes',
   },
 ];
 
@@ -417,18 +444,46 @@ export default function LinkedInMarketingPage() {
           {/* Symmetrical Bento Grid: 1 Hero Card + 4 Sub-Cards */}
           <div className={styles.bentoChallengesGrid}>
             {/* Hero Card: Low Engagement */}
-            <ScrollReveal className={styles.challengeCardHero}>
-              <div className={styles.challengeHeroContent}>
-                <span className={styles.challengeHeroBadge}>{heroChallenge.badge}</span>
-                <h3 className={styles.challengeHeroTitle}>{heroChallenge.title}</h3>
-                <p className={styles.challengeHeroDesc}>{heroChallenge.solution}</p>
-                <div className={styles.challengeHeroFix}>
-                  <span>✓ Solution:</span> {heroChallenge.fix}
+            <ScrollReveal className={styles.heroRevealWrapper}>
+              <div className={styles.challengeCardHero}>
+                <div className={styles.challengeHeroContent}>
+                  <div className={styles.challengeHeroHeader}>
+                    <span className={styles.challengeHeroBadge}>{heroChallenge.badge}</span>
+                    <span className={styles.challengePriorityTag}>High Commercial Friction</span>
+                  </div>
+                  <h3 className={styles.challengeHeroTitle}>{heroChallenge.title}</h3>
+                  <p className={styles.challengeHeroDesc}>{heroChallenge.solution}</p>
+                  <div className={styles.challengeHeroFix}>
+                    <span className={styles.fixIcon}>✓ Solution</span>
+                    <span className={styles.fixDivider}>|</span>
+                    <span>{heroChallenge.fix}</span>
+                  </div>
                 </div>
-              </div>
-              <div className={styles.challengeHeroStatBox}>
-                <div className={styles.heroStatVal}>{heroChallenge.statVal}</div>
-                <div className={styles.heroStatLabel}>{heroChallenge.statLabel}</div>
+
+                <div className={styles.challengeHeroActionDeck}>
+                  <div className={styles.actionDeckHeader}>
+                    <span className={styles.telemetryRadar}>
+                      <span className={styles.radarPing} />
+                      <span className={styles.radarDot} />
+                    </span>
+                    <div className={styles.telemetryInfo}>
+                      <span className={styles.telemetryMetric}>{heroChallenge.statVal} Lift</span>
+                      <span className={styles.telemetryDesc}>{heroChallenge.statLabel}</span>
+                    </div>
+                  </div>
+                  <div className={styles.actionDeckBtn}>
+                    <BeamButton
+                      href="#enquiry-section"
+                      label="Audit Your LinkedIn Strategy"
+                      size="lg"
+                      fullWidth
+                    />
+                  </div>
+                  <div className={styles.actionDeckFooter}>
+                    <span className={styles.trustCheck}>✓</span>
+                    <span>Free 15-Min Strategy Teardown • Zero Spam</span>
+                  </div>
+                </div>
               </div>
             </ScrollReveal>
 
@@ -482,7 +537,7 @@ export default function LinkedInMarketingPage() {
             {servicesOffered.map((svc, idx) => (
               <ScrollReveal key={svc.title} delay={idx * 0.07}>
                 <div className={styles.serviceCard}>
-                  <div>
+                  <div className={styles.serviceCardBody}>
                     <div className={styles.serviceCardHeader}>
                       <div className={styles.serviceIconBowl}>{svc.icon}</div>
                       <span className={styles.serviceTag}>{svc.tag}</span>
@@ -562,13 +617,20 @@ export default function LinkedInMarketingPage() {
             <p className={styles.sectionDesc}>
               LinkedIn marketing can support businesses that need to reach professional audiences, build industry credibility, or develop a predictable approach to B2B customer acquisition.
             </p>
+            <div className={styles.sectionHeaderCtaRow}>
+              <BeamButton
+                href="#enquiry-section"
+                label="Explore Sector Playbook"
+                size="md"
+              />
+            </div>
           </ScrollReveal>
 
           <div className={styles.industriesGrid}>
             {industriesBenefiting.map((ind, idx) => (
               <ScrollReveal key={ind.title} delay={idx * 0.08}>
                 <div className={styles.industryCard}>
-                  <div>
+                  <div className={styles.industryCardBody}>
                     <div className={styles.industryCardTop}>
                       <div className={styles.industryIconBowl}>{ind.icon}</div>
                       <span className={styles.industrySectorPill}>{ind.sector}</span>
@@ -611,21 +673,69 @@ export default function LinkedInMarketingPage() {
             <p className={styles.sectionDesc}>
               Successful LinkedIn marketing requires a clear understanding of your business, relevant audience targeting, consistent execution, and ongoing performance analysis.
             </p>
+            <div className={styles.sectionHeaderCtaRow}>
+              <BeamButton
+                href="#enquiry-section"
+                label="Deploy 5-Step B2B Roadmap"
+                size="md"
+              />
+            </div>
+            {/* Quick Milestone Breadcrumb Rail */}
+            <div className={styles.roadmapBreadcrumbs}>
+              {approachSteps.map((s, i) => (
+                <div key={s.step} className={styles.breadcrumbItem}>
+                  <span className={styles.breadcrumbNum}>{s.step}</span>
+                  <span className={styles.breadcrumbName}>{s.phase.split(':')[1]?.trim() || s.phase}</span>
+                  {i < approachSteps.length - 1 && <span className={styles.breadcrumbArrow}>→</span>}
+                </div>
+              ))}
+            </div>
           </ScrollReveal>
 
           <div className={styles.processTimeline}>
+            <div className={styles.timelineSpine} />
             {approachSteps.map((step, idx) => (
-              <ScrollReveal key={step.step} delay={idx * 0.08}>
+              <ScrollReveal key={step.step} delay={idx * 0.08} className={styles.processStepReveal}>
                 <div className={styles.processStepCard}>
+                  {/* Left Column: Number Node connected to vertical spine */}
                   <div className={styles.stepNumCol}>
-                    <div className={styles.stepNumBowl}>{step.step}</div>
+                    <div className={styles.stepNumNode}>
+                      <span className={styles.nodeHalo} />
+                      <span className={styles.nodeNumber}>{step.step}</span>
+                    </div>
                   </div>
+
+                  {/* Right Column: Rich Card Content */}
                   <div className={styles.stepContentCol}>
-                    <span className={styles.stepPhasePill}>{step.phase}</span>
-                    <h3 className={styles.stepTitle}>{step.title}</h3>
+                    <div className={styles.stepCardHeader}>
+                      <span className={styles.stepPhasePill}>{step.phase}</span>
+                      <span className={styles.stepDurationBadge}>{step.duration}</span>
+                    </div>
+
+                    <h3 className={styles.stepTitle}>
+                      {step.title.replace(/^Step \d+:\s*/, '')}
+                    </h3>
+
                     <p className={styles.stepDesc}>{step.desc}</p>
-                    <div className={styles.stepDeliverableTag}>
-                      <span>✓ Deliverable:</span> {step.deliverable}
+
+                    {step.highlights && (
+                      <div className={styles.stepHighlightsRow}>
+                        {step.highlights.map((hl) => (
+                          <span key={hl} className={styles.stepHighlightChip}>
+                            <span className={styles.chipDot} /> {hl}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+
+                    {/* Tangible Skeuomorphic Deliverable Capsule */}
+                    <div className={styles.stepDeliverableCapsule}>
+                      <div className={styles.deliverableIconBox}>💎</div>
+                      <div className={styles.deliverableTextBox}>
+                        <span className={styles.deliverableLabel}>VERIFIED DELIVERABLE</span>
+                        <strong className={styles.deliverableValue}>{step.deliverable}</strong>
+                      </div>
+                      <span className={styles.deliverableCheck}>✓</span>
                     </div>
                   </div>
                 </div>
@@ -656,17 +766,52 @@ export default function LinkedInMarketingPage() {
 
           {/* Symmetrical Bento Grid: 1 Hero Result Card + 6 KPI Tiles = 7 Items */}
           <div className={styles.resultsBentoGrid}>
-            <ScrollReveal className={styles.heroResultCard}>
-              <div>
-                <div className={styles.heroResultHeader}>
-                  <span className={styles.heroResultTag}>{heroResultMetric.tag}</span>
+            <ScrollReveal className={styles.heroRevealWrapper}>
+              <div className={styles.heroResultCard}>
+                <div className={styles.heroResultContent}>
+                  <div className={styles.heroResultHeader}>
+                    <span className={styles.heroResultTag}>{heroResultMetric.tag}</span>
+                    <span className={styles.heroResultLivePill}>
+                      <span className={styles.telemetryRadar}>
+                        <span className={styles.radarPing} />
+                        <span className={styles.radarDot} />
+                      </span>
+                      Verified Pipeline Engine
+                    </span>
+                  </div>
+                  <h3 className={styles.heroResultTitle}>{heroResultMetric.title}</h3>
+                  <p className={styles.heroResultDesc}>{heroResultMetric.desc}</p>
+                  <div className={styles.heroResultHighlights}>
+                    <span className={styles.highlightPill}>✓ ICP Match Validation</span>
+                    <span className={styles.highlightPill}>✓ Deal Velocity Scoring</span>
+                    <span className={styles.highlightPill}>✓ Closed-Won Attribution</span>
+                  </div>
                 </div>
-                <h3 className={styles.heroResultTitle}>{heroResultMetric.title}</h3>
-                <p className={styles.heroResultDesc}>{heroResultMetric.desc}</p>
-              </div>
-              <div className={styles.heroResultBadgePill}>
-                <strong>{heroResultMetric.statVal}</strong>
-                <span>{heroResultMetric.statLabel}</span>
+
+                <div className={styles.heroResultActionDeck}>
+                  <div className={styles.actionDeckHeader}>
+                    <span className={styles.telemetryRadar}>
+                      <span className={styles.radarPing} />
+                      <span className={styles.radarDot} />
+                    </span>
+                    <div className={styles.telemetryInfo}>
+                      <span className={styles.telemetryMetric}>{heroResultMetric.statVal} Attribution</span>
+                      <span className={styles.telemetryDesc}>{heroResultMetric.statLabel}</span>
+                    </div>
+                  </div>
+                  <div className={styles.actionDeckBtn}>
+                    <BeamButton
+                      href="#enquiry-section"
+                      label="Build Your B2B Sales Pipeline"
+                      size="lg"
+                      fullWidth
+                    />
+                  </div>
+                  <div className={styles.actionDeckFooter}>
+                    <span className={styles.trustCheck}>✓</span>
+                    <span>Enterprise CRM Sync • Revenue-First Model</span>
+                  </div>
+                </div>
               </div>
             </ScrollReveal>
 
@@ -714,22 +859,65 @@ export default function LinkedInMarketingPage() {
             <p className={styles.sectionDesc}>
               Choosing a LinkedIn marketing partner means finding a team that understands both the platform and your business goals. Marketing Copilot approaches digital marketing with a focus on strategy, relevant audience targeting, performance measurement, and continuous improvement.
             </p>
+            <div className={styles.sectionHeaderCtaRow}>
+              <BeamButton
+                href="#enquiry-section"
+                label="Partner With Our LinkedIn Specialists"
+                size="md"
+              />
+            </div>
           </ScrollReveal>
 
           {/* Symmetrical Bento Grid: 1 Hero Pillar + 4 Sub-Pillars = 5 Items */}
           <div className={styles.whyBentoGrid}>
-            <ScrollReveal className={styles.whyCardHero}>
-              <div className={styles.whyCardHeroStep}>{heroWhyPillar.step}</div>
-              <h3 className={styles.whyCardHeroTitle}>{heroWhyPillar.title}</h3>
-              <p className={styles.whyCardHeroDesc}>{heroWhyPillar.desc}</p>
+            <ScrollReveal className={styles.heroRevealWrapper}>
+              <div className={styles.whyCardHero}>
+                <div className={styles.whyHeroContent}>
+                  <div className={styles.whyHeroHeader}>
+                    <span className={styles.whyCardHeroStep}>{heroWhyPillar.step}</span>
+                    <span className={styles.whyHeroPriorityTag}>Strategic North Star</span>
+                  </div>
+                  <h3 className={styles.whyCardHeroTitle}>{heroWhyPillar.title}</h3>
+                  <p className={styles.whyCardHeroDesc}>{heroWhyPillar.desc}</p>
+                  <div className={styles.whyHeroHighlights}>
+                    <span className={styles.highlightPill}>✓ Commercial ROI Focus</span>
+                    <span className={styles.highlightPill}>✓ Zero Vanity Metrics</span>
+                    <span className={styles.highlightPill}>✓ Verified Pipeline Velocity</span>
+                  </div>
+                </div>
+
+                <div className={styles.whyHeroDeck}>
+                  <div className={styles.whyHeroDeckItem}>
+                    <span className={styles.whyHeroDeckIcon}>🎯</span>
+                    <div>
+                      <strong>Pipeline Over Impressions</strong>
+                      <span>Every rupee spent is mapped to business revenue</span>
+                    </div>
+                  </div>
+                  <div className={styles.whyHeroDeckItem}>
+                    <span className={styles.whyHeroDeckIcon}>⚡</span>
+                    <div>
+                      <strong>Sales Qualified Opportunities</strong>
+                      <span>Connecting directly with ICP decision-makers</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </ScrollReveal>
 
             {subWhyPillars.map((pillar, idx) => (
-              <ScrollReveal key={pillar.step} delay={idx * 0.08}>
+              <ScrollReveal key={pillar.step} delay={idx * 0.08} className={styles.whyCardWrapper}>
                 <div className={styles.whyCard}>
-                  <div className={styles.whyStep}>{pillar.step}</div>
+                  <div className={styles.whyCardHeader}>
+                    <div className={styles.whyStep}>{pillar.step}</div>
+                    <span className={styles.whyPillarTag}>{pillar.tag}</span>
+                    <div className={styles.whyCardIcon}>{pillar.icon}</div>
+                  </div>
                   <h3 className={styles.whyTitle}>{pillar.title}</h3>
                   <p className={styles.whyDesc}>{pillar.desc}</p>
+                  <div className={styles.whyHighlightBadge}>
+                    <span>✓</span> {pillar.highlight}
+                  </div>
                 </div>
               </ScrollReveal>
             ))}
@@ -753,6 +941,13 @@ export default function LinkedInMarketingPage() {
             <p className={styles.sectionDesc}>
               Everything you need to know about LinkedIn marketing services, ad budgets, organic strategy, and measuring B2B performance.
             </p>
+            <div className={styles.sectionHeaderCtaRow}>
+              <BeamButton
+                href="#enquiry-section"
+                label="Have Questions? Book Strategy Call"
+                size="md"
+              />
+            </div>
           </ScrollReveal>
 
           <div className={styles.faqContainer}>

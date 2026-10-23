@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Performance Marketing in India | Marketing Copilot',
+  title: 'Performance Marketing Agency in India | Marketing Copilot',
   description:
     'Elevate your business with expert performance marketing in India. Marketing Copilot offers tailored strategies to maximize your online presence.',
   keywords: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     canonical: 'https://marketingcopilot.in/services/performance-marketing-in-india',
   },
   openGraph: {
-    title: 'Performance Marketing in India | Marketing Copilot',
+    title: 'Performance Marketing Agency in India | Marketing Copilot',
     description:
       'Elevate your business with expert performance marketing in India. Marketing Copilot offers tailored strategies to maximize your online presence.',
     url: 'https://marketingcopilot.in/services/performance-marketing-in-india',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Performance Marketing in India | Marketing Copilot',
+    title: 'Performance Marketing Agency in India | Marketing Copilot',
     description:
       'Elevate your business with expert performance marketing in India. Marketing Copilot offers tailored strategies to maximize your online presence.',
   },

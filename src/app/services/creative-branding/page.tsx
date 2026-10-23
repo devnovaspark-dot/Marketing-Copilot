@@ -105,15 +105,15 @@ export default function CreativeBrandingPage() {
         <div className="container">
           <div className={styles.heroCenter}>
             <ScrollReveal>
-              <div className={styles.heroEyebrowPill}>
+              <h1 className={styles.heroEyebrowPill}>
                 <span className={styles.emeraldPulseDot} />
-                <span>#1 Brand Identity &amp; Corporate Design Studio in India</span>
-              </div>
+                <span>Creative Branding Service in India</span>
+              </h1>
 
-              <h1 className={styles.heroTitle}>
+              <h2 className={styles.heroTitle}>
                 Build an Unforgettable Brand That{' '}
                 <span className="accent-gradient">Commands Market Prestige</span>
-              </h1>
+              </h2>
 
               <p className={styles.heroSub}>
                 Stop competing in race-to-the-bottom price wars. We craft golden-ratio vector brandmarks, tokenized design systems, physical packaging, and brand bibles that help Indian businesses build distinctive brand identities, stronger market positioning, and greater perceived value.

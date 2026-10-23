@@ -89,7 +89,15 @@ const nextConfig: NextConfig = {
         destination: '/services/social-media',
       },
       {
+        source: '/services/social-media-marketing-agency-in-india',
+        destination: '/services/social-media',
+      },
+      {
         source: '/services/performance-marketing-in-india',
+        destination: '/services/performance-marketing',
+      },
+      {
+        source: '/services/performance-marketing-agency-in-india',
         destination: '/services/performance-marketing',
       },
       {
@@ -98,6 +106,10 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/services/web-development-in-india',
+        destination: '/services/web-development',
+      },
+      {
+        source: '/services/web-development-agency-in-india',
         destination: '/services/web-development',
       },
       {

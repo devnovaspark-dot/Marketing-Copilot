@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Creative Branding Agency in India | Marketing Copilot',
+  title: 'Creative Branding Services in India | Marketing Copilot',
   description: 'Build memorable brand recall. Brand positioning, visual design systems, packaging, and high-converting storytelling crafted in India.',
   keywords: [
+    'Creative Branding Services in India',
+    'Creative Branding Service in India',
     'Creative Branding Agency in India',
     'Brand Positioning India',
     'Visual Identity Design',
@@ -15,7 +17,7 @@ export const metadata: Metadata = {
     canonical: 'https://marketingcopilot.in/services/creative-branding-services-in-india',
   },
   openGraph: {
-    title: 'Creative Branding Agency in India | Marketing Copilot',
+    title: 'Creative Branding Services in India | Marketing Copilot',
     description: 'Build memorable brand recall. Brand positioning, visual design systems, packaging, and high-converting storytelling crafted in India.',
     url: 'https://marketingcopilot.in/services/creative-branding-services-in-india',
     siteName: 'Marketing Copilot',
@@ -24,7 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Creative Branding Agency in India | Marketing Copilot',
+    title: 'Creative Branding Services in India | Marketing Copilot',
     description: 'Build memorable brand recall. Brand positioning, visual design systems, packaging, and high-converting storytelling crafted in India.',
   },
 };

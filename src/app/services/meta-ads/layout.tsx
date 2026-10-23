@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   description: 'Discover effective Meta Ads services in India with Marketing Copilot. Maximize your online presence and reach your target audience today!',
   keywords: [
     'Meta Ads Services in India',
+    'Meta Ads Service',
+    'Meta Ads Agency in India',
+    'Facebook & Instagram Ads',
     'Facebook Ads Agency India',
     'Instagram Advertising Agency',
     'Meta Ads Management India',

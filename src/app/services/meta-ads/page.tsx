@@ -205,7 +205,7 @@ export default function MetaAdsPage() {
             <ScrollReveal>
               <h1 className={styles.heroEyebrowPill}>
                 <span className={styles.bluePulseDot} />
-                <span>Meta Ads Agency · Pan-India Performance &amp; Scale</span>
+                <span>Meta Ads Services in India</span>
               </h1>
 
               <h2 className={styles.heroTitle}>
