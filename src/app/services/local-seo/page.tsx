@@ -237,9 +237,9 @@ export default function LocalSeoPage() {
       {/* ══════════════════════════════════════════════════
           5. INTERACTIVE LOCAL REVENUE CALCULATOR
          ══════════════════════════════════════════════════ */}
-      <section style={{ padding: 'clamp(56px, 7vw, 96px) 0', background: '#FFFFFF' }}>
+      <section style={{ padding: 'clamp(38px, 5vw, 60px) 0', background: '#FFFFFF' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 40px' }}>
+          <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 24px' }}>
             <span style={{ fontSize: '12px', fontWeight: 800, color: '#0B2093', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
               LOCAL COMMERCE ECONOMICS
             </span>
@@ -265,9 +265,9 @@ export default function LocalSeoPage() {
       {/* ══════════════════════════════════════════════════
           6. THE LOCAL SEO STANDARD (COMPARISON MATRIX)
          ══════════════════════════════════════════════════ */}
-      <section style={{ padding: 'clamp(56px, 7vw, 96px) 0', background: '#F8FAFC', borderTop: '1px solid #E2E8F0', borderBottom: '1px solid #E2E8F0' }}>
+      <section style={{ padding: 'clamp(38px, 5vw, 60px) 0', background: '#F8FAFC', borderTop: '1px solid #E2E8F0', borderBottom: '1px solid #E2E8F0' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 40px' }}>
+          <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 24px' }}>
             <span style={{ fontSize: '12px', fontWeight: 800, color: '#0B2093', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
               THE MARKETING COPILOT DIFFERENCE
             </span>
@@ -293,9 +293,9 @@ export default function LocalSeoPage() {
       {/* ══════════════════════════════════════════════════
           7. 30-DAY LOCAL SEO SPRINT ROADMAP
          ══════════════════════════════════════════════════ */}
-      <section style={{ padding: 'clamp(56px, 7vw, 96px) 0', background: '#FFFFFF' }}>
+      <section style={{ padding: 'clamp(38px, 5vw, 60px) 0', background: '#FFFFFF' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 40px' }}>
+          <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 24px' }}>
             <span style={{ fontSize: '12px', fontWeight: 800, color: '#0B2093', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
               EXECUTION ROADMAP
             </span>
