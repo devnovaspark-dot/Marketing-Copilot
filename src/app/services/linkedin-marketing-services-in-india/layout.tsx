@@ -4,10 +4,6 @@ export const metadata: Metadata = {
   title: 'LinkedIn Marketing Services in India | B2B Lead Gen & Ads | Marketing Copilot',
   description:
     'Reach decision-makers and generate quality B2B leads with strategic LinkedIn marketing services in India. Page management, targeted ads, content & reporting.',
-  robots: {
-    index: false,
-    follow: false,
-  },
   keywords: [
     'LinkedIn Marketing Services in India',
     'LinkedIn Marketing Agency India',
