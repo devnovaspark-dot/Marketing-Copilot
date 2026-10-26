@@ -1,21 +1,21 @@
 /* ══════════════════════════════════════════════════
-   GOOGLE MAPS 3-PACK RANK RADAR — COCKPIT STYLES
-   High-Tech Geospatial Radar + Real Google 3-Pack SERP
-   Palette: Navy (#0B2093, #0D007F), Emerald (#10B981), Amber (#F59E0B), Slate
+   GOOGLE MAPS 3-PACK DOMINANCE ENGINE
+   Bespoke Interactive Transformation & SERP Cockpit
+   Palette: Blue (#0B2093, #0D007F), Emerald (#10B981), Amber (#F59E0B), Slate
  ══════════════════════════════════════════════════ */
 
-.simSection {
+.dominanceSection {
   padding: clamp(38px, 5vw, 60px) 0;
   background: #FFFFFF;
   position: relative;
 }
 
-.simCard {
-  background: linear-gradient(165deg, #FFFFFF 0%, #F8FAFC 60%, #F1F5F9 100%);
+.engineCard {
+  background: linear-gradient(165deg, #FFFFFF 0%, #FAFCFF 60%, #F1F5F9 100%);
   border: 1.5px solid #CBD5E1;
   border-radius: 22px;
   padding: clamp(22px, 3.2vw, 36px);
-  max-width: 1040px;
+  max-width: 1060px;
   margin: 0 auto;
   box-shadow: 
     inset 0 2px 0 #FFFFFF,
@@ -24,13 +24,13 @@
     0 4px 14px rgba(0, 0, 0, 0.03);
 }
 
-.simHeader {
+.engineHeader {
   text-align: center;
   max-width: 780px;
-  margin: 0 auto 24px;
+  margin: 0 auto 20px;
 }
 
-.simEyebrowPill {
+.eyebrowPill {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -48,21 +48,21 @@
   box-shadow: inset 0 1px 0 #FFFFFF;
 }
 
-.livePulseDot {
+.pulseDot {
   width: 7px;
   height: 7px;
   border-radius: 50%;
   background: #10B981;
   box-shadow: 0 0 10px rgba(16, 185, 129, 0.8);
-  animation: radarBlink 1.8s infinite ease-in-out;
+  animation: pulseLive 1.8s infinite ease-in-out;
 }
 
-@keyframes radarBlink {
+@keyframes pulseLive {
   0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.35; transform: scale(0.8); }
+  50% { opacity: 0.35; transform: scale(0.85); }
 }
 
-.simTitle {
+.engineTitle {
   font-family: var(--font-display);
   font-size: clamp(1.8rem, 3vw, 2.6rem);
   font-weight: 800;
@@ -72,7 +72,7 @@
   letter-spacing: -0.025em;
 }
 
-.simSub {
+.engineSub {
   font-size: 14px;
   color: #475569;
   line-height: 1.6;
@@ -80,333 +80,439 @@
   margin: 0 auto;
 }
 
-/* Control Switchers: City & Industry */
-.controlContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin: 22px auto 26px;
-  max-width: 860px;
-}
-
-.filterGroup {
+/* Control Navigation Bar */
+.navRow {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-wrap: wrap;
-  gap: 8px;
-}
-
-.filterLabel {
-  font-size: 11px;
-  font-weight: 800;
-  color: #64748B;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin-right: 4px;
-}
-
-.cityBtn {
-  background: #FFFFFF;
-  border: 1.5px solid #CBD5E1;
-  color: #334155;
-  border-radius: 999px;
-  padding: 6px 14px;
-  font-size: 12px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
-}
-
-.cityBtn:hover {
-  border-color: #0B2093;
-  color: #0B2093;
-  background: #F8FAFC;
-}
-
-.cityBtnActive {
-  background: #0B2093 !important;
-  color: #FFFFFF !important;
-  border-color: #0B2093 !important;
-  box-shadow: 0 4px 12px rgba(11, 32, 147, 0.25) !important;
-}
-
-.industryBtn {
-  background: #F1F5F9;
-  border: 1px solid #E2E8F0;
-  color: #475569;
-  border-radius: 8px;
-  padding: 5px 12px;
-  font-size: 11.5px;
-  font-weight: 650;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.industryBtn:hover {
-  background: #FFFFFF;
-  border-color: #CBD5E1;
-  color: #0F172A;
-}
-
-.industryBtnActive {
-  background: #EFF6FF !important;
-  color: #0B2093 !important;
-  border-color: #BFDBFE !important;
-  font-weight: 750 !important;
-}
-
-/* Two-Column Cockpit Layout */
-.cockpitGrid {
-  display: grid;
-  grid-template-columns: 1.05fr 1fr;
-  gap: 22px;
-  align-items: stretch;
-}
-
-/* ══════════════════════════════════════════════════
-   LEFT PANEL: HIGH-TECH GEOSPATIAL RADAR
- ══════════════════════════════════════════════════ */
-.radarCard {
-  background: radial-gradient(circle at 50% 50%, #0B1736 0%, #070D1F 100%);
-  border: 1.5px solid #1E293B;
-  border-radius: 18px;
-  padding: 18px 20px;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-shadow: inset 0 0 40px rgba(11, 32, 147, 0.3), 0 12px 28px rgba(0, 0, 0, 0.25);
-  color: #FFFFFF;
-}
-
-/* Radar Overhead Bar */
-.radarHeaderBar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 11px;
-  font-weight: 700;
-  color: #94A3B8;
-  letter-spacing: 0.05em;
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  position: relative;
-  z-index: 3;
-}
-
-.radarLocTitle {
-  color: #38BDF8;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
-.radarCoords {
-  font-family: monospace;
-  font-size: 10.5px;
-  color: #64748B;
-  background: rgba(15, 23, 42, 0.6);
-  padding: 2px 8px;
-  border-radius: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-/* Radar Center Viewport with Rings & Rotating Beam */
-.radarViewport {
-  position: relative;
-  width: 100%;
-  max-width: 380px;
-  margin: 14px auto;
-  aspect-ratio: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* SVG Concentric Radar Rings & Crosshairs */
-.radarSvgOverlay {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* Rotating Sweep Beam */
-.radarSweep {
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  background: conic-gradient(from 0deg, rgba(16, 185, 129, 0.25) 0deg, rgba(16, 185, 129, 0.05) 45deg, transparent 90deg, transparent 360deg);
-  pointer-events: none;
-  z-index: 1;
-  animation: rotateSweep 6s linear infinite;
-}
-
-@keyframes rotateSweep {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-/* 5x5 Pin Interactive Grid */
-.grid5x5Radar {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 10px;
-  width: 86%;
-  height: 86%;
-  position: relative;
-  z-index: 3;
-  margin: auto;
-}
-
-.radarNode {
-  aspect-ratio: 1;
-  border-radius: 50%;
-  border: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 11px;
-  font-weight: 900;
-  color: #FFFFFF;
-  cursor: pointer;
-  position: relative;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.radarNode:hover {
-  transform: scale(1.18);
-  z-index: 5;
-}
-
-.nodeRank1 {
-  background: radial-gradient(circle at 35% 35%, #34D399 0%, #059669 100%);
-  box-shadow: 0 0 12px rgba(16, 185, 129, 0.45);
-}
-
-.nodeRank2 {
-  background: radial-gradient(circle at 35% 35%, #FBBF24 0%, #D97706 100%);
-  box-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
-}
-
-.nodeSelected {
-  outline: 2.5px solid #38BDF8 !important;
-  outline-offset: 3px;
-  box-shadow: 0 0 20px #38BDF8 !important;
-  transform: scale(1.18) !important;
-  z-index: 6;
-}
-
-.nodeSelected::after {
-  content: '';
-  position: absolute;
-  inset: -8px;
-  border-radius: 50%;
-  border: 1px dashed rgba(56, 189, 248, 0.6);
-  animation: targetSpin 8s linear infinite;
-}
-
-@keyframes targetSpin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-/* Radar Footer Status */
-.radarFooter {
-  padding-top: 10px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 11px;
-  color: #CBD5E1;
-  position: relative;
-  z-index: 3;
-}
-
-.radarLegend {
-  display: flex;
-  align-items: center;
   gap: 12px;
+  margin: 22px 0 24px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #E2E8F0;
 }
 
-.radarLegendItem {
+.modeToggleGroup {
+  display: inline-flex;
+  background: #E2E8F0;
+  padding: 3px;
+  border-radius: 12px;
+  gap: 3px;
+}
+
+.modeBtn {
+  background: none;
+  border: none;
+  padding: 7px 16px;
+  border-radius: 9px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.modeBtnActive {
+  background: #FFFFFF !important;
+  color: #0B2093 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+
+.industryChips {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.chipBtn {
+  background: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  color: #334155;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.18s ease;
   display: inline-flex;
   align-items: center;
   gap: 5px;
 }
 
-.legendDotGreen {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #10B981;
-  box-shadow: 0 0 6px #10B981;
+.chipBtn:hover {
+  border-color: #0B2093;
+  color: #0B2093;
+  background: #F8FAFC;
 }
 
-.legendDotAmber {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #F59E0B;
-  box-shadow: 0 0 6px #F59E0B;
-}
-
-.radarMetricPill {
-  background: rgba(16, 185, 129, 0.18);
-  border: 1px solid rgba(16, 185, 129, 0.4);
-  color: #34D399;
-  padding: 3px 10px;
-  border-radius: 999px;
-  font-weight: 750;
-  font-size: 10.5px;
+.chipBtnActive {
+  background: #0B2093 !important;
+  color: #FFFFFF !important;
+  border-color: #0B2093 !important;
+  box-shadow: 0 2px 8px rgba(11, 32, 147, 0.2) !important;
 }
 
 /* ══════════════════════════════════════════════════
-   RIGHT PANEL: GOOGLE MAPS 3-PACK SERP CONSOLE
+   VIEW 1: BEFORE VS. AFTER TRANSFORMATION (SIDE-BY-SIDE)
  ══════════════════════════════════════════════════ */
-.serpCard {
+.transformGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  align-items: stretch;
+}
+
+/* Left Card: Before (Dimmed, Inactive) */
+.beforeCard {
   background: #FFFFFF;
-  border: 1.5px solid #CBD5E1;
+  border: 1.5px dashed #CBD5E1;
   border-radius: 18px;
-  padding: 18px 20px;
+  padding: 22px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02);
+  position: relative;
 }
 
-/* Mock Google Maps Search Input */
-.googleSearchMock {
+.cardHeaderRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.badgeBefore {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #FEF2F2;
+  border: 1px solid #FECACA;
+  color: #DC2626;
+  font-size: 10.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.badgeRankLost {
+  font-size: 11px;
+  font-weight: 700;
+  color: #94A3B8;
+}
+
+.listingBoxBefore {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 16px;
+}
+
+.listingTitleBefore {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 750;
+  color: #64748B;
+  margin: 0 0 4px;
+}
+
+.starsBefore {
+  font-size: 12px;
+  color: #D97706;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.alertList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed #E2E8F0;
+}
+
+.alertItem {
+  font-size: 11.5px;
+  color: #EF4444;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+}
+
+/* Metric Strip (Before) */
+.metricStripBefore {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding-top: 14px;
+  border-top: 1px solid #E2E8F0;
+}
+
+.metricCellBefore {
+  background: #F1F5F9;
+  border-radius: 8px;
+  padding: 8px 10px;
+  text-align: center;
+}
+
+.cellValBefore {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 800;
+  color: #64748B;
+  margin-bottom: 2px;
+}
+
+.cellLabelBefore {
+  font-size: 10px;
+  font-weight: 700;
+  color: #94A3B8;
+  text-transform: uppercase;
+}
+
+/* Right Card: After (Copilot #1 Winner) */
+.afterCard {
+  background: linear-gradient(155deg, #FFFFFF 0%, #F0FDF4 100%);
+  border: 1.5px solid #10B981;
+  border-radius: 18px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 
+    inset 0 1px 0 #FFFFFF,
+    0 16px 36px -8px rgba(16, 185, 129, 0.18),
+    0 4px 12px rgba(0, 0, 0, 0.03);
+  position: relative;
+}
+
+.badgeAfter {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ECFDF5;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #059669;
+  font-size: 10.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.badgeRankWon {
+  background: #10B981;
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+}
+
+.listingBoxAfter {
+  background: #FFFFFF;
+  border: 1.5px solid rgba(16, 185, 129, 0.3);
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.06);
+}
+
+.listingTitleAfter {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0 0 4px;
+}
+
+.starsAfter {
+  font-size: 12.5px;
+  color: #F59E0B;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+}
+
+.actionsAfter {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.callPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #0B2093;
+  color: #FFFFFF;
+  font-size: 11.5px;
+  font-weight: 750;
+  padding: 6px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(11, 32, 147, 0.25);
+}
+
+.dirPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  color: #0F172A;
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.winList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.winItem {
+  font-size: 11.5px;
+  color: #059669;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 650;
+}
+
+/* Metric Strip (After) */
+.metricStripAfter {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.metricCellAfter {
+  background: #FFFFFF;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 8px;
+  padding: 8px 10px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.05);
+}
+
+.cellValAfter {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 800;
+  color: #059669;
+  margin-bottom: 2px;
+}
+
+.cellLabelAfter {
+  font-size: 10px;
+  font-weight: 750;
+  color: #0B2093;
+  text-transform: uppercase;
+}
+
+/* Transformation Summary Banner */
+.transformSummaryBar {
+  margin-top: 20px;
+  background: #FFFFFF;
+  border: 1.5px solid #CBD5E1;
+  border-radius: 14px;
+  padding: 14px 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.summaryCol {
+  text-align: center;
+  border-right: 1px solid #E2E8F0;
+}
+
+.summaryCol:last-child {
+  border-right: none;
+}
+
+.summaryNum {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 800;
+  color: #0B2093;
+  line-height: 1.1;
+  margin-bottom: 2px;
+}
+
+.summaryLabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: #64748B;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ══════════════════════════════════════════════════
+   VIEW 2: REAL GOOGLE MAPS 3-PACK SERP & ANATOMY
+ ══════════════════════════════════════════════════ */
+.serpGrid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+/* Left: Simulated Google Maps Search Interface */
+.serpBox {
+  background: #FFFFFF;
+  border: 1.5px solid #CBD5E1;
+  border-radius: 18px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+.googleSearchInput {
   display: flex;
   align-items: center;
   gap: 10px;
   background: #F8FAFC;
-  border: 1.5px solid #E2E8F0;
+  border: 1.5px solid #CBD5E1;
   border-radius: 12px;
-  padding: 9px 14px;
+  padding: 10px 14px;
   margin-bottom: 14px;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.02);
 }
 
-.googlePinIcon {
+.googleIconG {
   font-size: 16px;
-  color: #EA4335;
+  font-weight: 800;
+  color: #4285F4;
 }
 
-.googleSearchInput {
+.googleQueryText {
   flex: 1;
   font-size: 12.5px;
   font-weight: 650;
@@ -416,212 +522,159 @@
   text-overflow: ellipsis;
 }
 
-.googleProximityBadge {
-  font-size: 10.5px;
-  font-weight: 750;
-  color: #059669;
-  background: #ECFDF5;
-  border: 1px solid rgba(16, 185, 129, 0.3);
-  padding: 2px 8px;
-  border-radius: 999px;
-  white-space: nowrap;
-}
-
-/* 3-Pack Container */
-.packList {
+.google3PackItems {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-bottom: 14px;
 }
 
-/* Top Winner (#1 Placement) */
-.packItemWinner {
+.serpItemRank1 {
   background: linear-gradient(145deg, #F0FDF4 0%, #FFFFFF 100%);
   border: 1.5px solid #10B981;
   border-radius: 12px;
   padding: 12px 14px;
   position: relative;
-  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.12);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.1);
 }
 
-.winnerEyebrow {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 6px;
-}
-
-.rankBadge1 {
+.rank1Badge {
   background: #10B981;
   color: #FFFFFF;
   font-size: 10px;
   font-weight: 800;
   padding: 2px 8px;
   border-radius: 999px;
-  letter-spacing: 0.04em;
   display: inline-flex;
   align-items: center;
   gap: 4px;
-}
-
-.verifiedLabel {
-  font-size: 10px;
-  font-weight: 750;
-  color: #059669;
-  display: inline-flex;
-  align-items: center;
-  gap: 3px;
-}
-
-.winnerTitle {
-  font-family: var(--font-display);
-  font-size: 14.5px;
-  font-weight: 800;
-  color: #0F172A;
-  margin: 0 0 4px;
-  line-height: 1.25;
-}
-
-.starsRow {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 12px;
   margin-bottom: 6px;
 }
 
-.starsGold {
-  color: #F59E0B;
-  letter-spacing: 1px;
-  font-weight: 800;
-}
-
-.reviewCount {
-  color: #64748B;
-  font-weight: 600;
-  font-size: 11.5px;
-}
-
-.categoryLine {
-  font-size: 11.5px;
-  color: #475569;
-  margin-bottom: 10px;
-}
-
-.winnerActions {
-  display: flex;
-  gap: 8px;
-}
-
-.actionPillPrimary {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  background: #0B2093;
-  color: #FFFFFF;
-  font-size: 11px;
-  font-weight: 700;
-  padding: 5px 12px;
-  border-radius: 6px;
-  text-decoration: none;
-  box-shadow: 0 2px 6px rgba(11, 32, 147, 0.2);
-}
-
-.actionPillSecondary {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  background: #FFFFFF;
-  border: 1px solid #CBD5E1;
-  color: #0F172A;
-  font-size: 11px;
-  font-weight: 650;
-  padding: 5px 10px;
-  border-radius: 6px;
-  text-decoration: none;
-}
-
-/* Competitor 2 and 3 */
-.packItemCompetitor {
+.serpItemCompetitor {
   background: #F8FAFC;
   border: 1px solid #E2E8F0;
   border-radius: 10px;
-  padding: 9px 12px;
+  padding: 10px 12px;
   opacity: 0.85;
 }
 
-.compHeader {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 2px;
-}
-
-.compRankBadge {
+.competitorBadge {
   background: #94A3B8;
   color: #FFFFFF;
   font-size: 9.5px;
   font-weight: 750;
   padding: 1px 6px;
   border-radius: 999px;
+  display: inline-block;
+  margin-bottom: 4px;
 }
 
-.compDistance {
-  font-size: 10.5px;
-  color: #94A3B8;
-  font-weight: 600;
+/* Right: The 4 Dominance Levers */
+.leversBox {
+  background: #FFFFFF;
+  border: 1.5px solid #CBD5E1;
+  border-radius: 18px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.compTitle {
+.leversTitle {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0 0 4px;
+}
+
+.leversSub {
   font-size: 12.5px;
-  font-weight: 700;
-  color: #334155;
+  color: #64748B;
+  margin-bottom: 14px;
+}
+
+.leverList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.leverCard {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+  padding: 11px 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  transition: all 0.2s ease;
+}
+
+.leverCard:hover {
+  background: #FFFFFF;
+  border-color: #0B2093;
+  box-shadow: 0 4px 12px rgba(11, 32, 147, 0.08);
+}
+
+.leverIconBox {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #EFF6FF;
+  color: #0B2093;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  flex-shrink: 0;
+  border: 1px solid #BFDBFE;
+}
+
+.leverName {
+  font-family: var(--font-display);
+  font-size: 13.5px;
+  font-weight: 750;
+  color: #0F172A;
   margin: 0 0 2px;
 }
 
-.compMeta {
-  font-size: 11px;
-  color: #64748B;
+.leverDesc {
+  font-size: 12px;
+  color: #475569;
+  line-height: 1.45;
+  margin: 0;
 }
 
-/* Telemetry Micro Grid */
-.telemetryGrid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
-  padding-top: 12px;
-  border-top: 1px solid #E2E8F0;
-}
-
-.telemetryTile {
+/* Metro Regional Footprint Bar */
+.metroBar {
+  margin-top: 20px;
+  padding: 12px 16px;
   background: #F8FAFC;
   border: 1px solid #E2E8F0;
-  border-radius: 8px;
-  padding: 8px 10px;
-  text-align: center;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 650;
+  color: #334155;
 }
 
-.tileValue {
-  font-family: var(--font-display);
-  font-size: 14px;
-  font-weight: 800;
+.metroTag {
+  background: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 750;
   color: #0B2093;
-  line-height: 1.1;
-  margin-bottom: 2px;
-}
-
-.tileLabel {
-  font-size: 9.5px;
-  font-weight: 700;
-  color: #64748B;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  line-height: 1.2;
 }
 
 /* Bottom CTA Area */
-.simBottomCta {
+.engineBottomCta {
   margin-top: 24px;
   display: flex;
   align-items: center;
@@ -630,41 +683,49 @@
   flex-wrap: wrap;
 }
 
-.bottomCtaNote {
+.bottomNote {
   font-size: 13.5px;
   font-weight: 650;
   color: #334155;
 }
 
-/* Responsive Rules */
+/* Responsive adjustments */
 @media (max-width: 900px) {
-  .cockpitGrid {
+  .transformGrid,
+  .serpGrid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 18px;
   }
-  .telemetryGrid {
+  .transformSummaryBar {
     grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .summaryCol:nth-child(2) {
+    border-right: none;
+  }
+  .navRow {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
 @media (max-width: 480px) {
-  .filterGroup {
-    justify-content: flex-start;
-    overflow-x: auto;
-    padding-bottom: 4px;
+  .metricStripBefore,
+  .metricStripAfter {
+    grid-template-columns: 1fr;
   }
-  .cityBtn {
-    font-size: 11px;
-    padding: 5px 10px;
-    white-space: nowrap;
+  .transformSummaryBar {
+    grid-template-columns: 1fr;
   }
-  .radarViewport {
-    max-width: 300px;
+  .summaryCol {
+    border-right: none;
+    border-bottom: 1px solid #E2E8F0;
+    padding-bottom: 10px;
   }
-  .grid5x5Radar {
-    gap: 6px;
+  .summaryCol:last-child {
+    border-bottom: none;
   }
-  .winnerActions {
-    flex-wrap: wrap;
+  .actionsAfter {
+    flex-direction: column;
   }
 }
