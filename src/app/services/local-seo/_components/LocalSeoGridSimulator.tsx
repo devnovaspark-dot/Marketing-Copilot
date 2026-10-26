@@ -4,282 +4,197 @@ import React, { useState } from 'react';
 import BeamButton from '@/components/BeamButton';
 import styles from './LocalSeoGridSimulator.module.css';
 
-interface CityData {
+interface CityTarget {
   id: string;
   name: string;
-  query: string;
   corridor: string;
   businessName: string;
-  reviews: string;
-  comp1: string;
-  comp1Meta: string;
-  comp1Distance: string;
-  comp2: string;
-  comp2Meta: string;
-  comp2Distance: string;
+  query: string;
 }
 
-const CITIES: CityData[] = [
+const CITIES: CityTarget[] = [
   {
     id: 'delhi',
     name: 'Delhi NCR',
-    query: 'Best Commercial & B2B Services Near Me',
     corridor: 'Connaught Place & Cyber City',
-    businessName: 'Apex Growth & Commercial Practice',
-    reviews: '480+',
-    comp1: 'National Business Network',
-    comp1Meta: '4.2 ★★★★☆ (64 reviews) · Open until 8 PM',
-    comp1Distance: '2.1 km away',
-    comp2: 'City Metro Services',
-    comp2Meta: '3.9 ★★★☆☆ (38 reviews) · Closes soon',
-    comp2Distance: '3.4 km away',
+    businessName: 'Apex Commercial Practice',
+    query: 'best corporate services near me',
   },
   {
     id: 'mumbai',
     name: 'Mumbai',
-    query: 'Top Corporate Advisory & Retainers Near Me',
-    corridor: 'Bandra Kurla Complex (BKC) & Lower Parel',
+    corridor: 'BKC & Nariman Point',
     businessName: 'Apex Corporate & Legal Advisory',
-    reviews: '520+',
-    comp1: 'South Mumbai Commercial Co.',
-    comp1Meta: '4.1 ★★★★☆ (58 reviews) · Open until 7 PM',
-    comp1Distance: '1.8 km away',
-    comp2: 'Metro Associates Group',
-    comp2Meta: '3.8 ★★★☆☆ (29 reviews) · Unverified',
-    comp2Distance: '3.1 km away',
+    query: 'top corporate retainers near me',
   },
   {
     id: 'bangalore',
     name: 'Bengaluru',
-    query: 'Top Digital Growth Agency Near Me',
-    corridor: 'Koramangala, Indiranagar & HSR Layout',
+    corridor: 'Koramangala & Indiranagar',
     businessName: 'Marketing Copilot Regional Tech Hub',
-    reviews: '440+',
-    comp1: 'Silicon Valley Digital Marketing',
-    comp1Meta: '4.3 ★★★★☆ (72 reviews) · Open until 8 PM',
-    comp1Distance: '1.6 km away',
-    comp2: 'Tech Corridor Web Ads',
-    comp2Meta: '4.0 ★★★★☆ (45 reviews) · Closed',
-    comp2Distance: '2.8 km away',
+    query: 'performance marketing agency near me',
   },
   {
     id: 'hyderabad',
     name: 'Hyderabad',
-    query: 'Best Multispeciality Practice Near Me',
-    corridor: 'Hitec City, Gachibowli & Jubilee Hills',
-    businessName: 'Apex Healthcare & Diagnostic Hospital',
-    reviews: '460+',
-    comp1: 'City Health Center',
-    comp1Meta: '4.2 ★★★★☆ (60 reviews) · Open until 9 PM',
-    comp1Distance: '2.4 km away',
-    comp2: 'Regional Care Clinic',
-    comp2Meta: '3.9 ★★★☆☆ (35 reviews) · Closes soon',
-    comp2Distance: '3.6 km away',
+    corridor: 'Hitec City & Jubilee Hills',
+    businessName: 'Apex Multispeciality Center',
+    query: 'best multispeciality clinic near me',
   },
   {
     id: 'pune',
     name: 'Pune',
-    query: 'Luxury Architecture & Interiors Near Me',
-    corridor: 'Baner High Street & Koregaon Park',
-    businessName: 'Luxe Living Design & Architecture Studio',
-    reviews: '380+',
-    comp1: 'Modern Space Décor Studio',
-    comp1Meta: '4.1 ★★★★☆ (48 reviews) · Open until 8 PM',
-    comp1Distance: '2.2 km away',
-    comp2: 'Classic Home Interiors',
-    comp2Meta: '3.7 ★★★☆☆ (28 reviews) · Closes 7 PM',
-    comp2Distance: '3.5 km away',
+    corridor: 'Baner & Koregaon Park',
+    businessName: 'Luxe Living Design Studio',
+    query: 'luxury architecture studio near me',
   },
 ];
 
 export default function LocalSeoGridSimulator() {
-  const [selectedCityId, setSelectedCityId] = useState<string>('delhi');
-  const currentCity = CITIES.find((c) => c.id === selectedCityId) || CITIES[0];
+  const [activeCityId, setActiveCityId] = useState<string>('delhi');
+  const city = CITIES.find((c) => c.id === activeCityId) || CITIES[0];
 
   return (
-    <section className={styles.cleanSection} id="grid-simulator">
+    <section className={styles.section} id="grid-simulator">
       <div className="container">
-        <div className={styles.cleanCard}>
-          {/* Header */}
-          <div className={styles.headerWrap}>
-            <div className={styles.eyebrow}>
-              <span className={styles.liveDot} />
-              <span>MAP 3-PACK DOMINANCE</span>
-            </div>
-            <h2 className={styles.title}>
-              Rank in the Top 3 on Google Maps
+        {/* Minimalist Header with Integrated City Tabs */}
+        <div className={styles.header}>
+          <div className={styles.eyebrowRow}>
+            <span className={styles.liveBeacon} />
+            <span className={styles.eyebrowText}>LIVE MAP 3-PACK SIGNAL TELEMETRY</span>
+          </div>
+
+          <div className={styles.headlineRow}>
+            <h2 className={styles.headline}>
+              How We Lock Your Business into the Google Map 3-Pack
             </h2>
-            <p className={styles.sub}>
-              Over 84% of high-intent local phone calls and direction requests go exclusively to the top 3 Google Map listings. Here is how we engineer your profile to claim and hold the #1 spot.
-            </p>
-          </div>
 
-          {/* Single Clean City Selector Row */}
-          <div className={styles.citySelectorBar}>
-            {CITIES.map((city) => {
-              const isActive = selectedCityId === city.id;
-              return (
+            {/* In-Line City Switcher (Compact, No Mess) */}
+            <div className={styles.cityTabs}>
+              {CITIES.map((c) => (
                 <button
-                  key={city.id}
+                  key={c.id}
                   type="button"
-                  onClick={() => setSelectedCityId(city.id)}
-                  className={`${styles.cityBtn} ${isActive ? styles.cityBtnActive : ''}`}
+                  onClick={() => setActiveCityId(c.id)}
+                  className={`${styles.cityTab} ${activeCityId === c.id ? styles.cityTabActive : ''}`}
                 >
-                  📍 {city.name}
+                  📍 {c.name}
                 </button>
-              );
-            })}
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Unified Frameless Console (Cool, Compact, Dual Split) */}
+        <div className={styles.consoleWrapper}>
+          {/* Left: Live SERP Simulation & Traffic Share */}
+          <div className={styles.serpSide}>
+            <div className={styles.searchBar}>
+              <span className={styles.searchIcon}>📍</span>
+              <span className={styles.searchText}>
+                &ldquo;{city.query}&rdquo; in {city.corridor}, {city.name}
+              </span>
+              <span className={styles.proximityTag}>500m Proximity</span>
+            </div>
+
+            <div className={styles.winnerBlock}>
+              <div className={styles.winnerHeader}>
+                <span className={styles.rankBadge}>★ #1 Map 3-Pack Leader</span>
+                <span className={styles.verifiedBadge}>✓ Google Verified</span>
+              </div>
+              <h3 className={styles.winnerName}>{city.businessName}</h3>
+              <div className={styles.winnerMeta}>
+                <span className={styles.ratingStars}>★★★★★ 4.9</span>
+                <span className={styles.reviewCount}>(480+ Reviews)</span>
+                <span className={styles.openNow}>· Open 24 Hours</span>
+              </div>
+              <div className={styles.quickButtons}>
+                <span className={styles.callButton}>📞 Call Now (96% Capture)</span>
+                <span className={styles.dirButton}>🧭 Directions (+340%)</span>
+              </div>
+            </div>
+
+            {/* Visual Local Traffic Share Bar */}
+            <div className={styles.trafficBarWrap}>
+              <div className={styles.trafficBarLabel}>
+                <span>Local Click &amp; Call Distribution:</span>
+                <span className={styles.highlightPct}>84% Captured by #1 Spot</span>
+              </div>
+              <div className={styles.trafficTrack}>
+                <div className={styles.trafficFill1} style={{ width: '84%' }} title="#1 Leader: 84%" />
+                <div className={styles.trafficFill2} style={{ width: '11%' }} title="#2 Competitor: 11%" />
+                <div className={styles.trafficFill3} style={{ width: '5%' }} title="#3 Competitor: 5%" />
+              </div>
+              <div className={styles.compLabels}>
+                <span>🥇 #1 Leader: 84%</span>
+                <span>🥈 #2 Competitor: 11%</span>
+                <span>🥉 #3 Competitor: 5%</span>
+              </div>
+            </div>
           </div>
 
-          {/* Main 2-Column Grid: Left Map SERP Card + Right 3 Value Pillars */}
-          <div className={styles.mainGrid}>
-            {/* Left: Authentic, Clean Google Maps 3-Pack Listing */}
-            <div className={styles.mapCard}>
+          {/* Right: 3 Hyperlocal Growth Engines (Compact, Sleek List) */}
+          <div className={styles.leversSide}>
+            <div className={styles.leverItem}>
+              <span className={styles.leverNum}>01</span>
               <div>
-                <div className={styles.mapSearchHeader}>
-                  <span className={styles.mapSearchIcon}>📍</span>
-                  <span className={styles.mapSearchText}>
-                    🔍 {currentCity.query} in {currentCity.corridor}
-                  </span>
-                  <span className={styles.mapSearchBadge}>● 450m Proximity</span>
-                </div>
-
-                <div className={styles.packList}>
-                  {/* #1 Winner (Your Business / Copilot Partner) */}
-                  <div className={styles.packWinner}>
-                    <div className={styles.winnerTopRow}>
-                      <span className={styles.rank1Badge}>
-                        ★ #1 Google Map 3-Pack Leader
-                      </span>
-                      <span className={styles.verifiedText}>
-                        ✓ Google Verified
-                      </span>
-                    </div>
-
-                    <h3 className={styles.winnerTitle}>
-                      {currentCity.businessName}
-                    </h3>
-
-                    <div className={styles.winnerStars}>
-                      <span className={styles.starGold}>★★★★★ 4.9</span>
-                      <span className={styles.reviewCount}>
-                        ({currentCity.reviews} Google Reviews)
-                      </span>
-                      <span style={{ color: '#059669', fontWeight: 700 }}>
-                        · Open 24 Hours
-                      </span>
-                    </div>
-
-                    <div className={styles.winnerCorridor}>
-                      {currentCity.corridor}, {currentCity.name}
-                    </div>
-
-                    <div className={styles.winnerActions}>
-                      <span className={styles.callBtn}>
-                        📞 Call Now (96% Capture)
-                      </span>
-                      <span className={styles.dirBtn}>
-                        🧭 Directions (+340%)
-                      </span>
-                      <span className={styles.dirBtn}>
-                        🌐 Website
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* #2 Competitor */}
-                  <div className={styles.packCompetitor}>
-                    <div className={styles.compLeft}>
-                      <span className={styles.compBadge}>#2 Competitor</span>
-                      <h4 className={styles.compName}>{currentCity.comp1}</h4>
-                      <div className={styles.compMeta}>{currentCity.comp1Meta}</div>
-                    </div>
-                    <span className={styles.compDistance}>
-                      {currentCity.comp1Distance}
-                    </span>
-                  </div>
-
-                  {/* #3 Competitor */}
-                  <div className={styles.packCompetitor}>
-                    <div className={styles.compLeft}>
-                      <span className={styles.compBadge}>#3 Competitor</span>
-                      <h4 className={styles.compName}>{currentCity.comp2}</h4>
-                      <div className={styles.compMeta}>{currentCity.comp2Meta}</div>
-                    </div>
-                    <span className={styles.compDistance}>
-                      {currentCity.comp2Distance}
-                    </span>
-                  </div>
-                </div>
+                <h4 className={styles.leverTitle}>500m Proximity Override</h4>
+                <p className={styles.leverText}>
+                  Overrides Google&apos;s distance drop-off with localized geo-coordinates and neighborhood schema, capturing buyers across a 10km radius.
+                </p>
               </div>
             </div>
 
-            {/* Right: 3 Clean Pillars of Dominance */}
-            <div className={styles.pillarsCol}>
-              <div className={styles.pillarCard}>
-                <div className={styles.pillarNumber}>01</div>
-                <div className={styles.pillarContent}>
-                  <h4 className={styles.pillarTitle}>500m Proximity Override</h4>
-                  <p className={styles.pillarDesc}>
-                    Google defaults to the searcher&apos;s physical distance. We deploy localized geo-schema and neighborhood landing pages to capture searches across a 10km radius.
-                  </p>
-                </div>
+            <div className={styles.leverItem}>
+              <span className={styles.leverNum}>02</span>
+              <div>
+                <h4 className={styles.leverTitle}>Automated 5★ Review Velocity</h4>
+                <p className={styles.leverText}>
+                  Automated WhatsApp review capture outpaces older competitors by 8x volume, maintaining an unshakeable 4.9★ rating.
+                </p>
               </div>
+            </div>
 
-              <div className={styles.pillarCard}>
-                <div className={styles.pillarNumber}>02</div>
-                <div className={styles.pillarContent}>
-                  <h4 className={styles.pillarTitle}>Automated 5★ Review Acceleration</h4>
-                  <p className={styles.pillarDesc}>
-                    Automated post-service WhatsApp and SMS review funnels turn happy customers into authentic Google reviews with customer photos, keeping your rating at 4.9★.
-                  </p>
-                </div>
-              </div>
-
-              <div className={styles.pillarCard}>
-                <div className={styles.pillarNumber}>03</div>
-                <div className={styles.pillarContent}>
-                  <h4 className={styles.pillarTitle}>Tier-1 Citation Lockdown</h4>
-                  <p className={styles.pillarDesc}>
-                    We sync and lock your Name, Address, and Phone (NAP) across 60+ Indian directories, eliminating duplicate listings and algorithmic rank penalties.
-                  </p>
-                </div>
+            <div className={styles.leverItem}>
+              <span className={styles.leverNum}>03</span>
+              <div>
+                <h4 className={styles.leverTitle}>Tier-1 Citation Lockdown</h4>
+                <p className={styles.leverText}>
+                  Syncs 100% NAP consistency across 60+ platforms, completely eliminating duplicate listings and algorithmic rank penalties.
+                </p>
               </div>
             </div>
           </div>
+        </div>
 
-          {/* Bottom Clean Stats Ribbon */}
-          <div className={styles.statsRibbon}>
-            <div className={styles.statCell}>
-              <div className={styles.statNum}>84%</div>
-              <div className={styles.statLabel}>Calls Captured by 3-Pack</div>
+        {/* Bottom Bar: Telemetry Stats & Action (Integrated Ribbon) */}
+        <div className={styles.bottomBar}>
+          <div className={styles.statGroup}>
+            <div className={styles.statItem}>
+              <span className={styles.statVal}>84%</span>
+              <span className={styles.statText}>Calls to Top 3</span>
             </div>
-            <div className={styles.statCell}>
-              <div className={styles.statNum} style={{ color: '#059669' }}>
-                +410%
-              </div>
-              <div className={styles.statLabel}>Inbound Call Velocity</div>
+            <div className={styles.statDivider} />
+            <div className={styles.statItem}>
+              <span className={styles.statVal} style={{ color: '#10B981' }}>+410%</span>
+              <span className={styles.statText}>Inbound Velocity</span>
             </div>
-            <div className={styles.statCell}>
-              <div className={styles.statNum} style={{ color: '#F59E0B' }}>
-                4.9★
-              </div>
-              <div className={styles.statLabel}>Average Client Rating</div>
+            <div className={styles.statDivider} />
+            <div className={styles.statItem}>
+              <span className={styles.statVal} style={{ color: '#F59E0B' }}>4.9★</span>
+              <span className={styles.statText}>Client Reputation</span>
             </div>
-            <div className={styles.statCell}>
-              <div className={styles.statNum}>21 Days</div>
-              <div className={styles.statLabel}>Average Time to Rank #1</div>
+            <div className={styles.statDivider} />
+            <div className={styles.statItem}>
+              <span className={styles.statVal}>21 Days</span>
+              <span className={styles.statText}>Avg Time to #1</span>
             </div>
           </div>
 
-          {/* Bottom CTA */}
-          <div className={styles.ctaRow}>
-            <span className={styles.ctaText}>
-              Curious where your business currently ranks across your target corridors?
-            </span>
+          <div className={styles.actionWrap}>
             <BeamButton
               href="/contact"
-              label="Claim Your Free Google Map 3-Pack Audit"
+              label="Audit Your Map 3-Pack Rank"
               size="md"
             />
           </div>
