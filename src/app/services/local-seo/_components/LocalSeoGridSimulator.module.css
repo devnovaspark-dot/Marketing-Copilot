@@ -127,6 +127,7 @@
     inset 0 1px 0 #FFFFFF,
     0 16px 36px -10px rgba(11, 32, 147, 0.08),
     0 2px 6px rgba(0, 0, 0, 0.02);
+  min-height: 310px;
 }
 
 /* ── LEFT: LIVE SERP SIGNAL & DISTRIBUTION ── */
@@ -137,6 +138,7 @@
   flex-direction: column;
   justify-content: space-between;
   gap: 14px;
+  min-height: 310px;
 }
 
 /* Google Maps Search Bar Mock */
@@ -148,6 +150,8 @@
   border: 1.5px solid #E2E8F0;
   border-radius: 12px;
   padding: 8px 14px;
+  height: 40px;
+  box-sizing: border-box;
 }
 
 .searchIcon {
@@ -163,6 +167,8 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  line-height: 20px;
+  height: 20px;
 }
 
 .proximityTag {
@@ -184,6 +190,11 @@
   border-radius: 14px;
   padding: 14px 16px;
   box-shadow: 0 4px 16px rgba(16, 185, 129, 0.1);
+  min-height: 136px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
 }
 
 .winnerTopRow {
@@ -191,6 +202,7 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 5px;
+  height: 18px;
 }
 
 .rankBadge {
@@ -218,6 +230,11 @@
   font-weight: 800;
   color: #0F172A;
   margin: 0 0 3px;
+  height: 22px;
+  line-height: 22px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .winnerMetaRow {

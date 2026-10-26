@@ -24,14 +24,14 @@ const CITIES: CityTarget[] = [
     id: 'mumbai',
     name: 'Mumbai',
     corridor: 'BKC & Nariman Point',
-    businessName: 'Apex Corporate & Legal Advisory',
+    businessName: 'Apex Corporate Advisory',
     query: 'top corporate retainers near me',
   },
   {
     id: 'bangalore',
     name: 'Bengaluru',
     corridor: 'Koramangala & Indiranagar',
-    businessName: 'Marketing Copilot Regional Tech Hub',
+    businessName: 'Marketing Copilot Tech Hub',
     query: 'performance marketing agency near me',
   },
   {
