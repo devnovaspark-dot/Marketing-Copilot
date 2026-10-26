@@ -188,13 +188,13 @@ export default function LocalSeoPage() {
 
               <div className={styles.coverageContent}>
                 <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#EFF6FF', border: '1px solid #BFDBFE', padding: '4px 12px', borderRadius: 999, alignSelf: 'flex-start', color: '#0B2093', fontSize: 11.5, fontWeight: 800 }}>
-                  <span>⚡ 100% REGIONAL GEO-GRID PENETRATION</span>
+                  <span>⚡ PAN-INDIA REGIONAL GEO-GRID PENETRATION</span>
                 </div>
                 <h2 style={{ fontSize: 'clamp(20px, 2.4vw, 30px)', fontWeight: 800, color: '#0F172A', margin: 0, lineHeight: 1.25 }}>
-                  Hyperlocal Map Dominance Across Bhubaneswar &amp; Cuttack
+                  Hyperlocal Map 3-Pack Dominance Across Pan-India Metros &amp; Commercial Corridors
                 </h2>
                 <p style={{ fontSize: 15, lineHeight: 1.65, color: '#475569', margin: 0 }}>
-                  From Saheed Nagar and Patia to Nayapalli, Jaydev Vihar, and Chandrasekharpur, our geotagged citation architecture and review acceleration funnels ensure your business ranks in the Google Map 3-Pack wherever high-intent local customers search.
+                  From Delhi NCR, Mumbai, and Bangalore to high-growth commercial hubs nationwide, our geotagged citation architecture and review acceleration funnels ensure your business captures the #1 Google Map 3-Pack spot wherever high-intent local buyers search.
                 </p>
                 <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap', paddingTop: 10, borderTop: '1px solid #E2E8F0' }}>
                   <div>
