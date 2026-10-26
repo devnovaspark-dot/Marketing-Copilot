@@ -284,6 +284,17 @@
   grid-template-columns: 1.1fr 0.9fr;
   gap: clamp(36px, 5vw, 64px);
   align-items: center;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.sectionCtaRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 36px;
+  position: relative;
+  z-index: 2;
 }
 
 .sectionHeading {
@@ -471,6 +482,8 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
+  max-width: 1040px;
+  margin: 0 auto;
 }
 
 .whyCard {
@@ -481,6 +494,7 @@
   padding: 32px 28px;
   display: flex;
   flex-direction: column;
+  height: 100%;
   transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 
     inset 0 1.5px 0 #FFFFFF,
@@ -554,10 +568,11 @@
   margin: 0;
   position: relative;
   z-index: 2;
+  flex-grow: 1;
 }
 
 /* ══════════════════════════════════════════════════
-   SECTION 5: AMAZON MARKETING AGENCY IN BHUBANESWAR
+   SECTION 5: AMAZON MARKETING AGENCY IN INDIA
 ══════════════════════════════════════════════════ */
 .agencySection {
   padding: clamp(64px, 8vw, 104px) 0;
@@ -571,6 +586,8 @@
   border: 1.5px solid #CBD5E1;
   border-radius: 24px;
   padding: clamp(36px, 5vw, 60px);
+  max-width: 1040px;
+  margin: 0 auto;
   box-shadow: 
     inset 0 1.5px 0 #FFFFFF,
     inset 0 -1.5px 0 rgba(0, 0, 0, 0.04),
@@ -686,6 +703,8 @@
   border: 1.5px solid #CBD5E1;
   border-radius: 28px;
   padding: clamp(32px, 4.5vw, 54px);
+  max-width: 1040px;
+  margin: 0 auto;
   box-shadow: 
     inset 0 1.5px 0 #FFFFFF,
     inset 0 -1.5px 0 rgba(0, 0, 0, 0.04),
@@ -928,6 +947,8 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
+  max-width: 1040px;
+  margin: 0 auto;
 }
 
 .processGridRow2 {
@@ -935,7 +956,7 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
   margin-top: 24px;
-  max-width: 860px;
+  max-width: 690px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -948,6 +969,7 @@
   padding: 30px 26px;
   display: flex;
   flex-direction: column;
+  height: 100%;
   transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 
     inset 0 1.5px 0 #FFFFFF,
@@ -1009,6 +1031,7 @@
   margin: 0;
   position: relative;
   z-index: 2;
+  flex-grow: 1;
 }
 
 /* ══════════════════════════════════════════════════
@@ -1027,6 +1050,8 @@
   border: 1.5px solid #CBD5E1;
   border-radius: 24px;
   overflow: hidden;
+  max-width: 1040px;
+  margin: 0 auto;
   box-shadow: 
     inset 0 1.5px 0 #FFFFFF,
     0 16px 40px -10px rgba(11, 32, 147, 0.08);
@@ -1239,124 +1264,190 @@
 }
 
 /* ══════════════════════════════════════════════════
-   SECTION: BOTTOM CONVERSION TERMINAL
-   (ZERO ANIMATION OVERFLOW · ROBUST BOUNDED BEAM)
+   FAQ BOTTOM CTA BOX
 ══════════════════════════════════════════════════ */
-.conversionSection {
-  padding: clamp(64px, 8vw, 104px) 0;
-  background: #FFFFFF;
-}
-
-.executiveTerminal {
-  position: relative;
-  background: #0F172A;
-  border: 1.5px solid rgba(255, 255, 255, 0.16);
-  border-radius: 26px;
-  padding: clamp(36px, 5.5vw, 68px);
-  display: grid;
-  grid-template-columns: 1.35fr 1fr;
-  gap: clamp(24px, 4vw, 48px);
+.faqCtaBox {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  overflow: hidden;
-  box-shadow: 
-    inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 28px 64px -12px rgba(11, 32, 147, 0.35);
-}
-
-.termGlow {
-  position: absolute;
-  top: -50%;
-  left: -20%;
-  width: 140%;
-  height: 200%;
-  background: radial-gradient(circle at 30% 40%, rgba(11, 32, 147, 0.45) 0%, transparent 60%);
-  pointer-events: none;
-}
-
-.termContent {
+  gap: 16px;
+  text-align: center;
   position: relative;
   z-index: 2;
 }
 
-.termPill {
-  display: inline-block;
-  font-family: var(--font-display);
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #FCD34D;
-  margin-bottom: 12px;
-  background: rgba(245, 158, 11, 0.12);
-  border: 1px solid rgba(245, 158, 11, 0.3);
-  padding: 4px 12px;
-  border-radius: 999px;
-}
-
-.termTitle {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 3.5vw, 2.75rem);
-  font-weight: 800;
-  line-height: 1.18;
-  color: #FFFFFF;
-  margin: 0 0 16px;
-  letter-spacing: -0.02em;
-}
-
-.termSub {
+.faqCtaNote {
   font-size: 15px;
-  line-height: 1.65;
-  color: rgba(255, 255, 255, 0.85);
-  margin: 0 0 24px;
-  max-width: 620px;
+  color: #475569;
+  margin: 0;
+  font-weight: 550;
 }
 
-.termContact {
+/* ══════════════════════════════════════════════════
+   SECTION: BOTTOM CONVERSION TERMINAL (SIGNATURE LIGHT SKEUOMORPHIC)
+══════════════════════════════════════════════════ */
+.conversionSection {
+  padding: clamp(56px, 7.5vw, 88px) 0;
+  background: #FFFFFF;
+}
+
+.homeCtaInnerBox {
+  background: linear-gradient(145deg, #FFFFFF 0%, #F8FAFC 50%, #F1F5F9 100%);
+  border: 1.5px solid #CBD5E1;
+  border-radius: 24px;
+  padding: clamp(38px, 5.5vw, 60px) clamp(20px, 4vw, 48px);
+  max-width: 1000px;
+  margin: 0 auto;
+  box-shadow: 
+    inset 0 2px 0 #FFFFFF,
+    inset 0 -1.5px 0 rgba(0, 0, 0, 0.04),
+    0 24px 60px -12px rgba(11, 32, 147, 0.12),
+    0 6px 18px rgba(0, 0, 0, 0.04);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.homeCtaInnerBox:hover {
+  border-color: rgba(11, 32, 147, 0.35);
+  box-shadow: 
+    inset 0 2px 0 #FFFFFF,
+    0 36px 84px -14px rgba(15, 23, 42, 0.14),
+    0 0 0 1px rgba(11, 32, 147, 0.15);
+}
+
+.homeCtaEyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-size: 11.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #0B2093;
+  background: #EFF6FF;
+  padding: 4px 14px;
+  border-radius: 999px;
+  border: 1px solid #BFDBFE;
+  box-shadow: inset 0 1px 0 #FFFFFF;
+  margin-bottom: 12px;
+}
+
+.homeCtaDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #0B2093;
+}
+
+.homeCtaHeadline {
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 3.2vw, 2.7rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: #0F172A;
+  margin-top: 4px;
+  margin-bottom: 14px;
+}
+
+.homeCtaSub {
+  font-family: var(--font-body);
+  font-size: clamp(14px, 1.05vw, 16px);
+  line-height: 1.6;
+  color: #475569;
+  max-width: 680px;
+  margin: 0 auto 20px;
+}
+
+.homeCtaContact {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
   flex-wrap: wrap;
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.85);
+  color: #64748B;
+  font-weight: 550;
+  margin-bottom: 24px;
 }
 
-.termPhone {
-  color: #FFFFFF;
-  font-weight: 700;
+.homeCtaPhone {
+  color: #0B2093;
+  font-weight: 750;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
-/* Button Container: Strictly flex-start to prevent wide unnatural stretching */
-.termActions {
+.homeCtaActions {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
-  position: relative;
-  z-index: 5;
-  align-items: flex-start;
   justify-content: center;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+  margin-bottom: 0;
 }
 
-/* Secondary Button Custom Skeuomorphic Dark Theme */
-.termSecondaryWrapper {
-  background: rgba(255, 255, 255, 0.12) !important;
-  box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.35) !important;
+.homeCtaSecondaryWrapper {
+  background: #FFFFFF !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
   border-radius: 9999px !important;
   overflow: hidden !important;
+  display: inline-flex;
 }
 
-.termSecondaryInner {
-  background: rgba(15, 23, 42, 0.92) !important;
-  color: #FFFFFF !important;
-  border: 1px solid rgba(255, 255, 255, 0.25) !important;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+.homeCtaSecondaryInner {
+  background: #FFFFFF !important;
+  color: #0F172A !important;
+  border: 1.5px solid #CBD5E1 !important;
+  box-shadow: inset 0 1px 0 #FFFFFF !important;
+  font-weight: 700 !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 9999px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.2s ease;
 }
 
-.termSecondaryInner:hover {
-  background: rgba(30, 41, 59, 0.95) !important;
-  color: #FCD34D !important;
-  border-color: rgba(245, 158, 11, 0.6) !important;
+.homeCtaSecondaryInner:hover {
+  background: #F8FAFC !important;
+  color: #0B2093 !important;
+  border-color: #0B2093 !important;
+}
+
+.homeCtaTrustBadges {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(10px, 2vw, 20px);
+  flex-wrap: wrap;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #E2E8F0;
+  position: relative;
+  z-index: 2;
+}
+
+.homeCtaTrustItem {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  color: #475569;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Backward compatibility fallback */
+.executiveTerminal {
+  composes: homeCtaInnerBox;
 }
 
 /* ══════════════════════════════════════════════════
@@ -1460,8 +1551,9 @@
     padding: 6px 12px;
     font-size: 11px;
   }
+  .homeCtaInnerBox,
   .executiveTerminal {
-    padding: 24px 16px !important;
+    padding: 28px 16px !important;
     border-radius: 18px !important;
   }
 }

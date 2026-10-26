@@ -525,7 +525,7 @@ export default function DigitalGrowthPartnerPage() {
             </div>
 
             <p className={styles.heroLeadParagraph}>
-              Stop spending growth capital on campaigns that deliver vanity metrics instead of real business results. As a Digital Growth Partner in India, our company builds end-to-end customer acquisition systems that connect high-intent search, paid campaigns, and conversion-focused design directly to revenue. Our digital marketing services align strategy, execution, and measurable growth to help businesses achieve their goals. Every investment matters, customer acquisition fuels performance, and our digital marketing services turn business objectives into profitable outcomes.
+              Stop spending growth capital on vanity metrics. As your Digital Growth Partner in India, we engineer full-funnel customer acquisition systems — connecting high-intent search, high-ROAS paid media, and conversion-focused architecture directly to profitable revenue.
             </p>
 
             {/* 3 Hero Metrics Requested By User */}
@@ -597,6 +597,14 @@ export default function DigitalGrowthPartnerPage() {
               </div>
             ) : (
               <form onSubmit={(e) => handleFormSubmit(e, 'hero')}>
+                <div className={styles.consoleHeaderStrip}>
+                  <div className={styles.consoleTitleGroup}>
+                    <span className={styles.consolePulseDot} />
+                    <span className={styles.consoleTitle}>Rapid Strategic Growth Audit</span>
+                  </div>
+                  <span className={styles.consoleBadge}>SLA &lt; 2 Hrs</span>
+                </div>
+
                 <div className={styles.inputGridDouble}>
                   <div className={styles.fieldGroup}>
                     <label className={styles.fieldLabel}>
@@ -716,27 +724,29 @@ export default function DigitalGrowthPartnerPage() {
                     Requirement / Growth Bottleneck
                   </label>
                   <textarea
-                    rows={2}
+                    rows={1}
                     value={heroForm.requirement}
                     onChange={(e) => setHeroForm({ ...heroForm, requirement: e.target.value })}
                     className={styles.tactileTextarea}
+                    placeholder="E.g., High CAC, scaling to ₹50L/mo GMV..."
                   />
                 </div>
 
                 {heroError && (
-                  <p style={{ color: '#DC2626', fontSize: '12px', fontWeight: 700, margin: '8px 0' }}>
+                  <p style={{ color: '#DC2626', fontSize: '12px', fontWeight: 700, margin: '6px 0' }}>
                     {heroError}
                   </p>
                 )}
 
                 {/* BeamButton matching the navbar button style animation */}
-                <div style={{ marginTop: 14 }}>
+                <div style={{ marginTop: 8 }}>
                   <BeamButton
                     type="submit"
                     disabled={heroSubmitting}
                     fullWidth
                     size="lg"
-                    label={heroSubmitting ? 'Evaluating Blueprint...' : 'Get My Free Consultation →'}
+                    arrow={true}
+                    label={heroSubmitting ? 'Evaluating Blueprint...' : 'Get My Free Consultation'}
                   />
                 </div>
 
@@ -928,6 +938,27 @@ export default function DigitalGrowthPartnerPage() {
       />
 
       {/* ═════════════════════════════════════════════════════════════════
+          INTERACTIVE CONNECT & STRATEGIC ASSESSMENT CTA SECTION
+          (Placed directly above 49 LIVE PROOF TELEMETRY DASHBOARDS per user instruction)
+      ═════════════════════════════════════════════ */}
+      <QuickConnectMapSection
+        id="direct-connect"
+        eyebrow="GROWTH SYSTEMS · PREDICTABLE REVENUE"
+        title={
+          <>
+            Smart Digital Marketing for<br />
+            <span style={{
+              background: 'linear-gradient(135deg, #FFB800 0%, #EA580C 50%, #B45309 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              display: 'inline-block'
+            }}>Growing Businesses</span>
+          </>
+        }
+        subtitle="We are a digital marketing agency, in India. We combine SEO, paid ads, content marketing, social media and conversion engineering. Our goal is to create growth systems. These systems help attract customers who're ready to buy. They also improve conversion rates. Allow brands to grow in a steady predictable way."
+      />
+
+      {/* ═════════════════════════════════════════════════════════════════
           49 LIVE PROOF TELEMETRY DASHBOARDS
           (Positioned directly above Our Growth Framework per user instruction)
       ═════════════════════════════════════════════ */}
@@ -952,26 +983,6 @@ export default function DigitalGrowthPartnerPage() {
         defaultTopic="⚡ Next.js Web Speed"
         title="Let’s Talk About Your Growth."
         subtitle="Send us your question for a free, confidential growth assessment."
-      />
-
-      {/* ═════════════════════════════════════════════════════════════════
-          INTERACTIVE CONNECT & STRATEGIC ASSESSMENT CTA SECTION
-      ═════════════════════════════════════════════ */}
-      <QuickConnectMapSection
-        id="direct-connect"
-        eyebrow="GROWTH SYSTEMS · PREDICTABLE REVENUE"
-        title={
-          <>
-            Smart Digital Marketing for<br />
-            <span style={{
-              background: 'linear-gradient(135deg, #FFB800 0%, #EA580C 50%, #B45309 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              display: 'inline-block'
-            }}>Growing Businesses</span>
-          </>
-        }
-        subtitle="We are a digital marketing agency, in India. We combine SEO, paid ads, content marketing, social media and conversion engineering. Our goal is to create growth systems. These systems help attract customers who're ready to buy. They also improve conversion rates. Allow brands to grow in a steady predictable way."
       />
 
       {/* ═════════════════════════════════════════════════════════════════

@@ -14,24 +14,32 @@ const funnelStages = [
     stage: 'Top of Funnel',
     tag: 'AWARENESS & QUALIFIED TRAFFIC',
     desc: 'We provide campaigns across Google, Meta, and other platforms where it is relevant to your brand. We use audience research, creative testing, compelling messaging, and campaign optimization to create awareness, attract qualified traffic, and build a large pool of potential customers for the next stage.',
+    footerTag: '✦ Multi-Channel Traffic',
+    status: '✓ Stage 01 Active',
   },
   {
     num: '02',
     stage: 'Middle of Funnel',
     tag: 'CONSIDERATION & NURTURING',
     desc: 'Our search campaigns, remarketing, educational content, and conversion-centric landing pages bring in interested prospects and close them to sales. By understanding user behavior and engagement, we refine targeting and messaging to nurture prospects, improve conversion intent, and generate more relevant inquiries for your business.',
+    footerTag: '✦ Intent & CRO Nurturing',
+    status: '✓ Stage 02 Active',
   },
   {
     num: '03',
     stage: 'Bottom of Funnel',
     tag: 'HIGH-INTENT CONVERSION',
     desc: 'Conversion-focused campaigns are our focus to convert high-intent users into customers. From purchase to phone call, WhatsApp enquiry, and form submission to booking or consultation, we optimize targeting, creative, landing page, and budgets around measurable acquisition outcomes.',
+    footerTag: '✦ Direct CRM Conversion',
+    status: '✓ Stage 03 Active',
   },
   {
     num: '04',
     stage: 'Retention & Growth',
     tag: 'LIFETIME VALUE & REPEAT SALES',
     desc: 'Our performance marketing strategy doesn\'t stop there. We target our past customers through remarketing, customer segments, repeat purchase campaigns, and upselling tactics. Such initiatives can lead to repeat sales, better customer relations, and extra revenue sources, and boost customer lifetime value.',
+    footerTag: '✦ High LTV Retention',
+    status: '✓ Stage 04 Active',
   },
 ];
 
@@ -42,24 +50,32 @@ const performanceServices = [
     tag: 'HIGH-INTENT SEARCH & PMAX',
     title: 'Google Ads Management',
     desc: 'Connect with your target audience who are actively looking for your products or services on Google. We optimize search, shopping, performance max, display, and remarketing campaigns through keyword research, ad copy, targeting, conversion tracking, and regular optimization.',
+    footerTag: '✦ Search & PMax Scale',
+    deliverable: '✓ Managed Google SLA',
   },
   {
     icon: '📱',
     tag: 'FACEBOOK & INSTAGRAM ADS',
     title: 'Meta Ads Management',
     desc: 'Targeted ads for your ideal customers on Facebook and Instagram. We handle lead generation, sales, retargeting, catalogue, and conversion campaigns with audience research, creative testing, campaign optimization, and performance tracking.',
+    footerTag: '✦ Reels & Feed Funnels',
+    deliverable: '✓ Managed Meta SLA',
   },
   {
     icon: '⚡',
     tag: 'QUALIFIED PIPELINE ACCELERATION',
     title: 'Lead Generation Campaigns',
     desc: 'Make the right inquiries rather than just the more inquiries. Your advertising, audience targeting, offers, landing pages, and follow-up process are integrated to bring true visitors to your real estate, healthcare, education, financial, hospitality, and professional services business.',
+    footerTag: '✦ High-Intent Pipeline',
+    deliverable: '✓ Verified Lead Funnel',
   },
   {
     icon: '🛍️',
     tag: 'ROAS & CATALOG SCALING',
     title: 'E-commerce Performance Marketing',
     desc: 'Increase product sales with connected advertising campaigns. We use Google Shopping, Performance Max, Meta catalogue ads, and remarketing to reach potential buyers while monitoring important metrics such as ROAS, CPA, conversion rate, and average order value.',
+    footerTag: '✦ Catalog ROAS Sync',
+    deliverable: '✓ Dynamic Ad Feeds',
   },
 ];
 
@@ -70,24 +86,32 @@ const whyPillars = [
     tag: 'INDIAN MARKET INTELLIGENCE & EXPERTISE',
     title: 'Market Understanding',
     desc: 'We understand the diverse business landscape across India, ranging from startups, education, healthcare, real estate, retail, to hospitality and D2C brands. When creating campaigns for your business, we take your audience, location, competition, and customer behaviour into consideration.',
+    footerTag: '✦ Indian Market Nuance',
+    status: '✓ Copilot Standard',
   },
   {
     icon: '🔄',
     tag: 'CONNECTED ACQUISITION SYSTEM',
     title: 'Full-Funnel Approach',
     desc: 'Google Ads, Meta Ads, landing pages, remarketing & conversion tracking are not standalone actions but are connected. This can help streamline the customer journey and provide your business with a more structured way to approach potential customers.',
+    footerTag: '✦ End-to-End Synergy',
+    status: '✓ Copilot Standard',
   },
   {
     icon: '📊',
     tag: 'NO FLUFF · MEASURABLE REVENUE',
     title: 'Transparent Reporting',
     desc: 'It is our opinion that it is vital that you know where your ad dollars are going. We provide you with valuable metrics like leads, conversions, cost per lead, sales, and campaign performance so that you can see what is working and what is not.',
+    footerTag: '✦ Forensic Telemetry',
+    status: '✓ Copilot Standard',
   },
   {
     icon: '🚀',
     tag: 'AGILE TESTING & BUDGET TUNING',
     title: 'Continuous Optimisation',
     desc: 'It is important that performance campaigns are monitored regularly as audience, competition, costs and customer behaviour can change. We track campaign performance, analyze data, experiment with strategies, and continuously optimize targeting, creatives, budgets, and other campaign components.',
+    footerTag: '✦ Agile Sprint Cycles',
+    status: '✓ Copilot Standard',
   },
 ];
 
@@ -98,36 +122,42 @@ const frameworkSteps = [
     icon: '🔍',
     title: 'Understand',
     desc: 'We learn about your business, customers, products, services and growth objectives.',
+    milestone: 'Discovery & Audit',
   },
   {
     step: '02',
     icon: '🛠️',
     title: 'Build',
     desc: 'We create your campaign structure, audiences, messaging, tracking and conversion journey.',
+    milestone: 'Funnel Architecture',
   },
   {
     step: '03',
     icon: '🚀',
     title: 'Launch',
     desc: 'Campaigns go live across the selected advertising platforms.',
+    milestone: 'Cross-Network Live',
   },
   {
     step: '04',
     icon: '📈',
     title: 'Measure',
     desc: 'We monitor traffic, leads, conversions, acquisition costs and other relevant KPIs.',
+    milestone: 'Telemetry Tracking',
   },
   {
     step: '05',
     icon: '⚙️',
     title: 'Optimise',
     desc: 'Budgets, audiences, creatives, keywords and landing pages are refined based on performance data.',
+    milestone: 'Algorithmic Tuning',
   },
   {
     step: '06',
     icon: '🏆',
     title: 'Scale',
     desc: 'Once campaigns show sustainable performance, we identify opportunities for controlled growth.',
+    milestone: 'Predictable Scale',
   },
 ];
 
@@ -245,13 +275,17 @@ export default function PerformanceMarketingPage() {
             {funnelStages.map((stage, idx) => (
               <ScrollReveal key={stage.num} delay={idx * 0.08} className={styles.cardCol}>
                 <div className={styles.funnelCard}>
-                  <div>
+                  <div className={styles.funnelTopBody}>
                     <div className={styles.funnelCardHeader}>
                       <span className={styles.funnelNum}>{stage.num}</span>
                       <span className={styles.funnelTag}>{stage.tag}</span>
                     </div>
                     <h3 className={styles.funnelTitle}>{stage.stage}</h3>
                     <p className={styles.funnelDesc}>{stage.desc}</p>
+                  </div>
+                  <div className={styles.funnelCardFooter}>
+                    <span className={styles.funnelFooterTag}>{stage.footerTag}</span>
+                    <span className={styles.funnelFooterStatus}>{stage.status}</span>
                   </div>
                 </div>
               </ScrollReveal>
@@ -311,13 +345,17 @@ export default function PerformanceMarketingPage() {
             {performanceServices.map((service, index) => (
               <ScrollReveal key={service.title} delay={index * 0.06} className={styles.cardCol}>
                 <div className={styles.serviceCard}>
-                  <div>
+                  <div className={styles.serviceTopBody}>
                     <div className={styles.serviceCardHeader}>
                       <div className={styles.serviceIconBowl}>{service.icon}</div>
                       <span className={styles.serviceTag}>{service.tag}</span>
                     </div>
                     <h3 className={styles.serviceTitle}>{service.title}</h3>
                     <p className={styles.serviceDesc}>{service.desc}</p>
+                  </div>
+                  <div className={styles.serviceCardFooter}>
+                    <span className={styles.serviceFooterTag}>{service.footerTag}</span>
+                    <span className={styles.serviceDeliverable}>{service.deliverable}</span>
                   </div>
                 </div>
               </ScrollReveal>
@@ -369,6 +407,15 @@ export default function PerformanceMarketingPage() {
               </div>
             </div>
           </ScrollReveal>
+
+          {/* Section Bottom CTA */}
+          <div className={styles.sectionCtaRow}>
+            <BeamButton
+              href="/contact"
+              label="Explore Custom Performance Channels →"
+              size="md"
+            />
+          </div>
         </div>
       </section>
 
@@ -394,13 +441,17 @@ export default function PerformanceMarketingPage() {
             {whyPillars.map((item, index) => (
               <ScrollReveal key={item.title} delay={index * 0.08} className={styles.cardCol}>
                 <div className={styles.whyCard}>
-                  <div>
+                  <div className={styles.whyTopBody}>
                     <div className={styles.whyCardHeader}>
                       <div className={styles.whyIconBowl}>{item.icon}</div>
                       <span className={styles.whyTag}>{item.tag}</span>
                     </div>
                     <h3 className={styles.whyTitle}>{item.title}</h3>
                     <p className={styles.whyDesc}>{item.desc}</p>
+                  </div>
+                  <div className={styles.whyCardFooter}>
+                    <span className={styles.whyFooterTag}>{item.footerTag}</span>
+                    <span className={styles.whyFooterStatus}>{item.status}</span>
                   </div>
                 </div>
               </ScrollReveal>
@@ -500,6 +551,15 @@ export default function PerformanceMarketingPage() {
               </div>
             </div>
           </ScrollReveal>
+
+          {/* Section Bottom CTA */}
+          <div className={styles.sectionCtaRow}>
+            <BeamButton
+              href="/contact"
+              label="Audit Your Attribution &amp; Tracking Stack →"
+              size="md"
+            />
+          </div>
         </div>
       </section>
 
@@ -525,7 +585,7 @@ export default function PerformanceMarketingPage() {
             {frameworkSteps.map((item, index) => (
               <ScrollReveal key={item.step} delay={index * 0.05} className={styles.cardCol}>
                 <div className={styles.frameworkCard}>
-                  <div>
+                  <div className={styles.frameworkTopBody}>
                     <div className={styles.frameworkHeader}>
                       <span className={styles.frameworkStepBadge}>STEP {item.step}</span>
                       <div className={styles.frameworkIconBowl}>{item.icon}</div>
@@ -533,9 +593,22 @@ export default function PerformanceMarketingPage() {
                     <h3 className={styles.frameworkTitle}>{item.title}</h3>
                     <p className={styles.frameworkDesc}>{item.desc}</p>
                   </div>
+                  <div className={styles.frameworkFooter}>
+                    <span className={styles.frameworkMilestone}>✓ {item.milestone}</span>
+                    <span className={styles.frameworkArrow}>→</span>
+                  </div>
                 </div>
               </ScrollReveal>
             ))}
+          </div>
+
+          {/* Section Bottom CTA */}
+          <div className={styles.sectionCtaRow}>
+            <BeamButton
+              href="/contact"
+              label="Deploy This 6-Stage Revenue Sprint →"
+              size="md"
+            />
           </div>
         </div>
       </section>
@@ -624,49 +697,73 @@ export default function PerformanceMarketingPage() {
           <div className={styles.dashboardPillarsRow}>
             <ScrollReveal delay={0.05} className={styles.cardCol}>
               <div className={styles.dashboardPillarCard}>
-                <div className={styles.pillarHeader}>
-                  <div className={styles.pillarIconBowl}>🎯</div>
-                  <h4 className={styles.pillarTitle}>Multi-Touch Attribution</h4>
+                <div className={styles.pillarTopBody}>
+                  <div className={styles.pillarHeader}>
+                    <div className={styles.pillarIconBowl}>🎯</div>
+                    <h4 className={styles.pillarTitle}>Multi-Touch Attribution</h4>
+                  </div>
+                  <p className={styles.pillarDesc}>
+                    Single source of truth tracking across Google Search, Shopping, Meta Reels, and WhatsApp inquiries without cookie degradation.
+                  </p>
                 </div>
-                <p className={styles.pillarDesc}>
-                  Single source of truth tracking across Google Search, Shopping, Meta Reels, and WhatsApp inquiries without cookie degradation.
-                </p>
+                <div className={styles.dashboardPillarFooter}>
+                  <span className={styles.telemetryFooterPill}>✦ Server-Side Sync</span>
+                  <span className={styles.telemetryCheck}>✓ Live Telemetry</span>
+                </div>
               </div>
             </ScrollReveal>
 
             <ScrollReveal delay={0.1} className={styles.cardCol}>
               <div className={styles.dashboardPillarCard}>
-                <div className={styles.pillarHeader}>
-                  <div className={styles.pillarIconBowl}>⚡</div>
-                  <h4 className={styles.pillarTitle}>Dynamic Landing Page Split Testing</h4>
+                <div className={styles.pillarTopBody}>
+                  <div className={styles.pillarHeader}>
+                    <div className={styles.pillarIconBowl}>⚡</div>
+                    <h4 className={styles.pillarTitle}>Dynamic Landing Page Testing</h4>
+                  </div>
+                  <p className={styles.pillarDesc}>
+                    Sub-second page speeds with custom CRO variants engineered to convert paid traffic up to 3.8X higher.
+                  </p>
                 </div>
-                <p className={styles.pillarDesc}>
-                  Sub-second page speeds with custom CRO variants engineered to convert paid traffic up to 3.8X higher.
-                </p>
+                <div className={styles.dashboardPillarFooter}>
+                  <span className={styles.telemetryFooterPill}>✦ 3.8X Lift Target</span>
+                  <span className={styles.telemetryCheck}>✓ Live Telemetry</span>
+                </div>
               </div>
             </ScrollReveal>
 
             <ScrollReveal delay={0.15} className={styles.cardCol}>
               <div className={styles.dashboardPillarCard}>
-                <div className={styles.pillarHeader}>
-                  <div className={styles.pillarIconBowl}>🛡️</div>
-                  <h4 className={styles.pillarTitle}>Server-Side Conversions API (CAPI)</h4>
+                <div className={styles.pillarTopBody}>
+                  <div className={styles.pillarHeader}>
+                    <div className={styles.pillarIconBowl}>🛡️</div>
+                    <h4 className={styles.pillarTitle}>Server-Side Conversions (CAPI)</h4>
+                  </div>
+                  <p className={styles.pillarDesc}>
+                    Direct server-to-server event dispatch achieving 99.4% event match quality and accurate revenue attribution.
+                  </p>
                 </div>
-                <p className={styles.pillarDesc}>
-                  Direct server-to-server event dispatch achieving 99.4% event match quality and accurate revenue attribution.
-                </p>
+                <div className={styles.dashboardPillarFooter}>
+                  <span className={styles.telemetryFooterPill}>✦ 99.4% Match SLA</span>
+                  <span className={styles.telemetryCheck}>✓ Live Telemetry</span>
+                </div>
               </div>
             </ScrollReveal>
 
             <ScrollReveal delay={0.2} className={styles.cardCol}>
               <div className={styles.dashboardPillarCard}>
-                <div className={styles.pillarHeader}>
-                  <div className={styles.pillarIconBowl}>📈</div>
-                  <h4 className={styles.pillarTitle}>Automated Bid Optimization</h4>
+                <div className={styles.pillarTopBody}>
+                  <div className={styles.pillarHeader}>
+                    <div className={styles.pillarIconBowl}>📈</div>
+                    <h4 className={styles.pillarTitle}>Automated Bid Optimization</h4>
+                  </div>
+                  <p className={styles.pillarDesc}>
+                    Continuous algorithmic budget allocation scaling high-performing ad sets while protecting minimum target ROAS.
+                  </p>
                 </div>
-                <p className={styles.pillarDesc}>
-                  Continuous algorithmic budget allocation scaling high-performing ad sets while protecting minimum target ROAS.
-                </p>
+                <div className={styles.dashboardPillarFooter}>
+                  <span className={styles.telemetryFooterPill}>✦ Algorithmic ROAS</span>
+                  <span className={styles.telemetryCheck}>✓ Live Telemetry</span>
+                </div>
               </div>
             </ScrollReveal>
           </div>
@@ -727,6 +824,18 @@ export default function PerformanceMarketingPage() {
                 </div>
               );
             })}
+          </div>
+
+          {/* Section Bottom CTA */}
+          <div className={styles.faqCtaBox}>
+            <p className={styles.faqCtaNote}>
+              Have a question about your ROAS benchmarks, attribution, or media spend?
+            </p>
+            <BeamButton
+              href="/contact"
+              label="Consult a Performance Specialist →"
+              size="md"
+            />
           </div>
         </div>
       </section>

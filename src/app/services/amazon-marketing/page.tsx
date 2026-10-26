@@ -271,93 +271,111 @@ export default function AmazonMarketingPage() {
                     </div>
                   </div>
 
-                  <div className={styles.intelItem}>
-                    <div className={styles.intelIconBox}>📈</div>
-                    <div className={styles.intelItemContent}>
-                      <span className={styles.intelItemTitle}>Organic Rank Flywheel Acceleration</span>
-                      <span className={styles.intelItemDesc}>Higher sales velocity naturally pushes your products up organic search rankings.</span>
+                    <div className={styles.intelItem}>
+                      <div className={styles.intelIconBox}>📈</div>
+                      <div className={styles.intelItemContent}>
+                        <span className={styles.intelItemTitle}>Organic Rank Flywheel Acceleration</span>
+                        <span className={styles.intelItemDesc}>Higher sales velocity naturally pushes your products up organic search rankings.</span>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════════════
-          4. WHY CHOOSE MARKETING COPILOT FOR AMAZON MARKETING?
-         ══════════════════════════════════════════════════ */}
-      <section className={styles.whyChooseSection}>
-        <div className="container">
-          <ScrollReveal className={styles.whyChooseHeader}>
-            <div className={styles.sectionHeaderBadge}>
-              <span className={styles.badgeDot} />
-              <span>THE COPILOT ADVANTAGE</span>
-            </div>
-            <h2 className={styles.sectionHeading}>
-              Why Choose Marketing Copilot for Amazon Marketing?
-            </h2>
-            <p className={styles.narrativeParagraph}>
-              Choosing the right marketing partner can make a difference when managing a competitive ecommerce marketplace.
-            </p>
-          </ScrollReveal>
-
-          {/* 4 Skeuomorphic Pillar Cards */}
-          <div className={styles.whyPillarsGrid}>
-            {whyChoosePillars.map((pillar, idx) => (
-              <ScrollReveal key={idx} delay={idx * 0.08} className={styles.whyCard}>
-                <div className={styles.cardGlassGloss} />
-                <div className={styles.whyCardTop}>
-                  <div className={styles.whyIconBox}>{pillar.icon}</div>
-                  <span className={styles.whyCardBadge}>{pillar.badge}</span>
-                </div>
-                <h3 className={styles.whyCardTitle}>{pillar.title}</h3>
-                <p className={styles.whyCardDesc}>{pillar.desc}</p>
               </ScrollReveal>
-            ))}
+            </div>
+
+            <div className={styles.sectionCtaRow}>
+              <BeamButton
+                href="/contact"
+                label="Unlock Cross-Channel Amazon Intelligence"
+                size="md"
+                arrow={true}
+              />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* ══════════════════════════════════════════════════
-          5. AMAZON MARKETING AGENCY IN INDIA
-         ══════════════════════════════════════════════════ */}
-      <section className={styles.agencySection} id="ppc-services">
-        <div className="container">
-          <ScrollReveal>
-            <div className={styles.agencyCard}>
-              <div className={styles.cardGlassGloss} />
-              <div className={styles.agencyLeft}>
-                <div className={styles.sectionHeaderBadge}>
-                  <span className={styles.badgeDot} />
-                  <span>LOCAL ROOTS · PAN-INDIA SCALE</span>
-                </div>
-                <h2 className={styles.sectionHeading}>
-                  Amazon Marketing Agency in India
-                </h2>
-                <p className={styles.narrativeParagraph}>
-                  Marketing Copilot is an Amazon marketing agency in India that can help you build an unquestioned category presence on Amazon.
-                </p>
-                <p className={styles.narrativeParagraph}>
-                  We handle businesses looking to boost product visibility, optimize their Amazon listing, and leverage Amazon advertising more effectively.
-                </p>
-                <p className={styles.narrativeParagraph}>
-                  With our studio roots in Bhubaneswar and national client footprint, we understand the nuances of manufacturing and D2C brands, scaling them into nationwide leaders across Amazon India and global marketplaces.
-                </p>
-                <p className={styles.narrativeParagraph}>
-                  Our Amazon marketing strategies are designed for startups, expanding e-commerce businesses, and established brands alike, depending on your current stage and growth objectives.
-                </p>
-
-                <div style={{ marginTop: '20px' }}>
-                  <BeamButton href="/contact" label="Start Growing on Amazon" size="md" arrow={true} />
-                </div>
+        {/* ══════════════════════════════════════════════════
+            4. WHY CHOOSE MARKETING COPILOT FOR AMAZON MARKETING?
+           ══════════════════════════════════════════════════ */}
+        <section className={styles.whyChooseSection}>
+          <div className="container">
+            <ScrollReveal className={styles.whyChooseHeader}>
+              <div className={styles.sectionHeaderBadge}>
+                <span className={styles.badgeDot} />
+                <span>THE COPILOT ADVANTAGE</span>
               </div>
+              <h2 className={styles.sectionHeading}>
+                Why Choose Marketing Copilot for Amazon Marketing?
+              </h2>
+              <p className={styles.narrativeParagraph}>
+                Choosing the right marketing partner can make a difference when managing a competitive ecommerce marketplace.
+              </p>
+            </ScrollReveal>
 
-              <div className={styles.agencyRight}>
-                <div className={styles.agencyMiniCard}>
-                  <div className={styles.miniIconBox}>🏙️</div>
-                  <div>
+            {/* 4 Skeuomorphic Pillar Cards */}
+            <div className={styles.whyPillarsGrid}>
+              {whyChoosePillars.map((pillar, idx) => (
+                <ScrollReveal key={idx} delay={idx * 0.08} className={styles.whyCard}>
+                  <div className={styles.cardGlassGloss} />
+                  <div className={styles.whyCardTop}>
+                    <div className={styles.whyIconBox}>{pillar.icon}</div>
+                    <span className={styles.whyCardBadge}>{pillar.badge}</span>
+                  </div>
+                  <h3 className={styles.whyCardTitle}>{pillar.title}</h3>
+                  <p className={styles.whyCardDesc}>{pillar.desc}</p>
+                </ScrollReveal>
+              ))}
+            </div>
+
+            <div className={styles.sectionCtaRow}>
+              <BeamButton
+                href="/contact"
+                label="Partner With Our Amazon Specialists"
+                size="md"
+                arrow={true}
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* ══════════════════════════════════════════════════
+            5. AMAZON MARKETING AGENCY IN INDIA
+           ══════════════════════════════════════════════════ */}
+        <section className={styles.agencySection} id="ppc-services">
+          <div className="container">
+            <ScrollReveal>
+              <div className={styles.agencyCard}>
+                <div className={styles.cardGlassGloss} />
+                <div className={styles.agencyLeft}>
+                  <div className={styles.sectionHeaderBadge}>
+                    <span className={styles.badgeDot} />
+                    <span>PAN-INDIA SCALE · MARKETPLACE EXPERTISE</span>
+                  </div>
+                  <h2 className={styles.sectionHeading}>
+                    Amazon Marketing Agency in India
+                  </h2>
+                  <p className={styles.narrativeParagraph}>
+                    Marketing Copilot is an Amazon marketing agency in India that can help you build an unquestioned category presence on Amazon.
+                  </p>
+                  <p className={styles.narrativeParagraph}>
+                    We handle businesses looking to boost product visibility, optimize their Amazon listing, and leverage Amazon advertising more effectively.
+                  </p>
+                  <p className={styles.narrativeParagraph}>
+                    With our pan-India footprint and deep marketplace expertise, we understand the nuances of manufacturing and D2C brands, scaling them into nationwide category leaders across Amazon India and global marketplaces.
+                  </p>
+                  <p className={styles.narrativeParagraph}>
+                    Our Amazon marketing strategies are designed for startups, expanding e-commerce businesses, and established brands alike, depending on your current stage and growth objectives.
+                  </p>
+
+                  <div style={{ marginTop: '20px' }}>
+                    <BeamButton href="/contact" label="Start Growing on Amazon" size="md" arrow={true} />
+                  </div>
+                </div>
+
+                <div className={styles.agencyRight}>
+                  <div className={styles.agencyMiniCard}>
+                    <div className={styles.miniIconBox}>🏙️</div>
+                    <div>
                     <div className={styles.agencyMiniTitle}>Indian Market Insight</div>
                     <div className={styles.agencyMiniSub}>Hands-on regional understanding combined with nationwide marketplace playbooks.</div>
                   </div>
@@ -547,6 +565,15 @@ export default function AmazonMarketingPage() {
               </ScrollReveal>
             ))}
           </div>
+
+          <div className={styles.sectionCtaRow}>
+            <BeamButton
+              href="/contact"
+              label="Initiate Step 1: Competitor &amp; Account Audit"
+              size="md"
+              arrow={true}
+            />
+          </div>
         </div>
       </section>
 
@@ -603,6 +630,15 @@ export default function AmazonMarketingPage() {
               </div>
             </div>
           </ScrollReveal>
+
+          <div className={styles.sectionCtaRow}>
+            <BeamButton
+              href="/contact"
+              label="Scale Your Brand Like Heed Organics"
+              size="md"
+              arrow={true}
+            />
+          </div>
         </div>
       </section>
 
@@ -647,47 +683,86 @@ export default function AmazonMarketingPage() {
               );
             })}
           </div>
+
+          <div className={styles.faqCtaBox}>
+            <p className={styles.faqCtaNote}>
+              Have a specific question about your ASIN catalog or advertising strategy?
+            </p>
+            <BeamButton
+              href="/contact"
+              label="Consult an Amazon Growth Specialist"
+              size="md"
+              arrow={true}
+            />
+          </div>
         </div>
       </section>
 
       {/* ══════════════════════════════════════════════════
-          8. BOTTOM CONVERSION TERMINAL
+          8. PRE-FOOTER CONVERSION CARD (SIGNATURE LIGHT SKEUOMORPHIC)
          ══════════════════════════════════════════════════ */}
       <section className={styles.conversionSection}>
         <div className="container">
           <ScrollReveal>
-            <div className={styles.executiveTerminal}>
-              <div className={styles.termGlow} />
-              <div className={styles.cardGlassGlossDark} />
-              <div className={styles.termContent}>
-                <span className={styles.termPill}>Make Every Amazon Ad Rupee Count</span>
-                <h2 className={styles.termTitle}>
-                  Ready to Scale Your Amazon Sales With Smarter PPC?
-                </h2>
-                <p className={styles.termSub}>
-                  Request an Amazon PPC audit to uncover inefficient campaigns, irrelevant search terms, missed keyword opportunities, and areas where your advertising strategy can perform better.
-                </p>
-                <div className={styles.termContact}>
-                  <span>Direct Line:</span>
-                  <a href="tel:+918280788689" className={styles.termPhone}>
-                    +91 82807 88689
+            <div className={styles.homeCtaInnerBox}>
+              <div className={styles.homeCtaEyebrow}>
+                <span className={styles.homeCtaDot} />
+                <span>Make Every Amazon Ad Rupee Count</span>
+              </div>
+
+              <h2 className={styles.homeCtaHeadline}>
+                Ready to Scale Your Amazon Sales With Smarter PPC?
+              </h2>
+
+              <p className={styles.homeCtaSub}>
+                Request an Amazon PPC audit to uncover inefficient campaigns, irrelevant search terms, missed keyword opportunities, and areas where your advertising strategy can perform better.
+              </p>
+
+              <div className={styles.homeCtaContact}>
+                <span>Direct Marketplace Desk:</span>
+                <a href="tel:+918280788689" className={styles.homeCtaPhone}>
+                  +91 82807 88689
+                </a>
+                <span>·</span>
+                <span>Pan-India Amazon Growth Operations</span>
+              </div>
+
+              <div className={styles.homeCtaActions}>
+                <BeamButton
+                  href="/contact"
+                  label="Request Your Free Amazon PPC Audit →"
+                  size="lg"
+                  arrow={true}
+                />
+                <div className={styles.homeCtaSecondaryWrapper}>
+                  <a
+                    href="https://wa.me/918280788689?text=Hi%20Marketing%20Copilot,%20I%20would%20like%20an%20Amazon%20PPC%20and%20listing%20audit%20for%20our%20brand."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.homeCtaSecondaryInner}
+                  >
+                    <span>💬 WhatsApp Marketplace Director</span>
                   </a>
-                  <span>·</span>
-                  <span>Bhubaneswar HQ · Serving Brands Across India</span>
                 </div>
               </div>
 
-              <div className={styles.termActions}>
-                <BeamButton href="/contact" label="Request Your PPC Audit" size="lg" arrow={true} />
-                <BeamButton
-                  href="/services"
-                  label="View All Digital Marketing Services"
-                  size="lg"
-                  variant="outline"
-                  arrow={true}
-                  className={styles.termSecondaryInner}
-                  wrapperClassName={styles.termSecondaryWrapper}
-                />
+              <div className={styles.homeCtaTrustBadges}>
+                <div className={styles.homeCtaTrustItem}>
+                  <span>🛡️</span>
+                  <span>Amazon Verified Partner API</span>
+                </div>
+                <div className={styles.homeCtaTrustItem}>
+                  <span>⚡</span>
+                  <span>18.4% Benchmark Target ACoS</span>
+                </div>
+                <div className={styles.homeCtaTrustItem}>
+                  <span>🔒</span>
+                  <span>Negative Keyword Shield Protection</span>
+                </div>
+                <div className={styles.homeCtaTrustItem}>
+                  <span>🚀</span>
+                  <span>Dedicated Amazon Ads Strategist</span>
+                </div>
               </div>
             </div>
           </ScrollReveal>

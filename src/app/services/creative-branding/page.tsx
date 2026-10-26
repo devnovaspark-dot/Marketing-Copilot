@@ -22,6 +22,8 @@ const brandingArsenal = [
     desc: 'Mathematical bezier curve drafting, custom font design, and uncompressed production asset exports.',
     status: 'VECTOR 8K',
     icon: '🎨',
+    footerTag: '✦ Scalable Vector Precision',
+    deliverable: '✓ Infinite Resolution',
   },
   {
     name: 'Figma Design Token Engine',
@@ -29,6 +31,8 @@ const brandingArsenal = [
     desc: 'Living component libraries with responsive typography scales and CSS variable synchronization.',
     status: 'FARM SYNCED',
     icon: '⚡',
+    footerTag: '✦ Living Token Hierarchy',
+    deliverable: '✓ Code Synced',
   },
   {
     name: 'Pantone Color Matching System',
@@ -36,6 +40,8 @@ const brandingArsenal = [
     desc: 'Direct PMS spot color matching ensuring physical packaging and signboards match digital screens.',
     status: 'PANTONE PMS',
     icon: '🎯',
+    footerTag: '✦ Precision Color Matching',
+    deliverable: '✓ Print Calibrated',
   },
   {
     name: 'Cinema 4D & Octane Render',
@@ -43,6 +49,8 @@ const brandingArsenal = [
     desc: '3D bottle, box, and spatial architectural signage renders for pre-manufacturing visualization.',
     status: 'OCTANE 4K',
     icon: '📦',
+    footerTag: '✦ Pre-Production 3D Renders',
+    deliverable: '✓ Packaging Ready',
   },
   {
     name: 'IP & Trademark Shield (India)',
@@ -50,6 +58,8 @@ const brandingArsenal = [
     desc: 'Phonetic and visual similarity screening against the Controller General of Patents & Trademarks.',
     status: 'IP COMPLIANT',
     icon: '🛡️',
+    footerTag: '✦ Class 35 & 42 Search',
+    deliverable: '✓ Trademark Cleared',
   },
   {
     name: 'Master Brand Guidelines Vault',
@@ -57,6 +67,8 @@ const brandingArsenal = [
     desc: '60+ page governance manual covering negative space rules, photography art direction, and tone of voice.',
     status: '60+ PGS PDF',
     icon: '📖',
+    footerTag: '✦ 60+ Page Brand Bible',
+    deliverable: '✓ Asset Handover',
   },
 ];
 
@@ -89,7 +101,7 @@ const brandingFaqs = [
 ];
 
 export default function CreativeBrandingPage() {
-  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
   const toggleFaq = (index: number) => {
     setOpenFaqIndex((prev) => (prev === index ? null : index));
@@ -196,6 +208,9 @@ export default function CreativeBrandingPage() {
             </p>
           </div>
           <BrandPricingPowerCalculator />
+          <div className={styles.sectionCtaRow}>
+            <BeamButton href="/contact" label="Model Your Brand Pricing Power →" size="md" arrow={true} />
+          </div>
         </div>
       </section>
 
@@ -216,6 +231,9 @@ export default function CreativeBrandingPage() {
             </p>
           </div>
           <BrandComparisonMatrix />
+          <div className={styles.sectionCtaRow}>
+            <BeamButton href="/contact" label="Partner with Brand Architects →" size="md" arrow={true} />
+          </div>
         </div>
       </section>
 
@@ -236,6 +254,9 @@ export default function CreativeBrandingPage() {
             </p>
           </div>
           <BrandIdentityRoadmap />
+          <div className={styles.sectionCtaRow}>
+            <BeamButton href="/contact" label="Launch Your 30-Day Brand Identity Sprint →" size="md" arrow={true} />
+          </div>
         </div>
       </section>
 
@@ -249,26 +270,26 @@ export default function CreativeBrandingPage() {
               <div className={styles.editorialContent}>
                 <div className={styles.editorialBadge}>
                   <span className={styles.badgeDot} />
-                  <span>Verified Brand Identity Case Study · Architecture &amp; Interiors</span>
+                  <span>Verified Brand Identity Case Study · Heritage Jewellery &amp; D2C Luxe</span>
                 </div>
 
                 <h3 className={styles.editorialTitle}>
-                  Medallion House &amp; Interior Studio
+                  Medallion House Fine Jewellery
                 </h3>
                 <div className={styles.editorialLocation}>
-                  📍 Patia Infocity Hub &amp; Saheed Nagar, Bhubaneswar
+                  📍 Jaipur Artisan Hub · Pan-India D2C Luxury
                 </div>
 
                 <p className={styles.editorialDesc}>
-                  Medallion House was executing ultra-luxury interior projects for luxury villas in Bhubaneswar but was hindered by a fragmented, generic visual identity. Marketing Copilot engineered a bespoke architectural monogram, gold-foil corporate stationery, and a complete showroom signage system that elevated their average project ticket size by 54%.
+                  Medallion House handcrafted magnificent 22kt-plated Kundan, Polki, and Meenakari jewellery in Jaipur but was hindered by generic digital branding and low perceived value. Marketing Copilot engineered a royal heritage visual identity, regal typography system, luxury unboxing suites, and high-converting bridal campaign assets that elevated their average order value by 54% across India.
                 </p>
 
                 <div className={styles.editorialQuoteBlock}>
                   <p className={styles.editorialQuoteText}>
-                    &quot;Our brand now commands immediate respect from HNIs and commercial developers. Prospective clients walk into our studio already viewing us as the undisputed luxury leader in Odisha.&quot;
+                    &quot;Marketing Copilot transformed our Jaipur artisan craft into an iconic national luxury brand. From our regal monogram to the gold-embossed unboxing experience, customers across Mumbai, Delhi, and Bangalore now view us as their premier festive jewellery house.&quot;
                   </p>
                   <span className={styles.editorialQuoteAuthor}>
-                    — Principal Architect &amp; Founder, Medallion House Bhubaneswar
+                    — Founder &amp; Creative Director, Medallion House Jewellery
                   </span>
                 </div>
 
@@ -281,28 +302,28 @@ export default function CreativeBrandingPage() {
                 <div className={styles.editorialImgWrapper}>
                   <Image
                     src="/images/Medallion house.jpg"
-                    alt="Medallion House Luxury Interior Studio"
+                    alt="Medallion House Fine Jewellery"
                     fill
                     sizes="(max-width: 900px) 100vw, 480px"
                     className={styles.editorialImg}
                   />
                   <div className={styles.editorialImgBadge}>
-                    <span>+54% Average Project Ticket · Patia Hub</span>
+                    <span>+54% AOV Growth · Pan-India D2C Reach</span>
                   </div>
                 </div>
 
                 <div className={styles.kpiStrip}>
                   <div className={styles.kpiCard}>
                     <div className={styles.kpiNum}>+54%</div>
-                    <div className={styles.kpiSub}>Average Contract Value</div>
+                    <div className={styles.kpiSub}>Average Order Value (AOV)</div>
                   </div>
                   <div className={styles.kpiCard}>
-                    <div className={styles.kpiNum}>0%</div>
-                    <div className={styles.kpiSub}>Discount Concessions</div>
+                    <div className={styles.kpiNum}>4.6X</div>
+                    <div className={styles.kpiSub}>Blended ROAS</div>
                   </div>
                   <div className={styles.kpiCard}>
                     <div className={styles.kpiNum}>100%</div>
-                    <div className={styles.kpiSub}>Trademark Registered</div>
+                    <div className={styles.kpiSub}>Brand Trademark Registered</div>
                   </div>
                 </div>
               </div>
@@ -330,16 +351,28 @@ export default function CreativeBrandingPage() {
 
           <div className={styles.arsenalGrid}>
             {brandingArsenal.map((spec, idx) => (
-              <div key={idx} className={styles.specCard}>
-                <div className={styles.specCardHeader}>
-                  <div className={styles.specIconBox}>{spec.icon}</div>
-                  <span className={styles.specStatus}>{spec.status}</span>
+              <div key={idx} className={styles.cardCol}>
+                <div className={styles.specCard}>
+                  <div className={styles.specTopBody}>
+                    <div className={styles.specCardHeader}>
+                      <div className={styles.specIconBox}>{spec.icon}</div>
+                      <span className={styles.specStatus}>{spec.status}</span>
+                    </div>
+                    <h4 className={styles.specTitle}>{spec.name}</h4>
+                    <div className={styles.specCategory}>{spec.category}</div>
+                    <p className={styles.specDesc}>{spec.desc}</p>
+                  </div>
+                  <div className={styles.specCardFooter}>
+                    <span className={styles.specFooterTag}>{spec.footerTag}</span>
+                    <span className={styles.specDeliverable}>{spec.deliverable}</span>
+                  </div>
                 </div>
-                <h4 className={styles.specTitle}>{spec.name}</h4>
-                <div className={styles.specCategory}>{spec.category}</div>
-                <p className={styles.specDesc}>{spec.desc}</p>
               </div>
             ))}
+          </div>
+
+          <div className={styles.sectionCtaRow}>
+            <BeamButton href="/contact" label="Deploy Industry-Standard Creative Tech →" size="md" arrow={true} />
           </div>
         </div>
       </section>
@@ -388,49 +421,77 @@ export default function CreativeBrandingPage() {
               );
             })}
           </div>
+
+          <div className={styles.faqCtaBox}>
+            <p className={styles.faqCtaNote}>Have a specific question about your trademark, rebrand timeline, or design deliverables?</p>
+            <BeamButton href="/contact" label="Ask Our Brand Architects →" size="md" arrow={true} />
+          </div>
         </div>
       </section>
 
       {/* ══════════════════════════════════════════════════
-          11. EXECUTIVE BOTTOM CONVERSION TERMINAL
+          11. PRE-FOOTER CONVERSION CARD (SIGNATURE LIGHT SKEUOMORPHIC)
          ══════════════════════════════════════════════════ */}
       <section className={styles.conversionSection} id="executive-terminal">
         <div className="container">
-          <div className={styles.executiveTerminal}>
-            <div className={styles.termGlow} />
-            <div style={{ position: 'relative', zIndex: 2 }}>
-              <span className={styles.termPill}>CONFIDENTIAL BRAND DISCOVERY SESSION</span>
-              <h2 className={styles.termTitle}>
+          <ScrollReveal>
+            <div className={styles.homeCtaInnerBox}>
+              <div className={styles.homeCtaEyebrow}>
+                <span className={styles.homeCtaDot} />
+                <span>CONFIDENTIAL BRAND DISCOVERY SESSION</span>
+              </div>
+
+              <h2 className={styles.homeCtaHeadline}>
                 Ready to Build an Unforgettable Brand?
               </h2>
-              <p className={styles.termSub}>
+
+              <p className={styles.homeCtaSub}>
                 Schedule a confidential 45-minute brand architecture session. We will analyze your competitors, audit your current visual perception gaps, and outline your 30-day brand elevation roadmap.
               </p>
-              <div className={styles.termContact}>
-                <span>Direct Line:</span>
-                <a href="tel:+919876543210" className={styles.termPhone}>
-                  +91 98765 43210
+
+              <div className={styles.homeCtaContact}>
+                <span>Direct Studio Desk:</span>
+                <a href="tel:+918280788689" className={styles.homeCtaPhone}>
+                  +91 82807 88689
                 </a>
                 <span>·</span>
-                <span>Bhubaneswar HQ · Serving Businesses Across India</span>
+                <span>Pan-India Brand Architecture &amp; Identity</span>
+              </div>
+
+              <div className={styles.homeCtaActions}>
+                <BeamButton href="/contact" label="Book Brand Discovery →" size="lg" arrow={true} />
+                <div className={styles.homeCtaSecondaryWrapper}>
+                  <a
+                    href="https://wa.me/918280788689?text=Hi%20Marketing%20Copilot,%20I%20would%20like%20to%20schedule%20a%20brand%20identity%20consultation."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.homeCtaSecondaryInner}
+                  >
+                    <span>💬 WhatsApp Creative Director</span>
+                  </a>
+                </div>
+              </div>
+
+              <div className={styles.homeCtaTrustBadges}>
+                <div className={styles.homeCtaTrustItem}>
+                  <span>🛡️</span>
+                  <span>100% Trademark Ownership</span>
+                </div>
+                <div className={styles.homeCtaTrustItem}>
+                  <span>⚡</span>
+                  <span>60+ Page Master Brand Bible</span>
+                </div>
+                <div className={styles.homeCtaTrustItem}>
+                  <span>🔒</span>
+                  <span>Production-Ready Packaging Specs</span>
+                </div>
+                <div className={styles.homeCtaTrustItem}>
+                  <span>🚀</span>
+                  <span>Dedicated Creative Director</span>
+                </div>
               </div>
             </div>
-
-            <div className={styles.termActions}>
-              <a href="/contact" className={styles.termAuditBtn}>
-                <span>Book Brand Discovery</span>
-                <span>→</span>
-              </a>
-              <a
-                href="https://wa.me/919876543210?text=Hi%20Marketing%20Copilot,%20I%20would%20like%20to%20schedule%20a%20brand%20identity%20consultation."
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.termWhatsAppBtn}
-              >
-                <span>💬 WhatsApp Creative Director</span>
-              </a>
-            </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
     </div>

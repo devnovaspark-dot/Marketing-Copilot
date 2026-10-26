@@ -577,8 +577,10 @@ export default function BrandSpotlightSection() {
 
             <div key={`header-text-${activeBrand.id}`} className={styles.dynamicHeaderContent}>
               <h2 className={`display-lg ${styles.headline}`}>
-                Sample case study of our client (
-                <span className="accent-gradient">{activeBrand.headlineHighlight}</span>)
+                Sample case study of our client{' '}
+                <span className={styles.clientHighlightWrap}>
+                  (<span className="accent-gradient">{activeBrand.headlineHighlight}</span>)
+                </span>
               </h2>
 
               <p className={`body-lg ${styles.subText}`}>

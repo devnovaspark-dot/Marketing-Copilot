@@ -133,6 +133,10 @@ const nextConfig: NextConfig = {
         destination: '/services/local-seo',
       },
       {
+        source: '/local-seo-services-in-india',
+        destination: '/services/local-seo',
+      },
+      {
         source: '/services/digital-growth-partner-in-india',
         destination: '/services/digital-growth-partner',
       },

@@ -1,5 +1,5 @@
 .stripWrapper {
-  margin-top: 6px;
+  margin-top: 8px;
   width: 100%;
 }
 
@@ -7,22 +7,24 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 6px 10px;
-  padding: 4px 12px;
-  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFD 100%);
+  flex-wrap: nowrap;
+  gap: 6px;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
   border: 1.5px solid rgba(226, 232, 240, 0.95);
-  border-radius: 10px;
+  border-radius: 12px;
   box-shadow: 
     inset 0 1.5px 0 #FFFFFF,
-    0 3px 10px rgba(11, 32, 147, 0.04);
+    0 4px 14px -2px rgba(11, 32, 147, 0.05);
 }
 
 @media (max-width: 640px) {
   .stripInner {
+    flex-wrap: wrap;
     justify-content: center;
     gap: 10px 14px;
-    padding: 8px 10px;
+    padding: 10px 12px;
   }
 }
 
@@ -30,8 +32,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2px;
-  transition: transform 0.2s ease;
+  gap: 2.5px;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .badgeItem:hover {
@@ -41,7 +43,7 @@
 .logoRow {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
 }
 
 .brandIcon {
@@ -50,21 +52,21 @@
 
 .brandName {
   font-family: var(--font-display, inherit);
-  font-size: 11.5px;
-  font-weight: 800;
+  font-size: 11px;
+  font-weight: 850;
   letter-spacing: -0.01em;
 }
 
 .googleBrand {
   font-family: var(--font-display, inherit);
-  font-size: 12px;
-  font-weight: 700;
+  font-size: 11.5px;
+  font-weight: 800;
   letter-spacing: -0.02em;
 }
 
 .designRushName {
   font-family: var(--font-display, inherit);
-  font-size: 10px;
+  font-size: 9.5px;
   font-weight: 900;
   letter-spacing: 0.06em;
   color: #111827;
@@ -73,13 +75,14 @@
 .ratingRow {
   display: flex;
   align-items: center;
-  gap: 3px;
+  gap: 3.5px;
 }
 
 .score {
+  font-family: var(--font-display, inherit);
   font-size: 10px;
-  font-weight: 800;
-  color: #475569;
+  font-weight: 900;
+  color: #0F172A;
 }
 
 .stars {
@@ -90,8 +93,8 @@
 
 .divider {
   width: 1px;
-  height: 20px;
-  background: #E2E8F0;
+  height: 22px;
+  background: linear-gradient(180deg, transparent 0%, #CBD5E1 50%, transparent 100%);
 }
 
 @media (max-width: 640px) {
@@ -99,3 +102,4 @@
     display: none;
   }
 }
+

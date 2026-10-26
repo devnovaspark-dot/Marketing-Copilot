@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import BeamButton from '@/components/BeamButton';
 import styles from './BrandIdentityStudioSimulator.module.css';
 
 interface BrandTheme {
@@ -20,16 +21,16 @@ interface BrandTheme {
 const BRAND_THEMES: BrandTheme[] = [
   {
     id: 'luxury',
-    name: 'Minimalist Luxury & Interior',
-    brandName: 'MEDALLION',
-    tagline: 'HAUTE INTERIORS & ARCHITECTURE · BHUBANESWAR',
-    bgGradient: 'linear-gradient(135deg, #0F172A 0%, #0B2093 100%)',
+    name: 'Royal Heritage & Fine Jewellery',
+    brandName: 'MEDALLION HOUSE',
+    tagline: 'JAIPUR CRAFT & FINE ARTISANAL JEWELLERY · EST. 2018',
+    bgGradient: 'linear-gradient(135deg, #0F172A 0%, #0B2093 50%, #064E3B 100%)',
     textColor: '#FFFFFF',
-    colors: ['#0F172A', '#0B2093', '#F59E0B', '#F8FAFC'],
+    colors: ['#0F172A', '#D4AF37', '#064E3B', '#FFFDF7'],
     fontFamily: 'serif',
-    sampleCopy: 'Engineered for luxury estate owners in Patia and Saheed Nagar. Clean geometric proportion meets warm architectural materials.',
-    collateral1: { type: 'Physical Stationery', title: 'Gold Foil Stamped 600 GSM Cotton Business Cards' },
-    collateral2: { type: 'Spatial Signage', title: 'Brushed Brass 3D Exterior Facade Monogram' },
+    sampleCopy: 'Born in Jaipur, crafted for today. Hand-set Kundan, polki setting, and 22kt-tone gold finishes engineered for luxury bridal celebrations and everyday elegance.',
+    collateral1: { type: 'Luxury Unboxing Suite', title: 'Velvet-Lined Gold-Embossed Rigid Jewellery Case' },
+    collateral2: { type: 'Certificate of Craft', title: 'Artisan Verification Stamp & Anti-Tarnish Guarantee' },
   },
   {
     id: 'tech',
@@ -146,6 +147,10 @@ export default function BrandIdentityStudioSimulator() {
               </div>
             </div>
           </div>
+        </div>
+
+        <div style={{ marginTop: '28px', display: 'flex', justifyContent: 'center' }}>
+          <BeamButton href="/contact" label="Explore Your Brand Visual Identity →" size="md" arrow={true} />
         </div>
       </div>
     </section>

@@ -2322,122 +2322,166 @@
   padding: 80px 0 20px;
 }
 
-.executiveTerminal {
-  position: relative;
-  background: #0F172A;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+.homeCtaInnerBox {
+  background: linear-gradient(145deg, #FFFFFF 0%, #F8FAFC 50%, #F1F5F9 100%);
+  border: 1.5px solid #CBD5E1;
   border-radius: 24px;
-  padding: clamp(32px, 4vw, 56px);
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 36px;
-  align-items: center;
+  padding: clamp(38px, 5.5vw, 60px) clamp(20px, 4vw, 48px);
+  max-width: 1000px;
+  margin: 0 auto;
+  box-shadow: 
+    inset 0 2px 0 #FFFFFF,
+    inset 0 -1.5px 0 rgba(0, 0, 0, 0.04),
+    0 24px 60px -12px rgba(11, 32, 147, 0.12),
+    0 6px 18px rgba(0, 0, 0, 0.04);
+  position: relative;
   overflow: hidden;
-  box-shadow: 0 24px 60px -12px rgba(11, 32, 147, 0.25);
+  text-align: center;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.termGlow {
-  position: absolute;
-  top: -50%;
-  left: -20%;
-  width: 140%;
-  height: 200%;
-  background: radial-gradient(circle at 30% 40%, rgba(11, 32, 147, 0.35) 0%, transparent 60%);
-  pointer-events: none;
+.homeCtaInnerBox:hover {
+  border-color: rgba(11, 32, 147, 0.35);
+  box-shadow: 
+    inset 0 2px 0 #FFFFFF,
+    0 36px 84px -14px rgba(15, 23, 42, 0.14),
+    0 0 0 1px rgba(11, 32, 147, 0.15);
 }
 
-.termPill {
-  display: inline-block;
+.homeCtaEyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-family: var(--font-display);
-  font-size: 11px;
+  font-size: 11.5px;
   font-weight: 800;
-  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #FCD34D;
+  letter-spacing: 0.08em;
+  color: #0B2093;
+  background: #EFF6FF;
+  padding: 4px 14px;
+  border-radius: 999px;
+  border: 1px solid #BFDBFE;
+  box-shadow: inset 0 1px 0 #FFFFFF;
   margin-bottom: 12px;
 }
 
-.termTitle {
+.homeCtaDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #0B2093;
+}
+
+.homeCtaHeadline {
   font-family: var(--font-display);
-  font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+  font-size: clamp(1.85rem, 3.2vw, 2.7rem);
   font-weight: 800;
   line-height: 1.2;
-  color: #FFFFFF;
-  margin: 0 0 12px;
+  letter-spacing: -0.025em;
+  color: #0F172A;
+  margin-top: 4px;
+  margin-bottom: 14px;
 }
 
-.termSub {
-  font-size: 14.5px;
+.homeCtaSub {
+  font-family: var(--font-body);
+  font-size: clamp(14px, 1.05vw, 16px);
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.82);
-  margin: 0 0 20px;
+  color: #475569;
+  max-width: 680px;
+  margin: 0 auto 20px;
 }
 
-.termContact {
+.homeCtaContact {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
   flex-wrap: wrap;
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.85);
+  color: #64748B;
+  font-weight: 550;
+  margin-bottom: 24px;
 }
 
-.termPhone {
-  color: #FFFFFF;
-  font-weight: 700;
+.homeCtaPhone {
+  color: #0B2093;
+  font-weight: 750;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
-.termActions {
+.homeCtaActions {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+  margin-bottom: 0;
 }
 
-.termAuditBtn {
+.homeCtaSecondaryWrapper {
+  background: #FFFFFF !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+  border-radius: 9999px !important;
+  overflow: hidden !important;
+  display: inline-flex;
+}
+
+.homeCtaSecondaryInner {
+  background: #FFFFFF !important;
+  color: #0F172A !important;
+  border: 1.5px solid #CBD5E1 !important;
+  box-shadow: inset 0 1px 0 #FFFFFF !important;
+  font-weight: 700 !important;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
   gap: 8px;
-  background: #F59E0B;
-  color: #0F172A;
-  font-family: var(--font-display);
-  font-size: 14.5px;
-  font-weight: 800;
-  padding: 14px 24px;
-  border-radius: 10px;
+  padding: 12px 22px;
+  border-radius: 9999px;
   text-decoration: none;
+  font-size: 14px;
   transition: all 0.2s ease;
-  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.35);
 }
 
-.termAuditBtn:hover {
-  background: #FFB800;
-  transform: translateY(-2px);
-  gap: 12px;
+.homeCtaSecondaryInner:hover {
+  background: #F8FAFC !important;
+  color: #0B2093 !important;
+  border-color: #0B2093 !important;
 }
 
-.termWhatsAppBtn {
-  display: inline-flex;
+.homeCtaTrustBadges {
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  color: #FFFFFF;
+  gap: clamp(10px, 2vw, 20px);
+  flex-wrap: wrap;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #E2E8F0;
+  position: relative;
+  z-index: 2;
+}
+
+.homeCtaTrustItem {
   font-family: var(--font-display);
-  font-size: 13.5px;
+  font-size: 12px;
   font-weight: 700;
-  padding: 12px 20px;
-  border-radius: 10px;
-  text-decoration: none;
-  transition: all 0.2s ease;
+  color: #475569;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  padding: 5px 12px;
+  border-radius: 999px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
 }
 
-.termWhatsAppBtn:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-1px);
+.executiveTerminal {
+  composes: homeCtaInnerBox;
 }
 
 @media (max-width: 900px) {

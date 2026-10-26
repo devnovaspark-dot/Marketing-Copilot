@@ -89,7 +89,7 @@ const localSeoFaqs = [
 ];
 
 export default function LocalSeoPage() {
-  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
   const toggleFaq = (index: number) => {
     setOpenFaqIndex((prev) => (prev === index ? null : index));
@@ -213,6 +213,14 @@ export default function LocalSeoPage() {
               </div>
             </div>
           </ScrollReveal>
+
+          <div className={styles.sectionCtaRow}>
+            <BeamButton
+              href="/contact"
+              label="Lock Your Regional Geo-Grid Dominance"
+              size="lg"
+            />
+          </div>
         </div>
       </section>
 
@@ -243,6 +251,14 @@ export default function LocalSeoPage() {
             </p>
           </div>
           <LocalSeoRevenueCalculator />
+
+          <div className={styles.sectionCtaRow}>
+            <BeamButton
+              href="/contact"
+              label="Unlock Your Local Revenue Potential"
+              size="lg"
+            />
+          </div>
         </div>
       </section>
 
@@ -263,6 +279,14 @@ export default function LocalSeoPage() {
             </p>
           </div>
           <LocalSeoComparisonMatrix />
+
+          <div className={styles.sectionCtaRow}>
+            <BeamButton
+              href="/contact"
+              label="Switch to Hyperlocal Map 3-Pack SEO"
+              size="lg"
+            />
+          </div>
         </div>
       </section>
 
@@ -283,6 +307,14 @@ export default function LocalSeoPage() {
             </p>
           </div>
           <LocalSeoSprintRoadmap />
+
+          <div className={styles.sectionCtaRow}>
+            <BeamButton
+              href="/contact"
+              label="Start Your 30-Day Map 3-Pack Sprint"
+              size="lg"
+            />
+          </div>
         </div>
       </section>
 
@@ -388,6 +420,14 @@ export default function LocalSeoPage() {
               </div>
             ))}
           </div>
+
+          <div className={styles.sectionCtaRow}>
+            <BeamButton
+              href="/contact"
+              label="Deploy Our Full Local Search Stack"
+              size="lg"
+            />
+          </div>
         </div>
       </section>
 
@@ -435,49 +475,89 @@ export default function LocalSeoPage() {
               );
             })}
           </div>
+
+          <div className={styles.faqCtaBox}>
+            <p className={styles.faqCtaNote}>
+              Have a specific question about your Google Map 3-Pack rankings or local citation audit?
+            </p>
+            <BeamButton
+              href="/contact"
+              label="Consult a Local SEO Strategist"
+              size="md"
+              arrow={true}
+            />
+          </div>
         </div>
       </section>
 
       {/* ══════════════════════════════════════════════════
-          11. EXECUTIVE BOTTOM CONVERSION TERMINAL
+          11. PRE-FOOTER CONVERSION CARD (SIGNATURE LIGHT SKEUOMORPHIC)
          ══════════════════════════════════════════════════ */}
       <section className={styles.conversionSection} id="executive-terminal">
         <div className="container">
-          <div className={styles.executiveTerminal}>
-            <div className={styles.termGlow} />
-            <div style={{ position: 'relative', zIndex: 2 }}>
-              <span className={styles.termPill}>FREE 5X5 GEO-GRID LOCAL AUDIT</span>
-              <h2 className={styles.termTitle}>
+          <ScrollReveal>
+            <div className={styles.homeCtaInnerBox}>
+              <div className={styles.homeCtaEyebrow}>
+                <span className={styles.homeCtaDot} />
+                <span>FREE 5X5 GEO-GRID LOCAL AUDIT</span>
+              </div>
+
+              <h2 className={styles.homeCtaHeadline}>
                 Ready to Lock Down the Google Map 3-Pack?
               </h2>
-              <p className={styles.termSub}>
-                Get a free 5x5 Geo-Grid diagnostic scanning your real Google Maps rankings across Patia, Saheed Nagar, Nayapalli, and Khandagiri. We will show you exactly why competitors are outranking you and how to take #1.
+
+              <p className={styles.homeCtaSub}>
+                Get a free 5x5 Geo-Grid diagnostic scanning your real Google Maps rankings across your service territory. We will show you exactly why competitors are outranking you and how to claim the top spot.
               </p>
-              <div className={styles.termContact}>
-                <span>Direct Line:</span>
-                <a href="tel:+918280788689" className={styles.termPhone}>
+
+              <div className={styles.homeCtaContact}>
+                <span>Direct Local Desk:</span>
+                <a href="tel:+918280788689" className={styles.homeCtaPhone}>
                   +91 82807 88689
                 </a>
                 <span>·</span>
-                <span>Bhubaneswar HQ · Serving Businesses Across India</span>
+                <span>Pan-India Local SEO &amp; Maps Optimization</span>
+              </div>
+
+              <div className={styles.homeCtaActions}>
+                <BeamButton
+                  href="/contact"
+                  label="Claim Your Free Geo-Grid Audit →"
+                  size="lg"
+                  arrow={true}
+                />
+                <div className={styles.homeCtaSecondaryWrapper}>
+                  <a
+                    href="https://wa.me/918280788689?text=Hi%20Marketing%20Copilot,%20I%20want%20to%20audit%20our%20Google%20Map%203-Pack%20ranking."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.homeCtaSecondaryInner}
+                  >
+                    <span>💬 WhatsApp Local SEO Director</span>
+                  </a>
+                </div>
+              </div>
+
+              <div className={styles.homeCtaTrustBadges}>
+                <div className={styles.homeCtaTrustItem}>
+                  <span>📍</span>
+                  <span>Google Map 3-Pack Guaranteed Strategy</span>
+                </div>
+                <div className={styles.homeCtaTrustItem}>
+                  <span>⚡</span>
+                  <span>5x5 Hyperlocal Geogrid Telemetry</span>
+                </div>
+                <div className={styles.homeCtaTrustItem}>
+                  <span>🔒</span>
+                  <span>100% White-Hat Citation Indexing</span>
+                </div>
+                <div className={styles.homeCtaTrustItem}>
+                  <span>🚀</span>
+                  <span>Dedicated Local Maps Strategist</span>
+                </div>
               </div>
             </div>
-
-            <div className={styles.termActions}>
-              <a href="/contact" className={styles.termAuditBtn}>
-                <span>Claim Your Free Geo-Grid Audit</span>
-                <span>→</span>
-              </a>
-              <a
-                href="https://wa.me/918280788689?text=Hi%20Marketing%20Copilot,%20I%20want%20to%20audit%20our%20Google%20Map%203-Pack%20ranking."
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.termWhatsAppBtn}
-              >
-                <span>💬 WhatsApp Local SEO Director</span>
-              </a>
-            </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
     </div>

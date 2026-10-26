@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import BeamButton from '@/components/BeamButton';
 import styles from './BrandIdentityWorkstation.module.css';
 
 interface TabData {
@@ -33,7 +34,7 @@ const BRAND_WORKSTATION_TABS: TabData[] = [
   <circle cx="250" cy="250" r="100.0" stroke="#F59E0B" strokeWidth="6"/>
   <!-- Optical Alignment Guides -->
   <line x1="88" y1="250" x2="412" y2="250" stroke="rgba(11,32,147,0.3)"/>
-  <text x="250" y="390" textAnchor="middle" fontFamily="Outfit">MEDALLION</text>
+  <text x="250" y="390" textAnchor="middle" fontFamily="Outfit">MEDALLION HOUSE</text>
 </svg>`,
   },
   {
@@ -158,6 +159,10 @@ export default function BrandIdentityWorkstation() {
               </div>
             </div>
           </div>
+        </div>
+
+        <div style={{ marginTop: '28px', display: 'flex', justifyContent: 'center' }}>
+          <BeamButton href="/contact" label="Engineer Your Brand Architecture →" size="md" arrow={true} />
         </div>
       </div>
     </section>

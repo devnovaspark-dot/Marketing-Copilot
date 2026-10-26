@@ -41,6 +41,61 @@ const FAQ_ITEMS = [
   }
 ];
 
+const AI_TECH_ARSENAL = [
+  {
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9v-2h2v2zm0-4H9V7h2v5zm4 4h-2v-2h2v2zm0-4h-2V7h2v5z"/>
+      </svg>
+    ),
+    status: 'OFFICIAL BSP',
+    title: 'Meta Cloud API',
+    category: 'WhatsApp & Messenger Webhooks',
+    desc: 'Direct official Meta Business Platform webhooks for 100% deliverability & green checkmark security.',
+    footerTag: '✦ Official Cloud API',
+    deliverable: '✓ Zero Number Ban Risk',
+  },
+  {
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+      </svg>
+    ),
+    status: 'GPT-4o & CLAUDE',
+    title: 'OpenAI & Anthropic',
+    category: 'Frontier LLM Reasoning',
+    desc: 'GPT-4o & Claude 3.5 Sonnet reasoning engines fine-tuned with domain-specific few-shot prompting.',
+    footerTag: '✦ Domain Fine-Tuned',
+    deliverable: '✓ Multi-Lingual Fluidity',
+  },
+  {
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"/>
+      </svg>
+    ),
+    status: 'VECTOR DB',
+    title: 'Pinecone & Chroma',
+    category: 'Embeddings & Semantic Search',
+    desc: 'High-density vector databases delivering zero-hallucination document search in under 120ms.',
+    footerTag: '✦ Zero Hallucination RAG',
+    deliverable: '✓ < 120ms Search Latency',
+  },
+  {
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99zM11 16h2v2h-2zm0-6h2v4h-2z"/>
+      </svg>
+    ),
+    status: 'WEBHOOK ENGINE',
+    title: 'HubSpot & Make.com',
+    category: 'Workflow & CRM Dispatch',
+    desc: 'Enterprise orchestration connecting real-time leads to SMS, WhatsApp, Slack, and Google Sheets.',
+    footerTag: '✦ 2-Way CRM Sync',
+    deliverable: '✓ Real-Time Pipeline Push',
+  },
+];
+
 export default function AiAutomationPage() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
@@ -144,6 +199,14 @@ export default function AiAutomationPage() {
       ══════════════════════════════════════════════════ */}
       <section className="container">
         <AiAutomationWorkstation />
+        <div className={styles.sectionCtaRow}>
+          <BeamButton
+            href="/contact"
+            label="Engineer Your Custom AI Sales Workflow →"
+            size="md"
+            arrow={true}
+          />
+        </div>
       </section>
 
       {/* ══════════════════════════════════════════════════
@@ -151,6 +214,14 @@ export default function AiAutomationPage() {
       ══════════════════════════════════════════════════ */}
       <section className="container">
         <AiSavingsCalculator />
+        <div className={styles.sectionCtaRow}>
+          <BeamButton
+            href="/contact"
+            label="Calculate & Deploy Your Custom AI Stack →"
+            size="md"
+            arrow={true}
+          />
+        </div>
       </section>
 
       {/* ══════════════════════════════════════════════════
@@ -158,25 +229,31 @@ export default function AiAutomationPage() {
       ══════════════════════════════════════════════════ */}
       <section className="container">
         <AiAutomationComparisonMatrix />
+        <div className={styles.sectionCtaRow}>
+          <BeamButton
+            href="/contact"
+            label="Upgrade to Enterprise AI Automation →"
+            size="md"
+            arrow={true}
+          />
+        </div>
       </section>
 
       {/* ══════════════════════════════════════════════════
          SECTION 7: 30-DAY IMPLEMENTATION ROADMAP
       ══════════════════════════════════════════════════ */}
       <section className="container">
-        <div className={styles.preRoadmapCta}>
+        <AiAutomationRoadmap />
+        <div className={styles.sectionCtaRow}>
           <BeamButton
             href="/contact"
-            label="Start Your 30-Day AI Implementation Sprint →"
-            size="lg"
+            label="Launch Your 30-Day AI Implementation Sprint →"
+            size="md"
+            arrow={true}
           />
         </div>
-        <AiAutomationRoadmap />
       </section>
 
-      {/* ══════════════════════════════════════════════════
-         SECTION 8: EDITORIAL CLIENT CASE STUDY
-      ══════════════════════════════════════════════════ */}
       {/* ══════════════════════════════════════════════════
          SECTION 8: EDITORIAL CLIENT CASE STUDY
       ══════════════════════════════════════════════════ */}
@@ -277,53 +354,25 @@ export default function AiAutomationPage() {
           </div>
 
           <div className={styles.arsenalGrid}>
-            <div className={styles.arsenalCard}>
-              <div>
-                <div className={styles.arsenalIconBox}>
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9v-2h2v2zm0-4H9V7h2v5zm4 4h-2v-2h2v2zm0-4h-2V7h2v5z"/>
-                  </svg>
+            {AI_TECH_ARSENAL.map((spec, idx) => (
+              <div key={idx} className={styles.cardCol}>
+                <div className={styles.arsenalCard}>
+                  <div className={styles.specTopBody}>
+                    <div className={styles.specCardHeader}>
+                      <div className={styles.specIconBox}>{spec.icon}</div>
+                      <span className={styles.specStatus}>{spec.status}</span>
+                    </div>
+                    <h4 className={styles.specTitle}>{spec.title}</h4>
+                    <div className={styles.specCategory}>{spec.category}</div>
+                    <p className={styles.specDesc}>{spec.desc}</p>
+                  </div>
+                  <div className={styles.specCardFooter}>
+                    <span className={styles.specFooterTag}>{spec.footerTag}</span>
+                    <span className={styles.specDeliverable}>{spec.deliverable}</span>
+                  </div>
                 </div>
-                <h4>Meta Cloud API</h4>
-                <p>Direct official Meta Business Platform webhooks for 100% deliverability &amp; green checkmark security.</p>
               </div>
-            </div>
-
-            <div className={styles.arsenalCard}>
-              <div>
-                <div className={styles.arsenalIconBox}>
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
-                  </svg>
-                </div>
-                <h4>OpenAI &amp; Anthropic</h4>
-                <p>GPT-4o &amp; Claude 3.5 Sonnet reasoning engines fine-tuned with domain-specific few-shot prompting.</p>
-              </div>
-            </div>
-
-            <div className={styles.arsenalCard}>
-              <div>
-                <div className={styles.arsenalIconBox}>
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"/>
-                  </svg>
-                </div>
-                <h4>Pinecone &amp; Chroma</h4>
-                <p>High-density vector databases delivering zero-hallucination document search in under 120ms.</p>
-              </div>
-            </div>
-
-            <div className={styles.arsenalCard}>
-              <div>
-                <div className={styles.arsenalIconBox}>
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99zM11 16h2v2h-2zm0-6h2v4h-2z"/>
-                  </svg>
-                </div>
-                <h4>HubSpot &amp; Make.com</h4>
-                <p>Enterprise orchestration connecting real-time leads to SMS, WhatsApp, Slack, and Google Sheets.</p>
-              </div>
-            </div>
+            ))}
           </div>
 
           {/* Infrastructure Visual Proof Banner */}
@@ -355,6 +404,15 @@ export default function AiAutomationPage() {
                 <span>99.99% SYSTEM AVAILABILITY</span>
               </div>
             </div>
+          </div>
+
+          <div className={styles.sectionCtaRow}>
+            <BeamButton
+              href="/contact"
+              label="Architect Your Industrial AI Stack →"
+              size="md"
+              arrow={true}
+            />
           </div>
         </div>
       </section>
@@ -399,6 +457,11 @@ export default function AiAutomationPage() {
               );
             })}
           </div>
+
+          <div className={styles.faqCtaBox}>
+            <p className={styles.faqCtaNote}>Have a question about WhatsApp Cloud API compliance, CRM webhooks, or custom LLM fine-tuning?</p>
+            <BeamButton href="/contact" label="Ask Our AI Solutions Architects →" size="md" arrow={true} />
+          </div>
         </div>
       </section>
 
@@ -423,15 +486,51 @@ export default function AiAutomationPage() {
               demo a live prototype with your product catalog, and present an exact deployment plan.
             </p>
 
+            <div className={styles.homeCtaContact}>
+              <span>Direct Solutions Desk:</span>
+              <a href="tel:+919876543210" className={styles.homeCtaPhone}>
+                +91 98765 43210
+              </a>
+              <span>·</span>
+              <span>Bhubaneswar HQ · Pan-India AI Implementations</span>
+            </div>
+
             <div className={styles.homeCtaActions}>
               <BeamButton
                 href="/contact"
                 label="Schedule AI Architecture Audit →"
                 size="lg"
+                arrow={true}
               />
-              <Link href="/services" className={styles.heroSecondaryBtn}>
-                Explore Other Services
-              </Link>
+              <div className={styles.homeCtaSecondaryWrapper}>
+                <a
+                  href="https://wa.me/919876543210?text=Hi%20Marketing%20Copilot,%20I%20would%20like%20to%20audit%20our%20inbound%20sales%20workflow%20and%20AI%20automation%20opportunities."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.homeCtaSecondaryInner}
+                >
+                  <span>💬 WhatsApp AI Director</span>
+                </a>
+              </div>
+            </div>
+
+            <div className={styles.homeCtaTrustBadges}>
+              <div className={styles.homeCtaTrustItem}>
+                <span>🛡️</span>
+                <span>Meta Cloud API Official Partner</span>
+              </div>
+              <div className={styles.homeCtaTrustItem}>
+                <span>⚡</span>
+                <span>Sub-2.0s Guaranteed Response Latency</span>
+              </div>
+              <div className={styles.homeCtaTrustItem}>
+                <span>🔒</span>
+                <span>Zero Hallucination RAG Architecture</span>
+              </div>
+              <div className={styles.homeCtaTrustItem}>
+                <span>🚀</span>
+                <span>Turnkey 30-Day Deployment SLA</span>
+              </div>
             </div>
           </div>
         </div>

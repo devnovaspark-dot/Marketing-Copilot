@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import BeamButton from '@/components/BeamButton';
 import styles from './LocalSeoGridSimulator.module.css';
 
 interface PinNode {
@@ -325,6 +326,14 @@ export default function LocalSeoGridSimulator() {
                 <span className={styles.statVal} style={{ color: '#FCD34D' }}>4.9★ (380+ Verified Reviews)</span>
               </div>
             </div>
+          </div>
+
+          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '36px' }}>
+            <BeamButton
+              href="/contact"
+              label="Audit Your Target City Geo-Grid"
+              size="md"
+            />
           </div>
         </div>
       </div>

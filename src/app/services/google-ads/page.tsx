@@ -89,7 +89,7 @@ const googleAdsFaqs = [
 ];
 
 export default function GoogleAdsPage() {
-  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
   const toggleFaq = (index: number) => {
     setOpenFaqIndex((prev) => (prev === index ? null : index));
@@ -196,6 +196,14 @@ export default function GoogleAdsPage() {
             </p>
           </div>
           <GoogleAdsPpcCalculator />
+          <div className={styles.sectionCtaRow}>
+            <BeamButton
+              href="/contact"
+              label="Get Your Custom Search ROI Forecast"
+              size="md"
+              arrow={true}
+            />
+          </div>
         </div>
       </section>
 
@@ -216,6 +224,14 @@ export default function GoogleAdsPage() {
             </p>
           </div>
           <GoogleAdsComparisonMatrix />
+          <div className={styles.sectionCtaRow}>
+            <BeamButton
+              href="/contact"
+              label="Switch to Engineering-Led PPC"
+              size="md"
+              arrow={true}
+            />
+          </div>
         </div>
       </section>
 
@@ -236,6 +252,14 @@ export default function GoogleAdsPage() {
             </p>
           </div>
           <GoogleAdsSprintRoadmap />
+          <div className={styles.sectionCtaRow}>
+            <BeamButton
+              href="/contact"
+              label="Start Your 30-Day Inbound Search Sprint"
+              size="md"
+              arrow={true}
+            />
+          </div>
         </div>
       </section>
 
@@ -341,6 +365,15 @@ export default function GoogleAdsPage() {
               </div>
             ))}
           </div>
+
+          <div className={styles.sectionCtaRow}>
+            <BeamButton
+              href="/contact"
+              label="Deploy the Enterprise Search Stack"
+              size="md"
+              arrow={true}
+            />
+          </div>
         </div>
       </section>
 
@@ -388,49 +421,89 @@ export default function GoogleAdsPage() {
               );
             })}
           </div>
+
+          <div className={styles.faqCtaBox}>
+            <p className={styles.faqCtaNote}>
+              Have a specific question about your Google Ads account, CPCs, or Quality Score?
+            </p>
+            <BeamButton
+              href="/contact"
+              label="Consult a Google Certified Strategist"
+              size="md"
+              arrow={true}
+            />
+          </div>
         </div>
       </section>
 
       {/* ══════════════════════════════════════════════════
-          11. EXECUTIVE BOTTOM CONVERSION TERMINAL
+          11. PRE-FOOTER CONVERSION CARD (SIGNATURE LIGHT SKEUOMORPHIC)
          ══════════════════════════════════════════════════ */}
       <section className={styles.conversionSection} id="executive-terminal">
         <div className="container">
-          <div className={styles.executiveTerminal}>
-            <div className={styles.termGlow} />
-            <div style={{ position: 'relative', zIndex: 2 }}>
-              <span className={styles.termPill}>CONFIDENTIAL PPC AUDIT &amp; KEYWORD RECON</span>
-              <h2 className={styles.termTitle}>
+          <ScrollReveal>
+            <div className={styles.homeCtaInnerBox}>
+              <div className={styles.homeCtaEyebrow}>
+                <span className={styles.homeCtaDot} />
+                <span>CONFIDENTIAL PPC AUDIT &amp; KEYWORD RECON</span>
+              </div>
+
+              <h2 className={styles.homeCtaHeadline}>
                 Ready to Stop Wasting Budget on Unqualified Clicks?
               </h2>
-              <p className={styles.termSub}>
+
+              <p className={styles.homeCtaSub}>
                 Get a forensic audit of your search keywords, competitor impression shares, and negative keyword leaks. Our certified Google Ads specialists will map an exact-match acquisition plan for your target market.
               </p>
-              <div className={styles.termContact}>
-                <span>Direct Line:</span>
-                <a href="tel:+918280788689" className={styles.termPhone}>
+
+              <div className={styles.homeCtaContact}>
+                <span>Direct PPC Desk:</span>
+                <a href="tel:+918280788689" className={styles.homeCtaPhone}>
                   +91 82807 88689
                 </a>
                 <span>·</span>
-                <span>Bhubaneswar HQ · Serving Businesses Across India</span>
+                <span>Pan-India Google Partner Operations</span>
+              </div>
+
+              <div className={styles.homeCtaActions}>
+                <BeamButton
+                  href="/contact"
+                  label="Claim Your Free Google Ads Audit →"
+                  size="lg"
+                  arrow={true}
+                />
+                <div className={styles.homeCtaSecondaryWrapper}>
+                  <a
+                    href="https://wa.me/918280788689?text=Hi%20Marketing%20Copilot,%20I%20would%20like%20a%20free%20Google%20Ads%20account%20and%20keyword%20audit."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.homeCtaSecondaryInner}
+                  >
+                    <span>💬 WhatsApp Lead Strategist</span>
+                  </a>
+                </div>
+              </div>
+
+              <div className={styles.homeCtaTrustBadges}>
+                <div className={styles.homeCtaTrustItem}>
+                  <span>🛡️</span>
+                  <span>Official Google Partner Setup</span>
+                </div>
+                <div className={styles.homeCtaTrustItem}>
+                  <span>⚡</span>
+                  <span>Sub-48hr Rapid Account Forensic Audit</span>
+                </div>
+                <div className={styles.homeCtaTrustItem}>
+                  <span>🔒</span>
+                  <span>Zero Click Waste Negative Match Silos</span>
+                </div>
+                <div className={styles.homeCtaTrustItem}>
+                  <span>🚀</span>
+                  <span>Dedicated Google Certified PPC Strategist</span>
+                </div>
               </div>
             </div>
-
-            <div className={styles.termActions}>
-              <a href="/contact" className={styles.termAuditBtn}>
-                <span>Claim Your Free Google Ads Audit</span>
-                <span>→</span>
-              </a>
-              <a
-                href="https://wa.me/919876543210?text=Hi%20Marketing%20Copilot,%20I%20want%20to%20audit%20our%20Google%20Ads%20account."
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.termWhatsAppBtn}
-              >
-                <span>💬 WhatsApp Lead Strategist</span>
-              </a>
-            </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
     </div>

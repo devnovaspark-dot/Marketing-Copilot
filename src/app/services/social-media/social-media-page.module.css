@@ -206,6 +206,56 @@
   color: #64748B;
 }
 
+/* Modern Social Platforms Ribbon */
+.platformTrustRibbon {
+  margin-top: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.platformTrustLabel {
+  font-family: var(--font-display);
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #64748B;
+}
+
+.platformPillGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 12px;
+}
+
+.platformPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+  border: 1px solid #CBD5E1;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  color: #334155;
+  box-shadow: 
+    inset 0 1px 0 #FFFFFF,
+    0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease;
+}
+
+.platformPill:hover {
+  border-color: #0B2093;
+  color: #0B2093;
+  transform: translateY(-1px);
+}
+
 /* ══════════════════════════════════════════════════
    2. CORE SERVICES SECTION (COMPACT 4 CARDS + SHOWCASE)
 ══════════════════════════════════════════════════ */
@@ -268,31 +318,40 @@
 
 /* Refined Compact Skeuomorphic Card */
 .serviceCard {
-  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
-  border: 1.5px solid #CBD5E1;
-  border-radius: 16px;
-  padding: 24px 22px;
+  background: linear-gradient(160deg, #FFFFFF 0%, #F8FAFD 55%, #EEF4FA 100%);
+  border: 1.5px solid rgba(203, 213, 225, 0.9);
+  border-radius: 18px;
+  padding: 26px 22px;
   display: flex;
   flex-direction: column;
   height: 100%;
   box-sizing: border-box;
   justify-content: space-between;
   box-shadow: 
-    inset 0 1.5px 0 #FFFFFF,
-    inset 0 -1px 0 rgba(0, 0, 0, 0.03),
-    0 6px 18px -4px rgba(11, 32, 147, 0.05),
-    0 1px 3px rgba(0, 0, 0, 0.02);
-  transition: all 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+    inset 0 2px 0 #FFFFFF,
+    inset 1.5px 0 0 rgba(255, 255, 255, 0.95),
+    inset 0 -1.5px 0 rgba(15, 23, 42, 0.03),
+    0 4px 6px -1px rgba(11, 32, 147, 0.03),
+    0 10px 20px -4px rgba(11, 32, 147, 0.06);
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
 }
 
 .serviceCard:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
   border-color: #0B2093;
   box-shadow: 
-    inset 0 1.5px 0 #FFFFFF,
-    0 12px 28px -6px rgba(11, 32, 147, 0.1),
-    0 2px 6px rgba(0, 0, 0, 0.03);
+    inset 0 2px 0 #FFFFFF,
+    inset 1.5px 0 0 rgba(255, 255, 255, 0.95),
+    inset 0 -2px 0 rgba(11, 32, 147, 0.08),
+    0 8px 18px -2px rgba(11, 32, 147, 0.08),
+    0 20px 36px -6px rgba(11, 32, 147, 0.14);
+}
+
+.serviceTopBody {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
 }
 
 .serviceCardHeader {
@@ -339,6 +398,9 @@
   color: #0F172A;
   margin: 0 0 10px;
   letter-spacing: -0.015em;
+  min-height: 48px;
+  display: flex;
+  align-items: flex-start;
 }
 
 .serviceDesc {
@@ -346,8 +408,71 @@
   font-size: 14px;
   line-height: 1.6;
   color: #475569;
-  margin: 0;
+  margin: 0 0 14px;
   flex: 1 1 auto;
+}
+
+.serviceHighlightsList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: auto;
+  padding-top: 14px;
+  margin-bottom: 16px;
+  border-top: 1px dashed #E2E8F0;
+}
+
+.serviceHighlightChip {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  color: #334155;
+  line-height: 1.35;
+}
+
+.highlightDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #0B2093;
+  flex-shrink: 0;
+  box-shadow: 0 0 5px rgba(11, 32, 147, 0.6);
+}
+
+.serviceCardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1.5px solid #E2E8F0;
+  margin-top: auto;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.serviceFooterTag {
+  font-family: var(--font-display);
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #0B2093;
+  background: #EFF6FF;
+  border: 1px solid #BFDBFE;
+  padding: 3px 9px;
+  border-radius: 6px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.serviceDeliverable {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  color: #16A34A;
+  white-space: nowrap;
 }
 
 /* Compact Visual Showcase Card */
@@ -611,8 +736,8 @@
 }
 
 .smallBizCard {
-  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
-  border: 1.5px solid #CBD5E1;
+  background: linear-gradient(160deg, #FFFFFF 0%, #F8FAFD 55%, #EEF4FA 100%);
+  border: 1.5px solid rgba(203, 213, 225, 0.9);
   border-radius: 16px;
   padding: 22px 18px;
   display: flex;
@@ -621,18 +746,29 @@
   box-sizing: border-box;
   justify-content: space-between;
   box-shadow: 
-    inset 0 1.5px 0 #FFFFFF,
-    inset 0 -1px 0 rgba(0, 0, 0, 0.03),
-    0 6px 16px -4px rgba(11, 32, 147, 0.04);
-  transition: all 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+    inset 0 2px 0 #FFFFFF,
+    inset 1.5px 0 0 rgba(255, 255, 255, 0.95),
+    inset 0 -1.5px 0 rgba(15, 23, 42, 0.03),
+    0 4px 6px -1px rgba(11, 32, 147, 0.03),
+    0 8px 18px -4px rgba(11, 32, 147, 0.05);
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .smallBizCard:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
   border-color: #0B2093;
   box-shadow: 
-    inset 0 1.5px 0 #FFFFFF,
-    0 12px 24px -6px rgba(11, 32, 147, 0.1);
+    inset 0 2px 0 #FFFFFF,
+    inset 1.5px 0 0 rgba(255, 255, 255, 0.95),
+    inset 0 -2px 0 rgba(11, 32, 147, 0.08),
+    0 6px 14px -2px rgba(11, 32, 147, 0.06),
+    0 16px 28px -6px rgba(11, 32, 147, 0.12);
+}
+
+.smallBizTopBody {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
 }
 
 .smallBizHeader {
@@ -678,6 +814,9 @@
   color: #0F172A;
   margin: 0 0 8px;
   line-height: 1.3;
+  min-height: 48px;
+  display: flex;
+  align-items: flex-start;
 }
 
 .smallBizDesc {
@@ -685,8 +824,62 @@
   font-size: 13.5px;
   line-height: 1.6;
   color: #475569;
-  margin: 0;
+  margin: 0 0 14px;
   flex: 1 1 auto;
+}
+
+.smallBizHighlightsList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: auto;
+  padding-top: 12px;
+  margin-bottom: 14px;
+  border-top: 1px dashed #E2E8F0;
+}
+
+.smallBizHighlightChip {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #334155;
+  line-height: 1.35;
+}
+
+.smallBizFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1.5px solid #E2E8F0;
+  margin-top: auto;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.smallBizFooterTag {
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 700;
+  color: #0B2093;
+  background: #EFF6FF;
+  border: 1px solid #BFDBFE;
+  padding: 3px 8px;
+  border-radius: 6px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.smallBizDeliverable {
+  font-family: var(--font-body);
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #16A34A;
+  white-space: nowrap;
 }
 
 /* ══════════════════════════════════════════════════
@@ -880,6 +1073,32 @@
   margin-bottom: 0;
 }
 
+/* Skeuomorphic Trust Badges in CTA Box */
+.homeCtaTrustBadges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 18px;
+  margin: 24px auto 0;
+  padding: 10px 18px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(203, 213, 225, 0.8);
+  border-radius: 12px;
+  max-width: 680px;
+  box-shadow: inset 0 1px 0 #FFFFFF, 0 2px 6px rgba(11, 32, 147, 0.03);
+}
+
+.homeCtaTrustItem {
+  font-family: var(--font-display);
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #334155;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
 /* ══════════════════════════════════════════════════
    RESPONSIVE DESIGN BREAKPOINTS
 ══════════════════════════════════════════════════ */
@@ -927,6 +1146,10 @@
   .brandMetricCard {
     padding: 16px 14px !important;
     border-radius: 14px !important;
+  }
+  .serviceTitle,
+  .smallBizTitle {
+    min-height: auto !important;
   }
   .telemetryCell {
     padding: 14px 10px !important;

@@ -16,6 +16,9 @@ const webServices = [
     tag: 'CLEAN CODE & SPEED',
     title: 'Custom Website Development',
     desc: 'We develop custom websites for your business needs, business goals, and the style of your brand. All websites are responsive, user-friendly, and clean-coded. Speed and performance are also a priority for us, ensuring that visitors can enjoy a smooth browsing experience.',
+    footerTag: '✦ Core Web Vitals <0.8s',
+    deliverable: '✓ Next.js & React',
+    highlights: ['Next.js 15 App Router', 'Sub-Second LCP Score', '100% Fluid Breakpoints'],
   },
   {
     num: '02',
@@ -23,6 +26,9 @@ const webServices = [
     tag: 'ONLINE COMMERCE',
     title: 'E-Commerce Website Development',
     desc: 'We design secure and user-friendly websites to enable businesses to sell products online. We develop a seamless shopping journey, from streamlined product management and checkout to WooCommerce and payment integration.',
+    footerTag: '✦ High-Conversion Cart',
+    deliverable: '✓ Shopify & Woo',
+    highlights: ['Shopify & WooCommerce', 'One-Click Razorpay & Stripe', 'Abandoned Cart Automation'],
   },
   {
     num: '03',
@@ -30,6 +36,9 @@ const webServices = [
     tag: 'SCALABLE CMS',
     title: 'WordPress Development',
     desc: 'We build professional WordPress websites that are easily managed and scalable to grow with your business. Whether it’s custom themes and plugins or speed and security enhancements, we build reliable websites that give you more control over your online content.',
+    footerTag: '✦ Scalable CMS Architecture',
+    deliverable: '✓ Custom ACF Pro',
+    highlights: ['Custom ACF Pro Blocks', 'Headless CMS Architecture', 'Enterprise Security Shield'],
   },
   {
     num: '04',
@@ -37,6 +46,9 @@ const webServices = [
     tag: 'INTUITIVE EXPERIENCES',
     title: 'UI/UX Design Integration',
     desc: 'Simple and modern UI/UX principles are provided to make your website easy and fun to use. Clear layouts, simple navigation, strong call-to-action buttons, and mobile-friendly designs help visitors find information quickly and interact with your website comfortably.',
+    footerTag: '✦ Design System & Tokens',
+    deliverable: '✓ Figma to Code',
+    highlights: ['Figma to Pixel-Perfect Code', 'Interactive Micro-Motion', 'WCAG 2.1 AA Compliant'],
   },
   {
     num: '05',
@@ -44,6 +56,9 @@ const webServices = [
     tag: 'SECURITY & UPTIME',
     title: 'Website Maintenance & Support',
     desc: 'Regular maintenance and support keep your website up to date, safe, and running smoothly. We offer updates, bug fixes, performance checks, and security monitoring to minimize technical issues and ensure your site is ready for routine business operations.',
+    footerTag: '✦ 99.9% Uptime Guarantee',
+    deliverable: '✓ 24/7 Monitoring',
+    highlights: ['24/7 Server Health Watch', 'Automated Daily Cloud Backups', 'Zero-Downtime Patching'],
   },
   {
     num: '06',
@@ -51,6 +66,9 @@ const webServices = [
     tag: 'MOBILE & WEB APPS',
     title: 'App Development',
     desc: 'We create simple, easy-to-use mobile and web applications built around your business needs. We work with you on planning, design, development, and testing to ensure you get a reliable app that delivers a seamless experience, meets your objectives, and reaches your customers.',
+    footerTag: '✦ PWA & Native Ready',
+    deliverable: '✓ iOS & Android',
+    highlights: ['Progressive Web Apps (PWA)', 'Cross-Platform React Native', 'Offline-First Sync API'],
   },
 ];
 
@@ -62,6 +80,8 @@ const growthSteps = [
     title: 'Research & Analysis',
     desc: 'We study your market, audience, competitors, and data to uncover valuable insights and identify opportunities for sustainable digital growth.',
     tag: 'Market & Audience Audit',
+    timeframe: 'WEEK 01-02',
+    checkpoints: ['Architecture & Tech Audit', 'User Persona Journey Mapping', 'Competitive Performance Benchmark'],
   },
   {
     step: 'STEP 02',
@@ -69,6 +89,8 @@ const growthSteps = [
     title: 'Strategy Planning',
     desc: 'We turn insights into a clear digital strategy, choosing the right channels, content, and campaigns to achieve your business goals.',
     tag: 'Clear Channel Architecture',
+    timeframe: 'WEEK 03',
+    checkpoints: ['Interactive Wireframe Systems', 'Conversion-Optimized Copywriting', 'Database & API Schema Design'],
   },
   {
     step: 'STEP 03',
@@ -76,6 +98,8 @@ const growthSteps = [
     title: 'Execution',
     desc: 'We put the strategy into action with focused campaigns, engaging content, and continuous optimization designed to deliver measurable business results.',
     tag: 'Agile Milestone Delivery',
+    timeframe: 'WEEK 04+',
+    checkpoints: ['High-Performance Next.js Build', 'Cross-Device QA & Speed Tests', 'Live Deployment & SEO Schema Launch'],
   },
 ];
 
@@ -86,24 +110,32 @@ const whyBestPillars = [
     title: 'Modern & Responsive Design',
     desc: 'We build clean, modern websites with a consistent experience on desktop, tablet, and mobile devices. Each element is straightforward, understandable, and easy to navigate for visitors.',
     feature: 'Mobile-First Ergonomics',
+    status: '✓ Copilot Standard',
+    highlights: ['Retina-Ready Typography', 'Fluid Grid Layouts', 'Touch-First Navigation'],
   },
   {
     icon: '⚡',
     title: 'Performance & Speed',
     desc: 'Slow websites can impact both user experience and engagement. Optimized development, clean code, and performance optimizations ensure your website loads quickly and operates seamlessly.',
     feature: 'Sub-Second Loading SLA',
+    status: '✓ Copilot Standard',
+    highlights: ['Next-Gen AVIF/WebP Compression', 'Zero Bloatware Codebase', '<0.8s Mobile First Contentful Paint'],
   },
   {
     icon: '🎯',
     title: 'SEO-Friendly Development',
     desc: 'SEO Development Practices: Strong Technical Base for Search Visibility. Consideration of important SEO elements, from website structure to mobile responsiveness and performance.',
     feature: 'Google Technical SEO Schema',
+    status: '✓ Copilot Standard',
+    highlights: ['Schema.org Rich Snippets', 'Canonical & Robots Routing', 'Automated XML Sitemaps'],
   },
   {
     icon: '🤝',
     title: 'Ongoing Support',
     desc: 'The partnership doesn’t finish once we have your website up and running. We maintain and support your website to ensure it stays up-to-date, secure, and reliable as your business grows.',
     feature: '24/7 Security & Health Checks',
+    status: '✓ Copilot Standard',
+    highlights: ['99.9% Cloud SLA Guarantee', 'Automated Malware Scanning', 'Priority Developer Response'],
   },
 ];
 
@@ -200,6 +232,20 @@ export default function WebDevelopmentPage() {
                   <span className={styles.tLabel}>Mobile Responsive</span>
                 </div>
               </div>
+
+              {/* Modern Tech Stack Trust Bar */}
+              <div className={styles.techStackRibbon}>
+                <span className={styles.techStackLabel}>ENGINEERED WITH MODERN TECH</span>
+                <div className={styles.techPillGrid}>
+                  <span className={styles.techPill}>⚛️ Next.js 15</span>
+                  <span className={styles.techPill}>⚡ React 19</span>
+                  <span className={styles.techPill}>🔷 TypeScript</span>
+                  <span className={styles.techPill}>🎨 Tailwind CSS</span>
+                  <span className={styles.techPill}>🛍️ Shopify Plus</span>
+                  <span className={styles.techPill}>🌐 Vercel Edge</span>
+                  <span className={styles.techPill}>☁️ AWS Cloud</span>
+                </div>
+              </div>
             </ScrollReveal>
           </div>
         </div>
@@ -237,7 +283,7 @@ export default function WebDevelopmentPage() {
             {webServices.map((svc, i) => (
               <ScrollReveal key={svc.title} delay={i * 60} className={styles.cardCol}>
                 <div className={styles.serviceSkeuoCard}>
-                  <div>
+                  <div className={styles.serviceTopBody}>
                     <div className={styles.serviceTopHeader}>
                       <span className={styles.serviceNumberEmbossed}>{svc.num}</span>
                       <div className={styles.serviceIconBowl}>{svc.icon}</div>
@@ -246,13 +292,19 @@ export default function WebDevelopmentPage() {
                     <h3 className={styles.serviceCardTitle}>
                       {svc.title}
                     </h3>
+                    <p className={styles.serviceCardDesc}>{svc.desc}</p>
+                    <div className={styles.serviceHighlightsList}>
+                      {svc.highlights.map((hl) => (
+                        <span key={hl} className={styles.serviceHighlightChip}>
+                          <span className={styles.highlightDot} />
+                          {hl}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                  <p className={styles.serviceCardDesc}>{svc.desc}</p>
                   <div className={styles.serviceCardFooter}>
-                    <span style={{ fontSize: '12px', fontWeight: 700, color: '#0B2093' }}>
-                      ✓ High-Performance Build
-                    </span>
-                    <span className={styles.serviceArrow}>→</span>
+                    <span className={styles.serviceFooterTag}>{svc.footerTag}</span>
+                    <span className={styles.serviceDeliverable}>{svc.deliverable}</span>
                   </div>
                 </div>
               </ScrollReveal>
@@ -301,6 +353,15 @@ export default function WebDevelopmentPage() {
               </div>
             </div>
           </ScrollReveal>
+
+          {/* Section Bottom CTA */}
+          <div className={styles.sectionCtaRow}>
+            <BeamButton
+              href="/contact"
+              label="Discuss Your Custom Web Architecture →"
+              size="md"
+            />
+          </div>
         </div>
       </section>
 
@@ -329,20 +390,39 @@ export default function WebDevelopmentPage() {
             {growthSteps.map((step, i) => (
               <ScrollReveal key={step.title} delay={i * 80} className={styles.cardCol}>
                 <div className={styles.processCard}>
-                  <div>
+                  <div className={styles.processTopBody}>
                     <div className={styles.processStepHeader}>
                       <span className={styles.processStepBadge}>{step.step}</span>
+                      <span className={styles.processTimeframeBadge}>{step.timeframe}</span>
                       <div className={styles.processIconBowl}>{step.icon}</div>
                     </div>
                     <h3 className={styles.processTitle}>{step.title}</h3>
+                    <p className={styles.processDesc}>{step.desc}</p>
+                    <div className={styles.processChecklist}>
+                      {step.checkpoints.map((cp) => (
+                        <div key={cp} className={styles.processCheckItem}>
+                          <span className={styles.processCheckDot}>✓</span>
+                          <span>{cp}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                  <p className={styles.processDesc}>{step.desc}</p>
                   <div className={styles.processFooter}>
-                    <span className={styles.processPill}>✓ {step.tag}</span>
+                    <span className={styles.processPill}>✦ {step.tag}</span>
+                    <span className={styles.processMilestone}>✓ Milestone SLA</span>
                   </div>
                 </div>
               </ScrollReveal>
             ))}
+          </div>
+
+          {/* Section Bottom CTA */}
+          <div className={styles.sectionCtaRow}>
+            <BeamButton
+              href="/contact"
+              label="Start Your Web Development Sprint →"
+              size="md"
+            />
           </div>
         </div>
       </section>
@@ -372,13 +452,25 @@ export default function WebDevelopmentPage() {
             {whyBestPillars.map((p, i) => (
               <ScrollReveal key={p.title} delay={i * 70} className={styles.cardCol}>
                 <div className={styles.whyBestCard}>
-                  <div>
-                    <div className={styles.whyBestIconBowl}>{p.icon}</div>
+                  <div className={styles.whyBestTopBody}>
+                    <div className={styles.whyBestHeader}>
+                      <div className={styles.whyBestIconBowl}>{p.icon}</div>
+                      <span className={styles.whyBestPill}>✦ {p.feature}</span>
+                    </div>
                     <h3 className={styles.whyBestTitle}>{p.title}</h3>
+                    <p className={styles.whyBestDesc}>{p.desc}</p>
+                    <div className={styles.whyBestChecklist}>
+                      {p.highlights.map((hl) => (
+                        <div key={hl} className={styles.whyBestCheckItem}>
+                          <span className={styles.whyCheckDot}>✓</span>
+                          <span>{hl}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                  <p className={styles.whyBestDesc}>{p.desc}</p>
                   <div className={styles.whyBestFooter}>
-                    <span className={styles.whyBestPill}>✓ {p.feature}</span>
+                    <span className={styles.whyBestFeatureTag}>Engineered Benchmark</span>
+                    <span className={styles.whyBestStatus}>{p.status}</span>
                   </div>
                 </div>
               </ScrollReveal>
@@ -431,6 +523,15 @@ export default function WebDevelopmentPage() {
               </div>
             </div>
           </ScrollReveal>
+
+          {/* Section Bottom CTA */}
+          <div className={styles.sectionCtaRow}>
+            <BeamButton
+              href="/contact"
+              label="Build with Next.js Engineering Standards →"
+              size="md"
+            />
+          </div>
         </div>
       </section>
 
@@ -485,6 +586,18 @@ export default function WebDevelopmentPage() {
               );
             })}
           </div>
+
+          {/* Section Bottom CTA */}
+          <div className={styles.faqCtaBox}>
+            <p className={styles.faqCtaNote}>
+              Need an architectural review or technical estimation for your web project?
+            </p>
+            <BeamButton
+              href="/contact"
+              label="Consult a Lead Web Architect →"
+              size="md"
+            />
+          </div>
         </div>
       </section>
 
@@ -517,6 +630,19 @@ export default function WebDevelopmentPage() {
                   label="Get a Free Quote →"
                   size="lg"
                 />
+                <BeamButton
+                  href="/contact"
+                  label="Talk to an Engineer →"
+                  size="lg"
+                  variant="outline"
+                />
+              </div>
+
+              <div className={styles.ctaTrustBadges}>
+                <span className={styles.ctaTrustItem}>🛡️ 100% Code Ownership</span>
+                <span className={styles.ctaTrustItem}>⚡ Sub-Second SLA</span>
+                <span className={styles.ctaTrustItem}>🔒 Enterprise NDA</span>
+                <span className={styles.ctaTrustItem}>🚀 2-Week Launch Sprints</span>
               </div>
 
               <div className={styles.ctaBrandPunchline}>

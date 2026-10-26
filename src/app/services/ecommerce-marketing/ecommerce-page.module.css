@@ -571,20 +571,55 @@
   margin-right: auto;
 }
 
-.serviceCard {
-  position: relative;
-  background: linear-gradient(170deg, #FFFFFF 0%, #FAFCFF 55%, #F1F5F9 100%);
-  border: 1.5px solid #CBD5E1;
-  border-radius: 20px;
-  padding: 32px 28px;
+.cardCol {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.sectionCtaRow {
+  margin-top: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.faqCtaBox {
+  margin-top: 36px;
   display: flex;
   flex-direction: column;
-  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.faqCtaNote {
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #64748B;
+  margin: 0;
+}
+
+.serviceCard {
+  background: linear-gradient(160deg, #FFFFFF 0%, #F8FAFD 55%, #EEF4FA 100%);
+  border: 1.5px solid rgba(203, 213, 225, 0.9);
+  border-radius: 18px;
+  padding: 24px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  box-sizing: border-box;
   box-shadow: 
-    inset 0 1.5px 0 #FFFFFF,
-    inset 0 -1px 0 rgba(0, 0, 0, 0.04),
-    0 8px 24px -6px rgba(11, 32, 147, 0.06),
-    0 2px 6px rgba(0, 0, 0, 0.03);
+    inset 0 2px 0 #FFFFFF,
+    inset 1.5px 0 0 rgba(255, 255, 255, 0.95),
+    inset 0 -1.5px 0 rgba(15, 23, 42, 0.03),
+    0 4px 6px -1px rgba(11, 32, 147, 0.03),
+    0 10px 20px -4px rgba(11, 32, 147, 0.06);
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
   overflow: hidden;
 }
 
@@ -592,30 +627,36 @@
   border-color: #0B2093;
   transform: translateY(-4px);
   box-shadow: 
-    inset 0 1.5px 0 #FFFFFF,
-    0 22px 48px -10px rgba(11, 32, 147, 0.16),
-    0 4px 12px rgba(0, 0, 0, 0.05);
+    inset 0 2px 0 #FFFFFF,
+    0 20px 40px -10px rgba(11, 32, 147, 0.14),
+    0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.serviceTopBody {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
 }
 
 .serviceCardTop {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   position: relative;
   z-index: 2;
 }
 
 .serviceIconBox {
-  width: 46px;
-  height: 46px;
-  border-radius: 13px;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
   background: linear-gradient(145deg, #FFFFFF 0%, #EEF2F6 100%);
   border: 1.5px solid #CBD5E1;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
+  font-size: 20px;
   box-shadow: 
     inset 0 1.5px 0 #FFFFFF,
     0 4px 10px rgba(11, 32, 147, 0.08);
@@ -627,7 +668,7 @@
   color: #0B2093;
   background: linear-gradient(180deg, #EFF6FF 0%, #DBEAFE 100%);
   border: 1px solid #BFDBFE;
-  padding: 4px 11px;
+  padding: 4px 10px;
   border-radius: 999px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -636,29 +677,68 @@
 
 .serviceCardTitle {
   font-family: var(--font-display);
-  font-size: 19.5px;
+  font-size: 19px;
   font-weight: 800;
   color: #0F172A;
-  margin: 0 0 12px;
-  line-height: 1.25;
+  margin: 0 0 10px;
+  line-height: 1.3;
+  min-height: 48px;
+  display: flex;
+  align-items: flex-start;
   position: relative;
   z-index: 2;
 }
 
 .serviceCardDesc {
-  font-size: 14.5px;
-  line-height: 1.65;
+  font-size: 14px;
+  line-height: 1.6;
   color: #475569;
-  margin: 0;
+  margin: 0 0 14px;
+  flex: 1 1 auto;
   position: relative;
   z-index: 2;
 }
 
+.serviceCardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1.5px solid #E2E8F0;
+  margin-top: auto;
+  flex-shrink: 0;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.serviceFooterTag {
+  font-family: var(--font-display);
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #0B2093;
+  background: #EFF6FF;
+  border: 1px solid #BFDBFE;
+  padding: 3px 9px;
+  border-radius: 6px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.serviceDeliverable {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  color: #16A34A;
+  white-space: nowrap;
+}
+
 /* ══════════════════════════════════════════════════
-   SECTION 6: PERFORMANCE NARRATIVE SHOWCASE
+   SECTION 6: PERFORMANCE NARRATIVE SHOWCASE (COMPACT)
 ══════════════════════════════════════════════════ */
 .growthNarrativeSection {
-  padding: clamp(64px, 8vw, 104px) 0;
+  padding: clamp(38px, 4.5vw, 56px) 0;
   background: 
     radial-gradient(circle at 15% 20%, rgba(11, 32, 147, 0.04) 0%, transparent 40%),
     #F8FAFC;
@@ -670,16 +750,16 @@
   position: relative;
   background: linear-gradient(170deg, #FFFFFF 0%, #FAFCFF 50%, #F1F5F9 100%);
   border: 1.5px solid #CBD5E1;
-  border-radius: 24px;
-  padding: clamp(36px, 5vw, 60px);
+  border-radius: 20px;
+  padding: clamp(24px, 3.5vw, 36px) clamp(22px, 3.5vw, 38px);
   box-shadow: 
     inset 0 1.5px 0 #FFFFFF,
     inset 0 -1.5px 0 rgba(0, 0, 0, 0.04),
-    0 24px 56px -12px rgba(11, 32, 147, 0.1),
-    0 4px 14px rgba(0, 0, 0, 0.04);
+    0 16px 40px -10px rgba(11, 32, 147, 0.08),
+    0 3px 10px rgba(0, 0, 0, 0.03);
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: clamp(32px, 4.5vw, 56px);
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: clamp(20px, 3vw, 32px);
   align-items: center;
   overflow: hidden;
 }
@@ -707,7 +787,7 @@
 .narrativeRight {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 10px;
   position: relative;
   z-index: 2;
 }
@@ -715,15 +795,15 @@
 .narrativeMiniCard {
   background: linear-gradient(180deg, #FFFFFF 0%, #FAFCFF 100%);
   border: 1.2px solid #CBD5E1;
-  border-radius: 14px;
-  padding: 16px 18px;
+  border-radius: 12px;
+  padding: 10px 14px;
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
   transition: all 0.22s ease;
   box-shadow: 
     inset 0 1px 0 #FFFFFF,
-    0 2px 6px rgba(0, 0, 0, 0.03);
+    0 2px 5px rgba(0, 0, 0, 0.02);
 }
 
 .narrativeMiniCard:hover {
@@ -732,45 +812,44 @@
   transform: translateY(-2px);
   box-shadow: 
     inset 0 1px 0 #FFFFFF,
-    0 8px 20px -4px rgba(11, 32, 147, 0.1);
+    0 6px 16px -3px rgba(11, 32, 147, 0.08);
 }
 
 .miniIconBox {
-  width: 40px;
-  height: 40px;
-  border-radius: 11px;
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
   background: linear-gradient(145deg, #FFFFFF 0%, #EEF2F6 100%);
   border: 1px solid #CBD5E1;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
+  font-size: 16px;
   flex-shrink: 0;
   box-shadow: 
     inset 0 1px 0 #FFFFFF,
-    0 2px 6px rgba(0, 0, 0, 0.04);
+    0 2px 4px rgba(0, 0, 0, 0.03);
 }
 
 .narrativeMiniTextTitle {
   font-family: var(--font-display);
-  font-size: 14.5px;
+  font-size: 13.5px;
   font-weight: 750;
   color: #0F172A;
   margin-bottom: 2px;
 }
 
 .narrativeMiniTextSub {
-  font-size: 12.5px;
+  font-size: 12px;
   color: #64748B;
-  line-height: 1.4;
+  line-height: 1.35;
 }
 
 /* ══════════════════════════════════════════════════
-   SECTION 7: SKEUOMORPHIC SHOWCASE & PROFIT ARCHITECTURE
-   (Replaces interactive calculator with rich image + text showcase)
+   SECTION 7: SKEUOMORPHIC SHOWCASE & PROFIT ARCHITECTURE (COMPACT)
 ══════════════════════════════════════════════════ */
 .showcaseSection {
-  padding: clamp(64px, 8vw, 104px) 0;
+  padding: clamp(38px, 4.5vw, 56px) 0;
   background: 
     radial-gradient(ellipse 70% 50% at 85% 30%, rgba(11, 32, 147, 0.05) 0%, transparent 60%),
     radial-gradient(circle at 15% 80%, rgba(245, 158, 11, 0.04) 0%, transparent 40%),
@@ -785,16 +864,16 @@
   position: relative;
   background: linear-gradient(170deg, #FFFFFF 0%, #FAFCFF 45%, #F1F5F9 100%);
   border: 1.5px solid #CBD5E1;
-  border-radius: 28px;
-  padding: clamp(36px, 5vw, 60px);
+  border-radius: 22px;
+  padding: clamp(24px, 3.5vw, 36px) clamp(22px, 3.5vw, 38px);
   box-shadow: 
     inset 0 1.5px 0 #FFFFFF,
     inset 0 -1.5px 0 rgba(0, 0, 0, 0.04),
-    0 24px 60px -12px rgba(11, 32, 147, 0.12),
-    0 4px 16px rgba(0, 0, 0, 0.04);
+    0 18px 44px -10px rgba(11, 32, 147, 0.09),
+    0 3px 12px rgba(0, 0, 0, 0.03);
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
-  gap: clamp(32px, 4.5vw, 56px);
+  gap: clamp(20px, 3vw, 32px);
   align-items: center;
   overflow: hidden;
 }
@@ -818,48 +897,48 @@
 .showcasePoints {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  margin: 24px 0 32px;
+  gap: 10px;
+  margin: 16px 0 22px;
   width: 100%;
 }
 
 .showcasePointItem {
   display: flex;
   align-items: flex-start;
-  gap: 16px;
+  gap: 12px;
   background: linear-gradient(180deg, #FFFFFF 0%, #FAFCFF 100%);
   border: 1.2px solid #CBD5E1;
-  border-radius: 16px;
-  padding: 16px 20px;
+  border-radius: 12px;
+  padding: 10px 14px;
   box-shadow: 
     inset 0 1px 0 #FFFFFF,
-    0 2px 6px rgba(0, 0, 0, 0.03);
+    0 2px 5px rgba(0, 0, 0, 0.02);
   transition: all 0.24s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .showcasePointItem:hover {
   background: #FFFFFF;
   border-color: #0B2093;
-  transform: translateX(4px);
+  transform: translateX(3px);
   box-shadow: 
     inset 0 1px 0 #FFFFFF,
-    0 8px 20px -4px rgba(11, 32, 147, 0.12);
+    0 6px 16px -3px rgba(11, 32, 147, 0.08);
 }
 
 .showcasePointIcon {
-  width: 42px;
-  height: 42px;
-  border-radius: 12px;
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
   background: linear-gradient(145deg, #FFFFFF 0%, #EEF2F6 100%);
   border: 1px solid #CBD5E1;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
+  font-size: 17px;
   flex-shrink: 0;
   box-shadow: 
-    inset 0 1.5px 0 #FFFFFF,
-    0 3px 8px rgba(11, 32, 147, 0.06);
+    inset 0 1px 0 #FFFFFF,
+    0 2px 5px rgba(11, 32, 147, 0.05);
 }
 
 .showcasePointText {
@@ -869,23 +948,23 @@
 
 .showcasePointTitle {
   font-family: var(--font-display);
-  font-size: 15.5px;
+  font-size: 14px;
   font-weight: 750;
   color: #0F172A;
-  margin-bottom: 3px;
+  margin-bottom: 2px;
 }
 
 .showcasePointDesc {
-  font-size: 13.5px;
+  font-size: 12.5px;
   color: #64748B;
-  line-height: 1.5;
+  line-height: 1.45;
 }
 
 /* Image container with skeuomorphic bevel, glass sheen & floating telemetry badges */
 .showcaseImageContainer {
   position: relative;
   width: 100%;
-  max-width: 520px;
+  max-width: 440px;
 }
 
 .showcaseImageFrame {
@@ -1319,116 +1398,168 @@
   background: #FFFFFF;
 }
 
-.executiveTerminal {
-  position: relative;
-  background: #0F172A;
-  border: 1.5px solid rgba(255, 255, 255, 0.16);
-  border-radius: 26px;
-  padding: clamp(36px, 5.5vw, 68px);
-  display: grid;
-  grid-template-columns: 1.35fr 1fr;
-  gap: clamp(24px, 4vw, 48px);
-  align-items: center;
-  overflow: hidden;
+.homeCtaInnerBox {
+  background: linear-gradient(145deg, #FFFFFF 0%, #F8FAFC 50%, #F1F5F9 100%);
+  border: 1.5px solid #CBD5E1;
+  border-radius: 24px;
+  padding: clamp(38px, 5.5vw, 60px) clamp(20px, 4vw, 48px);
+  max-width: 1000px;
+  margin: 0 auto;
   box-shadow: 
-    inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 28px 64px -12px rgba(11, 32, 147, 0.35);
-}
-
-.termGlow {
-  position: absolute;
-  top: -50%;
-  left: -20%;
-  width: 140%;
-  height: 200%;
-  background: radial-gradient(circle at 30% 40%, rgba(11, 32, 147, 0.45) 0%, transparent 60%);
-  pointer-events: none;
-}
-
-.termContent {
+    inset 0 2px 0 #FFFFFF,
+    inset 0 -1.5px 0 rgba(0, 0, 0, 0.04),
+    0 24px 60px -12px rgba(11, 32, 147, 0.12),
+    0 6px 18px rgba(0, 0, 0, 0.04);
   position: relative;
-  z-index: 2;
+  overflow: hidden;
+  text-align: center;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.termPill {
-  display: inline-block;
+.homeCtaInnerBox:hover {
+  border-color: rgba(11, 32, 147, 0.35);
+  box-shadow: 
+    inset 0 2px 0 #FFFFFF,
+    0 36px 84px -14px rgba(15, 23, 42, 0.14),
+    0 0 0 1px rgba(11, 32, 147, 0.15);
+}
+
+.homeCtaEyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-family: var(--font-display);
-  font-size: 11px;
+  font-size: 11.5px;
   font-weight: 800;
-  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #FCD34D;
-  margin-bottom: 12px;
-  background: rgba(245, 158, 11, 0.12);
-  border: 1px solid rgba(245, 158, 11, 0.3);
-  padding: 4px 12px;
+  letter-spacing: 0.08em;
+  color: #0B2093;
+  background: #EFF6FF;
+  padding: 4px 14px;
   border-radius: 999px;
+  border: 1px solid #BFDBFE;
+  box-shadow: inset 0 1px 0 #FFFFFF;
+  margin-bottom: 12px;
 }
 
-.termTitle {
+.homeCtaDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #0B2093;
+}
+
+.homeCtaHeadline {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-size: clamp(1.85rem, 3.2vw, 2.7rem);
   font-weight: 800;
-  line-height: 1.18;
-  color: #FFFFFF;
-  margin: 0 0 16px;
-  letter-spacing: -0.02em;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: #0F172A;
+  margin-top: 4px;
+  margin-bottom: 14px;
 }
 
-.termSub {
-  font-size: 15px;
-  line-height: 1.65;
-  color: rgba(255, 255, 255, 0.85);
-  margin: 0 0 24px;
-  max-width: 620px;
+.homeCtaSub {
+  font-family: var(--font-body);
+  font-size: clamp(14px, 1.05vw, 16px);
+  line-height: 1.6;
+  color: #475569;
+  max-width: 680px;
+  margin: 0 auto 20px;
 }
 
-.termContact {
+.homeCtaContact {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
   flex-wrap: wrap;
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.85);
+  color: #64748B;
+  font-weight: 550;
+  margin-bottom: 24px;
 }
 
-.termPhone {
-  color: #FFFFFF;
-  font-weight: 700;
+.homeCtaPhone {
+  color: #0B2093;
+  font-weight: 750;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
-/* Button Container: Strictly flex-start to prevent wide unnatural stretching */
-.termActions {
+.homeCtaActions {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
-  position: relative;
-  z-index: 5;
-  align-items: flex-start;
   justify-content: center;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+  margin-bottom: 0;
 }
 
-/* Secondary Button Custom Skeuomorphic Dark Theme */
-.termSecondaryWrapper {
-  background: rgba(255, 255, 255, 0.12) !important;
-  box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.35) !important;
+.homeCtaSecondaryWrapper {
+  background: #FFFFFF !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
   border-radius: 9999px !important;
   overflow: hidden !important;
+  display: inline-flex;
 }
 
-.termSecondaryInner {
-  background: rgba(15, 23, 42, 0.92) !important;
-  color: #FFFFFF !important;
-  border: 1px solid rgba(255, 255, 255, 0.25) !important;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+.homeCtaSecondaryInner {
+  background: #FFFFFF !important;
+  color: #0F172A !important;
+  border: 1.5px solid #CBD5E1 !important;
+  box-shadow: inset 0 1px 0 #FFFFFF !important;
+  font-weight: 700 !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 9999px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.2s ease;
 }
 
-.termSecondaryInner:hover {
-  background: rgba(30, 41, 59, 0.95) !important;
-  color: #FCD34D !important;
-  border-color: rgba(245, 158, 11, 0.6) !important;
+.homeCtaSecondaryInner:hover {
+  background: #F8FAFC !important;
+  color: #0B2093 !important;
+  border-color: #0B2093 !important;
+}
+
+/* Fallback alias */
+.executiveTerminal {
+  composes: homeCtaInnerBox;
+}
+
+.homeCtaTrustBadges {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(12px, 2vw, 24px);
+  flex-wrap: wrap;
+  margin-top: 18px;
+  padding-top: 20px;
+  border-top: 1px solid #E2E8F0;
+  position: relative;
+  z-index: 2;
+}
+
+.homeCtaTrustItem {
+  font-family: var(--font-display);
+  font-size: 12.5px;
+  font-weight: 650;
+  color: #475569;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  padding: 6px 14px;
+  border-radius: 999px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
 }
 
 /* ══════════════════════════════════════════════════
@@ -1530,5 +1661,16 @@
   .executiveTerminal {
     padding: 24px 16px !important;
     border-radius: 18px !important;
+  }
+  .serviceCardTitle {
+    min-height: auto !important;
+  }
+  .homeCtaTrustBadges {
+    gap: 8px !important;
+    padding-top: 14px !important;
+  }
+  .homeCtaTrustItem {
+    font-size: 11px !important;
+    padding: 4px 10px !important;
   }
 }

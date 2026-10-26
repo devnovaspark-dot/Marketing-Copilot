@@ -17,30 +17,40 @@ const ecommerceServices = [
     badge: 'ORGANIC STORE SEARCH',
     title: 'Ecommerce SEO',
     desc: "Boost your e-commerce website's ranking on Google and get your products found by customers. Optimizing product pages, category pages, keywords, technical SEO, internal links, images, content, and schema to bring in relevant organic traffic and boost search performance for your store.",
+    footerTag: '✦ Category & SKU Authority',
+    deliverable: '✓ Organic Intent Rank',
   },
   {
     icon: '🎯',
     badge: 'SHOPPING & SEARCH ADS',
     title: 'Google Ads for Ecommerce',
     desc: 'Connect with customers actively looking for products such as yours. We develop and optimize Google Ads Search and Shopping campaigns, delivering relevant traffic with targeted campaigns, product feeds, ad copy, conversion tracking, and continuous optimization for better e-commerce outcomes.',
+    footerTag: '✦ PMax & Feed Automation',
+    deliverable: '✓ High-ROAS Scaling',
   },
   {
     icon: '📱',
     badge: 'META ACQUISITION & CAPI',
     title: 'Meta Ads for Ecommerce Brands',
     desc: 'Connect with potential customers on Facebook and Instagram by targeting them with a Facebook ad. We develop campaigns for product discovery, targeting, retargeting, and conversions. We create ads, write copy, track and optimize, and help e-commerce brands attract new customers and convert interested website visitors.',
+    footerTag: '✦ Advantage+ (ASC) & CAPI',
+    deliverable: '✓ Predictable CAC',
   },
   {
     icon: '✨',
     badge: 'COMMUNITY & RETENTION',
     title: 'E-commerce Social Media Marketing',
     desc: 'Establish a uniform online social media presence aligned with your e-commerce objectives. Product posts, Instagram Reels, carousels, creative product promotion, educational content, or campaigns for Instagram & Facebook. Our strategy helps increase product awareness, engagement, and customer interest through useful and engaging content.',
+    footerTag: '✦ High-Retention Visuals',
+    deliverable: '✓ Repeat Brand Equity',
   },
   {
     icon: '✍️',
     badge: 'PERSUASIVE BUYER COPY',
     title: 'E-commerce Content Marketing',
     desc: 'Provide valuable information to enable your customers to make informed purchases. We create product descriptions, SEO blogs, buying guides, and promotional copy. Each piece is planned around your products, audience, and search needs to support e-commerce growth.',
+    footerTag: '✦ Conversion Storytelling',
+    deliverable: '✓ Low Bounce Cart Velocity',
   },
 ];
 
@@ -277,6 +287,16 @@ export default function EcommerceMarketingPage() {
               </div>
             </ScrollReveal>
           </div>
+
+          {/* Section Bottom CTA */}
+          <div className={styles.sectionCtaRow}>
+            <BeamButton
+              href="/contact"
+              label="Synchronize Your Customer Journey →"
+              size="md"
+              arrow={true}
+            />
+          </div>
         </div>
       </section>
 
@@ -334,6 +354,16 @@ export default function EcommerceMarketingPage() {
                 </p>
               </ScrollReveal>
             </div>
+
+            {/* Section Bottom CTA */}
+            <div className={styles.sectionCtaRow}>
+              <BeamButton
+                href="/contact"
+                label="Build Your Tailored Growth Plan →"
+                size="md"
+                arrow={true}
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -359,14 +389,22 @@ export default function EcommerceMarketingPage() {
           {/* Row 1: 3 Skeuomorphic Service Cards */}
           <div className={styles.servicesGrid}>
             {ecommerceServices.slice(0, 3).map((srv, idx) => (
-              <ScrollReveal key={idx} delay={idx * 0.08} className={styles.serviceCard}>
-                <div className={styles.cardGlassGloss} />
-                <div className={styles.serviceCardTop}>
-                  <div className={styles.serviceIconBox}>{srv.icon}</div>
-                  <span className={styles.serviceBadge}>{srv.badge}</span>
+              <ScrollReveal key={idx} delay={idx * 0.08} className={styles.cardCol}>
+                <div className={styles.serviceCard}>
+                  <div className={styles.cardGlassGloss} />
+                  <div className={styles.serviceTopBody}>
+                    <div className={styles.serviceCardTop}>
+                      <div className={styles.serviceIconBox}>{srv.icon}</div>
+                      <span className={styles.serviceBadge}>{srv.badge}</span>
+                    </div>
+                    <h3 className={styles.serviceCardTitle}>{srv.title}</h3>
+                    <p className={styles.serviceCardDesc}>{srv.desc}</p>
+                  </div>
+                  <div className={styles.serviceCardFooter}>
+                    <span className={styles.serviceFooterTag}>{srv.footerTag}</span>
+                    <span className={styles.serviceDeliverable}>{srv.deliverable}</span>
+                  </div>
                 </div>
-                <h3 className={styles.serviceCardTitle}>{srv.title}</h3>
-                <p className={styles.serviceCardDesc}>{srv.desc}</p>
               </ScrollReveal>
             ))}
           </div>
@@ -374,16 +412,34 @@ export default function EcommerceMarketingPage() {
           {/* Row 2: 2 Skeuomorphic Service Cards Centered */}
           <div className={styles.servicesGridRow2}>
             {ecommerceServices.slice(3, 5).map((srv, idx) => (
-              <ScrollReveal key={idx} delay={0.24 + idx * 0.08} className={styles.serviceCard}>
-                <div className={styles.cardGlassGloss} />
-                <div className={styles.serviceCardTop}>
-                  <div className={styles.serviceIconBox}>{srv.icon}</div>
-                  <span className={styles.serviceBadge}>{srv.badge}</span>
+              <ScrollReveal key={idx} delay={0.24 + idx * 0.08} className={styles.cardCol}>
+                <div className={styles.serviceCard}>
+                  <div className={styles.cardGlassGloss} />
+                  <div className={styles.serviceTopBody}>
+                    <div className={styles.serviceCardTop}>
+                      <div className={styles.serviceIconBox}>{srv.icon}</div>
+                      <span className={styles.serviceBadge}>{srv.badge}</span>
+                    </div>
+                    <h3 className={styles.serviceCardTitle}>{srv.title}</h3>
+                    <p className={styles.serviceCardDesc}>{srv.desc}</p>
+                  </div>
+                  <div className={styles.serviceCardFooter}>
+                    <span className={styles.serviceFooterTag}>{srv.footerTag}</span>
+                    <span className={styles.serviceDeliverable}>{srv.deliverable}</span>
+                  </div>
                 </div>
-                <h3 className={styles.serviceCardTitle}>{srv.title}</h3>
-                <p className={styles.serviceCardDesc}>{srv.desc}</p>
               </ScrollReveal>
             ))}
+          </div>
+
+          {/* Section Bottom CTA */}
+          <div className={styles.sectionCtaRow}>
+            <BeamButton
+              href="/contact"
+              label="Explore Full-Funnel Ecommerce Services →"
+              size="md"
+              arrow={true}
+            />
           </div>
         </div>
       </section>
@@ -592,6 +648,16 @@ export default function EcommerceMarketingPage() {
               </ScrollReveal>
             ))}
           </div>
+
+          {/* Section Bottom CTA */}
+          <div className={styles.sectionCtaRow}>
+            <BeamButton
+              href="/contact"
+              label="Kick Off Your 6-Step Ecommerce Sprint →"
+              size="md"
+              arrow={true}
+            />
+          </div>
         </div>
       </section>
 
@@ -709,50 +775,88 @@ export default function EcommerceMarketingPage() {
               );
             })}
           </div>
+
+          {/* Section Bottom CTA */}
+          <div className={styles.faqCtaBox}>
+            <p className={styles.faqCtaNote}>
+              Have a question about your specific product catalogue or store?
+            </p>
+            <BeamButton
+              href="/contact"
+              label="Ask Our Ecommerce Specialists →"
+              size="md"
+              arrow={true}
+            />
+          </div>
         </div>
       </section>
 
       {/* ══════════════════════════════════════════════════
-          11. PERFORMANCE-DRIVEN BOTTOM CONVERSION BANNER
+          11. PRE-FOOTER CONVERSION CARD (SIGNATURE LIGHT SKEUOMORPHIC)
          ══════════════════════════════════════════════════ */}
-      <section className={styles.conversionSection}>
+      <section className={styles.conversionSection} id="executive-terminal">
         <div className="container">
           <ScrollReveal>
-            <div className={styles.executiveTerminal}>
-              <div className={styles.termGlow} />
-              <div className={styles.cardGlassGlossDark} />
-              <div className={styles.termContent}>
-                <span className={styles.termPill}>PERFORMANCE-DRIVEN ECOMMERCE MARKETING</span>
-                <h2 className={styles.termTitle}>
-                  Want More Traffic, Leads &amp; Online Sales?
-                </h2>
-                <p className={styles.termSub}>
-                  Bring your products in front of the right audience with a connected strategy across ecommerce SEO, Google Ads, Meta Ads, social media, and conversion optimisation.
-                </p>
-                <div className={styles.termContact}>
-                  <span>Direct Line:</span>
-                  <a href="tel:+918280788689" className={styles.termPhone}>
-                    +91 82807 88689
+            <div className={styles.homeCtaInnerBox}>
+              <div className={styles.homeCtaEyebrow}>
+                <span className={styles.homeCtaDot} />
+                <span>PERFORMANCE-DRIVEN ECOMMERCE MARKETING</span>
+              </div>
+
+              <h2 className={styles.homeCtaHeadline}>
+                Want More Traffic, Leads &amp; Online Sales?
+              </h2>
+
+              <p className={styles.homeCtaSub}>
+                Bring your products in front of the right audience with a connected strategy across ecommerce SEO, Google Ads, Meta Ads, social media, and conversion optimisation.
+              </p>
+
+              <div className={styles.homeCtaContact}>
+                <span>Direct Commerce Desk:</span>
+                <a href="tel:+918280788689" className={styles.homeCtaPhone}>
+                  +91 82807 88689
+                </a>
+                <span>·</span>
+                <span>Pan-India Ecommerce Operations</span>
+              </div>
+
+              <div className={styles.homeCtaActions}>
+                <BeamButton
+                  href="/contact"
+                  label="Get Your Free Ecommerce Strategy →"
+                  size="lg"
+                  arrow={true}
+                />
+                <div className={styles.homeCtaSecondaryWrapper}>
+                  <a
+                    href="https://wa.me/918280788689?text=Hi%20Marketing%20Copilot,%20I%20would%20like%20to%20talk%20to%20your%20growth%20team%20about%20ecommerce%20marketing."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.homeCtaSecondaryInner}
+                  >
+                    <span>💬 WhatsApp Growth Team</span>
                   </a>
-                  <span>·</span>
-                  <span>Bhubaneswar HQ · Serving Brands Across India</span>
                 </div>
               </div>
 
-              <div className={styles.termActions}>
-                <BeamButton href="/contact" label="Get Your Ecommerce Strategy" size="lg" arrow={true} />
-                <BeamButton
-                  href="https://wa.me/918280788689?text=Hi%20Marketing%20Copilot,%20I%20would%20like%20to%20talk%20to%20your%20growth%20team%20about%20ecommerce%20marketing."
-                  label="Talk to Our Growth Team"
-                  size="lg"
-                  variant="outline"
-                  arrow={false}
-                  icon={<span style={{ marginRight: '6px' }}>💬</span>}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.termSecondaryInner}
-                  wrapperClassName={styles.termSecondaryWrapper}
-                />
+              {/* Skeuomorphic Trust Badges */}
+              <div className={styles.homeCtaTrustBadges}>
+                <div className={styles.homeCtaTrustItem}>
+                  <span>🛡️</span>
+                  <span>Verified ROAS Architecture</span>
+                </div>
+                <div className={styles.homeCtaTrustItem}>
+                  <span>⚡</span>
+                  <span>Automated CAPI &amp; SKU Feeds</span>
+                </div>
+                <div className={styles.homeCtaTrustItem}>
+                  <span>🔒</span>
+                  <span>Zero COD Leakage Sprints</span>
+                </div>
+                <div className={styles.homeCtaTrustItem}>
+                  <span>🚀</span>
+                  <span>Dedicated Commerce Lead</span>
+                </div>
               </div>
             </div>
           </ScrollReveal>

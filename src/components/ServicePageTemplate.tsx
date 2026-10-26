@@ -943,43 +943,68 @@ export default function ServicePageTemplate({
       {/* ══════════════════════════════════════════════════
           12. EXECUTIVE BOTTOM CONVERSION TERMINAL
          ══════════════════════════════════════════════════ */}
-      <section className={styles.conversionSection}>
+      <section className={styles.conversionSection} id="executive-terminal">
         <div className="container">
           <ScrollReveal>
-            <div className={styles.executiveTerminal}>
-              <div className={styles.termGlow} />
-              <div>
-                <span className={styles.termPill}>SCHEDULE EXECUTIVE AUDIT</span>
-                <h3 className={styles.termTitle}>
-                  Ready to Capture #1 Market Share in India?
-                </h3>
-                <p className={styles.termSub}>
-                  Claim your free 30-minute forensic growth audit. We will crawl your Core Web Vitals, analyze competitor acquisition gaps, and model your ROI roadmap across Odisha.
-                </p>
-                <div className={styles.termContact}>
-                  <span>📞 Direct Hotline:</span>
-                  <a href="tel:+918280788689" className={styles.termPhone}>
-                    +91 82807 88689
+            <div className={styles.homeCtaInnerBox}>
+              <div className={styles.homeCtaEyebrow}>
+                <span className={styles.homeCtaDot} />
+                <span>SCHEDULE STRATEGIC GROWTH AUDIT</span>
+              </div>
+
+              <h2 className={styles.homeCtaHeadline}>
+                Ready to Capture #1 Market Share in India?
+              </h2>
+
+              <p className={styles.homeCtaSub}>
+                Claim your free 30-minute forensic growth audit. We will crawl your Core Web Vitals, analyze competitor acquisition gaps, and model your ROI roadmap.
+              </p>
+
+              <div className={styles.homeCtaContact}>
+                <span>Direct Hotline:</span>
+                <a href="tel:+918280788689" className={styles.homeCtaPhone}>
+                  +91 82807 88689
+                </a>
+                <span>·</span>
+                <span>Pan-India Digital Strategy Operations</span>
+              </div>
+
+              <div className={styles.homeCtaActions}>
+                <BeamButton
+                  href="/contact"
+                  label="Claim Your Growth Strategy →"
+                  size="lg"
+                  arrow={true}
+                />
+                <div className={styles.homeCtaSecondaryWrapper}>
+                  <a
+                    href="https://wa.me/918280788689?text=Hi%20Marketing%20Copilot%2C%20I%20want%20to%20audit%20my%20business%20growth"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.homeCtaSecondaryInner}
+                  >
+                    <span>💬 WhatsApp Growth Strategist</span>
                   </a>
-                  <span>·</span>
-                  <span>HQ: Kharvela Nagar, Unit 3, Bhubaneswar</span>
                 </div>
               </div>
 
-              <div className={styles.termActions}>
-                <Link href="/contact" className={styles.termAuditBtn}>
-                  <span>Grow Your Business With Us</span>
-                  <span>→</span>
-                </Link>
-
-                <a
-                  href="https://wa.me/918280788689?text=Hi%20Marketing%20Copilot%2C%20I%20want%20to%20audit%20my%20business%20growth"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.termWhatsAppBtn}
-                >
-                  <span>💬 WhatsApp Our Principal Strategist</span>
-                </a>
+              <div className={styles.homeCtaTrustBadges}>
+                <div className={styles.homeCtaTrustItem}>
+                  <span>🛡️</span>
+                  <span>Forensic Audit Transparency</span>
+                </div>
+                <div className={styles.homeCtaTrustItem}>
+                  <span>⚡</span>
+                  <span>Rapid 48-Hour Turnaround</span>
+                </div>
+                <div className={styles.homeCtaTrustItem}>
+                  <span>🔒</span>
+                  <span>100% Data Confidentiality</span>
+                </div>
+                <div className={styles.homeCtaTrustItem}>
+                  <span>🚀</span>
+                  <span>Dedicated Senior Growth Lead</span>
+                </div>
               </div>
             </div>
           </ScrollReveal>

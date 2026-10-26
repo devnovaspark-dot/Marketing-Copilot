@@ -16,6 +16,9 @@ const coreServices = [
     tag: 'STRATEGY & TIMELINES',
     title: 'Social Media Strategy & Planning',
     desc: 'We develop a social media plan that aligns with your business goals, target audience, your competitors, and your industry. Our team designs optimization platforms, themes, posts, posting timelines, and campaign ideas. We also track trends and performance to ensure it remains relevant, consistent, and aligned with steady growth.',
+    footerTag: '✦ 30-Day Content Calendar',
+    deliverable: '✓ Strategic Playbook',
+    highlights: ['Audience & Competitor Audit', 'Monthly Thematic Architecture', 'Trend-Jack & Hashtag Strategy'],
   },
   {
     num: '02',
@@ -23,6 +26,9 @@ const coreServices = [
     tag: 'REELS & BRAND ASSETS',
     title: 'Content Creation & Branding',
     desc: 'We produce content that is both fun and web-crawler-friendly, all while bearing your brand and connecting with your audience. We have services for graphics, Reels, carousel posts, stories, promotional creatives, and branded campaigns. Each content piece is designed to help you generate engagement, convey your message clearly, and maintain brand visibility online.',
+    footerTag: '✦ 4K Sony FX3 Reels',
+    deliverable: '✓ High-Hook Velocity',
+    highlights: ['9:16 High-Retention Video', 'Kinetic Typography & Audio', 'Multi-Slide Visual Carousels'],
   },
   {
     num: '03',
@@ -30,6 +36,9 @@ const coreServices = [
     tag: 'PAID SOCIAL & LEADS',
     title: 'Paid Social Media Advertising',
     desc: 'We provide social media advertising solutions for businesses to target the right audiences and promote their products and services. We create and manage campaigns for lead generation, brand awareness, website traffic, sales, retargeting, and app promotions. The campaign\'s performance is continually tracked and fine-tuned to maximize spend.',
+    footerTag: '✦ Sub-₹120 Lead Funnels',
+    deliverable: '✓ Direct WhatsApp Sync',
+    highlights: ['Hyper-Local Geo Targeting', 'Custom & Lookalike Audiences', 'Conversion CAPI Integration'],
   },
   {
     num: '04',
@@ -37,6 +46,9 @@ const coreServices = [
     tag: 'COMMUNITY & ANALYTICS',
     title: 'Social Media Account Management',
     desc: 'We manage your social media accounts to keep your brand consistent, active, and responsive. We offer content optimization, regular content posting, audience engagement, community management, hashtag optimization, and analytics. We carry out the day-to-day tasks and use data and insights to optimize the social media presence over time.',
+    footerTag: '✦ 7-Day Active Moderation',
+    deliverable: '✓ <15m DM SLA',
+    highlights: ['Daily Scheduled Publishing', 'Instant DM & Comment Handling', 'Monthly Telemetry & Growth Review'],
   },
 ];
 
@@ -48,6 +60,9 @@ const smallBizServices = [
     tag: 'LOCAL REACH & ROI',
     title: 'Small Business Marketing',
     desc: 'The strategies that can be utilized for promoting small businesses should be targeted and depend on the business objectives and finances. Building your online presence, connecting with relevant customers, developing content, and increasing online visibility is all achieved with a social media marketing service from us.',
+    footerTag: '✦ Hyper-Local Awareness',
+    deliverable: '✓ Store Walk-Ins',
+    highlights: ['Geo-Fenced Audience Seeding', 'Direct WhatsApp Ordering', 'Bio Link & Catalog Optimization'],
   },
   {
     num: '02',
@@ -55,6 +70,9 @@ const smallBizServices = [
     tag: 'EARLY RAPPORT & AWARENESS',
     title: 'Startup Social Growth',
     desc: 'There is a need to create awareness and develop a rapport with the targeted audience for startups. We craft social media strategies focused on content, campaigns, engagement, and audience growth to make new businesses reputable in the digital landscape.',
+    footerTag: '✦ 0-to-1 Audience Engine',
+    deliverable: '✓ Founder Brand Authority',
+    highlights: ['Founder Storytelling Reels', 'High-Trust Social Proofing', 'Rapid Traction Content Loops'],
   },
   {
     num: '03',
@@ -62,6 +80,9 @@ const smallBizServices = [
     tag: 'CREATOR PARTNERSHIPS',
     title: 'Influencer Marketing Services',
     desc: 'Businesses can utilize influencer marketing to reach targeted viewers via relevant creators. We help brands establish genuine partnerships and connect with their audience in a meaningful way by managing influencer discovery, outreach, campaign preparation, collaboration, content coordination, and monitoring performance.',
+    footerTag: '✦ Regional Creator Network',
+    deliverable: '✓ Verified UGC Content',
+    highlights: ['Odia & National Creator Roster', 'Contract & Deliverable Oversight', 'Trackable Promo Code Tracking'],
   },
   {
     num: '04',
@@ -69,6 +90,9 @@ const smallBizServices = [
     tag: 'AGENCY PARTNER SOLUTION',
     title: 'White Label Management',
     desc: 'We offer social media management services that agencies can use without hiring a full team of social media workers. We also provide content creation, account management, campaign execution, creative work, and reporting while enabling agencies to offer services under their own brand.',
+    footerTag: '✦ Turnkey Agency SLA',
+    deliverable: '✓ Unbranded Reports',
+    highlights: ['Complete Creative Production', 'Client Presentation Decks', 'Scalable Margin Architecture'],
   },
   {
     num: '05',
@@ -76,6 +100,9 @@ const smallBizServices = [
     tag: 'FULL-SPECTRUM ENGAGEMENT',
     title: 'Online SMM Services',
     desc: 'Our expert SMM professionals include content creation, audience management, engagement, paid promotion, and performance-tracking activities. We build real-world solutions that help you stay top of mind and enhance your brand\'s online reputation across social platforms.',
+    footerTag: '✦ Multi-Network Cadence',
+    deliverable: '✓ Active Community',
+    highlights: ['Daily Cross-Platform Posting', 'Interactive Polls & Q&A Stories', 'Reputation & Review Management'],
   },
   {
     num: '06',
@@ -83,6 +110,9 @@ const smallBizServices = [
     tag: 'BEHAVIOR & LOCATION ADS',
     title: 'Social Media Advertising',
     desc: 'Businesses can target audiences via paid social media ads, according to their location, interests, behaviors, and more. We develop and manage campaigns on the right platforms and measure, test, and optimize campaigns to drive traffic, inquiries, leads, and conversions.',
+    footerTag: '✦ Algorithmic Ad Scaling',
+    deliverable: '✓ Predictable CAC',
+    highlights: ['CBO & ABO Budget Management', 'A/B Hook & Visual Creative Tests', 'Zero-Ad-Fatigue Creative Refresh'],
   },
 ];
 
@@ -173,6 +203,18 @@ export default function SocialMediaPage() {
                 <span className={styles.tLabel}>Cinema Gear SLA</span>
               </div>
             </div>
+
+            {/* Modern Social Platforms Ribbon */}
+            <div className={styles.platformTrustRibbon}>
+              <span className={styles.platformTrustLabel}>PLATFORMS WE SCALE</span>
+              <div className={styles.platformPillGrid}>
+                <span className={styles.platformPill}>📸 Instagram Reels &amp; Carousels</span>
+                <span className={styles.platformPill}>📘 Facebook Lead Ads</span>
+                <span className={styles.platformPill}>💼 LinkedIn B2B Thought Leadership</span>
+                <span className={styles.platformPill}>▶️ YouTube Shorts</span>
+                <span className={styles.platformPill}>💬 Click-to-WhatsApp Funnels</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -200,18 +242,30 @@ export default function SocialMediaPage() {
             </p>
           </ScrollReveal>
 
-          {/* 2x2 Grid of Core Cards */}
+          {/* 2x2 Grid of Core Cards with Equal Height & Bottom Aligned Footers */}
           <div className={styles.servicesGrid}>
             {coreServices.map((service, index) => (
               <ScrollReveal key={service.title} delay={index * 0.08} className={styles.cardCol}>
                 <div className={styles.serviceCard}>
-                  <div>
+                  <div className={styles.serviceTopBody}>
                     <div className={styles.serviceCardHeader}>
                       <div className={styles.serviceIconBowl}>{service.icon}</div>
                       <span className={styles.serviceTag}>{service.tag}</span>
                     </div>
                     <h3 className={styles.serviceTitle}>{service.title}</h3>
                     <p className={styles.serviceDesc}>{service.desc}</p>
+                    <div className={styles.serviceHighlightsList}>
+                      {service.highlights.map((hl) => (
+                        <span key={hl} className={styles.serviceHighlightChip}>
+                          <span className={styles.highlightDot} />
+                          {hl}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <div className={styles.serviceCardFooter}>
+                    <span className={styles.serviceFooterTag}>{service.footerTag}</span>
+                    <span className={styles.serviceDeliverable}>{service.deliverable}</span>
                   </div>
                 </div>
               </ScrollReveal>
@@ -356,13 +410,25 @@ export default function SocialMediaPage() {
             {smallBizServices.map((item, index) => (
               <ScrollReveal key={item.title} delay={index * 0.06} className={styles.cardCol}>
                 <div className={styles.smallBizCard}>
-                  <div>
+                  <div className={styles.smallBizTopBody}>
                     <div className={styles.smallBizHeader}>
                       <div className={styles.smallBizIconBowl}>{item.icon}</div>
                       <span className={styles.smallBizTag}>{item.tag}</span>
                     </div>
                     <h3 className={styles.smallBizTitle}>{item.title}</h3>
                     <p className={styles.smallBizDesc}>{item.desc}</p>
+                    <div className={styles.smallBizHighlightsList}>
+                      {item.highlights.map((hl) => (
+                        <span key={hl} className={styles.smallBizHighlightChip}>
+                          <span className={styles.highlightDot} />
+                          {hl}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <div className={styles.smallBizFooter}>
+                    <span className={styles.smallBizFooterTag}>{item.footerTag}</span>
+                    <span className={styles.smallBizDeliverable}>{item.deliverable}</span>
                   </div>
                 </div>
               </ScrollReveal>
@@ -459,6 +525,14 @@ export default function SocialMediaPage() {
                   size="lg"
                   variant="outline"
                 />
+              </div>
+
+              {/* Skeuomorphic Trust Signals */}
+              <div className={styles.homeCtaTrustBadges}>
+                <span className={styles.homeCtaTrustItem}>🛡️ 100% Original Content Shoots</span>
+                <span className={styles.homeCtaTrustItem}>⚡ 48-Hour Reel Turnaround</span>
+                <span className={styles.homeCtaTrustItem}>🔒 Zero Fake-Follower Guarantee</span>
+                <span className={styles.homeCtaTrustItem}>🚀 Dedicated Account Strategist</span>
               </div>
             </ScrollReveal>
           </div>

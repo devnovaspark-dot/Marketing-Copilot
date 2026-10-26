@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import BeamButton from '@/components/BeamButton';
 import styles from './LocalSeoWorkstation.module.css';
 
 interface TabData {
@@ -165,6 +166,14 @@ export default function LocalSeoWorkstation() {
                 </pre>
               </div>
             </div>
+          </div>
+
+          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '36px' }}>
+            <BeamButton
+              href="/contact"
+              label="Deploy This Local SEO Architecture"
+              size="md"
+            />
           </div>
         </div>
       </div>

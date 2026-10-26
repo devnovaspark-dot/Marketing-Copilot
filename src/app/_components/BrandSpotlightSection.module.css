@@ -169,6 +169,11 @@
   line-height: 1.15;
 }
 
+.clientHighlightWrap {
+  display: inline-block;
+  white-space: nowrap;
+}
+
 .subText {
   color: #475569;
   line-height: 1.6;

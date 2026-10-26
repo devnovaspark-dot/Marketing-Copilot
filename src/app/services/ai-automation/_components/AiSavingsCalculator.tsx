@@ -111,7 +111,7 @@ export default function AiSavingsCalculator() {
             </div>
           </div>
 
-          <a href="#audit-form" className={styles.ctaBtn}>
+          <a href="/contact" className={styles.ctaBtn}>
             Deploy Your Custom AI Automation Stack &rarr;
           </a>
         </div>
