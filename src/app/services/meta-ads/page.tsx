@@ -15,18 +15,21 @@ const smartPillars = [
     tag: 'PLACEMENT MASTERY',
     title: 'Facebook & Instagram Ads',
     desc: 'Targeted ad campaigns designed across high-engagement placements—including Feeds, Stories, Explore, and Reels—to connect with audiences where they spend their time.',
+    footerTag: '✦ Feed, Stories & Reels Reach',
   },
   {
     icon: '💬',
     tag: 'DIRECT RESPONSE',
     title: 'Lead & WhatsApp Campaigns',
     desc: 'Instant lead-capture funnels and Click-to-WhatsApp direct message ads that eliminate friction, allowing immediate customer conversations and higher conversions.',
+    footerTag: '✦ Instant Click-to-Chat Funnel',
   },
   {
     icon: '⚡',
     tag: 'DATA-DRIVEN ROAS',
     title: 'Performance Optimization',
     desc: 'Continuous bid management, creative A/B testing, and audience refinement powered by data to maximize your return on ad spend and reduce acquisition cost.',
+    footerTag: '✦ Continuous Algorithmic ROAS',
   },
 ];
 
@@ -36,16 +39,19 @@ const whyMatterFeatures = [
     icon: '🎯',
     title: 'Reach Before They Search',
     desc: 'Introduce your products and services proactively to high-intent consumers before they even think to search for them on Google.',
+    footerTag: '🎯 Proactive Demand Discovery',
   },
   {
     icon: '📍',
     title: 'Hyper-Local & Regional Scale',
     desc: 'Precision geo-targeting across Bhubaneswar pin codes, Cuttack, and Odisha, with seamless capability to expand to national markets.',
+    footerTag: '📍 Pin-Code to Pan-India Scale',
   },
   {
     icon: '🧠',
     title: 'Deep Behavioral Targeting',
     desc: 'Target audiences by verified locations, buying behaviors, lifestyle interests, and custom retargeting lists from past interactions.',
+    footerTag: '🧠 High-Intent Custom Audiences',
   },
 ];
 
@@ -107,19 +113,19 @@ const whyChoosePillars = [
     step: 'PILLAR 02',
     title: 'Creative + Performance',
     desc: 'Our approach combines creative development with campaign data. This allows advertising decisions to consider both the message and its performance.',
-    featureTag: '📊 Creative & Signal Telemetry',
+    featureTag: '📊 Signal & Telemetry',
   },
   {
     step: 'PILLAR 03',
     title: 'Business-Focused Campaigns',
     desc: 'Campaign objectives are aligned with business requirements such as enquiries, sales, registrations, bookings, or awareness.',
-    featureTag: '💼 Qualified Inquiries & Sales',
+    featureTag: '💼 Qualified Inquiries',
   },
   {
     step: 'PILLAR 04',
     title: 'Continuous Optimization',
     desc: 'Campaigns are reviewed regularly so that learnings from the data can inform future changes.',
-    featureTag: '⚡ Weekly Algorithmic Sprints',
+    featureTag: '⚡ Algorithmic Sprints',
   },
   {
     step: 'PILLAR 05',
@@ -132,7 +138,7 @@ const whyChoosePillars = [
     title: 'Multi-Industry Experience',
     desc: 'Marketing Copilot has proven experience across industries, including real estate, interior design, architecture, EdTech, travel, D2C, jewelry, and manufacturing.',
     featureTag: '🏢 8+ Industry Frameworks',
-    industries: ['Real Estate', 'Interior Design', 'Architecture', 'EdTech', 'Travel', 'D2C', 'Jewelry', 'Manufacturing'],
+    industrySummary: 'Real Estate, D2C & more',
   },
 ];
 
@@ -284,12 +290,18 @@ export default function MetaAdsPage() {
           {/* 3 Skeuomorphic Pillar Cards */}
           <div className={styles.pillarsGrid}>
             {smartPillars.map((pillar, i) => (
-              <ScrollReveal key={pillar.title} delay={i * 80} style={{ height: '100%' }}>
+              <ScrollReveal key={pillar.title} delay={i * 80} className={styles.cardCol}>
                 <div className={styles.pillarCard}>
-                  <div className={styles.pillarIconBowl}>{pillar.icon}</div>
-                  <span className={styles.pillarPill}>{pillar.tag}</span>
-                  <h3 className={styles.pillarTitle}>{pillar.title}</h3>
-                  <p className={styles.pillarDesc}>{pillar.desc}</p>
+                  <div className={styles.pillarTopBody}>
+                    <div className={styles.pillarIconBowl}>{pillar.icon}</div>
+                    <span className={styles.pillarPill}>{pillar.tag}</span>
+                    <h3 className={styles.pillarTitle}>{pillar.title}</h3>
+                    <p className={styles.pillarDesc}>{pillar.desc}</p>
+                  </div>
+                  <div className={styles.pillarFooter}>
+                    <span className={styles.pillarFooterTag}>{pillar.footerTag}</span>
+                    <span className={styles.pillarFooterCheck}>✓ Verified Impact</span>
+                  </div>
                 </div>
               </ScrollReveal>
             ))}
@@ -428,11 +440,17 @@ export default function MetaAdsPage() {
 
           <div className={styles.whyMatterCardsGrid}>
             {whyMatterFeatures.map((feat, i) => (
-              <ScrollReveal key={feat.title} delay={i * 80} style={{ height: '100%' }}>
+              <ScrollReveal key={feat.title} delay={i * 80} className={styles.cardCol}>
                 <div className={styles.whyMatterCard}>
-                  <div className={styles.whyIconWrap}>{feat.icon}</div>
-                  <h3 className={styles.whyCardTitle}>{feat.title}</h3>
-                  <p className={styles.whyCardDesc}>{feat.desc}</p>
+                  <div className={styles.whyTopBody}>
+                    <div className={styles.whyIconWrap}>{feat.icon}</div>
+                    <h3 className={styles.whyCardTitle}>{feat.title}</h3>
+                    <p className={styles.whyCardDesc}>{feat.desc}</p>
+                  </div>
+                  <div className={styles.whyCardFooter}>
+                    <span className={styles.whyFooterTag}>{feat.footerTag}</span>
+                    <span className={styles.whyFooterCheck}>✓ Core Advantage</span>
+                  </div>
                 </div>
               </ScrollReveal>
             ))}
@@ -465,7 +483,7 @@ export default function MetaAdsPage() {
             {metaServices.map((svc, i) => (
               <ScrollReveal key={svc.title} delay={i * 60} className={styles.cardCol}>
                 <div className={styles.serviceSkeuoCard}>
-                  <div>
+                  <div className={styles.serviceTopBody}>
                     <div className={styles.serviceTopHeader}>
                       <span className={styles.serviceNumberEmbossed}>{svc.num}</span>
                       <div className={styles.serviceIconBowl}>{svc.icon}</div>
@@ -474,10 +492,10 @@ export default function MetaAdsPage() {
                     <h3 className={styles.serviceCardTitle}>
                       {svc.title}
                     </h3>
+                    <p className={styles.serviceCardDesc}>{svc.desc}</p>
                   </div>
-                  <p className={styles.serviceCardDesc}>{svc.desc}</p>
                   <div className={styles.serviceCardFooter}>
-                    <span style={{ fontSize: '12px', fontWeight: 700, color: '#0B2093' }}>
+                    <span className={styles.serviceDeliveryText}>
                       ✓ Managed Campaign Delivery
                     </span>
                     <span className={styles.serviceArrow}>→</span>
@@ -570,24 +588,23 @@ export default function MetaAdsPage() {
             {whyChoosePillars.map((p, i) => (
               <ScrollReveal key={p.title} delay={i * 70} className={styles.cardCol}>
                 <div className={styles.whyChooseCard}>
-                  <div className={styles.whyChooseTop}>
-                    <span className={styles.whyChooseStepNum}>{p.step}</span>
-                    <h3 className={styles.whyChooseTitle}>{p.title}</h3>
+                  <div className={styles.whyChooseTopBody}>
+                    <div className={styles.whyChooseTop}>
+                      <span className={styles.whyChooseStepNum}>{p.step}</span>
+                      <h3 className={styles.whyChooseTitle}>{p.title}</h3>
+                    </div>
+                    <p className={styles.whyChooseDesc}>{p.desc}</p>
                   </div>
-                  <p className={styles.whyChooseDesc}>{p.desc}</p>
                   <div className={styles.whyChooseFooter}>
-                    {p.industries ? (
-                      <div className={styles.industryBadgeList}>
-                        {p.industries.map((ind) => (
-                          <span key={ind} className={styles.industryTag}>
-                            {ind}
-                          </span>
-                        ))}
-                      </div>
-                    ) : (
-                      <span className={styles.pillarFeatureTag}>
-                        {p.featureTag}
+                    <span className={styles.pillarFeatureTag}>
+                      {p.featureTag}
+                    </span>
+                    {p.industrySummary ? (
+                      <span className={styles.industryTagSummary}>
+                        {p.industrySummary}
                       </span>
+                    ) : (
+                      <span className={styles.pillarStatusTag}>✓ Copilot Standard</span>
                     )}
                   </div>
                 </div>
