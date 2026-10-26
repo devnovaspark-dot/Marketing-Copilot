@@ -1,36 +1,39 @@
 /* ══════════════════════════════════════════════════
-   GOOGLE MAPS 3-PACK DOMINANCE ENGINE
-   Bespoke Interactive Transformation & SERP Cockpit
-   Palette: Blue (#0B2093, #0D007F), Emerald (#10B981), Amber (#F59E0B), Slate
+   GOOGLE MAP 3-PACK ADVANTAGE — ULTRA-CLEAN DESIGN
+   Minimalist, Spacious, Premium Light Skeuomorphic
+   Palette: Navy (#0B2093), Emerald (#10B981), Slate (#0F172A, #64748B)
  ══════════════════════════════════════════════════ */
 
-.dominanceSection {
-  padding: clamp(38px, 5vw, 60px) 0;
+.cleanSection {
+  padding: clamp(48px, 6vw, 76px) 0;
   background: #FFFFFF;
   position: relative;
+  scroll-margin-top: 100px;
 }
 
-.engineCard {
-  background: linear-gradient(165deg, #FFFFFF 0%, #FAFCFF 60%, #F1F5F9 100%);
-  border: 1.5px solid #CBD5E1;
-  border-radius: 22px;
-  padding: clamp(22px, 3.2vw, 36px);
-  max-width: 1060px;
+.cleanCard {
+  background: linear-gradient(165deg, #FFFFFF 0%, #FAFCFF 50%, #F8FAFC 100%);
+  border: 1.5px solid #E2E8F0;
+  border-radius: 24px;
+  padding: clamp(28px, 4vw, 44px);
+  max-width: 1080px;
   margin: 0 auto;
   box-shadow: 
-    inset 0 2px 0 #FFFFFF,
-    inset 0 -1.5px 0 rgba(15, 23, 42, 0.04),
-    0 20px 48px -12px rgba(11, 32, 147, 0.09),
-    0 4px 14px rgba(0, 0, 0, 0.03);
+    inset 0 1px 0 #FFFFFF,
+    0 16px 40px -12px rgba(11, 32, 147, 0.07),
+    0 2px 8px rgba(0, 0, 0, 0.02);
 }
 
-.engineHeader {
+/* ══════════════════════════════════════════════════
+   HEADER: MINIMALIST & BREATHABLE
+ ══════════════════════════════════════════════════ */
+.headerWrap {
   text-align: center;
-  max-width: 780px;
-  margin: 0 auto 20px;
+  max-width: 760px;
+  margin: 0 auto 28px;
 }
 
-.eyebrowPill {
+.eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -44,294 +47,178 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #0B2093;
-  margin-bottom: 10px;
-  box-shadow: inset 0 1px 0 #FFFFFF;
+  margin-bottom: 12px;
 }
 
-.pulseDot {
+.liveDot {
   width: 7px;
   height: 7px;
   border-radius: 50%;
   background: #10B981;
-  box-shadow: 0 0 10px rgba(16, 185, 129, 0.8);
-  animation: pulseLive 1.8s infinite ease-in-out;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.7);
 }
 
-@keyframes pulseLive {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.35; transform: scale(0.85); }
-}
-
-.engineTitle {
+.title {
   font-family: var(--font-display);
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-size: clamp(1.85rem, 3.2vw, 2.7rem);
   font-weight: 800;
   color: #0F172A;
-  margin: 0 0 8px;
+  margin: 0 0 10px;
   line-height: 1.18;
   letter-spacing: -0.025em;
 }
 
-.engineSub {
-  font-size: 14px;
+.sub {
+  font-size: 14.5px;
   color: #475569;
   line-height: 1.6;
-  max-width: 680px;
+  max-width: 640px;
   margin: 0 auto;
 }
 
-/* Control Navigation Bar */
-.navRow {
+/* Single Clean City Selector Row */
+.citySelectorBar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 12px;
-  margin: 22px 0 24px;
-  padding-bottom: 18px;
-  border-bottom: 1px solid #E2E8F0;
+  gap: 8px;
+  margin: 24px auto 32px;
 }
 
-.modeToggleGroup {
-  display: inline-flex;
-  background: #E2E8F0;
-  padding: 3px;
-  border-radius: 12px;
-  gap: 3px;
-}
-
-.modeBtn {
-  background: none;
-  border: none;
+.cityBtn {
+  background: #FFFFFF;
+  border: 1.5px solid #CBD5E1;
+  color: #334155;
+  border-radius: 999px;
   padding: 7px 16px;
-  border-radius: 9px;
   font-size: 12.5px;
   font-weight: 700;
-  color: #475569;
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
 }
 
-.modeBtnActive {
-  background: #FFFFFF !important;
-  color: #0B2093 !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
-}
-
-.industryChips {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  flex-wrap: wrap;
-}
-
-.chipBtn {
-  background: #FFFFFF;
-  border: 1px solid #CBD5E1;
-  color: #334155;
-  padding: 5px 12px;
-  border-radius: 999px;
-  font-size: 11.5px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.18s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.chipBtn:hover {
+.cityBtn:hover {
   border-color: #0B2093;
   color: #0B2093;
   background: #F8FAFC;
+  transform: translateY(-1px);
 }
 
-.chipBtnActive {
+.cityBtnActive {
   background: #0B2093 !important;
   color: #FFFFFF !important;
   border-color: #0B2093 !important;
-  box-shadow: 0 2px 8px rgba(11, 32, 147, 0.2) !important;
+  box-shadow: 0 4px 14px rgba(11, 32, 147, 0.25) !important;
 }
 
 /* ══════════════════════════════════════════════════
-   VIEW 1: BEFORE VS. AFTER TRANSFORMATION (SIDE-BY-SIDE)
+   TWO-COLUMN SHOWCASE: MAP CARD (LEFT) + 3 PILLARS (RIGHT)
  ══════════════════════════════════════════════════ */
-.transformGrid {
+.mainGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 22px;
+  gap: 28px;
   align-items: stretch;
 }
 
-/* Left Card: Before (Dimmed, Inactive) */
-.beforeCard {
+/* Left: Realistic Google Maps 3-Pack Card */
+.mapCard {
   background: #FFFFFF;
-  border: 1.5px dashed #CBD5E1;
-  border-radius: 18px;
-  padding: 22px;
+  border: 1.5px solid #CBD5E1;
+  border-radius: 20px;
+  padding: 20px 22px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02);
-  position: relative;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
 }
 
-.cardHeaderRow {
+.mapSearchHeader {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 14px;
-}
-
-.badgeBefore {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: #FEF2F2;
-  border: 1px solid #FECACA;
-  color: #DC2626;
-  font-size: 10.5px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 3px 10px;
-  border-radius: 999px;
-}
-
-.badgeRankLost {
-  font-size: 11px;
-  font-weight: 700;
-  color: #94A3B8;
-}
-
-.listingBoxBefore {
+  gap: 10px;
   background: #F8FAFC;
-  border: 1px solid #E2E8F0;
+  border: 1.5px solid #E2E8F0;
   border-radius: 12px;
-  padding: 14px;
+  padding: 10px 14px;
   margin-bottom: 16px;
 }
 
-.listingTitleBefore {
-  font-family: var(--font-display);
-  font-size: 15px;
-  font-weight: 750;
-  color: #64748B;
-  margin: 0 0 4px;
+.mapSearchIcon {
+  font-size: 16px;
+  color: #EA4335;
 }
 
-.starsBefore {
-  font-size: 12px;
-  color: #D97706;
-  margin-bottom: 6px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.alertList {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-top: 10px;
-  padding-top: 10px;
-  border-top: 1px dashed #E2E8F0;
-}
-
-.alertItem {
-  font-size: 11.5px;
-  color: #EF4444;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-weight: 600;
-}
-
-/* Metric Strip (Before) */
-.metricStripBefore {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-  padding-top: 14px;
-  border-top: 1px solid #E2E8F0;
-}
-
-.metricCellBefore {
-  background: #F1F5F9;
-  border-radius: 8px;
-  padding: 8px 10px;
-  text-align: center;
-}
-
-.cellValBefore {
-  font-family: var(--font-display);
-  font-size: 15px;
-  font-weight: 800;
-  color: #64748B;
-  margin-bottom: 2px;
-}
-
-.cellLabelBefore {
-  font-size: 10px;
+.mapSearchText {
+  flex: 1;
+  font-size: 13px;
   font-weight: 700;
-  color: #94A3B8;
-  text-transform: uppercase;
+  color: #0F172A;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-/* Right Card: After (Copilot #1 Winner) */
-.afterCard {
-  background: linear-gradient(155deg, #FFFFFF 0%, #F0FDF4 100%);
-  border: 1.5px solid #10B981;
-  border-radius: 18px;
-  padding: 22px;
+.mapSearchBadge {
+  font-size: 10.5px;
+  font-weight: 750;
+  color: #059669;
+  background: #ECFDF5;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  padding: 2px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+/* 3-Pack Listings Container */
+.packList {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  box-shadow: 
-    inset 0 1px 0 #FFFFFF,
-    0 16px 36px -8px rgba(16, 185, 129, 0.18),
-    0 4px 12px rgba(0, 0, 0, 0.03);
+  gap: 12px;
+}
+
+/* #1 Winner Card */
+.packWinner {
+  background: linear-gradient(145deg, #F0FDF4 0%, #FFFFFF 100%);
+  border: 1.5px solid #10B981;
+  border-radius: 14px;
+  padding: 14px 16px;
+  box-shadow: 0 6px 18px rgba(16, 185, 129, 0.12);
   position: relative;
 }
 
-.badgeAfter {
-  display: inline-flex;
+.winnerTopRow {
+  display: flex;
   align-items: center;
-  gap: 6px;
-  background: #ECFDF5;
-  border: 1px solid rgba(16, 185, 129, 0.4);
-  color: #059669;
-  font-size: 10.5px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 3px 10px;
-  border-radius: 999px;
+  justify-content: space-between;
+  margin-bottom: 6px;
 }
 
-.badgeRankWon {
+.rank1Badge {
   background: #10B981;
   color: #FFFFFF;
-  font-size: 11px;
+  font-size: 10.5px;
   font-weight: 800;
-  padding: 2px 8px;
+  padding: 2px 9px;
   border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
   letter-spacing: 0.04em;
 }
 
-.listingBoxAfter {
-  background: #FFFFFF;
-  border: 1.5px solid rgba(16, 185, 129, 0.3);
-  border-radius: 12px;
-  padding: 14px;
-  margin-bottom: 16px;
-  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.06);
+.verifiedText {
+  font-size: 10.5px;
+  font-weight: 750;
+  color: #059669;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
 }
 
-.listingTitleAfter {
+.winnerTitle {
   font-family: var(--font-display);
   font-size: 16px;
   font-weight: 800;
@@ -339,23 +226,37 @@
   margin: 0 0 4px;
 }
 
-.starsAfter {
-  font-size: 12.5px;
-  color: #F59E0B;
-  margin-bottom: 6px;
+.winnerStars {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-weight: 700;
+  font-size: 12.5px;
+  margin-bottom: 6px;
 }
 
-.actionsAfter {
+.starGold {
+  color: #F59E0B;
+  font-weight: 800;
+}
+
+.reviewCount {
+  color: #64748B;
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
+.winnerCorridor {
+  font-size: 12px;
+  color: #475569;
+  margin-bottom: 12px;
+}
+
+.winnerActions {
   display: flex;
   gap: 8px;
-  margin-top: 10px;
 }
 
-.callPill {
+.callBtn {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -364,108 +265,170 @@
   font-size: 11.5px;
   font-weight: 750;
   padding: 6px 14px;
-  border-radius: 6px;
+  border-radius: 8px;
   text-decoration: none;
   box-shadow: 0 2px 6px rgba(11, 32, 147, 0.25);
 }
 
-.dirPill {
+.dirBtn {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   background: #FFFFFF;
   border: 1px solid #CBD5E1;
   color: #0F172A;
   font-size: 11.5px;
   font-weight: 700;
   padding: 6px 12px;
-  border-radius: 6px;
+  border-radius: 8px;
   text-decoration: none;
 }
 
-.winList {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-top: 10px;
-  padding-top: 10px;
-  border-top: 1px solid rgba(16, 185, 129, 0.2);
-}
-
-.winItem {
-  font-size: 11.5px;
-  color: #059669;
+/* Competitor Listings */
+.packCompetitor {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 10px 14px;
   display: flex;
   align-items: center;
-  gap: 6px;
-  font-weight: 650;
+  justify-content: space-between;
+  opacity: 0.85;
 }
 
-/* Metric Strip (After) */
-.metricStripAfter {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-  padding-top: 14px;
-  border-top: 1px solid rgba(16, 185, 129, 0.2);
+.compLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
-.metricCellAfter {
-  background: #FFFFFF;
-  border: 1px solid rgba(16, 185, 129, 0.3);
-  border-radius: 8px;
-  padding: 8px 10px;
-  text-align: center;
-  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.05);
-}
-
-.cellValAfter {
-  font-family: var(--font-display);
-  font-size: 16px;
-  font-weight: 800;
-  color: #059669;
+.compBadge {
+  background: #94A3B8;
+  color: #FFFFFF;
+  font-size: 9.5px;
+  font-weight: 750;
+  padding: 1px 6px;
+  border-radius: 999px;
+  align-self: flex-start;
   margin-bottom: 2px;
 }
 
-.cellLabelAfter {
-  font-size: 10px;
-  font-weight: 750;
-  color: #0B2093;
-  text-transform: uppercase;
+.compName {
+  font-size: 13px;
+  font-weight: 700;
+  color: #334155;
+  margin: 0;
 }
 
-/* Transformation Summary Banner */
-.transformSummaryBar {
-  margin-top: 20px;
+.compMeta {
+  font-size: 11px;
+  color: #64748B;
+}
+
+.compDistance {
+  font-size: 11px;
+  color: #94A3B8;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ══════════════════════════════════════════════════
+   RIGHT: 3 PILLARS OF 3-PACK DOMINANCE (CLEAN & SPACIOUS)
+ ══════════════════════════════════════════════════ */
+.pillarsCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.pillarCard {
+  background: #FFFFFF;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 16px;
+  padding: 18px 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+.pillarCard:hover {
+  border-color: #0B2093;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px -6px rgba(11, 32, 147, 0.1);
+}
+
+.pillarNumber {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: #EFF6FF;
+  border: 1px solid #BFDBFE;
+  color: #0B2093;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pillarContent {
+  flex: 1;
+}
+
+.pillarTitle {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0 0 4px;
+}
+
+.pillarDesc {
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: #475569;
+  margin: 0;
+}
+
+/* ══════════════════════════════════════════════════
+   BOTTOM STATS RIBBON
+ ══════════════════════════════════════════════════ */
+.statsRibbon {
+  margin-top: 28px;
   background: #FFFFFF;
   border: 1.5px solid #CBD5E1;
-  border-radius: 14px;
-  padding: 14px 20px;
+  border-radius: 16px;
+  padding: 16px 20px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  gap: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
 }
 
-.summaryCol {
+.statCell {
   text-align: center;
   border-right: 1px solid #E2E8F0;
 }
 
-.summaryCol:last-child {
+.statCell:last-child {
   border-right: none;
 }
 
-.summaryNum {
+.statNum {
   font-family: var(--font-display);
-  font-size: 20px;
+  font-size: clamp(20px, 2.2vw, 26px);
   font-weight: 800;
   color: #0B2093;
   line-height: 1.1;
   margin-bottom: 2px;
 }
 
-.summaryLabel {
+.statLabel {
   font-size: 11px;
   font-weight: 700;
   color: #64748B;
@@ -474,208 +437,10 @@
 }
 
 /* ══════════════════════════════════════════════════
-   VIEW 2: REAL GOOGLE MAPS 3-PACK SERP & ANATOMY
+   BOTTOM CTA
  ══════════════════════════════════════════════════ */
-.serpGrid {
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 24px;
-  align-items: stretch;
-}
-
-/* Left: Simulated Google Maps Search Interface */
-.serpBox {
-  background: #FFFFFF;
-  border: 1.5px solid #CBD5E1;
-  border-radius: 18px;
-  padding: 18px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
-}
-
-.googleSearchInput {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: #F8FAFC;
-  border: 1.5px solid #CBD5E1;
-  border-radius: 12px;
-  padding: 10px 14px;
-  margin-bottom: 14px;
-}
-
-.googleIconG {
-  font-size: 16px;
-  font-weight: 800;
-  color: #4285F4;
-}
-
-.googleQueryText {
-  flex: 1;
-  font-size: 12.5px;
-  font-weight: 650;
-  color: #0F172A;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.google3PackItems {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.serpItemRank1 {
-  background: linear-gradient(145deg, #F0FDF4 0%, #FFFFFF 100%);
-  border: 1.5px solid #10B981;
-  border-radius: 12px;
-  padding: 12px 14px;
-  position: relative;
-  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.1);
-}
-
-.rank1Badge {
-  background: #10B981;
-  color: #FFFFFF;
-  font-size: 10px;
-  font-weight: 800;
-  padding: 2px 8px;
-  border-radius: 999px;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  margin-bottom: 6px;
-}
-
-.serpItemCompetitor {
-  background: #F8FAFC;
-  border: 1px solid #E2E8F0;
-  border-radius: 10px;
-  padding: 10px 12px;
-  opacity: 0.85;
-}
-
-.competitorBadge {
-  background: #94A3B8;
-  color: #FFFFFF;
-  font-size: 9.5px;
-  font-weight: 750;
-  padding: 1px 6px;
-  border-radius: 999px;
-  display: inline-block;
-  margin-bottom: 4px;
-}
-
-/* Right: The 4 Dominance Levers */
-.leversBox {
-  background: #FFFFFF;
-  border: 1.5px solid #CBD5E1;
-  border-radius: 18px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.leversTitle {
-  font-family: var(--font-display);
-  font-size: 16px;
-  font-weight: 800;
-  color: #0F172A;
-  margin: 0 0 4px;
-}
-
-.leversSub {
-  font-size: 12.5px;
-  color: #64748B;
-  margin-bottom: 14px;
-}
-
-.leverList {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.leverCard {
-  background: #F8FAFC;
-  border: 1px solid #E2E8F0;
-  border-radius: 10px;
-  padding: 11px 14px;
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  transition: all 0.2s ease;
-}
-
-.leverCard:hover {
-  background: #FFFFFF;
-  border-color: #0B2093;
-  box-shadow: 0 4px 12px rgba(11, 32, 147, 0.08);
-}
-
-.leverIconBox {
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  background: #EFF6FF;
-  color: #0B2093;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 15px;
-  flex-shrink: 0;
-  border: 1px solid #BFDBFE;
-}
-
-.leverName {
-  font-family: var(--font-display);
-  font-size: 13.5px;
-  font-weight: 750;
-  color: #0F172A;
-  margin: 0 0 2px;
-}
-
-.leverDesc {
-  font-size: 12px;
-  color: #475569;
-  line-height: 1.45;
-  margin: 0;
-}
-
-/* Metro Regional Footprint Bar */
-.metroBar {
-  margin-top: 20px;
-  padding: 12px 16px;
-  background: #F8FAFC;
-  border: 1px solid #E2E8F0;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 10px;
-  font-size: 12px;
-  font-weight: 650;
-  color: #334155;
-}
-
-.metroTag {
-  background: #FFFFFF;
-  border: 1px solid #CBD5E1;
-  padding: 3px 10px;
-  border-radius: 999px;
-  font-size: 11px;
-  font-weight: 750;
-  color: #0B2093;
-}
-
-/* Bottom CTA Area */
-.engineBottomCta {
-  margin-top: 24px;
+.ctaRow {
+  margin-top: 26px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -683,49 +448,55 @@
   flex-wrap: wrap;
 }
 
-.bottomNote {
-  font-size: 13.5px;
+.ctaText {
+  font-size: 14px;
   font-weight: 650;
   color: #334155;
 }
 
-/* Responsive adjustments */
+/* ══════════════════════════════════════════════════
+   RESPONSIVE DESIGN
+ ══════════════════════════════════════════════════ */
 @media (max-width: 900px) {
-  .transformGrid,
-  .serpGrid {
+  .mainGrid {
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: 22px;
   }
-  .transformSummaryBar {
+  .statsRibbon {
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    gap: 14px;
   }
-  .summaryCol:nth-child(2) {
+  .statCell:nth-child(2) {
     border-right: none;
   }
-  .navRow {
-    flex-direction: column;
-    align-items: flex-start;
+  .statCell:nth-child(1),
+  .statCell:nth-child(2) {
+    border-bottom: 1px solid #E2E8F0;
+    padding-bottom: 10px;
   }
 }
 
-@media (max-width: 480px) {
-  .metricStripBefore,
-  .metricStripAfter {
+@media (max-width: 540px) {
+  .statsRibbon {
     grid-template-columns: 1fr;
   }
-  .transformSummaryBar {
-    grid-template-columns: 1fr;
-  }
-  .summaryCol {
+  .statCell {
     border-right: none;
     border-bottom: 1px solid #E2E8F0;
     padding-bottom: 10px;
   }
-  .summaryCol:last-child {
+  .statCell:last-child {
     border-bottom: none;
+    padding-bottom: 0;
   }
-  .actionsAfter {
-    flex-direction: column;
+  .winnerActions {
+    flex-wrap: wrap;
+  }
+  .citySelectorBar {
+    gap: 6px;
+  }
+  .cityBtn {
+    font-size: 11.5px;
+    padding: 6px 12px;
   }
 }
