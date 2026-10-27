@@ -586,8 +586,8 @@ const aboutFaqs = [
 const heroSlides = [
   {
     id: 'slide-1',
-    src: '/images/About us page.png',
-    alt: 'Marketing Copilot digital marketing company strategy and campaigns across India',
+    src: '/images/Modern Marketing Copilot Office Reception.webp',
+    alt: 'Marketing Copilot digital marketing company office reception and headquarters in Bhubaneswar',
     caption: 'Strategic Growth & Execution',
   },
   {
