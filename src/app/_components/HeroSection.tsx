@@ -8,14 +8,14 @@ import styles from './HeroSection.module.css';
 const heroSlides = [
   {
     id: 'slide-1',
-    src: '/images/hero_slide_1.webp',
-    alt: 'Marketing Copilot digital marketing company strategy and campaigns in India',
+    src: '/images/Marketing Copilot_ Connected Workspace.webp',
+    alt: 'Marketing Copilot connected marketing workspace with Google Ads, Meta Ads, and SEO solutions',
     caption: 'Strategic Growth & Execution',
   },
   {
     id: 'slide-2',
-    src: '/images/Marketing Copilot_ Connected Workspace.webp',
-    alt: 'Marketing Copilot connected marketing workspace with Google Ads, Meta Ads, and SEO solutions',
+    src: '/images/image bbsr.png',
+    alt: 'Marketing Copilot digital marketing growth and high-performance campaigns in Bhubaneswar',
     caption: 'Performance & 10x ROI',
   },
   {
