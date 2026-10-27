@@ -568,16 +568,14 @@ export default function LinkedInMarketingPage() {
 
           <div className={styles.salesNavGrid}>
             {salesNavigatorServices.map((svc, idx) => (
-              <ScrollReveal key={svc.title} delay={idx * 0.07}>
+              <ScrollReveal key={svc.title} delay={idx * 0.07} className={styles.salesNavColReveal}>
                 <div className={styles.salesNavCard}>
-                  <div>
-                    <div className={styles.salesNavCardHeader}>
-                      <div className={styles.salesNavIconBowl}>{svc.icon}</div>
-                      <span className={styles.salesNavNumBadge}>{svc.num}</span>
-                    </div>
-                    <h4 className={styles.salesNavTitle}>{svc.title}</h4>
-                    <p className={styles.salesNavDesc}>{svc.desc}</p>
+                  <div className={styles.salesNavCardHeader}>
+                    <div className={styles.salesNavIconBowl}>{svc.icon}</div>
+                    <span className={styles.salesNavNumBadge}>{svc.num}</span>
                   </div>
+                  <h4 className={styles.salesNavTitle}>{svc.title}</h4>
+                  <p className={styles.salesNavDesc}>{svc.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -1076,7 +1074,7 @@ export default function LinkedInMarketingPage() {
 
           <div className={styles.enquiryGrid}>
             {/* Left Column: Verified Business Contact Details */}
-            <ScrollReveal delay={0.05}>
+            <ScrollReveal delay={0.05} className={styles.enquiryColReveal}>
               <div className={styles.contactInfoCard}>
                 <div>
                   <div className={styles.contactCardTop}>
@@ -1152,7 +1150,7 @@ export default function LinkedInMarketingPage() {
             </ScrollReveal>
 
             {/* Right Column: Simple Enquiry Form */}
-            <ScrollReveal delay={0.1}>
+            <ScrollReveal delay={0.1} className={styles.enquiryColReveal}>
               <div className={styles.enquiryFormCard}>
                 <div className={styles.formHeader}>
                   <h3 className={styles.formHeaderTitle}>
