@@ -14,8 +14,8 @@ const heroSlides = [
   },
   {
     id: 'slide-2',
-    src: '/images/hero_slide_2.webp',
-    alt: 'Marketing Copilot marketing performance data and digital solutions',
+    src: '/images/Marketing Copilot_ Connected Workspace.webp',
+    alt: 'Marketing Copilot connected marketing workspace with Google Ads, Meta Ads, and SEO solutions',
     caption: 'Performance & 10x ROI',
   },
   {
