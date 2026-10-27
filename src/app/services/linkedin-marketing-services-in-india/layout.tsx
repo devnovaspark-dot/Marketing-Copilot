@@ -69,7 +69,7 @@ const serviceSchema = {
   },
   url: 'https://marketingcopilot.in/services/linkedin-marketing-services-in-india',
   description:
-    'Strategic LinkedIn marketing services in India including LinkedIn Ads management, B2B lead generation, company page management, content marketing, and campaign analytics.',
+    'Strategic LinkedIn marketing services in India including LinkedIn Ads management, LinkedIn Sales Navigator prospect research, B2B lead generation, company page management, content marketing, and campaign analytics.',
   offers: {
     '@type': 'Offer',
     priceCurrency: 'INR',
@@ -84,58 +84,58 @@ const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'What do LinkedIn marketing services include?',
+      name: 'How can LinkedIn marketing help my business grow?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'LinkedIn marketing services may include company page management, content creation, LinkedIn Ads management, audience targeting, B2B lead generation, campaign optimisation, and performance reporting. The exact scope depends on your business requirements and selected service package.',
+        text: 'LinkedIn marketing helps businesses build professional credibility, reach decision-makers, generate B2B leads, and connect with potential clients through targeted campaigns and relevant content.',
       },
     },
     {
       '@type': 'Question',
-      name: 'How can LinkedIn marketing generate B2B leads?',
+      name: 'Which LinkedIn marketing services does Marketing Copilot offer?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'LinkedIn marketing can help businesses reach relevant professionals based on factors such as job role, industry, company, and seniority. Through useful content, targeted advertising, relevant offers, and clear conversion paths, businesses can attract potential customers and encourage enquiries.',
+        text: 'Marketing Copilot provides LinkedIn Ads management, company page management, content marketing, B2B lead generation, Sales Navigator prospect research, campaign optimization, and performance reports.',
       },
     },
     {
       '@type': 'Question',
-      name: 'How much do LinkedIn marketing services cost in India?',
+      name: 'Is LinkedIn marketing suitable for small businesses?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The cost depends on the scope of work, campaign complexity, content requirements, advertising budget, and reporting needs. Agency fees and advertising spend may be charged separately. Contact Marketing Copilot to discuss a plan suited to your objectives and budget.',
+        text: 'Yes, small businesses can use LinkedIn marketing to reach niche audiences, showcase their expertise, build industry connections, and attract potential customers within their budget.',
       },
     },
     {
       '@type': 'Question',
-      name: 'What is the difference between LinkedIn organic marketing and LinkedIn Ads?',
+      name: 'How do LinkedIn Ads help generate qualified leads?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Organic marketing focuses on company page content, professional engagement, and brand credibility without paying for each advertisement placement. LinkedIn Ads use paid campaigns to reach selected audiences and support objectives such as website visits, lead generation, and brand awareness. Both approaches can complement each other.',
+        text: 'Businesses can create LinkedIn ads targeted to specific industries, job types, company sizes, and seniority levels, and share offers that match their ideal customer profile.',
       },
     },
     {
       '@type': 'Question',
-      name: 'How long does it take to see results from LinkedIn marketing?',
+      name: 'How much should a business invest in LinkedIn marketing?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The timeline varies by objective, audience, budget, offer, and execution. Paid campaigns can generate early engagement or enquiries after launch, while building brand authority and a consistent organic presence generally requires sustained effort. Performance should be evaluated against agreed objectives over time.',
+        text: 'Investment is based on campaign goals, target market, content needs, and campaign spending. With a customized strategy, you can ensure that your marketing efforts are aligned with your budget and growth objectives.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Can small businesses and startups benefit from LinkedIn marketing?',
+      name: 'How long does it take for LinkedIn marketing to produce success?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. Small businesses and startups can use LinkedIn to reach professional audiences, demonstrate expertise, build relevant connections, and test demand for their services. The strategy should match the company\'s target market, budget, and available resources.',
+        text: 'Paid can create leads quickly after launch, but organic campaigns take time for both engagement and content. Outcomes depend on your audience, budget, and strategy.',
       },
     },
     {
       '@type': 'Question',
-      name: 'How do you measure LinkedIn marketing performance?',
+      name: 'How can I measure the ROI of LinkedIn marketing?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Performance can be measured using relevant metrics such as reach, engagement, clicks, leads, conversion rate, and cost per lead. When CRM and sales data are available, lead quality and pipeline contribution can also be assessed.',
+        text: 'Know the value of a lead, conversion rates, cost per lead, customer acquisition costs, and the revenue generated from LinkedIn to determine ROI.',
       },
     },
   ],
