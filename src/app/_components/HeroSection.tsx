@@ -14,8 +14,8 @@ const heroSlides = [
   },
   {
     id: 'slide-2',
-    src: '/images/image bbsr.png',
-    alt: 'Marketing Copilot digital marketing growth and high-performance campaigns in Bhubaneswar',
+    src: '/images/industries image 1st slide.png',
+    alt: 'Bhubaneswar city high-rise growth and real estate infrastructure marketing with growing arrow',
     caption: 'Performance & 10x ROI',
   },
   {
