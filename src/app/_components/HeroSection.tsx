@@ -14,8 +14,8 @@ const heroSlides = [
   },
   {
     id: 'slide-2',
-    src: '/images/industries image 1st slide.png',
-    alt: 'Bhubaneswar city high-rise growth and real estate infrastructure marketing with growing arrow',
+    src: '/images/slide 3.webp',
+    alt: 'Bhubaneswar city performance marketing data, targeting icons, and digital solutions',
     caption: 'Performance & 10x ROI',
   },
   {
