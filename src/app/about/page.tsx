@@ -589,12 +589,14 @@ const heroSlides = [
     src: '/images/Modern Marketing Copilot Office Reception.webp',
     alt: 'Marketing Copilot digital marketing company office reception and headquarters in Bhubaneswar',
     caption: 'Strategic Growth & Execution',
+    objectPosition: 'right center',
   },
   {
     id: 'slide-2',
     src: '/images/Agency Feature_.jpg',
     alt: 'Marketing Copilot digital marketing agency operations and executive growth war-room',
     caption: 'Executive Growth War-Room',
+    objectPosition: 'center center',
   },
 ];
 
@@ -791,6 +793,7 @@ export default function AboutPage() {
                         sizes="(max-width: 900px) 100vw, 680px"
                         quality={95}
                         className={styles.slideImage}
+                        style={{ objectPosition: slide.objectPosition || 'center center' }}
                       />
                       <div className={styles.slideOverlay} />
                     </div>

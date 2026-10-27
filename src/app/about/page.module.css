@@ -221,7 +221,9 @@
 
 .imageViewport {
   width: 100%;
-  height: clamp(480px, 64vh, 610px);
+  aspect-ratio: 1.22 / 1;
+  min-height: 380px;
+  max-height: clamp(440px, 60vh, 560px);
   background: #0B132B;
   border-radius: 26px;
   overflow: hidden;
@@ -247,7 +249,7 @@
 
 .slideImage {
   object-fit: cover !important;
-  object-position: center center !important;
+  object-position: right center;
   transition: transform 7s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
@@ -3235,7 +3237,10 @@
     flex-direction: column;
   }
   .imageViewport {
-    height: clamp(380px, 45vh, 480px) !important;
+    aspect-ratio: 1.22 / 1;
+    height: auto !important;
+    max-height: 480px !important;
+    min-height: 320px !important;
     margin: 0 auto;
     width: 100%;
   }
@@ -3281,7 +3286,10 @@
     padding: 36px 0 32px;
   }
   .imageViewport {
-    height: clamp(300px, 45vh, 380px) !important;
+    aspect-ratio: 1.22 / 1;
+    height: auto !important;
+    max-height: 380px !important;
+    min-height: 260px !important;
   }
   .heroMainTitle {
     font-size: 28px !important;
@@ -4104,7 +4112,9 @@
 
 @media (max-width: 480px) {
   .imageViewport {
-    height: 240px !important;
+    aspect-ratio: 1.2 / 1;
+    height: auto !important;
+    min-height: 240px !important;
   }
   .fourAdvantagesGrid {
     gap: 8px !important;
