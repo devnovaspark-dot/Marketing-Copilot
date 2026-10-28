@@ -74,5 +74,9 @@ export const blockContent = defineType({
       type: 'tableBlock',
       title: 'Table with Header & Caption',
     }),
+    defineArrayMember({
+      type: 'carousel',
+      title: 'Image Carousel / Slider',
+    }),
   ],
 });

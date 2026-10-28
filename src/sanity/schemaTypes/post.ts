@@ -99,6 +99,12 @@ export const post = defineType({
       type: 'blockContent',
     }),
     defineField({
+      name: 'carousel',
+      title: 'Featured Carousel / Gallery (Optional)',
+      type: 'carousel',
+      description: 'Optional standalone image carousel displayed on the post (you can also insert carousels anywhere directly inside the Body above).',
+    }),
+    defineField({
       name: 'faqItems',
       title: 'FAQ Items',
       type: 'array',

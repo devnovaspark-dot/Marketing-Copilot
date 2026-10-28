@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { urlForImage } from '@/sanity/image';
 import BlogTable from '@/components/BlogTable';
+import BlogCarousel from '@/components/BlogCarousel';
 import styles from './PortableTextRenderer.module.css';
 
 export function slugifyHeading(text: string): string {
@@ -89,6 +90,8 @@ const components: PortableTextComponents = {
     },
     table: ({ value }: { value: any }) => <BlogTable value={value} />,
     tableBlock: ({ value }: { value: any }) => <BlogTable value={value} />,
+    carousel: ({ value }: { value: any }) => <BlogCarousel value={value} />,
+    carouselBlock: ({ value }: { value: any }) => <BlogCarousel value={value} />,
   },
   marks: {
     link: ({ children, value }) => {

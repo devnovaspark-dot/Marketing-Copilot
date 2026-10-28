@@ -4,6 +4,7 @@ import { faqItem } from './faqItem';
 import { blockContent } from './blockContent';
 import { post } from './post';
 import { tableBlock } from './tableBlock';
+import { carousel } from './carousel';
 
-export const schemaTypes = [faqItem, blockContent, author, category, post, tableBlock];
+export const schemaTypes = [faqItem, blockContent, author, category, post, tableBlock, carousel];
 
