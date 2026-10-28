@@ -36,7 +36,6 @@ export const postBySlugQuery = groq`
     bannerImage,
     keyTakeaways,
     body,
-    carousel,
     faqItems[] {
       question,
       answer

@@ -9,7 +9,8 @@ export const carousel = defineType({
       name: 'title',
       title: 'Carousel Title / Headline (Optional)',
       type: 'string',
-      description: 'Optional headline displayed above the carousel (e.g., "Creative Campaign Variations", "Brand Architecture Showcase").',
+      description:
+        'Optional headline displayed above the carousel (e.g., "Creative Campaign Variations", "Brand Architecture Showcase").',
     }),
     defineField({
       name: 'subtitle',
@@ -19,22 +20,21 @@ export const carousel = defineType({
     }),
     defineField({
       name: 'slides',
-      title: 'Slides / Images',
+      title: 'Carousel Slides / Images',
       type: 'array',
-      description: 'Add images to this carousel. You can reorder slides by dragging them.',
+      description:
+        'Upload or select images for this carousel. You can drag and drop multiple images at once. Click an image to add an optional title, caption, or link.',
+      options: {
+        layout: 'grid',
+      },
       of: [
         defineArrayMember({
-          name: 'slide',
-          title: 'Slide (with Caption & Link)',
-          type: 'object',
+          type: 'image',
+          title: 'Image Slide',
+          options: {
+            hotspot: true,
+          },
           fields: [
-            defineField({
-              name: 'image',
-              title: 'Image',
-              type: 'image',
-              options: { hotspot: true },
-              validation: (Rule) => Rule.required().error('Image is required for this slide.'),
-            }),
             defineField({
               name: 'title',
               title: 'Slide Title / Heading (Optional)',
@@ -61,43 +61,15 @@ export const carousel = defineType({
               description: 'Optional external or internal link when a user clicks this slide.',
             }),
           ],
-          preview: {
-            select: {
-              title: 'title',
-              caption: 'caption',
-              alt: 'alt',
-              media: 'image',
-            },
-            prepare({ title, caption, alt, media }) {
-              return {
-                title: title || caption || alt || 'Slide Image',
-                subtitle: caption || alt || 'Image slide',
-                media,
-              };
-            },
-          },
-        }),
-        defineArrayMember({
-          name: 'imageSlide',
-          title: 'Quick Image (Direct)',
-          type: 'image',
-          options: { hotspot: true },
-          fields: [
-            {
-              name: 'alt',
-              type: 'string',
-              title: 'Alternative Text',
-              description: 'Important for SEO and accessibility.',
-            },
-            {
-              name: 'caption',
-              type: 'string',
-              title: 'Caption',
-            },
-          ],
         }),
       ],
-      validation: (Rule) => Rule.required().min(1).error('At least one slide image is required.'),
+      validation: (Rule) =>
+        Rule.custom((slides) => {
+          if (!slides || !Array.isArray(slides) || slides.length === 0) {
+            return 'Please add at least one image to this carousel.';
+          }
+          return true;
+        }),
     }),
     defineField({
       name: 'aspectRatio',
@@ -120,7 +92,8 @@ export const carousel = defineType({
       name: 'autoplay',
       title: 'Autoplay Slides',
       type: 'boolean',
-      description: 'Automatically advance to the next slide every few seconds (pauses when reader hovers or touches).',
+      description:
+        'Automatically advance to the next slide every few seconds (pauses when reader hovers or touches).',
       initialValue: true,
     }),
     defineField({
@@ -150,24 +123,23 @@ export const carousel = defineType({
       name: 'caption',
       title: 'Overall Carousel Caption / Footnote (Optional)',
       type: 'string',
-      description: 'Optional summary caption, data source, or key takeaway note displayed below the entire carousel.',
+      description:
+        'Optional summary caption, data source, or key takeaway note displayed below the entire carousel.',
     }),
   ],
   preview: {
     select: {
       title: 'title',
       slides: 'slides',
-      firstSlideImg: 'slides.0.image',
-      firstDirectImg: 'slides.0.asset',
+      media: 'slides.0',
     },
-    prepare({ title, slides, firstSlideImg, firstDirectImg }) {
+    prepare({ title, slides, media }) {
       const count = Array.isArray(slides) ? slides.length : 0;
       return {
         title: title || 'Image Carousel / Slider',
         subtitle: `${count} slide${count === 1 ? '' : 's'}`,
-        media: firstSlideImg || firstDirectImg || undefined,
+        media,
       };
     },
   },
 });
-

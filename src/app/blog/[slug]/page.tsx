@@ -11,7 +11,6 @@ import RelatedStoriesSidebar, { RelatedStoryItem } from '@/components/RelatedSto
 import AuthorBioBox from '@/components/AuthorBioBox';
 import BlogSidebarCta from '@/components/BlogSidebarCta';
 import ReadingProgressBar from '@/components/ReadingProgressBar';
-import BlogCarousel from '@/components/BlogCarousel';
 import { sanityFetch } from '@/sanity/client';
 import { postBySlugQuery, postPathsQuery, relatedPostsQuery } from '@/sanity/queries';
 import { urlForImage } from '@/sanity/image';
@@ -55,7 +54,6 @@ interface SanityPostDetail {
   excerpt?: string;
   keyTakeaways?: string[];
   body?: PortableTextBlockItem[];
-  carousel?: any;
   faqItems?: { question: string; answer: string }[];
   pillarPost?: {
     title: string;
@@ -203,7 +201,6 @@ async function getArticle(slug: string) {
         summary: description,
         takeaways,
         body: sanityPost.body,
-        carousel: sanityPost.carousel,
         faqItems: faqs,
         pillarPost: sanityPost.pillarPost,
         headings: extractedHeadings,
@@ -413,11 +410,6 @@ export default async function ArticlePage({
                 <div className={styles.articleBody}>
                   <PortableTextRenderer value={article.body} />
                 </div>
-              )}
-
-              {/* Standalone / Featured Post Carousel (if populated at document level) */}
-              {article.carousel && (
-                <BlogCarousel value={article.carousel} />
               )}
 
               {/* Topic Cluster Pillar Post Card (if present) */}
