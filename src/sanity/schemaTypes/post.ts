@@ -98,6 +98,25 @@ export const post = defineType({
       title: 'Body',
       type: 'blockContent',
     }),
+    // Backward-compatibility: prevents "Unknown field found" on drafts opened during earlier carousel experiments
+    defineField({
+      name: 'carousel',
+      title: 'Legacy Carousel Data',
+      type: 'object',
+      hidden: true,
+      fields: [
+        defineField({ name: 'aspectRatio', type: 'string' }),
+        defineField({ name: 'autoplay', type: 'boolean' }),
+        defineField({ name: 'interval', type: 'number' }),
+        defineField({ name: 'showArrows', type: 'boolean' }),
+        defineField({ name: 'showIndicators', type: 'boolean' }),
+        defineField({
+          name: 'slides',
+          type: 'array',
+          of: [defineArrayMember({ type: 'image' })],
+        }),
+      ],
+    }),
     defineField({
       name: 'faqItems',
       title: 'FAQ Items',
