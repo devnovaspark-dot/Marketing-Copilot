@@ -9,14 +9,12 @@ export const faqItem = defineType({
       name: 'question',
       title: 'Question',
       type: 'string',
-      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'answer',
       title: 'Answer',
       type: 'text',
       rows: 4,
-      validation: (Rule) => Rule.required(),
     }),
   ],
   preview: {

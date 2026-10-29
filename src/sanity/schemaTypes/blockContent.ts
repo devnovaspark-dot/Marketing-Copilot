@@ -36,12 +36,8 @@ export const blockContent = defineType({
               {
                 title: 'URL',
                 name: 'href',
-                type: 'url',
-                validation: (Rule) =>
-                  Rule.uri({
-                    scheme: ['http', 'https', 'mailto', 'tel'],
-                    allowRelative: true,
-                  }),
+                type: 'string',
+                description: 'Enter any link (https://, /relative-path, about:blank, etc.)',
               },
               {
                 title: 'Open in new tab',

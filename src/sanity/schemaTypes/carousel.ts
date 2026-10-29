@@ -57,21 +57,12 @@ export const carousel = defineType({
             defineField({
               name: 'link',
               title: 'Click-Through Link URL (Optional)',
-              type: 'url',
+              type: 'string',
               description: 'Optional external or internal link when a user clicks this slide.',
             }),
           ],
         }),
       ],
-      validation: (Rule) =>
-        Rule.custom((slides, context) => {
-          // If on root post document (legacy field), ignore completely
-          if (context.path && context.path[0] === 'carousel') {
-            return true;
-          }
-          // Never return a blocking error that disables the Publish button
-          return true;
-        }),
     }),
     defineField({
       name: 'aspectRatio',
@@ -104,7 +95,6 @@ export const carousel = defineType({
       type: 'number',
       description: 'How many seconds to display each slide before advancing (default: 5).',
       initialValue: 5,
-      validation: (Rule) => Rule.min(2).max(20),
       hidden: ({ parent }) => !parent?.autoplay,
     }),
     defineField({

@@ -18,7 +18,7 @@ export const gif = defineType({
     defineField({
       name: 'externalUrl',
       title: 'OR External GIF URL (Giphy, Tenor, etc.)',
-      type: 'url',
+      type: 'string',
       description:
         'Optional: Paste a direct URL to an animated GIF (e.g. from Giphy, Tenor, Imgur, or any CDN). Used if no file is uploaded above.',
     }),
@@ -27,8 +27,6 @@ export const gif = defineType({
       title: 'Alternative Text (SEO & Accessibility)',
       type: 'string',
       description: 'Describe the animation for search engines and accessibility.',
-      validation: (Rule) =>
-        Rule.required().error('Alt text is required for accessibility and SEO.'),
     }),
     defineField({
       name: 'caption',

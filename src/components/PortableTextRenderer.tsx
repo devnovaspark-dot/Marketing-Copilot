@@ -146,10 +146,16 @@ const components: PortableTextComponents = {
   },
   marks: {
     link: ({ children, value }) => {
-      const rel = !value.href.startsWith('/') ? 'noreferrer noopener' : undefined;
-      const target = value.blank || !value.href.startsWith('/') ? '_blank' : undefined;
+      const rawHref = (value?.href || '').trim();
+      // If href is empty, '#', or 'about:blank', render text normally without a broken link
+      if (!rawHref || rawHref === 'about:blank' || rawHref === '#') {
+        return <span>{children}</span>;
+      }
+      const href = rawHref.startsWith('www.') ? `https://${rawHref}` : rawHref;
+      const rel = !href.startsWith('/') ? 'noreferrer noopener' : undefined;
+      const target = value?.blank || !href.startsWith('/') ? '_blank' : undefined;
       return (
-        <Link href={value.href} target={target} rel={rel}>
+        <Link href={href} target={target} rel={rel}>
           {children}
         </Link>
       );
