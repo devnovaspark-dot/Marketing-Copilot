@@ -1,9 +1,20 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'LinkedIn Marketing Services in India | B2B Lead Gen & Ads | Marketing Copilot',
+  title: 'Linkedin marketing services in India | Marketing Copilot',
   description:
-    'Reach decision-makers and generate quality B2B leads with strategic LinkedIn marketing services in India. Page management, targeted ads, content & reporting.',
+    'Discover expert LinkedIn marketing services in India with Marketing Copilot. Enhance your visibility and drive engagement to achieve your business goals.',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   keywords: [
     'LinkedIn Marketing Services in India',
     'LinkedIn Marketing Agency India',
@@ -18,9 +29,9 @@ export const metadata: Metadata = {
     canonical: 'https://marketingcopilot.in/services/linkedin-marketing-services-in-india',
   },
   openGraph: {
-    title: 'LinkedIn Marketing Services in India | B2B Lead Gen & Ads | Marketing Copilot',
+    title: 'Linkedin marketing services in India | Marketing Copilot',
     description:
-      'Reach the right professionals, build meaningful business connections, and generate quality leads with strategic LinkedIn marketing in India.',
+      'Discover expert LinkedIn marketing services in India with Marketing Copilot. Enhance your visibility and drive engagement to achieve your business goals.',
     url: 'https://marketingcopilot.in/services/linkedin-marketing-services-in-india',
     siteName: 'Marketing Copilot',
     locale: 'en_IN',
@@ -36,9 +47,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'LinkedIn Marketing Services in India | Marketing Copilot',
+    title: 'Linkedin marketing services in India | Marketing Copilot',
     description:
-      'Reach decision-makers and generate quality B2B leads with strategic LinkedIn marketing services in India.',
+      'Discover expert LinkedIn marketing services in India with Marketing Copilot. Enhance your visibility and drive engagement to achieve your business goals.',
     images: ['https://marketingcopilot.in/images/linkedin_b2b_dashboard.jpg'],
   },
 };
