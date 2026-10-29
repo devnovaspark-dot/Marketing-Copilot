@@ -5,6 +5,7 @@ import { blockContent } from './blockContent';
 import { post } from './post';
 import { tableBlock } from './tableBlock';
 import { carousel } from './carousel';
+import { gif } from './gif';
 
-export const schemaTypes = [faqItem, blockContent, author, category, post, tableBlock, carousel];
+export const schemaTypes = [faqItem, blockContent, author, category, post, tableBlock, carousel, gif];
 

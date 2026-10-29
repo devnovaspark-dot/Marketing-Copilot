@@ -78,5 +78,9 @@ export const blockContent = defineType({
       type: 'carousel',
       title: 'Image Carousel / Slider',
     }),
+    defineArrayMember({
+      type: 'gif',
+      title: 'GIF / Animated GIF',
+    }),
   ],
 });

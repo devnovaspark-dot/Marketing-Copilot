@@ -64,7 +64,11 @@ const components: PortableTextComponents = {
       if (!value?.asset?._ref) {
         return null;
       }
-      const imageUrl = urlForImage(value)?.width(1200).auto('format').fit('max').url();
+      const isGif = value.asset._ref.endsWith('-gif') || value.asset._ref.includes('-gif');
+      // For animated GIFs, do not apply auto('format') or resizing which freezes frames
+      const imageUrl = isGif
+        ? urlForImage(value)?.url()
+        : urlForImage(value)?.width(1200).auto('format').fit('max').url();
       if (!imageUrl) return null;
 
       return (
@@ -75,9 +79,56 @@ const components: PortableTextComponents = {
               alt={value.alt || 'Marketing Copilot strategic illustration'}
               width={1200}
               height={675}
+              unoptimized={isGif}
               sizes="(max-width: 768px) 100vw, 840px"
               className={styles.embeddedImage}
             />
+          </div>
+          {value.caption && (
+            <figcaption className={styles.imageCaption}>
+              <span className={styles.captionDot} />
+              <span>{value.caption}</span>
+            </figcaption>
+          )}
+        </figure>
+      );
+    },
+    gif: ({ value }: { value: any }) => {
+      let src = '';
+      if (value?.gifFile?.asset?._ref) {
+        src = urlForImage(value.gifFile)?.url() || '';
+      } else if (value?.externalUrl) {
+        src = value.externalUrl;
+      } else if (value?.asset?._ref) {
+        src = urlForImage(value)?.url() || '';
+      }
+
+      if (!src) return null;
+
+      const alt = value.alt || value.caption || 'Marketing Copilot Animated GIF';
+
+      return (
+        <figure className={styles.imageWrapper}>
+          <div className={styles.imageContainer}>
+            {/* If external URL, render native img to support any CDN without domain restrictions */}
+            {src.startsWith('http') && !src.includes('cdn.sanity.io') ? (
+              <img
+                src={src}
+                alt={alt}
+                loading="lazy"
+                className={styles.embeddedImage}
+                style={{ width: '100%', height: 'auto', display: 'block' }}
+              />
+            ) : (
+              <Image
+                src={src}
+                alt={alt}
+                width={1200}
+                height={675}
+                unoptimized
+                className={styles.embeddedImage}
+              />
+            )}
           </div>
           {value.caption && (
             <figcaption className={styles.imageCaption}>
