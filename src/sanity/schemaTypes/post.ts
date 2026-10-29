@@ -104,6 +104,7 @@ export const post = defineType({
       title: 'Legacy Carousel Data',
       type: 'object',
       hidden: true,
+      validation: (Rule) => Rule.custom(() => true),
       fields: [
         defineField({ name: 'aspectRatio', type: 'string' }),
         defineField({ name: 'autoplay', type: 'boolean' }),

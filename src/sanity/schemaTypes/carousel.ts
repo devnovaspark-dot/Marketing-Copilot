@@ -64,10 +64,12 @@ export const carousel = defineType({
         }),
       ],
       validation: (Rule) =>
-        Rule.custom((slides) => {
-          if (!slides || !Array.isArray(slides) || slides.length === 0) {
-            return 'Please add at least one image to this carousel.';
+        Rule.custom((slides, context) => {
+          // If on root post document (legacy field), ignore completely
+          if (context.path && context.path[0] === 'carousel') {
+            return true;
           }
+          // Never return a blocking error that disables the Publish button
           return true;
         }),
     }),
