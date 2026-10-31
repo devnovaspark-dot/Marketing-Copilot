@@ -83,5 +83,9 @@ export const blockContent = defineType({
       type: 'gif',
       title: 'GIF / Animated GIF',
     }),
+    defineArrayMember({
+      type: 'youtube',
+      title: 'YouTube Video',
+    }),
   ],
 });

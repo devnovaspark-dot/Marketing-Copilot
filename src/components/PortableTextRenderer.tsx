@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { urlForImage } from '@/sanity/image';
 import BlogTable from '@/components/BlogTable';
 import BlogCarousel from '@/components/BlogCarousel';
+import BlogYouTubeVideo, { extractYouTubeId } from '@/components/BlogYouTubeVideo';
 import styles from './PortableTextRenderer.module.css';
 
 export function slugifyHeading(text: string): string {
@@ -42,6 +43,38 @@ export function extractTextFromBlock(value: any, children: any): string {
 
 const components: PortableTextComponents = {
   block: {
+    normal: ({ children, value }) => {
+      const text = extractTextFromBlock(value, children);
+      const trimmed = (text || '').trim();
+      const isSoloUrl =
+        (trimmed.startsWith('https://') ||
+          trimmed.startsWith('http://') ||
+          trimmed.startsWith('www.') ||
+          trimmed.startsWith('youtu.be/')) &&
+        !trimmed.includes(' ') &&
+        Boolean(extractYouTubeId(trimmed));
+
+      if (isSoloUrl) {
+        return <BlogYouTubeVideo url={trimmed} />;
+      }
+
+      // If the paragraph contains only a standalone YouTube link annotation
+      if (
+        value?.markDefs &&
+        Array.isArray(value.markDefs) &&
+        value.markDefs.length === 1 &&
+        value?.children?.length === 1
+      ) {
+        const mark = value.markDefs[0] as any;
+        if (mark?._type === 'link' && typeof mark?.href === 'string' && extractYouTubeId(mark.href)) {
+          if (trimmed.length < 150) {
+            return <BlogYouTubeVideo url={mark.href} />;
+          }
+        }
+      }
+
+      return <p>{children}</p>;
+    },
     h2: ({ children, value }) => {
       const text = extractTextFromBlock(value, children);
       const id = slugifyHeading(text);
@@ -143,6 +176,8 @@ const components: PortableTextComponents = {
     tableBlock: ({ value }: { value: any }) => <BlogTable value={value} />,
     carousel: ({ value }: { value: any }) => <BlogCarousel value={value} />,
     carouselBlock: ({ value }: { value: any }) => <BlogCarousel value={value} />,
+    youtube: ({ value }: { value: any }) => <BlogYouTubeVideo value={value} />,
+    youtubeVideo: ({ value }: { value: any }) => <BlogYouTubeVideo value={value} />,
   },
   marks: {
     link: ({ children, value }) => {

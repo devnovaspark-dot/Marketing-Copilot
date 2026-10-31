@@ -1,0 +1,328 @@
+/* ==========================================================================
+   BLOG YOUTUBE VIDEO BOX - Marketing Copilot Brand System
+   High-converting responsive video embed with authentic YouTube play button
+   ========================================================================== */
+
+.videoCardWrapper {
+  margin: 2.75rem 0;
+  border-radius: 20px;
+  background: #FFFFFF;
+  border: 1.5px solid #CBD5E1;
+  box-shadow:
+    inset 0 2px 0 #FFFFFF,
+    0 12px 32px -8px rgba(11, 32, 147, 0.08),
+    0 2px 6px rgba(0, 0, 0, 0.03);
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.videoCardWrapper:hover {
+  border-color: #94A3B8;
+  box-shadow:
+    inset 0 2px 0 #FFFFFF,
+    0 18px 40px -10px rgba(11, 32, 147, 0.12),
+    0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+/* Header Bar */
+.headerBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: linear-gradient(180deg, #F8FAFC 0%, #F1F5F9 100%);
+  border-bottom: 1px solid #E2E8F0;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 200px;
+}
+
+.ytBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 11px;
+  background: #FEF2F2;
+  border: 1px solid #FECACA;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #DC2626;
+  flex-shrink: 0;
+}
+
+.ytBadgeIcon {
+  width: 15px;
+  height: 15px;
+  display: block;
+}
+
+.videoTitle {
+  font-family: var(--font-display), sans-serif;
+  font-size: 1.02rem;
+  font-weight: 750;
+  color: #0F172A;
+  margin: 0;
+  letter-spacing: -0.015em;
+  line-height: 1.35;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.statusPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 9999px;
+  font-size: 0.76rem;
+  font-weight: 650;
+  color: #475569;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.statusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #EF4444;
+  animation: pulseDot 2s infinite;
+}
+
+@keyframes pulseDot {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.6;
+  }
+}
+
+/* Stage / Player Container */
+.stageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #0B1120;
+  overflow: hidden;
+  user-select: none;
+}
+
+.posterContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  display: block;
+  border: none;
+  padding: 0;
+  background: transparent;
+  text-align: left;
+}
+
+.posterImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
+}
+
+.posterContainer:hover .posterImage {
+  transform: scale(1.025);
+  filter: brightness(0.95);
+}
+
+.vignetteOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 23, 42, 0.45) 0%,
+    rgba(15, 23, 42, 0.1) 40%,
+    rgba(15, 23, 42, 0.75) 100%
+  );
+  pointer-events: none;
+}
+
+/* YouTube Play Button Centered on Video */
+.playButtonContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  z-index: 5;
+  pointer-events: none;
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.posterContainer:hover .playButtonContainer {
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.ytPlayButton {
+  position: relative;
+  width: 76px;
+  height: 52px;
+  background: #FF0000;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 10px 30px rgba(255, 0, 0, 0.55),
+    0 2px 8px rgba(0, 0, 0, 0.35);
+  transition: all 0.25s ease;
+}
+
+.posterContainer:hover .ytPlayButton {
+  background: #E60000;
+  box-shadow:
+    0 14px 40px rgba(255, 0, 0, 0.75),
+    0 4px 14px rgba(0, 0, 0, 0.45);
+}
+
+.playTriangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 11px 0 11px 20px;
+  border-color: transparent transparent transparent #FFFFFF;
+  margin-left: 4px;
+}
+
+.playLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: rgba(15, 23, 42, 0.88);
+  color: #FFFFFF;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border-radius: 9999px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Active Iframe Player */
+.iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: #000000;
+}
+
+/* Caption / Footnote Bar */
+.captionBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 10px 18px;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+  border-top: 1px solid #E2E8F0;
+  flex-wrap: wrap;
+}
+
+.captionContent {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #475569;
+  line-height: 1.45;
+}
+
+.captionDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #DC2626;
+  flex-shrink: 0;
+}
+
+.ytDirectLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #0B2093;
+  text-decoration: none;
+  transition: color 0.15s ease;
+  margin-left: auto;
+}
+
+.ytDirectLink:hover {
+  color: #1D4ED8;
+  text-decoration: underline;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+  .videoCardWrapper {
+    margin: 1.75rem 0;
+    border-radius: 14px;
+  }
+
+  .headerBar {
+    padding: 10px 14px;
+    gap: 10px;
+  }
+
+  .videoTitle {
+    font-size: 0.94rem;
+  }
+
+  .ytPlayButton {
+    width: 64px;
+    height: 44px;
+    border-radius: 13px;
+  }
+
+  .playTriangle {
+    border-width: 9px 0 9px 16px;
+    margin-left: 3px;
+  }
+
+  .playLabel {
+    font-size: 0.75rem;
+    padding: 4px 11px;
+  }
+
+  .captionBar {
+    padding: 8px 12px;
+    font-size: 0.78rem;
+  }
+}
+
