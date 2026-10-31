@@ -142,13 +142,13 @@
 .modalBackdrop {
   position: fixed;
   inset: 0;
-  z-index: 999999;
-  background: rgba(10, 15, 30, 0.94);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  z-index: 999999999;
+  background: rgba(4, 7, 16, 0.96);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
   display: flex;
   flex-direction: column;
-  animation: modalFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: modalFadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   user-select: none;
 }
 
@@ -161,121 +161,52 @@
   }
 }
 
-/* Modal Top Bar */
-.modalHeader {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 24px;
-  background: rgba(15, 23, 42, 0.75);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  gap: 16px;
-  z-index: 10;
-  backdrop-filter: blur(12px);
-}
-
-.modalHeaderLeft {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  min-width: 0;
-}
-
-.modalBadge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 11px;
-  background: rgba(11, 32, 147, 0.35);
-  border: 1px solid rgba(59, 130, 246, 0.4);
-  border-radius: 9999px;
-  font-size: 0.75rem;
-  font-weight: 750;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: #93C5FD;
-  flex-shrink: 0;
-}
-
-.badgePulseDot {
-  width: 6px;
-  height: 6px;
+/* Floating Close Cross Button (Positioned above image at top right) */
+.closeButtonFloating {
+  position: fixed;
+  top: 24px;
+  right: 28px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  background: #3B82F6;
-  box-shadow: 0 0 10px #3B82F6;
-  animation: pulseDot 2s infinite;
-}
-
-@keyframes pulseDot {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.4);
-    opacity: 0.6;
-  }
-}
-
-.modalTitle {
-  font-size: 0.92rem;
-  font-weight: 600;
-  color: #F8FAFC;
-  margin: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.modalHeaderRight {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-}
-
-.modalActionBtn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 14px;
-  background: rgba(255, 255, 255, 0.1);
-  color: #F1F5F9;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 9999px;
-  font-size: 0.78rem;
-  font-weight: 650;
-  cursor: pointer;
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-
-.modalActionBtn:hover {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1.5px solid rgba(255, 255, 255, 0.28);
   color: #FFFFFF;
-}
-
-.closeButton {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  color: #FFFFFF;
-  border: 1px solid rgba(255, 255, 255, 0.22);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.2s ease;
-  font-size: 1.1rem;
-  line-height: 1;
+  z-index: 1000000000;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+  padding: 0;
 }
 
-.closeButton:hover {
-  background: rgba(239, 68, 68, 0.85);
-  border-color: rgba(239, 68, 68, 1);
-  transform: scale(1.08);
+.closeButtonFloating:hover {
+  background: #EF4444;
+  border-color: #EF4444;
+  color: #FFFFFF;
+  transform: scale(1.12);
+  box-shadow: 0 10px 32px rgba(239, 68, 68, 0.6);
+}
+
+.closeButtonFloating:active {
+  transform: scale(0.95);
+}
+
+.closeButtonFloating:focus-visible {
+  outline: 2px solid #60A5FA;
+  outline-offset: 3px;
+}
+
+.closeIcon {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  stroke-width: 2.6;
 }
 
 /* Modal Viewport (Canvas) */
@@ -408,38 +339,6 @@
   box-shadow: 0 0 12px rgba(59, 130, 246, 0.5);
 }
 
-/* Modal Bottom Helper Bar */
-.modalFooterHint {
-  padding: 10px 24px;
-  background: rgba(15, 23, 42, 0.85);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 0.8rem;
-  color: #94A3B8;
-  gap: 16px;
-  z-index: 10;
-  flex-wrap: wrap;
-}
-
-.footerCaption {
-  font-weight: 600;
-  color: #E2E8F0;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.footerTips {
-  font-size: 0.75rem;
-  color: #64748B;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-left: auto;
-}
-
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .imageFigure {
@@ -456,12 +355,16 @@
     right: 10px;
   }
 
-  .modalHeader {
-    padding: 10px 14px;
+  .closeButtonFloating {
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
   }
 
-  .modalTitle {
-    display: none;
+  .closeIcon {
+    width: 18px;
+    height: 18px;
   }
 
   .floatingControlsBar {
@@ -485,13 +388,5 @@
     padding: 4px 10px;
     font-size: 0.7rem;
   }
-
-  .modalFooterHint {
-    padding: 8px 14px;
-    font-size: 0.74rem;
-  }
-
-  .footerTips {
-    display: none;
-  }
 }
+

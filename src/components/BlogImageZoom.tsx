@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { createPortal } from 'react-dom';
 import Image from 'next/image';
 import styles from './BlogImageZoom.module.css';
 
@@ -21,9 +22,14 @@ export function ImageZoomModal({
   alt,
   caption,
 }: ImageZoomModalProps) {
+  const [mounted, setMounted] = useState(false);
   const [zoom, setZoom] = useState(1.0);
   const [pan, setPan] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const dragStartRef = useRef({ x: 0, y: 0 });
   const panStartRef = useRef({ x: 0, y: 0 });
@@ -144,55 +150,41 @@ export function ImageZoomModal({
     }
   };
 
-  if (!isOpen) return null;
+  if (!isOpen || !mounted) return null;
 
-  return (
+  return createPortal(
     <div
       className={styles.modalBackdrop}
       onClick={onClose}
       role="dialog"
       aria-modal="true"
-      aria-label="Infographic Fullscreen Inspection"
+      aria-label="Image Zoom View"
     >
-      {/* Modal Top Navigation Bar */}
-      <div className={styles.modalHeader} onClick={(e) => e.stopPropagation()}>
-        <div className={styles.modalHeaderLeft}>
-          <span className={styles.modalBadge}>
-            <span className={styles.badgePulseDot} />
-            <span>Infographic Inspector</span>
-          </span>
-          <h4 className={styles.modalTitle} title={caption || alt}>
-            {caption || alt}
-          </h4>
-        </div>
-
-        <div className={styles.modalHeaderRight}>
-          <a
-            href={fullImageSrc}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.modalActionBtn}
-            title="Open raw high-resolution image in new tab"
-          >
-            <span>View Raw</span>
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-              <polyline points="15 3 21 3 21 9" />
-              <line x1="10" y1="14" x2="21" y2="3" />
-            </svg>
-          </a>
-
-          <button
-            type="button"
-            className={styles.closeButton}
-            onClick={onClose}
-            aria-label="Close Inspection Modal (Esc)"
-            title="Close (Esc)"
-          >
-            ✕
-          </button>
-        </div>
-      </div>
+      {/* Floating Close Cross Button above the image */}
+      <button
+        type="button"
+        className={styles.closeButtonFloating}
+        onClick={(e) => {
+          e.stopPropagation();
+          onClose();
+        }}
+        aria-label="Close image zoom (Esc)"
+        title="Close (Esc)"
+      >
+        <svg
+          className={styles.closeIcon}
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
 
       {/* Interactive Zoom & Pan Viewport */}
       <div
@@ -205,7 +197,7 @@ export function ImageZoomModal({
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
-        onClick={(e) => e.stopPropagation()}
+        onClick={onClose}
         onDoubleClick={handleDoubleClick}
       >
         <div
@@ -213,6 +205,7 @@ export function ImageZoomModal({
           style={{
             transform: `translate3d(${pan.x}px, ${pan.y}px, 0) scale(${zoom})`,
           }}
+          onClick={(e) => e.stopPropagation()}
         >
           <img
             src={fullImageSrc}
@@ -267,23 +260,8 @@ export function ImageZoomModal({
           </button>
         </div>
       </div>
-
-      {/* Modal Bottom Helper & Caption Bar */}
-      <div className={styles.modalFooterHint} onClick={(e) => e.stopPropagation()}>
-        <div className={styles.footerCaption}>
-          <span className={styles.captionDot} aria-hidden="true" />
-          <span>{caption || alt}</span>
-        </div>
-
-        <div className={styles.footerTips}>
-          <span>💡 Double-click or scroll wheel to zoom</span>
-          <span>•</span>
-          <span>Drag to pan around text</span>
-          <span>•</span>
-          <span>Press <strong>Esc</strong> to close</span>
-        </div>
-      </div>
-    </div>
+    </div>,
+    document.body
   );
 }
 
