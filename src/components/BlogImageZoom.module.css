@@ -1,0 +1,497 @@
+/* ==========================================================================
+   BLOG IMAGE ZOOM (INFOGRAPHIC INSPECTOR) - Marketing Copilot Brand System
+   One-click deep zoom with fluid physics-based animation & pan controls
+   ========================================================================== */
+
+.imageFigure {
+  margin: 2.5rem 0;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1.5px solid #CBD5E1;
+  background: #F8FAFC;
+  box-shadow:
+    inset 0 2px 0 #FFFFFF,
+    0 12px 32px -8px rgba(11, 32, 147, 0.08),
+    0 2px 6px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.imageFigure:hover {
+  border-color: #0B2093;
+  box-shadow:
+    inset 0 2px 0 #FFFFFF,
+    0 18px 40px -10px rgba(11, 32, 147, 0.16),
+    0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.triggerButton {
+  position: relative;
+  width: 100%;
+  display: block;
+  border: none;
+  padding: 0;
+  background: #F1F5F9;
+  cursor: zoom-in;
+  text-align: left;
+  outline: none;
+}
+
+.triggerButton:focus-visible {
+  outline: 3px solid #0B2093;
+  outline-offset: 2px;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #F1F5F9;
+}
+
+.embeddedImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.triggerButton:hover .embeddedImage {
+  transform: scale(1.018);
+}
+
+/* Hover Action Pill */
+.hoverActionPill {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 15px;
+  background: rgba(11, 32, 147, 0.88);
+  color: #FFFFFF;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  border-radius: 9999px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 8px 24px rgba(11, 32, 147, 0.35);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+  z-index: 3;
+}
+
+.triggerButton:hover .hoverActionPill {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.zoomIcon {
+  width: 14px;
+  height: 14px;
+  stroke-width: 2.5;
+}
+
+/* Caption bar below thumbnail */
+.imageCaption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 18px;
+  font-size: 0.83rem;
+  font-weight: 600;
+  color: #475569;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+  border-top: 1px solid #E2E8F0;
+  flex-wrap: wrap;
+}
+
+.captionLeft {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.captionDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #0B2093;
+  flex-shrink: 0;
+}
+
+.captionHint {
+  font-size: 0.76rem;
+  color: #64748B;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: auto;
+}
+
+/* ==========================================================================
+   ANIMATED FULLSCREEN ZOOM MODAL / LIGHTBOX
+   ========================================================================== */
+
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  background: rgba(10, 15, 30, 0.94);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  display: flex;
+  flex-direction: column;
+  animation: modalFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  user-select: none;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal Top Bar */
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  background: rgba(15, 23, 42, 0.75);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  gap: 16px;
+  z-index: 10;
+  backdrop-filter: blur(12px);
+}
+
+.modalHeaderLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.modalBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 11px;
+  background: rgba(11, 32, 147, 0.35);
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #93C5FD;
+  flex-shrink: 0;
+}
+
+.badgePulseDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #3B82F6;
+  box-shadow: 0 0 10px #3B82F6;
+  animation: pulseDot 2s infinite;
+}
+
+@keyframes pulseDot {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.6;
+  }
+}
+
+.modalTitle {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #F8FAFC;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.modalHeaderRight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.modalActionBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #F1F5F9;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 650;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.modalActionBtn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #FFFFFF;
+}
+
+.closeButton {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.closeButton:hover {
+  background: rgba(239, 68, 68, 0.85);
+  border-color: rgba(239, 68, 68, 1);
+  transform: scale(1.08);
+}
+
+/* Modal Viewport (Canvas) */
+.modalViewport {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+}
+
+.modalViewport.isDragging {
+  cursor: grabbing;
+}
+
+.modalImageWrapper {
+  position: relative;
+  max-width: 92vw;
+  max-height: 82vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.smoothTransition {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modalImage {
+  max-width: 90vw;
+  max-height: 78vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 25px 65px rgba(0, 0, 0, 0.65);
+  pointer-events: none;
+}
+
+/* Floating Glass Zoom Controls Bar */
+.floatingControlsBar {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(15, 23, 42, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 9999px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow:
+    0 12px 36px rgba(0, 0, 0, 0.45),
+    0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.ctrlBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: all 0.15s ease;
+}
+
+.ctrlBtn:hover {
+  background: #0B2093;
+  border-color: #3B82F6;
+  transform: scale(1.1);
+}
+
+.ctrlBtn:active {
+  transform: scale(0.95);
+}
+
+.zoomBadge {
+  font-size: 0.8rem;
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+  color: #93C5FD;
+  min-width: 48px;
+  text-align: center;
+}
+
+.ctrlDivider {
+  width: 1px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 0 4px;
+}
+
+.modeToggleBtn {
+  padding: 5px 12px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.modeToggleBtn:hover {
+  background: #0B2093;
+  border-color: #3B82F6;
+}
+
+.modeToggleBtnActive {
+  background: #0B2093;
+  border-color: #3B82F6;
+  color: #FFFFFF;
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.5);
+}
+
+/* Modal Bottom Helper Bar */
+.modalFooterHint {
+  padding: 10px 24px;
+  background: rgba(15, 23, 42, 0.85);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #94A3B8;
+  gap: 16px;
+  z-index: 10;
+  flex-wrap: wrap;
+}
+
+.footerCaption {
+  font-weight: 600;
+  color: #E2E8F0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footerTips {
+  font-size: 0.75rem;
+  color: #64748B;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .imageFigure {
+    margin: 1.75rem 0;
+    border-radius: 14px;
+  }
+
+  .hoverActionPill {
+    opacity: 0.95;
+    transform: translateY(0);
+    padding: 6px 12px;
+    font-size: 0.74rem;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .modalHeader {
+    padding: 10px 14px;
+  }
+
+  .modalTitle {
+    display: none;
+  }
+
+  .floatingControlsBar {
+    bottom: 16px;
+    padding: 6px 12px;
+    gap: 6px;
+  }
+
+  .ctrlBtn {
+    width: 28px;
+    height: 28px;
+    font-size: 0.95rem;
+  }
+
+  .zoomBadge {
+    min-width: 42px;
+    font-size: 0.75rem;
+  }
+
+  .modeToggleBtn {
+    padding: 4px 10px;
+    font-size: 0.7rem;
+  }
+
+  .modalFooterHint {
+    padding: 8px 14px;
+    font-size: 0.74rem;
+  }
+
+  .footerTips {
+    display: none;
+  }
+}

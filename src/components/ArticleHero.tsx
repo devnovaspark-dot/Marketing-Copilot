@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import BeamButton from '@/components/BeamButton';
+import { ImageZoomModal } from '@/components/BlogImageZoom';
 import styles from './ArticleHero.module.css';
 
 interface ArticleHeroProps {
@@ -30,6 +31,7 @@ export default function ArticleHero({
   authorImage,
 }: ArticleHeroProps) {
   const [copied, setCopied] = useState(false);
+  const [isBannerZoomOpen, setIsBannerZoomOpen] = useState(false);
   const authorInitial = author ? author.charAt(0).toUpperCase() : 'M';
 
   const handleShare = async () => {
@@ -154,7 +156,17 @@ export default function ArticleHero({
 
         {/* Right Column: Hero Banner Image */}
         <div className={styles.rightCol}>
-          <div className={styles.bannerWrap}>
+          <div
+            className={styles.bannerWrap}
+            onClick={() => setIsBannerZoomOpen(true)}
+            role="button"
+            tabIndex={0}
+            style={{ cursor: 'zoom-in' }}
+            title="Click to zoom image in full resolution"
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') setIsBannerZoomOpen(true);
+            }}
+          >
             <Image
               src={image}
               alt={imageAlt || title}
@@ -166,9 +178,17 @@ export default function ArticleHero({
             {/* Editorial Guide Badge Overlay */}
             <div className={styles.bannerBadge}>
               <span className={styles.bannerBadgeDot} />
-              <span>Verified Strategic Guide</span>
+              <span>Verified Strategic Guide • Click to Zoom</span>
             </div>
           </div>
+
+          <ImageZoomModal
+            isOpen={isBannerZoomOpen}
+            onClose={() => setIsBannerZoomOpen(false)}
+            src={image}
+            alt={imageAlt || title}
+            caption={title}
+          />
         </div>
       </div>
     </section>

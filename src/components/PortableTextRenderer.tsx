@@ -5,6 +5,7 @@ import { urlForImage } from '@/sanity/image';
 import BlogTable from '@/components/BlogTable';
 import BlogCarousel from '@/components/BlogCarousel';
 import BlogYouTubeVideo, { extractYouTubeId } from '@/components/BlogYouTubeVideo';
+import BlogImageZoom from '@/components/BlogImageZoom';
 import styles from './PortableTextRenderer.module.css';
 
 export function slugifyHeading(text: string): string {
@@ -101,29 +102,21 @@ const components: PortableTextComponents = {
       // For animated GIFs, do not apply auto('format') or resizing which freezes frames
       const imageUrl = isGif
         ? urlForImage(value)?.url()
-        : urlForImage(value)?.width(1200).auto('format').fit('max').url();
+        : urlForImage(value)?.width(1400).auto('format').fit('max').url();
+      const highResUrl = isGif
+        ? imageUrl
+        : urlForImage(value)?.width(2800).auto('format').fit('max').url() || imageUrl;
+
       if (!imageUrl) return null;
 
       return (
-        <figure className={styles.imageWrapper}>
-          <div className={styles.imageContainer}>
-            <Image
-              src={imageUrl}
-              alt={value.alt || 'Marketing Copilot strategic illustration'}
-              width={1200}
-              height={675}
-              unoptimized={isGif}
-              sizes="(max-width: 768px) 100vw, 840px"
-              className={styles.embeddedImage}
-            />
-          </div>
-          {value.caption && (
-            <figcaption className={styles.imageCaption}>
-              <span className={styles.captionDot} />
-              <span>{value.caption}</span>
-            </figcaption>
-          )}
-        </figure>
+        <BlogImageZoom
+          src={imageUrl}
+          highResSrc={highResUrl}
+          alt={value.alt || 'Marketing Copilot strategic illustration'}
+          caption={value.caption}
+          unoptimized={isGif}
+        />
       );
     },
     gif: ({ value }: { value: any }) => {
@@ -141,35 +134,13 @@ const components: PortableTextComponents = {
       const alt = value.alt || value.caption || 'Marketing Copilot Animated GIF';
 
       return (
-        <figure className={styles.imageWrapper}>
-          <div className={styles.imageContainer}>
-            {/* If external URL, render native img to support any CDN without domain restrictions */}
-            {src.startsWith('http') && !src.includes('cdn.sanity.io') ? (
-              <img
-                src={src}
-                alt={alt}
-                loading="lazy"
-                className={styles.embeddedImage}
-                style={{ width: '100%', height: 'auto', display: 'block' }}
-              />
-            ) : (
-              <Image
-                src={src}
-                alt={alt}
-                width={1200}
-                height={675}
-                unoptimized
-                className={styles.embeddedImage}
-              />
-            )}
-          </div>
-          {value.caption && (
-            <figcaption className={styles.imageCaption}>
-              <span className={styles.captionDot} />
-              <span>{value.caption}</span>
-            </figcaption>
-          )}
-        </figure>
+        <BlogImageZoom
+          src={src}
+          highResSrc={src}
+          alt={alt}
+          caption={value.caption}
+          unoptimized={true}
+        />
       );
     },
     table: ({ value }: { value: any }) => <BlogTable value={value} />,
