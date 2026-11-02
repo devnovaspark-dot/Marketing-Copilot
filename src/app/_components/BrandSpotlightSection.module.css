@@ -149,8 +149,7 @@
 }
 
 .dynamicHeaderContent {
-  animation: fadeContent 0.28s cubic-bezier(0.16, 1, 0.3, 1) both;
-  min-height: 125px;
+  min-height: 110px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -166,14 +165,15 @@
 }
 
 .headline {
-  margin: 0 0 16px 0;
+  margin: 0 0 12px 0;
   letter-spacing: -0.025em;
   line-height: 1.15;
-  min-height: 48px;
+  min-height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  text-align: center;
 }
 
 .clientHighlightWrap {
@@ -184,12 +184,13 @@
 .subText {
   color: #475569;
   line-height: 1.6;
-  margin: 0 auto 22px;
+  margin: 0 auto 18px;
   max-width: 740px;
-  min-height: 54px;
+  min-height: 52px;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .headerPills {
@@ -198,7 +199,7 @@
   justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
-  margin: 18px auto 0;
+  margin: 14px auto 0;
   min-height: 38px;
 }
 
@@ -1652,28 +1653,31 @@
     box-sizing: border-box;
   }
   .dynamicHeaderContent {
-    min-height: 172px;
+    min-height: 168px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
   }
   .headline {
-    font-size: clamp(21px, 5.6vw, 27px) !important;
-    min-height: 66px;
+    font-size: clamp(20px, 5.2vw, 25px) !important;
+    min-height: 56px;
+    line-height: 1.25;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     margin-bottom: 8px;
+    text-align: center;
   }
   .subText {
     font-size: 13.5px;
     line-height: 1.55;
     margin-bottom: 12px;
-    min-height: 86px;
+    min-height: 84px;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
   }
 
   /* Mobile Multi-Brand 2x2 Filter Grid — All 4 Companies Fully Visible Without Horizontal Scroll */
@@ -1747,15 +1751,15 @@
   /* Impact Metric Pills */
   .headerPills {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 6px 8px;
-    flex-wrap: wrap;
+    gap: 6px;
     margin: 6px auto 18px;
     padding: 0 4px;
     width: 100%;
     box-sizing: border-box;
-    min-height: 60px;
+    min-height: 98px;
   }
   .headerPill {
     font-size: 0.72rem;
@@ -1778,6 +1782,7 @@
     flex-direction: column;
     align-items: center;
     gap: 8px;
+    min-height: 80px;
   }
   .deliverableLabel {
     font-size: 0.74rem;

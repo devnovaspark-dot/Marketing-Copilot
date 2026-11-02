@@ -56,7 +56,7 @@ const spotlightBrands: BrandSpotlightData[] = [
     videoTag: '9:16 CINEMA REEL',
     headlineHighlight: 'Ekatraa',
     narrative:
-      'Marketing Copilot worked closely with Ekatraa to turn market attention into proven growth. From designing brand visuals and shooting high‑quality videos to running all parts of ad campaigns and mastering search Marketing Copilot and Ekatraa made a big difference.',
+      'Partnering with Ekatraa to scale luxury bridal and ethnic fashion across Bhubaneswar through cinema-grade 9:16 reels, full-funnel Meta acquisition, and hyperlocal Google search dominance.',
     metrics: [
       { value: '+340%', label: 'Reach & Footfall Lift' },
       { value: '5.2X', label: 'Measured ROAS' },
@@ -263,7 +263,7 @@ const spotlightBrands: BrandSpotlightData[] = [
     videoPoster: '/images/panduranga_video_poster.webp',
     videoTitle: 'Sree Panduranga Fresh Produce Reel',
     videoTag: '9:16 CINEMA REEL',
-    headlineHighlight: 'Sree Panduranga Divine',
+    headlineHighlight: 'Sree Panduranga',
     narrative:
       'Scaling direct-to-consumer farm-fresh deliveries with Click-to-WhatsApp 1-tap ordering, localized micro-geo Meta ad clusters, and automated repeat purchase retention funnels across Bhubaneswar.',
     metrics: [
@@ -372,10 +372,12 @@ export default function BrandSpotlightSection() {
     // Pause current video if playing
     if (videoRef.current) {
       videoRef.current.pause();
+      videoRef.current.currentTime = 0;
     }
     setIsPlaying(false);
     setIsControlsVisible(true);
     setCurrentSlide(0);
+    setHasActivatedVideo(false);
     setActiveBrandId(brandId);
   };
 
@@ -575,7 +577,7 @@ export default function BrandSpotlightSection() {
               CLIENT SPOTLIGHT &bull; CASE STUDY IN ACTION
             </div>
 
-            <div key={`header-text-${activeBrand.id}`} className={styles.dynamicHeaderContent}>
+            <div className={styles.dynamicHeaderContent}>
               <h2 className={`display-lg ${styles.headline}`}>
                 Sample case study of our client{' '}
                 <span className={styles.clientHighlightWrap}>
@@ -621,7 +623,7 @@ export default function BrandSpotlightSection() {
             </div>
 
             {/* Impact Metric Pills */}
-            <div key={`pills-${activeBrand.id}`} className={styles.headerPills}>
+            <div className={styles.headerPills}>
               {activeBrand.metrics.map((m) => (
                 <span key={m.label} className={styles.headerPill}>
                   <span className={styles.pillDot} /> {m.value} {m.label}
@@ -636,12 +638,11 @@ export default function BrandSpotlightSection() {
            ══════════════════════════════════════════════════ */}
         {isMounted && (
         <div
-          key={`showcase-${activeBrand.id}-${showVideo ? 'video' : 'editorial'}`}
           className={showVideo ? styles.showcaseGrid : styles.dualPaneEditorialGrid}
         >
           {/* Card 1 (Left Pane): 9:16 Smartphone Video Reel OR Editorial Case Study */}
           {showVideo ? (
-            <ScrollReveal direction="up" className={styles.videoCol}>
+            <div className={styles.videoCol}>
               <div className={styles.colInnerWrap}>
                 <div className={styles.videoDeviceCard}>
                   <div className={styles.videoDeviceGlow} />
@@ -674,7 +675,6 @@ export default function BrandSpotlightSection() {
 
                     <video
                       ref={videoRef}
-                      key={activeBrand.videoSrc}
                       className={`${styles.videoPlayer} ${
                         activeBrand.id === 'ekatraa' ? styles.videoPlayerEkatraa : ''
                       }`}
@@ -761,9 +761,9 @@ export default function BrandSpotlightSection() {
                   <div className={styles.homeIndicator} />
                 </div>
               </div>
-            </ScrollReveal>
+            </div>
           ) : (
-            <ScrollReveal direction="up" className={styles.editorialCol}>
+            <div className={styles.editorialCol}>
               <div className={styles.colInnerWrap}>
                 <div className={styles.editorialCard}>
                   <div className={styles.editorialMain}>
@@ -823,11 +823,11 @@ export default function BrandSpotlightSection() {
                   </div>
                 </div>
               </div>
-            </ScrollReveal>
+            </div>
           )}
 
           {/* Card 2 (Right Pane): 1:1 Sliding Carousel Showcase */}
-          <ScrollReveal direction="up" delay={0.1} className={styles.carouselCol}>
+          <div className={styles.carouselCol}>
             <div
               className={styles.carouselCard}
               onMouseEnter={() => setIsHovered(true)}
@@ -965,7 +965,7 @@ export default function BrandSpotlightSection() {
                 </div>
               </div>
             </div>
-          </ScrollReveal>
+          </div>
         </div>
         )}
 
