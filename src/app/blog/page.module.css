@@ -430,7 +430,7 @@
 .featuredVisual {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 4 / 3;
   background: #FFFFFF;
   overflow: hidden;
   display: flex;
@@ -610,21 +610,23 @@
   position: relative;
   width: 100%;
   min-width: 0;
-  aspect-ratio: 16 / 10;
-  background: #F8FAFC;
+  aspect-ratio: 4 / 3;
+  background: #FFFFFF;
   overflow: hidden;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
 }
 
 .storyImg {
-  object-fit: cover;
-  object-position: center;
-  transition: transform 0.5s ease;
+  object-fit: contain !important;
+  object-position: center center;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .storyCard:hover .storyImg {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 .storyBody {

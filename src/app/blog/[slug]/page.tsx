@@ -276,6 +276,12 @@ export async function generateMetadata({
       title: `${article.metaTitle} | Marketing Copilot`,
       description: article.summary,
       url: `https://marketingcopilot.in/blog/${slug}`,
+      siteName: 'Marketing Copilot',
+      locale: 'en_IN',
+      type: 'article',
+      publishedTime: article.rawPublishedAt,
+      modifiedTime: article.rawModifiedAt,
+      authors: [article.author],
       images: [
         {
           url: article.featuredImageUrl,
