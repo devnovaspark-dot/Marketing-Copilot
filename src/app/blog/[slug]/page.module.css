@@ -32,6 +32,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
+  align-items: start;
 }
 
 @media (min-width: 1024px) {
@@ -77,25 +78,24 @@
   }
 }
 
-/* ── Right Sidebar: Sticky, Clean, Zero Internal Scrollbar ── */
+/* ── Right Sidebar: Clean, Stable, Zero Layout Shift ── */
 .sidebarCol {
   width: 100%;
   min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+  align-self: start;
+  height: fit-content;
   overflow: visible !important;
 }
 
 @media (min-width: 1024px) {
   .sidebarCol {
     grid-column: span 4;
-    position: sticky;
-    top: calc(var(--nav-height, 78px) + 20px);
     align-self: start;
-    /* Strictly ZERO internal scrolling or overflow clipping */
+    height: fit-content;
     overflow: visible !important;
-    max-height: none !important;
   }
 }
 
