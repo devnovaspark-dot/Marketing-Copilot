@@ -175,11 +175,6 @@ export default function ArticleHero({
               className={styles.bannerImage}
               sizes="(max-width: 1024px) 100vw, 580px"
             />
-            {/* Editorial Guide Badge Overlay */}
-            <div className={styles.bannerBadge}>
-              <span className={styles.bannerBadgeDot} />
-              <span>Verified Strategic Guide • Click to Zoom</span>
-            </div>
           </div>
 
           <ImageZoomModal

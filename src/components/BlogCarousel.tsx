@@ -290,39 +290,6 @@ export default function BlogCarousel({ value }: BlogCarouselProps) {
                     priority={idx === 0}
                     className={styles.slideImage}
                   />
-
-                  {/* Caption & Title Overlay if present */}
-                  {(slide.title || slide.caption || slide.link) && (
-                    <div className={styles.slideCaptionOverlay}>
-                      <div className={styles.slideOverlayContent}>
-                        {slide.title && (
-                          <h5 className={styles.slideOverlayTitle}>{slide.title}</h5>
-                        )}
-                        {slide.caption && (
-                          <p className={styles.slideOverlayText}>{slide.caption}</p>
-                        )}
-                        {slide.link && (
-                          <span className={styles.slideExternalLinkTag}>
-                            <span>Visit Link</span>
-                            <svg
-                              width="12"
-                              height="12"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2.5"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            >
-                              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                              <polyline points="15 3 21 3 21 9" />
-                              <line x1="10" y1="14" x2="21" y2="3" />
-                            </svg>
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                  )}
                 </div>
               );
 
@@ -411,10 +378,13 @@ export default function BlogCarousel({ value }: BlogCarouselProps) {
         )}
 
         {/* Bottom Overall Caption / Footnote */}
-        {caption && (
+        {(activeSlide.title || activeSlide.caption || caption) && (
           <figcaption className={styles.captionBar}>
             <span className={styles.captionDot} aria-hidden="true" />
-            <span className={styles.captionText}>{caption}</span>
+            <span className={styles.captionText}>
+              {activeSlide.title && <strong>{activeSlide.title}: </strong>}
+              {activeSlide.caption || caption}
+            </span>
           </figcaption>
         )}
       </figure>
