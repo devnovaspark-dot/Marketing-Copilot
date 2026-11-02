@@ -30,12 +30,21 @@ export const metadata: Metadata = {
     siteName: 'Marketing Copilot',
     locale: 'en_IN',
     type: 'website',
+    images: [
+      {
+        url: '/images/dashboard_hero.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Marketing Copilot Digital Marketing Blog',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Digital Marketing Blog: Tips & Insights | Marketing Copilot',
     description:
       'Explore digital marketing tips, SEO strategies, paid advertising insights, social media trends, and practical ideas to grow your business.',
+    images: ['/images/dashboard_hero.jpg'],
   },
 };
 
