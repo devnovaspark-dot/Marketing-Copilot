@@ -577,20 +577,16 @@ export default function BrandSpotlightSection() {
               CLIENT SPOTLIGHT &bull; CASE STUDY IN ACTION
             </div>
 
-            <div className={styles.dynamicHeaderContent}>
+            <div className={styles.staticHeaderContent}>
               <h2 className={`display-lg ${styles.headline}`}>
-                Sample case study of our client{' '}
-                <span className={styles.clientHighlightWrap}>
-                  (<span className="accent-gradient">{activeBrand.headlineHighlight}</span>)
-                </span>
+                Sample case study of our client
               </h2>
-
               <p className={`body-lg ${styles.subText}`}>
-                {activeBrand.narrative}
+                Strategic clarity on digital marketing execution, commercial creative direction, and verified multi-channel acquisition funnels.
               </p>
             </div>
 
-            {/* Interactive Multi-Brand Filter Tabs (Placed Down Below Subheading) */}
+            {/* Interactive Multi-Brand Filter Tabs */}
             <div className={styles.brandFilterWrapper} role="tablist" aria-label="Select Client Case Study">
               <div className={styles.brandFilterTrack}>
                 {spotlightBrands.map((brand) => {
@@ -620,6 +616,15 @@ export default function BrandSpotlightSection() {
                   );
                 })}
               </div>
+            </div>
+
+            {/* Active Client Executive Brief (Below tabs - guaranteed zero tab layout shift) */}
+            <div className={styles.clientNarrativeBox}>
+              <p className={styles.clientNarrativeText}>
+                <span className={styles.clientNarrativeTag}>({activeBrand.name})</span>
+                <span className={styles.clientNarrativeSep}>&mdash;</span>
+                {activeBrand.narrative}
+              </p>
             </div>
 
             {/* Impact Metric Pills */}

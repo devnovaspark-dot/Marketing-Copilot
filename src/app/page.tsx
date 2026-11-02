@@ -58,8 +58,8 @@ export default function HomePage() {
     <>
       <HeroSection />
       <ClientsSection />
-      <div className="section-cv"><QuickConnectMapSection /></div>
-      <div className="section-cv"><BrandSpotlightSection /></div>
+      <QuickConnectMapSection />
+      <BrandSpotlightSection />
       <div className="section-cv"><StoryVideoSection /></div>
       <div className="section-cv"><MetricsSection /></div>
       <div className="section-cv"><ProofShowcaseSection /></div>

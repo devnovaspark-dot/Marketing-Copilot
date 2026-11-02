@@ -531,10 +531,9 @@ ul, ol {
   }
 }
 
-/* ── Deep Offscreen Section Rendering Optimization ── */
+/* ── Section Rendering (Zero-Shift) ── */
 .section-cv {
-  content-visibility: auto;
-  contain-intrinsic-size: 1px 700px;
+  contain-intrinsic-size: auto;
 }
 
 /* Grids where cards wrapped in reveal need to take full column height */
