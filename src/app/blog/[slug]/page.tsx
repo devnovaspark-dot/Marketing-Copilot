@@ -424,11 +424,6 @@ export default async function ArticlePage({
                 image={article.authorImage}
                 bio={article.authorBio}
               />
-
-              {/* Interactive FAQ Accordion */}
-              {article.faqItems && article.faqItems.length > 0 && (
-                <BlogFaqAccordion items={article.faqItems} />
-              )}
             </article>
 
             {/* Right Column: Sticky Sidebar matching exact layout structure */}
@@ -458,6 +453,17 @@ export default async function ArticlePage({
               <BlogSidebarCta />
             </aside>
           </div>
+
+          {/* Dedicated FAQ Section: Aligned with Article Content Column (Zero Sidebar Contention) */}
+          {article.faqItems && article.faqItems.length > 0 && (
+            <section className={styles.faqSectionWrapper} aria-label="Frequently Asked Questions">
+              <div className={styles.faqGrid}>
+                <div className={styles.faqMainCol}>
+                  <BlogFaqAccordion items={article.faqItems} />
+                </div>
+              </div>
+            </section>
+          )}
         </div>
       </div>
 

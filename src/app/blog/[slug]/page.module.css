@@ -78,7 +78,7 @@
   }
 }
 
-/* ── Right Sidebar: Clean, Stable, Zero Layout Shift ── */
+/* ── Right Sidebar: Sticky, Clean, Zero Layout Shift ── */
 .sidebarCol {
   width: 100%;
   min-width: 0;
@@ -93,9 +93,33 @@
 @media (min-width: 1024px) {
   .sidebarCol {
     grid-column: span 4;
+    position: sticky;
+    top: calc(var(--nav-height, 78px) + 20px);
     align-self: start;
     height: fit-content;
     overflow: visible !important;
+  }
+}
+
+/* ── Dedicated FAQ Section: Aligned with Main Column ── */
+.faqSectionWrapper {
+  width: 100%;
+}
+
+.faqGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .faqGrid {
+    grid-template-columns: repeat(12, 1fr);
+    gap: 3.25rem;
+  }
+
+  .faqMainCol {
+    grid-column: span 8;
   }
 }
 
