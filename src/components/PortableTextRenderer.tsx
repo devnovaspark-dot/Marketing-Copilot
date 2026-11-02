@@ -6,7 +6,26 @@ import BlogTable from '@/components/BlogTable';
 import BlogCarousel from '@/components/BlogCarousel';
 import BlogYouTubeVideo, { extractYouTubeId } from '@/components/BlogYouTubeVideo';
 import BlogImageZoom from '@/components/BlogImageZoom';
+import ExternalLinkPreview from '@/components/ExternalLinkPreview';
 import styles from './PortableTextRenderer.module.css';
+
+export function isExternalUrl(href: string): boolean {
+  if (!href) return false;
+  if (
+    href.startsWith('/') ||
+    href.startsWith('#') ||
+    href.startsWith('mailto:') ||
+    href.startsWith('tel:')
+  ) {
+    return false;
+  }
+  try {
+    const url = new URL(href, 'https://marketingcopilot.in');
+    return !url.hostname.includes('marketingcopilot.in') && !url.hostname.includes('localhost');
+  } catch {
+    return false;
+  }
+}
 
 export function slugifyHeading(text: string): string {
   return text
@@ -158,6 +177,15 @@ const components: PortableTextComponents = {
         return <span>{children}</span>;
       }
       const href = rawHref.startsWith('www.') ? `https://${rawHref}` : rawHref;
+
+      if (isExternalUrl(href)) {
+        return (
+          <ExternalLinkPreview href={href}>
+            {children}
+          </ExternalLinkPreview>
+        );
+      }
+
       const rel = !href.startsWith('/') ? 'noreferrer noopener' : undefined;
       const target = value?.blank || !href.startsWith('/') ? '_blank' : undefined;
       return (

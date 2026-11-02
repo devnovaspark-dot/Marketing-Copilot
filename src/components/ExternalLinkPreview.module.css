@@ -1,0 +1,288 @@
+/* ══════════════════════════════════════════════════════════════
+   EXTERNAL LINK HOVER PREVIEW POPOVER (Brand Precision Skeuomorphic)
+   ══════════════════════════════════════════════════════════════ */
+
+.linkTrigger {
+  color: #0B2093;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(11, 32, 147, 0.45);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline;
+  position: relative;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.linkTrigger:hover {
+  color: #1D4ED8;
+  text-decoration-color: #1D4ED8;
+  background: rgba(11, 32, 147, 0.05);
+}
+
+.linkTrigger:focus-visible {
+  outline: 2px solid #3B82F6;
+  outline-offset: 2px;
+}
+
+/* External Link Small Corner Arrow */
+.externalArrow {
+  display: inline-block;
+  margin-left: 3px;
+  font-size: 0.78em;
+  opacity: 0.75;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  vertical-align: 0.1em;
+}
+
+.linkTrigger:hover .externalArrow {
+  opacity: 1;
+  transform: translate(1.5px, -1.5px);
+}
+
+/* Floating Card Container Mounted into Document Body */
+.popoverCard {
+  position: fixed;
+  z-index: 99999999;
+  width: 330px;
+  max-width: calc(100vw - 32px);
+  background: #FFFFFF;
+  border: 1.5px solid #CBD5E1;
+  border-radius: 16px;
+  box-shadow: 
+    inset 0 1.5px 0 #FFFFFF,
+    0 16px 42px -6px rgba(11, 32, 147, 0.16),
+    0 4px 16px rgba(0, 0, 0, 0.06);
+  padding: 13px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  animation: popoverFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  pointer-events: auto;
+  user-select: none;
+  font-family: var(--font-body), sans-serif;
+}
+
+@keyframes popoverFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Card Header: Favicon + Domain + External Badge */
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.faviconWrap {
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: inset 0 1px 0 #FFFFFF;
+}
+
+.faviconImg {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.domainName {
+  font-family: var(--font-display), sans-serif;
+  font-size: 12.5px;
+  font-weight: 750;
+  color: #0F172A;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.secureBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #0B2093;
+  background: #EEF2FF;
+  border: 1px solid rgba(11, 32, 147, 0.16);
+  padding: 2px 7px;
+  border-radius: 9999px;
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+}
+
+.secureIcon {
+  width: 9px;
+  height: 9px;
+}
+
+/* Rich Content Body */
+.cardBody {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+  min-width: 0;
+}
+
+.pageTitle {
+  font-family: var(--font-display), sans-serif;
+  font-size: 13px;
+  font-weight: 750;
+  line-height: 1.35;
+  color: #0F172A;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pageDescription {
+  font-size: 11.5px;
+  line-height: 1.45;
+  color: #64748B;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Thumbnail preview */
+.thumbnailWrap {
+  width: 58px;
+  height: 58px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #F1F5F9;
+  border: 1px solid #E2E8F0;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.thumbnailImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Skeleton Loading Shimmer */
+.skeletonTitle {
+  width: 85%;
+  height: 14px;
+  background: linear-gradient(90deg, #F1F5F9 25%, #E2E8F0 50%, #F1F5F9 75%);
+  background-size: 200% 100%;
+  border-radius: 4px;
+  animation: shimmer 1.5s infinite;
+}
+
+.skeletonDesc {
+  width: 96%;
+  height: 11px;
+  background: linear-gradient(90deg, #F1F5F9 25%, #E2E8F0 50%, #F1F5F9 75%);
+  background-size: 200% 100%;
+  border-radius: 4px;
+  margin-top: 4px;
+  animation: shimmer 1.5s infinite 0.2s;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Footer / Action Bar */
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-top: 7px;
+  border-top: 1px solid #F1F5F9;
+  font-size: 10.5px;
+}
+
+.urlTruncated {
+  color: #94A3B8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 170px;
+}
+
+.openHint {
+  color: #0B2093;
+  font-weight: 750;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  text-decoration: none;
+}
+
+.openHint:hover {
+  text-decoration: underline;
+}
+
+/* Pointer Arrow */
+.popoverArrow {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #FFFFFF;
+  border: 1.5px solid #CBD5E1;
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+
+.arrowTop {
+  bottom: -6px;
+  border-top: none;
+  border-left: none;
+}
+
+.arrowBottom {
+  top: -6px;
+  border-bottom: none;
+  border-right: none;
+}
