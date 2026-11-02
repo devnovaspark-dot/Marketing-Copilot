@@ -66,30 +66,22 @@ export default function BlogYouTubeVideo(props: BlogYouTubeVideoProps) {
 
   return (
     <figure className={styles.videoCardWrapper}>
-      {/* Header Bar */}
-      <div className={styles.headerBar}>
-        <div className={styles.headerLeft}>
-          <span className={styles.ytBadge}>
+      {/* Sleek Minimal Header Bar (Only rendered if title exists) */}
+      {title && (
+        <div className={styles.headerBar}>
+          <div className={styles.headerLeft}>
             <svg
-              className={styles.ytBadgeIcon}
+              className={styles.ytIcon}
               viewBox="0 0 24 24"
               fill="#FF0000"
               aria-hidden="true"
             >
               <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
             </svg>
-            YouTube Video
-          </span>
-          {title && <h4 className={styles.videoTitle}>{title}</h4>}
+            <h4 className={styles.videoTitle}>{title}</h4>
+          </div>
         </div>
-
-        <div className={styles.headerRight}>
-          <span className={styles.statusPill}>
-            <span className={styles.statusDot} />
-            <span>HD 1080p</span>
-          </span>
-        </div>
-      </div>
+      )}
 
       {/* 16:9 Video Player Stage */}
       <div className={styles.stageWrapper}>
@@ -129,21 +121,6 @@ export default function BlogYouTubeVideo(props: BlogYouTubeVideoProps) {
               <div className={styles.ytPlayButton}>
                 <div className={styles.playTriangle} />
               </div>
-              <span className={styles.playLabel}>
-                <span>Click to Play</span>
-                <svg
-                  width="13"
-                  height="13"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <polygon points="5 3 19 12 5 21 5 3" fill="currentColor" />
-                </svg>
-              </span>
             </div>
           </button>
         )}

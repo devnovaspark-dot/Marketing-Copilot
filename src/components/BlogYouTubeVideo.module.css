@@ -25,95 +25,42 @@
     0 4px 12px rgba(0, 0, 0, 0.04);
 }
 
-/* Header Bar */
+/* Minimal Header Bar */
 .headerBar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 12px 20px;
-  background: linear-gradient(180deg, #F8FAFC 0%, #F1F5F9 100%);
+  padding: 11px 18px;
+  background: #F8FAFC;
   border-bottom: 1px solid #E2E8F0;
-  gap: 16px;
-  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .headerLeft {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   flex: 1;
-  min-width: 200px;
+  min-width: 0;
 }
 
-.ytBadge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 11px;
-  background: #FEF2F2;
-  border: 1px solid #FECACA;
-  border-radius: 9999px;
-  font-size: 0.75rem;
-  font-weight: 750;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #DC2626;
+.ytIcon {
+  width: 22px;
+  height: 22px;
   flex-shrink: 0;
-}
-
-.ytBadgeIcon {
-  width: 15px;
-  height: 15px;
   display: block;
 }
 
 .videoTitle {
   font-family: var(--font-display), sans-serif;
-  font-size: 1.02rem;
-  font-weight: 750;
+  font-size: 0.98rem;
+  font-weight: 700;
   color: #0F172A;
   margin: 0;
   letter-spacing: -0.015em;
   line-height: 1.35;
-}
-
-.headerRight {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.statusPill {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 10px;
-  background: #FFFFFF;
-  border: 1px solid #E2E8F0;
-  border-radius: 9999px;
-  font-size: 0.76rem;
-  font-weight: 650;
-  color: #475569;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
-}
-
-.statusDot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #EF4444;
-  animation: pulseDot 2s infinite;
-}
-
-@keyframes pulseDot {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.4);
-    opacity: 0.6;
-  }
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* Stage / Player Container */
@@ -163,36 +110,35 @@
   pointer-events: none;
 }
 
-/* YouTube Play Button Centered on Video */
+/* Authentic Red YouTube Play Button Centered on Video */
 .playButtonContainer {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 12px;
+  justify-content: center;
   z-index: 5;
   pointer-events: none;
   transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .posterContainer:hover .playButtonContainer {
-  transform: translate(-50%, -50%) scale(1.08);
+  transform: translate(-50%, -50%) scale(1.1);
 }
 
 .ytPlayButton {
   position: relative;
-  width: 76px;
-  height: 52px;
+  width: 72px;
+  height: 50px;
   background: #FF0000;
-  border-radius: 16px;
+  border-radius: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow:
-    0 10px 30px rgba(255, 0, 0, 0.55),
+    0 10px 28px rgba(255, 0, 0, 0.55),
     0 2px 8px rgba(0, 0, 0, 0.35);
   transition: all 0.25s ease;
 }
@@ -200,7 +146,7 @@
 .posterContainer:hover .ytPlayButton {
   background: #E60000;
   box-shadow:
-    0 14px 40px rgba(255, 0, 0, 0.75),
+    0 14px 38px rgba(255, 0, 0, 0.75),
     0 4px 14px rgba(0, 0, 0, 0.45);
 }
 
@@ -208,26 +154,9 @@
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 11px 0 11px 20px;
+  border-width: 10px 0 10px 18px;
   border-color: transparent transparent transparent #FFFFFF;
-  margin-left: 4px;
-}
-
-.playLabel {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 14px;
-  background: rgba(15, 23, 42, 0.88);
-  color: #FFFFFF;
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  border-radius: 9999px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  margin-left: 3.5px;
 }
 
 /* Active Iframe Player */
@@ -248,7 +177,7 @@
   justify-content: space-between;
   gap: 14px;
   padding: 10px 18px;
-  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+  background: #FAFAFA;
   border-top: 1px solid #E2E8F0;
   flex-wrap: wrap;
 }
@@ -257,17 +186,18 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.84rem;
-  font-weight: 600;
-  color: #475569;
+  font-size: 0.82rem;
+  font-weight: 550;
+  color: #64748B;
   line-height: 1.45;
+  flex: 1;
 }
 
 .captionDot {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
-  background: #DC2626;
+  background: #EF4444;
   flex-shrink: 0;
 }
 
@@ -275,12 +205,13 @@
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  font-size: 0.78rem;
-  font-weight: 700;
+  font-size: 0.76rem;
+  font-weight: 650;
   color: #0B2093;
   text-decoration: none;
   transition: color 0.15s ease;
   margin-left: auto;
+  white-space: nowrap;
 }
 
 .ytDirectLink:hover {
@@ -291,38 +222,53 @@
 /* Responsive Breakpoints */
 @media (max-width: 768px) {
   .videoCardWrapper {
-    margin: 1.75rem 0;
+    margin: 1.5rem 0;
     border-radius: 14px;
   }
 
   .headerBar {
-    padding: 10px 14px;
-    gap: 10px;
+    padding: 8px 12px;
+    gap: 8px;
+  }
+
+  .ytIcon {
+    width: 18px;
+    height: 18px;
   }
 
   .videoTitle {
-    font-size: 0.94rem;
+    font-size: 0.88rem;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
 
   .ytPlayButton {
-    width: 64px;
-    height: 44px;
-    border-radius: 13px;
+    width: 58px;
+    height: 40px;
+    border-radius: 12px;
   }
 
   .playTriangle {
-    border-width: 9px 0 9px 16px;
-    margin-left: 3px;
-  }
-
-  .playLabel {
-    font-size: 0.75rem;
-    padding: 4px 11px;
+    border-width: 8px 0 8px 15px;
+    margin-left: 2.5px;
   }
 
   .captionBar {
     padding: 8px 12px;
+    gap: 6px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .captionContent {
     font-size: 0.78rem;
+  }
+
+  .ytDirectLink {
+    margin-left: 0;
+    font-size: 0.74rem;
   }
 }
 

@@ -8,10 +8,10 @@
   z-index: 99990;
   height: 66px;
   border-radius: 9999px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.78) 0%, rgba(255, 255, 255, 0.62) 50%, rgba(240, 246, 255, 0.72) 100%);
+  background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(32px) saturate(210%);
   -webkit-backdrop-filter: blur(32px) saturate(210%);
-  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  border: 1.5px solid rgba(226, 232, 240, 0.9);
   box-shadow: 
     inset 0 2px 0.5px #FFFFFF,
     inset 0 1px 1px rgba(255, 255, 255, 0.9),
@@ -25,8 +25,8 @@
 
 .header.scrolled {
   top: 10px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.85) 50%, rgba(240, 246, 255, 0.9) 100%);
-  border-color: rgba(255, 255, 255, 0.95);
+  background: #FFFFFF;
+  border-color: rgba(203, 213, 225, 0.95);
   box-shadow: 
     inset 0 2px 0.5px #FFFFFF,
     inset 0 -1.5px 2px rgba(15, 23, 42, 0.05),
@@ -1200,6 +1200,7 @@
     width: calc(100% - 24px);
     top: 12px;
     height: 60px;
+    background: #FFFFFF;
   }
   .inner {
     padding: 0 10px 0 14px;
@@ -1222,12 +1223,41 @@
   }
 }
 
+/* Mobile Screens (<= 768px): Clean docked top app bar, zero bleed-through */
+@media (max-width: 768px) {
+  .header,
+  .header.scrolled {
+    top: 0 !important;
+    left: 0 !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    height: 58px !important;
+    border-radius: 0 !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.95) !important;
+    background: #FFFFFF !important;
+    box-shadow: 0 2px 10px rgba(15, 23, 42, 0.06) !important;
+  }
+
+  .inner {
+    padding: 0 16px !important;
+  }
+
+  .logoImg {
+    height: 24px;
+  }
+}
+
 /* Small Mobile Screens (<= 480px) */
 @media (max-width: 480px) {
-  .header {
-    width: calc(100% - 16px);
-    top: 8px;
-    height: 56px;
+  .header,
+  .header.scrolled {
+    width: 100% !important;
+    top: 0 !important;
+    height: 54px !important;
   }
   .inner {
     padding: 0 8px 0 12px;
