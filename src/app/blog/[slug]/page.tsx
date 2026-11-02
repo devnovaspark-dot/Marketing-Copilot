@@ -13,7 +13,7 @@ import BlogSidebarCta from '@/components/BlogSidebarCta';
 import ReadingProgressBar from '@/components/ReadingProgressBar';
 import { sanityFetch } from '@/sanity/client';
 import { postBySlugQuery, postPathsQuery, relatedPostsQuery } from '@/sanity/queries';
-import { urlForImage } from '@/sanity/image';
+import { urlForImage, urlForSocialImage } from '@/sanity/image';
 import styles from './page.module.css';
 
 export const dynamicParams = true;
@@ -189,11 +189,19 @@ async function getArticle(slug: string) {
           })
         : 'Recently published';
 
-      const featuredImageUrl = bannerUrl
-        ? bannerUrl.startsWith('http')
-          ? bannerUrl
-          : `https://marketingcopilot.in${bannerUrl}`
-        : 'https://marketingcopilot.in/images/dashboard_hero.jpg';
+      const socialImageUrl = sanityPost.bannerImage?.asset
+        ? urlForSocialImage(sanityPost.bannerImage)?.url()
+        : null;
+
+      const featuredImageUrl = socialImageUrl
+        ? socialImageUrl.startsWith('http')
+          ? socialImageUrl
+          : `https://marketingcopilot.in${socialImageUrl}`
+        : bannerUrl
+          ? bannerUrl.startsWith('http')
+            ? bannerUrl
+            : `https://marketingcopilot.in${bannerUrl}`
+          : 'https://marketingcopilot.in/images/dashboard_hero.jpg';
 
       const extractedHeadings = extractHeadingsFromPortableText(sanityPost.body);
 

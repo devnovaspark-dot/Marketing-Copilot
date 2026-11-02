@@ -45,11 +45,22 @@ export const metadata: Metadata = {
     siteName: 'Marketing Copilot',
     locale: 'en_IN',
     type: 'website',
+    images: [
+      {
+        url: 'https://marketingcopilot.in/images/dashboard_hero.jpg',
+        secureUrl: 'https://marketingcopilot.in/images/dashboard_hero.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Marketing Copilot Digital Marketing Company in India',
+        type: 'image/jpeg',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Digital Marketing Company in India | Marketing Copilot',
     description: 'Top-rated digital marketing agency in India. SEO, Google Ads, Meta Ads, web development and compounding revenue growth for businesses across India.',
+    images: ['https://marketingcopilot.in/images/dashboard_hero.jpg'],
   },
 };
 
