@@ -102,6 +102,28 @@ function extractHeadingsFromPortableText(blocks?: PortableTextBlockItem[]): Head
   return headings;
 }
 
+
+/**
+ * Extracts natural image dimensions and aspect ratio from a Sanity asset _ref string.
+ * Example ref: "image-fd7d103b4e6fa04cbcec8617b7435fbba5f16a41-1200x900-webp" -> { width: 1200, height: 900, aspectRatio: 1.333 }
+ */
+function getSanityImageDimensions(assetRef?: string): {
+  width: number;
+  height: number;
+  aspectRatio: number;
+} | null {
+  if (!assetRef || typeof assetRef !== 'string') return null;
+  const match = assetRef.match(/-(\d+)x(\d+)-/);
+  if (match && match[1] && match[2]) {
+    const width = parseInt(match[1], 10);
+    const height = parseInt(match[2], 10);
+    if (width > 0 && height > 0) {
+      return { width, height, aspectRatio: width / height };
+    }
+  }
+  return null;
+}
+
 const CURATED_DESCRIPTIONS: Record<string, string> = {
   'how-do-you-choose-the-right-digital-marketing-service':
     'Learn how to choose the right digital marketing services for your business based on your goals, target audience, budget, and growth objectives.',
@@ -134,8 +156,11 @@ async function getArticle(slug: string) {
       Array.isArray(sanityPost.body) &&
       sanityPost.body.length > 0
     ) {
+      const bannerAssetRef = sanityPost.bannerImage?.asset?._ref;
+      const bannerDims = getSanityImageDimensions(bannerAssetRef);
+
       const bannerUrl = sanityPost.bannerImage?.asset
-        ? urlForImage(sanityPost.bannerImage)?.width(1200).height(750).url()
+        ? urlForImage(sanityPost.bannerImage)?.width(1600).auto('format').fit('max').url()
         : null;
 
       const authorImageUrl = sanityPost.author?.image?.asset
@@ -192,6 +217,9 @@ async function getArticle(slug: string) {
         rawPublishedAt,
         rawModifiedAt,
         image: bannerUrl || '/images/dashboard_hero.jpg',
+        imageWidth: bannerDims?.width,
+        imageHeight: bannerDims?.height,
+        imageAspectRatio: bannerDims?.aspectRatio,
         featuredImageUrl,
         imageAlt: sanityPost.bannerImage?.alt || headline,
         author: sanityPost.author?.name || 'Sankarsan Nayak',
@@ -251,8 +279,8 @@ export async function generateMetadata({
       images: [
         {
           url: article.featuredImageUrl,
-          width: 1200,
-          height: 630,
+          width: article.imageWidth || 1200,
+          height: article.imageHeight || 630,
           alt: article.imageAlt,
         },
       ],
@@ -386,6 +414,9 @@ export default async function ArticlePage({
         image={article.image}
         imageAlt={article.imageAlt}
         authorImage={article.authorImage}
+        imageWidth={article.imageWidth}
+        imageHeight={article.imageHeight}
+        imageAspectRatio={article.imageAspectRatio}
       />
 
       <div className={styles.page}>

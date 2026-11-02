@@ -17,6 +17,9 @@ interface ArticleHeroProps {
   image: string;
   imageAlt?: string;
   authorImage?: string;
+  imageWidth?: number;
+  imageHeight?: number;
+  imageAspectRatio?: number;
 }
 
 export default function ArticleHero({
@@ -29,6 +32,9 @@ export default function ArticleHero({
   image,
   imageAlt,
   authorImage,
+  imageWidth,
+  imageHeight,
+  imageAspectRatio,
 }: ArticleHeroProps) {
   const [copied, setCopied] = useState(false);
   const [isBannerZoomOpen, setIsBannerZoomOpen] = useState(false);
@@ -161,7 +167,10 @@ export default function ArticleHero({
             onClick={() => setIsBannerZoomOpen(true)}
             role="button"
             tabIndex={0}
-            style={{ cursor: 'zoom-in' }}
+            style={{
+              cursor: 'zoom-in',
+              aspectRatio: imageAspectRatio ? `${imageAspectRatio}` : undefined,
+            }}
             title="Click to zoom image in full resolution"
             onKeyDown={(e) => {
               if (e.key === 'Enter') setIsBannerZoomOpen(true);
@@ -170,10 +179,12 @@ export default function ArticleHero({
             <Image
               src={image}
               alt={imageAlt || title}
-              fill
+              width={imageWidth || 1200}
+              height={imageHeight || 800}
               priority
               className={styles.bannerImage}
               sizes="(max-width: 1024px) 100vw, 580px"
+              style={{ width: '100%', height: 'auto', display: 'block' }}
             />
           </div>
 
