@@ -294,8 +294,8 @@ export async function generateMetadata({
         {
           url: article.featuredImageUrl,
           secureUrl: article.featuredImageUrl,
-          width: article.imageWidth || 1200,
-          height: article.imageHeight || 630,
+          width: 1200,
+          height: 630,
           alt: article.imageAlt,
           type: 'image/jpeg',
         },
