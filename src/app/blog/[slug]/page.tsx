@@ -285,9 +285,11 @@ export async function generateMetadata({
       images: [
         {
           url: article.featuredImageUrl,
+          secureUrl: article.featuredImageUrl,
           width: article.imageWidth || 1200,
           height: article.imageHeight || 630,
           alt: article.imageAlt,
+          type: 'image/jpeg',
         },
       ],
     },
