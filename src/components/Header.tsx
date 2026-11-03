@@ -59,6 +59,94 @@ const serviceClusters: HeaderServiceCluster[] = [
   },
 ];
 
+export interface HeaderIndustryItem {
+  href: string;
+  label: string;
+  shortLabel: string;
+  icon: string;
+  desc: string;
+  badge?: string;
+  featured?: boolean;
+}
+
+const headerIndustries: HeaderIndustryItem[] = [
+  {
+    href: '/industries/digital-marketing-agency-for-dentists',
+    label: 'Dentists & Dental Practices',
+    shortLabel: 'Dentists 🦷',
+    icon: '🦷',
+    desc: 'Digital marketing agency for dentists — high-intent patient acquisition & Maps 3-Pack',
+    badge: 'NEW / FEATURED',
+    featured: true,
+  },
+  {
+    href: '/industries#healthcare',
+    label: 'Healthcare, Hospitals & Clinics',
+    shortLabel: 'Healthcare',
+    icon: '🏥',
+    desc: 'Patient trust, doctor branding & hospital appointment funnels',
+    badge: 'Popular',
+  },
+  {
+    href: '/industries#real-estate',
+    label: 'Real Estate & Luxury Housing',
+    shortLabel: 'Real Estate',
+    icon: '🏢',
+    desc: 'High-ticket property buyer enquiries & site-visit pipelines',
+    badge: 'High Ticket',
+  },
+  {
+    href: '/industries#education',
+    label: 'Education & EdTech',
+    shortLabel: 'Education',
+    icon: '🎓',
+    desc: 'Student admissions, coaching batches & course enrollment',
+  },
+  {
+    href: '/industries#restaurants',
+    label: 'Restaurants & Food Businesses',
+    shortLabel: 'Food & Dining',
+    icon: '🍽️',
+    desc: 'Local diner footfall, weekend reservations & viral Reels',
+  },
+  {
+    href: '/industries#hospitality',
+    label: 'Hotels & Hospitality',
+    shortLabel: 'Hospitality',
+    icon: '🏨',
+    desc: 'Direct bookings & destination search without OTA commission',
+  },
+  {
+    href: '/industries#ecommerce',
+    label: 'E-commerce & D2C Brands',
+    shortLabel: 'E-Commerce',
+    icon: '🛍️',
+    desc: 'Omnichannel scale, catalog performance & cart recovery',
+    badge: 'ROAS Focus',
+  },
+  {
+    href: '/industries#beauty-wellness',
+    label: 'Beauty, Wellness & Fitness',
+    shortLabel: 'Beauty & Fitness',
+    icon: '✨',
+    desc: 'Salons, skin clinics & repeat appointment funnels',
+  },
+  {
+    href: '/industries#finance-fintech',
+    label: 'Finance, Insurance & FinTech',
+    shortLabel: 'Finance',
+    icon: '💼',
+    desc: 'High-consideration wealth management & advisory leads',
+  },
+  {
+    href: '/industries#retail-local',
+    label: 'Retail & Local Commerce',
+    shortLabel: 'Retail & Local',
+    icon: '🏪',
+    desc: 'Hyperlocal store footfall & Google Maps 3-Pack rank',
+  },
+];
+
 const services: HeaderServiceItem[] = serviceClusters.flatMap((c) => c.services);
 
 const mobileLinks = [
@@ -75,7 +163,11 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [industriesOpen, setIndustriesOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mobileIndustriesOpen, setMobileIndustriesOpen] = useState(false);
+  const industriesTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const industriesNavItemRef = useRef<HTMLDivElement | null>(null);
   const [mounted, setMounted] = useState(false);
   const dropdownTimerRef = useRef<NodeJS.Timeout | null>(null);
   const navItemRef = useRef<HTMLDivElement | null>(null);
@@ -97,10 +189,14 @@ export default function Header() {
       if (navItemRef.current && !navItemRef.current.contains(e.target as Node)) {
         setServicesOpen(false);
       }
+      if (industriesNavItemRef.current && !industriesNavItemRef.current.contains(e.target as Node)) {
+        setIndustriesOpen(false);
+      }
     };
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         setServicesOpen(false);
+        setIndustriesOpen(false);
       }
     };
     document.addEventListener('mousedown', handleDocumentClick);
@@ -129,7 +225,9 @@ export default function Header() {
     setPrevPathname(pathname);
     setMenuOpen(false);
     setServicesOpen(false);
+    setIndustriesOpen(false);
     setMobileServicesOpen(true);
+    setMobileIndustriesOpen(true);
   }
 
   const handleMouseEnter = () => {
@@ -141,6 +239,19 @@ export default function Header() {
     if (dropdownTimerRef.current) clearTimeout(dropdownTimerRef.current);
     dropdownTimerRef.current = setTimeout(() => {
       setServicesOpen(false);
+    }, 200);
+  };
+
+  const handleIndustriesEnter = () => {
+    if (industriesTimerRef.current) clearTimeout(industriesTimerRef.current);
+    setServicesOpen(false);
+    setIndustriesOpen(true);
+  };
+
+  const handleIndustriesLeave = () => {
+    if (industriesTimerRef.current) clearTimeout(industriesTimerRef.current);
+    industriesTimerRef.current = setTimeout(() => {
+      setIndustriesOpen(false);
     }, 200);
   };
 
@@ -387,13 +498,175 @@ export default function Header() {
             Portfolio
           </Link>
 
-          {/* Industries */}
-          <Link
-            href="/industries"
-            className={`${styles.navLink} ${pathname.startsWith('/industries') || pathname.toLowerCase().includes('digital-marketing-services-industries') ? styles.engravedActive : ''}`}
+          {/* Industries Dropdown */}
+          <div
+            ref={industriesNavItemRef}
+            className={styles.navItem}
+            onMouseEnter={handleIndustriesEnter}
+            onMouseLeave={handleIndustriesLeave}
           >
-            Industries
-          </Link>
+            <Link
+              href="/industries"
+              className={`${styles.navLink} ${
+                pathname.startsWith('/industries') || pathname.toLowerCase().includes('digital-marketing-services-industries')
+                  ? styles.engravedActive
+                  : ''
+              }`}
+              onClick={(e) => {
+                if (industriesTimerRef.current) clearTimeout(industriesTimerRef.current);
+                if (pathname.startsWith('/industries')) {
+                  e.preventDefault();
+                  setIndustriesOpen((prev) => !prev);
+                } else {
+                  setIndustriesOpen((prev) => !prev);
+                }
+              }}
+              aria-expanded={industriesOpen}
+              aria-haspopup="true"
+              aria-label="Toggle Industries menu or navigate to overview"
+            >
+              Industries
+              <span
+                role="button"
+                tabIndex={0}
+                className={styles.chevronWrapper}
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  if (industriesTimerRef.current) clearTimeout(industriesTimerRef.current);
+                  setIndustriesOpen((prev) => !prev);
+                }}
+                aria-label="Toggle industries dropdown list"
+              >
+                <svg
+                  width="9"
+                  height="9"
+                  viewBox="0 0 12 12"
+                  fill="currentColor"
+                  style={{
+                    marginLeft: 5,
+                    transform: industriesOpen ? 'rotate(180deg)' : 'none',
+                    transition: 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
+                  }}
+                >
+                  <path d="M6 8L2 4h8L6 8z" />
+                </svg>
+              </span>
+            </Link>
+
+            <div
+              className={`${styles.dropdown} ${industriesOpen ? styles.dropdownOpen : ''}`}
+              aria-hidden={!industriesOpen}
+            >
+              <div className={styles.dropdownCard}>
+                <div className={styles.megaMenuContainer}>
+                  {/* Left Area: Categorized Industry Grid */}
+                  <div className={styles.megaMenuClusters}>
+                    <div className={styles.clusterCol}>
+                      <div className={styles.clusterHeader}>
+                        <span className={styles.clusterCategory}>Specialized Industry Sectors</span>
+                        <span className={styles.clusterTag}>PROVEN PLAYBOOKS</span>
+                      </div>
+                      <div className={styles.clusterList}>
+                        {headerIndustries.map((ind) => (
+                          <Link
+                            key={ind.href}
+                            href={ind.href}
+                            className={`${styles.megaMenuItem} ${ind.featured ? styles.featuredIndustryItem : ''}`}
+                            onClick={() => {
+                              if (industriesTimerRef.current) clearTimeout(industriesTimerRef.current);
+                              setIndustriesOpen(false);
+                            }}
+                          >
+                            <span className={styles.megaMenuIcon}>{ind.icon}</span>
+                            <div className={styles.megaMenuContent}>
+                              <div className={styles.megaMenuTitleRow}>
+                                <span className={styles.megaMenuLabel}>{ind.label}</span>
+                                {ind.badge && <span className={styles.megaMenuBadge}>{ind.badge}</span>}
+                              </div>
+                              <span className={styles.megaMenuDesc}>{ind.desc}</span>
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Right Area: Spotlight Card */}
+                  <div className={styles.megaMenuSpotlight}>
+                    <div className={styles.spotlightBadge}>
+                      <span className={styles.spotlightDot} />
+                      <span>CLINICAL &amp; B2B GROWTH</span>
+                    </div>
+
+                    <div className={styles.spotlightVisualWrap}>
+                      <Image
+                        src="/images/industries image 1st slide.png"
+                        alt="Specialized digital marketing growth by industry in India"
+                        fill
+                        sizes="240px"
+                        className={styles.spotlightImg}
+                        loading="lazy"
+                      />
+                    </div>
+
+                    <div className={styles.spotlightHeadline}>
+                      Need an Industry-Specific Strategy?
+                    </div>
+                    <p className={styles.spotlightSubtext}>
+                      Every industry has unique unit economics, patient/buyer intent, and conversion bottlenecks.
+                    </p>
+
+                    <Link
+                      href="/industries"
+                      className={styles.spotlightAuditBtn}
+                      onClick={() => {
+                        if (industriesTimerRef.current) clearTimeout(industriesTimerRef.current);
+                        setIndustriesOpen(false);
+                      }}
+                      tabIndex={industriesOpen ? 0 : -1}
+                    >
+                      <span>Explore All Industries</span>
+                      <span>→</span>
+                    </Link>
+
+                    <div className={styles.spotlightDivider} />
+
+                    <a
+                      href="https://wa.me/918280788689?text=Hi%20Marketing%20Copilot%2C%20I%20want%20to%20discuss%20an%20industry-specific%20growth%20strategy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.spotlightWhatsAppBtn}
+                      tabIndex={industriesOpen ? 0 : -1}
+                    >
+                      <span className={styles.waOnlineDot} />
+                      <span>WhatsApp a Strategist</span>
+                    </a>
+                  </div>
+                </div>
+
+                {/* Bottom Bar Footer */}
+                <div className={styles.dropdownFooter}>
+                  <Link
+                    href="/industries"
+                    className={styles.dropdownAll}
+                    onClick={() => {
+                      if (industriesTimerRef.current) clearTimeout(industriesTimerRef.current);
+                      setIndustriesOpen(false);
+                    }}
+                    tabIndex={industriesOpen ? 0 : -1}
+                  >
+                    <span>View all 10+ industry growth playbooks</span>
+                    <span>→</span>
+                  </Link>
+                  <div className={styles.dropdownGuarantee}>
+                    <span className={styles.guaranteeDot}>✓</span>
+                    <span>Zero Generic Retainers &amp; 100% Attribution</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
           {/* Blog */}
           <Link
@@ -522,6 +795,76 @@ export default function Header() {
                               onClick={() => setMenuOpen(false)}
                             >
                               <span>Explore all services</span>
+                              <span>→</span>
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                }
+
+                // Industries Item with Direct Page Link + Accordion Toggle
+                if (item.href === '/industries') {
+                  return (
+                    <div key="industries-accordion" className={styles.mobileAccordionWrapper}>
+                      <div className={`${styles.mobileServicesRow} ${isActive ? styles.mobileLinkActive : ''}`}>
+                        <Link
+                          href="/industries"
+                          className={styles.mobileServicesDirectLink}
+                          onClick={(e) => {
+                            if (pathname.startsWith('/industries')) {
+                              e.preventDefault();
+                              setMobileIndustriesOpen((prev) => !prev);
+                            } else {
+                              setMenuOpen(false);
+                            }
+                          }}
+                        >
+                          <span className={styles.mobileLinkLabel}>Industries</span>
+                        </Link>
+                        <button
+                          type="button"
+                          className={styles.mobileServicesToggleBtn}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setMobileIndustriesOpen(!mobileIndustriesOpen);
+                          }}
+                          aria-label={mobileIndustriesOpen ? 'Collapse industries list' : 'Expand industries list'}
+                          aria-expanded={mobileIndustriesOpen}
+                        >
+                          <span className={styles.servicesCountPill}>All Sectors</span>
+                          <span className={`${styles.mobileChevronIcon} ${mobileIndustriesOpen ? styles.mobileChevronRotated : ''}`}>
+                            <svg width="10" height="10" viewBox="0 0 12 12" fill="currentColor">
+                              <path d="M2 4L6 8L10 4" stroke="currentColor" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+
+                      {/* Smooth 2-Column Compact Industries Grid */}
+                      <div className={`${styles.mobileServicesSubmenuWrapper} ${mobileIndustriesOpen ? styles.mobileServicesSubmenuOpen : ''}`}>
+                        <div className={styles.mobileServicesSubmenuInner}>
+                          <div className={styles.mobileServicesSubmenu}>
+                            <div className={styles.mobileServicesGrid}>
+                              {headerIndustries.map((ind) => (
+                                <Link
+                                  key={ind.href}
+                                  href={ind.href}
+                                  className={`${styles.mobileServiceChip} ${pathname === ind.href ? styles.mobileServiceChipActive : ''}`}
+                                  onClick={() => setMenuOpen(false)}
+                                >
+                                  <span className={styles.chipIcon}>{ind.icon}</span>
+                                  <span className={styles.chipLabel}>{ind.shortLabel}</span>
+                                </Link>
+                              ))}
+                            </div>
+                            <Link
+                              href="/industries"
+                              className={styles.mobileAllServicesBtn}
+                              onClick={() => setMenuOpen(false)}
+                            >
+                              <span>Explore all industries</span>
                               <span>→</span>
                             </Link>
                           </div>

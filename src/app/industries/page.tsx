@@ -36,6 +36,7 @@ const heroSlides = [
 
 // Industry Icons Map
 const sectorIcons: Record<string, string> = {
+  'dentists': '🦷',
   'healthcare': '🏥',
   'real-estate': '🏢',
   'education': '🎓',
@@ -51,6 +52,7 @@ const sectorIcons: Record<string, string> = {
 // 10 Industry Filters
 const sectorFilters = [
   { id: 'all', label: 'All Industries' },
+  { id: 'dentists', label: '🦷 Dentists & Dental Clinics' },
   { id: 'healthcare', label: '🏥 Healthcare & Hospitals' },
   { id: 'real-estate', label: '🏢 Real Estate & Property' },
   { id: 'education', label: '🎓 Education & EdTech' },
@@ -66,6 +68,7 @@ const sectorFilters = [
 // Diagnostic Tool Options
 const diagnosticSectors = [
   { id: 'real-estate', icon: '🏢', name: 'Real Estate & Builders', defaultStack: 'Sub-second 3D Virtual Tour Portal + Google Search Ads with Negative Shield + WhatsApp Lead Routing', sampleLead: '4 BHK Villa Buyer in Patia (Verified OTP)' },
+  { id: 'dentists', icon: '🦷', name: 'Dentists & Dental Practices', defaultStack: 'Google Maps 3-Pack SEO + High-Ticket Dental Implant Ads + 1-Tap WhatsApp Slot Booking', sampleLead: 'Invisalign & Implant Enquiry in Infocity' },
   { id: 'healthcare', icon: '🏥', name: 'Healthcare & Clinics', defaultStack: 'Google Maps 3-Pack SEO + Verified Doctor Schema + Automated WhatsApp Appointment Bot', sampleLead: 'Specialist Consultation in Saheed Nagar' },
   { id: 'education', icon: '🎓', name: 'Education & Coaching', defaultStack: 'Scholarship Aptitude Test Lead Magnet + Meta Video Ads + Automated Counselor CRM', sampleLead: 'NEET Batch Enrollment from Cuttack' },
   { id: 'ecommerce', icon: '🛍️', name: 'Retail & E-commerce', defaultStack: 'Google Shopping / PMax Feeds + Meta Advantage+ Catalog + WhatsApp 3-Stage Cart Recovery', sampleLead: 'D2C Handloom Repeat Order (UPI Paid)' },

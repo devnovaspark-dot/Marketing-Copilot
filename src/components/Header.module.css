@@ -322,6 +322,17 @@
   transform: translateY(-1px);
 }
 
+.featuredIndustryItem {
+  background: linear-gradient(135deg, rgba(238, 242, 255, 0.95) 0%, rgba(224, 231, 255, 0.7) 100%);
+  border: 1px solid rgba(11, 32, 147, 0.22);
+  box-shadow: 0 2px 8px rgba(11, 32, 147, 0.08);
+}
+
+.featuredIndustryItem:hover {
+  background: #E0E7FF;
+  border-color: #0B2093;
+}
+
 .megaMenuIcon {
   display: flex;
   align-items: center;

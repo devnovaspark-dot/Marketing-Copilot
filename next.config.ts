@@ -72,6 +72,14 @@ const nextConfig: NextConfig = {
         destination: '/industries',
       },
       {
+        source: '/industries/dentists',
+        destination: '/industries/digital-marketing-agency-for-dentists',
+      },
+      {
+        source: '/industries/dental',
+        destination: '/industries/digital-marketing-agency-for-dentists',
+      },
+      {
         source: '/digital-marketing-services-industries-Bhubaneswar',
         destination: '/industries',
       },
