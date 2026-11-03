@@ -448,36 +448,42 @@ const whyChoosePillars = [
     title: 'Dental Industry Specialization',
     desc: 'Deep clinical understanding of dental procedures, operatory chair costs, DCI advertising ethics, and patient anxiety psychology.',
     highlight: 'Zero Generic Freelancers',
+    clinicalTag: '100% Dental Code & DCI Compliant',
   },
   {
     iconType: 'meta',
     title: 'Integrated Marketing Capabilities',
     desc: 'Meta Ads, Google Search, Maps 3-Pack, SEO, and YouTube work as one synchronized patient acquisition engine.',
     highlight: 'Full Omnichannel Harmony',
+    clinicalTag: 'Synchronized Patient Funnel',
   },
   {
     iconType: 'diamond',
     title: 'High-Value Treatment Focus',
     desc: 'We focus ad spend on surgical implants, aligners, and restorative cases rather than burning budget on low-margin cleanings.',
     highlight: 'Maximum Chair Yield',
+    clinicalTag: 'Targeting ₹50,000+ Case Values',
   },
   {
     iconType: 'mappin',
     title: 'Hyperlocal Catchment Dominance',
     desc: 'Hyperlocal dominance on Google Maps 3-Pack across 5–10 km pin codes where nearby families live and commute.',
     highlight: '5–10 KM Catchment Dominance',
+    clinicalTag: 'Dominating Local Search & Maps',
   },
   {
     iconType: 'chart',
     title: 'Transparent Performance Tracking',
     desc: 'Live 24/7 practice dashboard tracking qualified inquiries, consult show-ups, patient acquisition cost, and verified ROI.',
     highlight: 'Real Seated Telemetry',
+    clinicalTag: 'Live 24/7 Practice Dashboard',
   },
   {
     iconType: 'shield',
     title: 'Continuous Optimization & No-Show Shield',
     desc: 'Automated WhatsApp token confirmations and GPS reminder alerts that slash clinic empty chair no-shows by up to 78%.',
     highlight: '91.5%+ Show-Up Rate',
+    clinicalTag: 'WhatsApp Automated Token Bot',
   },
 ];
 
@@ -511,12 +517,69 @@ const dentalFaqs = [
   },
 ];
 
+// ══════════════════════════════════════════════════
+// SYNCHRONIZED PATIENT ACQUISITION ARCHITECTURE DATA
+// Lightweight, concise 6-stage patient conversion engine
+// ══════════════════════════════════════════════════
+const synchronizedFunnelSteps = [
+  {
+    step: '01',
+    name: 'Meta Ads',
+    role: 'Local Catchment Discovery',
+    iconType: 'meta',
+    desc: 'Reach local families and working professionals browsing Instagram and Facebook with aesthetic and smile transformation creatives.',
+    outcome: 'Builds immediate brand familiarity across your 5–10 km radius.',
+  },
+  {
+    step: '02',
+    name: 'Google Ads',
+    role: 'High-Intent Capture',
+    iconType: 'search',
+    desc: 'Capture patients actively searching for dental implants, clear aligners, and emergency dentistry with direct click-to-call landers.',
+    outcome: 'Converts high-intent surgical searchers straight into consultation inquiries.',
+  },
+  {
+    step: '03',
+    name: 'Maps 3-Pack',
+    role: 'Neighborhood Dominance',
+    iconType: 'mappin',
+    desc: 'Rank in top 3 Google Maps results with geo-tagged clinic photography, local schema, and automated WhatsApp 5-star reviews.',
+    outcome: 'Captures nearby residential footfall and builds neighborhood trust.',
+  },
+  {
+    step: '04',
+    name: 'SEO + AI Search',
+    role: 'Compounding Visibility',
+    iconType: 'seo',
+    desc: 'Rank organically for high-value treatment queries across Google search and AI platforms like ChatGPT and Gemini.',
+    outcome: 'Compounds sustainable zero-ad-cost patient consultations monthly.',
+  },
+  {
+    step: '05',
+    name: 'Video & Social',
+    role: 'Patient Trust & Authority',
+    iconType: 'video',
+    desc: 'Doctor explainers and sterilized clinic tours alleviate patient anxiety and establish professional clinical credibility.',
+    outcome: 'Pre-sells clinical trust and dissolves fear before patients arrive.',
+  },
+  {
+    step: '06',
+    name: 'Seated Consults',
+    role: 'Practice Chair Growth',
+    iconType: 'tooth',
+    desc: 'Automated WhatsApp token booking, GPS directions, and 2-hour reminder alerts protect your clinic from empty chair downtime.',
+    outcome: 'Fills specialized operatory chairs with 91.5%+ show-up rates.',
+  },
+];
+
 export default function DentalMarketingPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [currentSlide, setCurrentSlide] = useState<number>(0);
   const [activeStep, setActiveStep] = useState<number>(0);
   const [isProcessPaused, setIsProcessPaused] = useState<boolean>(false);
   const [activeCase, setActiveCase] = useState<number>(0);
+  const [activeFunnelStep, setActiveFunnelStep] = useState<number>(0);
+  const [isFunnelPaused, setIsFunnelPaused] = useState<boolean>(false);
 
   // Auto rotate hero clinical slides
   useEffect(() => {
@@ -534,6 +597,15 @@ export default function DentalMarketingPage() {
     }, 2000);
     return () => clearInterval(processTimer);
   }, [isProcessPaused]);
+
+  // Auto rotate synchronized architecture funnel steps (3.5s interval, pauses on hover)
+  useEffect(() => {
+    if (isFunnelPaused) return;
+    const funnelTimer = setInterval(() => {
+      setActiveFunnelStep((prev) => (prev + 1) % synchronizedFunnelSteps.length);
+    }, 3500);
+    return () => clearInterval(funnelTimer);
+  }, [isFunnelPaused]);
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -741,78 +813,152 @@ export default function DentalMarketingPage() {
             ))}
           </div>
 
-          {/* Integrated Visual Marketing Journey Flow Ribbon */}
-          <div className={styles.integratedFunnelRibbon}>
+          {/* Integrated Visual Marketing Journey Flow Ribbon (Animated & Interactive) */}
+          <div
+            className={styles.integratedFunnelRibbon}
+            onMouseEnter={() => setIsFunnelPaused(true)}
+            onMouseLeave={() => setIsFunnelPaused(false)}
+            onTouchStart={() => setIsFunnelPaused(true)}
+            onTouchEnd={() => setIsFunnelPaused(false)}
+          >
             <div className={styles.funnelRibbonHeader}>
               <div className={styles.funnelRibbonEyebrow}>
                 <span className={styles.funnelRibbonDot} />
-                <span>SYNCHRONIZED PATIENT ACQUISITION ARCHITECTURE</span>
+                <span>SYNCHRONIZED PATIENT ACQUISITION</span>
               </div>
               <h3 className={styles.funnelRibbonTitle}>
-                How These 6 Capabilities Work Together to Fill Your Chairs
+                How These 6 Capabilities Work Together
               </h3>
               <p className={styles.funnelRibbonSubtitle}>
-                Rather than disconnected agency silos, our capabilities function as a synchronized acquisition engine — guiding local searchers from discovery to seated operatory consultations.
+                A connected patient journey — guiding local searchers from discovery to seated consultations.
               </p>
             </div>
 
-            <div className={styles.funnelFlowHighway}>
-              <div className={styles.flowNode}>
-                <div className={styles.flowNodeStepNum}>STEP 01</div>
-                <div className={styles.flowNodeIcon}><Icon3DMeta /></div>
-                <div className={styles.flowNodeTitle}>Meta Ads</div>
-                <div className={styles.flowNodeRole}>Awareness &amp; Interest</div>
+            {/* Interactive Highway Nodes with Animated Traveling Beam */}
+            <div className={styles.funnelHighwayTrack}>
+              <div className={styles.funnelBeamLine}>
+                <div className={styles.funnelBeamPulse} />
               </div>
-              <div className={styles.flowArrow}>→</div>
 
-              <div className={styles.flowNode}>
-                <div className={styles.flowNodeStepNum}>STEP 02</div>
-                <div className={styles.flowNodeIcon}><Icon3DSearch /></div>
-                <div className={styles.flowNodeTitle}>Google Ads</div>
-                <div className={styles.flowNodeRole}>High-Intent Capture</div>
-              </div>
-              <div className={styles.flowArrow}>→</div>
+              <div className={styles.funnelFlowHighway}>
+                {synchronizedFunnelSteps.map((fStep, fIdx) => {
+                  const isActive = fIdx === activeFunnelStep;
+                  const isGoal = fIdx === 5;
+                  return (
+                    <button
+                      key={fIdx}
+                      type="button"
+                      onClick={() => setActiveFunnelStep(fIdx)}
+                      className={`${styles.flowNode} ${isActive ? styles.flowNodeActive : ''} ${isGoal ? (isActive ? styles.flowNodeGoalActive : styles.flowNodeGoal) : ''}`}
+                      aria-label={`Inspect Stage ${fStep.step}: ${fStep.name}`}
+                    >
+                      <div className={isGoal ? styles.flowNodeGoalStepNum : styles.flowNodeStepNum}>
+                        STEP {fStep.step}
+                      </div>
 
-              <div className={styles.flowNode}>
-                <div className={styles.flowNodeStepNum}>STEP 03</div>
-                <div className={styles.flowNodeIcon}><Icon3DMapPin /></div>
-                <div className={styles.flowNodeTitle}>Maps 3-Pack</div>
-                <div className={styles.flowNodeRole}>Local Discovery</div>
-              </div>
-              <div className={styles.flowArrow}>→</div>
+                      <div className={styles.flowNodeIcon}>
+                        {fStep.iconType === 'meta' && <Icon3DMeta />}
+                        {fStep.iconType === 'search' && <Icon3DSearch />}
+                        {fStep.iconType === 'mappin' && <Icon3DMapPin />}
+                        {fStep.iconType === 'seo' && <Icon3DSEO />}
+                        {fStep.iconType === 'video' && <Icon3DVideo />}
+                        {fStep.iconType === 'tooth' && <Icon3DTooth />}
+                      </div>
 
-              <div className={styles.flowNode}>
-                <div className={styles.flowNodeStepNum}>STEP 04</div>
-                <div className={styles.flowNodeIcon}><Icon3DSEO /></div>
-                <div className={styles.flowNodeTitle}>SEO + AEO/GEO</div>
-                <div className={styles.flowNodeRole}>Organic Visibility</div>
-              </div>
-              <div className={styles.flowArrow}>→</div>
+                      <div className={isGoal ? styles.flowNodeGoalTitle : styles.flowNodeTitle}>
+                        {fStep.name}
+                      </div>
 
-              <div className={styles.flowNode}>
-                <div className={styles.flowNodeStepNum}>STEP 05</div>
-                <div className={styles.flowNodeIcon}><Icon3DVideo /></div>
-                <div className={styles.flowNodeTitle}>Video &amp; Content</div>
-                <div className={styles.flowNodeRole}>Trust &amp; Authority</div>
-              </div>
-              <div className={styles.flowArrow}>→</div>
+                      <div className={isGoal ? styles.flowNodeGoalRole : styles.flowNodeRole}>
+                        {fStep.role}
+                      </div>
 
-              <div className={`${styles.flowNode} ${styles.flowNodeGoal}`}>
-                <div className={styles.flowNodeGoalStepNum}>OUTCOME</div>
-                <div className={styles.flowNodeGoalIcon}>🦷</div>
-                <div className={styles.flowNodeGoalTitle}>Patient Enquiries</div>
-                <div className={styles.flowNodeGoalRole}>Seated Consultations</div>
+                      {isActive && (
+                        <div className={styles.activePhaseIndicator}>
+                          <span className={styles.activePhaseDot} />
+                          <span>ACTIVE</span>
+                        </div>
+                      )}
+                    </button>
+                  );
+                })}
               </div>
             </div>
+
+            {/* Concise, Lightweight Active Phase Readout */}
+            {(() => {
+              const currentStage = synchronizedFunnelSteps[activeFunnelStep];
+              return (
+                <div key={`funnel-stage-${activeFunnelStep}`} className={`${styles.funnelMicroConsole} ${styles.textShift}`}>
+                  <div className={styles.microConsoleHeader}>
+                    <div className={styles.microConsoleBadge}>
+                      <span className={styles.consolePulseDot} />
+                      <span>STAGE {currentStage.step} • {currentStage.name}</span>
+                    </div>
+                    <span className={styles.microConsoleRole}>{currentStage.role}</span>
+                  </div>
+                  <p className={styles.microConsoleDesc}>{currentStage.desc}</p>
+                  <div className={styles.microConsoleOutcome}>
+                    <span className={styles.outcomeTag}>RESULT:</span>
+                    <span className={styles.outcomeText}>{currentStage.outcome}</span>
+                  </div>
+                </div>
+              );
+            })()}
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════ */}
+      {/* THE DENTAL ADVANTAGE • Pixel-Aligned Skeuomorphic */}
+      {/* ══════════════════════════════════════════════════ */}
+      <section id="why-choose-us" className={styles.sectionBlockAlt}>
+        <div className={styles.container}>
+          <div className={styles.sectionHeader}>
+            <div className={styles.sectionPill}>
+              <span>THE DENTAL ADVANTAGE</span>
+            </div>
+            <h2 className={styles.sectionTitle}>Why Dental Clinics Choose Marketing Copilot</h2>
+            <p className={styles.sectionSubtitle}>
+              We specialize exclusively in clinical dental growth, combining deep procedure understanding with proven digital acquisition systems.
+            </p>
+          </div>
+
+          <div className={styles.whyChooseGrid}>
+            {whyChoosePillars.map((pillar, idx) => (
+              <ScrollReveal key={idx} delay={idx * 50} className={styles.whyChooseCol}>
+                <div className={styles.whyChooseCard}>
+                  <div className={styles.whyChooseTopRow}>
+                    <div className={styles.whyChooseIconPod}>
+                      {pillar.iconType === 'tooth' && <Icon3DTooth />}
+                      {pillar.iconType === 'meta' && <Icon3DMeta />}
+                      {pillar.iconType === 'diamond' && <Icon3DDiamond />}
+                      {pillar.iconType === 'mappin' && <Icon3DMapPin />}
+                      {pillar.iconType === 'chart' && <Icon3DChart />}
+                      {pillar.iconType === 'shield' && <Icon3DShield />}
+                    </div>
+                    <span className={styles.whyChooseHighlight}>{pillar.highlight}</span>
+                  </div>
+                  <div className={styles.whyChooseBody}>
+                    <h3 className={styles.whyChooseTitle}>{pillar.title}</h3>
+                    <p className={styles.whyChooseDesc}>{pillar.desc}</p>
+                  </div>
+                  <div className={styles.whyChooseBottomAnchor}>
+                    <span className={styles.whyChooseAnchorDot} />
+                    <span className={styles.whyChooseAnchorText}>{pillar.clinicalTag}</span>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
           </div>
         </div>
       </section>
 
       {/* ══════════════════════════════════════════════════ */}
       {/* SECTION 03: HIGH-VALUE DENTAL TREATMENTS           */}
-      {/* With Photographic Thumbnails & 3D Vector Icons    */}
+      {/* Clean Unobstructed Photos & 3D Vector Icon Pods    */}
       {/* ══════════════════════════════════════════════════ */}
-      <section id="treatments" className={styles.sectionBlockAlt}>
+      <section id="treatments" className={styles.sectionBlock}>
         <div className={styles.container}>
           <div className={styles.sectionHeader}>
             <div className={styles.sectionPill}>
@@ -830,18 +976,9 @@ export default function DentalMarketingPage() {
                 <div className={styles.treatmentCard}>
                   <div className={styles.treatmentCardTopAccent} aria-hidden="true" />
 
-                  {/* Procedure Photography Header with Overlaid 3D Icon */}
-                  <div className={styles.treatmentImageFrame}>
-                    <Image
-                      src={proc.image}
-                      alt={proc.alt}
-                      fill
-                      className={styles.treatmentImage}
-                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 360px"
-                    />
-                    <div className={styles.treatmentImageOverlay} />
-
-                    <div className={styles.treatmentFloatingIcon}>
+                  {/* Card Top Header: 3D Vector Icon and Suite Badges (Above image, NOT on image) */}
+                  <div className={styles.treatmentTopBar}>
+                    <div className={styles.treatmentIconPod}>
                       {proc.iconType === 'aligner' && <Icon3DAligner />}
                       {proc.iconType === 'implant' && <Icon3DImplant />}
                       {proc.iconType === 'tooth' && <Icon3DTooth />}
@@ -850,10 +987,21 @@ export default function DentalMarketingPage() {
                       {proc.iconType === 'shield' && <Icon3DShield />}
                     </div>
 
-                    <div className={styles.treatmentFloatingBadges}>
+                    <div className={styles.treatmentMetaBadgeWrap}>
                       <span className={styles.treatmentTargetBadge}>{proc.targetBadge}</span>
                       <span className={styles.treatmentSeqNum}>SUITE 0{idx + 1}</span>
                     </div>
+                  </div>
+
+                  {/* Clean, unobstructed procedural photography - ZERO text above the image */}
+                  <div className={styles.treatmentImageFrame}>
+                    <Image
+                      src={proc.image}
+                      alt={proc.alt}
+                      fill
+                      className={styles.treatmentImage}
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 360px"
+                    />
                   </div>
 
                   <div className={styles.treatmentHeadGroup}>
@@ -1068,16 +1216,19 @@ export default function DentalMarketingPage() {
             <ScrollReveal>
               <div className={styles.caseStudyCard}>
                 <div className={styles.caseInfoCol}>
-                  <div className={styles.caseClientBadge}>
-                    <span className={styles.liveTelemetryLed} />
-                    <span>{activeCs.tag}</span>
+                  <div className={styles.caseHeaderRow}>
+                    <div className={styles.caseClientBadge}>
+                      <span className={styles.liveTelemetryLed} />
+                      <span>{activeCs.tag}</span>
+                    </div>
+                    <div className={styles.caseDoctorBadge}>
+                      <span>👨‍⚕️ {activeCs.doctor}</span>
+                    </div>
                   </div>
+
                   <h3 className={styles.caseTitle}>
                     {activeCs.headline}
                   </h3>
-                  <div className={styles.caseDoctorBadge}>
-                    <span>👨‍⚕️ {activeCs.doctor}</span>
-                  </div>
 
                   <div className={styles.caseChallengeSolution}>
                     <div className={styles.caseCSBlock}>
@@ -1085,30 +1236,37 @@ export default function DentalMarketingPage() {
                       <p className={styles.csText}>{activeCs.challenge}</p>
                     </div>
                     <div className={styles.caseCSBlock}>
-                      <span className={styles.csLabel}>Strategic Solution:</span>
+                      <span className={styles.csLabel}>Growth Strategy:</span>
                       <p className={styles.csText}>{activeCs.strategy}</p>
                     </div>
                   </div>
 
-                  <div className={styles.caseQuoteCard}>
-                    <p className={styles.caseQuoteText}>
-                      {activeCs.quote}
-                    </p>
-                    <span className={styles.caseQuoteAuthor}>
-                      — {activeCs.doctor}
-                    </span>
+                  {/* Verified Clinical Practice Metrics (In left column, NOT on image) */}
+                  <div className={styles.caseMetricsRow}>
+                    {activeCs.metrics.map((m, mIdx) => (
+                      <div key={mIdx} className={styles.caseMetricBox}>
+                        <span className={styles.caseMetricVal}>{m.value}</span>
+                        <span className={styles.caseMetricLabel}>{m.label}</span>
+                      </div>
+                    ))}
                   </div>
 
-                  <div className={styles.caseCtaWrap}>
-                    <BeamButton
-                      href="/contact"
-                      label="Replicate This Success For Your Practice"
-                      size="sm"
-                    />
+                  <div className={styles.caseBottomBar}>
+                    <p className={styles.caseQuoteInline}>
+                      <span className={styles.caseQuoteMark}>“</span>
+                      {activeCs.quote}
+                    </p>
+                    <div className={styles.caseCtaWrap}>
+                      <BeamButton
+                        href="/contact"
+                        label="Replicate Results"
+                        size="sm"
+                      />
+                    </div>
                   </div>
                 </div>
 
-                {/* Right Visual Clinical Photograph with Floating Telemetry Badges */}
+                {/* Right Column: Clean, Unobstructed Clinical Photography (ZERO text on image) */}
                 <div className={styles.caseVisualColumn}>
                   <div className={styles.caseImageFrame}>
                     <Image
@@ -1116,23 +1274,8 @@ export default function DentalMarketingPage() {
                       alt={activeCs.alt}
                       fill
                       className={styles.caseImage}
-                      sizes="(max-width: 900px) 100vw, 460px"
+                      sizes="(max-width: 900px) 100vw, 420px"
                     />
-                    <div className={styles.caseImageOverlay} />
-
-                    <div className={styles.caseImageTopTag}>
-                      <span>LIVE ATTRIBUTION TELEMETRY</span>
-                    </div>
-
-                    {/* Floating Glass Telemetry Metric Badges */}
-                    <div className={styles.caseFloatingMetrics}>
-                      {activeCs.metrics.map((m, mIdx) => (
-                        <div key={mIdx} className={styles.floatingMetricPill}>
-                          <span className={styles.floatingMetricVal}>{m.value}</span>
-                          <span className={styles.floatingMetricLabel}>{m.label}</span>
-                        </div>
-                      ))}
-                    </div>
                   </div>
                 </div>
               </div>
@@ -1147,7 +1290,7 @@ export default function DentalMarketingPage() {
       {/* ══════════════════════════════════════════════════ */}
       <section id="comparison" className={styles.sectionBlockCompact}>
         <div id="problems" style={{ position: 'relative', top: '-100px', visibility: 'hidden' }} />
-        <div className={styles.container}>
+        <div className={styles.comparisonContainer}>
           <div className={styles.sectionHeaderCompact}>
             <div className={styles.sectionPillCompact}>
               <span>DENTAL PRACTICE GROWTH BENCHMARK</span>
@@ -1237,46 +1380,6 @@ export default function DentalMarketingPage() {
                 />
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════════════ */}
-      {/* SECTION 07: WHY CHOOSE MARKETING COPILOT           */}
-      {/* THE DENTAL ADVANTAGE • Pixel-Aligned Skeuomorphic */}
-      {/* ══════════════════════════════════════════════════ */}
-      <section id="why-choose-us" className={styles.sectionBlock}>
-        <div className={styles.container}>
-          <div className={styles.sectionHeader}>
-            <div className={styles.sectionPill}>
-              <span>THE DENTAL ADVANTAGE</span>
-            </div>
-            <h2 className={styles.sectionTitle}>Why Dental Clinics Choose Marketing Copilot</h2>
-            <p className={styles.sectionSubtitle}>
-              We specialize exclusively in clinical dental growth, combining deep procedure understanding with proven digital acquisition systems.
-            </p>
-          </div>
-
-          <div className={styles.whyChooseGrid}>
-            {whyChoosePillars.map((pillar, idx) => (
-              <ScrollReveal key={idx} delay={idx * 50} className={styles.whyChooseCol}>
-                <div className={styles.whyChooseCard}>
-                  <div className={styles.whyChooseTopRow}>
-                    <div className={styles.whyChooseIconPod}>
-                      {pillar.iconType === 'tooth' && <Icon3DTooth />}
-                      {pillar.iconType === 'meta' && <Icon3DMeta />}
-                      {pillar.iconType === 'diamond' && <Icon3DDiamond />}
-                      {pillar.iconType === 'mappin' && <Icon3DMapPin />}
-                      {pillar.iconType === 'chart' && <Icon3DChart />}
-                      {pillar.iconType === 'shield' && <Icon3DShield />}
-                    </div>
-                    <span className={styles.whyChooseHighlight}>{pillar.highlight}</span>
-                  </div>
-                  <h3 className={styles.whyChooseTitle}>{pillar.title}</h3>
-                  <p className={styles.whyChooseDesc}>{pillar.desc}</p>
-                </div>
-              </ScrollReveal>
-            ))}
           </div>
         </div>
       </section>
