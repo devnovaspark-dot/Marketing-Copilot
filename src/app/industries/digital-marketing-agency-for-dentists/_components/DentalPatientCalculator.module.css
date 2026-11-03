@@ -60,7 +60,33 @@
 @media (max-width: 860px) {
   .calcGrid {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .calcCard {
+    padding: 20px 14px;
+    border-radius: 18px;
+  }
+  .calcHeader {
+    margin-bottom: 20px;
+  }
+  .calcTitle {
+    font-size: 21px;
+  }
+  .calcSubtitle {
+    font-size: 13px;
+  }
+  .inputsCol {
+    gap: 18px;
+  }
+  .resultsPanel {
+    padding: 20px 16px;
+    border-radius: 16px;
+  }
+  .roiHeadlineVal {
+    font-size: 26px;
   }
 }
 

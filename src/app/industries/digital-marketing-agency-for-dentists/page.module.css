@@ -17,6 +17,12 @@
   padding: 0 24px;
 }
 
+@media (max-width: 640px) {
+  .container {
+    padding: 0 14px;
+  }
+}
+
 /* ══════════════════════════════════════════════════
    HERO SECTION (Matching Global Hero Standard)
 ══════════════════════════════════════════════════ */
@@ -427,12 +433,74 @@
 @media (max-width: 1080px) {
   .bottleneckGrid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 640px) {
   .bottleneckGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .bottleneckCard {
+    padding: 13px 10px;
+    border-radius: 16px;
+  }
+  .cardTopBar {
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .cardLedBadge {
+    font-size: 8px;
+    padding: 2px 6px;
+    gap: 4px;
+  }
+  .ledAudit {
+    width: 6px;
+    height: 6px;
+  }
+  .metricAuditPill {
+    font-size: 7.5px;
+    padding: 2px 5px;
+  }
+  .cardIconWrap {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+  }
+  .cardTitle {
+    font-size: 13px;
+    line-height: 1.22;
+    min-height: 32px;
+    margin-bottom: 4px;
+  }
+  .symptomTag {
+    font-size: 9px;
+    padding: 1.5px 5px;
+    margin-bottom: 6px;
+  }
+  .cardText {
+    font-size: 10.5px;
+    line-height: 1.35;
+    margin-bottom: 8px;
+    min-height: 44px;
+  }
+  .solutionBox {
+    padding: 7px 8px;
+    min-height: 52px;
+    border-radius: 9px;
+  }
+  .solutionBoxLabel {
+    font-size: 8px;
+    gap: 3px;
+    margin-bottom: 2px;
+  }
+  .solutionBoxText {
+    font-size: 10px;
+    line-height: 1.3;
   }
 }
 
@@ -617,12 +685,91 @@
 @media (max-width: 990px) {
   .proceduresGrid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
   }
 }
 
 @media (max-width: 640px) {
   .proceduresGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .procedureCard {
+    padding: 13px 10px;
+    border-radius: 16px;
+  }
+  .procedureTopHeader {
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .procedureTierBadge {
+    font-size: 7.5px;
+    padding: 2px 5px;
+  }
+  .procedureDemandPill {
+    font-size: 7.5px;
+    padding: 2px 5px;
+  }
+  .procedureTitleRow {
+    gap: 5px;
+    margin-bottom: 6px;
+  }
+  .procedureIconEmoji {
+    font-size: 16px;
+  }
+  .procedureTitle {
+    font-size: 12.5px;
+    line-height: 1.2;
+  }
+  .procedureDesc {
+    font-size: 10.5px;
+    line-height: 1.35;
+    margin-bottom: 8px;
+    min-height: 38px;
+  }
+  .procedureSpecConsole {
+    padding: 6px 8px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+  }
+  .specLabel {
+    font-size: 7.5px;
+  }
+  .specTicket {
+    font-size: 11px;
+  }
+  .specMarginPill {
+    font-size: 7.5px;
+    padding: 2px 5px;
+  }
+  .deliverablesSectionTitle {
+    font-size: 8.5px;
+    margin-bottom: 5px;
+  }
+  .deliverablesList {
+    gap: 4px;
+    margin-bottom: 8px;
+  }
+  .deliverableItem {
+    font-size: 9.5px;
+    line-height: 1.3;
+    gap: 4px;
+  }
+  .checkCircle {
+    width: 12px;
+    height: 12px;
+    font-size: 7.5px;
+  }
+  .tagsTray {
+    gap: 3px;
+    margin-bottom: 8px;
+    padding-top: 5px;
+    min-height: auto;
+  }
+  .procedureTagChip {
+    font-size: 8px;
+    padding: 1.5px 4px;
   }
 }
 
@@ -879,7 +1026,65 @@
 
 @media (max-width: 860px) {
   .pillarsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .pillarsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .pillarCard {
+    padding: 13px 10px;
+    border-radius: 16px;
+  }
+  .pillarHeaderBar {
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .pillarStageBadge {
+    font-size: 7.5px;
+    padding: 2px 5px;
+  }
+  .pillarBadgePill {
+    font-size: 7.5px;
+    padding: 2px 5px;
+  }
+  .pillarTitle {
+    font-size: 12.5px;
+    line-height: 1.25;
+    margin: 4px 0 4px;
+  }
+  .pillarDesc {
+    font-size: 10.5px;
+    line-height: 1.35;
+    margin-bottom: 8px;
+    min-height: 38px;
+  }
+  .pillarTelemetryCluster {
     grid-template-columns: 1fr;
+    padding: 5px 7px;
+    gap: 3px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+  }
+  .telemetryCellLabel {
+    font-size: 7.5px;
+  }
+  .telemetryCellVal {
+    font-size: 10.5px;
+  }
+  .pillarDeliverableList {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+  .pillarDeliverableItem {
+    font-size: 9.5px;
+    line-height: 1.3;
+    gap: 4px;
   }
 }
 
@@ -1071,7 +1276,25 @@
 @media (max-width: 900px) {
   .caseStudyCard {
     grid-template-columns: 1fr;
-    padding: 30px 22px;
+    padding: 24px 18px;
+    gap: 22px;
+    border-radius: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .caseStudyCard {
+    padding: 18px 14px;
+    border-radius: 16px;
+    gap: 16px;
+  }
+  .caseTitle {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .caseStory {
+    font-size: 12px;
+    line-height: 1.45;
   }
 }
 
@@ -1187,6 +1410,18 @@
   z-index: 2;
   max-width: 980px;
   margin: 0 auto;
+}
+
+.mobileScrollHint {
+  display: none;
+}
+
+.comparisonScrollContainer {
+  width: 100%;
+}
+
+.comparisonInnerTable {
+  width: 100%;
 }
 
 .comparisonHeaderRow {
@@ -1512,20 +1747,75 @@
 }
 
 @media (max-width: 860px) {
+  .mobileScrollHint {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    background: #EFF6FF;
+    border-bottom: 1px solid #DBEAFE;
+    font-family: var(--font-display);
+    font-size: 11px;
+    font-weight: 700;
+    color: #0284C7;
+    letter-spacing: 0.04em;
+    text-align: center;
+  }
+
+  .comparisonScrollContainer {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    scrollbar-width: thin;
+    scrollbar-color: #93C5FD #F1F5F9;
+  }
+
+  .comparisonScrollContainer::-webkit-scrollbar {
+    height: 5px;
+  }
+
+  .comparisonScrollContainer::-webkit-scrollbar-track {
+    background: #F1F5F9;
+  }
+
+  .comparisonScrollContainer::-webkit-scrollbar-thumb {
+    background: #93C5FD;
+    border-radius: 9999px;
+  }
+
+  .comparisonInnerTable {
+    min-width: 680px; /* Maintains full horizontal 3-column desktop layout on mobile */
+    width: 100%;
+  }
+
   .comparisonHeaderRow {
-    display: none;
-  }
-  .comparisonRow {
-    grid-template-columns: 1fr;
+    display: grid;
+    grid-template-columns: 1.15fr 1fr 1.25fr;
+    padding: 10px 16px;
     gap: 10px;
-    padding: 14px 16px;
   }
+
+  .comparisonRow {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr 1.25fr;
+    gap: 10px;
+    padding: 10px 16px;
+  }
+
   .comparisonFooterStrip {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 14px;
     padding: 14px 16px;
+    text-align: center;
   }
+
+  .comparisonFooterLeft {
+    justify-content: center;
+    font-size: 11.5px;
+  }
+
   .comparisonBeamBtnWrap {
     width: 100%;
     display: flex;
@@ -1760,4 +2050,22 @@
   height: 4px;
   border-radius: 50%;
   background: #CBD5E1;
+}
+
+@media (max-width: 640px) {
+  .preFooterCard {
+    padding: 32px 16px;
+    border-radius: 20px;
+  }
+  .preFooterTitle {
+    font-size: 23px;
+  }
+  .preFooterDesc {
+    font-size: 13px;
+    margin-bottom: 24px;
+  }
+  .preFooterProof {
+    gap: 16px;
+    padding-top: 20px;
+  }
 }
