@@ -464,12 +464,12 @@ export default function DentalMarketingPage() {
     return () => clearInterval(timer);
   }, []);
 
-  // Auto rotate onboarding & scale process steps
+  // Auto rotate onboarding & scale process steps (2-second interval)
   useEffect(() => {
     if (isProcessPaused) return;
     const processTimer = setInterval(() => {
       setActiveStep((prev) => (prev + 1) % growthProcessSteps.length);
-    }, 4000);
+    }, 2000);
     return () => clearInterval(processTimer);
   }, [isProcessPaused]);
 
