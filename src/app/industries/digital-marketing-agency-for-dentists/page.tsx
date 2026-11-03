@@ -1146,6 +1146,7 @@ export default function DentalMarketingPage() {
       {/* Minimal Single-Window Benchmark Comparison Card    */}
       {/* ══════════════════════════════════════════════════ */}
       <section id="comparison" className={styles.sectionBlockCompact}>
+        <div id="problems" style={{ position: 'relative', top: '-100px', visibility: 'hidden' }} />
         <div className={styles.container}>
           <div className={styles.sectionHeaderCompact}>
             <div className={styles.sectionPillCompact}>
@@ -1325,10 +1326,26 @@ export default function DentalMarketingPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════ */}
-      {/* SECTION 09: FINAL CTA                              */}
+      {/* SECTION 09: LOCATION AND ADDRESS INFORMATION       */}
+      {/* Positioned Just Above Pre-Footer CTA               */}
+      {/* ══════════════════════════════════════════════════ */}
+      <QuickConnectMapSection
+        id="location"
+        eyebrow="CLINIC GROWTH PARTNER • OFFICE LOCATION & CONNECT"
+        title={
+          <>
+            Visit Our Headquarters or<br />
+            <span style={{ color: '#0B2093' }}>Connect With Our Dental Growth Team</span>
+          </>
+        }
+        subtitle="Serving dental clinics, multi-specialty practices, and implant centers across India. Connect with our dental marketing strategists to review your local catchment area and discuss practice growth."
+      />
+
+      {/* ══════════════════════════════════════════════════ */}
+      {/* SECTION 10: FINAL PRE-FOOTER CTA                   */}
       {/* Conversion-Focused Pre-Footer Card                 */}
       {/* ══════════════════════════════════════════════════ */}
-      <section id="cta" className={styles.sectionBlock}>
+      <section id="cta" className={styles.preFooterSection}>
         <div className={styles.container}>
           <div className={styles.preFooterCard}>
             <div className={styles.preFooterEyebrow}>
@@ -1379,22 +1396,6 @@ export default function DentalMarketingPage() {
           </div>
         </div>
       </section>
-
-      {/* ══════════════════════════════════════════════════ */}
-      {/* SECTION 10: LOCATION AND ADDRESS INFORMATION       */}
-      {/* Moved to Bottom Area (Immediately Before Footer)   */}
-      {/* ══════════════════════════════════════════════════ */}
-      <QuickConnectMapSection
-        id="location"
-        eyebrow="CLINIC GROWTH PARTNER • OFFICE LOCATION & CONNECT"
-        title={
-          <>
-            Visit Our Headquarters or<br />
-            <span style={{ color: '#0B2093' }}>Connect With Our Dental Growth Team</span>
-          </>
-        }
-        subtitle="Serving dental clinics, multi-specialty practices, and implant centers across India. Connect with our dental marketing strategists to review your local catchment area and discuss practice growth."
-      />
     </div>
   );
 }
