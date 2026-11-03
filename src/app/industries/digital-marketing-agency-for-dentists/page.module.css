@@ -1924,17 +1924,64 @@
 }
 
 /* ══════════════════════════════════════════════════
-   COMPARISON MATRIX (Compact Executive Matrix With 3D Icons)
+   COMPARISON MATRIX (Minimal & Compact Single-Window Fit)
 ══════════════════════════════════════════════════ */
+.sectionBlockCompact {
+  padding: 32px 0 36px;
+  position: relative;
+  background: #FFFFFF;
+}
+
+.sectionHeaderCompact {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 14px;
+}
+
+.sectionPillCompact {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(11, 32, 147, 0.06);
+  border: 1px solid rgba(11, 32, 147, 0.15);
+  border-radius: 999px;
+  padding: 2.5px 10px;
+  font-family: var(--font-display);
+  font-size: 8.5px;
+  font-weight: 800;
+  color: #0B2093;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.sectionTitleCompact {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.2vw, 26px);
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0 0 4px;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.sectionSubtitleCompact {
+  font-size: 12.5px;
+  color: #475569;
+  line-height: 1.4;
+  margin: 0 auto;
+  max-width: 680px;
+}
+
 .comparisonCard {
   background: #FFFFFF;
   border: 1.5px solid #CBD5E1;
-  border-radius: 18px;
+  border-radius: 14px;
   overflow: hidden;
   box-shadow: 
     inset 0 1.5px 0 #FFFFFF,
     inset 0 -1px 0 rgba(15, 23, 42, 0.04),
-    0 12px 32px -8px rgba(11, 32, 147, 0.08);
+    0 10px 28px -6px rgba(11, 32, 147, 0.07);
   position: relative;
   z-index: 2;
   max-width: 980px;
@@ -1947,10 +1994,10 @@
 
 .comparisonHeaderRow {
   display: grid;
-  grid-template-columns: 1.15fr 1fr 1.25fr;
+  grid-template-columns: 1.12fr 1fr 1.25fr;
   background: #F8FAFC;
   border-bottom: 1.5px solid #E2E8F0;
-  padding: 12px 20px;
+  padding: 8px 18px;
   align-items: center;
   gap: 12px;
 }
@@ -1958,9 +2005,9 @@
 .comparisonColTitle {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 1px;
   font-family: var(--font-display);
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -1968,26 +2015,26 @@
 }
 
 .comparisonColBadge {
-  font-size: 9px;
+  font-size: 8.5px;
   font-weight: 800;
   color: #0284C7;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
 }
 
 .comparisonGenericHeader {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 7px;
 }
 
 .genericHeaderBadge {
-  width: 20px;
-  height: 20px;
+  width: 17px;
+  height: 17px;
   border-radius: 50%;
   background: #FEE2E2;
   color: #EF4444;
-  font-size: 9.5px;
+  font-size: 8.5px;
   font-weight: 800;
   display: flex;
   align-items: center;
@@ -2003,28 +2050,28 @@
 
 .genericHeaderMain {
   font-family: var(--font-display);
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: 800;
   color: #475569;
   text-transform: uppercase;
 }
 
 .headerSubtext {
-  font-size: 10px;
+  font-size: 9.5px;
   color: #94A3B8;
   font-weight: 500;
 }
 
 .comparisonCopilotHeader {
   background: linear-gradient(135deg, #0B2093 0%, #1E40AF 100%);
-  padding: 6px 14px;
-  border-radius: 10px;
-  box-shadow: 0 3px 10px rgba(11, 32, 147, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  padding: 5px 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(11, 32, 147, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.25);
   border: 1px solid #1D4ED8;
   color: #FFFFFF;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 1px;
 }
 
 .copilotHeaderTop {
@@ -2033,10 +2080,10 @@
 }
 
 .copilotPillBadge {
-  font-size: 8.5px;
+  font-size: 8px;
   font-weight: 800;
   color: #6EE7B7;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
@@ -2047,12 +2094,12 @@
 }
 
 .copilotBrandIcon {
-  font-size: 12px;
+  font-size: 11px;
 }
 
 .copilotBrandText {
   font-family: var(--font-display);
-  font-size: 12px;
+  font-size: 11.5px;
   font-weight: 800;
   color: #FFFFFF;
   letter-spacing: 0.02em;
@@ -2065,12 +2112,12 @@
 
 .comparisonRow {
   display: grid;
-  grid-template-columns: 1.15fr 1fr 1.25fr;
-  padding: 10px 20px;
+  grid-template-columns: 1.12fr 1fr 1.25fr;
+  padding: 6.5px 18px;
   align-items: center;
-  border-bottom: 1px solid #E2E8F0;
+  border-bottom: 1px solid #F1F5F9;
   gap: 12px;
-  transition: background 0.2s ease;
+  transition: background 0.15s ease;
 }
 
 .comparisonRow:last-child {
@@ -2081,40 +2128,29 @@
   background: #F8FAFD;
 }
 
-.comparisonRow:hover .featureIconSquircle {
-  transform: translateY(-2px) scale(1.04);
-  box-shadow: 
-    0 8px 16px -2px rgba(11, 32, 147, 0.16),
-    inset 0 1.5px 0 #FFFFFF;
-  border-color: #93C5FD;
-}
-
 .featureCell {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .featureIconSquircle {
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
   background: linear-gradient(145deg, #FFFFFF 0%, #F8FAFC 50%, #E2E8F0 100%);
-  border: 1.5px solid #CBD5E1;
-  box-shadow: 
-    0 4px 10px -2px rgba(11, 32, 147, 0.1),
-    inset 0 1.5px 0 #FFFFFF,
-    inset 0 -1.5px 0 rgba(15, 23, 42, 0.06);
+  border: 1px solid #CBD5E1;
+  box-shadow: 0 2px 6px -1px rgba(11, 32, 147, 0.08);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  transition: all 0.25s ease;
+  transition: all 0.2s ease;
 }
 
 .featureIconSquircle svg {
-  width: 26px;
-  height: 26px;
+  width: 20px;
+  height: 20px;
 }
 
 .featureTextCol {
@@ -2125,133 +2161,133 @@
 
 .featureTitleText {
   font-family: var(--font-display);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 800;
   color: #0F172A;
-  line-height: 1.25;
+  line-height: 1.2;
 }
 
 .featureSubtext {
-  font-size: 10.5px;
+  font-size: 10px;
   color: #64748B;
   font-weight: 500;
-  line-height: 1.3;
+  line-height: 1.25;
 }
 
+/* MINIMAL CELLS - NO CARDS INSIDE CARDS! */
 .genericCell {
   display: flex;
   align-items: flex-start;
-  gap: 8px;
-  padding: 6px 10px;
-  border-radius: 8px;
-  background: rgba(248, 250, 252, 0.7);
-  border: 1px solid #E2E8F0;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  box-shadow: none;
 }
 
 .genericCrossBadge {
-  width: 17px;
-  height: 17px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #FEE2E2 0%, #FECACA 100%);
-  border: 1px solid #FCA5A5;
+  background: #FEE2E2;
   color: #DC2626;
-  font-size: 9px;
+  font-size: 8px;
   font-weight: 800;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  margin-top: 1px;
+  margin-top: 1.5px;
 }
 
 .genericCellText {
   display: flex;
   flex-direction: column;
   gap: 1px;
-  font-size: 11.5px;
-  line-height: 1.35;
+  font-size: 11px;
+  line-height: 1.3;
 }
 
 .genericRowTag {
-  font-size: 9.5px;
+  font-size: 9px;
   font-weight: 800;
   color: #EF4444;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
 }
 
 .genericDesc {
-  font-size: 11.5px;
+  font-size: 10.5px;
   color: #64748B;
 }
 
+/* MINIMAL COPILOT CELL */
 .copilotCell {
   display: flex;
   align-items: flex-start;
-  gap: 8px;
-  padding: 6px 12px;
-  border-radius: 8px;
-  background: linear-gradient(135deg, rgba(239, 246, 255, 0.8) 0%, rgba(240, 253, 250, 0.9) 100%);
-  border: 1px solid #BFDBFE;
-  box-shadow: 0 1px 4px rgba(11, 32, 147, 0.04);
+  gap: 6px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  box-shadow: none;
 }
 
 .copilotCheckBadge {
-  width: 17px;
-  height: 17px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
-  border: 1px solid #047857;
+  background: #10B981;
   color: #FFFFFF;
-  font-size: 9.5px;
+  font-size: 8px;
   font-weight: 800;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  margin-top: 1px;
-  box-shadow: 0 2px 4px rgba(16, 185, 129, 0.3);
+  margin-top: 1.5px;
+  box-shadow: 0 1px 3px rgba(16, 185, 129, 0.3);
 }
 
 .copilotCellText {
   display: flex;
   flex-direction: column;
   gap: 1px;
-  font-size: 11.5px;
-  line-height: 1.35;
+  font-size: 11px;
+  line-height: 1.3;
 }
 
 .copilotRowTag {
-  font-size: 9.5px;
+  font-size: 9px;
   font-weight: 800;
   color: #059669;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
 }
 
 .copilotDesc {
-  font-size: 11.5px;
+  font-size: 10.5px;
   color: #0F172A;
   font-weight: 600;
 }
 
+/* COMPACT FOOTER STRIP */
 .comparisonFooterStrip {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 12px;
   background: #F8FAFC;
-  border-top: 1.5px solid #CBD5E1;
-  padding: 10px 20px;
+  border-top: 1.5px solid #E2E8F0;
+  padding: 7px 18px;
 }
 
 .comparisonFooterLeft {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 11.5px;
+  gap: 6px;
+  font-size: 11px;
   color: #334155;
-  line-height: 1.35;
+  line-height: 1.3;
 }
 
 .comparisonFooterLeft strong {
@@ -2259,7 +2295,7 @@
 }
 
 .footerShieldIcon {
-  font-size: 15px;
+  font-size: 13px;
   flex-shrink: 0;
 }
 
@@ -2268,23 +2304,25 @@
 }
 
 @media (max-width: 860px) {
+  .sectionBlockCompact {
+    padding: 24px 0;
+  }
   .comparisonCard {
-    border-radius: 14px;
+    border-radius: 12px;
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
     overflow: hidden;
   }
 
-  /* EXACT 3-COLUMN HEADER ROW AS DESKTOP */
   .comparisonHeaderRow {
     display: grid;
     grid-template-columns: 1.05fr 1fr 1.15fr;
     background: #F8FAFC;
     border-bottom: 1.5px solid #E2E8F0;
-    padding: 8px 6px;
+    padding: 6px 4px;
     align-items: center;
-    gap: 4px;
+    gap: 3px;
     box-sizing: border-box;
     width: 100%;
   }
@@ -2295,24 +2333,24 @@
   }
 
   .comparisonColBadge {
-    font-size: 7px;
+    font-size: 6.5px;
     letter-spacing: 0.04em;
   }
 
   .comparisonColTitle > span:last-child {
-    font-size: 8px;
+    font-size: 7.5px;
     font-weight: 800;
   }
 
   .comparisonGenericHeader {
-    gap: 3px;
+    gap: 2px;
     min-width: 0;
   }
 
   .genericHeaderBadge {
-    width: 13px;
-    height: 13px;
-    font-size: 6.5px;
+    width: 12px;
+    height: 12px;
+    font-size: 6px;
     flex-shrink: 0;
   }
 
@@ -2322,7 +2360,7 @@
   }
 
   .genericHeaderMain {
-    font-size: 7.5px;
+    font-size: 7px;
     font-weight: 800;
     line-height: 1.15;
   }
@@ -2332,8 +2370,8 @@
   }
 
   .comparisonCopilotHeader {
-    padding: 3px 5px;
-    border-radius: 6px;
+    padding: 2.5px 4px;
+    border-radius: 5px;
     gap: 1px;
     min-width: 0;
   }
@@ -2343,7 +2381,7 @@
   }
 
   .copilotPillBadge {
-    font-size: 6px;
+    font-size: 5.5px;
     letter-spacing: 0.02em;
   }
 
@@ -2361,22 +2399,18 @@
     line-height: 1.15;
   }
 
-  /* EXACT 3-COLUMN DATA ROW AS DESKTOP */
   .comparisonRow {
     display: grid;
     grid-template-columns: 1.05fr 1fr 1.15fr;
-    padding: 6px 6px;
-    align-items: stretch;
-    border-bottom: 1px solid #E2E8F0;
-    gap: 4px;
+    padding: 5px 4px;
+    gap: 3px;
+    align-items: center;
     box-sizing: border-box;
     width: 100%;
   }
 
   .featureCell {
-    display: flex;
-    align-items: center;
-    gap: 4px;
+    gap: 3px;
     min-width: 0;
   }
 
@@ -2392,109 +2426,52 @@
     height: 14px;
   }
 
-  .featureTextCol {
-    gap: 0;
-    min-width: 0;
-  }
-
   .featureTitleText {
-    font-size: 9px;
-    font-weight: 800;
+    font-size: 8px;
     line-height: 1.15;
   }
 
   .featureSubtext {
-    font-size: 7px;
-    line-height: 1.1;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    display: none;
   }
 
-  .comparisonCellsWrap {
-    display: contents; /* Direct participation in 3-column desktop grid */
-  }
-
-  .genericCell {
-    display: flex;
-    align-items: flex-start;
+  .genericCell, .copilotCell {
     gap: 3px;
-    padding: 4px 4px;
-    border-radius: 5px;
-    background: rgba(248, 250, 252, 0.7);
-    border: 1px solid #E2E8F0;
+    padding: 0;
     min-width: 0;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
   }
 
-  .genericCrossBadge {
-    width: 12px;
-    height: 12px;
-    font-size: 6.5px;
+  .genericCrossBadge, .copilotCheckBadge {
+    width: 11px;
+    height: 11px;
+    font-size: 6px;
     flex-shrink: 0;
-    margin-top: 1px;
   }
 
-  .genericCellText {
-    gap: 0;
+  .genericCellText, .copilotCellText {
+    font-size: 7px;
+    line-height: 1.15;
     min-width: 0;
   }
 
-  .genericRowTag {
-    font-size: 7px;
-    font-weight: 800;
+  .genericRowTag, .copilotRowTag {
+    font-size: 6.5px;
     line-height: 1.1;
   }
 
-  .genericDesc {
-    font-size: 7.5px;
-    line-height: 1.15;
-    color: #64748B;
-  }
-
-  .copilotCell {
-    display: flex;
-    align-items: flex-start;
-    gap: 3px;
-    padding: 4px 4px;
-    border-radius: 5px;
-    background: linear-gradient(135deg, rgba(239, 246, 255, 0.9) 0%, rgba(240, 253, 250, 0.95) 100%);
-    border: 1px solid #BFDBFE;
-    min-width: 0;
-  }
-
-  .copilotCheckBadge {
-    width: 12px;
-    height: 12px;
-    font-size: 6.5px;
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-
-  .copilotCellText {
-    gap: 0;
-    min-width: 0;
-  }
-
-  .copilotRowTag {
+  .genericDesc, .copilotDesc {
     font-size: 7px;
-    font-weight: 800;
-    line-height: 1.1;
-    color: #047857;
-  }
-
-  .copilotDesc {
-    font-size: 7.5px;
     line-height: 1.15;
-    color: #0F172A;
-    font-weight: 600;
   }
 
   .comparisonFooterStrip {
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    padding: 12px 10px;
+    gap: 6px;
+    padding: 8px 10px;
     text-align: center;
     width: 100%;
     box-sizing: border-box;
@@ -2502,7 +2479,7 @@
 
   .comparisonFooterLeft {
     justify-content: center;
-    font-size: 10px;
+    font-size: 9px;
     line-height: 1.35;
     text-align: center;
   }

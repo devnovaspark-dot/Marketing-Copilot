@@ -368,56 +368,56 @@ const dentalComparison = [
   {
     iconType: 'diamond',
     feature: 'High-Ticket Procedure Scaling',
-    subtext: 'Implants, Aligners & Smile Makeovers',
+    subtext: 'Implants, Aligners & Veneers',
     genericTitle: 'Low-Margin Cleanings Only',
-    generic: 'Wastes ad spend attracting ₹500 scaling shoppers; zero traction for profitable implants, veneers, or clear aligner cases.',
+    generic: 'Budget wasted on ₹500 scaling shoppers; zero traction for implants or aligners.',
     copilotTitle: 'Scalable ₹50k+ Case Pipeline',
-    copilot: 'Precision patient funnels capturing qualified candidates ready to invest in high-ticket surgical and cosmetic smile restorations.',
+    copilot: 'Captures pre-qualified candidates seeking surgical implants and clear aligners.',
   },
   {
     iconType: 'tooth',
     feature: 'Operatory Chair Utilization',
-    subtext: 'Eliminate doctor downtime & empty slots',
+    subtext: 'Eliminate doctor downtime & gaps',
     genericTitle: 'Unpredictable Operatory Gaps',
-    generic: 'Sporadic walk-ins, inconsistent scheduling, and expensive clinical operatories sitting idle during prime practice hours.',
-    copilotTitle: 'Booked 2–3 Weeks in Advance',
-    copilot: 'Continuous patient inflow keeping specialized surgical and restorative operatory chairs predictably filled weeks ahead.',
+    generic: 'Sporadic walk-ins and expensive operatories sitting idle during peak hours.',
+    copilotTitle: 'Booked 2–3 Weeks Ahead',
+    copilot: 'Continuous patient inflow keeping surgical and restorative chairs filled.',
   },
   {
     iconType: 'mappin',
     feature: 'Local Catchment Dominance',
-    subtext: 'Google Maps 3-Pack across 5–10 km radius',
+    subtext: 'Google Maps 3-Pack (5–10 km)',
     genericTitle: 'Invisible Beyond 1 Kilometer',
-    generic: 'Unmanaged profile losing local neighborhood emergency and treatment searches to aggressive corporate dental chains.',
+    generic: 'Clinic buried below rivals on Maps; losing local neighborhood searches.',
     copilotTitle: 'Dominates Top 3 Local Pack',
-    copilot: 'Hyperlocal geo-tagging, schema categories, and automated 5-star WhatsApp review sequences that capture neighborhood footfall.',
+    copilot: 'Hyperlocal schema & automated 5-star WhatsApp reviews capturing footfall.',
   },
   {
     iconType: 'shield',
     feature: 'Patient Show-Up Rate',
-    subtext: 'Protect valuable clinical hours from no-shows',
+    subtext: 'Protect clinical hours from no-shows',
     genericTitle: '35%–45% Clinic No-Shows',
-    generic: 'Inquiries dumped into email inbox with zero rapid response, driving high chair cancellations and wasted operatory preparation.',
+    generic: 'Inquiries dumped into email without follow-up, causing empty chair downtime.',
     copilotTitle: '91.5%+ Seated Attendance',
-    copilot: 'Automated 1-tap WhatsApp token bot, clinic GPS navigation directions, and 24h & 2h reminders that ensure patients arrive.',
+    copilot: 'Automated 1-tap WhatsApp token bot, clinic GPS directions & 2h alerts.',
   },
   {
     iconType: 'scale',
     feature: 'Doctor Authority & Ethics',
-    subtext: '100% DCI compliance & patient trust',
-    genericTitle: 'Cheap Discounts & Penalty Risk',
-    generic: 'Gimmicky discount banners that erode clinical prestige, invite patient skepticism, and risk Dental Council advertising bans.',
+    subtext: '100% DCI compliance & trust',
+    genericTitle: 'Cheap Discounts & Risk',
+    generic: 'Gimmicky discount ads that damage doctor prestige and risk DCI ad bans.',
     copilotTitle: 'Premier Clinical Authority',
-    copilot: 'Strictly DCI-compliant patient education, procedure explainer videos, and clinical smile transformation stories that inspire trust.',
+    copilot: '100% DCI-compliant patient education and verified smile transformation stories.',
   },
   {
     iconType: 'chart',
     feature: 'Practice Revenue Transparency',
-    subtext: 'Track seated chair revenue & verified ROAS',
+    subtext: 'Track seated revenue & ROAS',
     genericTitle: 'Vague Vanity Clicks & Likes',
-    generic: 'Superficial monthly PDF reports tracking impressions and social clicks with zero clue on actual chair revenue generated.',
+    generic: 'Superficial monthly PDF reports tracking clicks with zero revenue clarity.',
     copilotTitle: 'Live 24/7 Practice Dashboard',
-    copilot: 'Transparent attribution dashboard tracking booked consultations, patient acquisition cost (CAC), and verified treatment ROI.',
+    copilot: 'Real-time dashboard tracking seated consults, acquisition cost & verified ROI.',
   },
 ];
 
@@ -999,14 +999,14 @@ export default function DentalMarketingPage() {
       {/* ══════════════════════════════════════════════════ */}
       {/* AGENCY COMPARISON (PLACED DIRECTLY DOWN PROCESS)   */}
       {/* ══════════════════════════════════════════════════ */}
-      <section id="comparison" className={styles.sectionBlock}>
+      <section id="comparison" className={styles.sectionBlockCompact}>
         <div className={styles.container}>
-          <div className={styles.sectionHeader}>
-            <div className={styles.sectionPill}>
+          <div className={styles.sectionHeaderCompact}>
+            <div className={styles.sectionPillCompact}>
               <span>DENTAL PRACTICE GROWTH BENCHMARK</span>
             </div>
-            <h2 className={styles.sectionTitle}>How We Grow Dental Clinics vs. Traditional Marketing</h2>
-            <p className={styles.sectionSubtitle}>
+            <h2 className={styles.sectionTitleCompact}>How We Grow Dental Clinics vs. Traditional Marketing</h2>
+            <p className={styles.sectionSubtitleCompact}>
               When your practice partners with Marketing Copilot, clinical growth shifts from unpredictable walk-ins to a predictable, high-value patient acquisition engine.
             </p>
           </div>
@@ -1079,7 +1079,7 @@ export default function DentalMarketingPage() {
               <div className={styles.comparisonFooterLeft}>
                 <span className={styles.footerShieldIcon}>🛡️</span>
                 <span>
-                  <strong>Dedicated Practice Growth Partner:</strong> We don&apos;t just run ads — we build a compounding patient acquisition system engineered to fill specialized operatory chairs and grow your dental practice sustainably.
+                  <strong>Dedicated Practice Growth Partner:</strong> Engineered to fill specialized operatory chairs and grow your dental practice sustainably.
                 </span>
               </div>
               <div className={styles.comparisonBeamBtnWrap}>
