@@ -361,62 +361,63 @@ const growthProcessSteps = [
 ];
 
 // ══════════════════════════════════════════════════
-// PHASE 7 & 8 DATA: AGENCY COMPARISON
+// PHASE 7 & 8 DATA: DENTAL PRACTICE GROWTH BENCHMARK
+// How Clinics Grow With Our Support vs. Others
 // ══════════════════════════════════════════════════
 const dentalComparison = [
   {
+    iconType: 'diamond',
+    feature: 'High-Ticket Procedure Scaling',
+    subtext: 'Implants, Aligners & Smile Makeovers',
+    genericTitle: 'Low-Margin Cleanings Only',
+    generic: 'Wastes ad spend attracting ₹500 scaling shoppers; zero traction for profitable implants, veneers, or clear aligner cases.',
+    copilotTitle: 'Scalable ₹50k+ Case Pipeline',
+    copilot: 'Precision patient funnels capturing qualified candidates ready to invest in high-ticket surgical and cosmetic smile restorations.',
+  },
+  {
     iconType: 'tooth',
-    feature: 'Clinical Dental Expertise',
-    subtext: 'High-ticket treatment psychology & margins',
-    genericTitle: 'Generalist Freelancers',
-    generic: 'Zero understanding of clinical procedures, treatment margins, or patient anxiety.',
-    copilotTitle: 'Dedicated Dental Team',
-    copilot: 'Specialized strategists trained in implants, aligners & restorative full-mouth cases.',
+    feature: 'Operatory Chair Utilization',
+    subtext: 'Eliminate doctor downtime & empty slots',
+    genericTitle: 'Unpredictable Operatory Gaps',
+    generic: 'Sporadic walk-ins, inconsistent scheduling, and expensive clinical operatories sitting idle during prime practice hours.',
+    copilotTitle: 'Booked 2–3 Weeks in Advance',
+    copilot: 'Continuous patient inflow keeping specialized surgical and restorative operatory chairs predictably filled weeks ahead.',
   },
   {
     iconType: 'mappin',
-    feature: 'Google Maps 3-Pack Dominance',
-    subtext: 'Hyperlocal pin codes & emergency footfall',
-    genericTitle: 'Unmanaged Profile',
-    generic: 'Basic static listing without geo-tagging, review velocity, or schema moats.',
-    copilotTitle: 'Guaranteed 3-Pack Engine',
-    copilot: 'Top Local 3-Pack ranking with automated 5-star review acquisition sequences.',
-  },
-  {
-    iconType: 'diamond',
-    feature: 'High-Ticket Case Focus',
-    subtext: 'Specialized surgical & aesthetic procedures',
-    genericTitle: 'Low-Margin Shoppers',
-    generic: 'Broad ads burning budget attracting bargain hunters for routine cleanings.',
-    copilotTitle: 'High-Margin Pipeline',
-    copilot: 'Negative-keyword scrubbed PPC capturing qualified implant & aligner candidates.',
+    feature: 'Local Catchment Dominance',
+    subtext: 'Google Maps 3-Pack across 5–10 km radius',
+    genericTitle: 'Invisible Beyond 1 Kilometer',
+    generic: 'Unmanaged profile losing local neighborhood emergency and treatment searches to aggressive corporate dental chains.',
+    copilotTitle: 'Dominates Top 3 Local Pack',
+    copilot: 'Hyperlocal geo-tagging, schema categories, and automated 5-star WhatsApp review sequences that capture neighborhood footfall.',
   },
   {
     iconType: 'shield',
-    feature: 'Appointment No-Show Shield',
-    subtext: 'Eliminate empty chairs & lost clinic time',
-    genericTitle: '35%+ No-Show Rate',
-    generic: 'Inquiries dumped into email inbox with zero rapid response, driving high no-shows.',
-    copilotTitle: '91.5%+ Attendance',
-    copilot: 'Automated 1-tap WhatsApp token confirmation, Google Maps directions & calendar sync.',
+    feature: 'Patient Show-Up Rate',
+    subtext: 'Protect valuable clinical hours from no-shows',
+    genericTitle: '35%–45% Clinic No-Shows',
+    generic: 'Inquiries dumped into email inbox with zero rapid response, driving high chair cancellations and wasted operatory preparation.',
+    copilotTitle: '91.5%+ Seated Attendance',
+    copilot: 'Automated 1-tap WhatsApp token bot, clinic GPS navigation directions, and 24h & 2h reminders that ensure patients arrive.',
   },
   {
     iconType: 'scale',
-    feature: 'Medical & Dental Ethics',
-    subtext: '100% DCI compliance & ad account safety',
-    genericTitle: 'Suspension Risk',
-    generic: 'Ad account bans from unverified claims or non-compliant discount promotions.',
-    copilotTitle: '100% Regulatory Safe',
-    copilot: 'Strictly compliant with DCI guidelines, patient privacy standards & clinical ethics.',
+    feature: 'Doctor Authority & Ethics',
+    subtext: '100% DCI compliance & patient trust',
+    genericTitle: 'Cheap Discounts & Penalty Risk',
+    generic: 'Gimmicky discount banners that erode clinical prestige, invite patient skepticism, and risk Dental Council advertising bans.',
+    copilotTitle: 'Premier Clinical Authority',
+    copilot: 'Strictly DCI-compliant patient education, procedure explainer videos, and clinical smile transformation stories that inspire trust.',
   },
   {
     iconType: 'chart',
-    feature: 'Chair-Time Attribution',
-    subtext: 'Track exact chair consultations & ROAS',
-    genericTitle: 'Vanity Metrics Only',
-    generic: 'Vague PDF reports tracking impressions, social clicks, and meaningless vanity likes.',
-    copilotTitle: 'Live Practice Dashboard',
-    copilot: 'Transparent 24/7 dashboard tracking booked chair consultations, inquiries & campaign ROAS.',
+    feature: 'Practice Revenue Transparency',
+    subtext: 'Track seated chair revenue & verified ROAS',
+    genericTitle: 'Vague Vanity Clicks & Likes',
+    generic: 'Superficial monthly PDF reports tracking impressions and social clicks with zero clue on actual chair revenue generated.',
+    copilotTitle: 'Live 24/7 Practice Dashboard',
+    copilot: 'Transparent attribution dashboard tracking booked consultations, patient acquisition cost (CAC), and verified treatment ROI.',
   },
 ];
 
@@ -1002,11 +1003,11 @@ export default function DentalMarketingPage() {
         <div className={styles.container}>
           <div className={styles.sectionHeader}>
             <div className={styles.sectionPill}>
-              <span>AGENCY COMPARISON</span>
+              <span>DENTAL PRACTICE GROWTH BENCHMARK</span>
             </div>
-            <h2 className={styles.sectionTitle}>Generic Marketing Agencies vs. Marketing Copilot</h2>
+            <h2 className={styles.sectionTitle}>How We Grow Dental Clinics vs. Traditional Marketing</h2>
             <p className={styles.sectionSubtitle}>
-              Why dental clinic owners and multi-specialty practices choose our dedicated clinical growth model over generic social media retainers.
+              When your practice partners with Marketing Copilot, clinical growth shifts from unpredictable walk-ins to a predictable, high-value patient acquisition engine.
             </p>
           </div>
 
@@ -1014,22 +1015,22 @@ export default function DentalMarketingPage() {
             <div className={styles.comparisonHeaderRow}>
               <div className={styles.comparisonColTitle}>
                 <span className={styles.comparisonColBadge}>BENCHMARK</span>
-                <span>Growth Capability</span>
+                <span>Practice Growth Dimension</span>
               </div>
               <div className={styles.comparisonGenericHeader}>
                 <span className={styles.genericHeaderBadge}>✕</span>
                 <div className={styles.headerTitleWrap}>
-                  <div className={styles.genericHeaderMain}>Generic Digital Agencies</div>
-                  <div className={styles.headerSubtext}>Generalist Freelancers &amp; Social Retainers</div>
+                  <div className={styles.genericHeaderMain}>Without Specialized Support</div>
+                  <div className={styles.headerSubtext}>Traditional Agencies &amp; Guesswork</div>
                 </div>
               </div>
               <div className={styles.comparisonCopilotHeader}>
                 <div className={styles.copilotHeaderTop}>
-                  <span className={styles.copilotPillBadge}>★ HIGH-CONVERTING STANDARD</span>
+                  <span className={styles.copilotPillBadge}>★ PROVEN DENTAL ACCELERATOR</span>
                 </div>
                 <div className={styles.copilotHeaderTitleRow}>
                   <span className={styles.copilotBrandIcon}>🦷</span>
-                  <span className={styles.copilotBrandText}>Marketing Copilot Dental</span>
+                  <span className={styles.copilotBrandText}>With Marketing Copilot Support</span>
                 </div>
               </div>
             </div>
@@ -1078,13 +1079,13 @@ export default function DentalMarketingPage() {
               <div className={styles.comparisonFooterLeft}>
                 <span className={styles.footerShieldIcon}>🛡️</span>
                 <span>
-                  <strong>Full Practice Attribution &amp; No-Show Shield:</strong> We engineer end-to-end patient acquisition systems that fill specialized treatment chairs with measurable ROI.
+                  <strong>Dedicated Practice Growth Partner:</strong> We don&apos;t just run ads — we build a compounding patient acquisition system engineered to fill specialized operatory chairs and grow your dental practice sustainably.
                 </span>
               </div>
               <div className={styles.comparisonBeamBtnWrap}>
                 <BeamButton
                   href="/contact"
-                  label="Switch to Dedicated Dental Growth"
+                  label="Claim Free Practice Growth Audit"
                   size="sm"
                 />
               </div>
