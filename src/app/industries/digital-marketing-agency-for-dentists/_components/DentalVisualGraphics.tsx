@@ -320,3 +320,4 @@ export function CaseTelemetryChart({ caseIndex }: CaseTelemetryProps) {
     </div>
   );
 }
+

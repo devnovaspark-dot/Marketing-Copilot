@@ -21,15 +21,6 @@ import {
   Icon3DAligner,
   Icon3DImplant,
 } from './_components/Dental3DIcons';
-import {
-  MetaAdsGraphic,
-  GoogleAdsGraphic,
-  SEOGeoGraphic,
-  VideoMarketingGraphic,
-  GoogleMapsGraphic,
-  ContentMarketingGraphic,
-  CaseTelemetryChart,
-} from './_components/DentalVisualGraphics';
 import styles from './page.module.css';
 
 // ══════════════════════════════════════════════════
@@ -59,14 +50,14 @@ const dentalHeroSlides = [
 // ══════════════════════════════════════════════════
 // SECTION 02 DATA: 6 CORE SERVICES
 // STRICT ORDER: Meta -> Google Ads -> SEO -> Social & YouTube -> Maps/GBP -> Content Marketing
-// Punchy, low-text, accompanied by micro-visuals
+// Compact, tactile, skeuomorphic presentation
 // ══════════════════════════════════════════════════
 const coreServices = [
   {
     iconType: 'meta',
     title: 'Meta Ads Marketing',
     roleBadge: 'AWARENESS & DEMAND',
-    desc: 'Target local patients across Instagram and Facebook with smile transformation reels that generate direct consultation inquiries.',
+    desc: 'Target local prospective patients across Instagram and Facebook with smile transformation reels that generate direct consultation inquiries.',
     tags: ['📍 Local Catchment', '🎥 Smile Reels', '💬 Direct Inquiries'],
     actionText: 'Explore Meta Funnel',
   },
@@ -114,7 +105,7 @@ const coreServices = [
 
 // ══════════════════════════════════════════════════
 // SECTION 03 DATA: HIGH-VALUE DENTAL TREATMENTS
-// Punchy, low-text, zero financial assumptions
+// Compact, tactile cards • Zero financial assumptions
 // ══════════════════════════════════════════════════
 const highValueTreatments = [
   {
@@ -317,7 +308,7 @@ const growthProcessSteps = [
 
 // ══════════════════════════════════════════════════
 // SECTION 05 DATA: VERIFIED CASE STUDIES (MIDDLE OF PAGE)
-// Includes visual telemetry charts & concise copy
+// Luxury skeuomorphic telemetry cockpit • Zero image bloat
 // ══════════════════════════════════════════════════
 const caseStudies = [
   {
@@ -431,42 +422,42 @@ const dentalComparison = [
 ];
 
 // ══════════════════════════════════════════════════
-// SECTION 07 DATA: WHY CHOOSE MARKETING COPILOT (6 PILLARS)
-// Low-text, high-impact clinical differentiators
+// SECTION 07 DATA: THE DENTAL ADVANTAGE (6 PILLARS)
+// Uses 3D vector icons, balanced heights & skeuomorphic styling
 // ══════════════════════════════════════════════════
 const whyChoosePillars = [
   {
-    icon: '🦷',
+    iconType: 'tooth',
     title: 'Dental Industry Specialization',
     desc: 'Deep clinical understanding of dental procedures, operatory chair costs, DCI advertising ethics, and patient anxiety psychology.',
     highlight: 'Zero Generic Freelancers',
   },
   {
-    icon: '🔄',
+    iconType: 'meta',
     title: 'Integrated Marketing Capabilities',
     desc: 'Meta Ads, Google Search, Maps 3-Pack, SEO, and YouTube work as one synchronized patient acquisition engine.',
     highlight: 'Full Omnichannel Harmony',
   },
   {
-    icon: '💎',
+    iconType: 'diamond',
     title: 'High-Value Treatment Focus',
     desc: 'We focus ad spend on surgical implants, aligners, and restorative cases rather than burning budget on low-margin cleanings.',
     highlight: 'Maximum Chair Yield',
   },
   {
-    icon: '📍',
+    iconType: 'mappin',
     title: 'Hyperlocal Catchment Dominance',
     desc: 'Hyperlocal dominance on Google Maps 3-Pack across 5–10 km pin codes where nearby families live and commute.',
     highlight: '5–10 KM Catchment Dominance',
   },
   {
-    icon: '📊',
+    iconType: 'chart',
     title: 'Transparent Performance Tracking',
     desc: 'Live 24/7 practice dashboard tracking qualified inquiries, consult show-ups, patient acquisition cost, and verified ROI.',
     highlight: 'Real Seated Telemetry',
   },
   {
-    icon: '🛡️',
+    iconType: 'shield',
     title: 'Continuous Optimization & No-Show Shield',
     desc: 'Automated WhatsApp token confirmations and GPS reminder alerts that slash clinic empty chair no-shows by up to 78%.',
     highlight: '91.5%+ Show-Up Rate',
@@ -683,7 +674,7 @@ export default function DentalMarketingPage() {
 
       {/* ══════════════════════════════════════════════════ */}
       {/* SECTION 02: WHAT WE PROVIDE FOR YOUR DENTAL CLINIC */}
-      {/* 6 Core Services with Micro-Graphics + Journey Flow */}
+      {/* 6 Skeuomorphic Service Cards + Compact Journey     */}
       {/* ══════════════════════════════════════════════════ */}
       <section id="services" className={styles.sectionBlock}>
         <div className={styles.container}>
@@ -699,7 +690,7 @@ export default function DentalMarketingPage() {
 
           <div className={styles.servicesGrid}>
             {coreServices.map((service, idx) => (
-              <ScrollReveal key={idx} delay={idx * 60}>
+              <ScrollReveal key={idx} delay={idx * 50} className={styles.serviceCol}>
                 <div className={styles.serviceCard}>
                   <div className={styles.serviceCardHeader}>
                     <div className={styles.serviceIconPod}>
@@ -715,14 +706,6 @@ export default function DentalMarketingPage() {
 
                   <h3 className={styles.serviceCardTitle}>{service.title}</h3>
                   <p className={styles.serviceCardDesc}>{service.desc}</p>
-
-                  {/* High-Fidelity Micro-Graphic Preview */}
-                  {service.iconType === 'meta' && <MetaAdsGraphic />}
-                  {service.iconType === 'search' && <GoogleAdsGraphic />}
-                  {service.iconType === 'seo' && <SEOGeoGraphic />}
-                  {service.iconType === 'video' && <VideoMarketingGraphic />}
-                  {service.iconType === 'mappin' && <GoogleMapsGraphic />}
-                  {service.iconType === 'content' && <ContentMarketingGraphic />}
 
                   <div className={styles.serviceTagsWrap}>
                     {service.tags.map((tag, tIdx) => (
@@ -810,7 +793,7 @@ export default function DentalMarketingPage() {
 
       {/* ══════════════════════════════════════════════════ */}
       {/* SECTION 03: HIGH-VALUE DENTAL TREATMENTS           */}
-      {/* Clean Showcase • Low-Text • Punchy Outcomes        */}
+      {/* Compact Skeuomorphic Cards • Zero Revenue Claims   */}
       {/* ══════════════════════════════════════════════════ */}
       <section id="treatments" className={styles.sectionBlockAlt}>
         <div className={styles.container}>
@@ -826,7 +809,7 @@ export default function DentalMarketingPage() {
 
           <div className={styles.treatmentsGrid}>
             {highValueTreatments.map((proc, idx) => (
-              <ScrollReveal key={idx} delay={idx * 60}>
+              <ScrollReveal key={idx} delay={idx * 50} className={styles.treatmentCol}>
                 <div className={styles.treatmentCard}>
                   <div className={styles.treatmentCardTopAccent} aria-hidden="true" />
 
@@ -1021,7 +1004,7 @@ export default function DentalMarketingPage() {
 
       {/* ══════════════════════════════════════════════════ */}
       {/* SECTION 05: CASE STUDIES & REAL RESULTS            */}
-      {/* Interactive Tabs + Live SVG Telemetry Charts       */}
+      {/* Luxury Glass Telemetry Cockpit (No bulky images)   */}
       {/* ══════════════════════════════════════════════════ */}
       <section id="case-studies" className={styles.sectionBlockAlt}>
         <div className={styles.container}>
@@ -1053,7 +1036,7 @@ export default function DentalMarketingPage() {
               ))}
             </div>
 
-            {/* Active Case Study Spotlight Card with Telemetry Graph */}
+            {/* Active Case Study Spotlight Card */}
             <ScrollReveal>
               <div className={styles.caseStudyCard}>
                 <div>
@@ -1089,9 +1072,6 @@ export default function DentalMarketingPage() {
                 </div>
 
                 <div className={styles.caseMetricsCluster}>
-                  {/* Visual SVG Telemetry Chart */}
-                  <CaseTelemetryChart caseIndex={activeCase} />
-
                   <div className={styles.caseMetricsRow}>
                     {activeCs.metrics.map((m, mIdx) => (
                       <div key={mIdx}>
@@ -1217,7 +1197,7 @@ export default function DentalMarketingPage() {
 
       {/* ══════════════════════════════════════════════════ */}
       {/* SECTION 07: WHY CHOOSE MARKETING COPILOT           */}
-      {/* 6 Clinical Growth Differentiators                  */}
+      {/* THE DENTAL ADVANTAGE • Pixel-Aligned Skeuomorphic */}
       {/* ══════════════════════════════════════════════════ */}
       <section id="why-choose-us" className={styles.sectionBlock}>
         <div className={styles.container}>
@@ -1233,11 +1213,16 @@ export default function DentalMarketingPage() {
 
           <div className={styles.whyChooseGrid}>
             {whyChoosePillars.map((pillar, idx) => (
-              <ScrollReveal key={idx} delay={idx * 60}>
+              <ScrollReveal key={idx} delay={idx * 50} className={styles.whyChooseCol}>
                 <div className={styles.whyChooseCard}>
                   <div className={styles.whyChooseTopRow}>
                     <div className={styles.whyChooseIconPod}>
-                      <span>{pillar.icon}</span>
+                      {pillar.iconType === 'tooth' && <Icon3DTooth />}
+                      {pillar.iconType === 'meta' && <Icon3DMeta />}
+                      {pillar.iconType === 'diamond' && <Icon3DDiamond />}
+                      {pillar.iconType === 'mappin' && <Icon3DMapPin />}
+                      {pillar.iconType === 'chart' && <Icon3DChart />}
+                      {pillar.iconType === 'shield' && <Icon3DShield />}
                     </div>
                     <span className={styles.whyChooseHighlight}>{pillar.highlight}</span>
                   </div>
