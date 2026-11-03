@@ -34,161 +34,155 @@ const dentalHeroSlides = [
 ];
 
 // ══════════════════════════════════════════════════
-// DATA: BOTTLENECKS (SKEUOMORPHIC CLINICAL DIAGNOSTICS)
+// DATA: BOTTLENECKS (PUNCHY, SIMPLE, EQUAL SIZED)
 // ══════════════════════════════════════════════════
 const dentalBottlenecks = [
   {
     code: 'DEFECT 01',
-    metricBadge: '-82% LOCAL FOOTFALL LOSS',
+    metricBadge: '-82% FOOTFALL LOSS',
     badgeType: 'critical',
     icon: '📍',
-    title: 'The Google Maps Invisibility Trap',
-    symptom: 'Hyperlocal Catchment Blindspot',
-    desc: 'Over 82% of dental patients search "dentist near me" or "best dental clinic near me". If your practice sits below position #3 on Google Maps, prospective patients bypass you for corporate chains just 500m away.',
-    solution: 'Hyperlocal Dental SEO & Google Maps 3-Pack rank with automated review velocity & clinical geo-tagging.',
+    title: 'Maps Invisibility Trap',
+    symptom: 'Catchment Area Blindspot',
+    desc: '82% of patients search "dentist near me". Ranking outside Google Maps 3-Pack loses high-margin footfalls to nearby chains.',
+    solution: 'Dominant Maps 3-Pack rank with automated review velocity & local geo-tagging.',
   },
   {
     code: 'DEFECT 02',
     metricBadge: '₹200 LEADS VS ₹1.5L VALUE',
     badgeType: 'warning',
     icon: '💸',
-    title: 'Low-Ticket Waste vs High-Ticket Value',
-    symptom: 'Ad Spend Hemorrhage on Price Shoppers',
-    desc: 'Generic ad agencies burn budgets on ₹200 routine check-up leads who never convert into high-margin procedures like Dental Implants, Invisalign, All-on-4, or complete Smile Makeovers.',
-    solution: 'Negative-scrubbed search funnels laser-targeted at high-intent cosmetic & surgical implant patients.',
+    title: 'Low-Ticket Ad Waste',
+    symptom: 'Ad Budget Hemorrhage',
+    desc: 'Generic agencies waste ad spend on ₹200 routine check-ups rather than high-yield surgical implants and clear aligners.',
+    solution: 'Negative-scrubbed search funnels targeted at high-intent surgical & cosmetic patients.',
   },
   {
     code: 'DEFECT 03',
-    metricBadge: '35% CHAIR STERILIZATION WASTE',
+    metricBadge: '35% STERILIZATION LOSS',
     badgeType: 'critical',
     icon: '🚪',
-    title: 'The 35% Dental Clinic No-Show Crisis',
-    symptom: 'Expensive Operatory Downtime',
-    desc: 'Online inquiries routinely ghost their scheduled chair slots. Every missed appointment wastes sterilized operatory prep, senior specialist hours, and thousands in practice overhead.',
-    solution: 'Automated 1-tap WhatsApp token confirmation with 24-hr & 2-hr GPS turn-by-turn navigation reminders.',
+    title: '35% Clinic No-Shows',
+    symptom: 'Operatory Chair Downtime',
+    desc: 'Online inquiries ghost their scheduled slots, wasting sterilized operatory setups, staff hours, and practice overhead.',
+    solution: '1-Tap WhatsApp token confirmation with 24-hr & 2-hr GPS turn-by-turn alerts.',
   },
   {
     code: 'DEFECT 04',
-    metricBadge: 'ZERO TRUST CONVERSION DROP',
+    metricBadge: 'TRUST CONVERSION DROP',
     badgeType: 'warning',
     icon: '⚖️',
-    title: 'Medical Compliance & Trust Deficit',
-    symptom: 'Patient Surgical Anxiety & Hesitation',
-    desc: 'Dentistry involves surgical fear and financial hesitation. Cheap discount gimmicks erode clinical credibility, scare affluent patients away, and invite medical council scrutiny.',
-    solution: 'Doctor-vetted education, painless clinical showcases, and authentic video smile transformations.',
+    title: 'Medical Ethics Deficit',
+    symptom: 'Patient Surgical Anxiety',
+    desc: 'Cheap discount gimmicks erode clinical credibility, scare discerning patients away, and invite medical council scrutiny.',
+    solution: 'Doctor-vetted educational proof, painless technology showcases & verified smile stories.',
   },
 ];
 
 // ══════════════════════════════════════════════════
-// DATA: HIGH-YIELD PROCEDURES (TACTILE SPEC SHEETS)
+// DATA: HIGH-YIELD PROCEDURES (CONCISE & ALIGNED)
 // ══════════════════════════════════════════════════
 const dentalProcedures = [
   {
-    badge: 'DIAMOND CLINICAL ASSET',
+    badge: 'DIAMOND ASSET',
     tierClass: 'tierDiamond',
     ticket: '₹35,000 - ₹2,50,000',
-    margin: '72% Case Margin',
-    demand: '8,400+ Mo Searches',
+    margin: '72% Margin',
+    demand: '8,400/mo search',
     icon: '🦷',
-    title: 'Dental Implants & Full Mouth Rehab',
-    desc: 'Target mature patients seeking permanent tooth restorations, single-unit titanium implants, and All-on-4 / All-on-6 fixed full-arch dentures.',
+    title: 'Dental Implants & Full Mouth',
+    desc: 'Capture mature patients seeking single implants and All-on-4 fixed restorations.',
     deliverables: [
-      'High-intent Google Search surgical campaigns',
+      'High-intent Google Search surgical funnels',
       'Before/after 3D CBCT scan proof landers',
-      'Senior implantologist authority packaging',
-      'Flexible 0% EMI financing funnel setup',
+      'Flexible 0% EMI financing packaging',
     ],
-    tags: ['Single Implants', 'All-on-4', 'Bone Grafting', 'Full Arch'],
+    tags: ['Single Implants', 'All-on-4', 'Full Arch'],
   },
   {
-    badge: 'HIGH-VALUE AESTHETICS',
+    badge: 'AESTHETIC CARE',
     tierClass: 'tierAesthetic',
     ticket: '₹45,000 - ₹1,80,000',
-    margin: '68% Case Margin',
-    demand: '14,200+ Mo Searches',
+    margin: '68% Margin',
+    demand: '14,200/mo search',
     icon: '✨',
     title: 'Clear Aligners & Invisalign',
-    desc: 'Attract working professionals, brides-to-be, and teenagers wanting discreet teeth straightening without visible metal brackets or wires.',
+    desc: 'Attract working professionals and teens wanting discreet teeth straightening.',
     deliverables: [
-      'Visual Instagram Reels smile transformation showcases',
-      'Free 3D digital smile simulation assessment hook',
-      'Direct WhatsApp 1-tap consultation scheduling',
-      'Catchment radius geo-fencing around IT & college hubs',
+      'Instagram Reels smile makeover showcases',
+      'Free 3D digital smile simulation hook',
+      'Direct WhatsApp 1-tap slot scheduling',
     ],
-    tags: ['Invisalign', 'Custom Aligners', 'Smile Simulation', 'Teen Aligners'],
+    tags: ['Invisalign', 'Custom Aligners', 'Smile Sim'],
   },
   {
-    badge: 'COSMETIC EXCELLENCE',
+    badge: 'COSMETIC TIER',
     tierClass: 'tierCosmetic',
     ticket: '₹15,000 - ₹80,000',
-    margin: '75% Case Margin',
-    demand: '6,100+ Mo Searches',
+    margin: '75% Margin',
+    demand: '6,100/mo search',
     icon: '👑',
-    title: 'Smile Makeovers & Porcelain Veneers',
-    desc: 'Capture premium aesthetic demand for chipped teeth, deep fluorosis stains, diastema gaps, and complete cosmetic smile rejuvenation.',
+    title: 'Smile Design & Veneers',
+    desc: 'Capture premium aesthetic demand for chipped teeth, gaps, and smile makeovers.',
     deliverables: [
-      'Ultra-HD macro clinical photography landing pages',
-      'Painless cosmetic treatment reassurance messaging',
-      'Bridal & executive aesthetic positioning',
-      'High-conversion video patient review integration',
+      'Ultra-HD macro clinical photography landers',
+      'Painless cosmetic treatment messaging',
+      'Verified video patient review integration',
     ],
-    tags: ['Porcelain Veneers', 'Composite Bonding', 'Smile Architecture', 'Whitening'],
+    tags: ['Veneers', 'Bonding', 'Whitening'],
   },
   {
-    badge: 'EMERGENCY PATIENT INFLOW',
+    badge: 'EMERGENCY INFLOW',
     tierClass: 'tierUrgent',
     ticket: '₹3,500 - ₹12,000',
-    margin: '80% Case Margin',
-    demand: '22,000+ Mo Searches',
+    margin: '80% Margin',
+    demand: '22,000/mo search',
     icon: '⚡',
-    title: 'Single-Sitting Rotary Root Canal (RCT)',
-    desc: 'Capture emergency toothache searches from patients in immediate pain requiring same-day clinical relief and single-visit endodontics.',
+    title: 'Single-Sitting Rotary RCT',
+    desc: 'Capture urgent toothache searches from patients needing immediate same-day pain relief.',
     deliverables: [
-      'Emergency Google Ads click-to-call mobile setup',
+      'Emergency Google Ads click-to-call setup',
       'Google Maps "Open Now" ranking dominance',
-      'Painless rotary endodontics reassurance copy',
-      'Instant WhatsApp clinic location handoff',
+      'Pain-free rotary endodontics messaging',
     ],
-    tags: ['Rotary RCT', 'Emergency Relief', 'Single Sitting', 'Zirconia Crowns'],
+    tags: ['Rotary RCT', 'Emergency', 'Zirconia'],
   },
   {
-    badge: 'SPECIALTY TECHNOLOGY',
+    badge: 'SPECIALTY TECH',
     tierClass: 'tierTech',
     ticket: '₹5,000 - ₹30,000',
-    margin: '82% Case Margin',
-    demand: '4,800+ Mo Searches',
+    margin: '82% Margin',
+    demand: '4,800/mo search',
     icon: '🔬',
-    title: 'Laser Dentistry & Gum Treatments',
-    desc: 'Position your practice as a cutting-edge technological center for painless gum depigmentation, crown lengthening, and frenectomy.',
+    title: 'Laser Dentistry & Gum Care',
+    desc: 'Position your practice as a cutting-edge technological center for painless laser surgery.',
     deliverables: [
       'Advanced clinical laser tech showcase reels',
-      'Minimal bleeding & zero scalpel pain reassurance',
-      'Periodontal health patient education funnels',
-      'Direct specialist appointment scheduling',
+      'Zero scalpel pain & fast healing reassurance',
+      'Specialist appointment scheduling funnel',
     ],
-    tags: ['Diode Laser', 'Gum Depigmentation', 'Laser Frenectomy', 'Flap Surgery'],
+    tags: ['Diode Laser', 'Depigmentation', 'Flap'],
   },
   {
-    badge: 'COMPOUNDING RETENTION',
+    badge: 'FAMILY RETENTION',
     tierClass: 'tierFamily',
-    ticket: '₹2,000 - ₹10,000 (Recurring)',
-    margin: '60% Case Margin',
-    demand: '18,500+ Mo Searches',
+    ticket: '₹2,000 - ₹10,000',
+    margin: '60% Margin',
+    demand: '18,500/mo search',
     icon: '🛡️',
-    title: 'Family & Pediatric Preventive Care',
-    desc: 'Build compounding lifetime patient value by capturing young parents seeking gentle, anxiety-free pediatric dental care for their families.',
+    title: 'Family & Pediatric Care',
+    desc: 'Build compounding lifetime patient retention with gentle, anxiety-free pediatric dentistry.',
     deliverables: [
       'Child-friendly clinic tour video showcases',
       'Preventive pit & fissure sealant packages',
-      'School-holiday seasonal check-up ad campaigns',
       'Automated 6-month recall WhatsApp bot',
     ],
-    tags: ['Pediatric Care', 'Cavity Shield', 'Family Plans', '6-Mo Recalls'],
+    tags: ['Pediatric', 'Family Plan', '6-Mo Recall'],
   },
 ];
 
 // ══════════════════════════════════════════════════
-// DATA: 4-PILLAR DENTAL GROWTH ENGINE (CONTROL MATRIX)
+// DATA: 4-PILLAR DENTAL ENGINE (CONCISE 2x2 MATRIX)
 // ══════════════════════════════════════════════════
 const dentalPillars = [
   {
@@ -196,76 +190,118 @@ const dentalPillars = [
     stageName: 'HYPERLOCAL DISCOVERY',
     badge: '45-DAY LOCAL 3-PACK TARGET',
     icon: '📍',
-    title: 'Local SEO & Google Maps 3-Pack Dominance',
-    desc: 'We optimize your Google Business Profile with verified dental procedure categories, geo-tagged clinical operatory photography, medical schema, and an ethical review acquisition engine that puts your clinic in the Top 3 positions across your target 5-10km catchment.',
+    title: 'Google Maps 3-Pack Dominance',
+    desc: 'We optimize your Google Business Profile with verified dental categories, geo-tagged clinical photos, and an automated review bot to secure a Top 3 Maps position.',
     telemetry: [
       { label: 'Rank Speed', val: '30-45 Days' },
-      { label: 'Call Volume', val: '+240%' },
-      { label: 'Review Score', val: '4.9★ Average' },
+      { label: 'Call Lift', val: '+240%' },
+      { label: 'Review Score', val: '4.9★ Avg' },
     ],
     deliverables: [
-      'Google Maps 3-Pack Local Citations',
-      'Geo-Tagged Clinical Photo Ingestion',
-      'Automated 5-Star WhatsApp Review Engine',
+      'Google Maps 3-Pack Citations',
+      'Geo-Tagged Clinical Photo Feeds',
+      'Automated Review Generation Bot',
       'Local Catchment Landing Pages',
     ],
   },
   {
     stage: '02',
-    stageName: 'HIGH-INTENT PATIENT CAPTURE',
+    stageName: 'PATIENT CAPTURE',
     badge: 'ZERO WASTED AD SPEND',
     icon: '🎯',
-    title: 'High-Intent Treatment Google Ads (PPC)',
-    desc: 'We capture active searchers hunting for "dental implants in India", "Invisalign cost", and "root canal specialist near me". Our rigorous negative keyword scrubbing blocks job seekers and government scheme searches, protecting your marketing budget.',
+    title: 'High-Intent Treatment Google Ads',
+    desc: 'Capture active searchers for "dental implants in India" and "Invisalign cost". Negative-keyword scrubbing eliminates price-shoppers and protects your budget.',
     telemetry: [
       { label: 'Avg ROAS', val: '6.2X' },
-      { label: 'High-Ticket Focus', val: '₹50k+' },
-      { label: 'Cost Per Lead', val: '₹180 - ₹340' },
+      { label: 'Focus', val: '₹50k+ Cases' },
+      { label: 'Lead Cost', val: '₹180 - ₹340' },
     ],
     deliverables: [
-      'Negative Keyword Surgical Shield',
-      'High-Ticket Landing Page Funnels',
-      'Call Tracking & CRM Attribution',
-      'Dynamic Keyword Insertion Ads',
+      'Negative Keyword Surgical Scrub',
+      'High-Ticket Implant Landers',
+      'Call Tracking & CRM Integration',
+      'Dynamic Keyword Search Ads',
     ],
   },
   {
     stage: '03',
-    stageName: 'AUTHORITY & CONVERSION',
-    badge: '100% DCI & MEDICAL ETHICS SAFE',
+    stageName: 'AUTHORITY & TRUST',
+    badge: '100% DCI COMPLIANT',
     icon: '📱',
-    title: 'Social Proof & Smile Transformation Storytelling',
-    desc: 'We turn your successful clinical cases into thumb-stopping Instagram Reels and video patient testimonials. Compliant with medical guidelines, these stories highlight painless treatments, sterilized operatories, and life-changing smile confidence.',
+    title: 'Social Proof & Smile Storytelling',
+    desc: 'Turn successful clinical outcomes into thumb-stopping Instagram Reels and video testimonials, highlighting sterilized operatories and authentic patient confidence.',
     telemetry: [
-      { label: 'Conversion Lift', val: '3.8X' },
+      { label: 'Conv Lift', val: '3.8X' },
       { label: 'Video Reach', val: '120k+ Mo' },
-      { label: 'Trust Rating', val: '100% Compliant' },
+      { label: 'Ethics', val: '100% Compliant' },
     ],
     deliverables: [
-      'Patient-Consent Transformation Stories',
-      'Doctor Credibility & Case Showcases',
-      'Painless Procedure Video Reassurance',
-      'Brand Retargeting Video Sequences',
+      'Patient-Consent Video Showcases',
+      'Doctor Authority Video Packaging',
+      'Painless Procedure Reassurance',
+      'Retargeting Social Funnels',
     ],
   },
   {
     stage: '04',
-    stageName: 'RETENTION & CHAIR REVENUE',
-    badge: '91.5% APPOINTMENT ATTENDANCE',
+    stageName: 'RETENTION SHIELD',
+    badge: '91.5% CHAIR ARRIVAL',
     icon: '🛡️',
     title: '1-Tap WhatsApp Booking & No-Show Shield',
-    desc: 'Our automated healthcare bot allows patients to select slots in 30 seconds. Automated 24-hour and 2-hour WhatsApp reminder sequences with clinic navigation links decrease chair no-shows by over 75%, keeping your operatories fully booked.',
+    desc: 'Our healthcare WhatsApp bot lets patients book in under 30 seconds. Automated 24-hr and 2-hr GPS turn-by-turn navigation alerts slash no-shows by 78%.',
     telemetry: [
-      { label: 'No-Show Drop', val: '-78%' },
-      { label: 'Booking Time', val: '<30 Seconds' },
+      { label: 'No-Shows', val: '-78%' },
+      { label: 'Booking Time', val: '<30s' },
       { label: 'Recall Rate', val: '65% 6-Mo' },
     ],
     deliverables: [
-      '1-Tap Slot Booking WhatsApp Bot',
-      '24h & 2h Turn-by-Turn GPS Reminders',
-      'Automated Token Pre-Payment Option',
-      '6-Month Preventive Recall Engine',
+      '1-Tap Appointment WhatsApp Bot',
+      '24h & 2h GPS Navigation Reminders',
+      'Automated Token Pre-Payment',
+      '6-Month Preventive Recall Bot',
     ],
+  },
+];
+
+// ══════════════════════════════════════════════════
+// DATA: COMPARISON MATRIX (WITH ICONS)
+// ══════════════════════════════════════════════════
+const dentalComparison = [
+  {
+    icon: '🦷',
+    feature: 'Clinical Dental Expertise',
+    generic: 'Generic copywriters with zero understanding of clinical dental procedures',
+    copilot: 'Specialized healthcare strategists trained in implants, aligners & RCT',
+  },
+  {
+    icon: '📍',
+    feature: 'Google Maps 3-Pack Rank',
+    generic: 'Basic listing without clinical geo-tagging or patient review velocity',
+    copilot: 'Guaranteed Local 3-Pack rank with automated 5-star review acquisition',
+  },
+  {
+    icon: '💎',
+    feature: 'High-Ticket Procedure Focus',
+    generic: 'Broad social ads that attract price-shoppers for ₹200 cleanings',
+    copilot: 'Negative-keyword scrubbed PPC capturing ₹50k+ implants & Invisalign',
+  },
+  {
+    icon: '🛡️',
+    feature: 'Appointment No-Show Shield',
+    generic: 'Leads emailed to clinic inbox with zero follow-up (35%+ no-show rate)',
+    copilot: 'Automated 1-tap WhatsApp token confirmation driving 91.5%+ attendance',
+  },
+  {
+    icon: '⚖️',
+    feature: 'Medical & Dental Ethics',
+    generic: 'High risk of ad account bans from unverified claims or illegal discounts',
+    copilot: '100% compliant with DCI guidelines, patient privacy & medical ethics',
+  },
+  {
+    icon: '📊',
+    feature: 'Revenue & ROAS Tracking',
+    generic: 'Vague reports tracking clicks, impressions, and vanity social likes',
+    copilot: 'Live dashboard tracking booked chair revenue, consults & ROAS',
   },
 ];
 
@@ -480,7 +516,7 @@ export default function DentalMarketingPage() {
       />
 
       {/* ══════════════════════════════════════════════════ */}
-      {/* BOTTLENECK VS SOLUTION (SKEUOMORPHIC DIAGNOSTICS) */}
+      {/* BOTTLENECK VS SOLUTION (CRISP, PUNCHY & ALIGNED)  */}
       {/* ══════════════════════════════════════════════════ */}
       <section className={styles.sectionBlock}>
         <div className={styles.container}>
@@ -490,7 +526,7 @@ export default function DentalMarketingPage() {
             </div>
             <h2 className={styles.sectionTitle}>Why Generic Marketing Agencies Fail for Dental Practices</h2>
             <p className={styles.sectionSubtitle}>
-              Patients seeking dental treatments are anxious, research-driven, and looking for immediate clinical credibility. Generic marketing strategies burn budget without filling chairs.
+              Patients seeking dental treatments are anxious and research-driven. Generic marketing strategies burn budget without filling chairs.
             </p>
           </div>
 
@@ -514,7 +550,7 @@ export default function DentalMarketingPage() {
                   <div className={styles.solutionBox}>
                     <div className={styles.solutionBoxLabel}>
                       <span>✓</span>
-                      <span>Copilot Clinical Countermeasure</span>
+                      <span>Copilot Countermeasure</span>
                     </div>
                     <p className={styles.solutionBoxText}>{item.solution}</p>
                   </div>
@@ -526,7 +562,7 @@ export default function DentalMarketingPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════ */}
-      {/* HIGH-YIELD PROCEDURES (TACTILE SPEC SHEETS)       */}
+      {/* HIGH-YIELD PROCEDURES (SYMMETRIC & ALIGNED)       */}
       {/* ══════════════════════════════════════════════════ */}
       <section className={styles.sectionBlockAlt}>
         <div className={styles.container}>
@@ -536,7 +572,7 @@ export default function DentalMarketingPage() {
             </div>
             <h2 className={styles.sectionTitle}>High-Ticket Dental Procedures We Scale</h2>
             <p className={styles.sectionSubtitle}>
-              We engineer dedicated patient acquisition campaigns around high-yield dental procedures that drive real practice valuation and profitability.
+              We engineer dedicated patient acquisition campaigns around high-yield dental procedures that drive real practice profitability.
             </p>
           </div>
 
@@ -567,7 +603,7 @@ export default function DentalMarketingPage() {
                     <span className={styles.specMarginPill}>{proc.margin}</span>
                   </div>
 
-                  <div className={styles.deliverablesSectionTitle}>Growth Architecture Deliverables</div>
+                  <div className={styles.deliverablesSectionTitle}>Core Deliverables</div>
                   <ul className={styles.deliverablesList}>
                     {proc.deliverables.map((deliv, dIdx) => (
                       <li key={dIdx} className={styles.deliverableItem}>
@@ -602,7 +638,7 @@ export default function DentalMarketingPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════ */}
-      {/* 4-PILLAR DENTAL ENGINE (SKEUOMORPHIC CONTROL CONSOLE) */}
+      {/* 4-PILLAR DENTAL ENGINE (2x2 BALANCED CONTROL CONSOLE) */}
       {/* ══════════════════════════════════════════════════ */}
       <section className={styles.sectionBlock}>
         <div className={styles.container}>
@@ -612,7 +648,7 @@ export default function DentalMarketingPage() {
             </div>
             <h2 className={styles.sectionTitle}>The 4-Pillar Digital Marketing Engine for Dentists</h2>
             <p className={styles.sectionSubtitle}>
-              From ranking #1 for "dentist near me" to driving booked chair appointments for ₹1.5L+ full mouth cases, here is how our full-funnel system works.
+              From ranking #1 on Google Maps to driving booked chair appointments for ₹1.5L+ full mouth cases.
             </p>
           </div>
 
@@ -683,9 +719,9 @@ export default function DentalMarketingPage() {
                   How Apex Dental Studio Scaled From 28 to 94 Monthly New Patient Bookings
                 </h3>
                 <p className={styles.caseStory}>
-                  Apex Dental &amp; Implant Studio was losing patient volume to large corporate hospital dental departments. Their clinic lacked local Google Maps visibility, and online inquiries suffered from a 42% no-show rate.
+                  Apex Dental &amp; Implant Studio was losing patient volume to large corporate hospitals. Their clinic lacked local Google Maps visibility, and online inquiries suffered from a 42% no-show rate.
                   <br /><br />
-                  Marketing Copilot implemented localized <strong>SEO services for dentists in India</strong>, high-intent Google Search campaigns for single-tooth and All-on-4 implants, and an automated WhatsApp appointment verification sequence.
+                  Marketing Copilot implemented localized <strong>SEO services for dentists in India</strong>, high-intent Google Search campaigns for implants, and an automated WhatsApp appointment verification sequence.
                 </p>
                 <BeamButton
                   href="/contact"
@@ -725,7 +761,7 @@ export default function DentalMarketingPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════ */}
-      {/* COMPARISON MATRIX (SKEUOMORPHIC EXECUTIVE MATRIX)  */}
+      {/* COMPARISON MATRIX (EXECUTIVE CARD WITH ICONS)     */}
       {/* ══════════════════════════════════════════════════ */}
       <section className={styles.sectionBlockAlt}>
         <div className={styles.container}>
@@ -739,49 +775,42 @@ export default function DentalMarketingPage() {
             </p>
           </div>
 
-          <div className={styles.tableContainer}>
-            <table className={styles.comparisonTable}>
-              <thead>
-                <tr>
-                  <th>Growth Capability</th>
-                  <th>Generic Digital Agencies</th>
-                  <th>Marketing Copilot Dental Practice Accelerator</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td className={styles.tableFeature}>Dental Industry Expertise</td>
-                  <td className={styles.tableGeneric}>✕ Generic copywriters with zero understanding of clinical procedures</td>
-                  <td className={styles.tableCopilot}>✓ Healthcare-trained strategists familiar with implants, RCT, and aligners</td>
-                </tr>
-                <tr>
-                  <td className={styles.tableFeature}>Google Maps 3-Pack Mastery</td>
-                  <td className={styles.tableGeneric}>✕ Basic listing setup without clinical geo-tagging or review velocity</td>
-                  <td className={styles.tableCopilot}>✓ Guaranteed Local 3-Pack rank with automated 5-star review acquisition</td>
-                </tr>
-                <tr>
-                  <td className={styles.tableFeature}>High-Ticket Patient Targeting</td>
-                  <td className={styles.tableGeneric}>✕ Broad social ads that attract price-shoppers for ₹200 cleanings</td>
-                  <td className={styles.tableCopilot}>✓ Negative-keyword scrubbed PPC capturing ₹50k+ implants and Invisalign</td>
-                </tr>
-                <tr>
-                  <td className={styles.tableFeature}>Appointment No-Show Shield</td>
-                  <td className={styles.tableGeneric}>✕ Leads emailed to clinic inbox with no follow-up automation (35%+ no-show)</td>
-                  <td className={styles.tableCopilot}>✓ Automated 1-tap WhatsApp token confirmation driving 92%+ chair arrival</td>
-                </tr>
-                <tr>
-                  <td className={styles.tableFeature}>Medical Advertising Compliance</td>
-                  <td className={styles.tableGeneric}>✕ High risk of account bans due to unverified medical claims and discounts</td>
-                  <td className={styles.tableCopilot}>✓ 100% compliant with medical ethics, patient privacy, and dental council norms</td>
-                </tr>
-              </tbody>
-            </table>
+          <div className={styles.comparisonCard}>
+            <div className={styles.comparisonHeaderRow}>
+              <span className={styles.comparisonColTitle}>Growth Capability</span>
+              <span className={styles.comparisonGenericHeader}>Generic Digital Agencies</span>
+              <span className={styles.comparisonCopilotHeader}>
+                <span>★</span>
+                <span>Marketing Copilot Dental</span>
+              </span>
+            </div>
+
+            <div className={styles.comparisonRowsList}>
+              {dentalComparison.map((row, idx) => (
+                <div key={idx} className={styles.comparisonRow}>
+                  <div className={styles.featureCell}>
+                    <div className={styles.featureIconSquircle}>{row.icon}</div>
+                    <span className={styles.featureTitleText}>{row.feature}</span>
+                  </div>
+
+                  <div className={styles.genericCell}>
+                    <span className={styles.genericCrossIcon}>✕</span>
+                    <span>{row.generic}</span>
+                  </div>
+
+                  <div className={styles.copilotCell}>
+                    <span className={styles.copilotCheckIcon}>✓</span>
+                    <span>{row.copilot}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* ══════════════════════════════════════════════════ */}
-      {/* FAQ SECTION                                       */}
+      {/* FAQ SECTION (SKEUOMORPHIC INDEXED ACCENTS)         */}
       {/* ══════════════════════════════════════════════════ */}
       <section className={styles.sectionBlock}>
         <div className={styles.container}>
@@ -799,17 +828,22 @@ export default function DentalMarketingPage() {
             {dentalFaqs.map((faq, idx) => {
               const isOpen = openFaq === idx;
               return (
-                <div key={idx} className={styles.faqItem}>
+                <div key={idx} className={`${styles.faqItem} ${isOpen ? styles.faqItemActive : ''}`}>
                   <button
                     type="button"
                     className={styles.faqButton}
                     onClick={() => toggleFaq(idx)}
                     aria-expanded={isOpen}
                   >
-                    <span>{faq.q}</span>
-                    <span className={`${styles.chevronIcon} ${isOpen ? styles.chevronRotated : ''}`}>
-                      ▼
-                    </span>
+                    <div className={styles.faqQuestionGroup}>
+                      <span className={styles.faqNumBadge}>{String(idx + 1).padStart(2, '0')}</span>
+                      <span className={`${styles.faqQuestionText} ${isOpen ? styles.faqQuestionTextActive : ''}`}>
+                        {faq.q}
+                      </span>
+                    </div>
+                    <div className={`${styles.faqToggleIconCircle} ${isOpen ? styles.faqToggleIconCircleActive : ''}`}>
+                      {isOpen ? '✕' : '+'}
+                    </div>
                   </button>
                   {isOpen && <div className={styles.faqAnswer}>{faq.a}</div>}
                 </div>
@@ -817,26 +851,56 @@ export default function DentalMarketingPage() {
             })}
           </div>
 
-          {/* CTA STRIP */}
-          <div className={styles.ctaStrip}>
-            <h3 className={styles.ctaTitle}>Ready to Fill Your Empty Dental Chairs With High-Value Patients?</h3>
-            <p className={styles.ctaText}>
-              Get a complimentary 30-minute Dental Practice Growth Audit. We will analyze your Google Maps ranking, competitor implant volume, and provide a clear patient acquisition roadmap.
-            </p>
-            <div className={styles.ctaActions}>
-              <BeamButton
-                href="/contact"
-                label="Request Free Practice Audit"
-                size="md"
-              />
-              <a
-                href="https://wa.me/918280788689?text=Hi%20Marketing%20Copilot%2C%20I%20run%20a%20dental%20practice%20and%20want%20to%20discuss%20patient%20acquisition"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.whatsappCtaBtn}
-              >
-                <span>💬 WhatsApp a Dental Strategist</span>
-              </a>
+          {/* ══════════════════════════════════════════════════ */}
+          {/* PRE-FOOTER CTA CARD (MATCHES HOMEPAGE STANDARD)    */}
+          {/* ══════════════════════════════════════════════════ */}
+          <div className={styles.preFooterSection}>
+            <div className={styles.preFooterCard}>
+              <div className={styles.preFooterEyebrow}>
+                <span className={styles.heroEyebrowDot} />
+                CONFIDENTIAL DENTAL PRACTICE REVIEW
+              </div>
+
+              <h2 className={styles.preFooterTitle}>
+                Ready for Dental Practice Marketing <span className={styles.heroAccent}>That Fills Chairs?</span>
+              </h2>
+
+              <p className={styles.preFooterSub}>
+                Let's talk about your dental clinic growth. Claim a complimentary 30-minute practice growth assessment, Google Maps catchment audit, and 90-day patient acquisition blueprint tailored to your locality.
+              </p>
+
+              <div className={styles.preFooterActions}>
+                <BeamButton
+                  href="/contact"
+                  label="Claim Your Practice Audit Blueprint"
+                  size="lg"
+                />
+                <a
+                  href="https://wa.me/918280788689?text=Hi%20Marketing%20Copilot%2C%20I%20run%20a%20dental%20practice%20and%20want%20to%20discuss%20patient%20acquisition"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.whatsappCtaBtn}
+                >
+                  <span>💬 WhatsApp a Dental Strategist</span>
+                </a>
+              </div>
+
+              <div className={styles.preFooterProof}>
+                <div className={styles.preFooterProofItem}>
+                  <span className={styles.preFooterProofNum}>+240%</span>
+                  <span className={styles.preFooterProofLabel}>Avg Patient Inflow</span>
+                </div>
+                <span className={styles.preFooterProofDot} />
+                <div className={styles.preFooterProofItem}>
+                  <span className={styles.preFooterProofNum}>91.5%</span>
+                  <span className={styles.preFooterProofLabel}>Chair Arrival Rate</span>
+                </div>
+                <span className={styles.preFooterProofDot} />
+                <div className={styles.preFooterProofItem}>
+                  <span className={styles.preFooterProofNum}>100%</span>
+                  <span className={styles.preFooterProofLabel}>DCI &amp; HIPAA Ethical</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
