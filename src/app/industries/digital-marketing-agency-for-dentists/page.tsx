@@ -56,66 +56,48 @@ const coreServices = [
     title: 'Meta Ads Marketing',
     roleBadge: 'AWARENESS & DEMAND',
     desc: 'Generate interest and attract prospective dental patients across Instagram and Facebook. Target specific demographics, neighborhoods, and procedure interests within your clinic’s local radius.',
-    outcomes: [
-      'Targeted local radius discovery',
-      'High-engagement smile video ads',
-      'Direct social patient inquiries',
-    ],
+    tags: ['📍 Local Catchment', '🎥 Video Showcase', '💬 Direct Inquiries'],
+    actionText: 'Explore Meta Funnel',
   },
   {
     iconType: 'search',
     title: 'Google Ads Management',
     roleBadge: 'HIGH-INTENT CAPTURE',
     desc: 'Reach patients actively searching for dental treatments and clinics right now. Convert urgent search queries into scheduled chair appointments with zero wasted ad spend.',
-    outcomes: [
-      'Negative keyword budget protection',
-      'Immediate high-intent patient calls',
-      'Procedure-focused landing pages',
-    ],
+    tags: ['🔍 High-Intent Search', '🛡️ Negative Scrubbed', '📞 Click-to-Call'],
+    actionText: 'Explore Search Ads',
   },
   {
     iconType: 'seo',
     title: 'SEO + AEO/GEO',
     roleBadge: 'SEARCH & AI DISCOVERY',
     desc: 'Improve organic search visibility so your clinic appears at the top for major treatment keywords across Google, Gemini AI Overviews, ChatGPT, and Perplexity.',
-    outcomes: [
-      'Compounding organic patient inflow',
-      'AI search engine optimization (GEO)',
-      'Treatment-specific clinical rankings',
-    ],
+    tags: ['📈 Top Google Ranks', '🤖 AI Search (GEO)', '🌐 Compounding Traffic'],
+    actionText: 'Explore SEO Strategy',
   },
   {
     iconType: 'content',
     title: 'Content Marketing',
     roleBadge: 'CLINICAL AUTHORITY',
     desc: 'Build undeniable authority in your dental community with educational guides, FAQs, and treatment breakdowns that alleviate patient dental fear and reinforce clinical trust.',
-    outcomes: [
-      'Reduces patient procedure anxiety',
-      'Strengthens practice organic authority',
-      'Answers common patient concerns',
-    ],
+    tags: ['📚 Educational Guides', '🛡️ Overcome Anxiety', '⭐ Doctor Authority'],
+    actionText: 'Explore Content Engine',
   },
   {
     iconType: 'video',
     title: 'Social Media & YouTube',
     roleBadge: 'TRUST & FAMILIARITY',
     desc: 'Humanize your practice with doctor-led procedural explanations, sterilized clinic walkthroughs, and genuine smile transformation reveals that build familiarity before the first visit.',
-    outcomes: [
-      'Doctor credibility video showcases',
-      'Authentic smile journey stories',
-      'Patient retention & community trust',
-    ],
+    tags: ['🎬 Operatory Tours', '✨ Smile Reveals', '🤝 Patient Community'],
+    actionText: 'Explore Video Strategy',
   },
   {
     iconType: 'mappin',
     title: 'Google Business Profile & Maps',
     roleBadge: 'LOCAL 3-PACK DOMINANCE',
     desc: 'Dominate Google Maps local search to capture nearby patients looking for dentists in their immediate vicinity. Drive phone calls, map directions, and high-trust foot traffic.',
-    outcomes: [
-      'Top 3 Local Map Pack ranking',
-      'Automated 5-star review collection',
-      'Geo-tagged clinical operatory proof',
-    ],
+    tags: ['📍 Maps 3-Pack Rank', '⭐ 5-Star Reviews', '🚗 Turn-by-Turn GPS'],
+    actionText: 'Explore Maps Dominance',
   },
 ];
 
@@ -183,116 +165,198 @@ const highValueTreatments = [
   {
     iconType: 'aligner',
     title: 'Invisalign & Clear Aligners',
-    targetBadge: 'DISCREET ORTHODONTICS',
-    desc: 'Attract adults, working professionals, and teens wanting discreet teeth straightening without traditional metal brackets.',
-    benefitLabel: 'Practice Growth Benefit',
-    benefit: 'High-volume elective procedure that attracts motivated, research-driven patients with strong compliance and recurring follow-up visits.',
-    deliverables: [
-      'Digital 3D smile scan campaign hooks',
-      'Aesthetic confidence social showcases',
-      '1-Tap WhatsApp consultation booking',
-    ],
+    targetBadge: 'AESTHETIC ORTHO',
+    scope: 'Target: Working Professionals & Teens',
+    desc: 'Attract adults and teens seeking discreet teeth straightening without traditional brackets. High patient compliance and recurring follow-up visits.',
+    impactFocus: 'Elective Aesthetic Inflow',
+    impactChair: 'High Treatment Compliance',
+    chips: ['3D Digital Smile Scans', 'Smile Simulation Hooks', 'WhatsApp Booking'],
   },
   {
     iconType: 'implant',
     title: 'Dental Implants & Full Mouth',
     targetBadge: 'SURGICAL RESTORATION',
-    desc: 'Capture patients seeking permanent tooth replacement, single unit implants, or full-arch All-on-4 restorative procedures.',
-    benefitLabel: 'Practice Growth Benefit',
-    benefit: 'Maximizes surgical operatory chair utilization and establishes your clinic as an advanced center for restorative excellence.',
-    deliverables: [
-      'High-intent surgical search campaigns',
-      'Painless CBCT guided surgery reassurance',
-      'Flexible financing & treatment plan guides',
-    ],
+    scope: 'Target: Missing Teeth & Mature Adults',
+    desc: 'Capture patients seeking permanent single tooth replacement, bridge restorations, or comprehensive All-on-4 full arch rehabilitation.',
+    impactFocus: 'Surgical Operatory Saturation',
+    impactChair: 'Maximum Chair Utilization',
+    chips: ['CBCT Guided Surgery Proof', 'High-Intent Search Ads', 'Flexible 0% EMI Guides'],
   },
   {
     iconType: 'tooth',
-    title: 'Dental Crowns & Restorative Dentistry',
+    title: 'Crowns & Restorative Dentistry',
     targetBadge: 'STRUCTURAL CARE',
-    desc: 'Reach patients requiring durable ceramic and zirconia crowns, fixed bridges, and restorative inlays after fracture or decay.',
-    benefitLabel: 'Practice Growth Benefit',
-    benefit: 'Dependable, recurring restorative demand that builds multi-member family loyalty and steady clinical chair-time revenue.',
-    deliverables: [
-      'Same-day digital CAD/CAM impression proof',
-      'Natural aesthetic & durability messaging',
-      'Automated preventive recall sequences',
-    ],
+    scope: 'Target: Fractured & Post-RCT Teeth',
+    desc: 'Reach patients requiring durable ceramic and zirconia crowns, fixed bridges, and inlays. Builds steady multi-member family retention.',
+    impactFocus: 'Predictable Restorative Demand',
+    impactChair: 'Compounding Family Recall',
+    chips: ['Same-Day Digital CAD/CAM', 'Zirconia Longevity Proof', 'Preventive Recall Bot'],
   },
   {
     iconType: 'diamond',
-    title: 'Cosmetic Dentistry & Teeth Whitening',
+    title: 'Cosmetic Dentistry & Whitening',
     targetBadge: 'AESTHETIC ENHANCEMENT',
-    desc: 'Attract patients seeking professional in-office whitening, diastema closure, direct composite bonding, and smile touch-ups.',
-    benefitLabel: 'Practice Growth Benefit',
-    benefit: 'Fast chair turnover procedures with high emotional satisfaction that generate word-of-mouth referrals and social proof.',
-    deliverables: [
-      'Macro before-and-after smile portfolios',
-      'Gentle, non-invasive cosmetic messaging',
-      'Specialized event & bridal smile funnels',
-    ],
+    scope: 'Target: Bridal, Professionals & Smile Makeovers',
+    desc: 'Attract patients seeking in-office whitening, diastema closure, and composite bonding. Fast turnover procedures with high emotional referral power.',
+    impactFocus: 'Rapid Chair Turnover',
+    impactChair: 'High Word-of-Mouth Referrals',
+    chips: ['Macro Before/After Portfolios', 'Non-Invasive Prep', 'Event & Bridal Packages'],
   },
   {
     iconType: 'scale',
-    title: 'Single-Sitting Root Canal Treatment (RCT)',
+    title: 'Single-Sitting Rotary RCT',
     targetBadge: 'IMMEDIATE RELIEF',
-    desc: 'Capture urgent toothache searches from patients seeking rapid, pain-free single-sitting endodontic therapy to preserve their teeth.',
-    benefitLabel: 'Practice Growth Benefit',
-    benefit: 'Converts emergency dental distress into long-term patient loyalty through pain-free rotary technology and swift clinical care.',
-    deliverables: [
-      'Emergency click-to-call Google Search Ads',
-      'Google Maps "Open Now" local dominance',
-      'Pain-free rotary endodontics messaging',
-    ],
+    scope: 'Target: Acute Toothache Searchers',
+    desc: 'Capture urgent toothache searchers seeking gentle, single-sitting endodontic therapy. Converts emergency distress into lifelong patient trust.',
+    impactFocus: 'Emergency Local Capture',
+    impactChair: 'Immediate Pain Relief Retention',
+    chips: ['Emergency Click-to-Call Ads', 'Google Maps Open Now', 'Pain-Free Rotary Messaging'],
   },
   {
     iconType: 'shield',
-    title: 'Smile Makeovers & Porcelain Veneers',
-    targetBadge: 'COMPREHENSIVE AESTHETICS',
-    desc: 'Position your practice as the premier studio for custom ceramic veneers, aesthetic alignment, and complete smile transformations.',
-    benefitLabel: 'Practice Growth Benefit',
-    benefit: 'Attracts discerning cosmetic patients seeking artistic craftsmanship, elevating practice reputation and clinical prestige.',
-    deliverables: [
-      'High-definition clinical photography showcases',
-      'Master ceramist craftsmanship stories',
-      'Digital smile preview consultation funnels',
-    ],
+    title: 'Smile Makeovers & Veneers',
+    targetBadge: 'PREMIUM AESTHETICS',
+    scope: 'Target: Comprehensive Smile Design',
+    desc: 'Position your practice as the premier destination for custom ceramic veneers, aesthetic symmetry, and complete smile transformations.',
+    impactFocus: 'High Clinical Prestige',
+    impactChair: 'Discerning Aesthetic Patients',
+    chips: ['Ultra-HD Clinical Photography', 'Ceramist Craftsmanship', 'Digital Smile Previews'],
   },
 ];
 
 // ══════════════════════════════════════════════════
-// PHASE 5 DATA: OUR PROCESS (5 SEQUENTIAL STEPS)
+// PHASE 5 DATA: OUR PROCESS (ARCHITECTURAL ROADMAP)
 // ══════════════════════════════════════════════════
 const growthProcessSteps = [
   {
     step: '01',
+    timeframe: 'DAYS 1–5',
+    category: 'DIAGNOSTIC & AUDIT',
     title: 'Practice & Market Analysis',
-    desc: 'Understand the clinic, local catchment area, services, competing dental practices, and target patient demographics.',
-    detail: 'Pin code demand audit & competitive gap mapping',
+    shortDesc: 'Deep audit of your clinic, catchment radius, local competitors, and chair availability.',
+    objective: 'Understand the clinic, local catchment area, services, competing dental practices, and high-margin surgical chair capacity to eliminate guesswork.',
+    keyMetric: 'Pin Code Demographics & Competitor Gaps',
+    deliverables: [
+      {
+        title: '5–10 KM Catchment Radius Mapping',
+        desc: 'Identify patient density, income demographics, and procedure demand in your target pin codes.',
+        icon: '📍',
+      },
+      {
+        title: 'Competitor Ranking & Blindspot Audit',
+        desc: 'Uncover where rival practices rank on Google Maps and where they are wasting ad budget.',
+        icon: '🔍',
+      },
+      {
+        title: 'Operatory Chair Capacity Review',
+        desc: 'Calculate exact inquiry volume needed to saturate specialized treatment operatory slots.',
+        icon: '🪑',
+      },
+    ],
   },
   {
     step: '02',
+    timeframe: 'DAYS 6–10',
+    category: 'CONVERSION BLUEPRINT',
     title: 'Marketing Strategy & Planning',
-    desc: 'Develop a customized digital marketing roadmap based on the clinic’s objectives, operatory capacity, and treatment priorities.',
-    detail: 'Tailored channel mix & procedure roadmap',
+    shortDesc: 'Customized digital acquisition roadmap prioritizing high-yield dental procedures.',
+    objective: 'Develop a customized acquisition strategy tailored to your clinic’s treatment priorities, surgical operatory capacity, and competitive strengths.',
+    keyMetric: 'Procedure Prioritization & Media Allocation',
+    deliverables: [
+      {
+        title: 'Procedure Channel Allocation',
+        desc: 'Distribute ad budget between Google Search for high intent and Meta Ads for aesthetic interest.',
+        icon: '🎯',
+      },
+      {
+        title: 'DCI-Compliant Content Scripts',
+        desc: 'Doctor-led authority messaging, operatory walkthroughs, and verified smile transformation stories.',
+        icon: '📝',
+      },
+      {
+        title: 'Dedicated Landing Page Funnels',
+        desc: 'High-converting mobile landers engineered specifically for dental implants and clear aligners.',
+        icon: '⚡',
+      },
+    ],
   },
   {
     step: '03',
+    timeframe: 'DAYS 11–18',
+    category: 'OMNICHANNEL LAUNCH',
     title: 'Campaign Setup & Execution',
-    desc: 'Launch and manage precision search advertising, local SEO, Google Maps 3-Pack optimization, and high-trust content campaigns.',
-    detail: 'DCI-compliant funnels, ad creatives & tracking',
+    shortDesc: 'Deploying precision Google Ads, hyper-local SEO, and Google Maps 3-Pack optimization.',
+    objective: 'Launch and manage precision search advertising, local SEO, Google Maps 3-Pack optimization, and high-trust content campaigns simultaneously.',
+    keyMetric: 'Live Ads & Maps Citations Active',
+    deliverables: [
+      {
+        title: 'Negative-Scrubbed Search Ads',
+        desc: 'Filter out low-margin cleanings and target high-ticket surgical and cosmetic search queries.',
+        icon: '🛡️',
+      },
+      {
+        title: 'Google Maps 3-Pack Geo-Tagging',
+        desc: 'Upload optimized clinical operatory photos, schema categories, and local citation links.',
+        icon: '🗺️',
+      },
+      {
+        title: 'Hyperlocal Social Video Ads',
+        desc: 'Engage local families and working professionals on Instagram with genuine smile aesthetics.',
+        icon: '📱',
+      },
+    ],
   },
   {
     step: '04',
+    timeframe: 'DAYS 19–35',
+    category: 'NO-SHOW SHIELD & CRM',
     title: 'Lead Tracking & Optimization',
-    desc: 'Monitor inquiry quality, deploy automated WhatsApp appointment verification to slash no-shows, and continually improve campaigns.',
-    detail: 'Automated WhatsApp attendance confirmation & ad scrubbing',
+    shortDesc: 'Deploying automated WhatsApp token confirmations to slash clinic no-shows.',
+    objective: 'Monitor inquiry quality, deploy our automated WhatsApp appointment verification to slash no-shows, and continually improve campaigns based on seated chair data.',
+    keyMetric: '91.5% Patient Chair Arrival Rate',
+    deliverables: [
+      {
+        title: 'Automated 1-Tap WhatsApp Token Bot',
+        desc: 'Instantly confirm booked slots and send prep instructions directly to the patient’s phone.',
+        icon: '💬',
+      },
+      {
+        title: '24-Hour & 2-Hour GPS Navigation Alerts',
+        desc: 'Send turn-by-turn clinic directions and parking guidance to prevent last-minute cancellations.',
+        icon: '🚗',
+      },
+      {
+        title: 'Clinical Feedback Keyword Scrub',
+        desc: 'Refine keyword bidding weekly based on which inquiries converted into paid chair procedures.',
+        icon: '🔄',
+      },
+    ],
   },
   {
     step: '05',
-    title: 'Reporting & Growth',
-    desc: 'Provide clear performance insights, track booked consultations, identify new procedural opportunities, and refine for continued scale.',
-    detail: 'Chair-time analytics & ongoing growth refinement',
+    timeframe: 'DAY 36+',
+    category: 'CHAIR-TIME SCALING',
+    title: 'Reporting & Practice Growth',
+    shortDesc: 'Transparent chair telemetry, patient review velocity, and continuous practice expansion.',
+    objective: 'Provide clear performance insights, track seated chair consultations, scale winning campaigns, and build compounding local reputation.',
+    keyMetric: 'Compounding Inflow & Chair Saturation',
+    deliverables: [
+      {
+        title: 'Live 24/7 Practice Attribution Dashboard',
+        desc: 'Track inquiries, consult show-ups, patient acquisition costs, and verified ROAS in real time.',
+        icon: '📊',
+      },
+      {
+        title: 'Automated 5-Star Review Engine',
+        desc: 'Prompt satisfied patients via WhatsApp post-treatment to continually strengthen Google Maps rank.',
+        icon: '⭐',
+      },
+      {
+        title: 'Adjacent Catchment Radius Scaling',
+        desc: 'Expand targeting to neighboring pin codes and scale high-value full-arch restorative campaigns.',
+        icon: '🚀',
+      },
+    ],
   },
 ];
 
@@ -389,6 +453,7 @@ const dentalFaqs = [
 export default function DentalMarketingPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [currentSlide, setCurrentSlide] = useState<number>(0);
+  const [activeStep, setActiveStep] = useState<number>(0);
 
   // Auto rotate hero clinical slides
   useEffect(() => {
@@ -580,14 +645,18 @@ export default function DentalMarketingPage() {
                   <h3 className={styles.serviceCardTitle}>{service.title}</h3>
                   <p className={styles.serviceCardDesc}>{service.desc}</p>
 
-                  <ul className={styles.serviceOutcomesList}>
-                    {service.outcomes.map((outcome, oIdx) => (
-                      <li key={oIdx} className={styles.serviceOutcomeItem}>
-                        <span className={styles.serviceOutcomeCheck}>✓</span>
-                        <span>{outcome}</span>
-                      </li>
+                  <div className={styles.serviceTagsWrap}>
+                    {service.tags.map((tag, tIdx) => (
+                      <span key={tIdx} className={styles.serviceTagChip}>
+                        {tag}
+                      </span>
                     ))}
-                  </ul>
+                  </div>
+
+                  <Link href="/contact" className={styles.serviceActionLink}>
+                    <span>{service.actionText}</span>
+                    <span>→</span>
+                  </Link>
                 </div>
               </ScrollReveal>
             ))}
@@ -738,34 +807,26 @@ export default function DentalMarketingPage() {
                   </div>
 
                   <h3 className={styles.treatmentTitle}>{proc.title}</h3>
+                  <span className={styles.treatmentScopeTag}>{proc.scope}</span>
                   <p className={styles.treatmentDesc}>{proc.desc}</p>
 
-                  <div className={styles.treatmentBenefitBox}>
-                    <div className={styles.treatmentBenefitLabel}>
-                      <span>★</span>
-                      <span>{proc.benefitLabel}</span>
-                    </div>
-                    <p className={styles.treatmentBenefitText}>{proc.benefit}</p>
+                  <div className={styles.treatmentImpactStrip}>
+                    <span className={styles.treatmentImpactIcon}>★</span>
+                    <span><strong>{proc.impactFocus}</strong> • {proc.impactChair}</span>
                   </div>
 
-                  <ul className={styles.treatmentDeliverablesList}>
-                    {proc.deliverables.map((deliv, dIdx) => (
-                      <li key={dIdx} className={styles.treatmentDeliverableItem}>
-                        <span className={styles.serviceOutcomeCheck}>✓</span>
-                        <span>{deliv}</span>
-                      </li>
+                  <div className={styles.treatmentChipsWrap}>
+                    {proc.chips.map((chip, cIdx) => (
+                      <span key={cIdx} className={styles.treatmentChip}>
+                        {chip}
+                      </span>
                     ))}
-                  </ul>
-
-                  <div className={styles.treatmentCtaWrap}>
-                    <BeamButton
-                      href="/contact"
-                      label="Scale This Treatment"
-                      variant="outline"
-                      size="sm"
-                      fullWidth
-                    />
                   </div>
+
+                  <Link href="/contact" className={styles.treatmentActionBtn}>
+                    <span>Scale Procedure</span>
+                    <span>→</span>
+                  </Link>
                 </div>
               </ScrollReveal>
             ))}
@@ -774,7 +835,8 @@ export default function DentalMarketingPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════ */}
-      {/* PHASE 5: OUR PROCESS – HOW WE WORK                */}
+      {/* PHASE 5: PROVEN ONBOARDING & SCALE                */}
+      {/* Architectural Interactive Roadmap Highway         */}
       {/* ══════════════════════════════════════════════════ */}
       <section id="process" className={styles.sectionBlockAlt}>
         <div className={styles.container}>
@@ -788,25 +850,101 @@ export default function DentalMarketingPage() {
             </p>
           </div>
 
-          <div className={styles.processTimeline}>
-            {growthProcessSteps.map((step, idx) => (
-              <ScrollReveal key={idx} delay={idx * 60}>
-                <div className={styles.processStepCard}>
-                  <div className={styles.processStepTop}>
-                    <span className={styles.processStepNumber}>{step.step}</span>
-                    <span className={styles.processStepPill}>PHASE {step.step}</span>
+          <div className={styles.roadmapContainer}>
+            {/* Desktop Horizontal Highway Stepper */}
+            <div className={styles.roadmapHighway}>
+              <div className={styles.roadmapTrackLine} aria-hidden="true" />
+              {growthProcessSteps.map((step, idx) => {
+                const isActive = activeStep === idx;
+                return (
+                  <button
+                    key={idx}
+                    type="button"
+                    onClick={() => setActiveStep(idx)}
+                    className={`${styles.roadmapStationBtn} ${isActive ? styles.stationActive : ''}`}
+                    aria-label={`Select Phase ${step.step}: ${step.title}`}
+                  >
+                    <div className={styles.stationBeacon}>
+                      <span className={styles.stationNumber}>{step.step}</span>
+                      <span className={styles.stationPulseDot} />
+                    </div>
+                    <div className={styles.stationMeta}>
+                      <span className={styles.stationTimeBadge}>{step.timeframe}</span>
+                      <span className={styles.stationTitleText}>{step.title}</span>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Desktop Executive Spotlight Cockpit Console */}
+            {(() => {
+              const current = growthProcessSteps[activeStep];
+              return (
+                <div className={styles.roadmapCockpit}>
+                  <div className={styles.cockpitLeft}>
+                    <div className={styles.cockpitPhaseTagRow}>
+                      <span className={styles.cockpitPhasePill}>PHASE {current.step} // {current.category}</span>
+                      <span className={styles.cockpitTimeframePill}>⏱️ {current.timeframe}</span>
+                    </div>
+                    <h3 className={styles.cockpitTitle}>{current.title}</h3>
+                    <p className={styles.cockpitObjective}>{current.objective}</p>
+                    <div className={styles.cockpitMetricStrip}>
+                      <span>⚡ Target Output:</span>
+                      <span>{current.keyMetric}</span>
+                    </div>
+                    <div>
+                      <BeamButton
+                        href="/contact"
+                        label={`Deploy Phase ${current.step} Protocol`}
+                        size="sm"
+                      />
+                    </div>
                   </div>
 
-                  <h3 className={styles.processStepTitle}>{step.title}</h3>
-                  <p className={styles.processStepDesc}>{step.desc}</p>
-
-                  <div className={styles.processStepDetail}>
-                    <span>⚡</span>
-                    <span>{step.detail}</span>
+                  <div className={styles.cockpitRight}>
+                    <div className={styles.cockpitDeliverablesTitleRow}>
+                      <span className={styles.cockpitDeliverablesHeader}>Execution Deliverables</span>
+                      <span className={styles.cockpitLiveBadge}>● Active Protocol</span>
+                    </div>
+                    <div className={styles.cockpitDeliverablesMatrix}>
+                      {current.deliverables.map((item, dIdx) => (
+                        <div key={dIdx} className={styles.deliverableRowCard}>
+                          <div className={styles.deliverableIconPod}>{item.icon}</div>
+                          <div className={styles.deliverableTextCol}>
+                            <div className={styles.deliverableTitle}>{item.title}</div>
+                            <p className={styles.deliverableDesc}>{item.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </ScrollReveal>
-            ))}
+              );
+            })()}
+
+            {/* Mobile Continuous Subway Flow */}
+            <div className={styles.mobileSubwayFlow}>
+              <div className={styles.mobileSubwayTrack} aria-hidden="true" />
+              {growthProcessSteps.map((step, idx) => (
+                <div key={idx} className={styles.mobileStepCard}>
+                  <div className={styles.mobileStepNode}>{step.step}</div>
+                  <div className={styles.mobileStepHeader}>
+                    <span className={styles.mobileStepCategory}>{step.category}</span>
+                    <span className={styles.mobileStepTimeBadge}>{step.timeframe}</span>
+                  </div>
+                  <h4 className={styles.mobileStepTitle}>{step.title}</h4>
+                  <p className={styles.mobileStepDesc}>{step.shortDesc}</p>
+                  <div className={styles.mobileStepDeliverables}>
+                    {step.deliverables.map((item, dIdx) => (
+                      <span key={dIdx} className={styles.mobileDeliverableChip}>
+                        {item.icon} {item.title}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

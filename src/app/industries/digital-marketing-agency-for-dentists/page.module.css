@@ -427,15 +427,14 @@
 .servicesGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 22px;
   position: relative;
   z-index: 2;
   align-items: stretch;
 }
 
 .servicesGrid > div,
-.treatmentsGrid > div,
-.processTimeline > div {
+.treatmentsGrid > div {
   min-width: 0;
   width: 100%;
   height: 100%;
@@ -478,39 +477,39 @@
     line-height: 1.2 !important;
   }
   .serviceCardDesc {
-    font-size: 10.5px !important;
+    font-size: 10px !important;
     line-height: 1.35 !important;
     margin: 0 0 8px !important;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-  .serviceOutcomesList {
-    padding: 6px 8px !important;
-    gap: 3px !important;
-    border-radius: 8px !important;
-  }
-  .serviceOutcomeItem {
-    font-size: 9px !important;
+  .serviceTagsWrap {
     gap: 4px !important;
-    line-height: 1.25 !important;
+    padding-top: 6px !important;
+  }
+  .serviceTagChip {
+    font-size: 8.5px !important;
+    padding: 2px 5px !important;
+  }
+  .serviceActionLink {
+    font-size: 10px !important;
+    margin-top: 8px !important;
   }
 }
 
 .serviceCard {
-  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFD 100%);
-  border: 1px solid rgba(203, 213, 225, 0.85);
-  border-radius: 22px;
-  padding: 26px 22px;
+  background: #FFFFFF;
+  border: 1.5px solid rgba(226, 232, 240, 0.95);
+  border-radius: 20px;
+  padding: 24px 20px;
   display: flex;
   flex-direction: column;
   position: relative;
   box-shadow: 
     inset 0 1.5px 0 0 #FFFFFF,
-    inset 0 -1.5px 0 0 rgba(11, 32, 147, 0.04),
-    0 2px 4px rgba(15, 23, 42, 0.03),
-    0 12px 28px -6px rgba(11, 32, 147, 0.08);
+    0 4px 16px -2px rgba(11, 32, 147, 0.05);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: hidden;
   height: 100%;
@@ -522,20 +521,20 @@
   border-color: #0B2093;
   box-shadow: 
     inset 0 1.5px 0 0 #FFFFFF,
-    0 22px 48px -10px rgba(11, 32, 147, 0.16);
+    0 20px 42px -8px rgba(11, 32, 147, 0.16);
 }
 
 .serviceCardHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   gap: 8px;
 }
 
 .serviceIconPod {
-  width: 52px;
-  height: 52px;
+  width: 50px;
+  height: 50px;
   border-radius: 14px;
   background: linear-gradient(135deg, #FFFFFF 0%, #F0F9FF 100%);
   border: 1.5px solid #BAE6FD;
@@ -568,7 +567,7 @@
 
 .serviceCardTitle {
   font-family: var(--font-display);
-  font-size: 18.5px;
+  font-size: 18px;
   font-weight: 800;
   color: #0F172A;
   margin: 0 0 8px;
@@ -576,41 +575,56 @@
 }
 
 .serviceCardDesc {
-  font-size: 13.5px;
+  font-size: 13px;
   color: #475569;
   line-height: 1.55;
-  margin: 0 0 16px;
+  margin: 0 0 14px;
   flex-grow: 1;
 }
 
-.serviceOutcomesList {
-  list-style: none;
-  padding: 12px 14px;
-  margin: 0;
-  background: #F8FAFC;
-  border: 1px solid #E2E8F0;
-  border-radius: 12px;
+.serviceTagsWrap {
   display: flex;
-  flex-direction: column;
-  gap: 7px;
+  flex-wrap: wrap;
+  gap: 6px;
   margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid #F1F5F9;
 }
 
-.serviceOutcomeItem {
-  font-size: 12px;
+.serviceTagChip {
+  font-size: 11px;
   font-weight: 600;
-  color: #1E293B;
-  display: flex;
+  color: #0B2093;
+  background: rgba(11, 32, 147, 0.04);
+  border: 1px solid rgba(11, 32, 147, 0.09);
+  padding: 3.5px 9px;
+  border-radius: 999px;
+  display: inline-flex;
   align-items: center;
-  gap: 7px;
-  line-height: 1.35;
+  gap: 4px;
+  transition: all 0.2s ease;
 }
 
-.serviceOutcomeCheck {
-  color: #059669;
+.serviceCard:hover .serviceTagChip {
+  background: rgba(11, 32, 147, 0.08);
+  border-color: rgba(11, 32, 147, 0.18);
+}
+
+.serviceActionLink {
+  margin-top: 12px;
+  font-size: 11.5px;
   font-weight: 800;
-  font-size: 12px;
-  flex-shrink: 0;
+  color: #0B2093;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: gap 0.2s ease;
+  text-decoration: none;
+}
+
+.serviceCard:hover .serviceActionLink {
+  gap: 7px;
+  color: #0284C7;
 }
 
 /* ══════════════════════════════════════════════════
@@ -893,11 +907,12 @@
 
 /* ══════════════════════════════════════════════════
    PHASE 4: HIGH-VALUE DENTAL TREATMENTS
+   Distinct Clinical Showcase Styling
 ══════════════════════════════════════════════════ */
 .treatmentsGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 22px;
   position: relative;
   z-index: 2;
   align-items: stretch;
@@ -934,58 +949,44 @@
   }
   .treatmentTitle {
     font-size: 12.5px !important;
-    margin: 0 0 4px !important;
+    margin: 0 0 3px !important;
     line-height: 1.2 !important;
   }
-  .treatmentDesc {
-    font-size: 10px !important;
-    line-height: 1.35 !important;
-    margin: 0 0 8px !important;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+  .treatmentScopeTag {
+    font-size: 8.5px !important;
+    padding: 2px 4px !important;
+    margin-bottom: 6px !important;
   }
-  .treatmentBenefitBox {
-    padding: 5px 6px !important;
-    margin-bottom: 8px !important;
-    border-radius: 8px !important;
+  .treatmentImpactStrip {
+    padding: 4px 6px !important;
+    margin-bottom: 6px !important;
+    font-size: 8.5px !important;
+    border-radius: 6px !important;
   }
-  .treatmentBenefitLabel {
-    font-size: 7px !important;
-    margin-bottom: 1px !important;
-  }
-  .treatmentBenefitText {
-    font-size: 9px !important;
-    line-height: 1.25 !important;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-  .treatmentDeliverablesList {
-    margin-bottom: 10px !important;
+  .treatmentChipsWrap {
     gap: 3px !important;
+    margin-bottom: 8px !important;
   }
-  .treatmentDeliverableItem {
-    font-size: 9px !important;
-    gap: 4px !important;
-    line-height: 1.25 !important;
+  .treatmentChip {
+    font-size: 8px !important;
+    padding: 1.5px 4px !important;
+  }
+  .treatmentActionBtn {
+    padding: 5px 8px !important;
+    font-size: 10px !important;
   }
 }
 
 .treatmentCard {
-  background: linear-gradient(180deg, #FFFFFF 0%, #F9FBFE 100%);
-  border: 1px solid rgba(203, 213, 225, 0.85);
-  border-radius: 22px;
-  padding: 24px 20px;
+  background: #FFFFFF;
+  border: 1.5px solid rgba(226, 232, 240, 0.95);
+  border-radius: 20px;
+  padding: 22px 18px;
   display: flex;
   flex-direction: column;
   box-shadow: 
     inset 0 1.5px 0 0 #FFFFFF,
-    inset 0 -1.5px 0 0 rgba(11, 32, 147, 0.04),
-    0 1px 3px rgba(15, 23, 42, 0.03),
-    0 14px 34px -8px rgba(11, 32, 147, 0.09);
+    0 4px 16px -2px rgba(11, 32, 147, 0.05);
   transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
@@ -998,27 +999,27 @@
   transform: translateY(-5px);
   box-shadow: 
     inset 0 1.5px 0 0 #FFFFFF,
-    0 22px 48px -10px rgba(11, 32, 147, 0.18);
+    0 20px 42px -8px rgba(11, 32, 147, 0.16);
 }
 
 .treatmentTopBar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   gap: 6px;
 }
 
 .treatmentIconPod {
-  width: 48px;
-  height: 48px;
+  width: 46px;
+  height: 46px;
   border-radius: 12px;
   background: linear-gradient(135deg, #FFFFFF 0%, #F0F9FF 100%);
   border: 1.5px solid #BAE6FD;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: inset 0 1px 0 #FFFFFF, 0 4px 10px rgba(2, 132, 199, 0.1);
+  box-shadow: inset 0 1px 0 #FFFFFF, 0 3px 10px rgba(2, 132, 199, 0.1);
   flex-shrink: 0;
 }
 
@@ -1037,186 +1038,531 @@
 
 .treatmentTitle {
   font-family: var(--font-display);
-  font-size: 18px;
+  font-size: 17.5px;
   font-weight: 800;
   color: #0F172A;
-  margin: 0 0 8px;
+  margin: 0 0 6px;
   line-height: 1.25;
 }
 
-.treatmentDesc {
-  font-size: 13px;
-  color: #475569;
-  line-height: 1.5;
-  margin: 0 0 14px;
+.treatmentScopeTag {
+  font-size: 11px;
+  font-weight: 600;
+  color: #0369A1;
+  background: #F0F9FF;
+  border: 1px solid #BAE6FD;
+  padding: 3px 8px;
+  border-radius: 6px;
+  display: inline-block;
+  margin-bottom: 10px;
 }
 
-.treatmentBenefitBox {
-  background: linear-gradient(135deg, #EFF6FF 0%, #F8FAFC 100%);
-  border: 1px solid #BFDBFE;
-  border-radius: 12px;
-  padding: 10px 12px;
-  margin-bottom: 14px;
-  box-shadow: inset 0 1px 0 #FFFFFF;
-}
-
-.treatmentBenefitLabel {
-  font-family: var(--font-display);
-  font-size: 9px;
-  font-weight: 800;
-  color: #0B2093;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  margin-bottom: 3px;
-}
-
-.treatmentBenefitText {
-  font-size: 12px;
-  color: #1E293B;
-  line-height: 1.4;
-  margin: 0;
-  font-weight: 500;
-}
-
-.treatmentDeliverablesList {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  flex-grow: 1;
-}
-
-.treatmentDeliverableItem {
+.treatmentImpactStrip {
+  background: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%);
+  border: 1px solid #DBEAFE;
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin-bottom: 12px;
   font-size: 11.5px;
-  color: #334155;
+  color: #1E293B;
   font-weight: 600;
   display: flex;
   align-items: center;
   gap: 6px;
-  line-height: 1.35;
 }
 
-.treatmentCtaWrap {
+.treatmentImpactIcon {
+  color: #059669;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.treatmentChipsWrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
   margin-top: auto;
+  margin-bottom: 14px;
+}
+
+.treatmentChip {
+  font-size: 10.5px;
+  font-weight: 600;
+  color: #475569;
+  background: #F1F5F9;
+  border: 1px solid #E2E8F0;
+  padding: 2.5px 7px;
+  border-radius: 6px;
+}
+
+.treatmentActionBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 12px;
+  border-radius: 8px;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #0B2093;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.treatmentCard:hover .treatmentActionBtn {
+  background: #0B2093;
+  color: #FFFFFF;
+  border-color: #0B2093;
 }
 
 /* ══════════════════════════════════════════════════
-   PHASE 5: OUR PROCESS TIMELINE
+   PHASE 5: PROVEN ONBOARDING & SCALE
+   Architectural Interactive Roadmap & Cockpit Console
 ══════════════════════════════════════════════════ */
-.processTimeline {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 16px;
+.roadmapContainer {
+  max-width: 1100px;
+  margin: 0 auto;
   position: relative;
   z-index: 2;
-  align-items: stretch;
-}
-
-.processStepCard {
-  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFD 100%);
-  border: 1px solid rgba(203, 213, 225, 0.85);
-  border-radius: 20px;
-  padding: 22px 16px;
   display: flex;
   flex-direction: column;
+  gap: 24px;
+}
+
+/* Highway Bar spanning the 5 stations */
+.roadmapHighway {
   position: relative;
-  box-shadow: 
-    inset 0 1.5px 0 0 #FFFFFF,
-    0 4px 16px -2px rgba(11, 32, 147, 0.05);
-  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
-  height: 100%;
-  box-sizing: border-box;
+  padding: 10px 0 20px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  align-items: flex-start;
 }
 
-.processStepCard:hover {
-  transform: translateY(-4px);
-  border-color: #0B2093;
-  box-shadow: 
-    inset 0 1.5px 0 0 #FFFFFF,
-    0 16px 36px -8px rgba(11, 32, 147, 0.15);
+/* Glowing track line running behind the stations */
+.roadmapTrackLine {
+  position: absolute;
+  top: 36px;
+  left: 10%;
+  right: 10%;
+  height: 3px;
+  background: linear-gradient(90deg, #38BDF8 0%, #0B2093 50%, #10B981 100%);
+  border-radius: 999px;
+  box-shadow: 0 0 10px rgba(2, 132, 199, 0.4);
+  z-index: 1;
 }
 
-.processStepTop {
+/* Station node button */
+.roadmapStationBtn {
+  position: relative;
+  z-index: 2;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  margin-bottom: 12px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0 4px;
+  transition: all 0.25s ease;
+  outline: none;
+  text-align: center;
+  width: 100%;
 }
 
-.processStepNumber {
+.stationBeacon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FFFFFF 0%, #F1F5F9 100%);
+  border: 2px solid #CBD5E1;
+  box-shadow: 
+    0 4px 12px rgba(15, 23, 42, 0.08),
+    inset 0 1.5px 0 #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.stationNumber {
   font-family: var(--font-display);
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 800;
-  color: #0B2093;
-  line-height: 1;
+  color: #475569;
+  letter-spacing: -0.02em;
 }
 
-.processStepPill {
+.stationPulseDot {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #CBD5E1;
+  border: 2px solid #FFFFFF;
+  transition: all 0.25s ease;
+}
+
+/* Active Station State */
+.stationActive .stationBeacon {
+  background: linear-gradient(135deg, #0B2093 0%, #1E40AF 100%);
+  border-color: #38BDF8;
+  transform: scale(1.12);
+  box-shadow: 
+    0 0 0 4px rgba(56, 189, 248, 0.25),
+    0 10px 24px -4px rgba(11, 32, 147, 0.4),
+    inset 0 2px 0 rgba(255, 255, 255, 0.4);
+}
+
+.stationActive .stationNumber {
+  color: #FFFFFF;
+}
+
+.stationActive .stationPulseDot {
+  background: #10B981;
+  box-shadow: 0 0 8px #10B981;
+  animation: pulseBeacon 1.8s infinite;
+}
+
+@keyframes pulseBeacon {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.7; }
+}
+
+.stationMeta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  margin-top: 10px;
+}
+
+.stationTimeBadge {
   font-family: var(--font-display);
   font-size: 8.5px;
   font-weight: 800;
-  color: #0284C7;
-  background: #F0F9FF;
-  border: 1px solid #BAE6FD;
+  color: #64748B;
+  background: #F1F5F9;
+  border: 1px solid #E2E8F0;
   padding: 2px 7px;
+  border-radius: 999px;
+  letter-spacing: 0.05em;
+  transition: all 0.2s ease;
+}
+
+.stationActive .stationTimeBadge {
+  color: #0369A1;
+  background: #E0F2FE;
+  border-color: #BAE6FD;
+}
+
+.stationTitleText {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 800;
+  color: #475569;
+  line-height: 1.25;
+  transition: all 0.2s ease;
+  margin-top: 2px;
+}
+
+.stationActive .stationTitleText {
+  color: #0B2093;
+}
+
+/* ══════════════════════════════════════════════════
+   EXECUTIVE SPOTLIGHT COCKPIT
+══════════════════════════════════════════════════ */
+.roadmapCockpit {
+  background: linear-gradient(135deg, #FFFFFF 0%, #F8FAFD 50%, #F1F5F9 100%);
+  border: 1.5px solid #CBD5E1;
+  border-radius: 24px;
+  padding: 30px 32px;
+  box-shadow: 
+    inset 0 2px 0 #FFFFFF,
+    inset 0 -1.5px 0 rgba(15, 23, 42, 0.04),
+    0 16px 40px -10px rgba(11, 32, 147, 0.1);
+  display: grid;
+  grid-template-columns: 1.05fr 1.35fr;
+  gap: 32px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.cockpitLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cockpitPhaseTagRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.cockpitPhasePill {
+  font-family: var(--font-display);
+  font-size: 9.5px;
+  font-weight: 800;
+  color: #0B2093;
+  background: rgba(11, 32, 147, 0.08);
+  border: 1px solid rgba(11, 32, 147, 0.18);
+  padding: 3.5px 10px;
   border-radius: 999px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
-.processStepTitle {
+.cockpitTimeframePill {
   font-family: var(--font-display);
-  font-size: 15px;
+  font-size: 9.5px;
+  font-weight: 800;
+  color: #047857;
+  background: #ECFDF5;
+  border: 1px solid #A7F3D0;
+  padding: 3.5px 9px;
+  border-radius: 999px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.cockpitTitle {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.3vw, 28px);
   font-weight: 800;
   color: #0F172A;
-  margin: 0 0 8px;
-  line-height: 1.25;
+  margin: 0;
+  line-height: 1.2;
 }
 
-.processStepDesc {
-  font-size: 12.5px;
+.cockpitObjective {
+  font-size: 14px;
   color: #475569;
-  line-height: 1.5;
-  margin: 0 0 12px;
-  flex-grow: 1;
+  line-height: 1.55;
+  margin: 0;
 }
 
-.processStepDetail {
-  font-size: 11px;
-  font-weight: 600;
-  color: #0B2093;
+.cockpitMetricStrip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
   background: #F8FAFC;
   border: 1px solid #E2E8F0;
-  border-radius: 8px;
-  padding: 6px 8px;
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #0B2093;
+  margin: 2px 0 8px;
+  box-shadow: inset 0 1px 0 #FFFFFF;
+}
+
+.cockpitRight {
   display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cockpitDeliverablesTitleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2px;
+}
+
+.cockpitDeliverablesHeader {
+  font-family: var(--font-display);
+  font-size: 10.5px;
+  font-weight: 800;
+  color: #64748B;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.cockpitLiveBadge {
+  display: inline-flex;
   align-items: center;
   gap: 5px;
-  margin-top: auto;
+  font-family: var(--font-display);
+  font-size: 9px;
+  font-weight: 800;
+  color: #059669;
+  background: #ECFDF5;
+  border: 1px solid #A7F3D0;
+  padding: 2.5px 8px;
+  border-radius: 999px;
+  text-transform: uppercase;
 }
 
-@media (max-width: 1024px) {
-  .processTimeline {
-    grid-template-columns: repeat(3, 1fr);
+.cockpitDeliverablesMatrix {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.deliverableRowCard {
+  background: #FFFFFF;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 10px 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.03);
+  transition: all 0.2s ease;
+}
+
+.deliverableRowCard:hover {
+  border-color: #93C5FD;
+  transform: translateX(3px);
+  box-shadow: 0 4px 12px rgba(11, 32, 147, 0.08);
+}
+
+.deliverableIconPod {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+  border: 1px solid #BFDBFE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.deliverableTextCol {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.deliverableTitle {
+  font-family: var(--font-display);
+  font-size: 12.5px;
+  font-weight: 800;
+  color: #0F172A;
+}
+
+.deliverableDesc {
+  font-size: 11.5px;
+  color: #64748B;
+  line-height: 1.35;
+  margin: 0;
+}
+
+/* ══════════════════════════════════════════════════
+   MOBILE SUBWAY FLOW (PROVEN ONBOARDING & SCALE)
+══════════════════════════════════════════════════ */
+.mobileSubwayFlow {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .roadmapHighway {
+    display: none;
+  }
+  .roadmapCockpit {
+    display: none;
+  }
+  .mobileSubwayFlow {
+    display: flex;
+    flex-direction: column;
     gap: 14px;
+    position: relative;
+    padding-left: 28px;
+  }
+  .mobileSubwayTrack {
+    position: absolute;
+    top: 10px;
+    bottom: 20px;
+    left: 10px;
+    width: 3px;
+    background: linear-gradient(180deg, #38BDF8 0%, #0B2093 50%, #10B981 100%);
+    border-radius: 999px;
+  }
+  .mobileStepCard {
+    background: #FFFFFF;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 14px;
+    padding: 14px 12px;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(11, 32, 147, 0.05);
+  }
+  .mobileStepNode {
+    position: absolute;
+    left: -27px;
+    top: 14px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #0B2093;
+    border: 2px solid #FFFFFF;
+    box-shadow: 0 0 0 2px #38BDF8, 0 2px 6px rgba(11, 32, 147, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    font-size: 8px;
+    font-weight: 800;
+  }
+  .mobileStepHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+    gap: 6px;
+  }
+  .mobileStepTimeBadge {
+    font-size: 8px;
+    font-weight: 800;
+    color: #047857;
+    background: #ECFDF5;
+    border: 1px solid #A7F3D0;
+    padding: 2px 6px;
+    border-radius: 999px;
+  }
+  .mobileStepCategory {
+    font-size: 8px;
+    font-weight: 800;
+    color: #0284C7;
+    letter-spacing: 0.04em;
+  }
+  .mobileStepTitle {
+    font-size: 13.5px;
+    font-weight: 800;
+    color: #0F172A;
+    margin: 0 0 4px;
+  }
+  .mobileStepDesc {
+    font-size: 11px;
+    color: #475569;
+    line-height: 1.4;
+    margin: 0 0 8px;
+  }
+  .mobileStepDeliverables {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .mobileDeliverableChip {
+    font-size: 9px;
+    font-weight: 600;
+    color: #0B2093;
+    background: #F1F5F9;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 2.5px 6px;
   }
 }
 
-@media (max-width: 640px) {
-  .processTimeline {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-  .processStepCard {
-    padding: 16px 14px;
-    border-radius: 14px;
-  }
-}
 
 
 /* ══════════════════════════════════════════════════
