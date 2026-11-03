@@ -4,17 +4,20 @@
 
 .pageWrapper {
   width: 100%;
+  max-width: 100vw;
   min-height: 100vh;
   background: #FFFFFF;
   color: #0F172A;
-  overflow-x: hidden;
+  overflow-x: clip;
   position: relative;
 }
 
 .container {
   max-width: 1240px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 24px;
+  box-sizing: border-box;
 }
 
 @media (max-width: 640px) {
@@ -430,77 +433,102 @@
   align-items: stretch;
 }
 
+.bottleneckGrid > div,
+.proceduresGrid > div,
+.pillarsGrid > div {
+  min-width: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 @media (max-width: 1080px) {
   .bottleneckGrid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
   }
 }
 
 @media (max-width: 640px) {
   .bottleneckGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    width: 100%;
+    box-sizing: border-box;
   }
   .bottleneckCard {
-    padding: 13px 10px;
-    border-radius: 16px;
+    padding: 12px 9px;
+    border-radius: 14px;
+    min-height: auto;
+    min-width: 0;
   }
   .cardTopBar {
-    margin-bottom: 8px;
-    flex-wrap: wrap;
-    gap: 4px;
-  }
-  .cardLedBadge {
-    font-size: 8px;
-    padding: 2px 6px;
-    gap: 4px;
-  }
-  .ledAudit {
-    width: 6px;
-    height: 6px;
-  }
-  .metricAuditPill {
-    font-size: 7.5px;
-    padding: 2px 5px;
-  }
-  .cardIconWrap {
-    width: 36px;
-    height: 36px;
-    font-size: 16px;
-    border-radius: 10px;
-    margin-bottom: 8px;
-  }
-  .cardTitle {
-    font-size: 13px;
-    line-height: 1.22;
-    min-height: 32px;
-    margin-bottom: 4px;
-  }
-  .symptomTag {
-    font-size: 9px;
-    padding: 1.5px 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
     margin-bottom: 6px;
   }
+  .cardLedBadge {
+    font-size: 7.5px;
+    padding: 2px 5px;
+    gap: 3px;
+  }
+  .ledAudit {
+    width: 5px;
+    height: 5px;
+  }
+  .metricAuditPill {
+    font-size: 7px;
+    padding: 1.5px 4px;
+  }
+  .cardIconWrap {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+    border-radius: 8px;
+    margin-bottom: 6px;
+  }
+  .cardTitle {
+    font-size: 12px;
+    line-height: 1.2;
+    min-height: auto;
+    margin-bottom: 3px;
+  }
+  .symptomTag {
+    font-size: 8px;
+    padding: 1px 4px;
+    margin-bottom: 5px;
+  }
   .cardText {
-    font-size: 10.5px;
+    font-size: 9.5px;
     line-height: 1.35;
     margin-bottom: 8px;
-    min-height: 44px;
+    min-height: auto;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
   .solutionBox {
-    padding: 7px 8px;
-    min-height: 52px;
-    border-radius: 9px;
+    padding: 6px 7px;
+    min-height: auto;
+    border-radius: 7px;
+    margin-top: auto;
   }
   .solutionBoxLabel {
-    font-size: 8px;
-    gap: 3px;
-    margin-bottom: 2px;
+    font-size: 7.5px;
+    gap: 2px;
+    margin-bottom: 1px;
   }
   .solutionBoxText {
-    font-size: 10px;
-    line-height: 1.3;
+    font-size: 9px;
+    line-height: 1.25;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 }
 
@@ -521,6 +549,8 @@
   overflow: hidden;
   height: 100%;
   box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
 }
 
 .bottleneckCard:hover {
@@ -684,92 +714,97 @@
 
 @media (max-width: 990px) {
   .proceduresGrid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
   }
 }
 
 @media (max-width: 640px) {
   .proceduresGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    width: 100%;
+    box-sizing: border-box;
   }
   .procedureCard {
-    padding: 13px 10px;
-    border-radius: 16px;
+    padding: 12px 9px;
+    border-radius: 14px;
+    min-width: 0;
   }
   .procedureTopHeader {
-    margin-bottom: 8px;
-    flex-wrap: wrap;
-    gap: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+    margin-bottom: 5px;
   }
   .procedureTierBadge {
-    font-size: 7.5px;
-    padding: 2px 5px;
+    font-size: 7px;
+    padding: 1.5px 5px;
   }
   .procedureDemandPill {
-    font-size: 7.5px;
-    padding: 2px 5px;
+    font-size: 7px;
+    padding: 1.5px 4px;
   }
   .procedureTitleRow {
-    gap: 5px;
-    margin-bottom: 6px;
+    gap: 4px;
+    margin-bottom: 4px;
   }
   .procedureIconEmoji {
-    font-size: 16px;
+    font-size: 15px;
   }
   .procedureTitle {
-    font-size: 12.5px;
+    font-size: 12px;
     line-height: 1.2;
   }
   .procedureDesc {
-    font-size: 10.5px;
-    line-height: 1.35;
-    margin-bottom: 8px;
-    min-height: 38px;
-  }
-  .procedureSpecConsole {
-    padding: 6px 8px;
-    margin-bottom: 8px;
-    border-radius: 8px;
-  }
-  .specLabel {
-    font-size: 7.5px;
-  }
-  .specTicket {
-    font-size: 11px;
-  }
-  .specMarginPill {
-    font-size: 7.5px;
-    padding: 2px 5px;
-  }
-  .deliverablesSectionTitle {
-    font-size: 8.5px;
-    margin-bottom: 5px;
-  }
-  .deliverablesList {
-    gap: 4px;
-    margin-bottom: 8px;
-  }
-  .deliverableItem {
     font-size: 9.5px;
     line-height: 1.3;
+    margin-bottom: 6px;
+    min-height: auto;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .procedureSpecConsole {
+    padding: 5px 6px;
+    margin-bottom: 6px;
+    border-radius: 6px;
+  }
+  .specLabel {
+    font-size: 7px;
+  }
+  .specTicket {
+    font-size: 10px;
+  }
+  .specMarginPill {
+    font-size: 7px;
+    padding: 1px 4px;
+  }
+  .deliverablesSectionTitle {
+    font-size: 8px;
+    margin-bottom: 4px;
+  }
+  .deliverablesList {
+    gap: 3px;
+    margin-bottom: 6px;
+  }
+  .deliverablesList li:nth-child(n+3) {
+    display: none;
+  }
+  .deliverableItem {
+    font-size: 9px;
+    line-height: 1.25;
     gap: 4px;
   }
   .checkCircle {
-    width: 12px;
-    height: 12px;
-    font-size: 7.5px;
+    width: 11px;
+    height: 11px;
+    font-size: 7px;
   }
   .tagsTray {
-    gap: 3px;
-    margin-bottom: 8px;
-    padding-top: 5px;
-    min-height: auto;
-  }
-  .procedureTagChip {
-    font-size: 8px;
-    padding: 1.5px 4px;
+    display: none;
   }
 }
 
@@ -790,6 +825,8 @@
   overflow: hidden;
   height: 100%;
   box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
 }
 
 .procedureCard:hover {
@@ -1026,64 +1063,76 @@
 
 @media (max-width: 860px) {
   .pillarsGrid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
   }
 }
 
 @media (max-width: 640px) {
   .pillarsGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    width: 100%;
+    box-sizing: border-box;
   }
   .pillarCard {
-    padding: 13px 10px;
-    border-radius: 16px;
+    padding: 12px 9px;
+    border-radius: 14px;
+    min-width: 0;
   }
   .pillarHeaderBar {
-    margin-bottom: 8px;
-    flex-wrap: wrap;
-    gap: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+    margin-bottom: 5px;
   }
   .pillarStageBadge {
-    font-size: 7.5px;
-    padding: 2px 5px;
+    font-size: 7px;
+    padding: 1.5px 5px;
   }
   .pillarBadgePill {
-    font-size: 7.5px;
-    padding: 2px 5px;
+    font-size: 7px;
+    padding: 1.5px 4px;
   }
   .pillarTitle {
-    font-size: 12.5px;
-    line-height: 1.25;
-    margin: 4px 0 4px;
+    font-size: 12px;
+    line-height: 1.2;
+    margin: 3px 0;
   }
   .pillarDesc {
-    font-size: 10.5px;
-    line-height: 1.35;
-    margin-bottom: 8px;
-    min-height: 38px;
+    font-size: 9.5px;
+    line-height: 1.3;
+    margin-bottom: 6px;
+    min-height: auto;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
   .pillarTelemetryCluster {
     grid-template-columns: 1fr;
-    padding: 5px 7px;
-    gap: 3px;
-    margin-bottom: 8px;
-    border-radius: 8px;
+    padding: 4px 6px;
+    gap: 2px;
+    margin-bottom: 6px;
+    border-radius: 6px;
   }
   .telemetryCellLabel {
-    font-size: 7.5px;
+    font-size: 7px;
   }
   .telemetryCellVal {
-    font-size: 10.5px;
+    font-size: 10px;
   }
   .pillarDeliverableList {
     grid-template-columns: 1fr;
-    gap: 4px;
+    gap: 3px;
+  }
+  .pillarDeliverableList li:nth-child(n+3) {
+    display: none;
   }
   .pillarDeliverableItem {
-    font-size: 9.5px;
-    line-height: 1.3;
+    font-size: 9px;
+    line-height: 1.25;
     gap: 4px;
   }
 }
@@ -1105,6 +1154,8 @@
   overflow: hidden;
   height: 100%;
   box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
 }
 
 .pillarCard:hover {
@@ -1412,16 +1463,8 @@
   margin: 0 auto;
 }
 
-.mobileScrollHint {
-  display: none;
-}
-
-.comparisonScrollContainer {
-  width: 100%;
-}
-
-.comparisonInnerTable {
-  width: 100%;
+.comparisonCellsWrap {
+  display: contents;
 }
 
 .comparisonHeaderRow {
@@ -1747,73 +1790,132 @@
 }
 
 @media (max-width: 860px) {
-  .mobileScrollHint {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 6px;
-    padding: 8px 12px;
-    background: #EFF6FF;
-    border-bottom: 1px solid #DBEAFE;
-    font-family: var(--font-display);
-    font-size: 11px;
-    font-weight: 700;
-    color: #0284C7;
-    letter-spacing: 0.04em;
-    text-align: center;
-  }
-
-  .comparisonScrollContainer {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+  .comparisonCard {
+    border-radius: 16px;
     width: 100%;
-    scrollbar-width: thin;
-    scrollbar-color: #93C5FD #F1F5F9;
-  }
-
-  .comparisonScrollContainer::-webkit-scrollbar {
-    height: 5px;
-  }
-
-  .comparisonScrollContainer::-webkit-scrollbar-track {
-    background: #F1F5F9;
-  }
-
-  .comparisonScrollContainer::-webkit-scrollbar-thumb {
-    background: #93C5FD;
-    border-radius: 9999px;
-  }
-
-  .comparisonInnerTable {
-    min-width: 680px; /* Maintains full horizontal 3-column desktop layout on mobile */
-    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
   }
 
   .comparisonHeaderRow {
-    display: grid;
-    grid-template-columns: 1.15fr 1fr 1.25fr;
-    padding: 10px 16px;
-    gap: 10px;
+    display: none;
   }
 
   .comparisonRow {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 10px;
+    gap: 8px;
+    border-bottom: 1px solid #E2E8F0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .featureCell {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .featureIconSquircle {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+
+  .featureIconSquircle svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .featureTitleText {
+    font-size: 12px;
+    font-weight: 800;
+  }
+
+  .featureSubtext {
+    font-size: 9px;
+  }
+
+  /* Two horizontal side-by-side comparison blocks: Generic vs Copilot */
+  .comparisonCellsWrap {
     display: grid;
-    grid-template-columns: 1.15fr 1fr 1.25fr;
-    gap: 10px;
-    padding: 10px 16px;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .genericCell {
+    display: flex;
+    flex-direction: column;
+    padding: 7px 8px;
+    border-radius: 8px;
+    background: #FFF5F5;
+    border: 1px solid #FECACA;
+    gap: 3px;
+    min-width: 0;
+  }
+
+  .genericCrossBadge {
+    width: 14px;
+    height: 14px;
+    font-size: 7.5px;
+  }
+
+  .genericRowTag {
+    font-size: 8px;
+  }
+
+  .genericDesc {
+    font-size: 9px;
+    line-height: 1.3;
+  }
+
+  .copilotCell {
+    display: flex;
+    flex-direction: column;
+    padding: 7px 8px;
+    border-radius: 8px;
+    background: #F0FDF4;
+    border: 1px solid #BBF7D0;
+    gap: 3px;
+    min-width: 0;
+  }
+
+  .copilotCheckBadge {
+    width: 14px;
+    height: 14px;
+    font-size: 7.5px;
+  }
+
+  .copilotRowTag {
+    font-size: 8px;
+  }
+
+  .copilotDesc {
+    font-size: 9px;
+    line-height: 1.3;
   }
 
   .comparisonFooterStrip {
     flex-direction: column;
     align-items: center;
-    gap: 14px;
-    padding: 14px 16px;
+    gap: 12px;
+    padding: 12px 10px;
     text-align: center;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .comparisonFooterLeft {
     justify-content: center;
-    font-size: 11.5px;
+    font-size: 10.5px;
+    line-height: 1.35;
+    text-align: center;
   }
 
   .comparisonBeamBtnWrap {

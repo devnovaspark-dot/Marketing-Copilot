@@ -792,73 +792,66 @@ export default function DentalMarketingPage() {
           </div>
 
           <div className={styles.comparisonCard}>
-            {/* Mobile Horizontal Swipe Indicator */}
-            <div className={styles.mobileScrollHint}>
-              <span>⇄ Swipe horizontally to compare with Generic Agencies</span>
-            </div>
-
-            <div className={styles.comparisonScrollContainer}>
-              <div className={styles.comparisonInnerTable}>
-                <div className={styles.comparisonHeaderRow}>
-                  <div className={styles.comparisonColTitle}>
-                    <span className={styles.comparisonColBadge}>BENCHMARK</span>
-                    <span>Growth Capability</span>
-                  </div>
-                  <div className={styles.comparisonGenericHeader}>
-                    <span className={styles.genericHeaderBadge}>✕</span>
-                    <div className={styles.headerTitleWrap}>
-                      <div className={styles.genericHeaderMain}>Generic Digital Agencies</div>
-                      <div className={styles.headerSubtext}>Generalist Freelancers &amp; Social Retainers</div>
-                    </div>
-                  </div>
-                  <div className={styles.comparisonCopilotHeader}>
-                    <div className={styles.copilotHeaderTop}>
-                      <span className={styles.copilotPillBadge}>★ HIGH-CONVERTING STANDARD</span>
-                    </div>
-                    <div className={styles.copilotHeaderTitleRow}>
-                      <span className={styles.copilotBrandIcon}>🦷</span>
-                      <span className={styles.copilotBrandText}>Marketing Copilot Dental</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className={styles.comparisonRowsList}>
-                  {dentalComparison.map((row, idx) => (
-                    <div key={idx} className={styles.comparisonRow}>
-                      <div className={styles.featureCell}>
-                        <div className={styles.featureIconSquircle}>
-                          {row.iconType === 'tooth' && <Icon3DTooth />}
-                          {row.iconType === 'mappin' && <Icon3DMapPin />}
-                          {row.iconType === 'diamond' && <Icon3DDiamond />}
-                          {row.iconType === 'shield' && <Icon3DShield />}
-                          {row.iconType === 'scale' && <Icon3DScale />}
-                          {row.iconType === 'chart' && <Icon3DChart />}
-                        </div>
-                        <div className={styles.featureTextCol}>
-                          <span className={styles.featureTitleText}>{row.feature}</span>
-                          <span className={styles.featureSubtext}>{row.subtext}</span>
-                        </div>
-                      </div>
-
-                      <div className={styles.genericCell}>
-                        <div className={styles.genericCrossBadge}>✕</div>
-                        <div className={styles.genericCellText}>
-                          <span className={styles.genericRowTag}>{row.genericTitle}</span>
-                          <span className={styles.genericDesc}>{row.generic}</span>
-                        </div>
-                      </div>
-
-                      <div className={styles.copilotCell}>
-                        <div className={styles.copilotCheckBadge}>✓</div>
-                        <div className={styles.copilotCellText}>
-                          <span className={styles.copilotRowTag}>{row.copilotTitle}</span>
-                          <span className={styles.copilotDesc}>{row.copilot}</span>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
+            <div className={styles.comparisonHeaderRow}>
+              <div className={styles.comparisonColTitle}>
+                <span className={styles.comparisonColBadge}>BENCHMARK</span>
+                <span>Growth Capability</span>
+              </div>
+              <div className={styles.comparisonGenericHeader}>
+                <span className={styles.genericHeaderBadge}>✕</span>
+                <div className={styles.headerTitleWrap}>
+                  <div className={styles.genericHeaderMain}>Generic Digital Agencies</div>
+                  <div className={styles.headerSubtext}>Generalist Freelancers &amp; Social Retainers</div>
                 </div>
               </div>
+              <div className={styles.comparisonCopilotHeader}>
+                <div className={styles.copilotHeaderTop}>
+                  <span className={styles.copilotPillBadge}>★ HIGH-CONVERTING STANDARD</span>
+                </div>
+                <div className={styles.copilotHeaderTitleRow}>
+                  <span className={styles.copilotBrandIcon}>🦷</span>
+                  <span className={styles.copilotBrandText}>Marketing Copilot Dental</span>
+                </div>
+              </div>
+            </div>
+
+            <div className={styles.comparisonRowsList}>
+              {dentalComparison.map((row, idx) => (
+                <div key={idx} className={styles.comparisonRow}>
+                  <div className={styles.featureCell}>
+                    <div className={styles.featureIconSquircle}>
+                      {row.iconType === 'tooth' && <Icon3DTooth />}
+                      {row.iconType === 'mappin' && <Icon3DMapPin />}
+                      {row.iconType === 'diamond' && <Icon3DDiamond />}
+                      {row.iconType === 'shield' && <Icon3DShield />}
+                      {row.iconType === 'scale' && <Icon3DScale />}
+                      {row.iconType === 'chart' && <Icon3DChart />}
+                    </div>
+                    <div className={styles.featureTextCol}>
+                      <span className={styles.featureTitleText}>{row.feature}</span>
+                      <span className={styles.featureSubtext}>{row.subtext}</span>
+                    </div>
+                  </div>
+
+                  <div className={styles.comparisonCellsWrap}>
+                    <div className={styles.genericCell}>
+                      <div className={styles.genericCrossBadge}>✕</div>
+                      <div className={styles.genericCellText}>
+                        <span className={styles.genericRowTag}>{row.genericTitle}</span>
+                        <span className={styles.genericDesc}>{row.generic}</span>
+                      </div>
+                    </div>
+
+                    <div className={styles.copilotCell}>
+                      <div className={styles.copilotCheckBadge}>✓</div>
+                      <div className={styles.copilotCellText}>
+                        <span className={styles.copilotRowTag}>{row.copilotTitle}</span>
+                        <span className={styles.copilotDesc}>{row.copilot}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
 
             {/* Bottom Proof & Guarantee Strip */}
