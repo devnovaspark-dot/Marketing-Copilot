@@ -303,3 +303,4 @@ export function Icon3DChart({ className }: { className?: string }) {
     </svg>
   );
 }
+

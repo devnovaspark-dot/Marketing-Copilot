@@ -272,62 +272,62 @@ const dentalPillars = [
 ];
 
 // ══════════════════════════════════════════════════
-// DATA: COMPARISON MATRIX (WITH 3D ICONS & EXECUTIVE PROOF)
+// DATA: COMPARISON MATRIX (COMPACT 3D MATRIX)
 // ══════════════════════════════════════════════════
 const dentalComparison = [
   {
     iconType: 'tooth',
     feature: 'Clinical Dental Expertise',
-    subtext: 'High-ticket treatment psychology & procedure margins',
+    subtext: 'High-ticket treatment psychology & margins',
     genericTitle: 'Generalist Freelancers',
-    generic: 'Generic copywriters with zero understanding of clinical dental procedures, margins, or patient anxiety triggers.',
+    generic: 'Zero understanding of clinical procedures, margins, or patient anxiety.',
     copilotTitle: 'Dedicated Dental Team',
-    copilot: 'Specialized healthcare strategists trained in dental implants, clear aligners & restorative full-mouth cases.',
+    copilot: 'Specialized strategists trained in implants, aligners & restorative full-mouth cases.',
   },
   {
     iconType: 'mappin',
     feature: 'Google Maps 3-Pack Dominance',
-    subtext: 'Hyperlocal pin codes & emergency search footfall',
+    subtext: 'Hyperlocal pin codes & emergency footfall',
     genericTitle: 'Unmanaged Profile',
-    generic: 'Basic static listing without clinical geo-tagging, patient review velocity, or medical schema moats.',
+    generic: 'Basic static listing without geo-tagging, review velocity, or schema moats.',
     copilotTitle: 'Guaranteed 3-Pack Engine',
-    copilot: 'Guaranteed Local 3-Pack rank with automated 5-star patient review acquisition & geo-grid ranking.',
+    copilot: 'Guaranteed Local 3-Pack rank with automated 5-star review acquisition.',
   },
   {
     iconType: 'diamond',
     feature: 'High-Ticket Case Focus',
     subtext: '₹50,000+ full-arch implants & clear aligners',
     genericTitle: 'Low-Margin Shoppers',
-    generic: 'Broad social ads that burn your ad budget attracting bargain hunters for ₹200 routine cleanings.',
+    generic: 'Broad ads burning budget attracting bargain hunters for ₹200 cleanings.',
     copilotTitle: 'High-Margin Pipeline',
-    copilot: 'Negative-keyword scrubbed PPC capturing high-margin ₹50k+ implants, cosmetic veneers & Invisalign.',
+    copilot: 'Negative-keyword scrubbed PPC capturing ₹50k+ implants & Invisalign.',
   },
   {
     iconType: 'shield',
     feature: 'Appointment No-Show Shield',
     subtext: 'Eliminate empty chairs & lost revenue',
     genericTitle: '35%+ No-Show Rate',
-    generic: 'Leads dumped into clinic inbox with zero rapid response, leading to an uncontrollable 35%+ no-show drop-off.',
-    copilotTitle: '91.5%+ Attendance Guarantee',
-    copilot: 'Automated 1-tap WhatsApp token confirmation and calendar sync driving 91.5%+ seated attendance.',
+    generic: 'Leads dumped into inbox with zero rapid response, driving 35%+ no-shows.',
+    copilotTitle: '91.5%+ Attendance',
+    copilot: 'Automated 1-tap WhatsApp token confirmation & calendar sync.',
   },
   {
     iconType: 'scale',
     feature: 'Medical & Dental Ethics',
     subtext: '100% DCI compliance & ad account safety',
     genericTitle: 'Suspension Risk',
-    generic: 'High risk of ad account bans from unverified claims, misleading discounts, or medical ethics violations.',
+    generic: 'Ad account bans from unverified claims or illegal discount promos.',
     copilotTitle: '100% Regulatory Safe',
-    copilot: 'Fully compliant with Dental Council of India (DCI) guidelines, patient privacy, and clinical ethics.',
+    copilot: 'Strictly compliant with DCI guidelines, patient privacy & clinical ethics.',
   },
   {
     iconType: 'chart',
     feature: 'Real-Time Revenue Attribution',
     subtext: 'Track exact chair revenue, consults & ROAS',
     genericTitle: 'Vanity Metrics Only',
-    generic: 'Vague monthly PDF reports tracking clicks, impressions, and vanity social media likes with zero accountability.',
+    generic: 'Vague PDF reports tracking impressions and vanity social likes.',
     copilotTitle: 'Live Chair Revenue Portal',
-    copilot: 'Executive 24/7 dashboard tracking booked chair revenue, consult attendance, and verifiable ROAS.',
+    copilot: 'Executive 24/7 dashboard tracking booked chair revenue, consults & ROAS.',
   },
 ];
 
@@ -389,119 +389,119 @@ export default function DentalMarketingPage() {
         <div className={styles.splashAmber} aria-hidden="true" />
         <div className={styles.ambientMesh} aria-hidden="true" />
 
-        <div className={styles.heroMainWrapper}>
-          <div className={styles.container}>
-            <div className={styles.heroInner}>
-              <ScrollReveal className={styles.heroContent}>
-                <div className={styles.heroEyebrow}>
-                  <span className={styles.heroEyebrowDot} />
-                  <span>PRACTICE GROWTH ACCELERATOR • DENTAL SECTOR</span>
-                </div>
+        <div className={styles.container}>
+          <div className={styles.heroInner}>
+            <ScrollReveal className={styles.heroContent}>
+              <div className={styles.heroEyebrow}>
+                <span className={styles.heroEyebrowDot} />
+                <span>PRACTICE GROWTH ACCELERATOR • DENTAL SECTOR</span>
+              </div>
 
-                <h1 className={styles.heroHeadline}>
-                  Digital Marketing Agency{' '}
-                  <span className={styles.heroAccent}>for Dentists</span>
-                </h1>
+              <h1 className={styles.heroHeadline}>
+                Digital Marketing Agency{' '}
+                <span className={styles.heroAccent}>for Dentists</span>
+              </h1>
 
-                <p className={styles.heroSub}>
-                  Turn local patient searches into booked dental chair-time. We deliver end-to-end <strong>Digital Marketing for Dentists</strong> and high-performance <strong>SEO Services for Dentists in India</strong> — dominating Google Maps 3-Pack, scaling ₹50k+ implants &amp; clear aligners, and eliminating costly clinic no-shows.
-                </p>
+              <p className={styles.heroSub}>
+                Turn local patient searches into booked dental chair-time. We deliver end-to-end <strong>Digital Marketing for Dentists</strong> and high-performance <strong>SEO Services for Dentists in India</strong> — dominating Google Maps 3-Pack, scaling ₹50k+ implants &amp; clear aligners, and eliminating costly clinic no-shows.
+              </p>
 
-                <div className={styles.heroActions}>
-                  <BeamButton
-                    href="/contact"
-                    label="Claim Free Practice Audit"
-                    size="md"
-                  />
-                  <BeamButton
-                    href="#simulator"
-                    label="Simulate Patient ROI"
-                    variant="outline"
-                    size="md"
-                    arrow={false}
-                  />
-                </div>
+              <div className={styles.heroActions}>
+                <BeamButton
+                  href="/contact"
+                  label="Claim Free Practice Audit"
+                  size="md"
+                />
+                <BeamButton
+                  href="#simulator"
+                  label="Simulate Patient ROI"
+                  variant="outline"
+                  size="md"
+                  arrow={false}
+                />
+              </div>
 
-                <div className={styles.trustStrip}>
-                  <span className={styles.trustItem}>
-                    <span className={styles.star}>★★★★★</span>
-                    <span>4.9/5 Rating (45+ Dental Practices)</span>
-                  </span>
-                  <span className={styles.trustSep}>•</span>
-                  <span className={styles.trustItem}>
-                    <span className={styles.trustDot} />
-                    <span>₹15Cr+ Patient Revenue</span>
-                  </span>
-                  <span className={styles.trustSep}>•</span>
-                  <span className={styles.trustItem}>
-                    <span className={styles.trustDot} />
-                    <span>100% HIPAA &amp; DCI Ethical</span>
-                  </span>
-                </div>
-              </ScrollReveal>
+              <div className={styles.trustStrip}>
+                <span className={styles.trustItem}>
+                  <span className={styles.star}>★★★★★</span>
+                  <span>4.9/5 Rating (45+ Dental Practices)</span>
+                </span>
+                <span className={styles.trustSep}>•</span>
+                <span className={styles.trustItem}>
+                  <span className={styles.trustDot} />
+                  <span>₹15Cr+ Patient Revenue</span>
+                </span>
+                <span className={styles.trustSep}>•</span>
+                <span className={styles.trustItem}>
+                  <span className={styles.trustDot} />
+                  <span>100% HIPAA &amp; DCI Ethical</span>
+                </span>
+              </div>
+            </ScrollReveal>
 
-              {/* Right Visual Showcase: Clean Photography Viewport (No Text Overlays) */}
-              <ScrollReveal delay={120}>
-                <div className={styles.visual}>
-                  <div className={styles.imageCard}>
-                    <div className={styles.imageViewport}>
-                      {dentalHeroSlides.map((slide, idx) => (
-                        <div
-                          key={idx}
-                          className={`${styles.slideItem} ${idx === currentSlide ? styles.slideActive : ''}`}
-                        >
-                          <Image
-                            src={slide.image}
-                            alt={slide.alt}
-                            fill
-                            priority={idx === 0}
-                            className={styles.slideImage}
-                            sizes="(max-width: 960px) 100vw, 560px"
-                          />
-                          <div className={styles.slideOverlay} />
-                        </div>
-                      ))}
-
-                      {/* Slide Dots */}
-                      <div className={styles.dotsWrap}>
-                        {dentalHeroSlides.map((_, dotIdx) => (
-                          <button
-                            key={dotIdx}
-                            type="button"
-                            className={`${styles.dot} ${dotIdx === currentSlide ? styles.dotActive : ''}`}
-                            onClick={() => setCurrentSlide(dotIdx)}
-                            aria-label={`Go to slide ${dotIdx + 1}`}
-                          />
-                        ))}
+            {/* Right Visual Showcase: Clean Photography Viewport (No Text Overlays) */}
+            <ScrollReveal delay={120}>
+              <div className={styles.visual}>
+                <div className={styles.imageCard}>
+                  <div className={styles.imageViewport}>
+                    {dentalHeroSlides.map((slide, idx) => (
+                      <div
+                        key={idx}
+                        className={`${styles.slideItem} ${idx === currentSlide ? styles.slideActive : ''}`}
+                      >
+                        <Image
+                          src={slide.image}
+                          alt={slide.alt}
+                          fill
+                          priority={idx === 0}
+                          className={styles.slideImage}
+                          sizes="(max-width: 960px) 100vw, 560px"
+                        />
+                        <div className={styles.slideOverlay} />
                       </div>
+                    ))}
+
+                    {/* Slide Dots */}
+                    <div className={styles.dotsWrap}>
+                      {dentalHeroSlides.map((_, dotIdx) => (
+                        <button
+                          key={dotIdx}
+                          type="button"
+                          className={`${styles.dot} ${dotIdx === currentSlide ? styles.dotActive : ''}`}
+                          onClick={() => setCurrentSlide(dotIdx)}
+                          aria-label={`Go to slide ${dotIdx + 1}`}
+                        />
+                      ))}
                     </div>
                   </div>
                 </div>
-              </ScrollReveal>
-            </div>
+              </div>
+            </ScrollReveal>
           </div>
         </div>
+      </section>
 
-        {/* METRICS BAR DOCKED AT BASE OF SINGLE-WINDOW HERO */}
-        <div className={styles.metricsBar}>
-          <div className={styles.container}>
-            <div className={styles.metricsGrid}>
-              <div className={styles.metricItem}>
-                <div className={styles.metricVal}>+240%</div>
-                <div className={styles.metricLabel}>New Patient Inquiries</div>
-              </div>
-              <div className={styles.metricItem}>
-                <div className={styles.metricVal}>Top 3</div>
-                <div className={styles.metricLabel}>Google Maps Local Rank</div>
-              </div>
-              <div className={styles.metricItem}>
-                <div className={styles.metricVal}>-78%</div>
-                <div className={styles.metricLabel}>Clinic Chair No-Shows</div>
-              </div>
-              <div className={styles.metricItem}>
-                <div className={styles.metricVal}>6.2X</div>
-                <div className={styles.metricLabel}>Average Practice ROAS</div>
-              </div>
+      {/* ══════════════════════════════════════════════════ */}
+      {/* METRICS BAR                                       */}
+      {/* ══════════════════════════════════════════════════ */}
+      <section className={styles.metricsBar}>
+        <div className={styles.container}>
+          <div className={styles.metricsGrid}>
+            <div className={styles.metricItem}>
+              <div className={styles.metricVal}>+240%</div>
+              <div className={styles.metricLabel}>New Patient Inquiries</div>
+            </div>
+            <div className={styles.metricItem}>
+              <div className={styles.metricVal}>Top 3</div>
+              <div className={styles.metricLabel}>Google Maps Local Rank</div>
+            </div>
+            <div className={styles.metricItem}>
+              <div className={styles.metricVal}>-78%</div>
+              <div className={styles.metricLabel}>Clinic Chair No-Shows</div>
+            </div>
+            <div className={styles.metricItem}>
+              <div className={styles.metricVal}>6.2X</div>
+              <div className={styles.metricLabel}>Average Practice ROAS</div>
             </div>
           </div>
         </div>
@@ -829,7 +829,7 @@ export default function DentalMarketingPage() {
                     <div className={styles.genericCrossBadge}>✕</div>
                     <div className={styles.genericCellText}>
                       <span className={styles.genericRowTag}>{row.genericTitle}</span>
-                      <p>{row.generic}</p>
+                      <span className={styles.genericDesc}>{row.generic}</span>
                     </div>
                   </div>
 
@@ -837,7 +837,7 @@ export default function DentalMarketingPage() {
                     <div className={styles.copilotCheckBadge}>✓</div>
                     <div className={styles.copilotCellText}>
                       <span className={styles.copilotRowTag}>{row.copilotTitle}</span>
-                      <p>{row.copilot}</p>
+                      <span className={styles.copilotDesc}>{row.copilot}</span>
                     </div>
                   </div>
                 </div>

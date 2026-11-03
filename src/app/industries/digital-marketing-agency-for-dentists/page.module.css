@@ -18,7 +18,7 @@
 }
 
 /* ══════════════════════════════════════════════════
-   HERO SECTION (Single-Window Executive Standard)
+   HERO SECTION (Matching Global Hero Standard)
 ══════════════════════════════════════════════════ */
 .hero {
   position: relative;
@@ -26,29 +26,12 @@
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding-top: calc(var(--nav-height, 72px) + 8px);
-  padding-bottom: 0;
+  justify-content: center;
+  padding-top: calc(var(--nav-height, 76px) + 20px);
+  padding-bottom: 36px;
   box-sizing: border-box;
   overflow: hidden;
   background: #FFFFFF;
-}
-
-@media (min-width: 961px) {
-  .hero {
-    height: 100vh;
-    height: 100dvh;
-    max-height: 100vh;
-    max-height: 100dvh;
-  }
-}
-
-.heroMainWrapper {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  padding: 8px 0;
 }
 
 /* Ambient color glows matching global hero */
@@ -122,18 +105,17 @@
 
 .heroInner {
   display: grid;
-  grid-template-columns: 1.12fr 0.88fr;
-  gap: clamp(24px, 2.8vw, 40px);
+  grid-template-columns: 1.08fr 0.95fr;
+  gap: clamp(28px, 3.2vw, 44px);
   align-items: center;
   position: relative;
   z-index: 2;
-  width: 100%;
 }
 
 @media (max-width: 960px) {
   .heroInner {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 36px;
   }
 }
 
@@ -146,37 +128,37 @@
 .heroEyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  padding: 4px 12px;
+  gap: 8px;
+  padding: 6px 14px;
   border-radius: 9999px;
   background: rgba(11, 32, 147, 0.05);
   border: 1px solid rgba(11, 32, 147, 0.12);
   color: #0B2093;
   font-family: var(--font-display);
-  font-size: 11px;
+  font-size: 11.5px;
   font-weight: 800;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
   box-shadow: 0 1px 3px rgba(11, 32, 147, 0.04);
 }
 
 .heroEyebrowDot {
-  width: 6.5px;
-  height: 6.5px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   background: #10B981;
-  box-shadow: 0 0 6px #10B981;
+  box-shadow: 0 0 8px #10B981;
 }
 
 .heroHeadline {
   font-family: var(--font-display);
-  font-size: clamp(28px, 3.3vw, 48px);
+  font-size: clamp(34px, 4.4vw, 56px);
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.03em;
   color: #0F172A;
-  margin: 0 0 12px;
+  margin: 0 0 20px;
 }
 
 .heroAccent {
@@ -186,26 +168,26 @@
 }
 
 .heroSub {
-  font-size: clamp(13px, 1.15vw, 15px);
-  line-height: 1.55;
+  font-size: clamp(15.5px, 1.7vw, 18px);
+  line-height: 1.6;
   color: #475569;
-  margin: 0 0 18px;
-  max-width: 580px;
+  margin: 0 0 32px;
+  max-width: 620px;
 }
 
 .heroActions {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
   flex-wrap: wrap;
-  margin-bottom: 18px;
+  margin-bottom: 34px;
 }
 
 .trustStrip {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 11.5px;
+  gap: 14px;
+  font-size: 13px;
   color: #64748B;
   font-weight: 600;
   flex-wrap: wrap;
@@ -218,8 +200,8 @@
 }
 
 .trustDot {
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: #0B2093;
 }
@@ -243,28 +225,28 @@
 .imageCard {
   position: relative;
   width: 100%;
-  border-radius: 20px;
+  border-radius: 24px;
   background: #FFFFFF;
-  border: 1px solid rgba(226, 232, 240, 0.85);
+  border: 1px solid rgba(226, 232, 240, 0.8);
   box-shadow: 
     inset 0 1px 0 #FFFFFF,
-    0 18px 44px -10px rgba(11, 32, 147, 0.14),
-    0 4px 12px rgba(0, 0, 0, 0.04);
-  padding: 8px;
+    0 24px 60px -12px rgba(11, 32, 147, 0.16),
+    0 4px 16px rgba(0, 0, 0, 0.04);
+  padding: 10px;
 }
 
 .imageViewport {
   position: relative;
   width: 100%;
-  height: clamp(260px, 34vh, 360px);
-  border-radius: 14px;
+  height: 440px;
+  border-radius: 18px;
   overflow: hidden;
   background: #0F172A;
 }
 
 @media (max-width: 640px) {
   .imageViewport {
-    height: 280px;
+    height: 320px;
   }
 }
 
@@ -298,16 +280,16 @@
 /* Dots */
 .dotsWrap {
   position: absolute;
-  bottom: 12px;
-  right: 14px;
+  bottom: 16px;
+  right: 16px;
   z-index: 5;
   display: flex;
-  gap: 5px;
+  gap: 6px;
 }
 
 .dot {
-  width: 7px;
-  height: 7px;
+  width: 8px;
+  height: 8px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.5);
   border: none;
@@ -318,64 +300,38 @@
 }
 
 .dotActive {
-  width: 18px;
+  width: 22px;
   background: #38BDF8;
   box-shadow: 0 0 8px #38BDF8;
 }
 
 /* ══════════════════════════════════════════════════
-   METRICS BAR (Docked at Base of Single-Window Hero)
+   METRICS BAR (Skeuomorphic Counters)
 ══════════════════════════════════════════════════ */
 .metricsBar {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: #F8FAFC;
   border-top: 1px solid #E2E8F0;
   border-bottom: 1px solid #E2E8F0;
-  padding: 12px 0;
-  position: relative;
-  z-index: 3;
-  width: 100%;
-  box-shadow: 0 -4px 14px rgba(11, 32, 147, 0.03);
+  padding: 34px 0;
 }
 
 .metricsGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  gap: 24px;
 }
 
-@media (max-width: 960px) {
-  .hero {
-    height: auto;
-    min-height: auto;
-    max-height: none;
-    padding-top: calc(var(--nav-height, 72px) + 20px);
-    padding-bottom: 0;
-  }
-  .imageViewport {
-    height: 300px;
-  }
-  .metricsBar {
-    padding: 18px 0;
-  }
+@media (max-width: 768px) {
   .metricsGrid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  }
-  .metricItem {
-    border-right: none;
+    gap: 20px;
   }
 }
 
 .metricItem {
   text-align: center;
-  padding: 0 12px;
+  padding: 0 16px;
   border-right: 1px solid #E2E8F0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
 }
 
 .metricItem:last-child {
@@ -384,18 +340,17 @@
 
 .metricVal {
   font-family: var(--font-display);
-  font-size: clamp(20px, 2vw, 26px);
+  font-size: clamp(28px, 3.5vw, 42px);
   font-weight: 800;
   color: #0B2093;
+  margin-bottom: 4px;
   letter-spacing: -0.02em;
-  line-height: 1.1;
 }
 
 .metricLabel {
-  font-size: 11px;
+  font-size: 13.5px;
   color: #64748B;
   font-weight: 600;
-  letter-spacing: 0.01em;
 }
 
 /* ══════════════════════════════════════════════════
@@ -1190,39 +1145,39 @@
 }
 
 /* ══════════════════════════════════════════════════
-   COMPARISON MATRIX (Skeuomorphic Executive Matrix With Icons)
+   COMPARISON MATRIX (Compact Executive Matrix With 3D Icons)
 ══════════════════════════════════════════════════ */
 .comparisonCard {
   background: #FFFFFF;
   border: 1.5px solid #CBD5E1;
-  border-radius: 24px;
+  border-radius: 18px;
   overflow: hidden;
   box-shadow: 
-    inset 0 2px 0 #FFFFFF,
+    inset 0 1.5px 0 #FFFFFF,
     inset 0 -1px 0 rgba(15, 23, 42, 0.04),
-    0 18px 48px -10px rgba(11, 32, 147, 0.08);
+    0 12px 32px -8px rgba(11, 32, 147, 0.08);
   position: relative;
   z-index: 2;
-  max-width: 1080px;
+  max-width: 980px;
   margin: 0 auto;
 }
 
 .comparisonHeaderRow {
   display: grid;
-  grid-template-columns: 1.15fr 1fr 1.3fr;
+  grid-template-columns: 1.15fr 1fr 1.25fr;
   background: #F8FAFC;
-  border-bottom: 2px solid #E2E8F0;
-  padding: 20px 28px;
+  border-bottom: 1.5px solid #E2E8F0;
+  padding: 12px 20px;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
 }
 
 .comparisonColTitle {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
   font-family: var(--font-display);
-  font-size: 13.5px;
+  font-size: 11.5px;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -1230,7 +1185,7 @@
 }
 
 .comparisonColBadge {
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 800;
   color: #0284C7;
   letter-spacing: 0.08em;
@@ -1240,16 +1195,16 @@
 .comparisonGenericHeader {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .genericHeaderBadge {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   background: #FEE2E2;
   color: #EF4444;
-  font-size: 11px;
+  font-size: 9.5px;
   font-weight: 800;
   display: flex;
   align-items: center;
@@ -1260,33 +1215,33 @@
 .headerTitleWrap {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 1px;
 }
 
 .genericHeaderMain {
   font-family: var(--font-display);
-  font-size: 12.5px;
+  font-size: 11.5px;
   font-weight: 800;
   color: #475569;
   text-transform: uppercase;
 }
 
 .headerSubtext {
-  font-size: 11px;
+  font-size: 10px;
   color: #94A3B8;
   font-weight: 500;
 }
 
 .comparisonCopilotHeader {
   background: linear-gradient(135deg, #0B2093 0%, #1E40AF 100%);
-  padding: 10px 18px;
-  border-radius: 14px;
-  box-shadow: 0 4px 14px rgba(11, 32, 147, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  padding: 6px 14px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(11, 32, 147, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.3);
   border: 1px solid #1D4ED8;
   color: #FFFFFF;
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 2px;
 }
 
 .copilotHeaderTop {
@@ -1295,7 +1250,7 @@
 }
 
 .copilotPillBadge {
-  font-size: 9.5px;
+  font-size: 8.5px;
   font-weight: 800;
   color: #6EE7B7;
   letter-spacing: 0.06em;
@@ -1305,16 +1260,16 @@
 .copilotHeaderTitleRow {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
 }
 
 .copilotBrandIcon {
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .copilotBrandText {
   font-family: var(--font-display);
-  font-size: 13.5px;
+  font-size: 12px;
   font-weight: 800;
   color: #FFFFFF;
   letter-spacing: 0.02em;
@@ -1327,12 +1282,12 @@
 
 .comparisonRow {
   display: grid;
-  grid-template-columns: 1.15fr 1fr 1.3fr;
-  padding: 18px 28px;
+  grid-template-columns: 1.15fr 1fr 1.25fr;
+  padding: 10px 20px;
   align-items: center;
   border-bottom: 1px solid #E2E8F0;
-  gap: 16px;
-  transition: background 0.25s ease;
+  gap: 12px;
+  transition: background 0.2s ease;
 }
 
 .comparisonRow:last-child {
@@ -1344,167 +1299,176 @@
 }
 
 .comparisonRow:hover .featureIconSquircle {
-  transform: translateY(-3px) scale(1.05);
+  transform: translateY(-2px) scale(1.04);
   box-shadow: 
-    0 14px 24px -4px rgba(11, 32, 147, 0.18),
-    0 4px 10px rgba(0, 0, 0, 0.06),
-    inset 0 2px 0 #FFFFFF,
-    inset 0 -2px 0 rgba(11, 32, 147, 0.1);
+    0 8px 16px -2px rgba(11, 32, 147, 0.16),
+    inset 0 1.5px 0 #FFFFFF;
   border-color: #93C5FD;
 }
 
 .featureCell {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
 }
 
 .featureIconSquircle {
-  width: 52px;
-  height: 52px;
-  border-radius: 14px;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
   background: linear-gradient(145deg, #FFFFFF 0%, #F8FAFC 50%, #E2E8F0 100%);
   border: 1.5px solid #CBD5E1;
   box-shadow: 
-    0 8px 18px -4px rgba(11, 32, 147, 0.12),
-    inset 0 2px 0 #FFFFFF,
-    inset 0 -2px 0 rgba(15, 23, 42, 0.08);
+    0 4px 10px -2px rgba(11, 32, 147, 0.1),
+    inset 0 1.5px 0 #FFFFFF,
+    inset 0 -1.5px 0 rgba(15, 23, 42, 0.06);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.25s ease;
+}
+
+.featureIconSquircle svg {
+  width: 26px;
+  height: 26px;
 }
 
 .featureTextCol {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 1px;
 }
 
 .featureTitleText {
   font-family: var(--font-display);
-  font-size: 14.5px;
+  font-size: 13px;
   font-weight: 800;
   color: #0F172A;
-  line-height: 1.3;
+  line-height: 1.25;
 }
 
 .featureSubtext {
-  font-size: 11.5px;
+  font-size: 10.5px;
   color: #64748B;
   font-weight: 500;
-  line-height: 1.35;
+  line-height: 1.3;
 }
 
 .genericCell {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
-  padding: 12px 14px;
-  border-radius: 12px;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 8px;
   background: rgba(248, 250, 252, 0.7);
   border: 1px solid #E2E8F0;
-  min-height: 72px;
 }
 
 .genericCrossBadge {
-  width: 20px;
-  height: 20px;
+  width: 17px;
+  height: 17px;
   border-radius: 50%;
   background: linear-gradient(135deg, #FEE2E2 0%, #FECACA 100%);
   border: 1px solid #FCA5A5;
   color: #DC2626;
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 800;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  margin-top: 2px;
+  margin-top: 1px;
 }
 
 .genericCellText {
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  font-size: 12px;
-  color: #64748B;
-  line-height: 1.45;
+  gap: 1px;
+  font-size: 11.5px;
+  line-height: 1.35;
 }
 
 .genericRowTag {
-  font-size: 10px;
+  font-size: 9.5px;
   font-weight: 800;
   color: #EF4444;
   text-transform: uppercase;
   letter-spacing: 0.03em;
 }
 
+.genericDesc {
+  font-size: 11.5px;
+  color: #64748B;
+}
+
 .copilotCell {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
-  padding: 12px 16px;
-  border-radius: 12px;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 8px;
   background: linear-gradient(135deg, rgba(239, 246, 255, 0.8) 0%, rgba(240, 253, 250, 0.9) 100%);
   border: 1px solid #BFDBFE;
-  box-shadow: 0 2px 8px rgba(11, 32, 147, 0.04);
-  min-height: 72px;
+  box-shadow: 0 1px 4px rgba(11, 32, 147, 0.04);
 }
 
 .copilotCheckBadge {
-  width: 20px;
-  height: 20px;
+  width: 17px;
+  height: 17px;
   border-radius: 50%;
   background: linear-gradient(135deg, #10B981 0%, #059669 100%);
   border: 1px solid #047857;
   color: #FFFFFF;
-  font-size: 10.5px;
+  font-size: 9.5px;
   font-weight: 800;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  margin-top: 2px;
-  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.35);
+  margin-top: 1px;
+  box-shadow: 0 2px 4px rgba(16, 185, 129, 0.3);
 }
 
 .copilotCellText {
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  font-size: 12.5px;
-  color: #0F172A;
-  font-weight: 600;
-  line-height: 1.45;
+  gap: 1px;
+  font-size: 11.5px;
+  line-height: 1.35;
 }
 
 .copilotRowTag {
-  font-size: 10px;
+  font-size: 9.5px;
   font-weight: 800;
   color: #059669;
   text-transform: uppercase;
   letter-spacing: 0.03em;
 }
 
+.copilotDesc {
+  font-size: 11.5px;
+  color: #0F172A;
+  font-weight: 600;
+}
+
 .comparisonFooterStrip {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 16px;
   background: #F8FAFC;
   border-top: 1.5px solid #CBD5E1;
-  padding: 16px 28px;
+  padding: 10px 20px;
 }
 
 .comparisonFooterLeft {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 12.5px;
+  gap: 8px;
+  font-size: 11.5px;
   color: #334155;
-  line-height: 1.4;
+  line-height: 1.35;
 }
 
 .comparisonFooterLeft strong {
@@ -1512,31 +1476,52 @@
 }
 
 .footerShieldIcon {
-  font-size: 18px;
+  font-size: 15px;
   flex-shrink: 0;
 }
 
 .comparisonCtaBtn {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 10px 20px;
+  gap: 5px;
+  padding: 7px 16px;
   border-radius: 9999px;
   background: linear-gradient(135deg, #0B2093 0%, #1E40AF 100%);
   color: #FFFFFF;
   font-family: var(--font-display);
-  font-size: 12.5px;
+  font-size: 11.5px;
   font-weight: 700;
   text-decoration: none;
-  box-shadow: 0 4px 12px rgba(11, 32, 147, 0.25);
+  box-shadow: 0 3px 10px rgba(11, 32, 147, 0.2);
   transition: all 0.2s ease;
   white-space: nowrap;
   flex-shrink: 0;
 }
 
 .comparisonCtaBtn:hover {
-  transform: translateY(-1.5px);
-  box-shadow: 0 6px 16px rgba(11, 32, 147, 0.35);
+  transform: translateY(-1px);
+  box-shadow: 0 5px 14px rgba(11, 32, 147, 0.3);
+}
+
+@media (max-width: 860px) {
+  .comparisonHeaderRow {
+    display: none;
+  }
+  .comparisonRow {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 14px 16px;
+  }
+  .comparisonFooterStrip {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 16px;
+  }
+  .comparisonCtaBtn {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 860px) {
