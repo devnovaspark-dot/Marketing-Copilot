@@ -22,7 +22,7 @@
 
 @media (max-width: 640px) {
   .container {
-    padding: 0 14px;
+    padding: 0 10px;
   }
 }
 
@@ -458,21 +458,27 @@
     box-sizing: border-box;
   }
   .bottleneckCard {
-    padding: 12px 9px;
+    padding: 10px 8px;
     border-radius: 14px;
-    min-height: auto;
+    aspect-ratio: 1 / 1;
+    min-height: 165px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     min-width: 0;
+    box-sizing: border-box;
+    overflow: hidden;
   }
   .cardTopBar {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 3px;
-    margin-bottom: 6px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2px;
+    margin-bottom: 4px;
   }
   .cardLedBadge {
-    font-size: 7.5px;
-    padding: 2px 5px;
+    font-size: 7px;
+    padding: 2px 4px;
     gap: 3px;
   }
   .ledAudit {
@@ -480,53 +486,48 @@
     height: 5px;
   }
   .metricAuditPill {
-    font-size: 7px;
-    padding: 1.5px 4px;
+    font-size: 6.5px;
+    padding: 1.5px 3.5px;
   }
   .cardIconWrap {
-    width: 30px;
-    height: 30px;
-    font-size: 14px;
-    border-radius: 8px;
-    margin-bottom: 6px;
+    width: 28px;
+    height: 28px;
+    font-size: 13px;
+    border-radius: 7px;
+    margin-bottom: 4px;
   }
   .cardTitle {
-    font-size: 12px;
-    line-height: 1.2;
+    font-size: 11px;
+    line-height: 1.15;
     min-height: auto;
-    margin-bottom: 3px;
-  }
-  .symptomTag {
-    font-size: 8px;
-    padding: 1px 4px;
-    margin-bottom: 5px;
-  }
-  .cardText {
-    font-size: 9.5px;
-    line-height: 1.35;
-    margin-bottom: 8px;
-    min-height: auto;
+    margin: 0 0 2px;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
+  .symptomTag {
+    display: none;
+  }
+  .cardText {
+    display: none;
+  }
   .solutionBox {
-    padding: 6px 7px;
+    padding: 4px 6px;
     min-height: auto;
-    border-radius: 7px;
+    border-radius: 6px;
     margin-top: auto;
   }
   .solutionBoxLabel {
-    font-size: 7.5px;
+    font-size: 6.5px;
     gap: 2px;
     margin-bottom: 1px;
   }
   .solutionBoxText {
-    font-size: 9px;
-    line-height: 1.25;
+    font-size: 8px;
+    line-height: 1.2;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
@@ -727,23 +728,30 @@
     box-sizing: border-box;
   }
   .procedureCard {
-    padding: 12px 9px;
+    padding: 10px 8px;
     border-radius: 14px;
+    aspect-ratio: 1 / 1;
+    min-height: 165px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     min-width: 0;
+    box-sizing: border-box;
+    overflow: hidden;
   }
   .procedureTopHeader {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 3px;
-    margin-bottom: 5px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2px;
+    margin-bottom: 4px;
   }
   .procedureTierBadge {
-    font-size: 7px;
-    padding: 1.5px 5px;
+    font-size: 6.5px;
+    padding: 1.5px 4px;
   }
   .procedureDemandPill {
-    font-size: 7px;
+    font-size: 6.5px;
     padding: 1.5px 4px;
   }
   .procedureTitleRow {
@@ -751,57 +759,41 @@
     margin-bottom: 4px;
   }
   .procedureIconEmoji {
-    font-size: 15px;
+    font-size: 14px;
   }
   .procedureTitle {
-    font-size: 12px;
-    line-height: 1.2;
-  }
-  .procedureDesc {
-    font-size: 9.5px;
-    line-height: 1.3;
-    margin-bottom: 6px;
-    min-height: auto;
+    font-size: 11px;
+    line-height: 1.15;
+    margin: 0;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
+  .procedureDesc {
+    display: none;
+  }
   .procedureSpecConsole {
-    padding: 5px 6px;
-    margin-bottom: 6px;
+    padding: 4px 6px;
+    margin-top: auto;
     border-radius: 6px;
   }
   .specLabel {
-    font-size: 7px;
+    font-size: 6.5px;
   }
   .specTicket {
-    font-size: 10px;
+    font-size: 9.5px;
+    font-weight: 800;
   }
   .specMarginPill {
-    font-size: 7px;
-    padding: 1px 4px;
+    font-size: 6.5px;
+    padding: 1px 3.5px;
   }
   .deliverablesSectionTitle {
-    font-size: 8px;
-    margin-bottom: 4px;
-  }
-  .deliverablesList {
-    gap: 3px;
-    margin-bottom: 6px;
-  }
-  .deliverablesList li:nth-child(n+3) {
     display: none;
   }
-  .deliverableItem {
-    font-size: 9px;
-    line-height: 1.25;
-    gap: 4px;
-  }
-  .checkCircle {
-    width: 11px;
-    height: 11px;
-    font-size: 7px;
+  .deliverablesList {
+    display: none;
   }
   .tagsTray {
     display: none;
@@ -1076,64 +1068,60 @@
     box-sizing: border-box;
   }
   .pillarCard {
-    padding: 12px 9px;
+    padding: 10px 8px;
     border-radius: 14px;
+    aspect-ratio: 1 / 1;
+    min-height: 165px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     min-width: 0;
+    box-sizing: border-box;
+    overflow: hidden;
   }
   .pillarHeaderBar {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 3px;
-    margin-bottom: 5px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2px;
+    margin-bottom: 4px;
   }
   .pillarStageBadge {
-    font-size: 7px;
-    padding: 1.5px 5px;
+    font-size: 6.5px;
+    padding: 1.5px 4px;
   }
   .pillarBadgePill {
-    font-size: 7px;
+    font-size: 6.5px;
     padding: 1.5px 4px;
   }
   .pillarTitle {
-    font-size: 12px;
-    line-height: 1.2;
-    margin: 3px 0;
-  }
-  .pillarDesc {
-    font-size: 9.5px;
-    line-height: 1.3;
-    margin-bottom: 6px;
-    min-height: auto;
+    font-size: 11px;
+    line-height: 1.15;
+    margin: 0;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
+  .pillarDesc {
+    display: none;
+  }
   .pillarTelemetryCluster {
-    grid-template-columns: 1fr;
-    padding: 4px 6px;
-    gap: 2px;
-    margin-bottom: 6px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 4px 5px;
+    gap: 3px;
+    margin-top: auto;
     border-radius: 6px;
   }
   .telemetryCellLabel {
-    font-size: 7px;
+    font-size: 6.5px;
   }
   .telemetryCellVal {
-    font-size: 10px;
+    font-size: 9px;
   }
   .pillarDeliverableList {
-    grid-template-columns: 1fr;
-    gap: 3px;
-  }
-  .pillarDeliverableList li:nth-child(n+3) {
     display: none;
-  }
-  .pillarDeliverableItem {
-    font-size: 9px;
-    line-height: 1.25;
-    gap: 4px;
   }
 }
 
@@ -1791,120 +1779,231 @@
 
 @media (max-width: 860px) {
   .comparisonCard {
-    border-radius: 16px;
+    border-radius: 14px;
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
     overflow: hidden;
   }
 
+  /* EXACT 3-COLUMN HEADER ROW AS DESKTOP */
   .comparisonHeaderRow {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr 1.15fr;
+    background: #F8FAFC;
+    border-bottom: 1.5px solid #E2E8F0;
+    padding: 8px 6px;
+    align-items: center;
+    gap: 4px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .comparisonColTitle {
+    gap: 1px;
+    min-width: 0;
+  }
+
+  .comparisonColBadge {
+    font-size: 7px;
+    letter-spacing: 0.04em;
+  }
+
+  .comparisonColTitle > span:last-child {
+    font-size: 8px;
+    font-weight: 800;
+  }
+
+  .comparisonGenericHeader {
+    gap: 3px;
+    min-width: 0;
+  }
+
+  .genericHeaderBadge {
+    width: 13px;
+    height: 13px;
+    font-size: 6.5px;
+    flex-shrink: 0;
+  }
+
+  .headerTitleWrap {
+    gap: 0;
+    min-width: 0;
+  }
+
+  .genericHeaderMain {
+    font-size: 7.5px;
+    font-weight: 800;
+    line-height: 1.15;
+  }
+
+  .headerSubtext {
     display: none;
   }
 
-  .comparisonRow {
+  .comparisonCopilotHeader {
+    padding: 3px 5px;
+    border-radius: 6px;
+    gap: 1px;
+    min-width: 0;
+  }
+
+  .copilotHeaderTop {
     display: flex;
-    flex-direction: column;
-    padding: 12px 10px;
-    gap: 8px;
+  }
+
+  .copilotPillBadge {
+    font-size: 6px;
+    letter-spacing: 0.02em;
+  }
+
+  .copilotHeaderTitleRow {
+    gap: 3px;
+  }
+
+  .copilotBrandIcon {
+    font-size: 8px;
+  }
+
+  .copilotBrandText {
+    font-size: 7.5px;
+    font-weight: 800;
+    line-height: 1.15;
+  }
+
+  /* EXACT 3-COLUMN DATA ROW AS DESKTOP */
+  .comparisonRow {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr 1.15fr;
+    padding: 6px 6px;
+    align-items: stretch;
     border-bottom: 1px solid #E2E8F0;
-    width: 100%;
+    gap: 4px;
     box-sizing: border-box;
+    width: 100%;
   }
 
   .featureCell {
     display: flex;
     align-items: center;
-    gap: 8px;
-    width: 100%;
+    gap: 4px;
+    min-width: 0;
   }
 
   .featureIconSquircle {
-    width: 30px;
-    height: 30px;
-    border-radius: 8px;
+    width: 22px;
+    height: 22px;
+    border-radius: 5px;
     flex-shrink: 0;
   }
 
   .featureIconSquircle svg {
-    width: 18px;
-    height: 18px;
+    width: 14px;
+    height: 14px;
+  }
+
+  .featureTextCol {
+    gap: 0;
+    min-width: 0;
   }
 
   .featureTitleText {
-    font-size: 12px;
+    font-size: 9px;
     font-weight: 800;
+    line-height: 1.15;
   }
 
   .featureSubtext {
-    font-size: 9px;
+    font-size: 7px;
+    line-height: 1.1;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
-  /* Two horizontal side-by-side comparison blocks: Generic vs Copilot */
   .comparisonCellsWrap {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6px;
-    width: 100%;
-    box-sizing: border-box;
+    display: contents; /* Direct participation in 3-column desktop grid */
   }
 
   .genericCell {
     display: flex;
-    flex-direction: column;
-    padding: 7px 8px;
-    border-radius: 8px;
-    background: #FFF5F5;
-    border: 1px solid #FECACA;
+    align-items: flex-start;
     gap: 3px;
+    padding: 4px 4px;
+    border-radius: 5px;
+    background: rgba(248, 250, 252, 0.7);
+    border: 1px solid #E2E8F0;
     min-width: 0;
   }
 
   .genericCrossBadge {
-    width: 14px;
-    height: 14px;
-    font-size: 7.5px;
+    width: 12px;
+    height: 12px;
+    font-size: 6.5px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .genericCellText {
+    gap: 0;
+    min-width: 0;
   }
 
   .genericRowTag {
-    font-size: 8px;
+    font-size: 7px;
+    font-weight: 800;
+    line-height: 1.1;
   }
 
   .genericDesc {
-    font-size: 9px;
-    line-height: 1.3;
+    font-size: 7.5px;
+    line-height: 1.15;
+    color: #64748B;
   }
 
   .copilotCell {
     display: flex;
-    flex-direction: column;
-    padding: 7px 8px;
-    border-radius: 8px;
-    background: #F0FDF4;
-    border: 1px solid #BBF7D0;
+    align-items: flex-start;
     gap: 3px;
+    padding: 4px 4px;
+    border-radius: 5px;
+    background: linear-gradient(135deg, rgba(239, 246, 255, 0.9) 0%, rgba(240, 253, 250, 0.95) 100%);
+    border: 1px solid #BFDBFE;
     min-width: 0;
   }
 
   .copilotCheckBadge {
-    width: 14px;
-    height: 14px;
-    font-size: 7.5px;
+    width: 12px;
+    height: 12px;
+    font-size: 6.5px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .copilotCellText {
+    gap: 0;
+    min-width: 0;
   }
 
   .copilotRowTag {
-    font-size: 8px;
+    font-size: 7px;
+    font-weight: 800;
+    line-height: 1.1;
+    color: #047857;
   }
 
   .copilotDesc {
-    font-size: 9px;
-    line-height: 1.3;
+    font-size: 7.5px;
+    line-height: 1.15;
+    color: #0F172A;
+    font-weight: 600;
   }
 
   .comparisonFooterStrip {
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     padding: 12px 10px;
     text-align: center;
     width: 100%;
@@ -1913,7 +2012,7 @@
 
   .comparisonFooterLeft {
     justify-content: center;
-    font-size: 10.5px;
+    font-size: 10px;
     line-height: 1.35;
     text-align: center;
   }
