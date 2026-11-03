@@ -336,7 +336,7 @@ const dentalFaqs = [
 ];
 
 export default function DentalMarketingPage() {
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [currentSlide, setCurrentSlide] = useState<number>(0);
 
   // Auto rotate hero clinical slides
@@ -413,7 +413,7 @@ export default function DentalMarketingPage() {
               </div>
             </ScrollReveal>
 
-            {/* Right Visual Showcase: Clinical Photography Carousel with Badges */}
+            {/* Right Visual Showcase: Clean Photography Viewport (No Text Overlays) */}
             <ScrollReveal delay={120}>
               <div className={styles.visual}>
                 <div className={styles.imageCard}>
@@ -432,26 +432,8 @@ export default function DentalMarketingPage() {
                           sizes="(max-width: 960px) 100vw, 560px"
                         />
                         <div className={styles.slideOverlay} />
-                        <div className={styles.slideCaption}>
-                          <span className={styles.slideCaptionTag}>{slide.tag}</span>
-                          <p className={styles.slideCaptionText}>{slide.caption}</p>
-                        </div>
                       </div>
                     ))}
-
-                    {/* Floating Top GMB Badge */}
-                    <div className={styles.floatingBadgeTop}>
-                      <span className={styles.gmbIcon}>📍</span>
-                      <span className={styles.gmbBadgeText}>#1 ON GOOGLE MAPS 3-PACK</span>
-                    </div>
-
-                    {/* Floating Bottom Inbound Pulse Alert */}
-                    <div className={styles.floatingAlertBottom}>
-                      <div className={styles.alertPulseDot} />
-                      <div className={styles.alertText}>
-                        <span className={styles.alertHighlight}>Live Booking:</span> New patient booked "Full Arch Implant Consultation" via WhatsApp
-                      </div>
-                    </div>
 
                     {/* Slide Dots */}
                     <div className={styles.dotsWrap}>
