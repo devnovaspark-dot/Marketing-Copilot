@@ -528,6 +528,29 @@
   margin: 0;
 }
 
+@media (max-width: 860px) {
+  .sectionBlock,
+  .sectionBlockAlt {
+    padding: 38px 0 42px;
+  }
+  .sectionHeader {
+    margin-bottom: 22px;
+  }
+  .sectionPill {
+    font-size: 10px;
+    padding: 4px 12px;
+    margin-bottom: 10px;
+  }
+  .sectionTitle {
+    font-size: clamp(22px, 5.5vw, 28px);
+    margin: 0 0 8px;
+  }
+  .sectionSubtitle {
+    font-size: 13.5px;
+    line-height: 1.45;
+  }
+}
+
 /* ══════════════════════════════════════════════════
    PHASE 2: WHAT WE PROVIDE FOR YOUR DENTAL CLINIC
 ══════════════════════════════════════════════════ */
@@ -738,28 +761,29 @@
 }
 
 /* ══════════════════════════════════════════════════
-   SECTION 02: INTEGRATED PATIENT ACQUISITION JOURNEY
+   SIX-STAGE MARKETING CAPABILITIES JOURNEY
+   Desktop: 6 Connected Horizontal Cards (Zero Clip)
+   Mobile: Vertical Connected 6-Step Timeline
 ══════════════════════════════════════════════════ */
-.integratedFunnelRibbon {
+.journeyWrapper {
   margin-top: 48px;
   background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFD 100%);
   border: 1.5px solid rgba(203, 213, 225, 0.85);
   border-radius: 24px;
-  padding: 32px 32px 36px;
+  padding: 36px 32px 40px;
   box-shadow: 
     inset 0 1.5px 0 #FFFFFF,
     0 16px 36px -8px rgba(11, 32, 147, 0.07);
   position: relative;
-  overflow: hidden;
 }
 
-.funnelRibbonHeader {
+.journeyHeader {
   text-align: center;
-  max-width: 780px;
-  margin: 0 auto 28px;
+  max-width: 820px;
+  margin: 0 auto 32px;
 }
 
-.funnelRibbonEyebrow {
+.journeyPill {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -776,355 +800,399 @@
   margin-bottom: 10px;
 }
 
-.funnelRibbonDot {
+.journeyDot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
   background: #0284C7;
 }
 
-.funnelRibbonTitle {
+.journeyTitle {
   font-family: var(--font-display);
-  font-size: clamp(20px, 2.2vw, 26px);
+  font-size: clamp(20px, 2.3vw, 27px);
   font-weight: 800;
   color: #0F172A;
   margin: 0 0 8px;
   letter-spacing: -0.02em;
 }
 
-.funnelRibbonSubtitle {
+.journeySubtitle {
   font-size: 13.5px;
   color: #64748B;
   line-height: 1.55;
   margin: 0;
 }
 
-.funnelHighwayTrack {
+/* ──────────────────────────────────────────────────
+   DESKTOP 6-STAGE HORIZONTAL TRACK (>= 960px)
+────────────────────────────────────────────────── */
+.journeyDesktopTrack {
   position: relative;
   width: 100%;
 }
 
-.funnelBeamLine {
+.journeyDesktopConnectingLine {
   position: absolute;
-  top: 50%;
-  left: 30px;
-  right: 30px;
+  top: 48px;
+  left: 5%;
+  right: 5%;
   height: 2px;
-  background: linear-gradient(90deg, rgba(2, 132, 199, 0.2) 0%, rgba(11, 32, 147, 0.4) 50%, rgba(16, 185, 129, 0.4) 100%);
-  pointer-events: none;
+  background: linear-gradient(90deg, #38BDF8 0%, #0B2093 50%, #10B981 100%);
   z-index: 1;
+  pointer-events: none;
+  opacity: 0.35;
 }
 
-.funnelBeamPulse {
-  position: absolute;
-  top: -2px;
-  height: 6px;
-  width: 90px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, transparent, #38BDF8, #10B981, transparent);
-  filter: blur(1.5px);
-  animation: beamFlow 3.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-}
-
-@keyframes beamFlow {
-  0% { left: 0%; opacity: 0; }
-  15% { opacity: 1; }
-  85% { opacity: 1; }
-  100% { left: 92%; opacity: 0; }
-}
-
-.funnelFlowHighway {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
+.journeyDesktopGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
   position: relative;
   z-index: 2;
-  padding: 6px 2px 10px;
+  align-items: stretch;
 }
 
-.flowNode {
-  flex: 1;
-  min-width: 130px;
+.journeyStageCard {
   background: #FFFFFF;
   border: 1.5px solid #E2E8F0;
   border-radius: 16px;
-  padding: 16px 8px;
+  padding: 16px 12px 14px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
   box-shadow: 
     inset 0 1px 0 #FFFFFF,
     0 4px 14px rgba(11, 32, 147, 0.04);
-  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
-  cursor: pointer;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
   position: relative;
-  font-family: inherit;
 }
 
-.flowNode:hover {
+.journeyStageCard:hover {
   transform: translateY(-4px);
   border-color: #0284C7;
   box-shadow: 
     inset 0 1px 0 #FFFFFF,
-    0 10px 24px -4px rgba(11, 32, 147, 0.12);
+    0 12px 26px -6px rgba(11, 32, 147, 0.12);
 }
 
-.flowNodeActive {
-  border-color: #0284C7 !important;
-  background: linear-gradient(180deg, #FFFFFF 0%, #F0F9FF 100%) !important;
-  transform: translateY(-5px) scale(1.02);
+/* Stage 06 Final Capstone Styling */
+.journeyStageCardFinal {
+  background: linear-gradient(180deg, #FFFFFF 0%, #F0FDF4 100%);
+  border: 1.5px solid #86EFAC;
   box-shadow: 
-    inset 0 1.5px 0 #FFFFFF,
-    0 0 0 2px rgba(2, 132, 199, 0.3),
-    0 14px 30px -4px rgba(11, 32, 147, 0.18) !important;
+    inset 0 1px 0 #FFFFFF,
+    0 6px 18px rgba(16, 185, 129, 0.1);
 }
 
-.flowNodeStepNum {
+.journeyStageCardFinal:hover {
+  border-color: #10B981;
+  box-shadow: 
+    inset 0 1px 0 #FFFFFF,
+    0 14px 28px -6px rgba(16, 185, 129, 0.2);
+}
+
+.stageCardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  gap: 6px;
+}
+
+.stageStepNum {
   font-family: var(--font-display);
   font-size: 8.5px;
   font-weight: 800;
   color: #0284C7;
-  letter-spacing: 0.08em;
-  background: rgba(2, 132, 199, 0.08);
+  letter-spacing: 0.06em;
+  background: rgba(2, 132, 199, 0.09);
   padding: 2px 7px;
   border-radius: 999px;
-  margin-bottom: 6px;
-  transition: all 0.2s ease;
+  white-space: nowrap;
 }
 
-.flowNodeActive .flowNodeStepNum {
-  background: #0284C7;
-  color: #FFFFFF;
-}
-
-.flowNodeGoalStepNum {
+.stageStepNumFinal {
   font-family: var(--font-display);
   font-size: 8.5px;
   font-weight: 800;
-  color: #38BDF8;
-  letter-spacing: 0.08em;
-  background: rgba(56, 189, 248, 0.18);
+  color: #059669;
+  letter-spacing: 0.06em;
+  background: rgba(16, 185, 129, 0.14);
   padding: 2px 7px;
   border-radius: 999px;
-  margin-bottom: 6px;
+  white-space: nowrap;
 }
 
-.flowNodeIcon {
-  width: 38px;
-  height: 38px;
+.stageRoleBadge {
+  font-family: var(--font-display);
+  font-size: 8px;
+  font-weight: 700;
+  color: #64748B;
+  background: #F1F5F9;
+  padding: 2px 6px;
+  border-radius: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.stageRoleBadgeFinal {
+  font-family: var(--font-display);
+  font-size: 8px;
+  font-weight: 800;
+  color: #047857;
+  background: #DCFCE7;
+  padding: 2px 6px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.stageIconSquircle {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #FFFFFF 0%, #EFF6FF 100%);
+  border: 1px solid #BFDBFE;
+  box-shadow: 
+    inset 0 1px 0 #FFFFFF,
+    0 2px 6px rgba(11, 32, 147, 0.06);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 8px;
-  transition: transform 0.25s ease;
+  margin-bottom: 10px;
+  flex-shrink: 0;
+  transition: transform 0.22s ease;
 }
 
-.flowNode:hover .flowNodeIcon,
-.flowNodeActive .flowNodeIcon {
-  transform: scale(1.1);
+.journeyStageCard:hover .stageIconSquircle {
+  transform: scale(1.08);
 }
 
-.flowNodeTitle {
+.stageCardTitle {
   font-family: var(--font-display);
-  font-size: 12px;
+  font-size: 13.5px;
   font-weight: 800;
   color: #0F172A;
-  margin-bottom: 3px;
-  line-height: 1.2;
-}
-
-.flowNodeRole {
-  font-size: 10px;
-  font-weight: 600;
-  color: #0284C7;
+  margin: 0 0 6px;
   line-height: 1.25;
 }
 
-.flowNodeGoal {
-  background: linear-gradient(135deg, #0B2093 0%, #1E3A8A 100%);
-  border-color: #0B2093;
-  box-shadow: 
-    inset 0 1px 0 rgba(255, 255, 255, 0.2),
-    0 8px 24px rgba(11, 32, 147, 0.22);
+.stageCardDesc {
+  font-size: 11px;
+  color: #475569;
+  line-height: 1.45;
+  margin: 0 0 12px;
+  flex: 1;
 }
 
-.flowNodeGoalActive {
-  background: linear-gradient(135deg, #0B2093 0%, #0369A1 100%) !important;
-  border-color: #38BDF8 !important;
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 
-    0 0 0 2px rgba(56, 189, 248, 0.5),
-    0 16px 36px rgba(11, 32, 147, 0.35) !important;
-}
-
-.flowNodeGoal .flowNodeGoalIcon {
-  font-size: 24px;
-  margin-bottom: 6px;
-}
-
-.flowNodeGoal .flowNodeGoalTitle {
+.stageFooterBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
   font-family: var(--font-display);
-  font-size: 12.5px;
-  font-weight: 800;
-  color: #FFFFFF;
-  margin-bottom: 3px;
-  line-height: 1.2;
-}
-
-.flowNodeGoal .flowNodeGoalRole {
-  font-size: 10.5px;
+  font-size: 8px;
   font-weight: 700;
-  color: #38BDF8;
+  color: #0284C7;
+  background: #F0F9FF;
+  border: 1px solid #BAE6FD;
+  padding: 3px 7px;
+  border-radius: 6px;
+  margin-top: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.activePhaseIndicator {
+.stageFooterBadgeFinal {
   display: inline-flex;
   align-items: center;
   gap: 4px;
   font-family: var(--font-display);
   font-size: 8px;
   font-weight: 800;
-  color: #0284C7;
-  background: #E0F2FE;
-  padding: 1.5px 6px;
-  border-radius: 999px;
-  margin-top: 6px;
+  color: #047857;
+  background: #DCFCE7;
+  border: 1px solid #86EFAC;
+  padding: 3px 7px;
+  border-radius: 6px;
+  margin-top: auto;
+  white-space: nowrap;
 }
 
-.activePhaseDot {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: #0284C7;
-  animation: pulse 1.4s infinite;
+.stageCheckIcon {
+  font-weight: 800;
+  font-size: 8px;
 }
 
-/* ══════════════════════════════════════════════════
-   LIGHTWEIGHT SYNCHRONIZED ARCHITECTURE MICRO-READOUT
-══════════════════════════════════════════════════ */
-.funnelMicroConsole {
-  margin-top: 18px;
-  background: linear-gradient(135deg, #0B132B 0%, #0F172A 100%);
-  border: 1.5px solid rgba(56, 189, 248, 0.25);
-  border-radius: 16px;
-  padding: 16px 22px;
-  color: #FFFFFF;
-  box-shadow: 
-    inset 0 1.5px 0 rgba(255, 255, 255, 0.15),
-    0 12px 30px -6px rgba(11, 32, 147, 0.25);
+/* ──────────────────────────────────────────────────
+   MOBILE 6-STEP VERTICAL TIMELINE (< 960px)
+────────────────────────────────────────────────── */
+.journeyMobileTimeline {
+  display: none;
+  position: relative;
+  width: 100%;
+  padding-left: 12px;
+}
+
+.mobileTimelineLine {
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  left: 27px;
+  width: 2px;
+  background: linear-gradient(180deg, #38BDF8 0%, #0B2093 50%, #10B981 100%);
+  z-index: 1;
+}
+
+.mobileTimelineSteps {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 14px;
   position: relative;
-  overflow: hidden;
+  z-index: 2;
 }
 
-.microConsoleHeader {
+.mobileTimelineItem {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
+  align-items: flex-start;
+  gap: 14px;
 }
 
-.microConsoleBadge {
+.mobileTimelineNode {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0284C7 0%, #0B2093 100%);
+  color: #FFFFFF;
   display: flex;
   align-items: center;
-  gap: 7px;
+  justify-content: center;
   font-family: var(--font-display);
   font-size: 11px;
   font-weight: 800;
-  letter-spacing: 0.06em;
-  color: #38BDF8;
-  text-transform: uppercase;
+  flex-shrink: 0;
+  box-shadow: 
+    0 0 0 3px #FFFFFF,
+    0 2px 8px rgba(11, 32, 147, 0.25);
+  margin-top: 10px;
 }
 
-.consolePulseDot {
-  width: 7px;
-  height: 7px;
+.mobileTimelineNodeFinal {
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  background: #10B981;
-  box-shadow: 0 0 8px #10B981;
-  animation: pulse 1.6s infinite;
-}
-
-.microConsoleRole {
+  background: linear-gradient(135deg, #10B981 0%, #047857 100%);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: var(--font-display);
-  font-size: 9.5px;
+  font-size: 11px;
   font-weight: 800;
-  color: #94A3B8;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  padding: 2.5px 9px;
-  border-radius: 999px;
+  flex-shrink: 0;
+  box-shadow: 
+    0 0 0 3px #FFFFFF,
+    0 2px 8px rgba(16, 185, 129, 0.35);
+  margin-top: 10px;
 }
 
-.microConsoleDesc {
-  font-size: 13px;
-  color: #CBD5E1;
+.mobileTimelineCard {
+  flex: 1;
+  background: #FFFFFF;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 14px;
+  padding: 14px 14px;
+  box-shadow: 0 2px 8px rgba(11, 32, 147, 0.04);
+}
+
+.mobileTimelineCardFinal {
+  background: linear-gradient(180deg, #FFFFFF 0%, #F0FDF4 100%);
+  border: 1.5px solid #86EFAC;
+}
+
+.mobileCardTopRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.mobileCardIcon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: #F0F9FF;
+  border: 1px solid #BAE6FD;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mobileCardMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mobileCardTitle {
+  font-family: var(--font-display);
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0;
+  line-height: 1.25;
+}
+
+.mobileCardRole {
+  font-family: var(--font-display);
+  font-size: 8.5px;
+  font-weight: 700;
+  color: #0284C7;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.mobileCardRoleFinal {
+  font-family: var(--font-display);
+  font-size: 8.5px;
+  font-weight: 800;
+  color: #059669;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.mobileCardDesc {
+  font-size: 11.5px;
+  color: #475569;
   line-height: 1.45;
   margin: 0;
 }
 
-.microConsoleOutcome {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(16, 185, 129, 0.08);
-  border: 1px solid rgba(16, 185, 129, 0.22);
-  border-radius: 8px;
-  padding: 5px 11px;
-  margin-top: 2px;
-  align-self: flex-start;
-}
-
-.outcomeTag {
-  font-family: var(--font-display);
-  font-size: 9px;
-  font-weight: 800;
-  color: #34D399;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  flex-shrink: 0;
-}
-
-.outcomeText {
-  font-size: 12px;
-  font-weight: 600;
-  color: #6EE7B7;
-  line-height: 1.3;
-}
-
-@media (max-width: 860px) {
-  .integratedFunnelRibbon {
-    padding: 24px 16px 28px;
-    margin-top: 36px;
-    border-radius: 18px;
-  }
-  .funnelHighwayTrack {
-    overflow-x: auto;
-  }
-  .funnelBeamLine {
+/* ──────────────────────────────────────────────────
+   RESPONSIVE SWITCH FOR JOURNEY (< 960px)
+────────────────────────────────────────────────── */
+@media (max-width: 960px) {
+  .journeyDesktopTrack {
     display: none;
   }
-  .funnelFlowHighway {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
+  .journeyMobileTimeline {
+    display: block;
   }
-  .flowNode {
-    min-width: 0;
-    padding: 12px 6px;
+  .journeyWrapper {
+    padding: 24px 14px 28px;
+    margin-top: 32px;
+    border-radius: 18px;
   }
-  .flowNodeGoal {
-    grid-column: span 2;
+  .journeyHeader {
+    margin-bottom: 22px;
   }
-  .funnelMicroConsole {
-    padding: 14px 14px;
-    border-radius: 14px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .journeyStageCard,
+  .stageIconSquircle {
+    transition: none !important;
+    transform: none !important;
   }
 }
 
@@ -3332,19 +3400,24 @@
 }
 
 @media (max-width: 640px) {
+  .preFooterSection {
+    padding: 32px 0 16px;
+  }
   .preFooterCard {
-    padding: 32px 16px;
+    padding: 28px 16px;
     border-radius: 20px;
   }
   .preFooterTitle {
-    font-size: 23px;
+    font-size: 22px;
   }
   .preFooterDesc {
     font-size: 13px;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
   }
   .preFooterProof {
-    gap: 16px;
-    padding-top: 20px;
+    gap: 12px;
+    padding-top: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }

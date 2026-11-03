@@ -518,57 +518,57 @@ const dentalFaqs = [
 ];
 
 // ══════════════════════════════════════════════════
-// SYNCHRONIZED PATIENT ACQUISITION ARCHITECTURE DATA
-// Lightweight, concise 6-stage patient conversion engine
+// SIX-STAGE MARKETING CAPABILITIES JOURNEY DATA
+// All 6 integrated capabilities clearly visible & explained
 // ══════════════════════════════════════════════════
-const synchronizedFunnelSteps = [
+const marketingJourneyStages = [
   {
     step: '01',
     name: 'Meta Ads',
-    role: 'Local Catchment Discovery',
+    role: 'Awareness & Audience Discovery',
     iconType: 'meta',
-    desc: 'Reach local families and working professionals browsing Instagram and Facebook with aesthetic and smile transformation creatives.',
-    outcome: 'Builds immediate brand familiarity across your 5–10 km radius.',
+    desc: 'Reach local families and working professionals browsing Instagram and Facebook with aesthetic smile transformations and procedural education.',
+    highlight: 'Catchment Discovery',
   },
   {
     step: '02',
     name: 'Google Ads',
-    role: 'High-Intent Capture',
+    role: 'High-Intent Patient Capture',
     iconType: 'search',
-    desc: 'Capture patients actively searching for dental implants, clear aligners, and emergency dentistry with direct click-to-call landers.',
-    outcome: 'Converts high-intent surgical searchers straight into consultation inquiries.',
+    desc: 'Target people actively searching for dental clinics, emergency toothache relief, and high-ticket surgical procedures in real time.',
+    highlight: 'Search Intent to Consult',
   },
   {
     step: '03',
-    name: 'Maps 3-Pack',
-    role: 'Neighborhood Dominance',
-    iconType: 'mappin',
-    desc: 'Rank in top 3 Google Maps results with geo-tagged clinic photography, local schema, and automated WhatsApp 5-star reviews.',
-    outcome: 'Captures nearby residential footfall and builds neighborhood trust.',
+    name: 'SEO + AEO/GEO',
+    role: 'Organic Search & AI Discovery',
+    iconType: 'seo',
+    desc: 'Build long-term organic visibility on Google and ensure your clinic is recommended by AI-powered search engines (ChatGPT, Gemini).',
+    highlight: 'Compounding Organic Moat',
   },
   {
     step: '04',
-    name: 'SEO + AI Search',
-    role: 'Compounding Visibility',
-    iconType: 'seo',
-    desc: 'Rank organically for high-value treatment queries across Google search and AI platforms like ChatGPT and Gemini.',
-    outcome: 'Compounds sustainable zero-ad-cost patient consultations monthly.',
+    name: 'Social Media & YouTube',
+    role: 'Patient Trust & Video Authority',
+    iconType: 'video',
+    desc: 'Doctor video explainers, sterilized clinic walkthroughs, and treatment Reels that alleviate dental anxiety and build clinical trust.',
+    highlight: 'Doctor Authority & Trust',
   },
   {
     step: '05',
-    name: 'Video & Social',
-    role: 'Patient Trust & Authority',
-    iconType: 'video',
-    desc: 'Doctor explainers and sterilized clinic tours alleviate patient anxiety and establish professional clinical credibility.',
-    outcome: 'Pre-sells clinical trust and dissolves fear before patients arrive.',
+    name: 'Google Business Profile & Maps',
+    role: '5–10 km Catchment Dominance',
+    iconType: 'mappin',
+    desc: 'Dominate Google Maps 3-Pack with optimized local listings, geo-tagged photography, and automated 5-star WhatsApp review acquisition.',
+    highlight: 'Local 3-Pack Rankings',
   },
   {
     step: '06',
-    name: 'Seated Consults',
-    role: 'Practice Chair Growth',
-    iconType: 'tooth',
-    desc: 'Automated WhatsApp token booking, GPS directions, and 2-hour reminder alerts protect your clinic from empty chair downtime.',
-    outcome: 'Fills specialized operatory chairs with 91.5%+ show-up rates.',
+    name: 'Content Marketing',
+    role: 'Clinical Authority & PR Growth',
+    iconType: 'content',
+    desc: 'Clinical treatment guides, dental blog articles, and PR content that establish niche authority and convert readers into consultation candidates.',
+    highlight: 'Authority & PR Growth',
   },
 ];
 
@@ -578,8 +578,6 @@ export default function DentalMarketingPage() {
   const [activeStep, setActiveStep] = useState<number>(0);
   const [isProcessPaused, setIsProcessPaused] = useState<boolean>(false);
   const [activeCase, setActiveCase] = useState<number>(0);
-  const [activeFunnelStep, setActiveFunnelStep] = useState<number>(0);
-  const [isFunnelPaused, setIsFunnelPaused] = useState<boolean>(false);
 
   // Auto rotate hero clinical slides
   useEffect(() => {
@@ -597,15 +595,6 @@ export default function DentalMarketingPage() {
     }, 2000);
     return () => clearInterval(processTimer);
   }, [isProcessPaused]);
-
-  // Auto rotate synchronized architecture funnel steps (3.5s interval, pauses on hover)
-  useEffect(() => {
-    if (isFunnelPaused) return;
-    const funnelTimer = setInterval(() => {
-      setActiveFunnelStep((prev) => (prev + 1) % synchronizedFunnelSteps.length);
-    }, 3500);
-    return () => clearInterval(funnelTimer);
-  }, [isFunnelPaused]);
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -813,98 +802,100 @@ export default function DentalMarketingPage() {
             ))}
           </div>
 
-          {/* Integrated Visual Marketing Journey Flow Ribbon (Animated & Interactive) */}
-          <div
-            className={styles.integratedFunnelRibbon}
-            onMouseEnter={() => setIsFunnelPaused(true)}
-            onMouseLeave={() => setIsFunnelPaused(false)}
-            onTouchStart={() => setIsFunnelPaused(true)}
-            onTouchEnd={() => setIsFunnelPaused(false)}
-          >
-            <div className={styles.funnelRibbonHeader}>
-              <div className={styles.funnelRibbonEyebrow}>
-                <span className={styles.funnelRibbonDot} />
-                <span>SYNCHRONIZED PATIENT ACQUISITION</span>
+          {/* ══════════════════════════════════════════════════ */}
+          {/* SIX-STAGE MARKETING CAPABILITIES JOURNEY           */}
+          {/* Desktop: 6 Connected Horizontal Cards (Zero Clip)  */}
+          {/* Mobile: Vertical Connected 6-Step Timeline         */}
+          {/* ══════════════════════════════════════════════════ */}
+          <div className={styles.journeyWrapper}>
+            <div className={styles.journeyHeader}>
+              <div className={styles.journeyPill}>
+                <span className={styles.journeyDot} />
+                <span>INTEGRATED MARKETING CAPABILITIES JOURNEY</span>
               </div>
-              <h3 className={styles.funnelRibbonTitle}>
-                How These 6 Capabilities Work Together
+              <h3 className={styles.journeyTitle}>
+                How All 6 Capabilities Connect to Acquire Dental Patients
               </h3>
-              <p className={styles.funnelRibbonSubtitle}>
-                A connected patient journey — guiding local searchers from discovery to seated consultations.
+              <p className={styles.journeySubtitle}>
+                From initial local awareness to qualified treatment enquiries — every capability works in synchronization to build authority and fill operatory chairs.
               </p>
             </div>
 
-            {/* Interactive Highway Nodes with Animated Traveling Beam */}
-            <div className={styles.funnelHighwayTrack}>
-              <div className={styles.funnelBeamLine}>
-                <div className={styles.funnelBeamPulse} />
-              </div>
-
-              <div className={styles.funnelFlowHighway}>
-                {synchronizedFunnelSteps.map((fStep, fIdx) => {
-                  const isActive = fIdx === activeFunnelStep;
-                  const isGoal = fIdx === 5;
+            {/* Desktop Horizontal 6-Stage Journey (Visible >= 960px) */}
+            <div className={styles.journeyDesktopTrack}>
+              <div className={styles.journeyDesktopConnectingLine} />
+              <div className={styles.journeyDesktopGrid}>
+                {marketingJourneyStages.map((stage, sIdx) => {
+                  const isLast = sIdx === 5;
                   return (
-                    <button
-                      key={fIdx}
-                      type="button"
-                      onClick={() => setActiveFunnelStep(fIdx)}
-                      className={`${styles.flowNode} ${isActive ? styles.flowNodeActive : ''} ${isGoal ? (isActive ? styles.flowNodeGoalActive : styles.flowNodeGoal) : ''}`}
-                      aria-label={`Inspect Stage ${fStep.step}: ${fStep.name}`}
+                    <div
+                      key={sIdx}
+                      className={`${styles.journeyStageCard} ${isLast ? styles.journeyStageCardFinal : ''}`}
                     >
-                      <div className={isGoal ? styles.flowNodeGoalStepNum : styles.flowNodeStepNum}>
-                        STEP {fStep.step}
+                      <div className={styles.stageCardHeader}>
+                        <span className={isLast ? styles.stageStepNumFinal : styles.stageStepNum}>
+                          STEP {stage.step}
+                        </span>
+                        <span className={isLast ? styles.stageRoleBadgeFinal : styles.stageRoleBadge}>
+                          {stage.highlight}
+                        </span>
                       </div>
 
-                      <div className={styles.flowNodeIcon}>
-                        {fStep.iconType === 'meta' && <Icon3DMeta />}
-                        {fStep.iconType === 'search' && <Icon3DSearch />}
-                        {fStep.iconType === 'mappin' && <Icon3DMapPin />}
-                        {fStep.iconType === 'seo' && <Icon3DSEO />}
-                        {fStep.iconType === 'video' && <Icon3DVideo />}
-                        {fStep.iconType === 'tooth' && <Icon3DTooth />}
+                      <div className={styles.stageIconSquircle}>
+                        {stage.iconType === 'meta' && <Icon3DMeta />}
+                        {stage.iconType === 'search' && <Icon3DSearch />}
+                        {stage.iconType === 'seo' && <Icon3DSEO />}
+                        {stage.iconType === 'video' && <Icon3DVideo />}
+                        {stage.iconType === 'mappin' && <Icon3DMapPin />}
+                        {stage.iconType === 'content' && <Icon3DContent />}
                       </div>
 
-                      <div className={isGoal ? styles.flowNodeGoalTitle : styles.flowNodeTitle}>
-                        {fStep.name}
-                      </div>
+                      <h4 className={styles.stageCardTitle}>{stage.name}</h4>
+                      <p className={styles.stageCardDesc}>{stage.desc}</p>
 
-                      <div className={isGoal ? styles.flowNodeGoalRole : styles.flowNodeRole}>
-                        {fStep.role}
+                      <div className={isLast ? styles.stageFooterBadgeFinal : styles.stageFooterBadge}>
+                        <span className={styles.stageCheckIcon}>✓</span>
+                        <span>{stage.role}</span>
                       </div>
-
-                      {isActive && (
-                        <div className={styles.activePhaseIndicator}>
-                          <span className={styles.activePhaseDot} />
-                          <span>ACTIVE</span>
-                        </div>
-                      )}
-                    </button>
+                    </div>
                   );
                 })}
               </div>
             </div>
 
-            {/* Concise, Lightweight Active Phase Readout */}
-            {(() => {
-              const currentStage = synchronizedFunnelSteps[activeFunnelStep];
-              return (
-                <div key={`funnel-stage-${activeFunnelStep}`} className={`${styles.funnelMicroConsole} ${styles.textShift}`}>
-                  <div className={styles.microConsoleHeader}>
-                    <div className={styles.microConsoleBadge}>
-                      <span className={styles.consolePulseDot} />
-                      <span>STAGE {currentStage.step} • {currentStage.name}</span>
+            {/* Mobile Vertical Connected Timeline (Visible < 960px) */}
+            <div className={styles.journeyMobileTimeline}>
+              <div className={styles.mobileTimelineLine} />
+              <div className={styles.mobileTimelineSteps}>
+                {marketingJourneyStages.map((stage, mIdx) => {
+                  const isLast = mIdx === 5;
+                  return (
+                    <div key={mIdx} className={styles.mobileTimelineItem}>
+                      <div className={isLast ? styles.mobileTimelineNodeFinal : styles.mobileTimelineNode}>
+                        <span>{stage.step}</span>
+                      </div>
+                      <div className={`${styles.mobileTimelineCard} ${isLast ? styles.mobileTimelineCardFinal : ''}`}>
+                        <div className={styles.mobileCardTopRow}>
+                          <div className={styles.mobileCardIcon}>
+                            {stage.iconType === 'meta' && <Icon3DMeta />}
+                            {stage.iconType === 'search' && <Icon3DSearch />}
+                            {stage.iconType === 'seo' && <Icon3DSEO />}
+                            {stage.iconType === 'video' && <Icon3DVideo />}
+                            {stage.iconType === 'mappin' && <Icon3DMapPin />}
+                            {stage.iconType === 'content' && <Icon3DContent />}
+                          </div>
+                          <div className={styles.mobileCardMeta}>
+                            <h4 className={styles.mobileCardTitle}>{stage.name}</h4>
+                            <span className={isLast ? styles.mobileCardRoleFinal : styles.mobileCardRole}>{stage.role}</span>
+                          </div>
+                        </div>
+                        <p className={styles.mobileCardDesc}>{stage.desc}</p>
+                      </div>
                     </div>
-                    <span className={styles.microConsoleRole}>{currentStage.role}</span>
-                  </div>
-                  <p className={styles.microConsoleDesc}>{currentStage.desc}</p>
-                  <div className={styles.microConsoleOutcome}>
-                    <span className={styles.outcomeTag}>RESULT:</span>
-                    <span className={styles.outcomeText}>{currentStage.outcome}</span>
-                  </div>
-                </div>
-              );
-            })()}
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -1385,7 +1376,24 @@ export default function DentalMarketingPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════ */}
-      {/* SECTION 08: FREQUENTLY ASKED QUESTIONS             */}
+      {/* SECTION A: ADDRESS & LOCATION                      */}
+      {/* Placed Before FAQ as Requested                     */}
+      {/* ══════════════════════════════════════════════════ */}
+      <QuickConnectMapSection
+        id="location"
+        eyebrow="CLINIC GROWTH PARTNER • OFFICE LOCATION & CONNECT"
+        title={
+          <>
+            Visit Our Headquarters or<br />
+            <span style={{ color: '#0B2093' }}>Connect With Our Dental Growth Team</span>
+          </>
+        }
+        subtitle="Serving dental clinics, multi-specialty practices, and implant centers across India. Connect with our dental marketing strategists to review your local catchment area and discuss practice growth."
+      />
+
+      {/* ══════════════════════════════════════════════════ */}
+      {/* SECTION B: FREQUENTLY ASKED QUESTIONS (FAQ)        */}
+      {/* Placed Immediately After Address                   */}
       {/* ══════════════════════════════════════════════════ */}
       <section id="faq" className={styles.sectionBlockAlt}>
         <div className={styles.container}>
@@ -1429,24 +1437,8 @@ export default function DentalMarketingPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════ */}
-      {/* SECTION 09: LOCATION AND ADDRESS INFORMATION       */}
-      {/* Positioned Just Above Pre-Footer CTA               */}
-      {/* ══════════════════════════════════════════════════ */}
-      <QuickConnectMapSection
-        id="location"
-        eyebrow="CLINIC GROWTH PARTNER • OFFICE LOCATION & CONNECT"
-        title={
-          <>
-            Visit Our Headquarters or<br />
-            <span style={{ color: '#0B2093' }}>Connect With Our Dental Growth Team</span>
-          </>
-        }
-        subtitle="Serving dental clinics, multi-specialty practices, and implant centers across India. Connect with our dental marketing strategists to review your local catchment area and discuss practice growth."
-      />
-
-      {/* ══════════════════════════════════════════════════ */}
-      {/* SECTION 10: FINAL PRE-FOOTER CTA                   */}
-      {/* Conversion-Focused Pre-Footer Card                 */}
+      {/* SECTION C: FINAL PRE-FOOTER CTA BANNER             */}
+      {/* Placed Immediately After FAQ                       */}
       {/* ══════════════════════════════════════════════════ */}
       <section id="cta" className={styles.preFooterSection}>
         <div className={styles.container}>
@@ -1461,7 +1453,7 @@ export default function DentalMarketingPage() {
             </h2>
 
             <p className={styles.preFooterSub}>
-              Let's create a dental marketing strategy that connects your clinic with the right patients and generates meaningful treatment enquiries.
+              Let's build a dental marketing strategy that connects your clinic with the right patients and generates meaningful treatment enquiries.
             </p>
 
             <div className={styles.preFooterActions}>
