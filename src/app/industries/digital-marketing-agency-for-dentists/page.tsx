@@ -454,6 +454,7 @@ export default function DentalMarketingPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [currentSlide, setCurrentSlide] = useState<number>(0);
   const [activeStep, setActiveStep] = useState<number>(0);
+  const [isProcessPaused, setIsProcessPaused] = useState<boolean>(false);
 
   // Auto rotate hero clinical slides
   useEffect(() => {
@@ -462,6 +463,15 @@ export default function DentalMarketingPage() {
     }, 5000);
     return () => clearInterval(timer);
   }, []);
+
+  // Auto rotate onboarding & scale process steps
+  useEffect(() => {
+    if (isProcessPaused) return;
+    const processTimer = setInterval(() => {
+      setActiveStep((prev) => (prev + 1) % growthProcessSteps.length);
+    }, 4000);
+    return () => clearInterval(processTimer);
+  }, [isProcessPaused]);
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -850,7 +860,13 @@ export default function DentalMarketingPage() {
             </p>
           </div>
 
-          <div className={styles.roadmapContainer}>
+          <div
+            className={styles.roadmapContainer}
+            onMouseEnter={() => setIsProcessPaused(true)}
+            onMouseLeave={() => setIsProcessPaused(false)}
+            onTouchStart={() => setIsProcessPaused(true)}
+            onTouchEnd={() => setIsProcessPaused(false)}
+          >
             {/* Desktop Horizontal Highway Stepper */}
             <div className={styles.roadmapHighway}>
               <div className={styles.roadmapTrackLine} aria-hidden="true" />
@@ -881,7 +897,7 @@ export default function DentalMarketingPage() {
             {(() => {
               const current = growthProcessSteps[activeStep];
               return (
-                <div className={styles.roadmapCockpit}>
+                <div key={activeStep} className={styles.roadmapCockpit}>
                   <div className={styles.cockpitLeft}>
                     <div className={styles.cockpitPhaseTagRow}>
                       <span className={styles.cockpitPhasePill}>PHASE {current.step} // {current.category}</span>
@@ -950,67 +966,9 @@ export default function DentalMarketingPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════ */}
-      {/* PHASE 6: CASE STUDIES & RESULTS                    */}
-      {/* Apex Dental Studio Verified Practice Cockpit       */}
+      {/* AGENCY COMPARISON (PLACED DIRECTLY DOWN PROCESS)   */}
       {/* ══════════════════════════════════════════════════ */}
-      <section className={styles.sectionBlock}>
-        <div className={styles.container}>
-          <ScrollReveal>
-            <div className={styles.caseStudyCard}>
-              <div>
-                <div className={styles.caseClientBadge}>
-                  <span className={styles.liveTelemetryLed} />
-                  <span>VERIFIED PRACTICE TELEMETRY // NEW DELHI</span>
-                </div>
-                <h3 className={styles.caseTitle}>
-                  How Apex Dental Studio Scaled From 28 to 94 Monthly New Patient Bookings
-                </h3>
-                <p className={styles.caseStory}>
-                  Apex Dental &amp; Implant Studio was losing patient volume to large corporate hospital chains. Their clinic lacked local Google Maps visibility, and online inquiries suffered from a 42% no-show rate.
-                  <br /><br />
-                  Marketing Copilot implemented localized <strong>SEO services for dentists in India</strong>, high-intent Google Search campaigns for implants, and an automated WhatsApp appointment verification sequence that slashed chair downtime.
-                </p>
-                <BeamButton
-                  href="/contact"
-                  label="Replicate This Success For Your Practice"
-                  size="sm"
-                />
-              </div>
-
-              <div className={styles.caseMetricsCluster}>
-                <div className={styles.caseMetricsRow}>
-                  <div>
-                    <div className={styles.caseMetricNumber}>+235%</div>
-                    <div className={styles.caseMetricText}>Patient Bookings</div>
-                  </div>
-                  <div>
-                    <div className={styles.caseMetricNumber}>₹240</div>
-                    <div className={styles.caseMetricText}>Cost Per Lead</div>
-                  </div>
-                  <div>
-                    <div className={styles.caseMetricNumber}>91.5%</div>
-                    <div className={styles.caseMetricText}>Show-Up Rate</div>
-                  </div>
-                </div>
-
-                <div className={styles.caseQuoteCard}>
-                  <p className={styles.caseQuoteText}>
-                    "Our operatory chairs for dental implants and clear aligners are fully booked 3 weeks in advance. Marketing Copilot eliminated bargain-hunters and delivered serious patients who value clinical quality."
-                  </p>
-                  <span className={styles.caseQuoteAuthor}>
-                    — Dr. R. Malhotra, MDS (Prosthodontics &amp; Implantology)
-                  </span>
-                </div>
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════════════ */}
-      {/* PHASE 7 & 8: AGENCY COMPARISON                     */}
-      {/* ══════════════════════════════════════════════════ */}
-      <section className={styles.sectionBlockAlt}>
+      <section id="comparison" className={styles.sectionBlock}>
         <div className={styles.container}>
           <div className={styles.sectionHeader}>
             <div className={styles.sectionPill}>
@@ -1102,6 +1060,63 @@ export default function DentalMarketingPage() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════ */}
+      {/* CASE STUDIES & RESULTS (VERIFIED APEX TELEMETRY)   */}
+      {/* ══════════════════════════════════════════════════ */}
+      <section id="case-study" className={styles.sectionBlockAlt}>
+        <div className={styles.container}>
+          <ScrollReveal>
+            <div className={styles.caseStudyCard}>
+              <div>
+                <div className={styles.caseClientBadge}>
+                  <span className={styles.liveTelemetryLed} />
+                  <span>VERIFIED PRACTICE TELEMETRY // NEW DELHI</span>
+                </div>
+                <h3 className={styles.caseTitle}>
+                  How Apex Dental Studio Scaled From 28 to 94 Monthly New Patient Bookings
+                </h3>
+                <p className={styles.caseStory}>
+                  Apex Dental &amp; Implant Studio was losing patient volume to large corporate hospital chains. Their clinic lacked local Google Maps visibility, and online inquiries suffered from a 42% no-show rate.
+                  <br /><br />
+                  Marketing Copilot implemented localized <strong>SEO services for dentists in India</strong>, high-intent Google Search campaigns for implants, and an automated WhatsApp appointment verification sequence that slashed chair downtime.
+                </p>
+                <BeamButton
+                  href="/contact"
+                  label="Replicate This Success For Your Practice"
+                  size="sm"
+                />
+              </div>
+
+              <div className={styles.caseMetricsCluster}>
+                <div className={styles.caseMetricsRow}>
+                  <div>
+                    <div className={styles.caseMetricNumber}>+235%</div>
+                    <div className={styles.caseMetricText}>Patient Bookings</div>
+                  </div>
+                  <div>
+                    <div className={styles.caseMetricNumber}>₹240</div>
+                    <div className={styles.caseMetricText}>Cost Per Lead</div>
+                  </div>
+                  <div>
+                    <div className={styles.caseMetricNumber}>91.5%</div>
+                    <div className={styles.caseMetricText}>Show-Up Rate</div>
+                  </div>
+                </div>
+
+                <div className={styles.caseQuoteCard}>
+                  <p className={styles.caseQuoteText}>
+                    "Our operatory chairs for dental implants and clear aligners are fully booked 3 weeks in advance. Marketing Copilot eliminated bargain-hunters and delivered serious patients who value clinical quality."
+                  </p>
+                  <span className={styles.caseQuoteAuthor}>
+                    — Dr. R. Malhotra, MDS (Prosthodontics &amp; Implantology)
+                  </span>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
