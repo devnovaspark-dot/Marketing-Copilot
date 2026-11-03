@@ -46,9 +46,8 @@ const dentalHeroSlides = [
 // ══════════════════════════════════════════════════
 const dentalBottlenecks = [
   {
-    code: 'DEFECT 01',
-    metricBadge: '-82% FOOTFALL LOSS',
-    badgeType: 'critical',
+    code: 'AUDIT POINT 01',
+    metricBadge: 'MAPS 3-PACK DEFICIT',
     icon: '📍',
     title: 'Maps Invisibility Trap',
     symptom: 'Catchment Area Blindspot',
@@ -56,9 +55,8 @@ const dentalBottlenecks = [
     solution: 'Dominant Maps 3-Pack rank with automated review velocity & local geo-tagging.',
   },
   {
-    code: 'DEFECT 02',
-    metricBadge: '₹200 LEADS VS ₹1.5L VALUE',
-    badgeType: 'warning',
+    code: 'AUDIT POINT 02',
+    metricBadge: 'HIGH-TICKET MARGIN GAP',
     icon: '💸',
     title: 'Low-Ticket Ad Waste',
     symptom: 'Ad Budget Hemorrhage',
@@ -66,9 +64,8 @@ const dentalBottlenecks = [
     solution: 'Negative-scrubbed search funnels targeted at high-intent surgical & cosmetic patients.',
   },
   {
-    code: 'DEFECT 03',
-    metricBadge: '35% STERILIZATION LOSS',
-    badgeType: 'critical',
+    code: 'AUDIT POINT 03',
+    metricBadge: '35% CHAIR IDLE TIME',
     icon: '🚪',
     title: '35% Clinic No-Shows',
     symptom: 'Operatory Chair Downtime',
@@ -76,9 +73,8 @@ const dentalBottlenecks = [
     solution: '1-Tap WhatsApp token confirmation with 24-hr & 2-hr GPS turn-by-turn alerts.',
   },
   {
-    code: 'DEFECT 04',
-    metricBadge: 'TRUST CONVERSION DROP',
-    badgeType: 'warning',
+    code: 'AUDIT POINT 04',
+    metricBadge: 'CLINICAL TRUST GAP',
     icon: '⚖️',
     title: 'Medical Ethics Deficit',
     symptom: 'Patient Surgical Anxiety',
@@ -544,10 +540,10 @@ export default function DentalMarketingPage() {
                 <div className={styles.bottleneckCard}>
                   <div className={styles.cardTopBar}>
                     <div className={styles.cardLedBadge}>
-                      <span className={item.badgeType === 'critical' ? styles.ledCritical : styles.ledWarning} />
+                      <span className={styles.ledAudit} />
                       <span>{item.code}</span>
                     </div>
-                    <span className={styles.metricLossPill}>{item.metricBadge}</span>
+                    <span className={styles.metricAuditPill}>{item.metricBadge}</span>
                   </div>
 
                   <div className={styles.cardIconWrap}>{item.icon}</div>
@@ -696,6 +692,18 @@ export default function DentalMarketingPage() {
                 </div>
               </ScrollReveal>
             ))}
+          </div>
+
+          {/* High-Converting Framework Beam CTA */}
+          <div className={styles.frameworkCtaRow}>
+            <BeamButton
+              href="/contact"
+              label="Deploy This 4-Pillar Engine for Your Clinic"
+              size="lg"
+            />
+            <p className={styles.frameworkCtaHint}>
+              <span>⚡</span> 30-Day Google Maps Local Rank Guarantee • DCI Ethics Compliant • Zero Practice Disruption
+            </p>
           </div>
         </div>
       </section>
@@ -852,9 +860,13 @@ export default function DentalMarketingPage() {
                   <strong>100% Attribution &amp; Zero No-Show Guarantee:</strong> We engineer full-funnel patient acquisition systems that fill high-ticket treatment chairs with predictable ROI.
                 </span>
               </div>
-              <a href="#calculator" className={styles.comparisonCtaBtn}>
-                Simulate Your Practice ROI →
-              </a>
+              <div className={styles.comparisonBeamBtnWrap}>
+                <BeamButton
+                  href="/contact"
+                  label="Switch to Dedicated Dental Growth"
+                  size="sm"
+                />
+              </div>
             </div>
           </div>
         </div>
