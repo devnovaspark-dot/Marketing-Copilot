@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import BeamButton from '@/components/BeamButton';
@@ -8,6 +8,30 @@ import ScrollReveal from '@/components/ScrollReveal';
 import QuickConnectMapSection from '@/app/_components/QuickConnectMapSection';
 import DentalPatientCalculator from './_components/DentalPatientCalculator';
 import styles from './page.module.css';
+
+// ══════════════════════════════════════════════════
+// DATA: HERO CLINICAL PHOTOGRAPHY SLIDES
+// ══════════════════════════════════════════════════
+const dentalHeroSlides = [
+  {
+    image: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80',
+    tag: 'ADVANCED CLINICAL OPERATORY',
+    caption: 'Sterilized Operatory Suites Engineered for High-Ticket Procedures',
+    alt: 'Modern dental operatory suite with high-tech dental chair and surgical lights',
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=80',
+    tag: 'SMILE TRANSFORMATION STUDIO',
+    caption: 'Full Arch Implants & Digital Invisalign Clear Aligner Consultations',
+    alt: 'Dentist discussing digital smile makeover with smiling patient',
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1200&q=80',
+    tag: '3D INTRAORAL SCANNING',
+    caption: 'Cutting-Edge Painless Diagnostics That Build Patient Trust',
+    alt: 'High tech dental diagnostic scan and computer imaging suite',
+  },
+];
 
 // ══════════════════════════════════════════════════
 // DATA: BOTTLENECKS
@@ -125,21 +149,25 @@ const dentalPillars = [
     num: 'PILLAR 01',
     title: 'Local SEO & Google Maps 3-Pack Dominance',
     desc: 'We optimize your Google Business Profile with verified dental procedure categories, geo-tagged clinical photos, local medical schema, and an ethical patient review generation engine that ranks your clinic in the Top 3 positions across your entire city.',
+    tags: ['Google Maps 3-Pack', 'Local Citations', 'Review Velocity Bot', 'Hyperlocal Catchment'],
   },
   {
     num: 'PILLAR 02',
     title: 'High-Intent Treatment Google Ads (PPC)',
     desc: 'We capture active searchers hunting for "dental implants in India", "Invisalign cost", and "root canal specialist near me". Our rigorous negative keyword scrubbing blocks job seekers and government scheme searches, protecting your marketing budget.',
+    tags: ['Negative Keyword Scrubbing', 'Implant & Aligners Funnels', 'Emergency Call Campaigns', 'ROAS Tracking'],
   },
   {
     num: 'PILLAR 03',
     title: 'Social Proof & Smile Transformation Storytelling',
     desc: 'We turn your successful clinical cases into thumb-stopping Instagram Reels and video patient testimonials. Compliant with medical guidelines, these stories highlight painless treatments, sterilized operatories, and life-changing smile confidence.',
+    tags: ['Patient Consent Reels', 'Before/After Showcases', 'Doctor Authority Content', '100% Ethical & DCI-Safe'],
   },
   {
     num: 'PILLAR 04',
     title: '1-Tap WhatsApp Booking & No-Show Shield',
     desc: 'Our automated healthcare bot allows patients to select slots in 30 seconds. Automated 24-hour and 2-hour WhatsApp reminder sequences with clinic navigation links decrease chair no-shows by over 75%, keeping your operatories fully booked.',
+    tags: ['1-Tap Appointment Bot', 'Google Maps Direct Nav', '24h/2h Pre-Visit Reminders', 'Post-Op Review Engine'],
   },
 ];
 
@@ -175,6 +203,15 @@ const dentalFaqs = [
 
 export default function DentalMarketingPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [currentSlide, setCurrentSlide] = useState<number>(0);
+
+  // Auto rotate hero clinical slides
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % dentalHeroSlides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -184,75 +221,117 @@ export default function DentalMarketingPage() {
     <div className={styles.pageWrapper}>
       {/* ══════════════════════════════════════════════════ */}
       {/* HERO SECTION                                      */}
+      {/* Matching Global Skeuomorphic Luxury Design        */}
       {/* ══════════════════════════════════════════════════ */}
-      <section className={styles.heroSection}>
+      <section className={styles.hero}>
+        <div className={styles.splashCyan} aria-hidden="true" />
+        <div className={styles.splashViolet} aria-hidden="true" />
+        <div className={styles.splashAmber} aria-hidden="true" />
+        <div className={styles.ambientMesh} aria-hidden="true" />
+
         <div className={styles.container}>
-          <div className={styles.heroGrid}>
+          <div className={styles.heroInner}>
             <ScrollReveal className={styles.heroContent}>
-              <div className={styles.heroBadge}>
-                <span className={styles.badgeDot} />
+              <div className={styles.heroEyebrow}>
+                <span className={styles.heroEyebrowDot} />
                 <span>PRACTICE GROWTH ACCELERATOR • DENTAL SECTOR</span>
               </div>
 
-              <h1 className={styles.heroTitle}>
-                <span className={styles.heroTitleHighlight}>Digital Marketing Agency for Dentists</span>
+              <h1 className={styles.heroHeadline}>
+                Digital Marketing Agency{' '}
+                <span className={styles.heroAccent}>for Dentists</span>
               </h1>
 
-              <p className={styles.heroSubtitle}>
-                Turn local patient searches into booked dental chair-time. We deliver end-to-end <strong>Digital Marketing for Dentists</strong> and high-performance <strong>SEO Services for Dentists in India</strong> — dominating Google Maps 3-Pack, scaling high-ticket implants and aligners, and eliminating costly clinic no-shows.
+              <p className={styles.heroSub}>
+                Turn local patient searches into booked dental chair-time. We deliver end-to-end <strong>Digital Marketing for Dentists</strong> and high-performance <strong>SEO Services for Dentists in India</strong> — dominating Google Maps 3-Pack, scaling ₹50k+ implants &amp; clear aligners, and eliminating costly clinic no-shows.
               </p>
 
-              <div className={styles.heroCtaGroup}>
+              <div className={styles.heroActions}>
                 <BeamButton
                   href="/contact"
                   label="Claim Free Practice Audit"
                   size="md"
                 />
-                <a href="#simulator" className={styles.secondaryBtn}>
-                  <span>Simulate Patient ROI</span>
-                  <span>↓</span>
-                </a>
+                <BeamButton
+                  href="#simulator"
+                  label="Simulate Patient ROI"
+                  variant="outline"
+                  size="md"
+                  arrow={false}
+                />
               </div>
 
-              <div className={styles.heroTrustRow}>
-                <div className={styles.starRating}>
-                  {'★'.repeat(5)}
-                </div>
-                <span>4.9/5 Rating Across 45+ Dental Practices &amp; Cosmetic Clinics in India</span>
+              <div className={styles.trustStrip}>
+                <span className={styles.trustItem}>
+                  <span className={styles.star}>★★★★★</span>
+                  <span>4.9/5 Rating (45+ Dental Practices)</span>
+                </span>
+                <span className={styles.trustSep}>•</span>
+                <span className={styles.trustItem}>
+                  <span className={styles.trustDot} />
+                  <span>₹15Cr+ Patient Revenue</span>
+                </span>
+                <span className={styles.trustSep}>•</span>
+                <span className={styles.trustItem}>
+                  <span className={styles.trustDot} />
+                  <span>100% HIPAA &amp; DCI Ethical</span>
+                </span>
               </div>
             </ScrollReveal>
 
-            {/* Hero Visual Mockup: Google Maps 3-Pack Preview */}
+            {/* Right Visual Showcase: Clinical Photography Carousel with Badges */}
             <ScrollReveal delay={120}>
-              <div className={styles.heroVisualCard}>
-                <div className={styles.visualHeader}>
-                  <div className={styles.mockSearchBox}>
-                    <span>🔍</span>
-                    <span>best dental clinic near me</span>
-                  </div>
-                  <span className={styles.liveGmbRankBadge}>#1 ON GOOGLE MAPS</span>
-                </div>
+              <div className={styles.visual}>
+                <div className={styles.imageCard}>
+                  <div className={styles.imageViewport}>
+                    {dentalHeroSlides.map((slide, idx) => (
+                      <div
+                        key={idx}
+                        className={`${styles.slideItem} ${idx === currentSlide ? styles.slideActive : ''}`}
+                      >
+                        <Image
+                          src={slide.image}
+                          alt={slide.alt}
+                          fill
+                          priority={idx === 0}
+                          className={styles.slideImage}
+                          sizes="(max-width: 960px) 100vw, 560px"
+                        />
+                        <div className={styles.slideOverlay} />
+                        <div className={styles.slideCaption}>
+                          <span className={styles.slideCaptionTag}>{slide.tag}</span>
+                          <p className={styles.slideCaptionText}>{slide.caption}</p>
+                        </div>
+                      </div>
+                    ))}
 
-                <div className={styles.mockListingCard}>
-                  <div className={styles.listingRankRow}>
-                    <span className={styles.rankNumberBadge}>RANK #1 IN LOCAL 3-PACK</span>
-                    <span style={{ color: '#059669', fontSize: 11, fontWeight: 700 }}>● Open Now</span>
-                  </div>
-                  <h3 className={styles.listingTitle}>Apex Dental &amp; Implant Studio</h3>
-                  <div className={styles.listingMeta}>
-                    <span style={{ color: '#F59E0B', fontWeight: 800 }}>4.9 ★★★★★</span>
-                    <span>(342 verified patient reviews)</span>
-                  </div>
-                  <div className={styles.listingTags}>
-                    <span className={styles.listingTag}>Dental Implants</span>
-                    <span className={styles.listingTag}>Invisalign Platinum</span>
-                    <span className={styles.listingTag}>Painless RCT</span>
-                  </div>
-                </div>
+                    {/* Floating Top GMB Badge */}
+                    <div className={styles.floatingBadgeTop}>
+                      <span className={styles.gmbIcon}>📍</span>
+                      <span className={styles.gmbBadgeText}>#1 ON GOOGLE MAPS 3-PACK</span>
+                    </div>
 
-                <div className={styles.liveActivityPill}>
-                  <div className={styles.pulseIcon} />
-                  <span><strong>Live Inbound:</strong> New patient booked "Full Arch Implant Consultation" via WhatsApp</span>
+                    {/* Floating Bottom Inbound Pulse Alert */}
+                    <div className={styles.floatingAlertBottom}>
+                      <div className={styles.alertPulseDot} />
+                      <div className={styles.alertText}>
+                        <span className={styles.alertHighlight}>Live Booking:</span> New patient booked "Full Arch Implant Consultation" via WhatsApp
+                      </div>
+                    </div>
+
+                    {/* Slide Dots */}
+                    <div className={styles.dotsWrap}>
+                      {dentalHeroSlides.map((_, dotIdx) => (
+                        <button
+                          key={dotIdx}
+                          type="button"
+                          className={`${styles.dot} ${dotIdx === currentSlide ? styles.dotActive : ''}`}
+                          onClick={() => setCurrentSlide(dotIdx)}
+                          aria-label={`Go to slide ${dotIdx + 1}`}
+                        />
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
             </ScrollReveal>
@@ -287,6 +366,22 @@ export default function DentalMarketingPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════ */}
+      {/* HYPERLOCAL MAP CATCHMENT SECTION                   */}
+      {/* Placed immediately below hero & metrics bar       */}
+      {/* ══════════════════════════════════════════════════ */}
+      <QuickConnectMapSection
+        id="dental-connect"
+        eyebrow="HYPERLOCAL CATCHMENT RADIUS • PATIENT ACQUISITION"
+        title={
+          <>
+            Connecting Patients to Dental Clinics<br />
+            <span style={{ color: '#0B2093' }}>Across Target Localities</span>
+          </>
+        }
+        subtitle="Patients rarely travel more than 5 to 10 kilometers for routine dental treatments, but will travel city-wide for specialized dental implants and cosmetic smile design. We engineer geo-targeted marketing funnels to capture both local footfalls and high-ticket procedure demand."
+      />
+
+      {/* ══════════════════════════════════════════════════ */}
       {/* BOTTLENECK VS SOLUTION                            */}
       {/* ══════════════════════════════════════════════════ */}
       <section className={styles.sectionBlock}>
@@ -305,7 +400,7 @@ export default function DentalMarketingPage() {
             {dentalBottlenecks.map((item, idx) => (
               <ScrollReveal key={idx} delay={idx * 60}>
                 <div className={styles.bottleneckCard}>
-                  <span className={styles.cardIcon}>{item.icon}</span>
+                  <div className={styles.cardIconWrap}>{item.icon}</div>
                   <h3 className={styles.cardTitle}>{item.title}</h3>
                   <p className={styles.cardText}>{item.desc}</p>
                   <div className={styles.solutionTag}>
@@ -322,7 +417,7 @@ export default function DentalMarketingPage() {
       {/* ══════════════════════════════════════════════════ */}
       {/* HIGH-YIELD PROCEDURES GRID                        */}
       {/* ══════════════════════════════════════════════════ */}
-      <section className={styles.sectionBlock} style={{ background: '#F1F5F9' }}>
+      <section className={styles.sectionBlock} style={{ background: '#F8FAFC' }}>
         <div className={styles.container}>
           <div className={styles.sectionHeader}>
             <div className={styles.sectionPill}>
@@ -338,14 +433,12 @@ export default function DentalMarketingPage() {
             {dentalProcedures.map((proc, idx) => (
               <ScrollReveal key={idx} delay={idx * 60}>
                 <div className={styles.procedureCard}>
-                  <div className={styles.procedureTop}>
-                    <div className={styles.procedureBadgeRow}>
-                      <span className={styles.procedureTag}>{proc.tag}</span>
-                      <span className={styles.procedureTicket}>{proc.ticket}</span>
-                    </div>
-                    <h3 className={styles.procedureTitle}>{proc.title}</h3>
-                    <p className={styles.procedureDesc}>{proc.desc}</p>
+                  <div className={styles.procedureBadgeRow}>
+                    <span className={styles.procedureTag}>{proc.tag}</span>
+                    <span className={styles.procedureTicket}>{proc.ticket}</span>
                   </div>
+                  <h3 className={styles.procedureTitle}>{proc.title}</h3>
+                  <p className={styles.procedureDesc}>{proc.desc}</p>
 
                   <ul className={styles.deliverablesList}>
                     {proc.deliverables.map((deliv, dIdx) => (
@@ -355,6 +448,16 @@ export default function DentalMarketingPage() {
                       </li>
                     ))}
                   </ul>
+
+                  <div className={styles.procedureCardCta}>
+                    <BeamButton
+                      href="/contact"
+                      label="Scale This Procedure"
+                      variant="outline"
+                      size="sm"
+                      fullWidth
+                    />
+                  </div>
                 </div>
               </ScrollReveal>
             ))}
@@ -384,6 +487,13 @@ export default function DentalMarketingPage() {
                   <span className={styles.pillarNum}>{pillar.num}</span>
                   <h3 className={styles.pillarTitle}>{pillar.title}</h3>
                   <p className={styles.pillarDesc}>{pillar.desc}</p>
+                  <div className={styles.pillarTagList}>
+                    {pillar.tags.map((tag, tIdx) => (
+                      <span key={tIdx} className={styles.pillarTagItem}>
+                        ✓ {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </ScrollReveal>
             ))}
@@ -396,6 +506,15 @@ export default function DentalMarketingPage() {
       {/* ══════════════════════════════════════════════════ */}
       <section id="simulator" className={styles.sectionBlock} style={{ background: '#F8FAFC' }}>
         <div className={styles.container}>
+          <div className={styles.sectionHeader}>
+            <div className={styles.sectionPill}>
+              <span>PRACTICE ROI SIMULATOR</span>
+            </div>
+            <h2 className={styles.sectionTitle}>Simulate Your Practice Revenue Growth</h2>
+            <p className={styles.sectionSubtitle}>
+              Adjust your monthly ad budget and procedure mix to forecast expected patient consultations, chair conversions, and net clinic revenue.
+            </p>
+          </div>
           <ScrollReveal>
             <DentalPatientCalculator />
           </ScrollReveal>
@@ -562,10 +681,6 @@ export default function DentalMarketingPage() {
           </div>
         </div>
       </section>
-
-      {/* Quick Connect Map Section */}
-      <QuickConnectMapSection />
     </div>
   );
 }
-
