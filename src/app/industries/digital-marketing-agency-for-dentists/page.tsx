@@ -50,7 +50,6 @@ const dentalHeroSlides = [
 // ══════════════════════════════════════════════════
 // SECTION 02 DATA: 6 CORE SERVICES
 // STRICT ORDER: Meta -> Google Ads -> SEO -> Social & YouTube -> Maps/GBP -> Content Marketing
-// Compact, tactile, skeuomorphic presentation
 // ══════════════════════════════════════════════════
 const coreServices = [
   {
@@ -105,7 +104,7 @@ const coreServices = [
 
 // ══════════════════════════════════════════════════
 // SECTION 03 DATA: HIGH-VALUE DENTAL TREATMENTS
-// Compact, tactile cards • Zero financial assumptions
+// With high-res clinical photography thumbnails
 // ══════════════════════════════════════════════════
 const highValueTreatments = [
   {
@@ -116,6 +115,8 @@ const highValueTreatments = [
     desc: 'Attract adults and teens seeking discreet teeth straightening with high treatment compliance.',
     impactFocus: 'Elective Aesthetic Inflow',
     impactChair: 'High Compliance',
+    image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=600&q=80',
+    alt: 'Clear aligner 3D digital dental orthodontic scan',
     chips: ['3D Smile Previews', 'Instagram Ad Hooks', 'WhatsApp Booking'],
   },
   {
@@ -126,6 +127,8 @@ const highValueTreatments = [
     desc: 'Capture patients seeking permanent single tooth replacement, bridge restorations, or All-on-4 rehabilitation.',
     impactFocus: 'Surgical Chair Saturation',
     impactChair: 'Maximum Chair Yield',
+    image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80',
+    alt: 'Surgical dental implant operatory suite',
     chips: ['CBCT Guided Surgery', 'High-Intent Search', '0% EMI Guides'],
   },
   {
@@ -136,6 +139,8 @@ const highValueTreatments = [
     desc: 'Reach patients requiring durable ceramic and zirconia crowns that build predictable family retention.',
     impactFocus: 'Predictable Restorative Flow',
     impactChair: 'Family Retention',
+    image: 'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=600&q=80',
+    alt: 'Ceramic zirconia dental crown restoration',
     chips: ['CAD/CAM Digital Scans', 'Zirconia Longevity', 'Preventive Recall Bot'],
   },
   {
@@ -146,6 +151,8 @@ const highValueTreatments = [
     desc: 'Attract bridal and professional patients seeking fast-turnaround whitening and composite bonding.',
     impactFocus: 'Rapid Chair Turnover',
     impactChair: 'High Referral Power',
+    image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80',
+    alt: 'In-office teeth whitening and cosmetic smile makeover',
     chips: ['Macro Before/After', 'Non-Invasive Prep', 'Event Packages'],
   },
   {
@@ -156,6 +163,8 @@ const highValueTreatments = [
     desc: 'Capture emergency toothache searchers seeking gentle, single-sitting endodontic pain relief.',
     impactFocus: 'Emergency Local Capture',
     impactChair: 'Urgent Pain Relief',
+    image: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=600&q=80',
+    alt: 'Advanced clinical microscope for rotary endodontics',
     chips: ['Emergency Click-to-Call', 'Maps Open Now', 'Pain-Free Rotary'],
   },
   {
@@ -166,6 +175,8 @@ const highValueTreatments = [
     desc: 'Position your clinic as the premier destination for custom ceramic veneers and smile symmetry.',
     impactFocus: 'High Clinical Prestige',
     impactChair: 'Discerning Patients',
+    image: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=600&q=80',
+    alt: 'Aesthetic porcelain veneers and smile transformation',
     chips: ['Ultra-HD Photography', 'Ceramist Craft', 'Digital Smile Scans'],
   },
 ];
@@ -308,7 +319,7 @@ const growthProcessSteps = [
 
 // ══════════════════════════════════════════════════
 // SECTION 05 DATA: VERIFIED CASE STUDIES (MIDDLE OF PAGE)
-// Luxury skeuomorphic telemetry cockpit • Zero image bloat
+// With photorealistic clinic & patient consultation visuals
 // ══════════════════════════════════════════════════
 const caseStudies = [
   {
@@ -320,6 +331,8 @@ const caseStudies = [
     doctor: 'Dr. R. Malhotra, MDS (Prosthodontics & Implantology)',
     challenge: 'Losing high-ticket implant candidates to hospital chains with an exhausting 42% no-show rate.',
     strategy: 'Deployed negative-scrubbed Search Ads for surgical implants, local SEO, and WhatsApp 1-tap token booking.',
+    image: 'https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=800&q=80',
+    alt: 'Doctor discussing implant rehabilitation with patient at Apex Dental Studio',
     metrics: [
       { value: '+235%', label: 'Patient Bookings' },
       { value: '₹240', label: 'Cost Per Lead' },
@@ -336,6 +349,8 @@ const caseStudies = [
     doctor: 'Dr. A. Joshi, BDS (Aesthetic & Family Dentistry)',
     challenge: 'Invisible beyond 1 km; corporate chains monopolized Google Maps, suppressing family footfall.',
     strategy: 'Optimized Google Maps 3-Pack across 42 pin codes with geo-tagged operatory photos and automated 5-star WhatsApp reviews.',
+    image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80',
+    alt: 'Dr. SmileCraft clinic consultation operatory in Mumbai',
     metrics: [
       { value: 'Top 3', label: 'Rank in 42 Pin Codes' },
       { value: '+180%', label: 'Map Directions & Calls' },
@@ -352,6 +367,8 @@ const caseStudies = [
     doctor: 'Dr. S. Nambiar, MDS (Orthodontics & Dentofacial)',
     challenge: 'Wasted ad budget on ₹500 scaling shoppers; zero traction for premium ₹1.5L+ clear aligners.',
     strategy: 'Engineered 3D smile simulation Instagram funnels and dedicated consultation landers with 0% EMI financing guides.',
+    image: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=800&q=80',
+    alt: 'Patient reviewing 3D digital clear aligner smile preview at Elite Aligners',
     metrics: [
       { value: '68+', label: 'Monthly Aligner Consults' },
       { value: '4.8X', label: 'Verified ROAS' },
@@ -793,7 +810,7 @@ export default function DentalMarketingPage() {
 
       {/* ══════════════════════════════════════════════════ */}
       {/* SECTION 03: HIGH-VALUE DENTAL TREATMENTS           */}
-      {/* Compact Skeuomorphic Cards • Zero Revenue Claims   */}
+      {/* With Photographic Thumbnails & 3D Vector Icons    */}
       {/* ══════════════════════════════════════════════════ */}
       <section id="treatments" className={styles.sectionBlockAlt}>
         <div className={styles.container}>
@@ -813,8 +830,18 @@ export default function DentalMarketingPage() {
                 <div className={styles.treatmentCard}>
                   <div className={styles.treatmentCardTopAccent} aria-hidden="true" />
 
-                  <div className={styles.treatmentTopBar}>
-                    <div className={styles.treatmentIconPod}>
+                  {/* Procedure Photography Header with Overlaid 3D Icon */}
+                  <div className={styles.treatmentImageFrame}>
+                    <Image
+                      src={proc.image}
+                      alt={proc.alt}
+                      fill
+                      className={styles.treatmentImage}
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 360px"
+                    />
+                    <div className={styles.treatmentImageOverlay} />
+
+                    <div className={styles.treatmentFloatingIcon}>
                       {proc.iconType === 'aligner' && <Icon3DAligner />}
                       {proc.iconType === 'implant' && <Icon3DImplant />}
                       {proc.iconType === 'tooth' && <Icon3DTooth />}
@@ -822,7 +849,8 @@ export default function DentalMarketingPage() {
                       {proc.iconType === 'scale' && <Icon3DScale />}
                       {proc.iconType === 'shield' && <Icon3DShield />}
                     </div>
-                    <div className={styles.treatmentMetaBadgeWrap}>
+
+                    <div className={styles.treatmentFloatingBadges}>
                       <span className={styles.treatmentTargetBadge}>{proc.targetBadge}</span>
                       <span className={styles.treatmentSeqNum}>SUITE 0{idx + 1}</span>
                     </div>
@@ -1004,7 +1032,7 @@ export default function DentalMarketingPage() {
 
       {/* ══════════════════════════════════════════════════ */}
       {/* SECTION 05: CASE STUDIES & REAL RESULTS            */}
-      {/* Luxury Glass Telemetry Cockpit (No bulky images)   */}
+      {/* VERIFIED PRACTICE TELEMETRY with Clinical Photos   */}
       {/* ══════════════════════════════════════════════════ */}
       <section id="case-studies" className={styles.sectionBlockAlt}>
         <div className={styles.container}>
@@ -1036,10 +1064,10 @@ export default function DentalMarketingPage() {
               ))}
             </div>
 
-            {/* Active Case Study Spotlight Card */}
+            {/* Active Case Study Spotlight Card with Clinic Photography */}
             <ScrollReveal>
               <div className={styles.caseStudyCard}>
-                <div>
+                <div className={styles.caseInfoCol}>
                   <div className={styles.caseClientBadge}>
                     <span className={styles.liveTelemetryLed} />
                     <span>{activeCs.tag}</span>
@@ -1062,6 +1090,15 @@ export default function DentalMarketingPage() {
                     </div>
                   </div>
 
+                  <div className={styles.caseQuoteCard}>
+                    <p className={styles.caseQuoteText}>
+                      {activeCs.quote}
+                    </p>
+                    <span className={styles.caseQuoteAuthor}>
+                      — {activeCs.doctor}
+                    </span>
+                  </div>
+
                   <div className={styles.caseCtaWrap}>
                     <BeamButton
                       href="/contact"
@@ -1071,23 +1108,31 @@ export default function DentalMarketingPage() {
                   </div>
                 </div>
 
-                <div className={styles.caseMetricsCluster}>
-                  <div className={styles.caseMetricsRow}>
-                    {activeCs.metrics.map((m, mIdx) => (
-                      <div key={mIdx}>
-                        <div className={styles.caseMetricNumber}>{m.value}</div>
-                        <div className={styles.caseMetricText}>{m.label}</div>
-                      </div>
-                    ))}
-                  </div>
+                {/* Right Visual Clinical Photograph with Floating Telemetry Badges */}
+                <div className={styles.caseVisualColumn}>
+                  <div className={styles.caseImageFrame}>
+                    <Image
+                      src={activeCs.image}
+                      alt={activeCs.alt}
+                      fill
+                      className={styles.caseImage}
+                      sizes="(max-width: 900px) 100vw, 460px"
+                    />
+                    <div className={styles.caseImageOverlay} />
 
-                  <div className={styles.caseQuoteCard}>
-                    <p className={styles.caseQuoteText}>
-                      {activeCs.quote}
-                    </p>
-                    <span className={styles.caseQuoteAuthor}>
-                      — {activeCs.doctor}
-                    </span>
+                    <div className={styles.caseImageTopTag}>
+                      <span>LIVE ATTRIBUTION TELEMETRY</span>
+                    </div>
+
+                    {/* Floating Glass Telemetry Metric Badges */}
+                    <div className={styles.caseFloatingMetrics}>
+                      {activeCs.metrics.map((m, mIdx) => (
+                        <div key={mIdx} className={styles.floatingMetricPill}>
+                          <span className={styles.floatingMetricVal}>{m.value}</span>
+                          <span className={styles.floatingMetricLabel}>{m.label}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
