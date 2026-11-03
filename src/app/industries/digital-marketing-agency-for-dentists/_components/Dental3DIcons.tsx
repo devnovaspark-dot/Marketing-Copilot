@@ -304,3 +304,274 @@ export function Icon3DChart({ className }: { className?: string }) {
   );
 }
 
+export function Icon3DMeta({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} width="36" height="36">
+      <defs>
+        <radialGradient id="metaGrad1" cx="35%" cy="35%" r="65%">
+          <stop offset="0%" stopColor="#818CF8" />
+          <stop offset="50%" stopColor="#4F46E5" />
+          <stop offset="100%" stopColor="#312E81" />
+        </radialGradient>
+        <radialGradient id="metaGrad2" cx="35%" cy="35%" r="65%">
+          <stop offset="0%" stopColor="#38BDF8" />
+          <stop offset="70%" stopColor="#0284C7" />
+          <stop offset="100%" stopColor="#0369A1" />
+        </radialGradient>
+        <filter id="metaDrop" x="6" y="6" width="36" height="38" filterUnits="userSpaceOnUse">
+          <feDropShadow dx="0" dy="3.5" stdDeviation="2.5" floodColor="#4F46E5" floodOpacity="0.3" />
+        </filter>
+      </defs>
+      <ellipse cx="24" cy="42" rx="14" ry="3" fill="#0F172A" fillOpacity="0.12" />
+      <g filter="url(#metaDrop)">
+        <circle cx="24" cy="23" r="16" fill="url(#metaGrad1)" />
+        <circle cx="24" cy="23" r="11" fill="#FFFFFF" fillOpacity="0.18" />
+        <circle cx="24" cy="23" r="7" fill="url(#metaGrad2)" />
+        <circle cx="24" cy="23" r="3" fill="#FFFFFF" />
+        <path d="M16 15C18 12 21 11 25 11" stroke="#FFFFFF" strokeWidth="1.8" strokeLinecap="round" strokeOpacity="0.8" />
+      </g>
+    </svg>
+  );
+}
+
+export function Icon3DSearch({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} width="36" height="36">
+      <defs>
+        <linearGradient id="searchRim" x1="10" y1="8" x2="30" y2="28" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#38BDF8" />
+          <stop offset="50%" stopColor="#0284C7" />
+          <stop offset="100%" stopColor="#0B2093" />
+        </linearGradient>
+        <linearGradient id="searchHandle" x1="26" y1="26" x2="42" y2="42" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#64748B" />
+          <stop offset="40%" stopColor="#334155" />
+          <stop offset="100%" stopColor="#0F172A" />
+        </linearGradient>
+        <radialGradient id="searchGlass" cx="38%" cy="36%" r="62%">
+          <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.95" />
+          <stop offset="60%" stopColor="#E0F2FE" stopOpacity="0.65" />
+          <stop offset="100%" stopColor="#BAE6FD" stopOpacity="0.85" />
+        </radialGradient>
+        <filter id="searchDrop" x="6" y="6" width="38" height="38" filterUnits="userSpaceOnUse">
+          <feDropShadow dx="0" dy="3.5" stdDeviation="2.5" floodColor="#0284C7" floodOpacity="0.3" />
+        </filter>
+      </defs>
+      <ellipse cx="25" cy="42" rx="14" ry="3" fill="#0F172A" fillOpacity="0.12" />
+      <g filter="url(#searchDrop)">
+        <path d="M28 28L39 39C40.5 40.5 40.5 42.5 39 44C37.5 45.5 35.5 45.5 34 44L23 33" stroke="url(#searchHandle)" strokeWidth="4.5" strokeLinecap="round" />
+        <circle cx="21" cy="20" r="13" fill="url(#searchRim)" />
+        <circle cx="21" cy="20" r="9.5" fill="url(#searchGlass)" />
+        <ellipse cx="18" cy="16" rx="3.5" ry="2" transform="rotate(-30 18 16)" fill="#FFFFFF" fillOpacity="0.85" />
+      </g>
+    </svg>
+  );
+}
+
+export function Icon3DSEO({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} width="36" height="36">
+      <defs>
+        <linearGradient id="rocketBody" x1="16" y1="8" x2="34" y2="34" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#FFFFFF" />
+          <stop offset="40%" stopColor="#F1F5F9" />
+          <stop offset="80%" stopColor="#CBD5E1" />
+          <stop offset="100%" stopColor="#94A3B8" />
+        </linearGradient>
+        <linearGradient id="rocketCone" x1="28" y1="6" x2="38" y2="16" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#F43F5E" />
+          <stop offset="100%" stopColor="#BE123C" />
+        </linearGradient>
+        <linearGradient id="rocketFlame" x1="14" y1="30" x2="8" y2="42" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#FBBF24" />
+          <stop offset="50%" stopColor="#F97316" />
+          <stop offset="100%" stopColor="#EF4444" />
+        </linearGradient>
+        <filter id="rocketDrop" x="6" y="6" width="36" height="38" filterUnits="userSpaceOnUse">
+          <feDropShadow dx="0" dy="3.5" stdDeviation="2" floodColor="#BE123C" floodOpacity="0.25" />
+        </filter>
+      </defs>
+      <ellipse cx="24" cy="43" rx="13" ry="2.8" fill="#0F172A" fillOpacity="0.12" />
+      <g filter="url(#rocketDrop)">
+        {/* Flame */}
+        <path d="M15 29L9 36C8 38 10 40 12 39L19 33Z" fill="url(#rocketFlame)" />
+        {/* Left Fin */}
+        <path d="M12 24L10 32L18 29Z" fill="#0B2093" />
+        {/* Right Fin */}
+        <path d="M24 18L32 20L29 28Z" fill="#0B2093" />
+        {/* Main Rocket Fuselage */}
+        <path d="M16 30C16 30 20 22 28 14C34 8 38 7 38 7C38 7 37 11 31 17C23 25 15 29 15 29Z" fill="url(#rocketBody)" stroke="#E2E8F0" strokeWidth="0.5" />
+        {/* Nose Cone */}
+        <path d="M33 12C35 10 38 7 38 7C38 7 35 10 33 12Z" fill="url(#rocketCone)" />
+        {/* Porthole */}
+        <circle cx="26" cy="18" r="3" fill="#0284C7" />
+        <circle cx="26" cy="18" r="1.8" fill="#BAE6FD" />
+      </g>
+    </svg>
+  );
+}
+
+export function Icon3DContent({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} width="36" height="36">
+      <defs>
+        <linearGradient id="docGrad" x1="12" y1="8" x2="34" y2="40" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#FFFFFF" />
+          <stop offset="60%" stopColor="#F8FAFC" />
+          <stop offset="100%" stopColor="#E2E8F0" />
+        </linearGradient>
+        <linearGradient id="penGrad" x1="28" y1="12" x2="42" y2="30" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#F59E0B" />
+          <stop offset="50%" stopColor="#D97706" />
+          <stop offset="100%" stopColor="#92400E" />
+        </linearGradient>
+        <filter id="docDrop" x="8" y="6" width="34" height="38" filterUnits="userSpaceOnUse">
+          <feDropShadow dx="0" dy="3.5" stdDeviation="2.5" floodColor="#0F172A" floodOpacity="0.15" />
+        </filter>
+      </defs>
+      <ellipse cx="24" cy="42" rx="13" ry="3" fill="#0F172A" fillOpacity="0.12" />
+      <g filter="url(#docDrop)">
+        {/* Document sheet */}
+        <rect x="11" y="8" width="22" height="30" rx="3.5" fill="url(#docGrad)" stroke="#CBD5E1" strokeWidth="1" />
+        {/* Folded corner */}
+        <polygon points="27,8 33,14 27,14" fill="#94A3B8" />
+        {/* Text lines */}
+        <line x1="16" y1="17" x2="25" y2="17" stroke="#0B2093" strokeWidth="2" strokeLinecap="round" />
+        <line x1="16" y1="23" x2="28" y2="23" stroke="#94A3B8" strokeWidth="1.8" strokeLinecap="round" />
+        <line x1="16" y1="28" x2="26" y2="28" stroke="#94A3B8" strokeWidth="1.8" strokeLinecap="round" />
+        {/* Stylus / Pen with 3D gradient */}
+        <path d="M28 32L38 16C39 14.5 41 14.5 42 16C43 17 43 19 41.5 20.5L31.5 36L27 37L28 32Z" fill="url(#penGrad)" />
+      </g>
+    </svg>
+  );
+}
+
+export function Icon3DVideo({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} width="36" height="36">
+      <defs>
+        <linearGradient id="vidGrad" x1="8" y1="10" x2="40" y2="38" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#EF4444" />
+          <stop offset="50%" stopColor="#DC2626" />
+          <stop offset="100%" stopColor="#991B1B" />
+        </linearGradient>
+        <radialGradient id="playGlass" cx="35%" cy="35%" r="65%">
+          <stop offset="0%" stopColor="#FFFFFF" />
+          <stop offset="100%" stopColor="#E2E8F0" />
+        </radialGradient>
+        <filter id="vidDrop" x="6" y="8" width="36" height="36" filterUnits="userSpaceOnUse">
+          <feDropShadow dx="0" dy="3.5" stdDeviation="2.5" floodColor="#DC2626" floodOpacity="0.3" />
+        </filter>
+      </defs>
+      <ellipse cx="24" cy="42" rx="14" ry="3" fill="#0F172A" fillOpacity="0.12" />
+      <g filter="url(#vidDrop)">
+        <rect x="9" y="11" width="30" height="23" rx="6" fill="url(#vidGrad)" />
+        <path d="M12 15C12 13.5 15 13 24 13C33 13 36 13.5 36 15" stroke="#FFFFFF" strokeWidth="1" strokeOpacity="0.5" />
+        {/* 3D Play Triangle */}
+        <polygon points="21,17 30,22.5 21,28" fill="url(#playGlass)" />
+      </g>
+    </svg>
+  );
+}
+
+export function Icon3DCalendar({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} width="36" height="36">
+      <defs>
+        <linearGradient id="calHead" x1="10" y1="8" x2="38" y2="16" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#0B2093" />
+          <stop offset="100%" stopColor="#0284C7" />
+        </linearGradient>
+        <linearGradient id="calBody" x1="10" y1="16" x2="38" y2="40" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#FFFFFF" />
+          <stop offset="100%" stopColor="#F1F5F9" />
+        </linearGradient>
+        <filter id="calDrop" x="6" y="6" width="36" height="38" filterUnits="userSpaceOnUse">
+          <feDropShadow dx="0" dy="3" stdDeviation="2.5" floodColor="#0B2093" floodOpacity="0.2" />
+        </filter>
+      </defs>
+      <ellipse cx="24" cy="42" rx="14" ry="3" fill="#0F172A" fillOpacity="0.12" />
+      <g filter="url(#calDrop)">
+        <rect x="9" y="15" width="30" height="24" rx="4" fill="url(#calBody)" stroke="#E2E8F0" strokeWidth="1" />
+        <rect x="9" y="10" width="30" height="9" rx="3" fill="url(#calHead)" />
+        {/* Ring binders */}
+        <rect x="15" y="7" width="3" height="6" rx="1.5" fill="#CBD5E1" stroke="#94A3B8" strokeWidth="0.5" />
+        <rect x="30" y="7" width="3" height="6" rx="1.5" fill="#CBD5E1" stroke="#94A3B8" strokeWidth="0.5" />
+        {/* Verification Checkmark */}
+        <path d="M19 28L23 32L30 23" stroke="#10B981" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+      </g>
+    </svg>
+  );
+}
+
+export function Icon3DAligner({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} width="36" height="36">
+      <defs>
+        <linearGradient id="alignerGrad" x1="10" y1="10" x2="38" y2="38" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#E0F2FE" stopOpacity="0.95" />
+          <stop offset="45%" stopColor="#BAE6FD" stopOpacity="0.8" />
+          <stop offset="100%" stopColor="#38BDF8" stopOpacity="0.95" />
+        </linearGradient>
+        <filter id="alignerDrop" x="6" y="8" width="36" height="36" filterUnits="userSpaceOnUse">
+          <feDropShadow dx="0" dy="3" stdDeviation="2" floodColor="#0284C7" floodOpacity="0.25" />
+        </filter>
+      </defs>
+      <ellipse cx="24" cy="42" rx="13" ry="2.8" fill="#0F172A" fillOpacity="0.1" />
+      <g filter="url(#alignerDrop)">
+        {/* Arch Tray */}
+        <path
+          d="M11 32C11 20 16 11 24 11C32 11 37 20 37 32C37 34 35 35 33 34C31 33 31 31 31 29C31 20 28 15 24 15C20 15 17 20 17 29C17 31 17 33 15 34C13 35 11 34 11 32Z"
+          fill="url(#alignerGrad)"
+          stroke="#FFFFFF"
+          strokeWidth="1.2"
+        />
+        {/* Cusp segments */}
+        <circle cx="15" cy="22" r="1.8" fill="#FFFFFF" fillOpacity="0.9" />
+        <circle cx="20" cy="15" r="1.8" fill="#FFFFFF" fillOpacity="0.9" />
+        <circle cx="28" cy="15" r="1.8" fill="#FFFFFF" fillOpacity="0.9" />
+        <circle cx="33" cy="22" r="1.8" fill="#FFFFFF" fillOpacity="0.9" />
+        {/* Sparkle */}
+        <path d="M24 7L24.6 8.5L26 9L24.6 9.5L24 11L23.4 9.5L22 9L23.4 8.5L24 7Z" fill="#38BDF8" />
+      </g>
+    </svg>
+  );
+}
+
+export function Icon3DImplant({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} width="36" height="36">
+      <defs>
+        <linearGradient id="abutmentGrad" x1="16" y1="8" x2="32" y2="20" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#FFFFFF" />
+          <stop offset="40%" stopColor="#F0F9FF" />
+          <stop offset="100%" stopColor="#93C5FD" />
+        </linearGradient>
+        <linearGradient id="screwGrad" x1="18" y1="20" x2="30" y2="42" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#CBD5E1" />
+          <stop offset="45%" stopColor="#64748B" />
+          <stop offset="100%" stopColor="#334155" />
+        </linearGradient>
+        <filter id="implantDrop" x="10" y="6" width="28" height="38" filterUnits="userSpaceOnUse">
+          <feDropShadow dx="0" dy="3" stdDeviation="2" floodColor="#0F172A" floodOpacity="0.2" />
+        </filter>
+      </defs>
+      <ellipse cx="24" cy="43" rx="10" ry="2.5" fill="#0F172A" fillOpacity="0.12" />
+      <g filter="url(#implantDrop)">
+        {/* Crown Ceramic Cap */}
+        <path d="M16 13C16 9 19 7 24 7C29 7 32 9 32 13C32 16 30 18 27 18H21C18 18 16 16 16 13Z" fill="url(#abutmentGrad)" stroke="#BAE6FD" strokeWidth="0.8" />
+        {/* Abutment collar */}
+        <rect x="20.5" y="18" width="7" height="3" rx="1" fill="#94A3B8" />
+        {/* Titanium Screw Threads */}
+        <path d="M20 21L28 21L27 24L21 24Z" fill="url(#screwGrad)" />
+        <path d="M19.5 25L28.5 25L27.5 28L20.5 28Z" fill="url(#screwGrad)" />
+        <path d="M20 29L28 29L27 32L21 32Z" fill="url(#screwGrad)" />
+        <path d="M20.5 33L27.5 33L26.5 36L21.5 36Z" fill="url(#screwGrad)" />
+        {/* Apex tip */}
+        <polygon points="21.5,37 26.5,37 24,42" fill="#334155" />
+      </g>
+    </svg>
+  );
+}
+
+
