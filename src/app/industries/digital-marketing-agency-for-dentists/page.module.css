@@ -18,19 +18,37 @@
 }
 
 /* ══════════════════════════════════════════════════
-   HERO SECTION (Matching Global Hero Standard)
+   HERO SECTION (Single-Window Executive Standard)
 ══════════════════════════════════════════════════ */
 .hero {
   position: relative;
-  min-height: 92vh;
+  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding-top: calc(var(--nav-height, 76px) + 24px);
-  padding-bottom: 48px;
+  justify-content: space-between;
+  padding-top: calc(var(--nav-height, 72px) + 8px);
+  padding-bottom: 0;
   box-sizing: border-box;
   overflow: hidden;
   background: #FFFFFF;
+}
+
+@media (min-width: 961px) {
+  .hero {
+    height: 100vh;
+    height: 100dvh;
+    max-height: 100vh;
+    max-height: 100dvh;
+  }
+}
+
+.heroMainWrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 8px 0;
 }
 
 /* Ambient color glows matching global hero */
@@ -104,17 +122,18 @@
 
 .heroInner {
   display: grid;
-  grid-template-columns: 1.08fr 0.95fr;
-  gap: clamp(28px, 3.2vw, 44px);
+  grid-template-columns: 1.12fr 0.88fr;
+  gap: clamp(24px, 2.8vw, 40px);
   align-items: center;
   position: relative;
   z-index: 2;
+  width: 100%;
 }
 
 @media (max-width: 960px) {
   .heroInner {
     grid-template-columns: 1fr;
-    gap: 36px;
+    gap: 32px;
   }
 }
 
@@ -127,37 +146,37 @@
 .heroEyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px 14px;
+  gap: 7px;
+  padding: 4px 12px;
   border-radius: 9999px;
   background: rgba(11, 32, 147, 0.05);
   border: 1px solid rgba(11, 32, 147, 0.12);
   color: #0B2093;
   font-family: var(--font-display);
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: 800;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   box-shadow: 0 1px 3px rgba(11, 32, 147, 0.04);
 }
 
 .heroEyebrowDot {
-  width: 7px;
-  height: 7px;
+  width: 6.5px;
+  height: 6.5px;
   border-radius: 50%;
   background: #10B981;
-  box-shadow: 0 0 8px #10B981;
+  box-shadow: 0 0 6px #10B981;
 }
 
 .heroHeadline {
   font-family: var(--font-display);
-  font-size: clamp(34px, 4.4vw, 56px);
+  font-size: clamp(28px, 3.3vw, 48px);
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.03em;
   color: #0F172A;
-  margin: 0 0 20px;
+  margin: 0 0 12px;
 }
 
 .heroAccent {
@@ -167,26 +186,26 @@
 }
 
 .heroSub {
-  font-size: clamp(15.5px, 1.7vw, 18px);
-  line-height: 1.6;
+  font-size: clamp(13px, 1.15vw, 15px);
+  line-height: 1.55;
   color: #475569;
-  margin: 0 0 32px;
-  max-width: 620px;
+  margin: 0 0 18px;
+  max-width: 580px;
 }
 
 .heroActions {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
   flex-wrap: wrap;
-  margin-bottom: 34px;
+  margin-bottom: 18px;
 }
 
 .trustStrip {
   display: flex;
   align-items: center;
-  gap: 14px;
-  font-size: 13px;
+  gap: 10px;
+  font-size: 11.5px;
   color: #64748B;
   font-weight: 600;
   flex-wrap: wrap;
@@ -199,8 +218,8 @@
 }
 
 .trustDot {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
   background: #0B2093;
 }
@@ -224,28 +243,28 @@
 .imageCard {
   position: relative;
   width: 100%;
-  border-radius: 24px;
+  border-radius: 20px;
   background: #FFFFFF;
-  border: 1px solid rgba(226, 232, 240, 0.8);
+  border: 1px solid rgba(226, 232, 240, 0.85);
   box-shadow: 
     inset 0 1px 0 #FFFFFF,
-    0 24px 60px -12px rgba(11, 32, 147, 0.16),
-    0 4px 16px rgba(0, 0, 0, 0.04);
-  padding: 10px;
+    0 18px 44px -10px rgba(11, 32, 147, 0.14),
+    0 4px 12px rgba(0, 0, 0, 0.04);
+  padding: 8px;
 }
 
 .imageViewport {
   position: relative;
   width: 100%;
-  height: 440px;
-  border-radius: 18px;
+  height: clamp(260px, 34vh, 360px);
+  border-radius: 14px;
   overflow: hidden;
   background: #0F172A;
 }
 
 @media (max-width: 640px) {
   .imageViewport {
-    height: 320px;
+    height: 280px;
   }
 }
 
@@ -279,16 +298,16 @@
 /* Dots */
 .dotsWrap {
   position: absolute;
-  bottom: 16px;
-  right: 16px;
+  bottom: 12px;
+  right: 14px;
   z-index: 5;
   display: flex;
-  gap: 6px;
+  gap: 5px;
 }
 
 .dot {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.5);
   border: none;
@@ -299,38 +318,64 @@
 }
 
 .dotActive {
-  width: 22px;
+  width: 18px;
   background: #38BDF8;
   box-shadow: 0 0 8px #38BDF8;
 }
 
 /* ══════════════════════════════════════════════════
-   METRICS BAR (Skeuomorphic Counters)
+   METRICS BAR (Docked at Base of Single-Window Hero)
 ══════════════════════════════════════════════════ */
 .metricsBar {
-  background: #F8FAFC;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-top: 1px solid #E2E8F0;
   border-bottom: 1px solid #E2E8F0;
-  padding: 34px 0;
+  padding: 12px 0;
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  box-shadow: 0 -4px 14px rgba(11, 32, 147, 0.03);
 }
 
 .metricsGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: 16px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 960px) {
+  .hero {
+    height: auto;
+    min-height: auto;
+    max-height: none;
+    padding-top: calc(var(--nav-height, 72px) + 20px);
+    padding-bottom: 0;
+  }
+  .imageViewport {
+    height: 300px;
+  }
+  .metricsBar {
+    padding: 18px 0;
+  }
   .metricsGrid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 16px;
+  }
+  .metricItem {
+    border-right: none;
   }
 }
 
 .metricItem {
   text-align: center;
-  padding: 0 16px;
+  padding: 0 12px;
   border-right: 1px solid #E2E8F0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
 }
 
 .metricItem:last-child {
@@ -339,17 +384,18 @@
 
 .metricVal {
   font-family: var(--font-display);
-  font-size: clamp(28px, 3.5vw, 42px);
+  font-size: clamp(20px, 2vw, 26px);
   font-weight: 800;
   color: #0B2093;
-  margin-bottom: 4px;
   letter-spacing: -0.02em;
+  line-height: 1.1;
 }
 
 .metricLabel {
-  font-size: 13.5px;
+  font-size: 11px;
   color: #64748B;
   font-weight: 600;
+  letter-spacing: 0.01em;
 }
 
 /* ══════════════════════════════════════════════════
@@ -1163,48 +1209,115 @@
 
 .comparisonHeaderRow {
   display: grid;
-  grid-template-columns: 1.15fr 1fr 1.25fr;
+  grid-template-columns: 1.15fr 1fr 1.3fr;
   background: #F8FAFC;
   border-bottom: 2px solid #E2E8F0;
-  padding: 18px 24px;
+  padding: 20px 28px;
   align-items: center;
+  gap: 16px;
 }
 
 .comparisonColTitle {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
   font-family: var(--font-display);
-  font-size: 12.5px;
+  font-size: 13.5px;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: #0F172A;
 }
 
-.comparisonGenericHeader {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--font-display);
-  font-size: 12.5px;
+.comparisonColBadge {
+  font-size: 10px;
   font-weight: 800;
-  color: #64748B;
+  color: #0284C7;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-.comparisonCopilotHeader {
+.comparisonGenericHeader {
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: 10px;
+}
+
+.genericHeaderBadge {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #FEE2E2;
+  color: #EF4444;
+  font-size: 11px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.headerTitleWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.genericHeaderMain {
   font-family: var(--font-display);
   font-size: 12.5px;
   font-weight: 800;
-  color: #0B2093;
+  color: #475569;
   text-transform: uppercase;
-  background: #EFF6FF;
-  padding: 5px 14px;
-  border-radius: 9999px;
-  border: 1px solid rgba(11, 32, 147, 0.15);
-  box-shadow: inset 0 1px 0 #FFFFFF;
-  width: fit-content;
+}
+
+.headerSubtext {
+  font-size: 11px;
+  color: #94A3B8;
+  font-weight: 500;
+}
+
+.comparisonCopilotHeader {
+  background: linear-gradient(135deg, #0B2093 0%, #1E40AF 100%);
+  padding: 10px 18px;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(11, 32, 147, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  border: 1px solid #1D4ED8;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.copilotHeaderTop {
+  display: flex;
+  align-items: center;
+}
+
+.copilotPillBadge {
+  font-size: 9.5px;
+  font-weight: 800;
+  color: #6EE7B7;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.copilotHeaderTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.copilotBrandIcon {
+  font-size: 14px;
+}
+
+.copilotBrandText {
+  font-family: var(--font-display);
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: 0.02em;
 }
 
 .comparisonRowsList {
@@ -1214,11 +1327,12 @@
 
 .comparisonRow {
   display: grid;
-  grid-template-columns: 1.15fr 1fr 1.25fr;
-  padding: 16px 24px;
+  grid-template-columns: 1.15fr 1fr 1.3fr;
+  padding: 18px 28px;
   align-items: center;
   border-bottom: 1px solid #E2E8F0;
-  transition: background 0.2s ease;
+  gap: 16px;
+  transition: background 0.25s ease;
 }
 
 .comparisonRow:last-child {
@@ -1229,82 +1343,220 @@
   background: #F8FAFD;
 }
 
+.comparisonRow:hover .featureIconSquircle {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 
+    0 14px 24px -4px rgba(11, 32, 147, 0.18),
+    0 4px 10px rgba(0, 0, 0, 0.06),
+    inset 0 2px 0 #FFFFFF,
+    inset 0 -2px 0 rgba(11, 32, 147, 0.1);
+  border-color: #93C5FD;
+}
+
 .featureCell {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
 }
 
 .featureIconSquircle {
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
-  background: linear-gradient(145deg, #EFF6FF 0%, #FFFFFF 100%);
-  border: 1px solid #DBEAFE;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: linear-gradient(145deg, #FFFFFF 0%, #F8FAFC 50%, #E2E8F0 100%);
+  border: 1.5px solid #CBD5E1;
   box-shadow: 
-    inset 0 1.5px 0 #FFFFFF,
-    0 2px 4px rgba(11, 32, 147, 0.06);
+    0 8px 18px -4px rgba(11, 32, 147, 0.12),
+    inset 0 2px 0 #FFFFFF,
+    inset 0 -2px 0 rgba(15, 23, 42, 0.08);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
   flex-shrink: 0;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.featureTextCol {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
 }
 
 .featureTitleText {
   font-family: var(--font-display);
-  font-size: 13.5px;
+  font-size: 14.5px;
   font-weight: 800;
   color: #0F172A;
+  line-height: 1.3;
+}
+
+.featureSubtext {
+  font-size: 11.5px;
+  color: #64748B;
+  font-weight: 500;
+  line-height: 1.35;
 }
 
 .genericCell {
   display: flex;
   align-items: flex-start;
-  gap: 8px;
-  font-size: 12.5px;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(248, 250, 252, 0.7);
+  border: 1px solid #E2E8F0;
+  min-height: 72px;
+}
+
+.genericCrossBadge {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FEE2E2 0%, #FECACA 100%);
+  border: 1px solid #FCA5A5;
+  color: #DC2626;
+  font-size: 10px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.genericCellText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 12px;
   color: #64748B;
   line-height: 1.45;
 }
 
-.genericCrossIcon {
-  color: #EF4444;
+.genericRowTag {
+  font-size: 10px;
   font-weight: 800;
-  font-size: 13px;
-  margin-top: 1px;
-  flex-shrink: 0;
+  color: #EF4444;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
 
 .copilotCell {
   display: flex;
   align-items: flex-start;
-  gap: 8px;
-  font-size: 12.5px;
-  color: #0B2093;
-  font-weight: 700;
-  line-height: 1.45;
-  background: rgba(239, 246, 255, 0.6);
-  padding: 9px 13px;
-  border-radius: 10px;
-  border: 1px solid rgba(11, 32, 147, 0.1);
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(239, 246, 255, 0.8) 0%, rgba(240, 253, 250, 0.9) 100%);
+  border: 1px solid #BFDBFE;
+  box-shadow: 0 2px 8px rgba(11, 32, 147, 0.04);
+  min-height: 72px;
 }
 
-.copilotCheckIcon {
-  color: #059669;
+.copilotCheckBadge {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+  border: 1px solid #047857;
+  color: #FFFFFF;
+  font-size: 10.5px;
   font-weight: 800;
-  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
-  margin-top: 1px;
+  margin-top: 2px;
+  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.35);
 }
 
-@media (max-width: 820px) {
+.copilotCellText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 12.5px;
+  color: #0F172A;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.copilotRowTag {
+  font-size: 10px;
+  font-weight: 800;
+  color: #059669;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.comparisonFooterStrip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: #F8FAFC;
+  border-top: 1.5px solid #CBD5E1;
+  padding: 16px 28px;
+}
+
+.comparisonFooterLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12.5px;
+  color: #334155;
+  line-height: 1.4;
+}
+
+.comparisonFooterLeft strong {
+  color: #0F172A;
+}
+
+.footerShieldIcon {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.comparisonCtaBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #0B2093 0%, #1E40AF 100%);
+  color: #FFFFFF;
+  font-family: var(--font-display);
+  font-size: 12.5px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(11, 32, 147, 0.25);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.comparisonCtaBtn:hover {
+  transform: translateY(-1.5px);
+  box-shadow: 0 6px 16px rgba(11, 32, 147, 0.35);
+}
+
+@media (max-width: 860px) {
   .comparisonHeaderRow {
     display: none;
   }
   .comparisonRow {
     grid-template-columns: 1fr;
-    gap: 10px;
-    padding: 16px;
+    gap: 12px;
+    padding: 18px 20px;
+  }
+  .comparisonFooterStrip {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px 20px;
+  }
+  .comparisonCtaBtn {
+    width: 100%;
+    justify-content: center;
   }
 }
 

@@ -117,12 +117,12 @@ const headerIndustries: HeaderIndustryItem[] = [
     desc: 'Direct bookings & destination search without OTA commission',
   },
   {
-    href: '/industries#ecommerce',
-    label: 'E-commerce & D2C Brands',
-    shortLabel: 'E-Commerce',
-    icon: '🛍️',
-    desc: 'Omnichannel scale, catalog performance & cart recovery',
-    badge: 'ROAS Focus',
+    href: '/industries#b2b-industrial',
+    label: 'B2B & Industrial Infra',
+    shortLabel: 'B2B & Infra',
+    icon: '🏗️',
+    desc: 'Heavy machinery, PEB structures & high-ticket commercial RFQs',
+    badge: 'High Value',
   },
   {
     href: '/industries#beauty-wellness',
@@ -140,10 +140,10 @@ const headerIndustries: HeaderIndustryItem[] = [
   },
   {
     href: '/industries#retail-local',
-    label: 'Retail & Local Commerce',
-    shortLabel: 'Retail & Local',
-    icon: '🏪',
-    desc: 'Hyperlocal store footfall & Google Maps 3-Pack rank',
+    label: 'Retail Stores & Showrooms',
+    shortLabel: 'Retail & Showrooms',
+    icon: '🏬',
+    desc: 'Walk-in shopper footfall, in-store promotions & multi-outlet reach',
   },
 ];
 
