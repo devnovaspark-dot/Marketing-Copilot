@@ -1288,16 +1288,24 @@
   display: grid;
   grid-template-columns: 1.05fr 1.35fr;
   gap: 32px;
-  align-items: center;
+  align-items: stretch;
   position: relative;
   overflow: hidden;
-  transition: all 0.3s ease;
+  min-height: 420px;
+  transition: border-color 0.3s ease;
 }
 
 .cockpitLeft {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  justify-content: space-between;
+  min-height: 100%;
+}
+
+.cockpitLeftTop {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .cockpitPhaseTagRow {
@@ -1340,6 +1348,7 @@
   color: #0F172A;
   margin: 0;
   line-height: 1.2;
+  min-height: 34px;
 }
 
 .cockpitObjective {
@@ -1347,6 +1356,7 @@
   color: #475569;
   line-height: 1.55;
   margin: 0;
+  min-height: 64px;
 }
 
 .cockpitMetricStrip {
@@ -1367,7 +1377,8 @@
 .cockpitRight {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  justify-content: space-between;
+  min-height: 100%;
 }
 
 .cockpitDeliverablesTitleRow {
@@ -1404,18 +1415,23 @@
 .cockpitDeliverablesMatrix {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
+  flex: 1;
+  justify-content: space-between;
+  margin-top: 6px;
 }
 
 .deliverableRowCard {
   background: #FFFFFF;
   border: 1.5px solid #E2E8F0;
   border-radius: 12px;
-  padding: 10px 12px;
+  padding: 10px 14px;
   display: flex;
-  align-items: flex-start;
-  gap: 10px;
+  align-items: center;
+  gap: 12px;
   box-shadow: 0 1px 4px rgba(15, 23, 42, 0.03);
+  min-height: 72px;
+  box-sizing: border-box;
   transition: all 0.2s ease;
 }
 
@@ -1442,6 +1458,7 @@
   display: flex;
   flex-direction: column;
   gap: 2px;
+  flex: 1;
 }
 
 .deliverableTitle {
@@ -1456,6 +1473,52 @@
   color: #64748B;
   line-height: 1.35;
   margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 31px;
+}
+
+/* ══════════════════════════════════════════════════
+   CARD SHIFTING ANIMATIONS
+══════════════════════════════════════════════════ */
+@keyframes cardShiftIn {
+  0% {
+    opacity: 0;
+    transform: translateX(22px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes textShiftIn {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.staggerShift1 {
+  animation: cardShiftIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.staggerShift2 {
+  animation: cardShiftIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) 0.06s both;
+}
+
+.staggerShift3 {
+  animation: cardShiftIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both;
+}
+
+.textShift {
+  animation: textShiftIn 0.28s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 /* ══════════════════════════════════════════════════
@@ -1560,6 +1623,16 @@
     border: 1px solid #E2E8F0;
     border-radius: 6px;
     padding: 2.5px 6px;
+  }
+  .mobileStepCardActive {
+    border-color: #38BDF8 !important;
+    box-shadow: 0 4px 18px rgba(11, 32, 147, 0.12) !important;
+    transform: translateX(3px);
+    transition: all 0.3s ease;
+  }
+  .mobileStepNodeActive {
+    background: #38BDF8 !important;
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.4), 0 2px 8px rgba(11, 32, 147, 0.4) !important;
   }
 }
 

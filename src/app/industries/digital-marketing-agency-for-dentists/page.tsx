@@ -897,17 +897,19 @@ export default function DentalMarketingPage() {
             {(() => {
               const current = growthProcessSteps[activeStep];
               return (
-                <div key={activeStep} className={styles.roadmapCockpit}>
+                <div className={styles.roadmapCockpit}>
                   <div className={styles.cockpitLeft}>
-                    <div className={styles.cockpitPhaseTagRow}>
-                      <span className={styles.cockpitPhasePill}>PHASE {current.step} // {current.category}</span>
-                      <span className={styles.cockpitTimeframePill}>⏱️ {current.timeframe}</span>
-                    </div>
-                    <h3 className={styles.cockpitTitle}>{current.title}</h3>
-                    <p className={styles.cockpitObjective}>{current.objective}</p>
-                    <div className={styles.cockpitMetricStrip}>
-                      <span>⚡ Target Output:</span>
-                      <span>{current.keyMetric}</span>
+                    <div className={styles.cockpitLeftTop}>
+                      <div key={`tags-${activeStep}`} className={`${styles.cockpitPhaseTagRow} ${styles.textShift}`}>
+                        <span className={styles.cockpitPhasePill}>PHASE {current.step} // {current.category}</span>
+                        <span className={styles.cockpitTimeframePill}>⏱️ {current.timeframe}</span>
+                      </div>
+                      <h3 key={`title-${activeStep}`} className={`${styles.cockpitTitle} ${styles.textShift}`}>{current.title}</h3>
+                      <p key={`obj-${activeStep}`} className={`${styles.cockpitObjective} ${styles.textShift}`}>{current.objective}</p>
+                      <div key={`metric-${activeStep}`} className={`${styles.cockpitMetricStrip} ${styles.textShift}`}>
+                        <span>⚡ Target Output:</span>
+                        <span>{current.keyMetric}</span>
+                      </div>
                     </div>
                     <div>
                       <BeamButton
@@ -924,15 +926,18 @@ export default function DentalMarketingPage() {
                       <span className={styles.cockpitLiveBadge}>● Active Protocol</span>
                     </div>
                     <div className={styles.cockpitDeliverablesMatrix}>
-                      {current.deliverables.map((item, dIdx) => (
-                        <div key={dIdx} className={styles.deliverableRowCard}>
-                          <div className={styles.deliverableIconPod}>{item.icon}</div>
-                          <div className={styles.deliverableTextCol}>
-                            <div className={styles.deliverableTitle}>{item.title}</div>
-                            <p className={styles.deliverableDesc}>{item.desc}</p>
+                      {current.deliverables.map((item, dIdx) => {
+                        const staggerClass = dIdx === 0 ? styles.staggerShift1 : dIdx === 1 ? styles.staggerShift2 : styles.staggerShift3;
+                        return (
+                          <div key={`card-${activeStep}-${dIdx}`} className={`${styles.deliverableRowCard} ${staggerClass}`}>
+                            <div className={styles.deliverableIconPod}>{item.icon}</div>
+                            <div className={styles.deliverableTextCol}>
+                              <div className={styles.deliverableTitle}>{item.title}</div>
+                              <p className={styles.deliverableDesc}>{item.desc}</p>
+                            </div>
                           </div>
-                        </div>
-                      ))}
+                        );
+                      })}
                     </div>
                   </div>
                 </div>
@@ -942,24 +947,30 @@ export default function DentalMarketingPage() {
             {/* Mobile Continuous Subway Flow */}
             <div className={styles.mobileSubwayFlow}>
               <div className={styles.mobileSubwayTrack} aria-hidden="true" />
-              {growthProcessSteps.map((step, idx) => (
-                <div key={idx} className={styles.mobileStepCard}>
-                  <div className={styles.mobileStepNode}>{step.step}</div>
-                  <div className={styles.mobileStepHeader}>
-                    <span className={styles.mobileStepCategory}>{step.category}</span>
-                    <span className={styles.mobileStepTimeBadge}>{step.timeframe}</span>
+              {growthProcessSteps.map((step, idx) => {
+                const isActive = activeStep === idx;
+                return (
+                  <div
+                    key={idx}
+                    className={`${styles.mobileStepCard} ${isActive ? styles.mobileStepCardActive : ''}`}
+                  >
+                    <div className={`${styles.mobileStepNode} ${isActive ? styles.mobileStepNodeActive : ''}`}>{step.step}</div>
+                    <div className={styles.mobileStepHeader}>
+                      <span className={styles.mobileStepCategory}>{step.category}</span>
+                      <span className={styles.mobileStepTimeBadge}>{step.timeframe}</span>
+                    </div>
+                    <h4 className={styles.mobileStepTitle}>{step.title}</h4>
+                    <p className={styles.mobileStepDesc}>{step.shortDesc}</p>
+                    <div className={styles.mobileStepDeliverables}>
+                      {step.deliverables.map((item, dIdx) => (
+                        <span key={dIdx} className={styles.mobileDeliverableChip}>
+                          {item.icon} {item.title}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                  <h4 className={styles.mobileStepTitle}>{step.title}</h4>
-                  <p className={styles.mobileStepDesc}>{step.shortDesc}</p>
-                  <div className={styles.mobileStepDeliverables}>
-                    {step.deliverables.map((item, dIdx) => (
-                      <span key={dIdx} className={styles.mobileDeliverableChip}>
-                        {item.icon} {item.title}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>
