@@ -21,6 +21,15 @@ import {
   Icon3DAligner,
   Icon3DImplant,
 } from './_components/Dental3DIcons';
+import {
+  MetaAdsGraphic,
+  GoogleAdsGraphic,
+  SEOGeoGraphic,
+  VideoMarketingGraphic,
+  GoogleMapsGraphic,
+  ContentMarketingGraphic,
+  CaseTelemetryChart,
+} from './_components/DentalVisualGraphics';
 import styles from './page.module.css';
 
 // ══════════════════════════════════════════════════
@@ -50,21 +59,22 @@ const dentalHeroSlides = [
 // ══════════════════════════════════════════════════
 // SECTION 02 DATA: 6 CORE SERVICES
 // STRICT ORDER: Meta -> Google Ads -> SEO -> Social & YouTube -> Maps/GBP -> Content Marketing
+// Punchy, low-text, accompanied by micro-visuals
 // ══════════════════════════════════════════════════
 const coreServices = [
   {
     iconType: 'meta',
     title: 'Meta Ads Marketing',
     roleBadge: 'AWARENESS & DEMAND',
-    desc: 'Reach people interested in dental treatments and build local clinic awareness across Instagram and Facebook. Engage prospective patients and convert local interest into direct inquiries.',
-    tags: ['📍 Local Catchment Radius', '🎥 Smile Transformation Reels', '💬 Direct Patient Enquiries'],
+    desc: 'Target local patients across Instagram and Facebook with smile transformation reels that generate direct consultation inquiries.',
+    tags: ['📍 Local Catchment', '🎥 Smile Reels', '💬 Direct Inquiries'],
     actionText: 'Explore Meta Funnel',
   },
   {
     iconType: 'search',
     title: 'Google Ads Management',
     roleBadge: 'HIGH-INTENT CAPTURE',
-    desc: 'Target people actively searching for dental clinics and treatments in your city. Reach potential patients in your immediate radius and convert active search intent into consultation appointments.',
+    desc: 'Capture patients actively searching for dental implants and urgent procedures, converting clicks into scheduled chair visits.',
     tags: ['🔍 High-Intent Search', '🛡️ Negative Scrubbed', '📞 Click-to-Call'],
     actionText: 'Explore Search Ads',
   },
@@ -72,100 +82,100 @@ const coreServices = [
     iconType: 'seo',
     title: 'SEO + AEO/GEO',
     roleBadge: 'ORGANIC & AI DISCOVERY',
-    desc: 'Improve search engine visibility and increase discoverability across Google, Gemini, ChatGPT, and AI summary answers. Build long-term compounding organic presence for high-value treatments.',
-    tags: ['📈 Top Google Ranks', '🤖 AI Search Overviews (GEO)', '🌐 Compounding Traffic'],
+    desc: 'Dominate organic search rankings and AI summary answers across Google, Gemini, and ChatGPT for high-yield clinical treatments.',
+    tags: ['📈 Top Google Ranks', '🤖 AI Search Overviews', '🌐 Compounding Traffic'],
     actionText: 'Explore Dental SEO',
   },
   {
     iconType: 'video',
     title: 'Social Media & YouTube Marketing',
     roleBadge: 'TRUST & FAMILIARITY',
-    desc: 'Build brand awareness across social platforms and engage audiences through educational content. Use YouTube videos to explain procedures, showcase sterilized operatory suites, and build familiarity before the first visit.',
-    tags: ['🎬 Operatory Tours', '✨ Smile Reveals', '🤝 Patient Community'],
+    desc: 'Humanize your practice with doctor-led walkthroughs, sterilized operatory tours, and smile reveal stories that eliminate patient fear.',
+    tags: ['🎬 Operatory Tours', '✨ Smile Reveals', '🤝 Patient Trust'],
     actionText: 'Explore Video Strategy',
   },
   {
     iconType: 'mappin',
     title: 'Google Business Profile & Maps',
     roleBadge: 'LOCAL 3-PACK DOMINANCE',
-    desc: 'Improve local search presence and strengthen Google Maps visibility to help nearby patients discover the practice. Make it effortless for local families to contact your clinic and navigate to your door.',
-    tags: ['📍 Maps 3-Pack Rank', '⭐ Automated 5-Star Reviews', '🚗 Turn-by-Turn GPS'],
+    desc: 'Dominate the Google Maps 3-Pack within your 5–10 km catchment to drive immediate patient phone calls, reviews, and GPS footfall.',
+    tags: ['📍 Maps 3-Pack Rank', '⭐ 5-Star Reviews', '🚗 Turn-by-Turn GPS'],
     actionText: 'Explore Maps Dominance',
   },
   {
     iconType: 'content',
     title: 'Content Marketing',
     roleBadge: 'CLINICAL AUTHORITY & PR',
-    desc: 'Publish dental blogs, informative treatment guides, and educational articles that resolve patient anxiety. Strengthen authority in the dental niche while supporting compounding organic search growth.',
-    tags: ['📚 Educational Guides', '🛡️ Overcome Dental Fear', '⭐ Doctor Authority & PR'],
+    desc: 'Publish doctor-verified clinical guides that resolve patient dental anxiety and build compounding local practice authority.',
+    tags: ['📚 Treatment Guides', '🛡️ Alleviate Anxiety', '⭐ Doctor Authority'],
     actionText: 'Explore Content Engine',
   },
 ];
 
 // ══════════════════════════════════════════════════
 // SECTION 03 DATA: HIGH-VALUE DENTAL TREATMENTS
-// (ZERO FIXED REVENUE NUMBERS OR FINANCIAL SIMULATION)
+// Punchy, low-text, zero financial assumptions
 // ══════════════════════════════════════════════════
 const highValueTreatments = [
   {
     iconType: 'aligner',
     title: 'Invisalign & Clear Aligners',
     targetBadge: 'AESTHETIC ORTHO',
-    scope: 'Target: Working Professionals & Teens',
-    desc: 'Attract adults and teens seeking discreet teeth straightening without traditional brackets. High patient compliance and recurring follow-up visits.',
+    scope: 'Ideal: Adults & Teens Seeking Discreet Alignment',
+    desc: 'Attract adults and teens seeking discreet teeth straightening with high treatment compliance.',
     impactFocus: 'Elective Aesthetic Inflow',
-    impactChair: 'High Treatment Compliance',
-    chips: ['3D Digital Smile Scans', 'Smile Simulation Hooks', 'WhatsApp Booking'],
+    impactChair: 'High Compliance',
+    chips: ['3D Smile Previews', 'Instagram Ad Hooks', 'WhatsApp Booking'],
   },
   {
     iconType: 'implant',
     title: 'Dental Implants & Full Mouth',
     targetBadge: 'SURGICAL RESTORATION',
-    scope: 'Target: Missing Teeth & Mature Adults',
-    desc: 'Capture patients seeking permanent single tooth replacement, bridge restorations, or comprehensive All-on-4 full arch rehabilitation.',
-    impactFocus: 'Surgical Operatory Saturation',
-    impactChair: 'Maximum Chair Utilization',
-    chips: ['CBCT Guided Surgery Proof', 'High-Intent Search Ads', 'Flexible 0% EMI Guides'],
+    scope: 'Ideal: Missing Teeth & Full Arch Candidates',
+    desc: 'Capture patients seeking permanent single tooth replacement, bridge restorations, or All-on-4 rehabilitation.',
+    impactFocus: 'Surgical Chair Saturation',
+    impactChair: 'Maximum Chair Yield',
+    chips: ['CBCT Guided Surgery', 'High-Intent Search', '0% EMI Guides'],
   },
   {
     iconType: 'tooth',
     title: 'Crowns & Restorative Dentistry',
     targetBadge: 'STRUCTURAL CARE',
-    scope: 'Target: Fractured & Post-RCT Teeth',
-    desc: 'Reach patients requiring durable ceramic and zirconia crowns, fixed bridges, and inlays. Builds steady multi-member family retention.',
-    impactFocus: 'Predictable Restorative Demand',
-    impactChair: 'Compounding Family Recall',
-    chips: ['Same-Day Digital CAD/CAM', 'Zirconia Longevity Proof', 'Preventive Recall Bot'],
+    scope: 'Ideal: Fractured & Post-RCT Teeth',
+    desc: 'Reach patients requiring durable ceramic and zirconia crowns that build predictable family retention.',
+    impactFocus: 'Predictable Restorative Flow',
+    impactChair: 'Family Retention',
+    chips: ['CAD/CAM Digital Scans', 'Zirconia Longevity', 'Preventive Recall Bot'],
   },
   {
     iconType: 'diamond',
     title: 'Cosmetic Dentistry & Whitening',
     targetBadge: 'AESTHETIC ENHANCEMENT',
-    scope: 'Target: Bridal, Professionals & Smile Makeovers',
-    desc: 'Attract patients seeking in-office whitening, diastema closure, and composite bonding. Fast turnover procedures with high emotional referral power.',
+    scope: 'Ideal: Bridal, Executives & Smile Makeovers',
+    desc: 'Attract bridal and professional patients seeking fast-turnaround whitening and composite bonding.',
     impactFocus: 'Rapid Chair Turnover',
-    impactChair: 'High Word-of-Mouth Referrals',
-    chips: ['Macro Before/After Portfolios', 'Non-Invasive Prep', 'Event & Bridal Packages'],
+    impactChair: 'High Referral Power',
+    chips: ['Macro Before/After', 'Non-Invasive Prep', 'Event Packages'],
   },
   {
     iconType: 'scale',
     title: 'Single-Sitting Rotary RCT',
     targetBadge: 'IMMEDIATE RELIEF',
-    scope: 'Target: Acute Toothache Searchers',
-    desc: 'Capture urgent toothache searchers seeking gentle, single-sitting endodontic therapy. Converts emergency distress into lifelong patient trust.',
+    scope: 'Ideal: Acute Toothache Searchers',
+    desc: 'Capture emergency toothache searchers seeking gentle, single-sitting endodontic pain relief.',
     impactFocus: 'Emergency Local Capture',
-    impactChair: 'Immediate Pain Relief Retention',
-    chips: ['Emergency Click-to-Call Ads', 'Google Maps Open Now', 'Pain-Free Rotary Messaging'],
+    impactChair: 'Urgent Pain Relief',
+    chips: ['Emergency Click-to-Call', 'Maps Open Now', 'Pain-Free Rotary'],
   },
   {
     iconType: 'shield',
     title: 'Smile Makeovers & Veneers',
     targetBadge: 'PREMIUM AESTHETICS',
-    scope: 'Target: Comprehensive Smile Design',
-    desc: 'Position your practice as the premier destination for custom ceramic veneers, aesthetic symmetry, and complete smile transformations.',
+    scope: 'Ideal: Comprehensive Aesthetic Design',
+    desc: 'Position your clinic as the premier destination for custom ceramic veneers and smile symmetry.',
     impactFocus: 'High Clinical Prestige',
-    impactChair: 'Discerning Aesthetic Patients',
-    chips: ['Ultra-HD Clinical Photography', 'Ceramist Craftsmanship', 'Digital Smile Previews'],
+    impactChair: 'Discerning Patients',
+    chips: ['Ultra-HD Photography', 'Ceramist Craft', 'Digital Smile Scans'],
   },
 ];
 
@@ -307,39 +317,40 @@ const growthProcessSteps = [
 
 // ══════════════════════════════════════════════════
 // SECTION 05 DATA: VERIFIED CASE STUDIES (MIDDLE OF PAGE)
+// Includes visual telemetry charts & concise copy
 // ══════════════════════════════════════════════════
 const caseStudies = [
   {
     category: 'Patient Acquisition Growth',
     clinic: 'Apex Dental & Implant Studio',
     location: 'New Delhi',
-    tag: 'VERIFIED PRACTICE TELEMETRY // NEW DELHI',
-    headline: 'How Apex Dental Studio Scaled From 28 to 94 Monthly New Patient Bookings',
+    tag: 'VERIFIED TELEMETRY // NEW DELHI',
+    headline: 'Scaling From 28 to 94 Monthly New Patient Consultations',
     doctor: 'Dr. R. Malhotra, MDS (Prosthodontics & Implantology)',
-    challenge: 'Apex Dental was losing high-ticket implant and aligner patients to large corporate hospital chains. Online inquiries suffered from an exhausting 42% no-show rate.',
-    strategy: 'Deployed negative-scrubbed Google Search Ads for surgical implants, hyperlocal SEO, and our automated WhatsApp 1-tap token confirmation sequence.',
+    challenge: 'Losing high-ticket implant candidates to hospital chains with an exhausting 42% no-show rate.',
+    strategy: 'Deployed negative-scrubbed Search Ads for surgical implants, local SEO, and WhatsApp 1-tap token booking.',
     metrics: [
       { value: '+235%', label: 'Patient Bookings' },
       { value: '₹240', label: 'Cost Per Lead' },
       { value: '91.5%', label: 'Show-Up Rate' },
     ],
-    quote: '"Our operatory chairs for dental implants and clear aligners are fully booked 3 weeks in advance. Marketing Copilot eliminated bargain-hunters and delivered serious patients who value clinical quality."',
+    quote: '"Our operatory chairs for dental implants and clear aligners are fully booked 3 weeks in advance."',
   },
   {
     category: 'Local Search Visibility',
     clinic: 'Dr. SmileCraft Dental Care',
     location: 'Mumbai',
     tag: 'LOCAL CATCHMENT DOMINANCE // MUMBAI',
-    headline: 'Dominating Google Maps 3-Pack Across 42 Micro-Catchment Pin Codes',
+    headline: 'Dominating Google Maps 3-Pack Across 42 Micro-Catchments',
     doctor: 'Dr. A. Joshi, BDS (Aesthetic & Family Dentistry)',
-    challenge: 'The clinic was invisible beyond a 1 km radius. Rival corporate clinics monopolized top Google Maps listings, suppressing routine family checkups and emergency footfall.',
-    strategy: 'Restructured Google Business Profile schema categories, geo-tagged operatory photography, and integrated automated WhatsApp 5-star review acquisition prompts.',
+    challenge: 'Invisible beyond 1 km; corporate chains monopolized Google Maps, suppressing family footfall.',
+    strategy: 'Optimized Google Maps 3-Pack across 42 pin codes with geo-tagged operatory photos and automated 5-star WhatsApp reviews.',
     metrics: [
       { value: 'Top 3', label: 'Rank in 42 Pin Codes' },
       { value: '+180%', label: 'Map Directions & Calls' },
       { value: '4.9★', label: 'Over 320+ Reviews' },
     ],
-    quote: '"Nearby families walking into our clinic now say they found us #1 on Google Maps. We are capturing emergency toothache visits and family checkups every single day without paying ad spend."',
+    quote: '"Nearby families walking in now say they found us #1 on Google Maps without us paying for ads."',
   },
   {
     category: 'High-Value Treatment Campaigns',
@@ -348,14 +359,14 @@ const caseStudies = [
     tag: 'HIGH-TICKET CASE ACQUISITION // BANGALORE',
     headline: 'Generating 68+ Monthly Qualified Clear Aligner Consultations',
     doctor: 'Dr. S. Nambiar, MDS (Orthodontics & Dentofacial)',
-    challenge: 'Previous agency burned monthly budget on ₹500 scaling shoppers; zero qualified patients ready to invest in ₹1.5L+ comprehensive clear aligner treatments.',
-    strategy: 'Constructed targeted Instagram Reels funnels showcasing 3D digital smile previews, combined with pre-qualifying consultation landers and zero-interest EMI breakdowns.',
+    challenge: 'Wasted ad budget on ₹500 scaling shoppers; zero traction for premium ₹1.5L+ clear aligners.',
+    strategy: 'Engineered 3D smile simulation Instagram funnels and dedicated consultation landers with 0% EMI financing guides.',
     metrics: [
       { value: '68+', label: 'Monthly Aligner Consults' },
       { value: '4.8X', label: 'Verified ROAS' },
       { value: '62%', label: 'Chair Conversion Rate' },
     ],
-    quote: '"Marketing Copilot filtered out bargain shoppers and delivered patients eager for comprehensive smile transformations. Our aesthetic operatory operates predictably at full capacity."',
+    quote: '"Marketing Copilot filtered out bargain shoppers and filled our aesthetic operatory at full capacity."',
   },
 ];
 
@@ -421,43 +432,44 @@ const dentalComparison = [
 
 // ══════════════════════════════════════════════════
 // SECTION 07 DATA: WHY CHOOSE MARKETING COPILOT (6 PILLARS)
+// Low-text, high-impact clinical differentiators
 // ══════════════════════════════════════════════════
 const whyChoosePillars = [
   {
     icon: '🦷',
     title: 'Dental Industry Specialization',
-    desc: 'We understand clinical dental procedures, operatory chair costs, DCI advertising ethics, and the psychological difference between emergency pain patients and elective cosmetic smile seekers.',
+    desc: 'Deep clinical understanding of dental procedures, operatory chair costs, DCI advertising ethics, and patient anxiety psychology.',
     highlight: 'Zero Generic Freelancers',
   },
   {
     icon: '🔄',
     title: 'Integrated Marketing Capabilities',
-    desc: 'Meta Ads, Google Search, Maps 3-Pack, SEO, and YouTube work as a synchronized patient acquisition engine, multiplying each channel’s impact without disconnected agency silos.',
+    desc: 'Meta Ads, Google Search, Maps 3-Pack, SEO, and YouTube work as one synchronized patient acquisition engine.',
     highlight: 'Full Omnichannel Harmony',
   },
   {
     icon: '💎',
     title: 'High-Value Treatment Focus',
-    desc: 'We engineer campaigns specifically to attract high-ticket dental implants, clear aligners, ceramic veneers, and full-mouth rehabilitations rather than wasting budget on low-margin cleanings.',
+    desc: 'We focus ad spend on surgical implants, aligners, and restorative cases rather than burning budget on low-margin cleanings.',
     highlight: 'Maximum Chair Yield',
   },
   {
     icon: '📍',
     title: 'Hyperlocal Catchment Dominance',
-    desc: 'Patients rarely travel beyond 5–10 km for routine care. We dominate your immediate pin codes on Google Maps 3-Pack and geo-targeted ads to capture local neighborhood footfall.',
-    highlight: '5–10 KM Pin Code Dominance',
+    desc: 'Hyperlocal dominance on Google Maps 3-Pack across 5–10 km pin codes where nearby families live and commute.',
+    highlight: '5–10 KM Catchment Dominance',
   },
   {
     icon: '📊',
     title: 'Transparent Performance Tracking',
-    desc: 'No vague PDF reports filled with vanity clicks and impressions. Access a live 24/7 dashboard showing actual inquiries, consult show-ups, patient acquisition cost, and verified ROI.',
-    highlight: 'Real Seated Patient Telemetry',
+    desc: 'Live 24/7 practice dashboard tracking qualified inquiries, consult show-ups, patient acquisition cost, and verified ROI.',
+    highlight: 'Real Seated Telemetry',
   },
   {
     icon: '🛡️',
     title: 'Continuous Optimization & No-Show Shield',
-    desc: 'Our proprietary WhatsApp token confirmation and GPS reminder sequence cuts clinic no-shows by up to 78%, keeping your expensive dental chairs predictably booked weeks in advance.',
-    highlight: '91.5%+ Seated Show-Up Rate',
+    desc: 'Automated WhatsApp token confirmations and GPS reminder alerts that slash clinic empty chair no-shows by up to 78%.',
+    highlight: '91.5%+ Show-Up Rate',
   },
 ];
 
@@ -671,7 +683,7 @@ export default function DentalMarketingPage() {
 
       {/* ══════════════════════════════════════════════════ */}
       {/* SECTION 02: WHAT WE PROVIDE FOR YOUR DENTAL CLINIC */}
-      {/* 6 Core Services in Strict Sequence + Journey Flow  */}
+      {/* 6 Core Services with Micro-Graphics + Journey Flow */}
       {/* ══════════════════════════════════════════════════ */}
       <section id="services" className={styles.sectionBlock}>
         <div className={styles.container}>
@@ -703,6 +715,14 @@ export default function DentalMarketingPage() {
 
                   <h3 className={styles.serviceCardTitle}>{service.title}</h3>
                   <p className={styles.serviceCardDesc}>{service.desc}</p>
+
+                  {/* High-Fidelity Micro-Graphic Preview */}
+                  {service.iconType === 'meta' && <MetaAdsGraphic />}
+                  {service.iconType === 'search' && <GoogleAdsGraphic />}
+                  {service.iconType === 'seo' && <SEOGeoGraphic />}
+                  {service.iconType === 'video' && <VideoMarketingGraphic />}
+                  {service.iconType === 'mappin' && <GoogleMapsGraphic />}
+                  {service.iconType === 'content' && <ContentMarketingGraphic />}
 
                   <div className={styles.serviceTagsWrap}>
                     {service.tags.map((tag, tIdx) => (
@@ -738,6 +758,7 @@ export default function DentalMarketingPage() {
 
             <div className={styles.funnelFlowHighway}>
               <div className={styles.flowNode}>
+                <div className={styles.flowNodeStepNum}>STEP 01</div>
                 <div className={styles.flowNodeIcon}><Icon3DMeta /></div>
                 <div className={styles.flowNodeTitle}>Meta Ads</div>
                 <div className={styles.flowNodeRole}>Awareness &amp; Interest</div>
@@ -745,6 +766,7 @@ export default function DentalMarketingPage() {
               <div className={styles.flowArrow}>→</div>
 
               <div className={styles.flowNode}>
+                <div className={styles.flowNodeStepNum}>STEP 02</div>
                 <div className={styles.flowNodeIcon}><Icon3DSearch /></div>
                 <div className={styles.flowNodeTitle}>Google Ads</div>
                 <div className={styles.flowNodeRole}>High-Intent Capture</div>
@@ -752,6 +774,7 @@ export default function DentalMarketingPage() {
               <div className={styles.flowArrow}>→</div>
 
               <div className={styles.flowNode}>
+                <div className={styles.flowNodeStepNum}>STEP 03</div>
                 <div className={styles.flowNodeIcon}><Icon3DMapPin /></div>
                 <div className={styles.flowNodeTitle}>Maps 3-Pack</div>
                 <div className={styles.flowNodeRole}>Local Discovery</div>
@@ -759,6 +782,7 @@ export default function DentalMarketingPage() {
               <div className={styles.flowArrow}>→</div>
 
               <div className={styles.flowNode}>
+                <div className={styles.flowNodeStepNum}>STEP 04</div>
                 <div className={styles.flowNodeIcon}><Icon3DSEO /></div>
                 <div className={styles.flowNodeTitle}>SEO + AEO/GEO</div>
                 <div className={styles.flowNodeRole}>Organic Visibility</div>
@@ -766,6 +790,7 @@ export default function DentalMarketingPage() {
               <div className={styles.flowArrow}>→</div>
 
               <div className={styles.flowNode}>
+                <div className={styles.flowNodeStepNum}>STEP 05</div>
                 <div className={styles.flowNodeIcon}><Icon3DVideo /></div>
                 <div className={styles.flowNodeTitle}>Video &amp; Content</div>
                 <div className={styles.flowNodeRole}>Trust &amp; Authority</div>
@@ -773,6 +798,7 @@ export default function DentalMarketingPage() {
               <div className={styles.flowArrow}>→</div>
 
               <div className={`${styles.flowNode} ${styles.flowNodeGoal}`}>
+                <div className={styles.flowNodeGoalStepNum}>OUTCOME</div>
                 <div className={styles.flowNodeGoalIcon}>🦷</div>
                 <div className={styles.flowNodeGoalTitle}>Patient Enquiries</div>
                 <div className={styles.flowNodeGoalRole}>Seated Consultations</div>
@@ -784,7 +810,7 @@ export default function DentalMarketingPage() {
 
       {/* ══════════════════════════════════════════════════ */}
       {/* SECTION 03: HIGH-VALUE DENTAL TREATMENTS           */}
-      {/* Clean Showcase • Zero Financial Assumptions        */}
+      {/* Clean Showcase • Low-Text • Punchy Outcomes        */}
       {/* ══════════════════════════════════════════════════ */}
       <section id="treatments" className={styles.sectionBlockAlt}>
         <div className={styles.container}>
@@ -823,7 +849,7 @@ export default function DentalMarketingPage() {
                     <h3 className={styles.treatmentTitle}>{proc.title}</h3>
                     <div className={styles.treatmentCandidate}>
                       <span className={styles.candidateDot} />
-                      <span>{proc.scope.replace('Target: ', 'Ideal: ')}</span>
+                      <span>{proc.scope}</span>
                     </div>
                   </div>
 
@@ -995,7 +1021,7 @@ export default function DentalMarketingPage() {
 
       {/* ══════════════════════════════════════════════════ */}
       {/* SECTION 05: CASE STUDIES & REAL RESULTS            */}
-      {/* Moved to Middle • 3 Verified Case Studies          */}
+      {/* Interactive Tabs + Live SVG Telemetry Charts       */}
       {/* ══════════════════════════════════════════════════ */}
       <section id="case-studies" className={styles.sectionBlockAlt}>
         <div className={styles.container}>
@@ -1027,7 +1053,7 @@ export default function DentalMarketingPage() {
               ))}
             </div>
 
-            {/* Active Case Study Spotlight Card */}
+            {/* Active Case Study Spotlight Card with Telemetry Graph */}
             <ScrollReveal>
               <div className={styles.caseStudyCard}>
                 <div>
@@ -1063,6 +1089,9 @@ export default function DentalMarketingPage() {
                 </div>
 
                 <div className={styles.caseMetricsCluster}>
+                  {/* Visual SVG Telemetry Chart */}
+                  <CaseTelemetryChart caseIndex={activeCase} />
+
                   <div className={styles.caseMetricsRow}>
                     {activeCs.metrics.map((m, mIdx) => (
                       <div key={mIdx}>

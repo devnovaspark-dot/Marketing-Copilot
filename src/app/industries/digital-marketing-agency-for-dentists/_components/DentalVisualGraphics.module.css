@@ -1,0 +1,506 @@
+/* ══════════════════════════════════════════════════
+   DENTAL VISUAL GRAPHICS MODULE
+   Lightweight, High-Fidelity UI Micro-Graphics
+══════════════════════════════════════════════════ */
+
+/* Container for micro-graphics inside service cards */
+.graphicWrapper {
+  margin: 14px 0 16px;
+  background: #F8FAFD;
+  border: 1px solid #E2E8F0;
+  border-radius: 14px;
+  padding: 12px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.04);
+  transition: all 0.25s ease;
+}
+
+.graphicWrapper:hover {
+  background: #FFFFFF;
+  border-color: #0B2093;
+  box-shadow: 
+    inset 0 1px 0 #FFFFFF,
+    0 8px 20px -4px rgba(11, 32, 147, 0.08);
+}
+
+/* 1. Meta Ads Graphic */
+.metaGraphic {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.metaHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.metaUserRow {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.metaAvatar {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0B2093 0%, #0284C7 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-size: 11px;
+}
+
+.metaUserMeta {
+  display: flex;
+  flex-direction: column;
+}
+
+.metaUsername {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  color: #0F172A;
+  line-height: 1.1;
+}
+
+.metaSponsored {
+  font-size: 9px;
+  color: #64748B;
+}
+
+.metaLiveBadge {
+  font-size: 8.5px;
+  font-weight: 800;
+  color: #059669;
+  background: #ECFDF5;
+  border: 1px solid #A7F3D0;
+  padding: 1.5px 6px;
+  border-radius: 999px;
+}
+
+.metaVisualBox {
+  position: relative;
+  height: 72px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0284C7 0%, #0B2093 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  color: #FFFFFF;
+}
+
+.metaVisualTag {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.metaCtaPill {
+  font-family: var(--font-display);
+  font-size: 9.5px;
+  font-weight: 800;
+  background: #FFFFFF;
+  color: #0B2093;
+  padding: 4px 10px;
+  border-radius: 999px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.metaStatsRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 10px;
+  color: #64748B;
+  padding: 0 2px;
+}
+
+.metaReachStat {
+  font-weight: 700;
+  color: #0284C7;
+}
+
+/* 2. Google Ads Graphic */
+.googleAdsGraphic {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.googleAdTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 9.5px;
+}
+
+.googleAdBadge {
+  font-weight: 800;
+  color: #0F172A;
+  background: #F1F5F9;
+  border: 1px solid #CBD5E1;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+.googleAdUrl {
+  color: #475569;
+  font-size: 9.5px;
+}
+
+.googleAdHeadline {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 800;
+  color: #1D4ED8;
+  line-height: 1.25;
+}
+
+.googleAdStars {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10px;
+  color: #D97706;
+  font-weight: 700;
+}
+
+.googleAdActions {
+  display: flex;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.googleAdActionBtn {
+  font-family: var(--font-display);
+  font-size: 9px;
+  font-weight: 700;
+  color: #0F172A;
+  background: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+/* 3. SEO + AEO/GEO Graphic */
+.seoGraphic {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.seoAiHeader {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%);
+  border: 1px solid #C7D2FE;
+  border-radius: 8px;
+  padding: 4px 8px;
+  font-family: var(--font-display);
+  font-size: 9px;
+  font-weight: 800;
+  color: #4338CA;
+}
+
+.seoAiDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4F46E5;
+}
+
+.seoRankCard {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.seoRankBadge {
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 900;
+  color: #059669;
+  background: #ECFDF5;
+  border: 1px solid #A7F3D0;
+  padding: 2px 7px;
+  border-radius: 999px;
+}
+
+.seoQueryText {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #0F172A;
+}
+
+.seoGeoSparkline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 9px;
+  color: #64748B;
+  padding: 0 2px;
+}
+
+/* 4. Social Media & YouTube Graphic */
+.videoGraphic {
+  position: relative;
+  height: 84px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 8px 10px;
+  color: #FFFFFF;
+}
+
+.videoTopRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.videoPill {
+  font-family: var(--font-display);
+  font-size: 8.5px;
+  font-weight: 800;
+  background: rgba(239, 68, 68, 0.9);
+  color: #FFFFFF;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.videoViews {
+  font-size: 9px;
+  color: #CBD5E1;
+  font-weight: 600;
+}
+
+.videoCenterPlay {
+  align-self: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0F172A;
+  font-size: 11px;
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.4);
+}
+
+.videoTitle {
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 700;
+  color: #F8FAFC;
+  line-height: 1.2;
+}
+
+/* 5. Google Maps Graphic */
+.mapsGraphic {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mapsHeaderRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mapsRankBadge {
+  font-family: var(--font-display);
+  font-size: 9px;
+  font-weight: 800;
+  color: #DC2626;
+  background: #FEF2F2;
+  border: 1px solid #FECACA;
+  padding: 2px 7px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.mapsRankDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #DC2626;
+}
+
+.mapsReviewScore {
+  font-size: 9.5px;
+  font-weight: 700;
+  color: #D97706;
+}
+
+.mapsCardBox {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mapsClinicName {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  color: #0F172A;
+}
+
+.mapsDistance {
+  font-size: 9.5px;
+  color: #64748B;
+}
+
+.mapsActionRow {
+  display: flex;
+  gap: 6px;
+}
+
+.mapsActionBtn {
+  font-family: var(--font-display);
+  font-size: 9px;
+  font-weight: 700;
+  color: #0284C7;
+  background: #F0F9FF;
+  border: 1px solid #BAE6FD;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+/* 6. Content Marketing Graphic */
+.contentGraphic {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contentTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contentDciBadge {
+  font-family: var(--font-display);
+  font-size: 8.5px;
+  font-weight: 800;
+  color: #047857;
+  background: #ECFDF5;
+  border: 1px solid #A7F3D0;
+  padding: 1.5px 6px;
+  border-radius: 999px;
+}
+
+.contentReadTime {
+  font-size: 9px;
+  color: #64748B;
+}
+
+.contentArticleBox {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  padding: 6px 10px;
+}
+
+.contentArticleTitle {
+  font-family: var(--font-display);
+  font-size: 10.5px;
+  font-weight: 800;
+  color: #0F172A;
+  margin-bottom: 2px;
+}
+
+.contentAuthorRow {
+  font-size: 9px;
+  color: #64748B;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ══════════════════════════════════════════════════
+   CASE STUDY TELEMETRY CHARTS
+══════════════════════════════════════════════════ */
+.telemetryChartWrap {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.telemetryChartHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.telemetryChartTitle {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #38BDF8;
+}
+
+.telemetryLiveIndicator {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 9px;
+  font-weight: 700;
+  color: #10B981;
+}
+
+.telemetryLiveDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 6px #10B981;
+}
+
+.svgChartSvg {
+  width: 100%;
+  height: 70px;
+  overflow: visible;
+}
+
+.chartAxisLabels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  color: #94A3B8;
+  padding: 0 4px;
+}
