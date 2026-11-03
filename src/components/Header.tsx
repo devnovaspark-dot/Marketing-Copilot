@@ -592,56 +592,59 @@ export default function Header() {
                     </div>
                   </div>
 
-                  {/* Right Area: Spotlight Card */}
+                  {/* Right Area: Interactive Growth Spotlight Card */}
                   <div className={styles.megaMenuSpotlight}>
-                    <div className={styles.spotlightBadge}>
-                      <span className={styles.spotlightDot} />
-                      <span>CLINICAL &amp; B2B GROWTH</span>
+                    <div className={styles.spotlightCard}>
+                      <div className={styles.spotlightTopRow}>
+                        <span className={styles.spotlightPulseDot} />
+                        <span className={styles.spotlightHqText}>CLINICAL &amp; B2B SECTORS</span>
+                        <span className={styles.spotlightRating}>★ 4.9/5</span>
+                      </div>
+
+                      <div className={styles.spotlightGraphicBox}>
+                        <Image
+                          src="/images/ns_services_graphic.png"
+                          alt="Specialized digital marketing growth by industry in India"
+                          width={400}
+                          height={230}
+                          className={styles.spotlightGraphicImg}
+                          loading="lazy"
+                        />
+                      </div>
+
+                      <div className={styles.spotlightHeadline}>
+                        Practice &amp; Industry Playbooks
+                      </div>
+                      <p className={styles.spotlightSubtext}>
+                        Tailored patient and buyer acquisition funnels engineered for your specific unit economics.
+                      </p>
+
+                      <Link
+                        href="/industries/digital-marketing-agency-for-dentists"
+                        className={styles.spotlightAuditBtn}
+                        onClick={() => {
+                          if (industriesTimerRef.current) clearTimeout(industriesTimerRef.current);
+                          setIndustriesOpen(false);
+                        }}
+                        tabIndex={industriesOpen ? 0 : -1}
+                      >
+                        <span>Explore Dental Growth Playbook</span>
+                        <span>→</span>
+                      </Link>
+
+                      <div className={styles.spotlightDivider} />
+
+                      <a
+                        href="https://wa.me/918280788689?text=Hi%20Marketing%20Copilot%2C%20I%20want%20to%20discuss%20an%20industry-specific%20growth%20strategy"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.spotlightWhatsAppBtn}
+                        tabIndex={industriesOpen ? 0 : -1}
+                      >
+                        <span className={styles.waOnlineDot} />
+                        <span>WhatsApp a Strategist</span>
+                      </a>
                     </div>
-
-                    <div className={styles.spotlightVisualWrap}>
-                      <Image
-                        src="/images/industries image 1st slide.png"
-                        alt="Specialized digital marketing growth by industry in India"
-                        fill
-                        sizes="240px"
-                        className={styles.spotlightImg}
-                        loading="lazy"
-                      />
-                    </div>
-
-                    <div className={styles.spotlightHeadline}>
-                      Need an Industry-Specific Strategy?
-                    </div>
-                    <p className={styles.spotlightSubtext}>
-                      Every industry has unique unit economics, patient/buyer intent, and conversion bottlenecks.
-                    </p>
-
-                    <Link
-                      href="/industries"
-                      className={styles.spotlightAuditBtn}
-                      onClick={() => {
-                        if (industriesTimerRef.current) clearTimeout(industriesTimerRef.current);
-                        setIndustriesOpen(false);
-                      }}
-                      tabIndex={industriesOpen ? 0 : -1}
-                    >
-                      <span>Explore All Industries</span>
-                      <span>→</span>
-                    </Link>
-
-                    <div className={styles.spotlightDivider} />
-
-                    <a
-                      href="https://wa.me/918280788689?text=Hi%20Marketing%20Copilot%2C%20I%20want%20to%20discuss%20an%20industry-specific%20growth%20strategy"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={styles.spotlightWhatsAppBtn}
-                      tabIndex={industriesOpen ? 0 : -1}
-                    >
-                      <span className={styles.waOnlineDot} />
-                      <span>WhatsApp a Strategist</span>
-                    </a>
                   </div>
                 </div>
 
