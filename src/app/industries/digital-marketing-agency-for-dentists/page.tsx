@@ -804,6 +804,8 @@ export default function DentalMarketingPage() {
             {highValueTreatments.map((proc, idx) => (
               <ScrollReveal key={idx} delay={idx * 60}>
                 <div className={styles.treatmentCard}>
+                  <div className={styles.treatmentCardTopAccent} aria-hidden="true" />
+
                   <div className={styles.treatmentTopBar}>
                     <div className={styles.treatmentIconPod}>
                       {proc.iconType === 'aligner' && <Icon3DAligner />}
@@ -813,29 +815,46 @@ export default function DentalMarketingPage() {
                       {proc.iconType === 'scale' && <Icon3DScale />}
                       {proc.iconType === 'shield' && <Icon3DShield />}
                     </div>
-                    <span className={styles.treatmentTargetBadge}>{proc.targetBadge}</span>
+                    <div className={styles.treatmentMetaBadgeWrap}>
+                      <span className={styles.treatmentTargetBadge}>{proc.targetBadge}</span>
+                      <span className={styles.treatmentSeqNum}>SUITE 0{idx + 1}</span>
+                    </div>
                   </div>
 
-                  <h3 className={styles.treatmentTitle}>{proc.title}</h3>
-                  <span className={styles.treatmentScopeTag}>{proc.scope}</span>
+                  <div className={styles.treatmentHeadGroup}>
+                    <h3 className={styles.treatmentTitle}>{proc.title}</h3>
+                    <div className={styles.treatmentCandidate}>
+                      <span className={styles.candidateDot} />
+                      <span>{proc.scope.replace('Target: ', 'Ideal: ')}</span>
+                    </div>
+                  </div>
+
                   <p className={styles.treatmentDesc}>{proc.desc}</p>
 
-                  <div className={styles.treatmentImpactStrip}>
-                    <span className={styles.treatmentImpactIcon}>★</span>
-                    <span><strong>{proc.impactFocus}</strong> • {proc.impactChair}</span>
+                  <div className={styles.treatmentImpactBox}>
+                    <div className={styles.impactBoxHeader}>
+                      <span className={styles.impactSpark}>⚡</span>
+                      <span className={styles.impactBoxLabel}>Practice Outcome</span>
+                    </div>
+                    <div className={styles.impactBoxValue}>
+                      <span className={styles.impactFocusText}>{proc.impactFocus}</span>
+                      <span className={styles.impactDot}>•</span>
+                      <span className={styles.impactChairText}>{proc.impactChair}</span>
+                    </div>
                   </div>
 
                   <div className={styles.treatmentChipsWrap}>
                     {proc.chips.map((chip, cIdx) => (
                       <span key={cIdx} className={styles.treatmentChip}>
-                        {chip}
+                        <span className={styles.chipCheck}>✓</span>
+                        <span>{chip}</span>
                       </span>
                     ))}
                   </div>
 
                   <Link href="/contact" className={styles.treatmentActionBtn}>
-                    <span>Scale Procedure</span>
-                    <span>→</span>
+                    <span className={styles.actionBtnLabel}>Scale {proc.title.split(' ')[0]} Cases</span>
+                    <span className={styles.actionBtnArrow}>→</span>
                   </Link>
                 </div>
               </ScrollReveal>

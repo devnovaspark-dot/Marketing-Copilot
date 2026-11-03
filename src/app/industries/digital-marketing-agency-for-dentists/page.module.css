@@ -931,13 +931,13 @@
     gap: 10px;
   }
   .treatmentCard {
-    padding: 12px 10px !important;
+    padding: 13px 10px !important;
     border-radius: 14px !important;
   }
   .treatmentIconPod {
-    width: 34px !important;
-    height: 34px !important;
-    border-radius: 8px !important;
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 9px !important;
   }
   .treatmentIconPod svg {
     width: 20px !important;
@@ -947,46 +947,68 @@
     font-size: 7px !important;
     padding: 2px 4px !important;
   }
+  .treatmentSeqNum {
+    font-size: 7.5px !important;
+  }
   .treatmentTitle {
     font-size: 12.5px !important;
-    margin: 0 0 3px !important;
+    margin: 0 0 2px !important;
     line-height: 1.2 !important;
   }
-  .treatmentScopeTag {
+  .treatmentCandidate {
     font-size: 8.5px !important;
-    padding: 2px 4px !important;
-    margin-bottom: 6px !important;
+    margin-bottom: 4px !important;
   }
-  .treatmentImpactStrip {
+  .treatmentDesc {
+    font-size: 10px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 6px !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .treatmentImpactBox {
     padding: 4px 6px !important;
     margin-bottom: 6px !important;
-    font-size: 8.5px !important;
     border-radius: 6px !important;
+  }
+  .impactBoxHeader {
+    font-size: 7.5px !important;
+  }
+  .impactBoxValue {
+    font-size: 8.5px !important;
   }
   .treatmentChipsWrap {
     gap: 3px !important;
     margin-bottom: 8px !important;
   }
   .treatmentChip {
-    font-size: 8px !important;
-    padding: 1.5px 4px !important;
+    font-size: 7.5px !important;
+    padding: 2px 4px !important;
+  }
+  .chipCheck {
+    font-size: 7px !important;
   }
   .treatmentActionBtn {
     padding: 5px 8px !important;
-    font-size: 10px !important;
+    font-size: 9.5px !important;
+  }
+  .actionBtnLabel {
+    font-size: 9.5px !important;
   }
 }
 
 .treatmentCard {
-  background: #FFFFFF;
-  border: 1.5px solid rgba(226, 232, 240, 0.95);
+  background: linear-gradient(180deg, #FFFFFF 0%, #FBFDFF 100%);
+  border: 1.5px solid #E2E8F0;
   border-radius: 20px;
-  padding: 22px 18px;
+  padding: 24px 20px;
   display: flex;
   flex-direction: column;
   box-shadow: 
     inset 0 1.5px 0 0 #FFFFFF,
-    0 4px 16px -2px rgba(11, 32, 147, 0.05);
+    0 4px 18px -2px rgba(11, 32, 147, 0.05);
   transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
@@ -994,87 +1016,174 @@
   box-sizing: border-box;
 }
 
+.treatmentCardTopAccent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #38BDF8 0%, #0B2093 50%, #10B981 100%);
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
 .treatmentCard:hover {
-  border-color: #0B2093;
+  border-color: #93C5FD;
   transform: translateY(-5px);
   box-shadow: 
     inset 0 1.5px 0 0 #FFFFFF,
-    0 20px 42px -8px rgba(11, 32, 147, 0.16);
+    0 20px 40px -10px rgba(11, 32, 147, 0.14);
+}
+
+.treatmentCard:hover .treatmentCardTopAccent {
+  opacity: 1;
+  height: 3.5px;
 }
 
 .treatmentTopBar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 12px;
-  gap: 6px;
+  margin-bottom: 14px;
+  gap: 8px;
 }
 
 .treatmentIconPod {
-  width: 46px;
-  height: 46px;
-  border-radius: 12px;
+  width: 48px;
+  height: 48px;
+  border-radius: 13px;
   background: linear-gradient(135deg, #FFFFFF 0%, #F0F9FF 100%);
   border: 1.5px solid #BAE6FD;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: inset 0 1px 0 #FFFFFF, 0 3px 10px rgba(2, 132, 199, 0.1);
+  box-shadow: 
+    inset 0 1.5px 0 #FFFFFF,
+    0 4px 12px rgba(56, 189, 248, 0.15);
   flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.treatmentCard:hover .treatmentIconPod {
+  transform: scale(1.05);
+  border-color: #38BDF8;
+}
+
+.treatmentMetaBadgeWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
 }
 
 .treatmentTargetBadge {
   font-family: var(--font-display);
-  font-size: 9px;
+  font-size: 8.5px;
   font-weight: 800;
   color: #0369A1;
   background: #F0F9FF;
   border: 1px solid #BAE6FD;
   padding: 3px 8px;
-  border-radius: 6px;
-  letter-spacing: 0.04em;
+  border-radius: 999px;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
+}
+
+.treatmentSeqNum {
+  font-family: var(--font-display);
+  font-size: 9px;
+  font-weight: 800;
+  color: #94A3B8;
+  letter-spacing: 0.06em;
+}
+
+.treatmentHeadGroup {
+  margin-bottom: 8px;
 }
 
 .treatmentTitle {
   font-family: var(--font-display);
-  font-size: 17.5px;
+  font-size: 18px;
   font-weight: 800;
   color: #0F172A;
-  margin: 0 0 6px;
+  margin: 0 0 4px;
   line-height: 1.25;
 }
 
-.treatmentScopeTag {
-  font-size: 11px;
-  font-weight: 600;
-  color: #0369A1;
-  background: #F0F9FF;
-  border: 1px solid #BAE6FD;
-  padding: 3px 8px;
-  border-radius: 6px;
-  display: inline-block;
-  margin-bottom: 10px;
-}
-
-.treatmentImpactStrip {
-  background: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%);
-  border: 1px solid #DBEAFE;
-  border-radius: 8px;
-  padding: 8px 10px;
-  margin-bottom: 12px;
-  font-size: 11.5px;
-  color: #1E293B;
-  font-weight: 600;
-  display: flex;
+.treatmentCandidate {
+  display: inline-flex;
   align-items: center;
   gap: 6px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #0284C7;
 }
 
-.treatmentImpactIcon {
-  color: #059669;
+.candidateDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #38BDF8;
+}
+
+.treatmentDesc {
+  font-size: 12.5px;
+  color: #475569;
+  line-height: 1.5;
+  margin: 0 0 12px;
+}
+
+.treatmentImpactBox {
+  background: linear-gradient(135deg, #F8FAFD 0%, #EFF6FF 100%);
+  border: 1px solid #DBEAFE;
+  border-radius: 10px;
+  padding: 8px 11px;
+  margin-bottom: 12px;
+  box-shadow: inset 0 1px 0 #FFFFFF;
+}
+
+.impactBoxHeader {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 2px;
+}
+
+.impactSpark {
+  font-size: 10px;
+  color: #F59E0B;
+}
+
+.impactBoxLabel {
+  font-family: var(--font-display);
+  font-size: 8.5px;
   font-weight: 800;
-  flex-shrink: 0;
+  color: #0369A1;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.impactBoxValue {
+  font-size: 11.5px;
+  color: #0B2093;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.impactFocusText {
+  font-weight: 700;
+}
+
+.impactDot {
+  color: #94A3B8;
+  font-size: 10px;
+}
+
+.impactChairText {
+  color: #475569;
+  font-weight: 500;
 }
 
 .treatmentChipsWrap {
@@ -1086,34 +1195,69 @@
 }
 
 .treatmentChip {
-  font-size: 10.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
   font-weight: 600;
-  color: #475569;
-  background: #F1F5F9;
+  color: #334155;
+  background: #FFFFFF;
   border: 1px solid #E2E8F0;
-  padding: 2.5px 7px;
+  padding: 3px 8px;
   border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.treatmentCard:hover .treatmentChip {
+  border-color: #CBD5E1;
+}
+
+.chipCheck {
+  color: #059669;
+  font-weight: 800;
+  font-size: 9.5px;
 }
 
 .treatmentActionBtn {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 7px 12px;
-  border-radius: 8px;
-  background: #F8FAFC;
-  border: 1px solid #E2E8F0;
+  padding: 8px 14px;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #F8FAFD 0%, #F1F5F9 100%);
+  border: 1.5px solid #CBD5E1;
+  text-decoration: none;
+  transition: all 0.22s ease;
+}
+
+.actionBtnLabel {
+  font-family: var(--font-display);
   font-size: 11.5px;
   font-weight: 700;
   color: #0B2093;
-  text-decoration: none;
-  transition: all 0.2s ease;
+  transition: color 0.22s ease;
+}
+
+.actionBtnArrow {
+  font-size: 13px;
+  font-weight: 800;
+  color: #0B2093;
+  transition: transform 0.22s ease, color 0.22s ease;
 }
 
 .treatmentCard:hover .treatmentActionBtn {
-  background: #0B2093;
-  color: #FFFFFF;
+  background: linear-gradient(135deg, #0B2093 0%, #1E40AF 100%);
   border-color: #0B2093;
+  box-shadow: 0 4px 14px rgba(11, 32, 147, 0.25);
+}
+
+.treatmentCard:hover .actionBtnLabel,
+.treatmentCard:hover .actionBtnArrow {
+  color: #FFFFFF;
+}
+
+.treatmentCard:hover .actionBtnArrow {
+  transform: translateX(4px);
 }
 
 /* ══════════════════════════════════════════════════
