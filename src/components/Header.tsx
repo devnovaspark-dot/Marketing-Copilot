@@ -73,11 +73,9 @@ const headerIndustries: HeaderIndustryItem[] = [
   {
     href: '/industries/digital-marketing-agency-for-dentists',
     label: 'Dentists & Dental Practices',
-    shortLabel: 'Dentists 🦷',
+    shortLabel: 'Dentists',
     icon: '🦷',
-    desc: 'Digital marketing agency for dentists — high-intent patient acquisition & Maps 3-Pack',
-    badge: 'NEW / FEATURED',
-    featured: true,
+    desc: 'Patient acquisition, dental implants & Maps 3-Pack dominance',
   },
   {
     href: '/industries#healthcare',
@@ -597,7 +595,7 @@ export default function Header() {
                     <div className={styles.spotlightCard}>
                       <div className={styles.spotlightTopRow}>
                         <span className={styles.spotlightPulseDot} />
-                        <span className={styles.spotlightHqText}>CLINICAL &amp; B2B SECTORS</span>
+                        <span className={styles.spotlightHqText}>SPECIALIZED SECTORS</span>
                         <span className={styles.spotlightRating}>★ 4.9/5</span>
                       </div>
 
@@ -613,14 +611,14 @@ export default function Header() {
                       </div>
 
                       <div className={styles.spotlightHeadline}>
-                        Practice &amp; Industry Playbooks
+                        Industry Growth Playbooks
                       </div>
                       <p className={styles.spotlightSubtext}>
-                        Tailored patient and buyer acquisition funnels engineered for your specific unit economics.
+                        Tailored customer and buyer acquisition funnels engineered for your specific industry unit economics.
                       </p>
 
                       <Link
-                        href="/industries/digital-marketing-agency-for-dentists"
+                        href="/industries"
                         className={styles.spotlightAuditBtn}
                         onClick={() => {
                           if (industriesTimerRef.current) clearTimeout(industriesTimerRef.current);
@@ -628,7 +626,7 @@ export default function Header() {
                         }}
                         tabIndex={industriesOpen ? 0 : -1}
                       >
-                        <span>Explore Dental Growth Playbook</span>
+                        <span>Explore All Industry Playbooks</span>
                         <span>→</span>
                       </Link>
 
