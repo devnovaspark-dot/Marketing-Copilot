@@ -58,13 +58,13 @@ const founders = [
 
 const leaders = [
   {
-    name: 'Shatabdi Priyadarshini',
-    role: 'Business and Growth Executive',
-    dept: 'Growth & Strategy',
-    image: '/images/Shatabdi Priyadarshini.png',
-    imagePosition: '50% 12%',
-    bio: 'With 5 years of experience driving business and growth strategy, spearheading commercial expansion, strategic enterprise acquisitions, and high-value client partnerships across India.',
-    quote: 'Building high-leverage growth partnerships that unlock compounding market valuation for ambitious brands.',
+    name: 'Nikhil Dash',
+    role: 'HR Executive',
+    dept: 'People & Culture',
+    image: '/images/Nikhil Dash.png',
+    imagePosition: 'center center',
+    bio: 'With 4 years of total experience in HR and people operations, fostering high-performance agency culture, talent acquisition, people development, and seamless organizational administration across the studio.',
+    quote: 'Empowering world-class creative and engineering talent to build the next generation of growth systems.',
     linkedin: 'https://linkedin.com',
   },
   {
@@ -78,13 +78,13 @@ const leaders = [
     linkedin: 'https://linkedin.com',
   },
   {
-    name: 'Nikhil Dash',
-    role: 'HR Executive',
-    dept: 'People & Culture',
-    image: '/images/Nikhil Dash.png',
-    imagePosition: '50% 12%',
-    bio: 'With 4 years of total experience in HR and people operations, fostering high-performance agency culture, talent acquisition, people development, and seamless organizational administration across the studio.',
-    quote: 'Empowering world-class creative and engineering talent to build the next generation of growth systems.',
+    name: 'Shatabdi Priyadarshini',
+    role: 'Business and Growth Executive',
+    dept: 'Growth & Strategy',
+    image: '/images/Shatabdi Priyadarshini.png',
+    imagePosition: 'center center',
+    bio: 'With 5 years of experience driving business and growth strategy, spearheading commercial expansion, strategic enterprise acquisitions, and high-value client partnerships across India.',
+    quote: 'Building high-leverage growth partnerships that unlock compounding market valuation for ambitious brands.',
     linkedin: 'https://linkedin.com',
   },
 ];
