@@ -572,12 +572,114 @@ const marketingJourneyStages = [
   },
 ];
 
+// ══════════════════════════════════════════════════
+// DATA: CLINICAL CREATIVE VAULT (100% VISUAL / IMG ORIENTED)
+// ══════════════════════════════════════════════════
+interface CreativeVaultItem {
+  id: string;
+  category: 'geo-maps' | 'meta-ads' | 'funnels' | 'whatsapp';
+  categoryLabel: string;
+  title: string;
+  image: string;
+  alt: string;
+  metricBadge: string;
+  procedureTag: string;
+}
+
+const vaultCategories = [
+  { id: 'all', label: 'All Visual Assets' },
+  { id: 'geo-maps', label: 'Local Geo-Grid & Maps' },
+  { id: 'meta-ads', label: 'Meta & Instagram Ads' },
+  { id: 'funnels', label: 'Mobile Funnels' },
+  { id: 'whatsapp', label: 'WhatsApp Bot' },
+];
+
+const creativeVaultItems: CreativeVaultItem[] = [
+  {
+    id: 'geogrid-map',
+    category: 'geo-maps',
+    categoryLabel: 'Local Geo-Grid Map',
+    title: 'Hyperlocal Geo-Grid Map Dominance Across 42 Pin Codes',
+    image: '/images/local-seo/local-seo-geogrid-ranking-map-01.webp',
+    alt: 'Local SEO Geo-Grid map showing rank 1 across dental catchment pin codes',
+    metricBadge: 'Rank #1 in 42 Catchments',
+    procedureTag: 'Google Maps 3-Pack',
+  },
+  {
+    id: 'clear-aligners-creative',
+    category: 'meta-ads',
+    categoryLabel: 'Meta & Instagram Ads',
+    title: 'Invisalign & Clear Aligner 3D Smile Hook Ad Creative',
+    image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1000&q=85',
+    alt: '3D clear aligner digital orthodontic scan ad creative',
+    metricBadge: '₹210 Cost Per Lead',
+    procedureTag: 'Aesthetic Ortho Funnel',
+  },
+  {
+    id: 'implant-funnel',
+    category: 'funnels',
+    categoryLabel: 'High-Ticket Funnels',
+    title: 'CBCT Guided Implant Surgery Mobile Consultation Lander',
+    image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1000&q=85',
+    alt: 'Surgical dental implant operatory suite mobile lander mockup',
+    metricBadge: '14.8% Booking Rate',
+    procedureTag: 'Full-Arch Restorations',
+  },
+  {
+    id: 'whatsapp-bot',
+    category: 'whatsapp',
+    categoryLabel: 'WhatsApp Automation',
+    title: 'Automated 1-Tap WhatsApp Token & No-Show Shield Bot',
+    image: '/images/meta-ads/meta-ads-whatsapp-engagement-campaigns-15.webp',
+    alt: 'WhatsApp appointment booking and patient retention telemetry',
+    metricBadge: '91.5% Chair Show-Up Rate',
+    procedureTag: 'Zero-No-Show Automation',
+  },
+  {
+    id: 'gbp-footfall',
+    category: 'geo-maps',
+    categoryLabel: 'Local Geo-Grid Map',
+    title: 'Google Business Profile Monthly Directions & Calling Surge',
+    image: '/images/google-business-profile/gbp-direction-requests-growth-05.webp',
+    alt: 'Google Maps verified directions growth telemetry chart',
+    metricBadge: '+180% Direction Calls',
+    procedureTag: 'Local 3-Pack Footfall',
+  },
+  {
+    id: 'clinical-tour',
+    category: 'meta-ads',
+    categoryLabel: 'Meta & Instagram Ads',
+    title: 'Doctor Authority Operatory Tour & Sterilization Short',
+    image: 'https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=1000&q=85',
+    alt: 'Doctor discussing patient care in operatory video short',
+    metricBadge: '84K+ Patient Views',
+    procedureTag: 'Doctor Authority Reels',
+  },
+];
+
 export default function DentalMarketingPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [currentSlide, setCurrentSlide] = useState<number>(0);
   const [activeStep, setActiveStep] = useState<number>(0);
   const [isProcessPaused, setIsProcessPaused] = useState<boolean>(false);
   const [activeCase, setActiveCase] = useState<number>(0);
+  const [activeVaultCategory, setActiveVaultCategory] = useState<string>('all');
+  const [vaultModalItem, setVaultModalItem] = useState<CreativeVaultItem | null>(null);
+  const [beforeAfterMode, setBeforeAfterMode] = useState<'before' | 'after'>('after');
+
+  // Keyboard escape handler for vault modal
+  useEffect(() => {
+    if (!vaultModalItem) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setVaultModalItem(null);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [vaultModalItem]);
+
+  const filteredVaultItems = activeVaultCategory === 'all'
+    ? creativeVaultItems
+    : creativeVaultItems.filter((item) => item.category === activeVaultCategory);
 
   // Auto rotate hero clinical slides
   useEffect(() => {
@@ -1273,6 +1375,184 @@ export default function DentalMarketingPage() {
             </ScrollReveal>
           </div>
         </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════ */}
+      {/* SECTION 05B: VISUAL CREATIVE VAULT & LIVE ASSETS   */}
+      {/* 100% Graphics & Image-Oriented Patient Showcase   */}
+      {/* ══════════════════════════════════════════════════ */}
+      <section id="creative-vault" className={styles.vaultSection}>
+        <div className={styles.container}>
+          <div className={styles.vaultHeader}>
+            <div className={styles.vaultPill}>
+              <span>CLINICAL CREATIVE VAULT • LIVE CAMPAIGN ARTIFACTS</span>
+            </div>
+            <h2 className={styles.vaultTitle}>
+              Visual Marketing Assets Engineered for Dental Practices
+            </h2>
+            <p className={styles.vaultSubtitle}>
+              From hyper-local geo-grid ranking heatmaps to high-ticket surgical implant funnels — see the real visual creative assets that turn local searchers into confirmed operatory appointments.
+            </p>
+          </div>
+
+          {/* Interactive Before & After Smile Transformation Hero Card */}
+          <div className={styles.beforeAfterCard}>
+            <div className={styles.beforeAfterMedia}>
+              <Image
+                src={
+                  beforeAfterMode === 'before'
+                    ? 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=85'
+                    : 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=1200&q=85'
+                }
+                alt={
+                  beforeAfterMode === 'before'
+                    ? 'Pre-treatment clinical consultation presentation'
+                    : 'Completed ceramic veneer aesthetic smile makeover'
+                }
+                fill
+                className={styles.beforeAfterImage}
+                sizes="(max-width: 900px) 100vw, 1100px"
+              />
+              <div className={styles.beforeAfterControls}>
+                <button
+                  type="button"
+                  className={`${styles.toggleBtn} ${beforeAfterMode === 'before' ? styles.toggleBtnActive : ''}`}
+                  onClick={() => setBeforeAfterMode('before')}
+                >
+                  <span>Before Treatment</span>
+                </button>
+                <button
+                  type="button"
+                  className={`${styles.toggleBtn} ${beforeAfterMode === 'after' ? styles.toggleBtnActive : ''}`}
+                  onClick={() => setBeforeAfterMode('after')}
+                >
+                  <span>After Smile Makeover ✨</span>
+                </button>
+              </div>
+              <div className={styles.beforeAfterStatusBadge}>
+                <span className={styles.statusDot} />
+                <span>
+                  {beforeAfterMode === 'before'
+                    ? 'Initial Clinical Presentation (Crowded Anterior Arch & Discoloration)'
+                    : 'Final Clinical Outcome (6 Ceramic Veneers & Symmetrical Smile Line)'}
+                </span>
+              </div>
+            </div>
+            <div className={styles.beforeAfterMetaStrip}>
+              <div className={styles.metaStat}>
+                <span className={styles.metaStatVal}>2 Visits</span>
+                <span className={styles.metaStatLabel}>Treatment Timeline</span>
+              </div>
+              <div className={styles.metaStat}>
+                <span className={styles.metaStatVal}>100% Ceramic</span>
+                <span className={styles.metaStatLabel}>Lithium Disilicate Veneers</span>
+              </div>
+              <div className={styles.metaStat}>
+                <span className={styles.metaStatVal}>4.2X ROAS</span>
+                <span className={styles.metaStatLabel}>Instagram Smile Campaign</span>
+              </div>
+              <div className={styles.metaStatCta}>
+                <span className={styles.metaStatTag}>ETHICAL CLINICAL MARKETING</span>
+                <span className={styles.metaStatNote}>Full DCI / MCI Advertising Compliant</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Interactive Category Tabs */}
+          <div className={styles.vaultFilterTabs}>
+            {vaultCategories.map((tab) => {
+              const isActive = activeVaultCategory === tab.id;
+              const count = tab.id === 'all'
+                ? creativeVaultItems.length
+                : creativeVaultItems.filter((i) => i.category === tab.id).length;
+              return (
+                <button
+                  key={tab.id}
+                  type="button"
+                  className={`${styles.vaultTabBtn} ${isActive ? styles.vaultTabBtnActive : ''}`}
+                  onClick={() => setActiveVaultCategory(tab.id)}
+                >
+                  <span>{tab.label}</span>
+                  <span style={{ opacity: 0.65, marginLeft: '5px' }}>({count})</span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* 6-Card Visual Showcase Grid */}
+          <div className={styles.vaultGrid}>
+            {filteredVaultItems.map((item, idx) => (
+              <ScrollReveal key={item.id} delay={idx * 60}>
+                <div
+                  className={styles.vaultCard}
+                  onClick={() => setVaultModalItem(item)}
+                  title="Click to view full-resolution preview"
+                >
+                  <div className={styles.vaultCardMedia}>
+                    <Image
+                      src={item.image}
+                      alt={item.alt}
+                      fill
+                      className={styles.vaultCardImg}
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                    <span className={styles.vaultProcedureBadge}>{item.procedureTag}</span>
+                    <span className={styles.vaultZoomIcon} aria-hidden="true">🔍</span>
+                  </div>
+
+                  <div className={styles.vaultCardBody}>
+                    <h3 className={styles.vaultCardTitle}>{item.title}</h3>
+                    <div className={styles.vaultCardFooter}>
+                      <span className={styles.vaultMetricPill}>
+                        <span>✓</span>
+                        <span>{item.metricBadge}</span>
+                      </span>
+                      <span className={styles.vaultInspectPrompt}>
+                        <span>Inspect</span>
+                        <span>→</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+
+        {/* Lightbox Modal for High-Resolution Inspection */}
+        {vaultModalItem && (
+          <div className={styles.modalBackdrop} onClick={() => setVaultModalItem(null)}>
+            <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+              <button
+                type="button"
+                className={styles.modalCloseBtn}
+                onClick={() => setVaultModalItem(null)}
+                aria-label="Close high-resolution preview"
+              >
+                ✕
+              </button>
+              <div className={styles.modalImageWrapper}>
+                <Image
+                  src={vaultModalItem.image}
+                  alt={vaultModalItem.alt}
+                  fill
+                  className={styles.modalImage}
+                  sizes="90vw"
+                />
+              </div>
+              <div className={styles.modalFooter}>
+                <div>
+                  <span className={styles.modalCategory}>{vaultModalItem.categoryLabel}</span>
+                  <h4 className={styles.modalTitle}>{vaultModalItem.title}</h4>
+                </div>
+                <div className={styles.modalMetricBadge}>
+                  <span>✓</span>
+                  <span>{vaultModalItem.metricBadge}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </section>
 
       {/* ══════════════════════════════════════════════════ */}

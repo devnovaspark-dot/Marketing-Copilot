@@ -2501,6 +2501,586 @@
 }
 
 /* ══════════════════════════════════════════════════
+   VISUAL CREATIVE VAULT & LIVE ASSET SHOWCASE
+   Graphics & Image-Oriented Section for Dental Practices
+══════════════════════════════════════════════════ */
+.vaultSection {
+  padding: 64px 0 72px;
+  position: relative;
+  background: radial-gradient(100% 60% at 50% 0%, #F8FAFD 0%, #FFFFFF 100%);
+  border-top: 1px solid #E2E8F0;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.vaultHeader {
+  text-align: center;
+  max-width: 840px;
+  margin: 0 auto 36px;
+  position: relative;
+  z-index: 2;
+}
+
+.vaultPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(11, 32, 147, 0.06);
+  color: #0B2093;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 9999px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(11, 32, 147, 0.14);
+}
+
+.vaultTitle {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3.2vw, 38px);
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0 0 12px;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.vaultSubtitle {
+  font-size: 15px;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ──────────────────────────────────────────────────
+   BEFORE & AFTER SMILE TRANSFORMATION HERO CARD
+────────────────────────────────────────────────── */
+.beforeAfterCard {
+  background: #0B132B;
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 20px 48px -12px rgba(11, 32, 147, 0.2);
+  margin-bottom: 40px;
+}
+
+.beforeAfterMedia {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  background: #060B1E;
+  overflow: hidden;
+}
+
+.beforeAfterImage {
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+}
+
+.beforeAfterCard:hover .beforeAfterImage {
+  transform: scale(1.02);
+}
+
+.beforeAfterControls {
+  position: absolute;
+  top: 18px;
+  left: 20px;
+  z-index: 3;
+  display: flex;
+  gap: 8px;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(12px);
+  padding: 5px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.toggleBtn {
+  background: transparent;
+  border: none;
+  color: #94A3B8;
+  font-family: var(--font-display);
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.22s ease;
+}
+
+.toggleBtnActive {
+  background: #0284C7;
+  color: #FFFFFF;
+  box-shadow: 0 2px 10px rgba(2, 132, 199, 0.5);
+}
+
+.beforeAfterStatusBadge {
+  position: absolute;
+  bottom: 18px;
+  left: 20px;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(15, 23, 42, 0.82);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  padding: 6px 14px;
+  color: #F8FAFC;
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
+.statusDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 8px #10B981;
+}
+
+.beforeAfterMetaStrip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  padding: 20px 28px;
+  background: rgba(11, 19, 43, 0.95);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  align-items: center;
+}
+
+.metaStat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.metaStatVal {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  color: #38BDF8;
+}
+
+.metaStatLabel {
+  font-size: 11px;
+  color: #94A3B8;
+  font-weight: 500;
+}
+
+.metaStatCta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.metaStatTag {
+  font-family: var(--font-display);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #10B981;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  padding: 3px 8px;
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+
+.metaStatNote {
+  font-size: 10px;
+  color: #64748B;
+  margin-top: 4px;
+}
+
+/* ──────────────────────────────────────────────────
+   CATEGORY TABS FOR VISUAL VAULT
+────────────────────────────────────────────────── */
+.vaultFilterTabs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.vaultTabBtn {
+  background: #FFFFFF;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 999px;
+  padding: 7px 16px;
+  font-family: var(--font-display);
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  box-shadow: 0 1px 3px rgba(11, 32, 147, 0.04);
+}
+
+.vaultTabBtn:hover {
+  border-color: #0284C7;
+  color: #0B2093;
+}
+
+.vaultTabBtnActive {
+  background: #0B2093;
+  border-color: #0B2093;
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(11, 32, 147, 0.25);
+}
+
+/* ──────────────────────────────────────────────────
+   6-CARD VISUAL ARTIFACTS GRID
+────────────────────────────────────────────────── */
+.vaultGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.vaultCard {
+  background: #FFFFFF;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 18px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 
+    inset 0 1px 0 #FFFFFF,
+    0 4px 14px rgba(11, 32, 147, 0.05);
+  transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+  cursor: pointer;
+  position: relative;
+  min-width: 0;
+}
+
+.vaultCard:hover {
+  transform: translateY(-5px);
+  border-color: #0284C7;
+  box-shadow: 
+    inset 0 1px 0 #FFFFFF,
+    0 16px 36px -8px rgba(11, 32, 147, 0.16);
+}
+
+.vaultCardMedia {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: #F1F5F9;
+  overflow: hidden;
+}
+
+.vaultCardImg {
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+
+.vaultCard:hover .vaultCardImg {
+  transform: scale(1.05);
+}
+
+.vaultProcedureBadge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+  font-family: var(--font-display);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #FFFFFF;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 3px 8px;
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+
+.vaultZoomIcon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  opacity: 0.85;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.vaultCard:hover .vaultZoomIcon {
+  opacity: 1;
+  transform: scale(1.1);
+  background: #0284C7;
+  border-color: #38BDF8;
+}
+
+.vaultCardBody {
+  padding: 14px 14px 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background: #FFFFFF;
+}
+
+.vaultCardTitle {
+  font-family: var(--font-display);
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0 0 10px;
+  line-height: 1.35;
+  word-break: break-word;
+}
+
+.vaultCardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  gap: 8px;
+  padding-top: 10px;
+  border-top: 1px solid #F1F5F9;
+}
+
+.vaultMetricPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-display);
+  font-size: 8.5px;
+  font-weight: 800;
+  color: #0284C7;
+  background: #F0F9FF;
+  border: 1px solid #BAE6FD;
+  padding: 3px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+  flex-shrink: 1;
+}
+
+.vaultInspectPrompt {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #64748B;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  transition: color 0.2s ease, gap 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.vaultCard:hover .vaultInspectPrompt {
+  color: #0B2093;
+  gap: 6px;
+}
+
+/* ──────────────────────────────────────────────────
+   LIGHTBOX MODAL FOR FULL-RESOLUTION INSPECTION
+────────────────────────────────────────────────── */
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(10, 15, 30, 0.85);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: modalFadeIn 0.22s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modalContent {
+  background: #FFFFFF;
+  border-radius: 20px;
+  max-width: 960px;
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.6);
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+}
+
+.modalCloseBtn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 10;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.modalCloseBtn:hover {
+  background: #EF4444;
+  border-color: #EF4444;
+  transform: scale(1.08);
+}
+
+.modalImageWrapper {
+  position: relative;
+  width: 100%;
+  height: min(540px, 62vh);
+  background: #0B132B;
+}
+
+.modalImage {
+  object-fit: contain;
+}
+
+.modalFooter {
+  padding: 18px 24px;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-top: 1px solid #E2E8F0;
+}
+
+.modalCategory {
+  font-family: var(--font-display);
+  font-size: 9px;
+  font-weight: 800;
+  color: #0284C7;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+  display: block;
+}
+
+.modalTitle {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0;
+}
+
+.modalMetricBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #F0FDF4;
+  border: 1px solid #86EFAC;
+  color: #047857;
+  font-family: var(--font-display);
+  font-size: 10.5px;
+  font-weight: 800;
+  padding: 6px 12px;
+  border-radius: 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ──────────────────────────────────────────────────
+   RESPONSIVE BREAKPOINTS FOR VAULT
+────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .vaultGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .beforeAfterMedia {
+    height: 340px;
+  }
+  .beforeAfterMetaStrip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+  .metaStatCta {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .vaultSection {
+    padding: 38px 0 42px;
+  }
+  .vaultGrid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .beforeAfterMedia {
+    height: 250px;
+  }
+  .beforeAfterControls {
+    top: 10px;
+    left: 10px;
+    padding: 3px;
+  }
+  .toggleBtn {
+    font-size: 10px;
+    padding: 4px 10px;
+  }
+  .beforeAfterStatusBadge {
+    bottom: 10px;
+    left: 10px;
+    padding: 4px 10px;
+    font-size: 10px;
+  }
+  .beforeAfterMetaStrip {
+    grid-template-columns: 1fr 1fr;
+    padding: 14px 16px;
+    gap: 10px;
+  }
+  .metaStatVal {
+    font-size: 15px;
+  }
+  .metaStatLabel {
+    font-size: 9.5px;
+  }
+  .modalFooter {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 14px 16px;
+  }
+  .modalTitle {
+    font-size: 13px;
+  }
+}
+
+/* ══════════════════════════════════════════════════
    COMPARISON MATRIX (Expanded, High-Legibility Dental Benchmark)
 ══════════════════════════════════════════════════ */
 .sectionBlockCompact {
