@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import BeamButton from '@/components/BeamButton';
@@ -677,9 +677,11 @@ export default function DentalMarketingPage() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [vaultModalItem]);
 
-  const filteredVaultItems = activeVaultCategory === 'all'
-    ? creativeVaultItems
-    : creativeVaultItems.filter((item) => item.category === activeVaultCategory);
+  const filteredVaultItems = useMemo(() => {
+    return activeVaultCategory === 'all'
+      ? creativeVaultItems
+      : creativeVaultItems.filter((item) => item.category === activeVaultCategory);
+  }, [activeVaultCategory]);
 
   // Auto rotate hero clinical slides
   useEffect(() => {
