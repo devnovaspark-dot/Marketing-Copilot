@@ -478,6 +478,7 @@
 }
 
 .sectionBlockAlt {
+  scroll-margin-top: 90px;
   padding: 60px 0;
   position: relative;
   background: radial-gradient(100% 60% at 50% 0%, #F8FAFD 0%, #FFFFFF 100%);
@@ -2271,30 +2272,30 @@
    CASE STUDY SPOTLIGHT CARD (Compact, Sleek & Proportional)
 ══════════════════════════════════════════════════ */
 .caseStudyCard {
-  background: radial-gradient(120% 120% at 50% 0%, #172554 0%, #0B132B 65%, #070D1F 100%);
-  border: 1.5px solid rgba(56, 189, 248, 0.22);
-  border-radius: 20px;
-  padding: 22px 24px;
-  color: #FFFFFF;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFD 100%);
+  border: 1.5px solid rgba(203, 213, 225, 0.85);
+  border-radius: 24px;
+  padding: 26px 28px;
+  color: #0F172A;
   display: grid;
-  grid-template-columns: 1.25fr 0.75fr;
-  gap: 22px;
+  grid-template-columns: 1.18fr 0.82fr;
+  gap: 26px;
   align-items: stretch;
   box-shadow: 
-    inset 0 1.5px 0 rgba(255, 255, 255, 0.2),
-    0 18px 45px -8px rgba(11, 32, 147, 0.35);
+    inset 0 1.5px 0 #FFFFFF,
+    0 16px 36px -8px rgba(11, 32, 147, 0.07);
   position: relative;
   overflow: hidden;
   max-width: 1040px;
   margin: 0 auto;
 }
 
-@media (max-width: 860px) {
+@media (max-width: 900px) {
   .caseStudyCard {
     grid-template-columns: 1fr;
-    padding: 16px 14px;
-    gap: 16px;
-    border-radius: 16px;
+    padding: 18px 16px;
+    gap: 18px;
+    border-radius: 18px;
   }
 }
 
@@ -2303,13 +2304,13 @@
   flex-direction: column;
   justify-content: space-between;
   min-width: 0;
+  gap: 12px;
 }
 
 .caseHeaderRow {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 6px;
   gap: 10px;
   flex-wrap: wrap;
 }
@@ -2318,16 +2319,16 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: rgba(56, 189, 248, 0.12);
-  color: #38BDF8;
+  background: rgba(2, 132, 199, 0.08);
+  color: #0284C7;
   font-family: var(--font-display);
-  font-size: 9px;
+  font-size: 9.5px;
   font-weight: 800;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 3px 10px;
+  padding: 4px 10px;
   border-radius: 9999px;
-  border: 1px solid rgba(56, 189, 248, 0.25);
+  border: 1px solid rgba(2, 132, 199, 0.22);
 }
 
 .liveTelemetryLed {
@@ -2341,55 +2342,89 @@
 
 .caseDoctorBadge {
   font-size: 11px;
-  color: #94A3B8;
-  font-weight: 600;
+  color: #475569;
+  font-weight: 700;
+  background: #F1F5F9;
+  border: 1px solid #E2E8F0;
+  border-radius: 999px;
+  padding: 3px 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .caseTitle {
   font-family: var(--font-display);
-  font-size: clamp(17px, 1.8vw, 21px);
+  font-size: clamp(19px, 2.1vw, 24px);
   font-weight: 800;
-  color: #FFFFFF;
-  margin: 0 0 10px;
-  letter-spacing: -0.02em;
+  color: #0F172A;
+  margin: 0;
+  letter-spacing: -0.025em;
   line-height: 1.25;
 }
 
 .caseChallengeSolution {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  margin-bottom: 10px;
+  gap: 10px;
 }
 
 @media (max-width: 640px) {
   .caseChallengeSolution {
     grid-template-columns: 1fr;
+    gap: 8px;
   }
 }
 
-.caseCSBlock {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 10px;
-  padding: 8px 10px;
+.caseCSBlockChallenge {
+  background: #FFF1F2;
+  border: 1px solid #FECDD3;
+  border-radius: 12px;
+  padding: 9px 11px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
 }
 
-.csLabel {
-  display: block;
+.csLabelChallenge {
   font-family: var(--font-display);
-  font-size: 8.5px;
+  font-size: 9px;
   font-weight: 800;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #38BDF8;
-  margin-bottom: 3px;
+  color: #E11D48;
 }
 
-.csText {
+.csTextChallenge {
   font-size: 11px;
-  color: #CBD5E1;
-  line-height: 1.35;
+  color: #4C0519;
+  line-height: 1.38;
+  margin: 0;
+}
+
+.caseCSBlockStrategy {
+  background: #F0FDF4;
+  border: 1px solid #BBF7D0;
+  border-radius: 12px;
+  padding: 9px 11px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.csLabelStrategy {
+  font-family: var(--font-display);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #16A34A;
+}
+
+.csTextStrategy {
+  font-size: 11px;
+  color: #14532D;
+  line-height: 1.38;
   margin: 0;
 }
 
@@ -2397,32 +2432,33 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 8px;
-  margin-bottom: 10px;
 }
 
 .caseMetricBox {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  padding: 8px 6px;
+  background: #FFFFFF;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 10px 8px;
   text-align: center;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  box-shadow: 0 4px 12px rgba(11, 32, 147, 0.03);
 }
 
 .caseMetricVal {
   font-family: var(--font-display);
-  font-size: 17px;
+  font-size: 19px;
   font-weight: 800;
-  color: #38BDF8;
+  color: #0B2093;
   line-height: 1.1;
   display: block;
 }
 
 .caseMetricLabel {
-  font-size: 8.5px;
-  color: #94A3B8;
-  font-weight: 600;
-  margin-top: 2px;
+  font-size: 9px;
+  color: #64748B;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 3px;
   display: block;
 }
 
@@ -2431,63 +2467,115 @@
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding-top: 8px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 6px;
+  border-top: 1px solid #E2E8F0;
 }
 
 @media (max-width: 640px) {
   .caseBottomBar {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
+    align-items: stretch;
+    gap: 10px;
   }
 }
 
-.caseQuoteInline {
-  font-size: 11.5px;
-  font-style: italic;
-  color: #E2E8F0;
-  line-height: 1.35;
-  margin: 0;
+.caseQuoteBox {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
   flex: 1;
+  background: #F8FAFD;
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+  padding: 8px 12px;
 }
 
 .caseQuoteMark {
-  color: #38BDF8;
-  font-size: 14px;
+  color: #0284C7;
+  font-size: 16px;
   font-weight: 800;
-  margin-right: 3px;
+  line-height: 1;
+}
+
+.caseQuoteInline {
+  font-size: 11px;
+  font-style: italic;
+  color: #334155;
+  line-height: 1.35;
+  margin: 0;
 }
 
 .caseCtaWrap {
   flex-shrink: 0;
 }
 
+/* ──────────────────────────────────────────────────
+   RIGHT COLUMN: ILLUSTRATED CLINICAL CASE ARTIFACT
+────────────────────────────────────────────────── */
 .caseVisualColumn {
   display: flex;
   flex-direction: column;
   height: 100%;
-  justify-content: center;
+}
+
+.caseArtifactContainer {
+  background: #FFFFFF;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px -6px rgba(11, 32, 147, 0.08);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.caseArtifactHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: #F8FAFD;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.caseArtifactClinic {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  color: #0F172A;
+}
+
+.caseArtifactLivePill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 9px;
+  font-weight: 700;
+  color: #059669;
+  background: #ECFDF5;
+  border: 1px solid #A7F3D0;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.caseArtifactDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #10B981;
 }
 
 .caseImageFrame {
   position: relative;
   width: 100%;
-  height: 100%;
-  min-height: 250px;
-  border-radius: 14px;
+  height: 155px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 
-    inset 0 1px 0 rgba(255, 255, 255, 0.2),
-    0 12px 30px -6px rgba(0, 0, 0, 0.45);
-  background: #0B132B;
+  background: #E2E8F0;
 }
 
-@media (max-width: 860px) {
+@media (max-width: 900px) {
   .caseImageFrame {
-    height: 190px !important;
-    min-height: auto;
+    height: 145px;
   }
 }
 
@@ -2496,13 +2584,121 @@
   transition: transform 0.5s ease;
 }
 
-.caseImageFrame:hover .caseImage {
+.caseArtifactContainer:hover .caseImage {
   transform: scale(1.03);
 }
 
+.caseTelemetryOverlay {
+  padding: 12px 14px;
+  background: linear-gradient(180deg, #F8FAFD 0%, #FFFFFF 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.telemetryEyebrowRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.telemetryCategoryBadge {
+  font-family: var(--font-display);
+  font-size: 8.5px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #0284C7;
+}
+
+.telemetrySurgePill {
+  font-family: var(--font-display);
+  font-size: 9px;
+  font-weight: 800;
+  color: #16A34A;
+  background: #DCFCE7;
+  border: 1px solid #86EFAC;
+  padding: 2px 7px;
+  border-radius: 6px;
+}
+
+.telemetryComparisonRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+  padding: 6px 10px;
+}
+
+.telemetryValCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.telemetryValLabel {
+  font-size: 8px;
+  color: #94A3B8;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.telemetryValInitial {
+  font-family: var(--font-display);
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #64748B;
+}
+
+.telemetryValResult {
+  font-family: var(--font-display);
+  font-size: 12.5px;
+  font-weight: 800;
+  color: #0B2093;
+}
+
+.telemetryArrow {
+  color: #0284C7;
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.telemetryProgressBar {
+  height: 5px;
+  background: #E2E8F0;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.telemetryProgressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #0284C7 0%, #10B981 100%);
+  border-radius: 999px;
+  transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.telemetryChecklistRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.telemetryCheckChip {
+  font-size: 8.5px;
+  font-weight: 600;
+  color: #334155;
+  background: #F1F5F9;
+  border: 1px solid #E2E8F0;
+  border-radius: 6px;
+  padding: 2px 6px;
+  white-space: nowrap;
+}
+
 /* ══════════════════════════════════════════════════
-   VISUAL CREATIVE VAULT & LIVE ASSET SHOWCASE
-   Graphics & Image-Oriented Section for Dental Practices
+   CLINICAL CREATIVE VAULT • LIVE CAMPAIGN ARTIFACTS
+   Realistic Interactive Campaign UI Simulations
 ══════════════════════════════════════════════════ */
 .vaultSection {
   padding: 64px 0 72px;
@@ -2514,7 +2710,7 @@
 
 .vaultHeader {
   text-align: center;
-  max-width: 840px;
+  max-width: 860px;
   margin: 0 auto 36px;
   position: relative;
   z-index: 2;
@@ -2554,162 +2750,14 @@
   margin: 0;
 }
 
-/* ──────────────────────────────────────────────────
-   BEFORE & AFTER SMILE TRANSFORMATION HERO CARD
-────────────────────────────────────────────────── */
-.beforeAfterCard {
-  background: #0B132B;
-  border: 1.5px solid rgba(255, 255, 255, 0.12);
-  border-radius: 22px;
-  overflow: hidden;
-  box-shadow: 
-    inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 20px 48px -12px rgba(11, 32, 147, 0.2);
-  margin-bottom: 40px;
-}
-
-.beforeAfterMedia {
-  position: relative;
-  width: 100%;
-  height: 420px;
-  background: #060B1E;
-  overflow: hidden;
-}
-
-.beforeAfterImage {
-  object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
-}
-
-.beforeAfterCard:hover .beforeAfterImage {
-  transform: scale(1.02);
-}
-
-.beforeAfterControls {
-  position: absolute;
-  top: 18px;
-  left: 20px;
-  z-index: 3;
-  display: flex;
-  gap: 8px;
-  background: rgba(15, 23, 42, 0.75);
-  backdrop-filter: blur(12px);
-  padding: 5px;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
-}
-
-.toggleBtn {
-  background: transparent;
-  border: none;
-  color: #94A3B8;
-  font-family: var(--font-display);
-  font-size: 11.5px;
-  font-weight: 700;
-  padding: 6px 14px;
-  border-radius: 999px;
-  cursor: pointer;
-  transition: all 0.22s ease;
-}
-
-.toggleBtnActive {
-  background: #0284C7;
-  color: #FFFFFF;
-  box-shadow: 0 2px 10px rgba(2, 132, 199, 0.5);
-}
-
-.beforeAfterStatusBadge {
-  position: absolute;
-  bottom: 18px;
-  left: 20px;
-  z-index: 3;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(15, 23, 42, 0.82);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 999px;
-  padding: 6px 14px;
-  color: #F8FAFC;
-  font-size: 11.5px;
-  font-weight: 600;
-}
-
-.statusDot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #10B981;
-  box-shadow: 0 0 8px #10B981;
-}
-
-.beforeAfterMetaStrip {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 16px;
-  padding: 20px 28px;
-  background: rgba(11, 19, 43, 0.95);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  align-items: center;
-}
-
-.metaStat {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.metaStatVal {
-  font-family: var(--font-display);
-  font-size: 18px;
-  font-weight: 800;
-  color: #38BDF8;
-}
-
-.metaStatLabel {
-  font-size: 11px;
-  color: #94A3B8;
-  font-weight: 500;
-}
-
-.metaStatCta {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: center;
-}
-
-.metaStatTag {
-  font-family: var(--font-display);
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  color: #10B981;
-  background: rgba(16, 185, 129, 0.12);
-  border: 1px solid rgba(16, 185, 129, 0.3);
-  padding: 3px 8px;
-  border-radius: 999px;
-  text-transform: uppercase;
-}
-
-.metaStatNote {
-  font-size: 10px;
-  color: #64748B;
-  margin-top: 4px;
-}
-
-/* ──────────────────────────────────────────────────
-   CATEGORY TABS FOR VISUAL VAULT
-────────────────────────────────────────────────── */
+/* Category Filter Tabs */
 .vaultFilterTabs {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  margin-bottom: 28px;
+  margin-bottom: 32px;
 }
 
 .vaultTabBtn {
@@ -2738,130 +2786,760 @@
   box-shadow: 0 4px 14px rgba(11, 32, 147, 0.25);
 }
 
-/* ──────────────────────────────────────────────────
-   6-CARD VISUAL ARTIFACTS GRID
-────────────────────────────────────────────────── */
-.vaultGrid {
+/* 3-Column Artifacts Grid */
+.vaultArtifactsGrid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
+  gap: 22px;
+  align-items: stretch;
 }
 
-.vaultCard {
+.vaultArtifactCol {
+  min-width: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.artifactCard {
   background: #FFFFFF;
   border: 1.5px solid #E2E8F0;
-  border-radius: 18px;
+  border-radius: 20px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   box-shadow: 
-    inset 0 1px 0 #FFFFFF,
-    0 4px 14px rgba(11, 32, 147, 0.05);
+    inset 0 1.5px 0 #FFFFFF,
+    0 4px 16px rgba(11, 32, 147, 0.05);
   transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
-  cursor: pointer;
-  position: relative;
   min-width: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
 }
 
-.vaultCard:hover {
+.artifactCard:hover {
   transform: translateY(-5px);
   border-color: #0284C7;
   box-shadow: 
-    inset 0 1px 0 #FFFFFF,
+    inset 0 1.5px 0 #FFFFFF,
     0 16px 36px -8px rgba(11, 32, 147, 0.16);
 }
 
-.vaultCardMedia {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  background: #F1F5F9;
-  overflow: hidden;
+.artifactHeaderBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #F8FAFC;
+  border-bottom: 1px solid #E2E8F0;
 }
 
-.vaultCardImg {
-  object-fit: cover;
-  transition: transform 0.45s ease;
-}
-
-.vaultCard:hover .vaultCardImg {
-  transform: scale(1.05);
-}
-
-.vaultProcedureBadge {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  z-index: 2;
+.artifactTypeTag {
   font-family: var(--font-display);
-  font-size: 8px;
+  font-size: 8.5px;
   font-weight: 800;
-  letter-spacing: 0.05em;
-  color: #FFFFFF;
-  background: rgba(15, 23, 42, 0.85);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  letter-spacing: 0.06em;
+  color: #0B2093;
+  background: rgba(11, 32, 147, 0.08);
   padding: 3px 8px;
-  border-radius: 999px;
+  border-radius: 6px;
   text-transform: uppercase;
 }
 
-.vaultZoomIcon {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  z-index: 2;
+.artifactChannelBadge {
+  font-family: var(--font-display);
+  font-size: 8.5px;
+  font-weight: 700;
+  color: #64748B;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Artifact UI Frames */
+.artifactFrame {
+  padding: 16px;
+  background: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+/* 1. Meta / Instagram Ad Styling */
+.instaAdContainer {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.instaTopRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.instaProfileGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.instaAvatar {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: rgba(15, 23, 42, 0.7);
+  background: linear-gradient(135deg, #0284C7 0%, #0B2093 100%);
+  color: #FFFFFF;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+}
+
+.instaNameCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.instaName {
+  font-size: 11px;
+  font-weight: 800;
+  color: #0F172A;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.instaVerified {
+  color: #0284C7;
+  font-size: 9px;
+}
+
+.instaSub {
+  font-size: 9px;
+  color: #64748B;
+}
+
+.instaVisualWrapper {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  background: #0B132B;
+  overflow: hidden;
+}
+
+.instaImg {
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.artifactCard:hover .instaImg {
+  transform: scale(1.04);
+}
+
+.instaFloatingPill {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  background: rgba(15, 23, 42, 0.85);
   backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  font-family: var(--font-display);
+  font-size: 8.5px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.instaCtaBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: #F8FAFC;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.instaCtaText {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #0F172A;
+}
+
+.instaCtaBtn {
+  background: #0284C7;
+  color: #FFFFFF;
+  font-family: var(--font-display);
+  font-size: 9.5px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.instaCtaBtn:hover {
+  background: #0369A1;
+}
+
+.instaSocialRow {
+  padding: 8px 12px;
+  font-size: 10px;
+  color: #475569;
+  line-height: 1.4;
+}
+
+.instaLikes {
+  font-weight: 800;
+  color: #0F172A;
+  margin-bottom: 2px;
+}
+
+/* 2. Google Search Ad SERP Styling */
+.googleSerpContainer {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 14px;
+  padding: 14px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.googleAdBadgeRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 9.5px;
+  color: #475569;
+}
+
+.googleAdPill {
+  font-weight: 800;
+  color: #0F172A;
+  background: #F1F5F9;
+  border: 1px solid #CBD5E1;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+.googleAdDomain {
+  color: #202124;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.googleAdTitle {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #1A0DAB;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.googleAdRating {
+  font-size: 10px;
+  color: #E37400;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.googleAdDesc {
+  font-size: 10.5px;
+  color: #4D5156;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.googleSitelinksGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  padding-top: 6px;
+  border-top: 1px solid #F1F5F9;
+}
+
+.googleSitelinkItem {
+  font-size: 9.5px;
+  font-weight: 700;
+  color: #1A0DAB;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  padding: 4px 6px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.googleScrubberTag {
+  margin-top: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-display);
+  font-size: 8px;
+  font-weight: 800;
+  color: #047857;
+  background: #DCFCE7;
+  border: 1px solid #86EFAC;
+  padding: 3px 7px;
+  border-radius: 6px;
+}
+
+/* 3. Google Maps 3-Pack Styling */
+.mapsCardContainer {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 14px;
+  padding: 14px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.mapsTopDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mapsName {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0;
+}
+
+.mapsRatingRow {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10.5px;
+  color: #E37400;
+  font-weight: 700;
+}
+
+.mapsReviewsCount {
+  color: #64748B;
+  font-weight: 500;
+}
+
+.mapsAddress {
+  font-size: 10px;
+  color: #475569;
+}
+
+.mapsHours {
+  font-size: 9.5px;
+  color: #16A34A;
+  font-weight: 700;
+}
+
+.mapsActionButtons {
+  display: flex;
+  gap: 6px;
+}
+
+.mapsBtn {
+  flex: 1;
+  text-align: center;
+  background: #F0F9FF;
+  border: 1px solid #BAE6FD;
+  color: #0284C7;
+  font-family: var(--font-display);
+  font-size: 9px;
+  font-weight: 800;
+  padding: 5px 4px;
+  border-radius: 6px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+}
+
+.geoGridRadar {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+  padding: 8px 10px;
+}
+
+.radarTitle {
+  font-family: var(--font-display);
+  font-size: 8px;
+  font-weight: 800;
+  color: #0B2093;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.radarPinsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+
+.radarPin {
+  background: #DCFCE7;
+  border: 1px solid #86EFAC;
+  color: #047857;
+  font-family: var(--font-display);
+  font-size: 8px;
+  font-weight: 800;
+  padding: 3px 2px;
+  border-radius: 4px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+/* 4. WhatsApp Chat Simulation Styling */
+.whatsappPhoneContainer {
+  background: #0B141A;
+  border: 1px solid #1F2C34;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+}
+
+.waHeader {
+  background: #1F2C34;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid #2A3942;
+}
+
+.waAvatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #00A884;
   color: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 11px;
-  opacity: 0.85;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  font-weight: 800;
 }
 
-.vaultCard:hover .vaultZoomIcon {
-  opacity: 1;
-  transform: scale(1.1);
-  background: #0284C7;
-  border-color: #38BDF8;
-}
-
-.vaultCardBody {
-  padding: 14px 14px 16px;
+.waMetaCol {
   display: flex;
   flex-direction: column;
-  flex: 1;
-  background: #FFFFFF;
 }
 
-.vaultCardTitle {
-  font-family: var(--font-display);
-  font-size: 13.5px;
+.waTitle {
+  font-size: 10.5px;
   font-weight: 800;
-  color: #0F172A;
-  margin: 0 0 10px;
-  line-height: 1.35;
-  word-break: break-word;
-}
-
-.vaultCardFooter {
+  color: #E9EDEF;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-top: auto;
+  gap: 4px;
+}
+
+.waSub {
+  font-size: 8.5px;
+  color: #00A884;
+}
+
+.waChatBody {
+  padding: 10px 10px 14px;
+  display: flex;
+  flex-direction: column;
   gap: 8px;
-  padding-top: 10px;
+  background: #0B141A;
+  min-height: 220px;
+}
+
+.waBubbleIncoming {
+  background: #1F2C34;
+  color: #D1D7DB;
+  border-radius: 8px 8px 8px 0;
+  padding: 6px 10px;
+  font-size: 10px;
+  line-height: 1.4;
+  max-width: 88%;
+  align-self: flex-start;
+}
+
+.waBubbleOutgoing {
+  background: #005C4B;
+  color: #E9EDEF;
+  border-radius: 8px 8px 0 8px;
+  padding: 6px 10px;
+  font-size: 10px;
+  line-height: 1.4;
+  max-width: 90%;
+  align-self: flex-end;
+}
+
+.waTokenButton {
+  background: #00A884;
+  border: none;
+  color: #FFFFFF;
+  font-family: var(--font-display);
+  font-size: 9.5px;
+  font-weight: 800;
+  padding: 7px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 4px;
+  width: 100%;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 168, 132, 0.35);
+}
+
+.waTokenButton:hover {
+  background: #02906F;
+}
+
+.waTokenSuccessBubble {
+  background: #064E3B;
+  border: 1px solid #10B981;
+  color: #ECFDF5;
+  border-radius: 8px;
+  padding: 7px 10px;
+  font-size: 9.5px;
+  line-height: 1.35;
+  margin-top: 4px;
+  animation: pulseIn 0.3s ease;
+}
+
+.waResetBtn {
+  background: transparent;
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  color: #94A3B8;
+  font-size: 8px;
+  padding: 3px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 6px;
+  align-self: center;
+}
+
+@keyframes pulseIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* 5. Smile Studio Styling */
+.smileStudioContainer {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.smileStudioMedia {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  background: #0B132B;
+}
+
+.smileStudioImg {
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.smileStudioControls {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  display: flex;
+  gap: 4px;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(8px);
+  padding: 3px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 2;
+}
+
+.smileToggleBtn {
+  background: transparent;
+  border: none;
+  color: #94A3B8;
+  font-family: var(--font-display);
+  font-size: 9px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.smileToggleBtnActive {
+  background: #0284C7;
+  color: #FFFFFF;
+}
+
+.smileStudioSpecs {
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: #F8FAFC;
   border-top: 1px solid #F1F5F9;
 }
 
-.vaultMetricPill {
+.smileSpecRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 9.5px;
+}
+
+.smileSpecLabel {
+  color: #64748B;
+  font-weight: 600;
+}
+
+.smileSpecVal {
+  color: #0F172A;
+  font-weight: 800;
+}
+
+/* 6. Practice Telemetry Dashboard Styling */
+.telemetryContainer {
+  background: #0B132B;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 14px 12px;
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.telemTopRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 8px;
+}
+
+.telemTitle {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.telemSyncBadge {
+  font-family: var(--font-display);
+  font-size: 8px;
+  font-weight: 800;
+  color: #10B981;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.telemSyncDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 6px #10B981;
+}
+
+.telemStatsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.telemStatBox {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 6px;
+  text-align: center;
+}
+
+.telemStatNum {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 800;
+  color: #38BDF8;
+}
+
+.telemStatLabel {
+  font-size: 8px;
+  color: #94A3B8;
+  margin-top: 2px;
+}
+
+.telemBarsCol {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-top: 4px;
+}
+
+.telemBarItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.telemBarLabelRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 8.5px;
+  color: #CBD5E1;
+}
+
+.telemBarTrack {
+  height: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.telemBarFill {
+  height: 100%;
+  border-radius: 999px;
+}
+
+/* Common Card Bottom Telemetry Pill */
+.artifactBottomTelemetry {
+  padding: 10px 14px;
+  background: #F8FAFD;
+  border-top: 1px solid #E2E8F0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.artifactTelemetryPill {
   display: inline-flex;
   align-items: center;
   gap: 4px;
@@ -2877,206 +3555,38 @@
   overflow: hidden;
   text-overflow: ellipsis;
   min-width: 0;
-  flex-shrink: 1;
 }
 
-.vaultInspectPrompt {
-  font-size: 10.5px;
-  font-weight: 700;
-  color: #64748B;
-  display: inline-flex;
-  align-items: center;
-  gap: 3px;
-  transition: color 0.2s ease, gap 0.2s ease;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-
-.vaultCard:hover .vaultInspectPrompt {
+.artifactInspectLink {
+  font-size: 9.5px;
+  font-weight: 800;
   color: #0B2093;
-  gap: 6px;
-}
-
-/* ──────────────────────────────────────────────────
-   LIGHTBOX MODAL FOR FULL-RESOLUTION INSPECTION
-────────────────────────────────────────────────── */
-.modalBackdrop {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  background: rgba(10, 15, 30, 0.85);
-  backdrop-filter: blur(10px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  animation: modalFadeIn 0.22s ease-out;
-}
-
-@keyframes modalFadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.modalContent {
-  background: #FFFFFF;
-  border-radius: 20px;
-  max-width: 960px;
-  width: 100%;
-  max-height: 90vh;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.6);
-  border: 1.5px solid rgba(255, 255, 255, 0.2);
-  position: relative;
-}
-
-.modalCloseBtn {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  z-index: 10;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: rgba(15, 23, 42, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  color: #FFFFFF;
-  font-size: 16px;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease;
-}
-
-.modalCloseBtn:hover {
-  background: #EF4444;
-  border-color: #EF4444;
-  transform: scale(1.08);
-}
-
-.modalImageWrapper {
-  position: relative;
-  width: 100%;
-  height: min(540px, 62vh);
-  background: #0B132B;
-}
-
-.modalImage {
-  object-fit: contain;
-}
-
-.modalFooter {
-  padding: 18px 24px;
-  background: #FFFFFF;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  border-top: 1px solid #E2E8F0;
-}
-
-.modalCategory {
-  font-family: var(--font-display);
-  font-size: 9px;
-  font-weight: 800;
-  color: #0284C7;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 2px;
-  display: block;
-}
-
-.modalTitle {
-  font-family: var(--font-display);
-  font-size: 15px;
-  font-weight: 800;
-  color: #0F172A;
-  margin: 0;
-}
-
-.modalMetricBadge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: #F0FDF4;
-  border: 1px solid #86EFAC;
-  color: #047857;
-  font-family: var(--font-display);
-  font-size: 10.5px;
-  font-weight: 800;
-  padding: 6px 12px;
-  border-radius: 8px;
   white-space: nowrap;
-  flex-shrink: 0;
 }
 
-/* ──────────────────────────────────────────────────
-   RESPONSIVE BREAKPOINTS FOR VAULT
-────────────────────────────────────────────────── */
-@media (max-width: 1024px) {
-  .vaultGrid {
+/* Responsive Rules */
+@media (max-width: 1080px) {
+  .vaultArtifactsGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
   }
-  .beforeAfterMedia {
-    height: 340px;
-  }
-  .beforeAfterMetaStrip {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 14px;
-  }
-  .metaStatCta {
-    align-items: flex-start;
-  }
 }
 
-@media (max-width: 640px) {
-  .vaultSection {
-    padding: 38px 0 42px;
-  }
-  .vaultGrid {
+@media (max-width: 680px) {
+  .vaultArtifactsGrid {
     grid-template-columns: 1fr;
     gap: 14px;
   }
-  .beforeAfterMedia {
-    height: 250px;
+  .vaultFilterTabs {
+    gap: 6px;
   }
-  .beforeAfterControls {
-    top: 10px;
-    left: 10px;
-    padding: 3px;
-  }
-  .toggleBtn {
+  .vaultTabBtn {
     font-size: 10px;
-    padding: 4px 10px;
+    padding: 5px 12px;
   }
-  .beforeAfterStatusBadge {
-    bottom: 10px;
-    left: 10px;
-    padding: 4px 10px;
-    font-size: 10px;
-  }
-  .beforeAfterMetaStrip {
-    grid-template-columns: 1fr 1fr;
-    padding: 14px 16px;
-    gap: 10px;
-  }
-  .metaStatVal {
-    font-size: 15px;
-  }
-  .metaStatLabel {
-    font-size: 9.5px;
-  }
-  .modalFooter {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 14px 16px;
-  }
-  .modalTitle {
-    font-size: 13px;
+  .artifactFrame {
+    padding: 12px;
   }
 }
 

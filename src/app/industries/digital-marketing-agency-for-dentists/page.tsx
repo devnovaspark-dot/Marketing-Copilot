@@ -326,7 +326,7 @@ const caseStudies = [
     category: 'Patient Acquisition Growth',
     clinic: 'Apex Dental & Implant Studio',
     location: 'New Delhi',
-    tag: 'VERIFIED TELEMETRY // NEW DELHI',
+    tag: 'VERIFIED PRACTICE DATA // NEW DELHI',
     headline: 'Scaling From 28 to 94 Monthly New Patient Consultations',
     doctor: 'Dr. R. Malhotra, MDS (Prosthodontics & Implantology)',
     challenge: 'Losing high-ticket implant candidates to hospital chains with an exhausting 42% no-show rate.',
@@ -339,6 +339,14 @@ const caseStudies = [
       { value: '91.5%', label: 'Show-Up Rate' },
     ],
     quote: '"Our operatory chairs for dental implants and clear aligners are fully booked 3 weeks in advance."',
+    telemetry: {
+      badge: 'IMPLANT & ALIGNER TELEMETRY',
+      growthRate: '+235% Surge',
+      beforeVal: '28 / mo',
+      afterVal: '94 / mo',
+      progressPercent: 92,
+      footers: ['✓ WhatsApp 1-Tap Booking', '✓ 0% EMI Patient Funnel', '✓ Full Operatory Booking'],
+    },
   },
   {
     category: 'Local Search Visibility',
@@ -357,6 +365,14 @@ const caseStudies = [
       { value: '4.9★', label: 'Over 320+ Reviews' },
     ],
     quote: '"Nearby families walking in now say they found us #1 on Google Maps without us paying for ads."',
+    telemetry: {
+      badge: 'MAPS 3-PACK GEO-RADAR',
+      growthRate: '100% Top-3 Grid',
+      beforeVal: 'Unranked (>20)',
+      afterVal: 'Top 3 in 42 Zones',
+      progressPercent: 96,
+      footers: ['✓ 320+ Verified 5★ Reviews', '✓ Geo-Tagged Photos', '✓ +180% Navigation Calls'],
+    },
   },
   {
     category: 'High-Value Treatment Campaigns',
@@ -375,6 +391,14 @@ const caseStudies = [
       { value: '62%', label: 'Chair Conversion Rate' },
     ],
     quote: '"Marketing Copilot filtered out bargain shoppers and filled our aesthetic operatory at full capacity."',
+    telemetry: {
+      badge: 'PREMIUM ALIGNER FUNNEL',
+      growthRate: '17X Quality Shift',
+      beforeVal: '4 / mo',
+      afterVal: '68 / mo',
+      progressPercent: 88,
+      footers: ['✓ Filtered ₹500 Shoppers', '✓ 4.8X Return on Ad Spend', '✓ 62% Chair Acceptance'],
+    },
   },
 ];
 
@@ -1311,6 +1335,7 @@ export default function DentalMarketingPage() {
             <ScrollReveal>
               <div className={styles.caseStudyCard}>
                 <div className={styles.caseInfoCol}>
+                  {/* Top Eyebrow Row */}
                   <div className={styles.caseHeaderRow}>
                     <div className={styles.caseClientBadge}>
                       <span className={styles.liveTelemetryLed} />
@@ -1321,22 +1346,28 @@ export default function DentalMarketingPage() {
                     </div>
                   </div>
 
+                  {/* Clean Prominent Headline */}
                   <h3 className={styles.caseTitle}>
                     {activeCs.headline}
                   </h3>
 
+                  {/* Illustrated Challenge vs Deployed Playbook Badges */}
                   <div className={styles.caseChallengeSolution}>
-                    <div className={styles.caseCSBlock}>
-                      <span className={styles.csLabel}>Clinic Challenge:</span>
-                      <p className={styles.csText}>{activeCs.challenge}</p>
+                    <div className={styles.caseCSBlockChallenge}>
+                      <div className={styles.csLabelChallenge}>
+                        <span>⚠️ Practice Challenge</span>
+                      </div>
+                      <p className={styles.csTextChallenge}>{activeCs.challenge}</p>
                     </div>
-                    <div className={styles.caseCSBlock}>
-                      <span className={styles.csLabel}>Growth Strategy:</span>
-                      <p className={styles.csText}>{activeCs.strategy}</p>
+                    <div className={styles.caseCSBlockStrategy}>
+                      <div className={styles.csLabelStrategy}>
+                        <span>🚀 Deployed Playbook</span>
+                      </div>
+                      <p className={styles.csTextStrategy}>{activeCs.strategy}</p>
                     </div>
                   </div>
 
-                  {/* Verified Clinical Practice Metrics (In left column, NOT on image) */}
+                  {/* 3 High-Impact Result Metric Cards */}
                   <div className={styles.caseMetricsRow}>
                     {activeCs.metrics.map((m, mIdx) => (
                       <div key={mIdx} className={styles.caseMetricBox}>
@@ -1346,31 +1377,79 @@ export default function DentalMarketingPage() {
                     ))}
                   </div>
 
+                  {/* Testimonial Quote & Action Button */}
                   <div className={styles.caseBottomBar}>
-                    <p className={styles.caseQuoteInline}>
+                    <div className={styles.caseQuoteBox}>
                       <span className={styles.caseQuoteMark}>“</span>
-                      {activeCs.quote}
-                    </p>
+                      <p className={styles.caseQuoteInline}>{activeCs.quote}</p>
+                    </div>
                     <div className={styles.caseCtaWrap}>
                       <BeamButton
                         href="/contact"
-                        label="Replicate Results"
+                        label="Replicate Growth"
                         size="sm"
                       />
                     </div>
                   </div>
                 </div>
 
-                {/* Right Column: Clean, Unobstructed Clinical Photography (ZERO text on image) */}
+                {/* Right Column: Illustrated Clinical Case Artifact & Practice Telemetry Showcase */}
                 <div className={styles.caseVisualColumn}>
-                  <div className={styles.caseImageFrame}>
-                    <Image
-                      src={activeCs.image}
-                      alt={activeCs.alt}
-                      fill
-                      className={styles.caseImage}
-                      sizes="(max-width: 900px) 100vw, 420px"
-                    />
+                  <div className={styles.caseArtifactContainer}>
+                    {/* Top Status Header */}
+                    <div className={styles.caseArtifactHeader}>
+                      <span className={styles.caseArtifactClinic}>{activeCs.clinic}</span>
+                      <span className={styles.caseArtifactLivePill}>
+                        <span className={styles.caseArtifactDot} />
+                        Verified Data
+                      </span>
+                    </div>
+
+                    {/* Operatory Photo Frame */}
+                    <div className={styles.caseImageFrame}>
+                      <Image
+                        src={activeCs.image}
+                        alt={activeCs.alt}
+                        fill
+                        className={styles.caseImage}
+                        sizes="(max-width: 900px) 100vw, 420px"
+                      />
+                    </div>
+
+                    {/* Illustrated Growth Telemetry Card */}
+                    <div className={styles.caseTelemetryOverlay}>
+                      <div className={styles.telemetryEyebrowRow}>
+                        <span className={styles.telemetryCategoryBadge}>{activeCs.telemetry.badge}</span>
+                        <span className={styles.telemetrySurgePill}>{activeCs.telemetry.growthRate}</span>
+                      </div>
+
+                      <div className={styles.telemetryComparisonRow}>
+                        <div className={styles.telemetryValCol}>
+                          <span className={styles.telemetryValLabel}>Initial Baseline</span>
+                          <span className={styles.telemetryValInitial}>{activeCs.telemetry.beforeVal}</span>
+                        </div>
+                        <span className={styles.telemetryArrow}>→</span>
+                        <div className={styles.telemetryValCol}>
+                          <span className={styles.telemetryValLabel}>After 90 Days</span>
+                          <span className={styles.telemetryValResult}>{activeCs.telemetry.afterVal}</span>
+                        </div>
+                      </div>
+
+                      {/* Visual Growth Progress Track */}
+                      <div className={styles.telemetryProgressBar}>
+                        <div
+                          className={styles.telemetryProgressFill}
+                          style={{ width: `${activeCs.telemetry.progressPercent}%` }}
+                        />
+                      </div>
+
+                      {/* Clinical Verification Checklist */}
+                      <div className={styles.telemetryChecklistRow}>
+                        {activeCs.telemetry.footers.map((item, fIdx) => (
+                          <span key={fIdx} className={styles.telemetryCheckChip}>{item}</span>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
