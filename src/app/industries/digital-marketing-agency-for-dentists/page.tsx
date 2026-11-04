@@ -1112,6 +1112,150 @@ export default function DentalMarketingPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════ */}
+      {/* SECTION 03: CLINICAL CREATIVE VAULT & ARTIFACTS    */}
+      {/* Dual-Panel Storytelling & Best Clinical Visual     */}
+      {/* ══════════════════════════════════════════════════ */}
+      <section id="creative-vault" className={styles.vaultSection}>
+        <div className={styles.container}>
+          {/* Section Header */}
+          <div className={styles.vaultHeader}>
+            <div className={styles.vaultPill}>
+              <span className={styles.vaultDot} />
+              <span>CLINICAL CREATIVE VAULT • LIVE CAMPAIGN ARTIFACTS</span>
+            </div>
+            <h2 className={styles.vaultTitle}>
+              How High-Value Patients Are Won: Clinical Storytelling &amp; Campaigns
+            </h2>
+            <p className={styles.vaultSubtitle}>
+              Step inside the real patient journey — from the initial late-night distress search to interactive clinical education, overcome fear, and confirmed operatory chair appointments.
+            </p>
+          </div>
+
+          {/* Segmented Control Procedure Tabs */}
+          <div className={styles.segmentedTabsContainer}>
+            <div className={styles.segmentedTabsDock}>
+              {clinicalStories.map((story, idx) => (
+                <button
+                  key={story.id}
+                  type="button"
+                  onClick={() => setActiveStoryIdx(idx)}
+                  className={`${styles.segmentedTabBtn} ${activeStoryIdx === idx ? styles.segmentedTabBtnActive : ''}`}
+                  aria-label={`View Story: ${story.tabLabel}`}
+                >
+                  <span>{story.tabLabel}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* DUAL PANEL: Left Side Narrative Timeline • Right Side Unobstructed Hero Image */}
+          <ScrollReveal>
+            <div className={styles.dualPanelContainer}>
+              <div className={styles.cardTopGlowBeam} aria-hidden="true" />
+
+              {/* LEFT PANEL: Clean Scannable Narrative */}
+              <div className={styles.storyContentPanel}>
+                <div className={styles.storyTopMeta}>
+                  <span className={styles.storyProcedurePill}>{activeStory.procedureTag}</span>
+                  <span className={styles.storyCampaignBadge}>
+                    <span className={styles.storyLiveDot} />
+                    {activeStory.badge}
+                  </span>
+                </div>
+
+                <h3 className={styles.storyMainTitle}>{activeStory.title}</h3>
+                <p className={styles.storyHookText}>{activeStory.hook}</p>
+
+                {/* Elegant Connecting Timeline */}
+                <div className={styles.storyTimelineClean}>
+                  {activeStory.narrative.map((item, nIdx) => (
+                    <div key={nIdx} className={styles.timelineNode}>
+                      <div className={styles.timelineTrackCol}>
+                        <div className={styles.timelineCircle}>{item.step}</div>
+                        {nIdx < activeStory.narrative.length - 1 && (
+                          <div className={styles.timelineVerticalLine} />
+                        )}
+                      </div>
+                      <div className={styles.timelineContentCol}>
+                        <div className={styles.timelineHeadingRow}>
+                          <span className={styles.timelinePhaseTag}>{item.phase}</span>
+                          <h4 className={styles.timelineTitle}>{item.title}</h4>
+                        </div>
+                        <p className={styles.timelineDesc}>{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Sleek Metric Ribbon */}
+                <div className={styles.storyMetricRibbon}>
+                  {activeStory.metrics.map((m, mIdx) => (
+                    <div key={mIdx} className={styles.ribbonMetricItem}>
+                      <span className={styles.ribbonMetricVal}>{m.val}</span>
+                      <span className={styles.ribbonMetricLabel}>{m.label}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* CTA Action Row */}
+                <div className={styles.storyCtaRow}>
+                  <BeamButton
+                    href="/contact"
+                    label="Deploy This Campaign Strategy"
+                    size="md"
+                  />
+                  <span className={styles.storyCtaNote}>
+                    ✓ Tailored to your local clinic catchment
+                  </span>
+                </div>
+              </div>
+
+              {/* RIGHT PANEL: Unobstructed Hero Clinical Visual & Verification Card */}
+              <div className={styles.storyVisualPanel}>
+                <div className={styles.heroShowcaseWrap}>
+                  {/* Clean, Full-Bleed Clinical Photograph Frame */}
+                  <div className={styles.heroImageFrame}>
+                    <Image
+                      src={activeStory.image}
+                      alt={activeStory.imageAlt}
+                      fill
+                      className={styles.heroImage}
+                      sizes="(max-width: 960px) 100vw, 620px"
+                      priority
+                    />
+
+                    {/* Minimalist Glass Badges on Top Corners */}
+                    <div className={styles.heroImageHeader}>
+                      <span className={styles.heroTagPill}>{activeStory.imageTag}</span>
+                      <span className={styles.heroLivePill}>
+                        <span className={styles.heroDot} />
+                        Live Patient Flow
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Clean Doctor Verification Card Positioned Below (Zero image blocking) */}
+                  <div className={styles.heroDoctorStrip}>
+                    <div className={styles.doctorQuoteRow}>
+                      <span className={styles.doctorQuoteMark}>“</span>
+                      <p className={styles.doctorQuoteText}>{activeStory.quote}</p>
+                    </div>
+                    <div className={styles.doctorMetaRow}>
+                      <div>
+                        <div className={styles.doctorName}>{activeStory.doctor}</div>
+                        <div className={styles.doctorClinic}>{activeStory.doctorClinic}</div>
+                      </div>
+                      <span className={styles.doctorVerifiedBadge}>✓ Verified Practice Data</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════ */}
       {/* THE DENTAL ADVANTAGE • Pixel-Aligned Skeuomorphic */}
       {/* ══════════════════════════════════════════════════ */}
       <section id="why-choose-us" className={styles.sectionBlockAlt}>
@@ -1545,143 +1689,6 @@ export default function DentalMarketingPage() {
       {/* SECTION 05B: VISUAL CREATIVE VAULT & LIVE ASSETS   */}
       {/* 100% Graphics & Image-Oriented Patient Showcase   */}
       {/* ══════════════════════════════════════════════════ */}
-      <section id="creative-vault" className={styles.vaultSection}>
-        <div className={styles.container}>
-          {/* Section Header */}
-          <div className={styles.vaultHeader}>
-            <div className={styles.vaultPill}>
-              <span>CLINICAL CREATIVE VAULT • LIVE CAMPAIGN ARTIFACTS</span>
-            </div>
-            <h2 className={styles.vaultTitle}>
-              How High-Value Patients Are Won: Clinical Storytelling
-            </h2>
-            <p className={styles.vaultSubtitle}>
-              Step inside the real patient journey — from the initial late-night distress search to interactive clinical education, overcome fear, and confirmed operatory appointments.
-            </p>
-          </div>
-
-          {/* Segmented Control Procedure Tabs */}
-          <div className={styles.segmentedTabsContainer}>
-            <div className={styles.segmentedTabsDock}>
-              {clinicalStories.map((story, idx) => (
-                <button
-                  key={story.id}
-                  type="button"
-                  onClick={() => setActiveStoryIdx(idx)}
-                  className={`${styles.segmentedTabBtn} ${activeStoryIdx === idx ? styles.segmentedTabBtnActive : ''}`}
-                  aria-label={`View Story: ${story.tabLabel}`}
-                >
-                  <span>{story.tabLabel}</span>
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* DUAL PANEL: Left Side Narrative Timeline • Right Side Unobstructed Hero Image */}
-          <ScrollReveal>
-            <div className={styles.dualPanelContainer}>
-              {/* LEFT PANEL: Clean Scannable Narrative */}
-              <div className={styles.storyContentPanel}>
-                <div className={styles.storyTopMeta}>
-                  <span className={styles.storyProcedurePill}>{activeStory.procedureTag}</span>
-                  <span className={styles.storyCampaignBadge}>
-                    <span className={styles.storyLiveDot} />
-                    {activeStory.badge}
-                  </span>
-                </div>
-
-                <h3 className={styles.storyMainTitle}>{activeStory.title}</h3>
-                <p className={styles.storyHookText}>{activeStory.hook}</p>
-
-                {/* Elegant Connecting Timeline (No nested boxes) */}
-                <div className={styles.storyTimelineClean}>
-                  {activeStory.narrative.map((item, nIdx) => (
-                    <div key={nIdx} className={styles.timelineNode}>
-                      <div className={styles.timelineTrackCol}>
-                        <div className={styles.timelineCircle}>{item.step}</div>
-                        {nIdx < activeStory.narrative.length - 1 && (
-                          <div className={styles.timelineVerticalLine} />
-                        )}
-                      </div>
-                      <div className={styles.timelineContentCol}>
-                        <div className={styles.timelineHeadingRow}>
-                          <span className={styles.timelinePhaseTag}>{item.phase}</span>
-                          <h4 className={styles.timelineTitle}>{item.title}</h4>
-                        </div>
-                        <p className={styles.timelineDesc}>{item.desc}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Sleek Metric Ribbon */}
-                <div className={styles.storyMetricRibbon}>
-                  {activeStory.metrics.map((m, mIdx) => (
-                    <div key={mIdx} className={styles.ribbonMetricItem}>
-                      <span className={styles.ribbonMetricVal}>{m.val}</span>
-                      <span className={styles.ribbonMetricLabel}>{m.label}</span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* CTA Action Row */}
-                <div className={styles.storyCtaRow}>
-                  <BeamButton
-                    href="/contact"
-                    label="Deploy This Campaign Strategy"
-                    size="md"
-                  />
-                  <span className={styles.storyCtaNote}>
-                    ✓ Tailored to your local clinic catchment
-                  </span>
-                </div>
-              </div>
-
-              {/* RIGHT PANEL: Unobstructed Hero Clinical Visual & Verification Card */}
-              <div className={styles.storyVisualPanel}>
-                <div className={styles.heroShowcaseWrap}>
-                  {/* Clean, Full-Bleed Clinical Photograph Frame */}
-                  <div className={styles.heroImageFrame}>
-                    <Image
-                      src={activeStory.image}
-                      alt={activeStory.imageAlt}
-                      fill
-                      className={styles.heroImage}
-                      sizes="(max-width: 960px) 100vw, 620px"
-                      priority
-                    />
-
-                    {/* Minimalist Glass Badges on Top Corners */}
-                    <div className={styles.heroImageHeader}>
-                      <span className={styles.heroTagPill}>{activeStory.imageTag}</span>
-                      <span className={styles.heroLivePill}>
-                        <span className={styles.heroDot} />
-                        Live Patient Flow
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Clean Doctor Verification Card Positioned Below (Zero image blocking) */}
-                  <div className={styles.heroDoctorStrip}>
-                    <div className={styles.doctorQuoteRow}>
-                      <span className={styles.doctorQuoteMark}>“</span>
-                      <p className={styles.doctorQuoteText}>{activeStory.quote}</p>
-                    </div>
-                    <div className={styles.doctorMetaRow}>
-                      <div>
-                        <div className={styles.doctorName}>{activeStory.doctor}</div>
-                        <div className={styles.doctorClinic}>{activeStory.doctorClinic}</div>
-                      </div>
-                      <span className={styles.doctorVerifiedBadge}>✓ Verified Practice Data</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
       {/* ══════════════════════════════════════════════════ */}
       {/* SECTION 06: TRADITIONAL VS. DENTAL MARKETING       */}
       {/* Minimal Single-Window Benchmark Comparison Card    */}
