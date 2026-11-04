@@ -632,26 +632,26 @@ const clinicalStories: ClinicalStory[] = [
     category: 'Surgical Dental Implants',
     clinic: 'Apex Dental & Implant Studio',
     location: 'New Delhi',
-    tag: 'HIGH-TICKET SURGICAL IMPLANTS // NEW DELHI',
-    headline: 'Scaling Full-Arch Surgical Implants from 4 to 28 Monthly Cases',
-    doctor: 'Dr. R. Malhotra, MDS (Prosthodontics & Implantology)',
-    challenge: 'Losing high-ticket full-arch candidates to corporate chains; high surgical fear and pricing caused 60%+ consultation drop-offs.',
-    strategy: 'Deployed negative-scrubbed Google Search Ads, CBCT 3D guided surgery explainer pages, and 1-tap WhatsApp token reservation with 0% EMI financing.',
+    tag: 'HIGH-TICKET SURGICAL IMPLANTS',
+    headline: 'Scaling Full-Arch Implants: 4 to 28 Monthly Consultations',
+    doctor: 'Dr. R. Malhotra, MDS (Implantology)',
+    challenge: 'Lost high-ticket cases to hospital chains; patient fear caused 60%+ consultation drop-offs.',
+    strategy: 'Targeted Google Search funnels with 3D CBCT guided surgery pages and 0% EMI financing.',
     image: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=85',
     alt: 'Maxillofacial implant surgeon reviewing 3D CBCT digital scan with surgical guide',
     metrics: [
-      { value: '28 Cases', label: 'Monthly Implant Consults' },
-      { value: '₹220', label: 'Qualified Cost Per Lead' },
-      { value: '92.4%', label: 'Operatory Show-Up Rate' },
+      { value: '28 Cases', label: 'Monthly Consults' },
+      { value: '₹220', label: 'Qualified CPL' },
+      { value: '92.4%', label: 'Show-Up Rate' },
     ],
-    quote: '"We stopped getting price shoppers who waste chair time. Every patient scheduled in Operatory 2 is financially pre-qualified for surgical implants."',
+    quote: '"Every patient booked in Operatory 2 is financially pre-qualified for surgical implants."',
     telemetry: {
       badge: 'SURGICAL IMPLANT FUNNEL',
       growthRate: '7X Case Surge',
       beforeVal: '4 / mo',
       afterVal: '28 / mo',
       progressPercent: 94,
-      footers: ['✓ WhatsApp 1-Tap Booking', '✓ 0% EMI Patient Funnel', '✓ Full Operatory Booking'],
+      footers: ['✓ WhatsApp 1-Tap Booking', '✓ 0% EMI Pre-Approved', '✓ Full Operatory Booking'],
     },
   },
   {
@@ -660,26 +660,26 @@ const clinicalStories: ClinicalStory[] = [
     category: 'High-Value Cosmetic Campaigns',
     clinic: 'Elite Aligners & Aesthetic Studio',
     location: 'Bangalore',
-    tag: 'HIGH-TICKET CASE ACQUISITION // BANGALORE',
-    headline: 'Generating 68+ Monthly Qualified Clear Aligner Consultations',
-    doctor: 'Dr. S. Nambiar, MDS (Orthodontics & Dentofacial)',
-    challenge: 'Wasted ad budget on ₹500 scaling shoppers; zero traction for premium ₹1.5L+ clear aligners with generic social ads.',
-    strategy: 'Engineered 3D smile simulation Instagram funnels and dedicated consultation landers with transparent monthly 0% EMI financing guides.',
+    tag: 'AESTHETIC ORTHODONTICS',
+    headline: 'Generating 68+ Monthly Qualified Clear Aligner Consults',
+    doctor: 'Dr. S. Nambiar, MDS (Orthodontics)',
+    challenge: 'Zero traction for ₹1.5L+ aligners from generic social ads; patients confused by cheap DIY trays.',
+    strategy: 'Engineered 3D smile simulation Instagram funnels and localized 1-tap WhatsApp scan bookings.',
     image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1200&q=85',
     alt: 'Patient reviewing 3D digital clear aligner smile preview at Elite Aligners',
     metrics: [
-      { value: '68+', label: 'Monthly Aligner Consults' },
+      { value: '68+', label: 'Monthly Consults' },
       { value: '4.8X', label: 'Verified ROAS' },
-      { value: '62%', label: 'Chair Conversion Rate' },
+      { value: '62%', label: 'Chair Conversion' },
     ],
-    quote: '"Marketing Copilot filtered out bargain shoppers and filled our aesthetic operatory at full capacity with motivated smile makeover candidates."',
+    quote: '"Filtered out bargain shoppers and filled our aesthetic operatory at full capacity."',
     telemetry: {
       badge: 'PREMIUM ALIGNER FUNNEL',
       growthRate: '17X Quality Shift',
       beforeVal: '4 / mo',
       afterVal: '68 / mo',
       progressPercent: 88,
-      footers: ['✓ Filtered ₹500 Shoppers', '✓ 4.8X Return on Ad Spend', '✓ 62% Chair Acceptance'],
+      footers: ['✓ Filtered ₹500 Shoppers', '✓ 4.8X Return on Spend', '✓ 62% Chair Acceptance'],
     },
   },
   {
@@ -688,26 +688,26 @@ const clinicalStories: ClinicalStory[] = [
     category: 'Local Search & Catchment Dominance',
     clinic: 'Dr. SmileCraft Dental Care',
     location: 'Mumbai',
-    tag: 'LOCAL CATCHMENT DOMINANCE // MUMBAI',
+    tag: 'LOCAL CATCHMENT DOMINANCE',
     headline: 'Dominating Google Maps 3-Pack Across 42 Micro-Catchments',
-    doctor: 'Dr. A. Joshi, BDS (Aesthetic & Family Dentistry)',
-    challenge: 'Invisible beyond 1 km; corporate hospital chains monopolized Google Maps, suppressing local family footfall and emergency visits.',
-    strategy: 'Optimized Google Maps 3-Pack across 42 pin codes with geo-tagged operatory photos, clinical schema markup, and automated 5-star WhatsApp reviews.',
+    doctor: 'Dr. A. Joshi, BDS (Aesthetics)',
+    challenge: 'Invisible beyond 800m; corporate chains monopolized Maps, suppressing walk-ins.',
+    strategy: 'Geo-tagged operatory photography, clinical schema markup, and automated 5-star WhatsApp reviews.',
     image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=85',
     alt: 'Dr. SmileCraft clinic consultation operatory in Mumbai',
     metrics: [
-      { value: 'Top 3', label: 'Rank in 42 Pin Codes' },
-      { value: '+180%', label: 'Map Directions & Calls' },
+      { value: 'Top 3', label: 'Rank in 42 Zones' },
+      { value: '+180%', label: 'Navigation & Calls' },
       { value: '4.9★', label: 'Over 320+ Reviews' },
     ],
-    quote: '"Nearby families walk into our clinic daily saying Google Maps recommended us #1 with glowing 5-star reviews."',
+    quote: '"Nearby families walk into our clinic daily saying Google Maps recommended us #1."',
     telemetry: {
       badge: 'MAPS 3-PACK GEO-RADAR',
       growthRate: '100% Top-3 Grid',
       beforeVal: 'Unranked (>20)',
       afterVal: 'Top 3 in 42 Zones',
       progressPercent: 96,
-      footers: ['✓ 320+ Verified 5★ Reviews', '✓ Geo-Tagged Photos', '✓ +180% Navigation Calls'],
+      footers: ['✓ 320+ Verified 5★ Reviews', '✓ Geo-Tagged Photos', '✓ +180% Direction Calls'],
     },
   },
   {
@@ -716,19 +716,19 @@ const clinicalStories: ClinicalStory[] = [
     category: 'Multigenerational Family Retention',
     clinic: 'Roy Family Dental Clinic',
     location: 'Gurgaon',
-    tag: 'LIFETIME PATIENT RETENTION // GURGAON',
-    headline: 'Transforming Anxious First-Timers into Decades of Multi-Family Loyalty',
-    doctor: 'Dr. N. Roy, MDS (Pediatric Dentistry)',
-    challenge: 'Mothers and families vetting local dentists prioritize sterility standards and gentle sedation options over discount pricing.',
-    strategy: 'Doctor-led video explainers detailing Class-B autoclave sterilization protocols and automated WhatsApp 6-month hygiene recalls.',
+    tag: 'LIFETIME PATIENT RETENTION',
+    headline: 'Transforming Anxious First-Timers into 400+ Family Moat',
+    doctor: 'Dr. N. Roy, MDS (Pediatric)',
+    challenge: 'Mothers and families vetting local dentists prioritize sterility and gentle sedation options.',
+    strategy: 'Doctor-led video explainers detailing Class-B autoclave sterilization and 6-month automated recalls.',
     image: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=1200&q=85',
     alt: 'Family dentist conducting gentle consultation with patient',
     metrics: [
       { value: '86%', label: '6-Month Recall Rate' },
       { value: '3.4X', label: 'Family Referrals' },
-      { value: '₹140', label: 'Blended Cost Per Lead' },
+      { value: '₹140', label: 'Blended CPL' },
     ],
-    quote: '"Our appointment books for hygiene cleanings and family consultations are booked solid thanks to the automated recall engine."',
+    quote: '"Our appointment books for hygiene cleanings and family consultations are booked solid."',
     telemetry: {
       badge: 'HYGIENE RECALL ENGINE',
       growthRate: '86% Retention',
@@ -1187,8 +1187,16 @@ export default function DentalMarketingPage() {
                       alt={activeStory.alt}
                       fill
                       className={styles.vaultImage}
-                      sizes="(max-width: 900px) 100vw, 420px"
+                      sizes="(max-width: 900px) 100vw, 680px"
+                      priority
                     />
+                    <div className={styles.vaultImageGlassBar}>
+                      <span className={styles.vaultImageTagPill}>{activeStory.category}</span>
+                      <span className={styles.vaultImageLivePill}>
+                        <span className={styles.liveTelemetryLed} />
+                        4K Clinical Verification
+                      </span>
+                    </div>
                   </div>
 
                   {/* Skeuomorphic Growth Telemetry Box */}
