@@ -1553,34 +1553,36 @@ export default function DentalMarketingPage() {
               <span>CLINICAL CREATIVE VAULT • LIVE CAMPAIGN ARTIFACTS</span>
             </div>
             <h2 className={styles.vaultTitle}>
-              How High-Value Patients Are Won: Clinical Storytelling &amp; Campaigns
+              How High-Value Patients Are Won: Clinical Storytelling
             </h2>
             <p className={styles.vaultSubtitle}>
-              Step inside the real patient journey — from the initial late-night distress search to interactive clinical education, overcome fear, and confirmed operatory chair appointments.
+              Step inside the real patient journey — from the initial late-night distress search to interactive clinical education, overcome fear, and confirmed operatory appointments.
             </p>
           </div>
 
-          {/* Interactive Procedure Story Selector Tabs */}
-          <div className={styles.storyTabsWrap}>
-            {clinicalStories.map((story, idx) => (
-              <button
-                key={story.id}
-                type="button"
-                onClick={() => setActiveStoryIdx(idx)}
-                className={`${styles.storyTabBtn} ${activeStoryIdx === idx ? styles.storyTabBtnActive : ''}`}
-                aria-label={`View Story: ${story.tabLabel}`}
-              >
-                <span>{story.tabLabel}</span>
-              </button>
-            ))}
+          {/* Segmented Control Procedure Tabs */}
+          <div className={styles.segmentedTabsContainer}>
+            <div className={styles.segmentedTabsDock}>
+              {clinicalStories.map((story, idx) => (
+                <button
+                  key={story.id}
+                  type="button"
+                  onClick={() => setActiveStoryIdx(idx)}
+                  className={`${styles.segmentedTabBtn} ${activeStoryIdx === idx ? styles.segmentedTabBtnActive : ''}`}
+                  aria-label={`View Story: ${story.tabLabel}`}
+                >
+                  <span>{story.tabLabel}</span>
+                </button>
+              ))}
+            </div>
           </div>
 
-          {/* DUAL PANEL: Left Side Storytelling Narrative • Right Side Best Clinical Img & Artifact */}
+          {/* DUAL PANEL: Left Side Narrative Timeline • Right Side Unobstructed Hero Image */}
           <ScrollReveal>
             <div className={styles.dualPanelContainer}>
-              {/* LEFT PANEL: Compact, Scannable Storytelling Narrative */}
+              {/* LEFT PANEL: Clean Scannable Narrative */}
               <div className={styles.storyContentPanel}>
-                <div className={styles.storyEyebrowRow}>
+                <div className={styles.storyTopMeta}>
                   <span className={styles.storyProcedurePill}>{activeStory.procedureTag}</span>
                   <span className={styles.storyCampaignBadge}>
                     <span className={styles.storyLiveDot} />
@@ -1591,35 +1593,38 @@ export default function DentalMarketingPage() {
                 <h3 className={styles.storyMainTitle}>{activeStory.title}</h3>
                 <p className={styles.storyHookText}>{activeStory.hook}</p>
 
-                {/* 3-Step Compact Patient Storyline */}
-                <div className={styles.storyTimeline}>
+                {/* Elegant Connecting Timeline (No nested boxes) */}
+                <div className={styles.storyTimelineClean}>
                   {activeStory.narrative.map((item, nIdx) => (
-                    <div key={nIdx} className={styles.storyTimelineItem}>
-                      <div className={styles.storyStepBadge}>
-                        <span className={styles.storyStepNum}>{item.step}</span>
+                    <div key={nIdx} className={styles.timelineNode}>
+                      <div className={styles.timelineTrackCol}>
+                        <div className={styles.timelineCircle}>{item.step}</div>
+                        {nIdx < activeStory.narrative.length - 1 && (
+                          <div className={styles.timelineVerticalLine} />
+                        )}
                       </div>
-                      <div className={styles.storyStepBody}>
-                        <h4 className={styles.storyStepHeading}>
-                          <span className={styles.storyStepPhasePill}>{item.phase}</span>
-                          {item.title}
-                        </h4>
-                        <p className={styles.storyStepDescription}>{item.desc}</p>
+                      <div className={styles.timelineContentCol}>
+                        <div className={styles.timelineHeadingRow}>
+                          <span className={styles.timelinePhaseTag}>{item.phase}</span>
+                          <h4 className={styles.timelineTitle}>{item.title}</h4>
+                        </div>
+                        <p className={styles.timelineDesc}>{item.desc}</p>
                       </div>
                     </div>
                   ))}
                 </div>
 
-                {/* 3 Key Campaign Performance Metrics */}
-                <div className={styles.storyMetricsGrid}>
+                {/* Sleek Metric Ribbon */}
+                <div className={styles.storyMetricRibbon}>
                   {activeStory.metrics.map((m, mIdx) => (
-                    <div key={mIdx} className={styles.storyMetricBox}>
-                      <span className={styles.storyMetricVal}>{m.val}</span>
-                      <span className={styles.storyMetricLabel}>{m.label}</span>
+                    <div key={mIdx} className={styles.ribbonMetricItem}>
+                      <span className={styles.ribbonMetricVal}>{m.val}</span>
+                      <span className={styles.ribbonMetricLabel}>{m.label}</span>
                     </div>
                   ))}
                 </div>
 
-                {/* Action CTA */}
+                {/* CTA Action Row */}
                 <div className={styles.storyCtaRow}>
                   <BeamButton
                     href="/contact"
@@ -1627,53 +1632,53 @@ export default function DentalMarketingPage() {
                     size="md"
                   />
                   <span className={styles.storyCtaNote}>
-                    ✓ Tailored to your clinic catchment
+                    ✓ Tailored to your local clinic catchment
                   </span>
                 </div>
               </div>
 
-              {/* RIGHT PANEL: Hero-Sized Highlighted Clinical Image with Glassmorphic Telemetry */}
+              {/* RIGHT PANEL: Unobstructed Hero Clinical Visual & Verification Card */}
               <div className={styles.storyVisualPanel}>
-                <div className={styles.heroImageShowcaseCard}>
-                  {/* Big Hero Clinical Image Container */}
-                  <div className={styles.storyHeroImageFrame}>
+                <div className={styles.heroShowcaseWrap}>
+                  {/* Clean, Full-Bleed Clinical Photograph Frame */}
+                  <div className={styles.heroImageFrame}>
                     <Image
                       src={activeStory.image}
                       alt={activeStory.imageAlt}
                       fill
-                      className={styles.storyHeroImage}
+                      className={styles.heroImage}
                       sizes="(max-width: 960px) 100vw, 620px"
                       priority
                     />
 
-                    {/* Top Floating Glass Badges */}
-                    <div className={styles.storyHeroTopBadges}>
-                      <span className={styles.storyHeroTagPill}>{activeStory.imageTag}</span>
-                      <span className={styles.storyHeroLivePill}>
-                        <span className={styles.storyVerifiedDot} />
-                        Verified Clinical Artifact
+                    {/* Minimalist Glass Badges on Top Corners */}
+                    <div className={styles.heroImageHeader}>
+                      <span className={styles.heroTagPill}>{activeStory.imageTag}</span>
+                      <span className={styles.heroLivePill}>
+                        <span className={styles.heroDot} />
+                        Live Patient Flow
                       </span>
                     </div>
+                  </div>
 
-                    {/* Bottom Embedded Glassmorphic Doctor Telemetry Card */}
-                    <div className={styles.storyHeroGlassCard}>
-                      <div className={styles.glassQuoteRow}>
-                        <span className={styles.glassQuoteMark}>“</span>
-                        <p className={styles.glassQuoteText}>{activeStory.quote}</p>
+                  {/* Clean Doctor Verification Card Positioned Below (Zero image blocking) */}
+                  <div className={styles.heroDoctorStrip}>
+                    <div className={styles.doctorQuoteRow}>
+                      <span className={styles.doctorQuoteMark}>“</span>
+                      <p className={styles.doctorQuoteText}>{activeStory.quote}</p>
+                    </div>
+                    <div className={styles.doctorMetaRow}>
+                      <div>
+                        <div className={styles.doctorName}>{activeStory.doctor}</div>
+                        <div className={styles.doctorClinic}>{activeStory.doctorClinic}</div>
                       </div>
-                      <div className={styles.glassDoctorMeta}>
-                        <div>
-                          <div className={styles.glassDoctorName}>{activeStory.doctor}</div>
-                          <div className={styles.glassDoctorClinic}>{activeStory.doctorClinic}</div>
-                        </div>
-                        <span className={styles.glassVerifiedBadge}>✓ Verified Practice</span>
-                      </div>
+                      <span className={styles.doctorVerifiedBadge}>✓ Verified Practice Data</span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            </ScrollReveal>
+          </ScrollReveal>
         </div>
       </section>
 
