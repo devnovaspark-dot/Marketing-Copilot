@@ -627,111 +627,111 @@ const clinicalStories: ClinicalStory[] = [
     id: 'implants',
     tabLabel: '🦷 Full-Arch Implants',
     procedureTag: 'Surgical Dental Implants',
-    badge: 'HIGH-TICKET PATIENT ACQUISITION',
-    title: 'From Missing-Tooth Embarrassment to Confirmed Full-Arch Rehabilitation',
-    hook: 'How a negative-scrubbed Google Search funnel captures high-intent implant candidates while screening out low-margin ₹500 price shoppers.',
+    badge: 'HIGH-TICKET ACQUISITION',
+    title: 'From Missing Teeth to Confirmed Full-Arch Restoration',
+    hook: 'Negative-scrubbed Google Search funnels capturing high-ticket implant cases while screening out bargain seekers.',
     narrative: [
       {
         step: '01',
-        phase: 'HIGH-INTENT DISTRESS',
-        title: 'The Midnight Emergency Search',
-        desc: 'Patients suffering from painful failing bridges or missing molars search late at night: "best implant clinic near me" or "fixed teeth in 3 days". We deploy negative-keyword scrubbed Search campaigns that target affluent local catchments and filter out bargain seekers.',
+        phase: 'INTENT CAPTURE',
+        title: 'High-Intent Distress Queries',
+        desc: 'Targeting searches like "permanent fixed teeth near me" across affluent local catchments while filtering out cheap bargain seekers.',
       },
       {
         step: '02',
-        phase: 'CLINICAL ASSURANCE',
-        title: 'Eliminating Fear with 3D CBCT Scans',
-        desc: 'Instead of landing on generic hospital pages, prospects review an implant-specific case lander highlighting CBCT 3D guided surgery, sterilized operatory tours, and transparent 0% EMI financing plans that eliminate procedure cost anxiety.',
+        phase: 'CLINICAL TRUST',
+        title: '3D CBCT Guided Surgery Preview',
+        desc: 'Custom landing pages showcasing sterilized operatory walkthroughs and transparent 0% EMI plans eliminate surgical anxiety.',
       },
       {
         step: '03',
-        phase: 'CHAIR CONVERSION',
-        title: '1-Tap WhatsApp Token Confirmation',
-        desc: 'A frictionless WhatsApp booking flow assigns an immediate priority operatory token with preparation instructions, boosting clinic consultation show-up rates from an industry average of 42% to 92.4%.',
+        phase: 'CHAIR BOOKING',
+        title: '1-Tap WhatsApp Slot Confirmation',
+        desc: 'Frictionless WhatsApp booking assigns immediate priority operatory slots, achieving a verified 92.4% show-up rate.',
       },
     ],
     metrics: [
-      { val: '₹1.85L', label: 'Average Case Value' },
+      { val: '₹1.85L', label: 'Avg Case Value' },
       { val: '₹220', label: 'Qualified CPL' },
       { val: '92.4%', label: 'Operatory Show-Up' },
     ],
     image: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=85',
     imageAlt: 'Maxillofacial implant surgeon reviewing 3D CBCT digital scan with surgical guide',
     imageTag: 'CBCT 3D GUIDED SURGERY',
-    quote: '"We stopped getting price shoppers who waste chair time. Every patient scheduled in Operatory 2 is financially pre-qualified for surgical implants."',
-    doctor: 'Dr. R. Malhotra, MDS (Prosthodontics & Implantology)',
+    quote: '"Every patient scheduled in Operatory 2 is financially pre-qualified for surgical implants."',
+    doctor: 'Dr. R. Malhotra, MDS (Implantology)',
     doctorClinic: 'Apex Dental & Implant Studio, New Delhi',
   },
   {
     id: 'aligners',
     tabLabel: '✨ Clear Aligners & Veneers',
-    procedureTag: 'Aesthetic Orthodontics & Veneers',
-    badge: 'HIGH-MARGIN COSMETIC CONVERSION',
-    title: 'Turning Instagram Smile Insecurity into Premium Aesthetic Consultations',
-    hook: 'How 3D digital smile simulation Instagram funnels convert 22–38 year old working professionals seeking confident smiles.',
+    procedureTag: 'Cosmetic & Orthodontics',
+    badge: 'AESTHETIC PATIENT FUNNEL',
+    title: 'Turning Smile Insecurity into Premium Aesthetic Consultations',
+    hook: 'High-definition 3D smile simulations converting 22–38 year-old working professionals across Instagram.',
     narrative: [
       {
         step: '01',
-        phase: 'AESTHETIC DISCOVERY',
+        phase: 'SOCIAL DISCOVERY',
         title: 'Local Catchment Social Discovery',
-        desc: 'Aesthetic smile transformations and discreet clear aligner comparisons are delivered to working professionals within a 7 km radius who follow wellness, fitness, and lifestyle brands across Instagram & Facebook.',
+        desc: 'Hyper-targeted Instagram smile transformation reels reaching working professionals within a 7 km clinic radius.',
       },
       {
         step: '02',
         phase: 'EMOTIONAL HOOK',
-        title: 'Interactive 3D Smile Preview',
-        desc: 'Prospective candidates view interactive digital 3D before-and-after smile alignment simulations, transforming passive visual browsing into an urgent desire for clinic treatment.',
+        title: 'Interactive 3D Smile Simulator',
+        desc: 'Digital before-and-after smile alignment previews transform passive social browsing into an urgent desire for clinic treatment.',
       },
       {
         step: '03',
-        phase: 'CHAIR RESERVATION',
-        title: 'Instant 3D Diagnostic Slot Booking',
-        desc: 'Candidates bypass traditional reception forms and reserve an introductory 3D iTero diagnostic scan consultation directly with flexible monthly EMI financing options.',
+        phase: 'CHAIR BOOKING',
+        title: 'Direct Diagnostic Scan Reservation',
+        desc: 'Patients claim an introductory 3D iTero diagnostic scan consultation directly with flexible monthly EMI financing options.',
       },
     ],
     metrics: [
-      { val: '68+', label: 'Monthly Aligner Consults' },
+      { val: '68+', label: 'Monthly Inquiries' },
       { val: '4.8X', label: 'Verified ROAS' },
-      { val: '64%', label: 'Chair Conversion Rate' },
+      { val: '64%', label: 'Chair Conversion' },
     ],
     image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1200&q=85',
     imageAlt: 'Patient smiling during digital aesthetic veneer and clear aligner consultation',
     imageTag: 'AESTHETIC SMILE STUDIO',
-    quote: '"Our clear aligner chair bookings tripled in 60 days. Patients arrive at our studio already convinced about the clinical outcome."',
-    doctor: 'Dr. S. Nambiar, MDS (Orthodontics & Dentofacial)',
+    quote: '"Our clear aligner chair bookings tripled in 60 days. Patients arrive already convinced about the clinical outcome."',
+    doctor: 'Dr. S. Nambiar, MDS (Orthodontics)',
     doctorClinic: 'Elite Aligners & Aesthetic Studio, Bangalore',
   },
   {
     id: 'local-3pack',
     tabLabel: '📍 Local 3-Pack Catchment',
     procedureTag: 'Google Maps 3-Pack Dominance',
-    badge: 'HYPER-LOCAL CATCHMENT DOMINANCE',
-    title: 'Capturing High-Urgency Local Patients Across 42 Micro-Catchments',
-    hook: 'How automated 5-star WhatsApp review triggers and geo-grid optimization turn Google Maps into a 24/7 direct patient funnel.',
+    badge: 'HYPERLOCAL DOMINANCE',
+    title: 'Dominating Acute Dental Searches Across 42 Micro-Catchments',
+    hook: 'Automated 5-star WhatsApp reviews and geo-grid SEO turning Google Maps into a 24/7 patient funnel.',
     narrative: [
       {
         step: '01',
-        phase: 'URGENT LOCAL SEARCH',
-        title: 'The Acute Morning Distress Search',
-        desc: 'A corporate executive or parent wakes up with acute dental discomfort and searches "dentist open near me". Our geo-grid ranking architecture locks down position #1 in Google Maps across all surrounding sectors.',
+        phase: 'LOCAL SEARCH',
+        title: '#1 Google Maps 3-Pack Locking',
+        desc: 'Dominating top positions for "emergency dentist near me" across all micro-catchments within 5–10 km.',
       },
       {
         step: '02',
-        phase: 'UNMATCHED REPUTATION',
-        title: '4.9★ Social Proof & Virtual Tour',
-        desc: 'With over 320+ geo-tagged clinical reviews and operatory walkthrough videos, the patient immediately chooses your clinic over rival corporate chains.',
+        phase: 'SOCIAL PROOF',
+        title: '320+ Verified 5★ Patient Reviews',
+        desc: 'Geo-tagged operatory photography and clinical reviews ensure searchers choose your practice over competitors.',
       },
       {
         step: '03',
         phase: 'GPS FOOTFALL',
-        title: 'Turn-by-Turn Navigation & Direct Walk-In',
-        desc: 'The Google Maps profile triggers direct WhatsApp consultation tokens and one-tap GPS navigation straight to your clinic reception desk.',
+        title: 'Turn-by-Turn GPS Navigation',
+        desc: 'Direct click-to-call and map navigation lead acute emergency patients straight to your clinic reception desk.',
       },
     ],
     metrics: [
-      { val: 'Top 3', label: 'Rank in 42 Catchments' },
-      { val: '+180%', label: 'Map Directions & Calls' },
-      { val: '4.9★', label: '320+ Verified Reviews' },
+      { val: 'Top 3', label: 'In 42 Catchments' },
+      { val: '+180%', label: 'Directions & Calls' },
+      { val: '4.9★', label: '320+ Reviews' },
     ],
     image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=85',
     imageAlt: 'Modern sterile dental operatory clinic welcoming emergency patient',
@@ -743,34 +743,34 @@ const clinicalStories: ClinicalStory[] = [
   {
     id: 'family',
     tabLabel: '👨‍👩‍👧 Family & Preventative Care',
-    procedureTag: 'Multigenerational Family Retention',
+    procedureTag: 'Family & Pediatric Care',
     badge: 'LIFETIME PATIENT RETENTION',
-    title: 'Transforming Anxious First-Timers into Decades of Multi-Family Loyalty',
-    hook: 'Building a fear-free clinical brand through sterilized operatory video tours and automated preventative hygiene recalls.',
+    title: 'Converting Anxious First-Timers into Decades of Multi-Family Loyalty',
+    hook: 'Fear-free clinical branding and automated recall workflows ensuring full recurring appointment books.',
     narrative: [
       {
         step: '01',
-        phase: 'FEAR-FREE DISCOVERY',
-        title: 'Parents Seeking Pain-Free Care',
-        desc: 'Mothers and families vetting local dentists prioritize sterility standards and gentle, pain-free sedation options over discount pricing.',
+        phase: 'FEAR-FREE',
+        title: 'Sterility & Pain-Free Assurance',
+        desc: 'Highlighting Class-B autoclave sterilization and gentle sedation options eliminates phobia for parents and kids.',
       },
       {
         step: '02',
-        phase: 'TRUST BUILDING',
-        title: 'Sterilized Operatory Video Walkthroughs',
-        desc: 'Doctor-led video explainers detailing Class-B autoclave sterilization protocols eliminate dental phobia and instill immediate clinical trust.',
+        phase: 'CLINICAL TRUST',
+        title: 'Doctor-Led Operatory Tours',
+        desc: 'Authentic video walkthroughs build deep doctor authority and eliminate clinical dread before the first visit.',
       },
       {
         step: '03',
-        phase: 'AUTOMATED RECALL',
-        title: '6-Month Automated Recall Protocol',
-        desc: 'Automated WhatsApp hygiene recall workflows keep families returning bi-annually for cleanings, sealants, and preventative health checks.',
+        phase: 'RECALL ENGINE',
+        title: '6-Month Automated Recall Workflow',
+        desc: 'Automated WhatsApp hygiene recall reminders maintain an 86% recurring cleaning and check-up booking rate.',
       },
     ],
     metrics: [
-      { val: '86%', label: '6-Month Recall Rate' },
+      { val: '86%', label: 'Recall Rate' },
       { val: '3.4X', label: 'Family Referrals' },
-      { val: '₹140', label: 'Blended Cost Per Lead' },
+      { val: '₹140', label: 'Blended CPL' },
     ],
     image: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=1200&q=85',
     imageAlt: 'Family dentist conducting gentle consultation with patient',
@@ -1578,7 +1578,7 @@ export default function DentalMarketingPage() {
           {/* DUAL PANEL: Left Side Storytelling Narrative • Right Side Best Clinical Img & Artifact */}
           <ScrollReveal>
             <div className={styles.dualPanelContainer}>
-              {/* LEFT PANEL: Narrative Storytelling */}
+              {/* LEFT PANEL: Compact, Scannable Storytelling Narrative */}
               <div className={styles.storyContentPanel}>
                 <div className={styles.storyEyebrowRow}>
                   <span className={styles.storyProcedurePill}>{activeStory.procedureTag}</span>
@@ -1591,16 +1591,18 @@ export default function DentalMarketingPage() {
                 <h3 className={styles.storyMainTitle}>{activeStory.title}</h3>
                 <p className={styles.storyHookText}>{activeStory.hook}</p>
 
-                {/* 3-Step Patient Journey Storyline */}
+                {/* 3-Step Compact Patient Storyline */}
                 <div className={styles.storyTimeline}>
                   {activeStory.narrative.map((item, nIdx) => (
                     <div key={nIdx} className={styles.storyTimelineItem}>
                       <div className={styles.storyStepBadge}>
                         <span className={styles.storyStepNum}>{item.step}</span>
-                        <span className={styles.storyStepPhase}>{item.phase}</span>
                       </div>
                       <div className={styles.storyStepBody}>
-                        <h4 className={styles.storyStepHeading}>{item.title}</h4>
+                        <h4 className={styles.storyStepHeading}>
+                          <span className={styles.storyStepPhasePill}>{item.phase}</span>
+                          {item.title}
+                        </h4>
                         <p className={styles.storyStepDescription}>{item.desc}</p>
                       </div>
                     </div>
@@ -1625,59 +1627,53 @@ export default function DentalMarketingPage() {
                     size="md"
                   />
                   <span className={styles.storyCtaNote}>
-                    ✓ Tailored to your clinic catchment &amp; procedure priorities
+                    ✓ Tailored to your clinic catchment
                   </span>
                 </div>
               </div>
 
-              {/* RIGHT PANEL: High-Definition Clinical Image & Doctor Telemetry Card */}
+              {/* RIGHT PANEL: Hero-Sized Highlighted Clinical Image with Glassmorphic Telemetry */}
               <div className={styles.storyVisualPanel}>
-                <div className={styles.storyVisualCard}>
-                  {/* Visual Header Strip */}
-                  <div className={styles.storyVisualHeader}>
-                    <span className={styles.storyImageTag}>{activeStory.imageTag}</span>
-                    <span className={styles.storyVerifiedPill}>
-                      <span className={styles.storyVerifiedDot} />
-                      Verified Patient Artifact
-                    </span>
-                  </div>
-
-                  {/* Primary High-Resolution Clinical Photograph Frame */}
-                  <div className={styles.storyImageWrapper}>
+                <div className={styles.heroImageShowcaseCard}>
+                  {/* Big Hero Clinical Image Container */}
+                  <div className={styles.storyHeroImageFrame}>
                     <Image
                       src={activeStory.image}
                       alt={activeStory.imageAlt}
                       fill
-                      className={styles.storyImage}
-                      sizes="(max-width: 960px) 100vw, 540px"
-                      priority={activeStoryIdx === 0}
+                      className={styles.storyHeroImage}
+                      sizes="(max-width: 960px) 100vw, 620px"
+                      priority
                     />
-                    <div className={styles.storyImageOverlayGradient} />
-                    <div className={styles.storyImageBottomPill}>
-                      <span>Clinical Standard: Full DCI / MCI Ethics Compliant</span>
-                    </div>
-                  </div>
 
-                  {/* Doctor Testimonial & Attribution Card */}
-                  <div className={styles.storyDoctorBox}>
-                    <div className={styles.storyDoctorQuoteRow}>
-                      <span className={styles.storyQuoteMark}>“</span>
-                      <p className={styles.storyDoctorQuote}>{activeStory.quote}</p>
+                    {/* Top Floating Glass Badges */}
+                    <div className={styles.storyHeroTopBadges}>
+                      <span className={styles.storyHeroTagPill}>{activeStory.imageTag}</span>
+                      <span className={styles.storyHeroLivePill}>
+                        <span className={styles.storyVerifiedDot} />
+                        Verified Clinical Artifact
+                      </span>
                     </div>
-                    <div className={styles.storyDoctorMetaRow}>
-                      <div>
-                        <div className={styles.storyDoctorName}>{activeStory.doctor}</div>
-                        <div className={styles.storyDoctorClinic}>{activeStory.doctorClinic}</div>
+
+                    {/* Bottom Embedded Glassmorphic Doctor Telemetry Card */}
+                    <div className={styles.storyHeroGlassCard}>
+                      <div className={styles.glassQuoteRow}>
+                        <span className={styles.glassQuoteMark}>“</span>
+                        <p className={styles.glassQuoteText}>{activeStory.quote}</p>
                       </div>
-                      <div className={styles.storyDoctorBadge}>
-                        <span>Verified Case</span>
+                      <div className={styles.glassDoctorMeta}>
+                        <div>
+                          <div className={styles.glassDoctorName}>{activeStory.doctor}</div>
+                          <div className={styles.glassDoctorClinic}>{activeStory.doctorClinic}</div>
+                        </div>
+                        <span className={styles.glassVerifiedBadge}>✓ Verified Practice</span>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </ScrollReveal>
+            </ScrollReveal>
         </div>
       </section>
 
