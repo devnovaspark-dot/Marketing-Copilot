@@ -597,87 +597,187 @@ const marketingJourneyStages = [
 ];
 
 // ══════════════════════════════════════════════════
-// DATA: CLINICAL CREATIVE VAULT (100% VISUAL / IMG ORIENTED)
 // ══════════════════════════════════════════════════
-interface CreativeVaultItem {
+// SECTION 05B DATA: DUAL-PANEL CLINICAL STORYTELLING
+// ══════════════════════════════════════════════════
+interface ClinicalStory {
   id: string;
-  category: 'geo-maps' | 'meta-ads' | 'funnels' | 'whatsapp';
-  categoryLabel: string;
-  title: string;
-  image: string;
-  alt: string;
-  metricBadge: string;
+  tabLabel: string;
+  badge: string;
   procedureTag: string;
+  title: string;
+  hook: string;
+  narrative: {
+    step: string;
+    phase: string;
+    title: string;
+    desc: string;
+  }[];
+  metrics: { val: string; label: string }[];
+  image: string;
+  imageAlt: string;
+  imageTag: string;
+  quote: string;
+  doctor: string;
+  doctorClinic: string;
 }
 
-const vaultCategories = [
-  { id: 'all', label: 'All Visual Assets' },
-  { id: 'geo-maps', label: 'Local Geo-Grid & Maps' },
-  { id: 'meta-ads', label: 'Meta & Instagram Ads' },
-  { id: 'funnels', label: 'Mobile Funnels' },
-  { id: 'whatsapp', label: 'WhatsApp Bot' },
-];
-
-const creativeVaultItems: CreativeVaultItem[] = [
+const clinicalStories: ClinicalStory[] = [
   {
-    id: 'geogrid-map',
-    category: 'geo-maps',
-    categoryLabel: 'Local Geo-Grid Map',
-    title: 'Hyperlocal Geo-Grid Map Dominance Across 42 Pin Codes',
-    image: '/images/local-seo/local-seo-geogrid-ranking-map-01.webp',
-    alt: 'Local SEO Geo-Grid map showing rank 1 across dental catchment pin codes',
-    metricBadge: 'Rank #1 in 42 Catchments',
-    procedureTag: 'Google Maps 3-Pack',
+    id: 'implants',
+    tabLabel: '🦷 Full-Arch Implants',
+    procedureTag: 'Surgical Dental Implants',
+    badge: 'HIGH-TICKET PATIENT ACQUISITION',
+    title: 'From Missing-Tooth Embarrassment to Confirmed Full-Arch Rehabilitation',
+    hook: 'How a negative-scrubbed Google Search funnel captures high-intent implant candidates while screening out low-margin ₹500 price shoppers.',
+    narrative: [
+      {
+        step: '01',
+        phase: 'HIGH-INTENT DISTRESS',
+        title: 'The Midnight Emergency Search',
+        desc: 'Patients suffering from painful failing bridges or missing molars search late at night: "best implant clinic near me" or "fixed teeth in 3 days". We deploy negative-keyword scrubbed Search campaigns that target affluent local catchments and filter out bargain seekers.',
+      },
+      {
+        step: '02',
+        phase: 'CLINICAL ASSURANCE',
+        title: 'Eliminating Fear with 3D CBCT Scans',
+        desc: 'Instead of landing on generic hospital pages, prospects review an implant-specific case lander highlighting CBCT 3D guided surgery, sterilized operatory tours, and transparent 0% EMI financing plans that eliminate procedure cost anxiety.',
+      },
+      {
+        step: '03',
+        phase: 'CHAIR CONVERSION',
+        title: '1-Tap WhatsApp Token Confirmation',
+        desc: 'A frictionless WhatsApp booking flow assigns an immediate priority operatory token with preparation instructions, boosting clinic consultation show-up rates from an industry average of 42% to 92.4%.',
+      },
+    ],
+    metrics: [
+      { val: '₹1.85L', label: 'Average Case Value' },
+      { val: '₹220', label: 'Qualified CPL' },
+      { val: '92.4%', label: 'Operatory Show-Up' },
+    ],
+    image: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=85',
+    imageAlt: 'Maxillofacial implant surgeon reviewing 3D CBCT digital scan with surgical guide',
+    imageTag: 'CBCT 3D GUIDED SURGERY',
+    quote: '"We stopped getting price shoppers who waste chair time. Every patient scheduled in Operatory 2 is financially pre-qualified for surgical implants."',
+    doctor: 'Dr. R. Malhotra, MDS (Prosthodontics & Implantology)',
+    doctorClinic: 'Apex Dental & Implant Studio, New Delhi',
   },
   {
-    id: 'clear-aligners-creative',
-    category: 'meta-ads',
-    categoryLabel: 'Meta & Instagram Ads',
-    title: 'Invisalign & Clear Aligner 3D Smile Hook Ad Creative',
-    image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1000&q=85',
-    alt: '3D clear aligner digital orthodontic scan ad creative',
-    metricBadge: '₹210 Cost Per Lead',
-    procedureTag: 'Aesthetic Ortho Funnel',
+    id: 'aligners',
+    tabLabel: '✨ Clear Aligners & Veneers',
+    procedureTag: 'Aesthetic Orthodontics & Veneers',
+    badge: 'HIGH-MARGIN COSMETIC CONVERSION',
+    title: 'Turning Instagram Smile Insecurity into Premium Aesthetic Consultations',
+    hook: 'How 3D digital smile simulation Instagram funnels convert 22–38 year old working professionals seeking confident smiles.',
+    narrative: [
+      {
+        step: '01',
+        phase: 'AESTHETIC DISCOVERY',
+        title: 'Local Catchment Social Discovery',
+        desc: 'Aesthetic smile transformations and discreet clear aligner comparisons are delivered to working professionals within a 7 km radius who follow wellness, fitness, and lifestyle brands across Instagram & Facebook.',
+      },
+      {
+        step: '02',
+        phase: 'EMOTIONAL HOOK',
+        title: 'Interactive 3D Smile Preview',
+        desc: 'Prospective candidates view interactive digital 3D before-and-after smile alignment simulations, transforming passive visual browsing into an urgent desire for clinic treatment.',
+      },
+      {
+        step: '03',
+        phase: 'CHAIR RESERVATION',
+        title: 'Instant 3D Diagnostic Slot Booking',
+        desc: 'Candidates bypass traditional reception forms and reserve an introductory 3D iTero diagnostic scan consultation directly with flexible monthly EMI financing options.',
+      },
+    ],
+    metrics: [
+      { val: '68+', label: 'Monthly Aligner Consults' },
+      { val: '4.8X', label: 'Verified ROAS' },
+      { val: '64%', label: 'Chair Conversion Rate' },
+    ],
+    image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1200&q=85',
+    imageAlt: 'Patient smiling during digital aesthetic veneer and clear aligner consultation',
+    imageTag: 'AESTHETIC SMILE STUDIO',
+    quote: '"Our clear aligner chair bookings tripled in 60 days. Patients arrive at our studio already convinced about the clinical outcome."',
+    doctor: 'Dr. S. Nambiar, MDS (Orthodontics & Dentofacial)',
+    doctorClinic: 'Elite Aligners & Aesthetic Studio, Bangalore',
   },
   {
-    id: 'implant-funnel',
-    category: 'funnels',
-    categoryLabel: 'High-Ticket Funnels',
-    title: 'CBCT Guided Implant Surgery Mobile Consultation Lander',
-    image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1000&q=85',
-    alt: 'Surgical dental implant operatory suite mobile lander mockup',
-    metricBadge: '14.8% Booking Rate',
-    procedureTag: 'Full-Arch Restorations',
+    id: 'local-3pack',
+    tabLabel: '📍 Local 3-Pack Catchment',
+    procedureTag: 'Google Maps 3-Pack Dominance',
+    badge: 'HYPER-LOCAL CATCHMENT DOMINANCE',
+    title: 'Capturing High-Urgency Local Patients Across 42 Micro-Catchments',
+    hook: 'How automated 5-star WhatsApp review triggers and geo-grid optimization turn Google Maps into a 24/7 direct patient funnel.',
+    narrative: [
+      {
+        step: '01',
+        phase: 'URGENT LOCAL SEARCH',
+        title: 'The Acute Morning Distress Search',
+        desc: 'A corporate executive or parent wakes up with acute dental discomfort and searches "dentist open near me". Our geo-grid ranking architecture locks down position #1 in Google Maps across all surrounding sectors.',
+      },
+      {
+        step: '02',
+        phase: 'UNMATCHED REPUTATION',
+        title: '4.9★ Social Proof & Virtual Tour',
+        desc: 'With over 320+ geo-tagged clinical reviews and operatory walkthrough videos, the patient immediately chooses your clinic over rival corporate chains.',
+      },
+      {
+        step: '03',
+        phase: 'GPS FOOTFALL',
+        title: 'Turn-by-Turn Navigation & Direct Walk-In',
+        desc: 'The Google Maps profile triggers direct WhatsApp consultation tokens and one-tap GPS navigation straight to your clinic reception desk.',
+      },
+    ],
+    metrics: [
+      { val: 'Top 3', label: 'Rank in 42 Catchments' },
+      { val: '+180%', label: 'Map Directions & Calls' },
+      { val: '4.9★', label: '320+ Verified Reviews' },
+    ],
+    image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=85',
+    imageAlt: 'Modern sterile dental operatory clinic welcoming emergency patient',
+    imageTag: 'MAPS 3-PACK DOMINANCE',
+    quote: '"Nearby families walk into our clinic daily saying Google Maps recommended us #1 with glowing 5-star reviews."',
+    doctor: 'Dr. A. Joshi, BDS (Aesthetic & Family Care)',
+    doctorClinic: 'Dr. SmileCraft Dental Care, Mumbai',
   },
   {
-    id: 'whatsapp-bot',
-    category: 'whatsapp',
-    categoryLabel: 'WhatsApp Automation',
-    title: 'Automated 1-Tap WhatsApp Token & No-Show Shield Bot',
-    image: '/images/meta-ads/meta-ads-whatsapp-engagement-campaigns-15.webp',
-    alt: 'WhatsApp appointment booking and patient retention telemetry',
-    metricBadge: '91.5% Chair Show-Up Rate',
-    procedureTag: 'Zero-No-Show Automation',
-  },
-  {
-    id: 'gbp-footfall',
-    category: 'geo-maps',
-    categoryLabel: 'Local Geo-Grid Map',
-    title: 'Google Business Profile Monthly Directions & Calling Surge',
-    image: '/images/google-business-profile/gbp-direction-requests-growth-05.webp',
-    alt: 'Google Maps verified directions growth telemetry chart',
-    metricBadge: '+180% Direction Calls',
-    procedureTag: 'Local 3-Pack Footfall',
-  },
-  {
-    id: 'clinical-tour',
-    category: 'meta-ads',
-    categoryLabel: 'Meta & Instagram Ads',
-    title: 'Doctor Authority Operatory Tour & Sterilization Short',
-    image: 'https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=1000&q=85',
-    alt: 'Doctor discussing patient care in operatory video short',
-    metricBadge: '84K+ Patient Views',
-    procedureTag: 'Doctor Authority Reels',
+    id: 'family',
+    tabLabel: '👨‍👩‍👧 Family & Preventative Care',
+    procedureTag: 'Multigenerational Family Retention',
+    badge: 'LIFETIME PATIENT RETENTION',
+    title: 'Transforming Anxious First-Timers into Decades of Multi-Family Loyalty',
+    hook: 'Building a fear-free clinical brand through sterilized operatory video tours and automated preventative hygiene recalls.',
+    narrative: [
+      {
+        step: '01',
+        phase: 'FEAR-FREE DISCOVERY',
+        title: 'Parents Seeking Pain-Free Care',
+        desc: 'Mothers and families vetting local dentists prioritize sterility standards and gentle, pain-free sedation options over discount pricing.',
+      },
+      {
+        step: '02',
+        phase: 'TRUST BUILDING',
+        title: 'Sterilized Operatory Video Walkthroughs',
+        desc: 'Doctor-led video explainers detailing Class-B autoclave sterilization protocols eliminate dental phobia and instill immediate clinical trust.',
+      },
+      {
+        step: '03',
+        phase: 'AUTOMATED RECALL',
+        title: '6-Month Automated Recall Protocol',
+        desc: 'Automated WhatsApp hygiene recall workflows keep families returning bi-annually for cleanings, sealants, and preventative health checks.',
+      },
+    ],
+    metrics: [
+      { val: '86%', label: '6-Month Recall Rate' },
+      { val: '3.4X', label: 'Family Referrals' },
+      { val: '₹140', label: 'Blended Cost Per Lead' },
+    ],
+    image: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=1200&q=85',
+    imageAlt: 'Family dentist conducting gentle consultation with patient',
+    imageTag: 'FEAR-FREE FAMILY DENTISTRY',
+    quote: '"Our appointment books for hygiene cleanings and family consultations are booked solid thanks to the automated recall engine."',
+    doctor: 'Dr. N. Roy, MDS (Pediatric Dentistry)',
+    doctorClinic: 'Roy Family Dental Clinic, New Delhi',
   },
 ];
 
@@ -687,25 +787,8 @@ export default function DentalMarketingPage() {
   const [activeStep, setActiveStep] = useState<number>(0);
   const [isProcessPaused, setIsProcessPaused] = useState<boolean>(false);
   const [activeCase, setActiveCase] = useState<number>(0);
-  const [activeVaultCategory, setActiveVaultCategory] = useState<string>('all');
-  const [vaultModalItem, setVaultModalItem] = useState<CreativeVaultItem | null>(null);
-  const [beforeAfterMode, setBeforeAfterMode] = useState<'before' | 'after'>('after');
-
-  // Keyboard escape handler for vault modal
-  useEffect(() => {
-    if (!vaultModalItem) return;
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setVaultModalItem(null);
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [vaultModalItem]);
-
-  const filteredVaultItems = useMemo(() => {
-    return activeVaultCategory === 'all'
-      ? creativeVaultItems
-      : creativeVaultItems.filter((item) => item.category === activeVaultCategory);
-  }, [activeVaultCategory]);
+  const [activeStoryIdx, setActiveStoryIdx] = useState<number>(0);
+  const activeStory = clinicalStories[activeStoryIdx];
 
   // Auto rotate hero clinical slides
   useEffect(() => {
@@ -1464,176 +1547,138 @@ export default function DentalMarketingPage() {
       {/* ══════════════════════════════════════════════════ */}
       <section id="creative-vault" className={styles.vaultSection}>
         <div className={styles.container}>
+          {/* Section Header */}
           <div className={styles.vaultHeader}>
             <div className={styles.vaultPill}>
               <span>CLINICAL CREATIVE VAULT • LIVE CAMPAIGN ARTIFACTS</span>
             </div>
             <h2 className={styles.vaultTitle}>
-              Visual Marketing Assets Engineered for Dental Practices
+              How High-Value Patients Are Won: Clinical Storytelling &amp; Campaigns
             </h2>
             <p className={styles.vaultSubtitle}>
-              From hyper-local geo-grid ranking heatmaps to high-ticket surgical implant funnels — see the real visual creative assets that turn local searchers into confirmed operatory appointments.
+              Step inside the real patient journey — from the initial late-night distress search to interactive clinical education, overcome fear, and confirmed operatory chair appointments.
             </p>
           </div>
 
-          {/* Interactive Before & After Smile Transformation Hero Card */}
-          <div className={styles.beforeAfterCard}>
-            <div className={styles.beforeAfterMedia}>
-              <Image
-                src={
-                  beforeAfterMode === 'before'
-                    ? 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=85'
-                    : 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=1200&q=85'
-                }
-                alt={
-                  beforeAfterMode === 'before'
-                    ? 'Pre-treatment clinical consultation presentation'
-                    : 'Completed ceramic veneer aesthetic smile makeover'
-                }
-                fill
-                className={styles.beforeAfterImage}
-                sizes="(max-width: 900px) 100vw, 1100px"
-              />
-              <div className={styles.beforeAfterControls}>
-                <button
-                  type="button"
-                  className={`${styles.toggleBtn} ${beforeAfterMode === 'before' ? styles.toggleBtnActive : ''}`}
-                  onClick={() => setBeforeAfterMode('before')}
-                >
-                  <span>Before Treatment</span>
-                </button>
-                <button
-                  type="button"
-                  className={`${styles.toggleBtn} ${beforeAfterMode === 'after' ? styles.toggleBtnActive : ''}`}
-                  onClick={() => setBeforeAfterMode('after')}
-                >
-                  <span>After Smile Makeover ✨</span>
-                </button>
-              </div>
-              <div className={styles.beforeAfterStatusBadge}>
-                <span className={styles.statusDot} />
-                <span>
-                  {beforeAfterMode === 'before'
-                    ? 'Initial Clinical Presentation (Crowded Anterior Arch & Discoloration)'
-                    : 'Final Clinical Outcome (6 Ceramic Veneers & Symmetrical Smile Line)'}
-                </span>
-              </div>
-            </div>
-            <div className={styles.beforeAfterMetaStrip}>
-              <div className={styles.metaStat}>
-                <span className={styles.metaStatVal}>2 Visits</span>
-                <span className={styles.metaStatLabel}>Treatment Timeline</span>
-              </div>
-              <div className={styles.metaStat}>
-                <span className={styles.metaStatVal}>100% Ceramic</span>
-                <span className={styles.metaStatLabel}>Lithium Disilicate Veneers</span>
-              </div>
-              <div className={styles.metaStat}>
-                <span className={styles.metaStatVal}>4.2X ROAS</span>
-                <span className={styles.metaStatLabel}>Instagram Smile Campaign</span>
-              </div>
-              <div className={styles.metaStatCta}>
-                <span className={styles.metaStatTag}>ETHICAL CLINICAL MARKETING</span>
-                <span className={styles.metaStatNote}>Full DCI / MCI Advertising Compliant</span>
-              </div>
-            </div>
+          {/* Interactive Procedure Story Selector Tabs */}
+          <div className={styles.storyTabsWrap}>
+            {clinicalStories.map((story, idx) => (
+              <button
+                key={story.id}
+                type="button"
+                onClick={() => setActiveStoryIdx(idx)}
+                className={`${styles.storyTabBtn} ${activeStoryIdx === idx ? styles.storyTabBtnActive : ''}`}
+                aria-label={`View Story: ${story.tabLabel}`}
+              >
+                <span>{story.tabLabel}</span>
+              </button>
+            ))}
           </div>
 
-          {/* Interactive Category Tabs */}
-          <div className={styles.vaultFilterTabs}>
-            {vaultCategories.map((tab) => {
-              const isActive = activeVaultCategory === tab.id;
-              const count = tab.id === 'all'
-                ? creativeVaultItems.length
-                : creativeVaultItems.filter((i) => i.category === tab.id).length;
-              return (
-                <button
-                  key={tab.id}
-                  type="button"
-                  className={`${styles.vaultTabBtn} ${isActive ? styles.vaultTabBtnActive : ''}`}
-                  onClick={() => setActiveVaultCategory(tab.id)}
-                >
-                  <span>{tab.label}</span>
-                  <span style={{ opacity: 0.65, marginLeft: '5px' }}>({count})</span>
-                </button>
-              );
-            })}
-          </div>
+          {/* DUAL PANEL: Left Side Storytelling Narrative • Right Side Best Clinical Img & Artifact */}
+          <ScrollReveal>
+            <div className={styles.dualPanelContainer}>
+              {/* LEFT PANEL: Narrative Storytelling */}
+              <div className={styles.storyContentPanel}>
+                <div className={styles.storyEyebrowRow}>
+                  <span className={styles.storyProcedurePill}>{activeStory.procedureTag}</span>
+                  <span className={styles.storyCampaignBadge}>
+                    <span className={styles.storyLiveDot} />
+                    {activeStory.badge}
+                  </span>
+                </div>
 
-          {/* 6-Card Visual Showcase Grid */}
-          <div className={styles.vaultGrid}>
-            {filteredVaultItems.map((item, idx) => (
-              <ScrollReveal key={item.id} delay={idx * 60}>
-                <div
-                  className={styles.vaultCard}
-                  onClick={() => setVaultModalItem(item)}
-                  title="Click to view full-resolution preview"
-                >
-                  <div className={styles.vaultCardMedia}>
-                    <Image
-                      src={item.image}
-                      alt={item.alt}
-                      fill
-                      className={styles.vaultCardImg}
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
-                    <span className={styles.vaultProcedureBadge}>{item.procedureTag}</span>
-                    <span className={styles.vaultZoomIcon} aria-hidden="true">🔍</span>
+                <h3 className={styles.storyMainTitle}>{activeStory.title}</h3>
+                <p className={styles.storyHookText}>{activeStory.hook}</p>
+
+                {/* 3-Step Patient Journey Storyline */}
+                <div className={styles.storyTimeline}>
+                  {activeStory.narrative.map((item, nIdx) => (
+                    <div key={nIdx} className={styles.storyTimelineItem}>
+                      <div className={styles.storyStepBadge}>
+                        <span className={styles.storyStepNum}>{item.step}</span>
+                        <span className={styles.storyStepPhase}>{item.phase}</span>
+                      </div>
+                      <div className={styles.storyStepBody}>
+                        <h4 className={styles.storyStepHeading}>{item.title}</h4>
+                        <p className={styles.storyStepDescription}>{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* 3 Key Campaign Performance Metrics */}
+                <div className={styles.storyMetricsGrid}>
+                  {activeStory.metrics.map((m, mIdx) => (
+                    <div key={mIdx} className={styles.storyMetricBox}>
+                      <span className={styles.storyMetricVal}>{m.val}</span>
+                      <span className={styles.storyMetricLabel}>{m.label}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Action CTA */}
+                <div className={styles.storyCtaRow}>
+                  <BeamButton
+                    href="/contact"
+                    label="Deploy This Campaign Strategy"
+                    size="md"
+                  />
+                  <span className={styles.storyCtaNote}>
+                    ✓ Tailored to your clinic catchment &amp; procedure priorities
+                  </span>
+                </div>
+              </div>
+
+              {/* RIGHT PANEL: High-Definition Clinical Image & Doctor Telemetry Card */}
+              <div className={styles.storyVisualPanel}>
+                <div className={styles.storyVisualCard}>
+                  {/* Visual Header Strip */}
+                  <div className={styles.storyVisualHeader}>
+                    <span className={styles.storyImageTag}>{activeStory.imageTag}</span>
+                    <span className={styles.storyVerifiedPill}>
+                      <span className={styles.storyVerifiedDot} />
+                      Verified Patient Artifact
+                    </span>
                   </div>
 
-                  <div className={styles.vaultCardBody}>
-                    <h3 className={styles.vaultCardTitle}>{item.title}</h3>
-                    <div className={styles.vaultCardFooter}>
-                      <span className={styles.vaultMetricPill}>
-                        <span>✓</span>
-                        <span>{item.metricBadge}</span>
-                      </span>
-                      <span className={styles.vaultInspectPrompt}>
-                        <span>Inspect</span>
-                        <span>→</span>
-                      </span>
+                  {/* Primary High-Resolution Clinical Photograph Frame */}
+                  <div className={styles.storyImageWrapper}>
+                    <Image
+                      src={activeStory.image}
+                      alt={activeStory.imageAlt}
+                      fill
+                      className={styles.storyImage}
+                      sizes="(max-width: 960px) 100vw, 540px"
+                      priority={activeStoryIdx === 0}
+                    />
+                    <div className={styles.storyImageOverlayGradient} />
+                    <div className={styles.storyImageBottomPill}>
+                      <span>Clinical Standard: Full DCI / MCI Ethics Compliant</span>
+                    </div>
+                  </div>
+
+                  {/* Doctor Testimonial & Attribution Card */}
+                  <div className={styles.storyDoctorBox}>
+                    <div className={styles.storyDoctorQuoteRow}>
+                      <span className={styles.storyQuoteMark}>“</span>
+                      <p className={styles.storyDoctorQuote}>{activeStory.quote}</p>
+                    </div>
+                    <div className={styles.storyDoctorMetaRow}>
+                      <div>
+                        <div className={styles.storyDoctorName}>{activeStory.doctor}</div>
+                        <div className={styles.storyDoctorClinic}>{activeStory.doctorClinic}</div>
+                      </div>
+                      <div className={styles.storyDoctorBadge}>
+                        <span>Verified Case</span>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-
-        {/* Lightbox Modal for High-Resolution Inspection */}
-        {vaultModalItem && (
-          <div className={styles.modalBackdrop} onClick={() => setVaultModalItem(null)}>
-            <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
-              <button
-                type="button"
-                className={styles.modalCloseBtn}
-                onClick={() => setVaultModalItem(null)}
-                aria-label="Close high-resolution preview"
-              >
-                ✕
-              </button>
-              <div className={styles.modalImageWrapper}>
-                <Image
-                  src={vaultModalItem.image}
-                  alt={vaultModalItem.alt}
-                  fill
-                  className={styles.modalImage}
-                  sizes="90vw"
-                />
-              </div>
-              <div className={styles.modalFooter}>
-                <div>
-                  <span className={styles.modalCategory}>{vaultModalItem.categoryLabel}</span>
-                  <h4 className={styles.modalTitle}>{vaultModalItem.title}</h4>
-                </div>
-                <div className={styles.modalMetricBadge}>
-                  <span>✓</span>
-                  <span>{vaultModalItem.metricBadge}</span>
-                </div>
               </div>
             </div>
-          </div>
-        )}
+          </ScrollReveal>
+        </div>
       </section>
 
       {/* ══════════════════════════════════════════════════ */}
