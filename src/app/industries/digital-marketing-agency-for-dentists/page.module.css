@@ -588,9 +588,23 @@
     gap: 10px;
   }
   .serviceCard {
-    padding: 14px 10px !important;
-    border-radius: 14px !important;
-  }
+  background: linear-gradient(180deg, #FFFFFF 0%, #F9FBFE 55%, #F1F5F9 100%);
+  border: 1.5px solid rgba(203, 213, 225, 0.95);
+  border-radius: 22px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 
+    inset 0 2px 0 0 #FFFFFF,
+    inset 0 -1.5px 0 0 rgba(11, 32, 147, 0.04),
+    0 2px 6px rgba(11, 32, 147, 0.03),
+    0 12px 28px -6px rgba(11, 32, 147, 0.07);
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
   .serviceIconPod {
     width: 36px !important;
     height: 36px !important;
@@ -863,16 +877,18 @@
   min-width: 0;
   width: 100%;
   box-sizing: border-box;
-  background: #FFFFFF;
-  border: 1.5px solid #E2E8F0;
-  border-radius: 16px;
-  padding: 14px 9px 12px;
+  background: linear-gradient(180deg, #FFFFFF 0%, #FAFCFF 55%, #F1F5F9 100%);
+  border: 1.5px solid rgba(203, 213, 225, 0.95);
+  border-radius: 18px;
+  padding: 16px 12px 14px;
   display: flex;
   flex-direction: column;
   box-shadow: 
-    inset 0 1px 0 #FFFFFF,
-    0 4px 14px rgba(11, 32, 147, 0.04);
-  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    inset 0 1.5px 0 0 #FFFFFF,
+    inset 0 -1.5px 0 0 rgba(11, 32, 147, 0.03),
+    0 2px 6px rgba(11, 32, 147, 0.03),
+    0 10px 24px -4px rgba(11, 32, 147, 0.06);
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
 }
@@ -1300,9 +1316,23 @@
     gap: 10px;
   }
   .treatmentCard {
-    padding: 13px 10px !important;
-    border-radius: 14px !important;
-  }
+  background: linear-gradient(180deg, #FFFFFF 0%, #F9FBFE 60%, #F1F5F9 100%);
+  border: 1.5px solid rgba(203, 213, 225, 0.95);
+  border-radius: 22px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 
+    inset 0 1.5px 0 0 #FFFFFF,
+    inset 0 -1.5px 0 0 rgba(11, 32, 147, 0.04),
+    0 2px 6px rgba(11, 32, 147, 0.03),
+    0 12px 28px -6px rgba(11, 32, 147, 0.07);
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  box-sizing: border-box;
+}
   .treatmentImageFrame {
     height: 110px !important;
     margin-bottom: 12px !important;
@@ -2272,21 +2302,23 @@
    CASE STUDY SPOTLIGHT CARD (Compact, Sleek & Proportional)
 ══════════════════════════════════════════════════ */
 .caseStudyCard {
-  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFD 100%);
-  border: 1.5px solid rgba(203, 213, 225, 0.85);
-  border-radius: 24px;
-  padding: 26px 28px;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F9FBFE 60%, #F1F5F9 100%);
+  border: 1.5px solid rgba(203, 213, 225, 0.95);
+  border-radius: 26px;
+  padding: 30px 32px;
   color: #0F172A;
   display: grid;
   grid-template-columns: 1.18fr 0.82fr;
-  gap: 26px;
+  gap: 30px;
   align-items: stretch;
   box-shadow: 
     inset 0 1.5px 0 #FFFFFF,
-    0 16px 36px -8px rgba(11, 32, 147, 0.07);
+    inset 0 -1.5px 0 rgba(11, 32, 147, 0.04),
+    0 4px 10px rgba(11, 32, 147, 0.03),
+    0 20px 48px -10px rgba(11, 32, 147, 0.09);
   position: relative;
   overflow: hidden;
-  max-width: 1040px;
+  max-width: 1240px;
   margin: 0 auto;
 }
 
@@ -2435,12 +2467,15 @@
 }
 
 .caseMetricBox {
-  background: #FFFFFF;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFD 100%);
   border: 1.5px solid #E2E8F0;
-  border-radius: 12px;
-  padding: 10px 8px;
+  border-radius: 14px;
+  padding: 12px 10px;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(11, 32, 147, 0.03);
+  box-shadow: 
+    inset 0 1.5px 0 #FFFFFF,
+    0 3px 8px rgba(11, 32, 147, 0.04);
+  transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
 .caseMetricVal {
@@ -2520,10 +2555,12 @@
 
 .caseArtifactContainer {
   background: #FFFFFF;
-  border: 1.5px solid #E2E8F0;
-  border-radius: 18px;
+  border: 1.5px solid rgba(203, 213, 225, 0.95);
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 10px 24px -6px rgba(11, 32, 147, 0.08);
+  box-shadow: 
+    inset 0 1.5px 0 #FFFFFF,
+    0 12px 30px -6px rgba(11, 32, 147, 0.09);
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -2697,12 +2734,12 @@
 }
 
 /* ══════════════════════════════════════════════════
-   CLINICAL CREATIVE VAULT • BEST UI CLEAN DUAL-PANEL
+   CLINICAL CREATIVE VAULT • SKEUOMORPHIC DUAL PANEL
    Positioned Above The Dental Advantage
-   Ultra-Attractive, Clean, Modern Clinical Showcase
+   Luxury Skeuomorphic Design with Tactile Depth
 ══════════════════════════════════════════════════ */
 .vaultSection {
-  padding: 68px 0 76px;
+  padding: 64px 0 72px;
   position: relative;
   background: radial-gradient(100% 60% at 50% 0%, #F8FAFD 0%, #FFFFFF 100%);
   border-top: 1px solid #E2E8F0;
@@ -2722,7 +2759,7 @@
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  background: rgba(11, 32, 147, 0.06);
+  background: linear-gradient(180deg, #FFFFFF 0%, #F0F9FF 100%);
   color: #0B2093;
   font-family: var(--font-display);
   font-size: 11px;
@@ -2732,7 +2769,10 @@
   padding: 5px 14px;
   border-radius: 9999px;
   margin-bottom: 12px;
-  border: 1px solid rgba(11, 32, 147, 0.14);
+  border: 1px solid rgba(11, 32, 147, 0.16);
+  box-shadow: 
+    inset 0 1px 0 #FFFFFF,
+    0 2px 6px rgba(11, 32, 147, 0.04);
 }
 
 .vaultDot {
@@ -2760,93 +2800,118 @@
   margin: 0;
 }
 
-/* Modern Segmented Control Dock */
-.segmentedTabsContainer {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 34px;
+/* Skeuomorphic Procedure Selector Tabs */
+.vaultStudyTabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  max-width: 1240px;
+  margin: 0 auto 26px;
 }
 
-.segmentedTabsDock {
-  background: #EEF2F6;
-  padding: 5px;
-  border-radius: 9999px;
-  border: 1px solid #E2E8F0;
-  display: inline-flex;
-  flex-wrap: wrap;
-  gap: 5px;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+@media (max-width: 900px) {
+  .vaultStudyTabs {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
 }
 
-.segmentedTabBtn {
-  background: transparent;
-  border: none;
-  color: #475569;
-  font-family: var(--font-display);
-  font-size: 13px;
-  font-weight: 700;
-  padding: 9px 20px;
-  border-radius: 9999px;
+@media (max-width: 580px) {
+  .vaultStudyTabs {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+.vaultStudyTab {
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFD 60%, #F1F5F9 100%);
+  border: 1.5px solid rgba(203, 213, 225, 0.95);
+  border-radius: 16px;
+  padding: 12px 16px;
+  text-align: left;
   cursor: pointer;
   transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  box-shadow: 
+    inset 0 1.5px 0 #FFFFFF,
+    inset 0 -1px 0 rgba(11, 32, 147, 0.03),
+    0 2px 6px rgba(11, 32, 147, 0.03);
 }
 
-.segmentedTabBtn:hover {
-  color: #0F172A;
+.vaultStudyTab:hover {
+  border-color: #0284C7;
+  transform: translateY(-2px);
+  box-shadow: 
+    inset 0 1.5px 0 #FFFFFF,
+    0 6px 18px rgba(11, 32, 147, 0.08);
 }
 
-.segmentedTabBtnActive {
-  background: #FFFFFF;
-  color: #0B2093;
+.vaultStudyTabActive {
+  background: linear-gradient(180deg, #FFFFFF 0%, #F0F9FF 100%);
+  border-color: #0284C7;
+  box-shadow: 
+    inset 0 1.5px 0 #FFFFFF,
+    0 0 0 1px #0284C7,
+    0 8px 24px rgba(2, 132, 199, 0.16);
+}
+
+.vaultTabBadge {
+  font-family: var(--font-display);
+  font-size: 8.5px;
   font-weight: 800;
-  box-shadow: 0 4px 14px rgba(11, 32, 147, 0.12), 0 1px 3px rgba(0, 0, 0, 0.06);
+  color: #0284C7;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
-/* DUAL PANEL CONTAINER - Clean, Polished, Attractive Card Shell */
-.dualPanelContainer {
-  background: linear-gradient(180deg, #FFFFFF 0%, #FAFCFF 100%);
-  border: 1.5px solid rgba(2, 132, 199, 0.18);
-  border-radius: 28px;
-  padding: 36px 40px;
+.vaultTabClinic {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 800;
+  color: #0F172A;
+  line-height: 1.25;
+}
+
+.vaultTabLocation {
+  font-size: 10.5px;
+  font-weight: 600;
+  color: #64748B;
+}
+
+/* SKEUOMORPHIC DUAL PANEL CARD SHELL */
+.vaultSkeuoCard {
+  background: linear-gradient(180deg, #FFFFFF 0%, #F9FBFE 60%, #F1F5F9 100%);
+  border: 1.5px solid rgba(203, 213, 225, 0.95);
+  border-radius: 26px;
+  padding: 30px 32px;
+  color: #0F172A;
   display: grid;
-  grid-template-columns: 1fr 1.08fr;
-  gap: 38px;
+  grid-template-columns: 1.18fr 0.82fr;
+  gap: 30px;
   align-items: stretch;
   box-shadow: 
     inset 0 1.5px 0 #FFFFFF,
-    0 24px 56px -12px rgba(11, 32, 147, 0.08);
-  max-width: 1260px;
-  margin: 0 auto;
+    inset 0 -1.5px 0 rgba(11, 32, 147, 0.04),
+    0 4px 10px rgba(11, 32, 147, 0.03),
+    0 20px 48px -10px rgba(11, 32, 147, 0.09);
   position: relative;
   overflow: hidden;
+  max-width: 1240px;
+  margin: 0 auto;
 }
 
-.cardTopGlowBeam {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent 0%, #0284C7 50%, transparent 100%);
-  opacity: 0.8;
-}
-
-@media (max-width: 980px) {
-  .dualPanelContainer {
+@media (max-width: 960px) {
+  .vaultSkeuoCard {
     grid-template-columns: 1fr;
-    padding: 22px 18px;
-    gap: 26px;
+    padding: 20px 18px;
+    gap: 20px;
     border-radius: 20px;
   }
 }
 
-/* ──────────────────────────────────────────────────
-   LEFT PANEL: CLEAN STORYTELLING
-────────────────────────────────────────────────── */
-.storyContentPanel {
+.vaultInfoCol {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -2854,948 +2919,273 @@
   gap: 14px;
 }
 
-.storyTopMeta {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.storyProcedurePill {
-  font-family: var(--font-display);
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: #0284C7;
-  background: #F0F9FF;
-  border: 1px solid #BAE6FD;
-  padding: 3px 10px;
-  border-radius: 999px;
-}
-
-.storyCampaignBadge {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-family: var(--font-display);
-  font-size: 8.5px;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  color: #16A34A;
-  background: #F0FDF4;
-  border: 1px solid #BBF7D0;
-  padding: 3px 10px;
-  border-radius: 999px;
-  text-transform: uppercase;
-}
-
-.storyLiveDot {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: #10B981;
-  box-shadow: 0 0 6px #10B981;
-}
-
-.storyMainTitle {
-  font-family: var(--font-display);
-  font-size: clamp(21px, 2.3vw, 26px);
-  font-weight: 800;
-  color: #0F172A;
-  margin: 0;
-  letter-spacing: -0.02em;
-  line-height: 1.25;
-}
-
-.storyHookText {
-  font-size: 13.5px;
-  color: #475569;
-  line-height: 1.55;
-  margin: 0;
-  border-left: 3px solid #0284C7;
-  padding-left: 12px;
-}
-
-/* Clean Connecting Timeline Flow */
-.storyTimelineClean {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  margin: 6px 0;
-}
-
-.timelineNode {
-  display: flex;
-  gap: 14px;
-  position: relative;
-}
-
-.timelineTrackCol {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-shrink: 0;
-  width: 28px;
-}
-
-.timelineCircle {
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  background: #0B2093;
-  color: #FFFFFF;
-  font-family: var(--font-display);
-  font-size: 11px;
-  font-weight: 800;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 8px rgba(11, 32, 147, 0.25);
-  z-index: 2;
-}
-
-.timelineVerticalLine {
-  width: 2px;
-  background: #E2E8F0;
-  flex: 1;
-  min-height: 22px;
-  margin: 4px 0;
-}
-
-.timelineContentCol {
-  padding-bottom: 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.timelineHeadingRow {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  flex-wrap: wrap;
-}
-
-.timelinePhaseTag {
-  font-size: 7.5px;
-  font-weight: 800;
-  color: #0284C7;
-  background: #F0F9FF;
-  border: 1px solid #BAE6FD;
-  padding: 1px 6px;
-  border-radius: 4px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-.timelineTitle {
-  font-family: var(--font-display);
-  font-size: 12.5px;
-  font-weight: 800;
-  color: #0F172A;
-  margin: 0;
-}
-
-.timelineDesc {
-  font-size: 11.5px;
-  color: #64748B;
-  line-height: 1.42;
-  margin: 2px 0 0;
-}
-
-/* Single Sleek Metric Ribbon */
-.storyMetricRibbon {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  background: #F8FAFD;
-  border: 1.5px solid #E2E8F0;
-  border-radius: 14px;
-  padding: 10px 14px;
-  text-align: center;
-}
-
-.ribbonMetricItem {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.ribbonMetricItem:not(:last-child) {
-  border-right: 1px solid #E2E8F0;
-}
-
-.ribbonMetricVal {
-  font-family: var(--font-display);
-  font-size: 19px;
-  font-weight: 800;
-  color: #0B2093;
-  line-height: 1.1;
-}
-
-.ribbonMetricLabel {
-  font-size: 8.5px;
-  font-weight: 700;
-  color: #64748B;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
-.storyCtaRow {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  flex-wrap: wrap;
-  padding-top: 6px;
-  border-top: 1px solid #E2E8F0;
-}
-
-.storyCtaNote {
-  font-size: 10.5px;
-  color: #64748B;
-  font-weight: 600;
-}
-
-/* ──────────────────────────────────────────────────
-   RIGHT PANEL: UNOBSTRUCTED HERO CLINICAL IMAGE
-────────────────────────────────────────────────── */
-.storyVisualPanel {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.heroShowcaseWrap {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  height: 100%;
-}
-
-/* Pure Hero Image Frame */
-.heroImageFrame {
-  position: relative;
-  width: 100%;
-  height: 380px;
-  border-radius: 20px;
-  overflow: hidden;
-  background: #0B132B;
-  border: 1px solid rgba(226, 232, 240, 0.8);
-  box-shadow: 
-    0 20px 48px -10px rgba(11, 32, 147, 0.14),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
-}
-
-@media (max-width: 980px) {
-  .heroImageFrame {
-    height: 280px;
-  }
-}
-
-.heroImage {
-  object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.heroImageFrame:hover .heroImage {
-  transform: scale(1.03);
-}
-
-.heroImageHeader {
-  position: absolute;
-  top: 14px;
-  left: 14px;
-  right: 14px;
-  z-index: 2;
+.vaultHeaderRow {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 8px;
-  pointer-events: none;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
-.heroTagPill {
+.vaultClientBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F0F9FF 100%);
+  color: #0284C7;
   font-family: var(--font-display);
-  font-size: 9px;
+  font-size: 9.5px;
   font-weight: 800;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #FFFFFF;
-  background: rgba(15, 23, 42, 0.72);
-  backdrop-filter: blur(8px);
-  padding: 4px 10px;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 4px 11px;
+  border-radius: 9999px;
+  border: 1px solid rgba(2, 132, 199, 0.25);
+  box-shadow: inset 0 1px 0 #FFFFFF, 0 1px 2px rgba(2, 132, 199, 0.06);
 }
 
-.heroLivePill {
+.vaultDoctorBadge {
+  font-size: 11px;
+  color: #475569;
+  font-weight: 700;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F1F5F9 100%);
+  border: 1px solid #CBD5E1;
+  border-radius: 999px;
+  padding: 3px 11px;
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
+  box-shadow: inset 0 1px 0 #FFFFFF;
+}
+
+.vaultCardTitle {
   font-family: var(--font-display);
-  font-size: 8.5px;
+  font-size: clamp(20px, 2.3vw, 26px);
   font-weight: 800;
-  color: #10B981;
-  background: rgba(15, 23, 42, 0.72);
-  backdrop-filter: blur(8px);
-  padding: 4px 10px;
-  border-radius: 999px;
-  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #0F172A;
+  margin: 0;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
 }
 
-.heroDot {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: #10B981;
-  box-shadow: 0 0 6px #10B981;
+.vaultChallengeSolution {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
 }
 
-/* Dedicated Doctor Verification Strip (Placed Below Image) */
-.heroDoctorStrip {
-  background: #F8FAFD;
-  border: 1.5px solid #E2E8F0;
-  border-radius: 16px;
-  padding: 14px 18px;
+@media (max-width: 640px) {
+  .vaultChallengeSolution {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+.vaultCSBlockChallenge {
+  background: linear-gradient(180deg, #FFF5F5 0%, #FEE2E2 100%);
+  border: 1.5px solid #FECACA;
+  border-radius: 14px;
+  padding: 11px 13px;
   display: flex;
   flex-direction: column;
+  gap: 4px;
+  box-shadow: 
+    inset 0 1px 0 #FFFFFF,
+    0 2px 6px rgba(220, 38, 38, 0.05);
+}
+
+.vaultCSBlockStrategy {
+  background: linear-gradient(180deg, #F0FDF4 0%, #DCFCE7 100%);
+  border: 1.5px solid #BBF7D0;
+  border-radius: 14px;
+  padding: 11px 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-shadow: 
+    inset 0 1px 0 #FFFFFF,
+    0 2px 6px rgba(22, 163, 74, 0.05);
+}
+
+.vaultMetricsRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
 }
 
-.doctorQuoteRow {
-  display: flex;
-  align-items: flex-start;
-  gap: 6px;
+.vaultMetricBox {
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFD 100%);
+  border: 1.5px solid #E2E8F0;
+  border-radius: 14px;
+  padding: 12px 10px;
+  text-align: center;
+  box-shadow: 
+    inset 0 1.5px 0 #FFFFFF,
+    0 3px 8px rgba(11, 32, 147, 0.04);
+  transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
-.doctorQuoteMark {
+.vaultMetricBox:hover {
+  transform: translateY(-2px);
+  border-color: #0284C7;
+}
+
+.vaultMetricVal {
+  font-family: var(--font-display);
+  font-size: 21px;
+  font-weight: 800;
+  color: #0B2093;
+  line-height: 1.1;
+  display: block;
+}
+
+.vaultMetricLabel {
+  font-size: 9.5px;
+  color: #64748B;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 4px;
+  display: block;
+}
+
+.vaultBottomBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding-top: 8px;
+  border-top: 1px solid #E2E8F0;
+}
+
+@media (max-width: 640px) {
+  .vaultBottomBar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+}
+
+.vaultQuoteBox {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  flex: 1;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFD 100%);
+  border: 1.5px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 10px 14px;
+  box-shadow: inset 0 1px 0 #FFFFFF;
+}
+
+.vaultQuoteMark {
   color: #0284C7;
   font-size: 18px;
   font-weight: 800;
   line-height: 1;
 }
 
-.doctorQuoteText {
+.vaultQuoteInline {
   font-size: 11.5px;
   font-style: italic;
   color: #334155;
-  line-height: 1.45;
+  line-height: 1.4;
   margin: 0;
 }
 
-.doctorMetaRow {
+.vaultCtaWrap {
+  flex-shrink: 0;
+}
+
+/* SKEUOMORPHIC RIGHT COLUMN ARTIFACT */
+.vaultVisualColumn {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 8px;
-  border-top: 1px solid #E2E8F0;
-  gap: 8px;
+  flex-direction: column;
+  height: 100%;
 }
 
-.doctorName {
-  font-family: var(--font-display);
-  font-size: 11.5px;
-  font-weight: 800;
-  color: #0F172A;
-}
-
-.doctorClinic {
-  font-size: 9.5px;
-  color: #64748B;
-  margin-top: 1px;
-}
-
-.doctorVerifiedBadge {
-  font-family: var(--font-display);
-  font-size: 8.5px;
-  font-weight: 800;
-  color: #059669;
-  background: #ECFDF5;
-  border: 1px solid #A7F3D0;
-  padding: 3px 8px;
-  border-radius: 6px;
-  white-space: nowrap;
-}
-
-.comparisonContainer {
-  max-width: 1340px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 24px;
-  box-sizing: border-box;
-}
-
-@media (max-width: 640px) {
-  .comparisonContainer {
-    padding: 0 10px;
-  }
-}
-
-.sectionHeaderCompact {
-  text-align: center;
-  max-width: 860px;
-  margin: 0 auto 20px;
-}
-
-.sectionPillCompact {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(11, 32, 147, 0.06);
-  border: 1px solid rgba(11, 32, 147, 0.15);
-  border-radius: 999px;
-  padding: 3.5px 12px;
-  font-family: var(--font-display);
-  font-size: 9px;
-  font-weight: 800;
-  color: #0B2093;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 7px;
-}
-
-.sectionTitleCompact {
-  font-family: var(--font-display);
-  font-size: clamp(23px, 2.5vw, 32px);
-  font-weight: 800;
-  color: #0F172A;
-  margin: 0 0 6px;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-}
-
-.sectionSubtitleCompact {
-  font-size: 14px;
-  color: #475569;
-  line-height: 1.45;
-  margin: 0 auto;
-  max-width: 760px;
-}
-
-.comparisonCard {
+.vaultArtifactContainer {
   background: #FFFFFF;
-  border: 1.5px solid #CBD5E1;
+  border: 1.5px solid rgba(203, 213, 225, 0.95);
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 
-    inset 0 2px 0 #FFFFFF,
-    inset 0 -1.5px 0 rgba(11, 32, 147, 0.04),
-    0 16px 44px -8px rgba(11, 32, 147, 0.11),
-    0 4px 14px rgba(11, 32, 147, 0.04);
-  position: relative;
-  z-index: 2;
-  max-width: 1290px;
-  margin: 0 auto;
-}
-
-.comparisonCellsWrap {
-  display: contents;
-}
-
-.comparisonHeaderRow {
-  display: grid;
-  grid-template-columns: 1.15fr 1fr 1.25fr;
-  background: #F8FAFC;
-  border-bottom: 1.5px solid #E2E8F0;
-  padding: 13px 32px;
-  align-items: center;
-  gap: 20px;
-}
-
-.comparisonColTitle {
+    inset 0 1.5px 0 #FFFFFF,
+    0 12px 30px -6px rgba(11, 32, 147, 0.09);
   display: flex;
   flex-direction: column;
-  gap: 1px;
-  font-family: var(--font-display);
-  font-size: 12.5px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #0F172A;
+  height: 100%;
 }
 
-.comparisonColBadge {
-  font-size: 9px;
-  font-weight: 800;
-  color: #0284C7;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-}
-
-.comparisonGenericHeader {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.genericHeaderBadge {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: #FEE2E2;
-  color: #EF4444;
-  font-size: 9.5px;
-  font-weight: 800;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.headerTitleWrap {
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-}
-
-.genericHeaderMain {
-  font-family: var(--font-display);
-  font-size: 12.5px;
-  font-weight: 800;
-  color: #475569;
-  text-transform: uppercase;
-}
-
-.headerSubtext {
-  font-size: 10.5px;
-  color: #94A3B8;
-  font-weight: 500;
-}
-
-.comparisonCopilotHeader {
-  background: linear-gradient(135deg, #0B2093 0%, #1E40AF 100%);
-  padding: 7px 18px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(11, 32, 147, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.25);
-  border: 1px solid #1D4ED8;
-  color: #FFFFFF;
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-}
-
-.copilotHeaderTop {
-  display: flex;
-  align-items: center;
-}
-
-.copilotPillBadge {
-  font-size: 8.5px;
-  font-weight: 800;
-  color: #6EE7B7;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-.copilotHeaderTitleRow {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.copilotBrandIcon {
-  font-size: 13px;
-}
-
-.copilotBrandText {
-  font-family: var(--font-display);
-  font-size: 13.5px;
-  font-weight: 800;
-  color: #FFFFFF;
-  letter-spacing: 0.02em;
-}
-
-.comparisonRowsList {
-  display: flex;
-  flex-direction: column;
-}
-
-.comparisonRow {
-  display: grid;
-  grid-template-columns: 1.15fr 1fr 1.25fr;
-  padding: 11.5px 32px;
-  align-items: center;
-  border-bottom: 1px solid #F1F5F9;
-  gap: 20px;
-  transition: background 0.15s ease;
-}
-
-.comparisonRow:last-child {
-  border-bottom: none;
-}
-
-.comparisonRow:hover {
-  background: #F8FAFD;
-}
-
-.featureCell {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.featureIconSquircle {
-  width: 42px;
-  height: 42px;
-  border-radius: 11px;
-  background: linear-gradient(145deg, #FFFFFF 0%, #F8FAFC 50%, #E2E8F0 100%);
-  border: 1px solid #CBD5E1;
-  box-shadow: 0 2px 6px -1px rgba(11, 32, 147, 0.08);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  transition: all 0.2s ease;
-}
-
-.featureIconSquircle svg {
-  width: 25px;
-  height: 25px;
-}
-
-.featureTextCol {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5px;
-}
-
-.featureTitleText {
-  font-family: var(--font-display);
-  font-size: 14.5px;
-  font-weight: 800;
-  color: #0F172A;
-  line-height: 1.25;
-}
-
-.featureSubtext {
-  font-size: 11.5px;
-  color: #64748B;
-  font-weight: 500;
-  line-height: 1.25;
-}
-
-/* MINIMAL CELLS - NO CARDS INSIDE CARDS! */
-.genericCell {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  background: transparent;
-  border: none;
-  padding: 0;
-  box-shadow: none;
-}
-
-.genericCrossBadge {
-  width: 17px;
-  height: 17px;
-  border-radius: 50%;
-  background: #FEE2E2;
-  color: #DC2626;
-  font-size: 9px;
-  font-weight: 800;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  margin-top: 1.5px;
-}
-
-.genericCellText {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  font-size: 12.5px;
-  line-height: 1.35;
-}
-
-.genericRowTag {
-  font-size: 10.5px;
-  font-weight: 800;
-  color: #EF4444;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-}
-
-.genericDesc {
-  font-size: 12px;
-  color: #64748B;
-}
-
-/* MINIMAL COPILOT CELL */
-.copilotCell {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  background: rgba(16, 185, 129, 0.04);
-  border: 1px solid rgba(16, 185, 129, 0.15);
-  border-radius: 9px;
-  padding: 6px 12px;
-  box-shadow: none;
-}
-
-.copilotCheckBadge {
-  width: 17px;
-  height: 17px;
-  border-radius: 50%;
-  background: #10B981;
-  color: #FFFFFF;
-  font-size: 9.5px;
-  font-weight: 800;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  margin-top: 1.5px;
-  box-shadow: 0 1px 3px rgba(16, 185, 129, 0.3);
-}
-
-.copilotCellText {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  font-size: 12.5px;
-  line-height: 1.35;
-}
-
-.copilotRowTag {
-  font-size: 10.5px;
-  font-weight: 800;
-  color: #059669;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-}
-
-.copilotDesc {
-  font-size: 12px;
-  color: #0F172A;
-  font-weight: 600;
-}
-
-/* COMPACT FOOTER STRIP */
-.comparisonFooterStrip {
+.vaultArtifactHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  background: #F8FAFC;
-  border-top: 1.5px solid #E2E8F0;
-  padding: 11px 32px;
+  padding: 11px 16px;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFD 100%);
+  border-bottom: 1px solid #E2E8F0;
 }
 
-.comparisonFooterLeft {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  font-size: 12.5px;
-  color: #334155;
-  line-height: 1.35;
-}
-
-.comparisonFooterLeft strong {
+.vaultArtifactClinic {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 800;
   color: #0F172A;
 }
 
-.footerShieldIcon {
-  font-size: 16px;
-  flex-shrink: 0;
+.vaultArtifactLivePill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 9px;
+  font-weight: 700;
+  color: #059669;
+  background: linear-gradient(180deg, #FFFFFF 0%, #ECFDF5 100%);
+  border: 1px solid #A7F3D0;
+  padding: 2px 8px;
+  border-radius: 999px;
+  box-shadow: inset 0 1px 0 #FFFFFF;
 }
 
-.comparisonBeamBtnWrap {
-  flex-shrink: 0;
+.vaultArtifactDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #10B981;
 }
 
-@media (max-width: 860px) {
-  .sectionBlockCompact {
-    padding: 24px 0;
-  }
-  .comparisonCard {
-    border-radius: 12px;
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    overflow: hidden;
-  }
+.vaultImageFrame {
+  position: relative;
+  width: 100%;
+  height: 165px;
+  overflow: hidden;
+  background: #E2E8F0;
+}
 
-  .comparisonHeaderRow {
-    display: grid;
-    grid-template-columns: 1.05fr 1fr 1.15fr;
-    background: #F8FAFC;
-    border-bottom: 1.5px solid #E2E8F0;
-    padding: 6px 4px;
-    align-items: center;
-    gap: 3px;
-    box-sizing: border-box;
-    width: 100%;
-  }
-
-  .comparisonColTitle {
-    gap: 1px;
-    min-width: 0;
-  }
-
-  .comparisonColBadge {
-    font-size: 6.5px;
-    letter-spacing: 0.04em;
-  }
-
-  .comparisonColTitle > span:last-child {
-    font-size: 7.5px;
-    font-weight: 800;
-  }
-
-  .comparisonGenericHeader {
-    gap: 2px;
-    min-width: 0;
-  }
-
-  .genericHeaderBadge {
-    width: 12px;
-    height: 12px;
-    font-size: 6px;
-    flex-shrink: 0;
-  }
-
-  .headerTitleWrap {
-    gap: 0;
-    min-width: 0;
-  }
-
-  .genericHeaderMain {
-    font-size: 7px;
-    font-weight: 800;
-    line-height: 1.15;
-  }
-
-  .headerSubtext {
-    display: none;
-  }
-
-  .comparisonCopilotHeader {
-    padding: 2.5px 4px;
-    border-radius: 5px;
-    gap: 1px;
-    min-width: 0;
-  }
-
-  .copilotHeaderTop {
-    display: flex;
-  }
-
-  .copilotPillBadge {
-    font-size: 5.5px;
-    letter-spacing: 0.02em;
-  }
-
-  .copilotHeaderTitleRow {
-    gap: 3px;
-  }
-
-  .copilotBrandIcon {
-    font-size: 8px;
-  }
-
-  .copilotBrandText {
-    font-size: 7.5px;
-    font-weight: 800;
-    line-height: 1.15;
-  }
-
-  .comparisonRow {
-    display: grid;
-    grid-template-columns: 1.05fr 1fr 1.15fr;
-    padding: 5px 4px;
-    gap: 3px;
-    align-items: center;
-    box-sizing: border-box;
-    width: 100%;
-  }
-
-  .featureCell {
-    gap: 3px;
-    min-width: 0;
-  }
-
-  .featureIconSquircle {
-    width: 22px;
-    height: 22px;
-    border-radius: 5px;
-    flex-shrink: 0;
-  }
-
-  .featureIconSquircle svg {
-    width: 14px;
-    height: 14px;
-  }
-
-  .featureTitleText {
-    font-size: 8px;
-    line-height: 1.15;
-  }
-
-  .featureSubtext {
-    display: none;
-  }
-
-  .genericCell, .copilotCell {
-    gap: 3px;
-    padding: 0;
-    min-width: 0;
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-  }
-
-  .genericCrossBadge, .copilotCheckBadge {
-    width: 11px;
-    height: 11px;
-    font-size: 6px;
-    flex-shrink: 0;
-  }
-
-  .genericCellText, .copilotCellText {
-    font-size: 7px;
-    line-height: 1.15;
-    min-width: 0;
-  }
-
-  .genericRowTag, .copilotRowTag {
-    font-size: 6.5px;
-    line-height: 1.1;
-  }
-
-  .genericDesc, .copilotDesc {
-    font-size: 7px;
-    line-height: 1.15;
-  }
-
-  .comparisonFooterStrip {
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-    padding: 8px 10px;
-    text-align: center;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  .comparisonFooterLeft {
-    justify-content: center;
-    font-size: 9px;
-    line-height: 1.35;
-    text-align: center;
-  }
-
-  .comparisonBeamBtnWrap {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+@media (max-width: 900px) {
+  .vaultImageFrame {
+    height: 150px;
   }
 }
 
-/* ══════════════════════════════════════════════════
-   SECTION 07: WHY CHOOSE MARKETING COPILOT (6 PILLARS)
-   Skeuomorphic, Tactile & Pixel-Aligned
-══════════════════════════════════════════════════ */
+.vaultImage {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.vaultArtifactContainer:hover .vaultImage {
+  transform: scale(1.03);
+}
+
+.vaultTelemetryOverlay {
+  padding: 14px 16px;
+  background: linear-gradient(180deg, #F8FAFD 0%, #FFFFFF 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  flex: 1;
+}
+
 .whyChooseGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -3831,21 +3221,19 @@
 .whyChooseCard {
   background: linear-gradient(180deg, #FFFFFF 0%, #F9FBFE 60%, #F1F5F9 100%);
   border: 1.5px solid rgba(203, 213, 225, 0.95);
-  border-radius: 20px;
-  padding: 22px 22px 18px;
+  border-radius: 22px;
+  padding: 26px 22px;
+  display: flex;
+  flex-direction: column;
   box-shadow: 
     inset 0 1.5px 0 0 #FFFFFF,
     inset 0 -1.5px 0 0 rgba(11, 32, 147, 0.04),
     0 2px 6px rgba(11, 32, 147, 0.03),
-    0 10px 24px -4px rgba(11, 32, 147, 0.06);
+    0 12px 28px -6px rgba(11, 32, 147, 0.07);
   transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   position: relative;
   overflow: hidden;
   height: 100%;
-  width: 100%;
   box-sizing: border-box;
 }
 

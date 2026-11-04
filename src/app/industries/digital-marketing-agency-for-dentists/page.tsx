@@ -603,181 +603,140 @@ const marketingJourneyStages = [
 interface ClinicalStory {
   id: string;
   tabLabel: string;
-  badge: string;
-  procedureTag: string;
-  title: string;
-  hook: string;
-  narrative: {
-    step: string;
-    phase: string;
-    title: string;
-    desc: string;
-  }[];
-  metrics: { val: string; label: string }[];
-  image: string;
-  imageAlt: string;
-  imageTag: string;
-  quote: string;
+  category: string;
+  clinic: string;
+  location: string;
+  tag: string;
+  headline: string;
   doctor: string;
-  doctorClinic: string;
+  challenge: string;
+  strategy: string;
+  image: string;
+  alt: string;
+  metrics: { value: string; label: string }[];
+  quote: string;
+  telemetry: {
+    badge: string;
+    growthRate: string;
+    beforeVal: string;
+    afterVal: string;
+    progressPercent: number;
+    footers: string[];
+  };
 }
 
 const clinicalStories: ClinicalStory[] = [
   {
     id: 'implants',
     tabLabel: '🦷 Full-Arch Implants',
-    procedureTag: 'Surgical Dental Implants',
-    badge: 'HIGH-TICKET ACQUISITION',
-    title: 'From Missing Teeth to Confirmed Full-Arch Restoration',
-    hook: 'Negative-scrubbed Google Search funnels capturing high-ticket implant cases while screening out bargain seekers.',
-    narrative: [
-      {
-        step: '01',
-        phase: 'INTENT CAPTURE',
-        title: 'High-Intent Distress Queries',
-        desc: 'Targeting searches like "permanent fixed teeth near me" across affluent local catchments while filtering out cheap bargain seekers.',
-      },
-      {
-        step: '02',
-        phase: 'CLINICAL TRUST',
-        title: '3D CBCT Guided Surgery Preview',
-        desc: 'Custom landing pages showcasing sterilized operatory walkthroughs and transparent 0% EMI plans eliminate surgical anxiety.',
-      },
-      {
-        step: '03',
-        phase: 'CHAIR BOOKING',
-        title: '1-Tap WhatsApp Slot Confirmation',
-        desc: 'Frictionless WhatsApp booking assigns immediate priority operatory slots, achieving a verified 92.4% show-up rate.',
-      },
-    ],
-    metrics: [
-      { val: '₹1.85L', label: 'Avg Case Value' },
-      { val: '₹220', label: 'Qualified CPL' },
-      { val: '92.4%', label: 'Operatory Show-Up' },
-    ],
+    category: 'Surgical Dental Implants',
+    clinic: 'Apex Dental & Implant Studio',
+    location: 'New Delhi',
+    tag: 'HIGH-TICKET SURGICAL IMPLANTS // NEW DELHI',
+    headline: 'Scaling Full-Arch Surgical Implants from 4 to 28 Monthly Cases',
+    doctor: 'Dr. R. Malhotra, MDS (Prosthodontics & Implantology)',
+    challenge: 'Losing high-ticket full-arch candidates to corporate chains; high surgical fear and pricing caused 60%+ consultation drop-offs.',
+    strategy: 'Deployed negative-scrubbed Google Search Ads, CBCT 3D guided surgery explainer pages, and 1-tap WhatsApp token reservation with 0% EMI financing.',
     image: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=85',
-    imageAlt: 'Maxillofacial implant surgeon reviewing 3D CBCT digital scan with surgical guide',
-    imageTag: 'CBCT 3D GUIDED SURGERY',
-    quote: '"Every patient scheduled in Operatory 2 is financially pre-qualified for surgical implants."',
-    doctor: 'Dr. R. Malhotra, MDS (Implantology)',
-    doctorClinic: 'Apex Dental & Implant Studio, New Delhi',
+    alt: 'Maxillofacial implant surgeon reviewing 3D CBCT digital scan with surgical guide',
+    metrics: [
+      { value: '28 Cases', label: 'Monthly Implant Consults' },
+      { value: '₹220', label: 'Qualified Cost Per Lead' },
+      { value: '92.4%', label: 'Operatory Show-Up Rate' },
+    ],
+    quote: '"We stopped getting price shoppers who waste chair time. Every patient scheduled in Operatory 2 is financially pre-qualified for surgical implants."',
+    telemetry: {
+      badge: 'SURGICAL IMPLANT FUNNEL',
+      growthRate: '7X Case Surge',
+      beforeVal: '4 / mo',
+      afterVal: '28 / mo',
+      progressPercent: 94,
+      footers: ['✓ WhatsApp 1-Tap Booking', '✓ 0% EMI Patient Funnel', '✓ Full Operatory Booking'],
+    },
   },
   {
     id: 'aligners',
     tabLabel: '✨ Clear Aligners & Veneers',
-    procedureTag: 'Cosmetic & Orthodontics',
-    badge: 'AESTHETIC PATIENT FUNNEL',
-    title: 'Turning Smile Insecurity into Premium Aesthetic Consultations',
-    hook: 'High-definition 3D smile simulations converting 22–38 year-old working professionals across Instagram.',
-    narrative: [
-      {
-        step: '01',
-        phase: 'SOCIAL DISCOVERY',
-        title: 'Local Catchment Social Discovery',
-        desc: 'Hyper-targeted Instagram smile transformation reels reaching working professionals within a 7 km clinic radius.',
-      },
-      {
-        step: '02',
-        phase: 'EMOTIONAL HOOK',
-        title: 'Interactive 3D Smile Simulator',
-        desc: 'Digital before-and-after smile alignment previews transform passive social browsing into an urgent desire for clinic treatment.',
-      },
-      {
-        step: '03',
-        phase: 'CHAIR BOOKING',
-        title: 'Direct Diagnostic Scan Reservation',
-        desc: 'Patients claim an introductory 3D iTero diagnostic scan consultation directly with flexible monthly EMI financing options.',
-      },
-    ],
-    metrics: [
-      { val: '68+', label: 'Monthly Inquiries' },
-      { val: '4.8X', label: 'Verified ROAS' },
-      { val: '64%', label: 'Chair Conversion' },
-    ],
+    category: 'High-Value Cosmetic Campaigns',
+    clinic: 'Elite Aligners & Aesthetic Studio',
+    location: 'Bangalore',
+    tag: 'HIGH-TICKET CASE ACQUISITION // BANGALORE',
+    headline: 'Generating 68+ Monthly Qualified Clear Aligner Consultations',
+    doctor: 'Dr. S. Nambiar, MDS (Orthodontics & Dentofacial)',
+    challenge: 'Wasted ad budget on ₹500 scaling shoppers; zero traction for premium ₹1.5L+ clear aligners with generic social ads.',
+    strategy: 'Engineered 3D smile simulation Instagram funnels and dedicated consultation landers with transparent monthly 0% EMI financing guides.',
     image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1200&q=85',
-    imageAlt: 'Patient smiling during digital aesthetic veneer and clear aligner consultation',
-    imageTag: 'AESTHETIC SMILE STUDIO',
-    quote: '"Our clear aligner chair bookings tripled in 60 days. Patients arrive already convinced about the clinical outcome."',
-    doctor: 'Dr. S. Nambiar, MDS (Orthodontics)',
-    doctorClinic: 'Elite Aligners & Aesthetic Studio, Bangalore',
+    alt: 'Patient reviewing 3D digital clear aligner smile preview at Elite Aligners',
+    metrics: [
+      { value: '68+', label: 'Monthly Aligner Consults' },
+      { value: '4.8X', label: 'Verified ROAS' },
+      { value: '62%', label: 'Chair Conversion Rate' },
+    ],
+    quote: '"Marketing Copilot filtered out bargain shoppers and filled our aesthetic operatory at full capacity with motivated smile makeover candidates."',
+    telemetry: {
+      badge: 'PREMIUM ALIGNER FUNNEL',
+      growthRate: '17X Quality Shift',
+      beforeVal: '4 / mo',
+      afterVal: '68 / mo',
+      progressPercent: 88,
+      footers: ['✓ Filtered ₹500 Shoppers', '✓ 4.8X Return on Ad Spend', '✓ 62% Chair Acceptance'],
+    },
   },
   {
     id: 'local-3pack',
     tabLabel: '📍 Local 3-Pack Catchment',
-    procedureTag: 'Google Maps 3-Pack Dominance',
-    badge: 'HYPERLOCAL DOMINANCE',
-    title: 'Dominating Acute Dental Searches Across 42 Micro-Catchments',
-    hook: 'Automated 5-star WhatsApp reviews and geo-grid SEO turning Google Maps into a 24/7 patient funnel.',
-    narrative: [
-      {
-        step: '01',
-        phase: 'LOCAL SEARCH',
-        title: '#1 Google Maps 3-Pack Locking',
-        desc: 'Dominating top positions for "emergency dentist near me" across all micro-catchments within 5–10 km.',
-      },
-      {
-        step: '02',
-        phase: 'SOCIAL PROOF',
-        title: '320+ Verified 5★ Patient Reviews',
-        desc: 'Geo-tagged operatory photography and clinical reviews ensure searchers choose your practice over competitors.',
-      },
-      {
-        step: '03',
-        phase: 'GPS FOOTFALL',
-        title: 'Turn-by-Turn GPS Navigation',
-        desc: 'Direct click-to-call and map navigation lead acute emergency patients straight to your clinic reception desk.',
-      },
-    ],
-    metrics: [
-      { val: 'Top 3', label: 'In 42 Catchments' },
-      { val: '+180%', label: 'Directions & Calls' },
-      { val: '4.9★', label: '320+ Reviews' },
-    ],
+    category: 'Local Search & Catchment Dominance',
+    clinic: 'Dr. SmileCraft Dental Care',
+    location: 'Mumbai',
+    tag: 'LOCAL CATCHMENT DOMINANCE // MUMBAI',
+    headline: 'Dominating Google Maps 3-Pack Across 42 Micro-Catchments',
+    doctor: 'Dr. A. Joshi, BDS (Aesthetic & Family Dentistry)',
+    challenge: 'Invisible beyond 1 km; corporate hospital chains monopolized Google Maps, suppressing local family footfall and emergency visits.',
+    strategy: 'Optimized Google Maps 3-Pack across 42 pin codes with geo-tagged operatory photos, clinical schema markup, and automated 5-star WhatsApp reviews.',
     image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=85',
-    imageAlt: 'Modern sterile dental operatory clinic welcoming emergency patient',
-    imageTag: 'MAPS 3-PACK DOMINANCE',
+    alt: 'Dr. SmileCraft clinic consultation operatory in Mumbai',
+    metrics: [
+      { value: 'Top 3', label: 'Rank in 42 Pin Codes' },
+      { value: '+180%', label: 'Map Directions & Calls' },
+      { value: '4.9★', label: 'Over 320+ Reviews' },
+    ],
     quote: '"Nearby families walk into our clinic daily saying Google Maps recommended us #1 with glowing 5-star reviews."',
-    doctor: 'Dr. A. Joshi, BDS (Aesthetic & Family Care)',
-    doctorClinic: 'Dr. SmileCraft Dental Care, Mumbai',
+    telemetry: {
+      badge: 'MAPS 3-PACK GEO-RADAR',
+      growthRate: '100% Top-3 Grid',
+      beforeVal: 'Unranked (>20)',
+      afterVal: 'Top 3 in 42 Zones',
+      progressPercent: 96,
+      footers: ['✓ 320+ Verified 5★ Reviews', '✓ Geo-Tagged Photos', '✓ +180% Navigation Calls'],
+    },
   },
   {
     id: 'family',
     tabLabel: '👨‍👩‍👧 Family & Preventative Care',
-    procedureTag: 'Family & Pediatric Care',
-    badge: 'LIFETIME PATIENT RETENTION',
-    title: 'Converting Anxious First-Timers into Decades of Multi-Family Loyalty',
-    hook: 'Fear-free clinical branding and automated recall workflows ensuring full recurring appointment books.',
-    narrative: [
-      {
-        step: '01',
-        phase: 'FEAR-FREE',
-        title: 'Sterility & Pain-Free Assurance',
-        desc: 'Highlighting Class-B autoclave sterilization and gentle sedation options eliminates phobia for parents and kids.',
-      },
-      {
-        step: '02',
-        phase: 'CLINICAL TRUST',
-        title: 'Doctor-Led Operatory Tours',
-        desc: 'Authentic video walkthroughs build deep doctor authority and eliminate clinical dread before the first visit.',
-      },
-      {
-        step: '03',
-        phase: 'RECALL ENGINE',
-        title: '6-Month Automated Recall Workflow',
-        desc: 'Automated WhatsApp hygiene recall reminders maintain an 86% recurring cleaning and check-up booking rate.',
-      },
-    ],
-    metrics: [
-      { val: '86%', label: 'Recall Rate' },
-      { val: '3.4X', label: 'Family Referrals' },
-      { val: '₹140', label: 'Blended CPL' },
-    ],
-    image: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=1200&q=85',
-    imageAlt: 'Family dentist conducting gentle consultation with patient',
-    imageTag: 'FEAR-FREE FAMILY DENTISTRY',
-    quote: '"Our appointment books for hygiene cleanings and family consultations are booked solid thanks to the automated recall engine."',
+    category: 'Multigenerational Family Retention',
+    clinic: 'Roy Family Dental Clinic',
+    location: 'Gurgaon',
+    tag: 'LIFETIME PATIENT RETENTION // GURGAON',
+    headline: 'Transforming Anxious First-Timers into Decades of Multi-Family Loyalty',
     doctor: 'Dr. N. Roy, MDS (Pediatric Dentistry)',
-    doctorClinic: 'Roy Family Dental Clinic, New Delhi',
+    challenge: 'Mothers and families vetting local dentists prioritize sterility standards and gentle sedation options over discount pricing.',
+    strategy: 'Doctor-led video explainers detailing Class-B autoclave sterilization protocols and automated WhatsApp 6-month hygiene recalls.',
+    image: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=1200&q=85',
+    alt: 'Family dentist conducting gentle consultation with patient',
+    metrics: [
+      { value: '86%', label: '6-Month Recall Rate' },
+      { value: '3.4X', label: 'Family Referrals' },
+      { value: '₹140', label: 'Blended Cost Per Lead' },
+    ],
+    quote: '"Our appointment books for hygiene cleanings and family consultations are booked solid thanks to the automated recall engine."',
+    telemetry: {
+      badge: 'HYGIENE RECALL ENGINE',
+      growthRate: '86% Retention',
+      beforeVal: '32% Recall',
+      afterVal: '86% Recall',
+      progressPercent: 90,
+      footers: ['✓ Sterilized Video Tours', '✓ 6-Month Recall Protocol', '✓ Pain-Free Sedation'],
+    },
   },
 ];
 
@@ -1124,128 +1083,148 @@ export default function DentalMarketingPage() {
               <span>CLINICAL CREATIVE VAULT • LIVE CAMPAIGN ARTIFACTS</span>
             </div>
             <h2 className={styles.vaultTitle}>
-              How High-Value Patients Are Won: Clinical Storytelling &amp; Campaigns
+              Real Dental Marketing. Measurable Practice Growth.
             </h2>
             <p className={styles.vaultSubtitle}>
-              Step inside the real patient journey — from the initial late-night distress search to interactive clinical education, overcome fear, and confirmed operatory chair appointments.
+              Explore authentic clinical acquisition funnels and live telemetry data that turn local patient searchers into confirmed operatory appointments.
             </p>
           </div>
 
-          {/* Segmented Control Procedure Tabs */}
-          <div className={styles.segmentedTabsContainer}>
-            <div className={styles.segmentedTabsDock}>
-              {clinicalStories.map((story, idx) => (
-                <button
-                  key={story.id}
-                  type="button"
-                  onClick={() => setActiveStoryIdx(idx)}
-                  className={`${styles.segmentedTabBtn} ${activeStoryIdx === idx ? styles.segmentedTabBtnActive : ''}`}
-                  aria-label={`View Story: ${story.tabLabel}`}
-                >
-                  <span>{story.tabLabel}</span>
-                </button>
-              ))}
-            </div>
+          {/* Interactive Procedure Selector Tabs (Skeuomorphic Segmented Tabs) */}
+          <div className={styles.vaultStudyTabs}>
+            {clinicalStories.map((story, idx) => (
+              <button
+                key={story.id}
+                type="button"
+                onClick={() => setActiveStoryIdx(idx)}
+                className={`${styles.vaultStudyTab} ${activeStoryIdx === idx ? styles.vaultStudyTabActive : ''}`}
+                aria-label={`View Campaign: ${story.tabLabel}`}
+              >
+                <span className={styles.vaultTabBadge}>{story.category}</span>
+                <span className={styles.vaultTabClinic}>{story.tabLabel}</span>
+                <span className={styles.vaultTabLocation}>📍 {story.location}</span>
+              </button>
+            ))}
           </div>
 
-          {/* DUAL PANEL: Left Side Narrative Timeline • Right Side Unobstructed Hero Image */}
+          {/* Active Dual-Panel Skeuomorphic Showcase Card */}
           <ScrollReveal>
-            <div className={styles.dualPanelContainer}>
+            <div className={styles.vaultSkeuoCard}>
               <div className={styles.cardTopGlowBeam} aria-hidden="true" />
 
-              {/* LEFT PANEL: Clean Scannable Narrative */}
-              <div className={styles.storyContentPanel}>
-                <div className={styles.storyTopMeta}>
-                  <span className={styles.storyProcedurePill}>{activeStory.procedureTag}</span>
-                  <span className={styles.storyCampaignBadge}>
-                    <span className={styles.storyLiveDot} />
-                    {activeStory.badge}
-                  </span>
+              {/* LEFT COLUMN: Narrative, Challenge, Playbook, Metrics, Quote */}
+              <div className={styles.vaultInfoCol}>
+                <div className={styles.vaultHeaderRow}>
+                  <div className={styles.vaultClientBadge}>
+                    <span className={styles.liveTelemetryLed} />
+                    <span>{activeStory.tag}</span>
+                  </div>
+                  <div className={styles.vaultDoctorBadge}>
+                    <span>👨‍⚕️ {activeStory.doctor}</span>
+                  </div>
                 </div>
 
-                <h3 className={styles.storyMainTitle}>{activeStory.title}</h3>
-                <p className={styles.storyHookText}>{activeStory.hook}</p>
+                <h3 className={styles.vaultCardTitle}>
+                  {activeStory.headline}
+                </h3>
 
-                {/* Elegant Connecting Timeline */}
-                <div className={styles.storyTimelineClean}>
-                  {activeStory.narrative.map((item, nIdx) => (
-                    <div key={nIdx} className={styles.timelineNode}>
-                      <div className={styles.timelineTrackCol}>
-                        <div className={styles.timelineCircle}>{item.step}</div>
-                        {nIdx < activeStory.narrative.length - 1 && (
-                          <div className={styles.timelineVerticalLine} />
-                        )}
-                      </div>
-                      <div className={styles.timelineContentCol}>
-                        <div className={styles.timelineHeadingRow}>
-                          <span className={styles.timelinePhaseTag}>{item.phase}</span>
-                          <h4 className={styles.timelineTitle}>{item.title}</h4>
-                        </div>
-                        <p className={styles.timelineDesc}>{item.desc}</p>
-                      </div>
+                {/* Challenge & Playbook Dual Skeuomorphic Badges */}
+                <div className={styles.vaultChallengeSolution}>
+                  <div className={styles.vaultCSBlockChallenge}>
+                    <div className={styles.csLabelChallenge}>
+                      <span>⚠️ PRACTICE CHALLENGE</span>
                     </div>
-                  ))}
+                    <p className={styles.csTextChallenge}>{activeStory.challenge}</p>
+                  </div>
+                  <div className={styles.vaultCSBlockStrategy}>
+                    <div className={styles.csLabelStrategy}>
+                      <span>🚀 DEPLOYED PLAYBOOK</span>
+                    </div>
+                    <p className={styles.csTextStrategy}>{activeStory.strategy}</p>
+                  </div>
                 </div>
 
-                {/* Sleek Metric Ribbon */}
-                <div className={styles.storyMetricRibbon}>
+                {/* 3 High-Impact Stat Boxes */}
+                <div className={styles.vaultMetricsRow}>
                   {activeStory.metrics.map((m, mIdx) => (
-                    <div key={mIdx} className={styles.ribbonMetricItem}>
-                      <span className={styles.ribbonMetricVal}>{m.val}</span>
-                      <span className={styles.ribbonMetricLabel}>{m.label}</span>
+                    <div key={mIdx} className={styles.vaultMetricBox}>
+                      <span className={styles.vaultMetricVal}>{m.value}</span>
+                      <span className={styles.vaultMetricLabel}>{m.label}</span>
                     </div>
                   ))}
                 </div>
 
-                {/* CTA Action Row */}
-                <div className={styles.storyCtaRow}>
-                  <BeamButton
-                    href="/contact"
-                    label="Deploy This Campaign Strategy"
-                    size="md"
-                  />
-                  <span className={styles.storyCtaNote}>
-                    ✓ Tailored to your local clinic catchment
-                  </span>
+                {/* Testimonial & Button Row */}
+                <div className={styles.vaultBottomBar}>
+                  <div className={styles.vaultQuoteBox}>
+                    <span className={styles.vaultQuoteMark}>“</span>
+                    <p className={styles.vaultQuoteInline}>{activeStory.quote}</p>
+                  </div>
+                  <div className={styles.vaultCtaWrap}>
+                    <BeamButton
+                      href="/contact"
+                      label="Deploy Strategy"
+                      size="sm"
+                    />
+                  </div>
                 </div>
               </div>
 
-              {/* RIGHT PANEL: Unobstructed Hero Clinical Visual & Verification Card */}
-              <div className={styles.storyVisualPanel}>
-                <div className={styles.heroShowcaseWrap}>
-                  {/* Clean, Full-Bleed Clinical Photograph Frame */}
-                  <div className={styles.heroImageFrame}>
-                    <Image
-                      src={activeStory.image}
-                      alt={activeStory.imageAlt}
-                      fill
-                      className={styles.heroImage}
-                      sizes="(max-width: 960px) 100vw, 620px"
-                      priority
-                    />
-
-                    {/* Minimalist Glass Badges on Top Corners */}
-                    <div className={styles.heroImageHeader}>
-                      <span className={styles.heroTagPill}>{activeStory.imageTag}</span>
-                      <span className={styles.heroLivePill}>
-                        <span className={styles.heroDot} />
-                        Live Patient Flow
-                      </span>
-                    </div>
+              {/* RIGHT COLUMN: Clinical Photo + Skeuomorphic Practice Telemetry Showcase */}
+              <div className={styles.vaultVisualColumn}>
+                <div className={styles.vaultArtifactContainer}>
+                  {/* Clinic Header Strip */}
+                  <div className={styles.vaultArtifactHeader}>
+                    <span className={styles.vaultArtifactClinic}>{activeStory.clinic}</span>
+                    <span className={styles.vaultArtifactLivePill}>
+                      <span className={styles.vaultArtifactDot} />
+                      Verified Data
+                    </span>
                   </div>
 
-                  {/* Clean Doctor Verification Card Positioned Below (Zero image blocking) */}
-                  <div className={styles.heroDoctorStrip}>
-                    <div className={styles.doctorQuoteRow}>
-                      <span className={styles.doctorQuoteMark}>“</span>
-                      <p className={styles.doctorQuoteText}>{activeStory.quote}</p>
+                  {/* Operatory Photo Frame */}
+                  <div className={styles.vaultImageFrame}>
+                    <Image
+                      src={activeStory.image}
+                      alt={activeStory.alt}
+                      fill
+                      className={styles.vaultImage}
+                      sizes="(max-width: 900px) 100vw, 420px"
+                    />
+                  </div>
+
+                  {/* Skeuomorphic Growth Telemetry Box */}
+                  <div className={styles.vaultTelemetryOverlay}>
+                    <div className={styles.telemetryEyebrowRow}>
+                      <span className={styles.telemetryCategoryBadge}>{activeStory.telemetry.badge}</span>
+                      <span className={styles.telemetrySurgePill}>{activeStory.telemetry.growthRate}</span>
                     </div>
-                    <div className={styles.doctorMetaRow}>
-                      <div>
-                        <div className={styles.doctorName}>{activeStory.doctor}</div>
-                        <div className={styles.doctorClinic}>{activeStory.doctorClinic}</div>
+
+                    <div className={styles.telemetryComparisonRow}>
+                      <div className={styles.telemetryValCol}>
+                        <span className={styles.telemetryValLabel}>Initial Baseline</span>
+                        <span className={styles.telemetryValInitial}>{activeStory.telemetry.beforeVal}</span>
                       </div>
-                      <span className={styles.doctorVerifiedBadge}>✓ Verified Practice Data</span>
+                      <span className={styles.telemetryArrow}>→</span>
+                      <div className={styles.telemetryValCol}>
+                        <span className={styles.telemetryValLabel}>After 90 Days</span>
+                        <span className={styles.telemetryValResult}>{activeStory.telemetry.afterVal}</span>
+                      </div>
+                    </div>
+
+                    {/* Progress Bar */}
+                    <div className={styles.telemetryProgressBar}>
+                      <div
+                        className={styles.telemetryProgressFill}
+                        style={{ width: `${activeStory.telemetry.progressPercent}%` }}
+                      />
+                    </div>
+
+                    {/* Verification Chips */}
+                    <div className={styles.telemetryChecklistRow}>
+                      {activeStory.telemetry.footers.map((item, fIdx) => (
+                        <span key={fIdx} className={styles.telemetryCheckChip}>{item}</span>
+                      ))}
                     </div>
                   </div>
                 </div>
