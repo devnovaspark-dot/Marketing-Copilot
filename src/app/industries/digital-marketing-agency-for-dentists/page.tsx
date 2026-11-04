@@ -684,7 +684,7 @@ const clinicalStories: ClinicalStory[] = [
   },
   {
     id: 'local-3pack',
-    tabLabel: '📍 Local 3-Pack Catchment',
+    tabLabel: '🎯 Local 3-Pack Catchment',
     category: 'Local Search & Catchment Dominance',
     clinic: 'Dr. SmileCraft Dental Care',
     location: 'Mumbai',
@@ -1110,8 +1110,6 @@ export default function DentalMarketingPage() {
           {/* Active Dual-Panel Skeuomorphic Showcase Card */}
           <ScrollReveal>
             <div className={styles.vaultSkeuoCard}>
-              <div className={styles.cardTopGlowBeam} aria-hidden="true" />
-
               {/* LEFT COLUMN: Narrative, Challenge, Playbook, Metrics, Quote */}
               <div className={styles.vaultInfoCol}>
                 <div className={styles.vaultHeaderRow}>
