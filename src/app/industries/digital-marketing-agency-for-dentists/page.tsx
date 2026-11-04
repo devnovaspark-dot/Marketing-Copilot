@@ -54,58 +54,54 @@ const dentalHeroSlides = [
 const coreServices = [
   {
     iconType: 'meta',
-    title: 'Meta Ads Marketing',
-    roleBadge: 'AWARENESS & DEMAND',
-    desc: 'Target local prospective patients across Instagram and Facebook with smile transformation reels that generate direct consultation inquiries.',
+    title: 'Meta Ads Marketing for Dentists',
+    roleBadge: 'AWARENESS & PATIENT DEMAND',
+    desc: 'Reach local patients across Instagram and Facebook with engaging smile transformation reels and targeted campaigns that generate dental consultation enquiries.',
     tags: ['📍 Local Catchment', '🎥 Smile Reels', '💬 Direct Inquiries'],
     actionText: 'Explore Meta Funnel',
   },
   {
     iconType: 'search',
-    title: 'Google Ads Management',
-    roleBadge: 'HIGH-INTENT CAPTURE',
-    desc: 'Capture patients actively searching for dental implants and urgent procedures, converting clicks into scheduled chair visits.',
+    title: 'Google Ads for Dentists',
+    roleBadge: 'HIGH-INTENT PATIENT ACQUISITION',
+    desc: 'Connect with patients actively searching for dental implants, cosmetic treatments, and urgent procedures through targeted Google Ads campaigns that drive appointment bookings.',
     tags: ['🔍 High-Intent Search', '🛡️ Negative Scrubbed', '📞 Click-to-Call'],
     actionText: 'Explore Search Ads',
   },
   {
     iconType: 'seo',
-    title: 'SEO + AEO/GEO',
-    roleBadge: 'ORGANIC & AI DISCOVERY',
-    desc: 'Dominate organic search rankings and AI summary answers across Google, Gemini, and ChatGPT for high-yield clinical treatments.',
+    title: 'SEO Services for Dentists in India',
+    roleBadge: 'ORGANIC & AI SEARCH VISIBILITY',
+    desc: "Improve your clinic's organic search rankings and AI search visibility across Google, Gemini, and ChatGPT to attract patients searching for dental treatments.",
     tags: ['📈 Top Google Ranks', '🤖 AI Search Overviews', '🌐 Compounding Traffic'],
     actionText: 'Explore Dental SEO',
   },
   {
     iconType: 'video',
     title: 'Social Media & YouTube Marketing',
-    roleBadge: 'TRUST & FAMILIARITY',
-    desc: 'Humanize your practice with doctor-led walkthroughs, sterilized operatory tours, and smile reveal stories that eliminate patient fear.',
+    roleBadge: 'TRUST & PATIENT ENGAGEMENT',
+    desc: 'Build patient confidence through doctor-led videos, clinic walkthroughs, treatment explainers, and smile transformation stories that make dental care more approachable.',
     tags: ['🎬 Operatory Tours', '✨ Smile Reveals', '🤝 Patient Trust'],
     actionText: 'Explore Video Strategy',
   },
   {
     iconType: 'mappin',
-    title: 'Google Business Profile & Maps',
-    roleBadge: 'LOCAL 3-PACK DOMINANCE',
-    desc: 'Dominate the Google Maps 3-Pack within your 5–10 km catchment to drive immediate patient phone calls, reviews, and GPS footfall.',
+    title: 'Google Business Profile & Maps Optimisation',
+    roleBadge: 'LOCAL SEARCH & MAP VISIBILITY',
+    desc: 'Strengthen your local presence with Google Business Profile optimisation, location-based SEO, and review management to attract nearby patients and increase clinic visits.',
     tags: ['📍 Maps 3-Pack Rank', '⭐ 5-Star Reviews', '🚗 Turn-by-Turn GPS'],
     actionText: 'Explore Maps Dominance',
   },
   {
     iconType: 'content',
-    title: 'Content Marketing',
-    roleBadge: 'CLINICAL AUTHORITY & PR',
-    desc: 'Publish doctor-verified clinical guides that resolve patient dental anxiety and build compounding local practice authority.',
+    title: 'Dental Content Marketing',
+    roleBadge: 'CLINICAL AUTHORITY & PATIENT EDUCATION',
+    desc: 'Publish expert-reviewed dental blogs, treatment guides, and educational content that address patient concerns, improve search visibility, and establish your clinic as a trusted dental care provider.',
     tags: ['📚 Treatment Guides', '🛡️ Alleviate Anxiety', '⭐ Doctor Authority'],
     actionText: 'Explore Content Engine',
   },
 ];
 
-// ══════════════════════════════════════════════════
-// SECTION 03 DATA: HIGH-VALUE DENTAL TREATMENTS
-// With high-res clinical photography thumbnails
-// ══════════════════════════════════════════════════
 const highValueTreatments = [
   {
     iconType: 'aligner',
@@ -516,87 +512,82 @@ const whyChoosePillars = [
 // ══════════════════════════════════════════════════
 const dentalFaqs = [
   {
-    q: 'Why should a dental clinic hire a specialized digital marketing agency for dentists?',
-    a: 'General marketing agencies lack an understanding of clinical dental terminology, procedure value, and the difference between emergency toothache searches and elective cosmetic dentistry. As a specialized agency for dentists, Marketing Copilot creates DCI-compliant patient funnels specifically tailored for dental implants, clear aligners, and family dentistry that convert searchers into seated patients.',
+    q: 'How Can a Digital Marketing Agency for Dentists Help Grow My Dental Practice?',
+    a: 'A dental marketing company that specializes in dental marketing may support your online presence, drive qualified queries, and bring in more people calling in for oral consultations.',
   },
   {
-    q: 'How do SEO services for dentists in India help my clinic attract local patients?',
-    a: 'Our SEO services for dentists in India focus on hyperlocal search dominance. When a prospective patient in your locality searches "dentist near me" or "best dental clinic in [area]", Google highlights the Maps 3-Pack. We optimize your citations, clinic category architecture, localized treatment landing pages, and patient review velocity to ensure your clinic ranks at the top.',
+    q: 'How Can SEO Services for Dentists in India Improve Local Patient Acquisition?',
+    a: 'Dental SEO improves your Google rankings, strengthens local search visibility, and helps nearby patients find your clinic when searching for specific dental treatments.',
   },
   {
-    q: 'What is the typical timeline to see a steady influx of dental patient inquiries?',
-    a: 'High-intent Google Ads and WhatsApp booking funnels can start generating qualified patient inquiries within 5 to 7 days of launch. Hyperlocal Google Maps 3-Pack optimization and organic SEO typically achieve compounding leadership within 60 to 90 days.',
+    q: 'How Long Does Digital Marketing Take to Generate Consistent Dental Patient Inquiries?',
+    a: 'Paid campaigns can generate inquiries in just a few days, whilst SEO takes several months to build visibility, organic traffic, and a sustained stream of patient leads.',
   },
   {
-    q: 'How do you prevent dental appointment no-shows?',
-    a: 'We implement an automated WhatsApp No-Show Shield. When a patient books an appointment, they receive an immediate token confirmation. At 24 hours and 2 hours prior to chair time, the system sends friendly reminder messages with doctor credentials, clinic Google Maps directions, and prep instructions. This drives patient attendance rates up to 91.5%+.',
+    q: 'How Can Dental Clinic Lead Generation Reduce Missed Appointments and Improve Bookings?',
+    a: 'The use of lead management, the right follow-up, appointment reminders, and well-communicated procedures helps boost consultation attendance, minimize missed appointments, and thus boost patient engagement.',
   },
   {
-    q: 'Are your digital marketing campaigns compliant with medical and dental advertising ethics?',
-    a: 'Yes, 100%. We adhere to professional healthcare advertising standards. We never use sensationalized claims, deceptive before/after manipulation, or unethical discount promos. All content focuses on patient education, authentic smile transformations with verified patient consent, and doctor credibility.',
+    q: 'Do your dental marketing campaigns adhere to the medical advertising directives in India?',
+    a: 'Yes, we communicate subtly and responsibly and operate our campaigns with accurate treatment details, promotion ethics, and the medical and dental advertising guidelines that apply.',
   },
   {
-    q: 'Can you help our practice target high-value procedures like Dental Implants and Aligners?',
-    a: 'Yes. That is our core specialty. Rather than burning budget on low-margin scaling checkups, we build bespoke patient funnels for single tooth implants, full mouth All-on-4 rehabilitation, and clear aligners targeted at affluent catchment zones with clear financing and consultation options.',
+    q: 'Can Google Ads for Dentists Help Promote High-Value Treatments Like Implants and Aligners?',
+    a: "Yes, if you're marketing dental implants, clear aligners, or other specialized treatments, more relevant inquiries can be generated to your clinic through targeted Google Ads.",
   },
 ];
 
-// ══════════════════════════════════════════════════
-// SIX-STAGE MARKETING CAPABILITIES JOURNEY DATA
-// All 6 integrated capabilities clearly visible & explained
-// ══════════════════════════════════════════════════
 const marketingJourneyStages = [
   {
     step: '01',
     name: 'Meta Ads',
-    role: 'Awareness & Audience Discovery',
+    role: 'Local Awareness & Audience Reach',
     iconType: 'meta',
-    desc: 'Reach local families and working professionals browsing Instagram and Facebook with aesthetic smile transformations and procedural education.',
+    desc: 'Connect with locals, families, and professionals via approachable smile transformation posts, treatment videos, and education.',
     highlight: 'Catchment Discovery',
   },
   {
     step: '02',
     name: 'Google Ads',
-    role: 'High-Intent Patient Capture',
+    role: 'High-Intent Patient Enquiries',
     iconType: 'search',
-    desc: 'Target people actively searching for dental clinics, emergency toothache relief, and high-ticket surgical procedures in real time.',
-    highlight: 'Search Intent to Consult',
+    desc: 'Targeted dental search campaigns connect with people searching for dental clinics, emergency dental care, toothache treatment, and advanced dental procedures.',
+    highlight: 'Search Intent to Consultation',
   },
   {
     step: '03',
     name: 'SEO + AEO/GEO',
-    role: 'Organic Search & AI Discovery',
+    role: 'Organic Rankings & AI Search Visibility',
     iconType: 'seo',
-    desc: 'Build long-term organic visibility on Google and ensure your clinic is recommended by AI-powered search engines (ChatGPT, Gemini).',
-    highlight: 'Compounding Organic Moat',
+    desc: "Boost your clinic's Google presence and online visibility, and help patients find you in AI tools such as ChatGPT and Gemini.",
+    highlight: 'Organic Growth in the Long Term',
   },
   {
     step: '04',
     name: 'Social Media & YouTube',
-    role: 'Patient Trust & Video Authority',
+    role: 'Patient Engagement & Video Marketing',
     iconType: 'video',
-    desc: 'Doctor video explainers, sterilized clinic walkthroughs, and treatment Reels that alleviate dental anxiety and build clinical trust.',
-    highlight: 'Doctor Authority & Trust',
+    desc: 'Share doctor-led videos, clinic tours, treatment explainer videos, and educational reels to answer patient questions, decrease anxiety, and create trust.',
+    highlight: 'Doctor Authority & Patient Trust',
   },
   {
     step: '05',
     name: 'Google Business Profile & Maps',
-    role: '5–10 km Catchment Dominance',
+    role: 'Local Search & Patient Discovery',
     iconType: 'mappin',
-    desc: 'Dominate Google Maps 3-Pack with optimized local listings, geo-tagged photography, and automated 5-star WhatsApp review acquisition.',
-    highlight: 'Local 3-Pack Rankings',
+    desc: 'Optimize Google Maps rankings with local listings, high-quality photos, business information, and patient experience handling consistency.',
+    highlight: 'Local Google Maps Visibility',
   },
   {
     step: '06',
     name: 'Content Marketing',
-    role: 'Clinical Authority & PR Growth',
+    role: 'Clinical Authority & Lead Generation',
     iconType: 'content',
-    desc: 'Clinical treatment guides, dental blog articles, and PR content that establish niche authority and convert readers into consultation candidates.',
-    highlight: 'Authority & PR Growth',
+    desc: 'Generate informative dental blogs, treatment guides, and patient-answering, search-friendly, expert background content that nurtures consultation inquiries.',
+    highlight: 'Content & Brand Authority',
   },
 ];
 
-// ══════════════════════════════════════════════════
 // ══════════════════════════════════════════════════
 // SECTION 05B DATA: DUAL-PANEL CLINICAL STORYTELLING
 // ══════════════════════════════════════════════════
@@ -793,24 +784,24 @@ export default function DentalMarketingPage() {
               </div>
 
               <h1 className={styles.heroHeadline}>
-                More Qualified Patient Leads.{' '}
-                <span className={styles.heroAccent}>More Dental Consultations.</span>{' '}
-                Sustainable Practice Growth.
+                Digital Marketing Agency for Dentists to{' '}
+                <span className={styles.heroAccent}>Build Online Visibility</span>{' '}
+                and Grow Your Clinic
               </h1>
 
               <p className={styles.heroSub}>
-                We help dental clinics attract high-intent patients, generate qualified enquiries, and convert digital visibility into real treatment opportunities through an integrated dental marketing strategy.
+                Attract more patients, generate qualified enquiries, and increase dental consultations with a result-driven digital marketing agency for dentists. We help dental clinics strengthen their online presence, reach patients actively searching for dental treatments, and turn digital visibility into consistent appointment opportunities.
               </p>
 
               <div className={styles.heroActions}>
                 <BeamButton
                   href="/contact"
-                  label="Get Your Dental Growth Strategy"
+                  label="Start Growing Your Dental Practice"
                   size="md"
                 />
                 <BeamButton
                   href="#services"
-                  label="Explore Our Services"
+                  label="Explore Digital Marketing Services for Dentists"
                   variant="outline"
                   size="md"
                   arrow={false}
@@ -928,11 +919,11 @@ export default function DentalMarketingPage() {
         <div className={styles.container}>
           <div className={styles.sectionHeader}>
             <div className={styles.sectionPill}>
-              <span>CLINICAL GROWTH CAPABILITIES</span>
+              <span>DIGITAL MARKETING FOR DENTISTS</span>
             </div>
-            <h2 className={styles.sectionTitle}>Everything Your Dental Clinic Needs to Attract More Patients</h2>
+            <h2 className={styles.sectionTitle}>Complete Digital Marketing Solutions to Grow Your Dental Practice</h2>
             <p className={styles.sectionSubtitle}>
-              Six integrated marketing capabilities designed to help dental clinics increase visibility, build trust, and generate qualified patient enquiries.
+              As a dentist-focused, results-driven digital marketing agency, we offer 6 integrated marketing capabilities to help your clinic stay visible and reach high-intent patients. Also, get a good flow of qualified inquiries from a solid dental marketing approach.
             </p>
           </div>
 
@@ -981,13 +972,13 @@ export default function DentalMarketingPage() {
             <div className={styles.journeyHeader}>
               <div className={styles.journeyPill}>
                 <span className={styles.journeyDot} />
-                <span>INTEGRATED MARKETING CAPABILITIES JOURNEY</span>
+                <span>360° DIGITAL GROWTH FOR DENTAL CLINICS</span>
               </div>
               <h3 className={styles.journeyTitle}>
-                How All 6 Capabilities Connect to Acquire Dental Patients
+                How a Digital Marketing Agency for Dentists Builds a Consistent Patient Pipeline
               </h3>
               <p className={styles.journeySubtitle}>
-                From initial local awareness to qualified treatment enquiries — every capability works in synchronization to build authority and fill operatory chairs.
+                Discover how Google Ads for dentists, local SEO, social media, and content marketing work together to attract high-intent patients and turn online searches into treatment enquiries.
               </p>
             </div>
 
@@ -1517,11 +1508,11 @@ export default function DentalMarketingPage() {
         <div className={styles.container}>
           <div className={styles.sectionHeader}>
             <div className={styles.sectionPill}>
-              <span>VERIFIED PRACTICE TELEMETRY</span>
+              <span>DENTAL MARKETING PERFORMANCE & RESULTS</span>
             </div>
-            <h2 className={styles.sectionTitle}>Real Dental Marketing. Measurable Growth.</h2>
+            <h2 className={styles.sectionTitle}>See How a Digital Marketing Agency for Dentists Drives Practice Growth</h2>
             <p className={styles.sectionSubtitle}>
-              See how strategic digital marketing helps dental practices improve visibility, attract enquiries, and grow their patient acquisition efforts.
+              Discover how strategic digital marketing for dentists improves online visibility, generates qualified patient leads, and helps dental clinics increase consultation bookings.
             </p>
           </div>
 
@@ -1800,9 +1791,9 @@ export default function DentalMarketingPage() {
             <div className={styles.sectionPill}>
               <span>FREQUENTLY ASKED QUESTIONS</span>
             </div>
-            <h2 className={styles.sectionTitle}>Frequently Asked Questions About Dental Marketing</h2>
+            <h2 className={styles.sectionTitle}>Everything to Know About Digital Marketing for Dental Clinics in India</h2>
             <p className={styles.sectionSubtitle}>
-              Everything you need to know about our specialized dental marketing services, patient acquisition timelines, and ethical advertising compliance.
+              Explore common questions about digital marketing for dentists, SEO services, Google Ads, patient acquisition, and strategies for growing dental clinics in India.
             </p>
           </div>
 
@@ -1844,31 +1835,30 @@ export default function DentalMarketingPage() {
           <div className={styles.preFooterCard}>
             <div className={styles.preFooterEyebrow}>
               <span className={styles.heroEyebrowDot} />
-              CONFIDENTIAL DENTAL PRACTICE REVIEW
+              YOUR DENTAL PRACTICE GROWTH STARTS HERE
             </div>
 
             <h2 className={styles.preFooterTitle}>
-              Ready to Attract More Patients <span className={styles.heroAccent}>to Your Dental Practice?</span>
+              Need More Patients for Your Dental Clinic?
             </h2>
 
             <p className={styles.preFooterSub}>
-              Let's build a dental marketing strategy that connects your clinic with the right patients and generates meaningful treatment enquiries.
+              Partner with a dental marketing agency that understands how to acquire patients. From SEO services for dentists in India to Google Ads, we help clinics improve online visibility and generate more treatment enquiries.
             </p>
 
             <div className={styles.preFooterActions}>
               <BeamButton
                 href="/contact"
-                label="Get Your Dental Growth Strategy"
+                label="Build Your Patient Acquisition Strategy"
                 size="lg"
               />
-              <a
-                href="https://wa.me/918280788689?text=Hi%20Marketing%20Copilot%2C%20I%20run%20a%20dental%20practice%20and%20want%20to%20discuss%20patient%20acquisition"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.whatsappCtaBtn}
-              >
-                <span>💬 Book a Consultation</span>
-              </a>
+              <BeamButton
+                href="/contact"
+                label="Book a Dental Marketing Consultation"
+                variant="outline"
+                size="lg"
+                arrow={false}
+              />
             </div>
 
             <div className={styles.preFooterProof}>

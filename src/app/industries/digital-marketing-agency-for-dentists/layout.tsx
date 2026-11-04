@@ -1,19 +1,17 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Digital Marketing Agency for Dentists | SEO Services for Dentists in India',
+  title: 'Digital Marketing Agency for Dentists to Build Online Visibility and Grow Your Clinic',
   description:
-    'Marketing Copilot is a specialized digital marketing agency for dentists. We deliver high-intent digital marketing for dentists, Google Maps 3-Pack rank, SEO services for dentists in India, and automated appointment booking funnels.',
+    'Attract more patients, generate qualified enquiries, and increase dental consultations with a result-driven digital marketing agency for dentists. Specialized in SEO services for dentists in India, Google Ads for dentists, and dental clinic lead generation.',
   keywords: [
     'Digital marketing agency for dentists',
     'Digital Marketing for Dentists',
     'SEO Services for Dentists in India',
-    'Dental clinic marketing agency India',
-    'Dental SEO agency India',
-    'Google Ads for dentists India',
-    'Dental implant patient acquisition',
-    'Invisalign marketing for dentists',
-    'Dental practice patient generation',
+    'Dental Marketing Agency',
+    'Google Ads for Dentists',
+    'Dental Clinic Lead Generation',
+    'Digital Marketing for Dentist in India',
   ],
   robots: {
     index: false,
@@ -81,7 +79,7 @@ export default function DentalIndustryLayout({
               name: 'India',
             },
             description:
-              'Specialized digital marketing agency for dentists providing SEO services for dentists in India, local Google Maps optimization, and patient appointment funnels.',
+              'Attract more patients, generate qualified enquiries, and increase dental consultations with a result-driven digital marketing agency for dentists. SEO services for dentists in India, Google Ads for dentists, and dental clinic lead generation.',
           }),
         }}
       />
