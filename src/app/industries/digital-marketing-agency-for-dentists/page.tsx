@@ -24,28 +24,12 @@ import {
 import styles from './page.module.css';
 
 // ══════════════════════════════════════════════════
-// DATA: HERO CLINICAL PHOTOGRAPHY SLIDES (PRESERVED)
+// DATA: HERO CLINICAL PHOTOGRAPHY
 // ══════════════════════════════════════════════════
-const dentalHeroSlides = [
-  {
-    image: '/images/Hero Section.webp',
-    tag: 'ADVANCED CLINICAL OPERATORY',
-    caption: 'Sterilized Operatory Suites Engineered for High-Ticket Procedures',
-    alt: 'Modern dental operatory suite with high-tech dental chair and surgical lights',
-  },
-  {
-    image: '/images/Hero Section.webp',
-    tag: 'SMILE TRANSFORMATION STUDIO',
-    caption: 'Full Arch Implants & Digital Invisalign Clear Aligner Consultations',
-    alt: 'Dentist discussing digital smile makeover with smiling patient',
-  },
-  {
-    image: '/images/Hero Section.webp',
-    tag: '3D INTRAORAL SCANNING',
-    caption: 'Cutting-Edge Painless Diagnostics That Build Patient Trust',
-    alt: 'High tech dental diagnostic scan and computer imaging suite',
-  },
-];
+const dentalHeroImage = {
+  image: '/images/Hero Section.webp',
+  alt: 'Modern dental operatory suite with high-tech dental chair and surgical lights',
+};
 
 // ══════════════════════════════════════════════════
 // SECTION 02 DATA: 6 CORE SERVICES
@@ -733,20 +717,11 @@ const clinicalStories: ClinicalStory[] = [
 
 export default function DentalMarketingPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [currentSlide, setCurrentSlide] = useState<number>(0);
   const [activeStep, setActiveStep] = useState<number>(0);
   const [isProcessPaused, setIsProcessPaused] = useState<boolean>(false);
   const [activeCase, setActiveCase] = useState<number>(0);
   const [activeStoryIdx, setActiveStoryIdx] = useState<number>(0);
   const activeStory = clinicalStories[activeStoryIdx];
-
-  // Auto rotate hero clinical slides
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % dentalHeroSlides.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
 
   // Auto rotate onboarding & scale process steps (2-second interval)
   useEffect(() => {
@@ -826,57 +801,19 @@ export default function DentalMarketingPage() {
               </div>
             </ScrollReveal>
 
-            {/* Right Visual Showcase: Clinical Photography + Floating Badges */}
+            {/* Right Visual Showcase: Clinical Photography */}
             <ScrollReveal delay={120}>
               <div className={styles.visual}>
                 <div className={styles.imageCard}>
-                  {/* Floating Performance Glass Badges */}
-                  <div className={styles.floatingBadgeTop}>
-                    <div className={styles.floatingBadgeIcon}>📈</div>
-                    <div className={styles.floatingBadgeText}>
-                      <span className={styles.floatingBadgeVal}>+240% Inquiries</span>
-                      <span className={styles.floatingBadgeSub}>High-Intent Inflow</span>
-                    </div>
-                  </div>
-
-                  <div className={styles.floatingBadgeBottom}>
-                    <div className={styles.floatingBadgeIcon}>🛡️</div>
-                    <div className={styles.floatingBadgeText}>
-                      <span className={styles.floatingBadgeVal}>91.5% Show-Up Rate</span>
-                      <span className={styles.floatingBadgeSub}>WhatsApp No-Show Shield</span>
-                    </div>
-                  </div>
-
                   <div className={styles.imageViewport}>
-                    {dentalHeroSlides.map((slide, idx) => (
-                      <div
-                        key={idx}
-                        className={`${styles.slideItem} ${idx === currentSlide ? styles.slideActive : ''}`}
-                      >
-                        <Image
-                          src={slide.image}
-                          alt={slide.alt}
-                          fill
-                          priority={idx === 0}
-                          className={styles.slideImage}
-                          sizes="(max-width: 960px) 100vw, 560px"
-                        />
-                        <div className={styles.slideOverlay} />
-                      </div>
-                    ))}
-
-                    {/* Slide Dots */}
-                    <div className={styles.dotsWrap}>
-                      {dentalHeroSlides.map((_, dotIdx) => (
-                        <button
-                          key={dotIdx}
-                          type="button"
-                          className={`${styles.dot} ${dotIdx === currentSlide ? styles.dotActive : ''}`}
-                          onClick={() => setCurrentSlide(dotIdx)}
-                          aria-label={`Go to slide ${dotIdx + 1}`}
-                        />
-                      ))}
-                    </div>
+                    <Image
+                      src={dentalHeroImage.image}
+                      alt={dentalHeroImage.alt}
+                      fill
+                      priority
+                      className={styles.slideImage}
+                      sizes="(max-width: 960px) 100vw, 560px"
+                    />
                   </div>
                 </div>
               </div>
