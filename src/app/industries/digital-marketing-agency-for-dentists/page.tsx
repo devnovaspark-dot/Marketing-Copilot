@@ -312,7 +312,7 @@ const caseStudies = [
     challenge: 'Losing high-ticket implant candidates to hospital chains with an exhausting 42% no-show rate.',
     strategy: 'Deployed negative-scrubbed Search Ads for surgical implants, local SEO, and WhatsApp 1-tap token booking.',
     image: '/images/Case Studies Performance Spotlight.webp',
-    alt: 'Doctor discussing implant rehabilitation with patient at Apex Dental Studio',
+    alt: 'High-tech surgical operatory suite and consultation setup at Apex Dental & Implant Studio',
     metrics: [
       { value: '+235%', label: 'Patient Bookings' },
       { value: '₹240', label: 'Cost Per Lead' },
@@ -337,8 +337,8 @@ const caseStudies = [
     doctor: 'Dr. A. Joshi, BDS (Aesthetic & Family Dentistry)',
     challenge: 'Invisible beyond 1 km; corporate chains monopolized Google Maps, suppressing family footfall.',
     strategy: 'Optimized Google Maps 3-Pack across 42 pin codes with geo-tagged operatory photos and automated 5-star WhatsApp reviews.',
-    image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80',
-    alt: 'Dr. SmileCraft clinic consultation operatory in Mumbai',
+    image: '/images/SmileCraft Maps Clinic.webp',
+    alt: 'Doctor reviewing 3D CBCT reconstructive dental scans for local catchment patients',
     metrics: [
       { value: 'Top 3', label: 'Rank in 42 Pin Codes' },
       { value: '+180%', label: 'Map Directions & Calls' },
@@ -363,8 +363,8 @@ const caseStudies = [
     doctor: 'Dr. S. Nambiar, MDS (Orthodontics & Dentofacial)',
     challenge: 'Wasted ad budget on ₹500 scaling shoppers; zero traction for premium ₹1.5L+ clear aligners.',
     strategy: 'Engineered 3D smile simulation Instagram funnels and dedicated consultation landers with 0% EMI financing guides.',
-    image: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=800&q=80',
-    alt: 'Patient reviewing 3D digital clear aligner smile preview at Elite Aligners',
+    image: '/images/Elite Aligners Consultation.webp',
+    alt: 'Dentist and patient reviewing 3D digital clear aligner smile preview on clinical screen',
     metrics: [
       { value: '68+', label: 'Monthly Aligner Consults' },
       { value: '4.8X', label: 'Verified ROAS' },
