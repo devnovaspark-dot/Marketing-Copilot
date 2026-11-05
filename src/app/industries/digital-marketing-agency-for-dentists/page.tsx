@@ -765,7 +765,7 @@ export default function DentalMarketingPage() {
               </h1>
 
               <p className={styles.heroSub}>
-                Attract more patients, generate qualified enquiries, and increase dental consultations with a result-driven digital marketing agency for dentists. We help dental clinics strengthen their online presence, reach patients actively searching for dental treatments, and turn digital visibility into consistent appointment opportunities.
+                Attract more patients, generate qualified enquiries, and increase dental consultations with a result-driven digital marketing agency for dentists in India. We help dental clinics across India strengthen their online presence, reach patients actively searching for dental treatments, and turn digital visibility into consistent appointment opportunities.
               </p>
 
               <div className={styles.heroActions}>
@@ -792,11 +792,6 @@ export default function DentalMarketingPage() {
                 <span className={styles.trustItem}>
                   <span className={styles.trustDot} />
                   <span>15,000+ Booked Consultations</span>
-                </span>
-                <span className={styles.trustSep}>•</span>
-                <span className={styles.trustItem}>
-                  <span className={styles.trustDot} />
-                  <span>100% HIPAA &amp; DCI Ethical</span>
                 </span>
               </div>
             </ScrollReveal>
@@ -858,9 +853,9 @@ export default function DentalMarketingPage() {
             <div className={styles.sectionPill}>
               <span>DIGITAL MARKETING FOR DENTISTS</span>
             </div>
-            <h2 className={styles.sectionTitle}>Complete Digital Marketing Solutions to Grow Your Dental Practice</h2>
+            <h2 className={styles.sectionTitle}>Complete Digital Marketing Solutions to Grow Your Dental Practice in India</h2>
             <p className={styles.sectionSubtitle}>
-              As a dentist-focused, results-driven digital marketing agency, we offer 6 integrated marketing capabilities to help your clinic stay visible and reach high-intent patients. Also, get a good flow of qualified inquiries from a solid dental marketing approach.
+              As a dentist-focused, results-driven digital marketing agency in India, we offer 6 integrated marketing capabilities to help your clinic stay visible and reach high-intent patients. Also, get a good flow of qualified inquiries from a solid dental marketing approach.
             </p>
           </div>
 
@@ -912,10 +907,10 @@ export default function DentalMarketingPage() {
                 <span>360° DIGITAL GROWTH FOR DENTAL CLINICS</span>
               </div>
               <h3 className={styles.journeyTitle}>
-                How a Digital Marketing Agency for Dentists Builds a Consistent Patient Pipeline
+                How a Digital Marketing Agency for Dentists in India Builds a Consistent Patient Pipeline
               </h3>
               <p className={styles.journeySubtitle}>
-                Discover how Google Ads for dentists, local SEO, social media, and content marketing work together to attract high-intent patients and turn online searches into treatment enquiries.
+                Discover how Google Ads for dentists, local SEO, social media, and content marketing work together to attract high-intent patients across India and turn online searches into treatment enquiries.
               </p>
             </div>
 
@@ -1011,10 +1006,10 @@ export default function DentalMarketingPage() {
               <span>CLINICAL CREATIVE VAULT • LIVE CAMPAIGN ARTIFACTS</span>
             </div>
             <h2 className={styles.vaultTitle}>
-              Real Dental Marketing. Measurable Practice Growth.
+              Real Dental Marketing in India. Measurable Practice Growth.
             </h2>
             <p className={styles.vaultSubtitle}>
-              Explore authentic clinical acquisition funnels and live telemetry data that turn local patient searchers into confirmed operatory appointments.
+              Explore authentic clinical acquisition funnels and live telemetry data that turn local patient searchers across India into confirmed operatory appointments.
             </p>
           </div>
 
@@ -1170,7 +1165,7 @@ export default function DentalMarketingPage() {
             <div className={styles.sectionPill}>
               <span>THE DENTAL ADVANTAGE</span>
             </div>
-            <h2 className={styles.sectionTitle}>Why Dental Clinics Choose Marketing Copilot</h2>
+            <h2 className={styles.sectionTitle}>Why Dental Clinics in India Choose Marketing Copilot</h2>
             <p className={styles.sectionSubtitle}>
               We specialize exclusively in clinical dental growth, combining deep procedure understanding with proven digital acquisition systems.
             </p>
@@ -1440,9 +1435,9 @@ export default function DentalMarketingPage() {
             <div className={styles.sectionPill}>
               <span>DENTAL MARKETING PERFORMANCE & RESULTS</span>
             </div>
-            <h2 className={styles.sectionTitle}>See How a Digital Marketing Agency for Dentists Drives Practice Growth</h2>
+            <h2 className={styles.sectionTitle}>See How a Digital Marketing Agency for Dentists in India Drives Practice Growth</h2>
             <p className={styles.sectionSubtitle}>
-              Discover how strategic digital marketing for dentists improves online visibility, generates qualified patient leads, and helps dental clinics increase consultation bookings.
+              Discover how strategic digital marketing for dentists in India improves online visibility, generates qualified patient leads, and helps dental clinics increase consultation bookings.
             </p>
           </div>
 
@@ -1704,7 +1699,7 @@ export default function DentalMarketingPage() {
         eyebrow="CLINIC GROWTH PARTNER • OFFICE LOCATION & CONNECT"
         title={
           <>
-            Visit Our Headquarters or<br />
+            Visit Our Headquarters in India or<br />
             <span style={{ color: '#0B2093' }}>Connect With Our Dental Growth Team</span>
           </>
         }
@@ -1800,11 +1795,6 @@ export default function DentalMarketingPage() {
               <div className={styles.preFooterProofItem}>
                 <span className={styles.preFooterProofNum}>91.5%</span>
                 <span className={styles.preFooterProofLabel}>Chair Arrival Rate</span>
-              </div>
-              <span className={styles.preFooterProofDot} />
-              <div className={styles.preFooterProofItem}>
-                <span className={styles.preFooterProofNum}>100%</span>
-                <span className={styles.preFooterProofLabel}>DCI &amp; HIPAA Ethical</span>
               </div>
             </div>
           </div>
