@@ -37,12 +37,12 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://marketingcopilot.in/images/dashboard_hero.jpg',
-        secureUrl: 'https://marketingcopilot.in/images/dashboard_hero.jpg',
+        url: 'https://marketingcopilot.in/images/social-share-og-banner.webp',
+        secureUrl: 'https://marketingcopilot.in/images/social-share-og-banner.webp',
         width: 1200,
         height: 630,
         alt: 'Digital Marketing Agency for Dentists - Marketing Copilot',
-        type: 'image/jpeg',
+        type: 'image/webp',
       },
     ],
   },
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     title: 'Digital Marketing Agency for Dentists | Marketing Copilot',
     description:
       'Specialized digital marketing agency for dentists. Fill empty chair-time with high-value implant, aligner, and root canal patients.',
-    images: ['https://marketingcopilot.in/images/dashboard_hero.jpg'],
+    images: ['https://marketingcopilot.in/images/social-share-og-banner.webp'],
   },
 };
 
