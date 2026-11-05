@@ -28,7 +28,7 @@ import styles from './page.module.css';
 // ══════════════════════════════════════════════════
 const dentalHeroImage = {
   image: '/images/Hero Section.webp',
-  alt: 'Modern dental operatory suite with high-tech dental chair and surgical lights',
+  alt: 'Dentist examining smiling patient during clinical consultation in modern operatory suite',
 };
 
 // ══════════════════════════════════════════════════
@@ -95,8 +95,8 @@ const highValueTreatments = [
     desc: 'Attract adults and teens seeking discreet teeth straightening with high treatment compliance.',
     impactFocus: 'Elective Aesthetic Inflow',
     impactChair: 'High Compliance',
-    image: '/images/DM SOLUTION1.webp',
-    alt: 'Clear aligner 3D digital dental orthodontic scan',
+    image: '/images/Invisalign & Clear Aligners.webp',
+    alt: 'Clear aligner tray and orthodontic tooth alignment model',
     chips: ['3D Smile Previews', 'Instagram Ad Hooks', 'WhatsApp Booking'],
   },
   {
@@ -107,8 +107,8 @@ const highValueTreatments = [
     desc: 'Capture patients seeking permanent single tooth replacement, bridge restorations, or All-on-4 rehabilitation.',
     impactFocus: 'Surgical Chair Saturation',
     impactChair: 'Maximum Chair Yield',
-    image: '/images/DM SOLUTION2.webp',
-    alt: 'Surgical dental implant operatory suite',
+    image: '/images/Dental Implants & Full Mouth.webp',
+    alt: 'Surgical dental implant anatomical model with titanium screw in jawbone',
     chips: ['CBCT Guided Surgery', 'High-Intent Search', '0% EMI Guides'],
   },
   {
@@ -119,7 +119,7 @@ const highValueTreatments = [
     desc: 'Reach patients requiring durable ceramic and zirconia crowns that build predictable family retention.',
     impactFocus: 'Predictable Restorative Flow',
     impactChair: 'Family Retention',
-    image: '/images/DM SOLUTION3.webp',
+    image: '/images/Crowns & Restorative Dentistry.webp',
     alt: 'Ceramic zirconia dental crown restoration',
     chips: ['CAD/CAM Digital Scans', 'Zirconia Longevity', 'Preventive Recall Bot'],
   },
@@ -131,7 +131,7 @@ const highValueTreatments = [
     desc: 'Attract bridal and professional patients seeking fast-turnaround whitening and composite bonding.',
     impactFocus: 'Rapid Chair Turnover',
     impactChair: 'High Referral Power',
-    image: '/images/DM SOLUTION4.webp',
+    image: '/images/Cosmetic Dentistry & Whitening.webp',
     alt: 'In-office teeth whitening and cosmetic smile makeover',
     chips: ['Macro Before/After', 'Non-Invasive Prep', 'Event Packages'],
   },
@@ -143,7 +143,7 @@ const highValueTreatments = [
     desc: 'Capture emergency toothache searchers seeking gentle, single-sitting endodontic pain relief.',
     impactFocus: 'Emergency Local Capture',
     impactChair: 'Urgent Pain Relief',
-    image: '/images/DM SOLUTION5.webp',
+    image: '/images/Single-Sitting Rotary RCT.webp',
     alt: 'Advanced clinical microscope for rotary endodontics',
     chips: ['Emergency Click-to-Call', 'Maps Open Now', 'Pain-Free Rotary'],
   },
@@ -155,7 +155,7 @@ const highValueTreatments = [
     desc: 'Position your clinic as the premier destination for custom ceramic veneers and smile symmetry.',
     impactFocus: 'High Clinical Prestige',
     impactChair: 'Discerning Patients',
-    image: '/images/DM SOLUTION6.webp',
+    image: '/images/Smile Makeovers & Veneers.webp',
     alt: 'Aesthetic porcelain veneers and smile transformation',
     chips: ['Ultra-HD Photography', 'Ceramist Craft', 'Digital Smile Scans'],
   },
@@ -612,8 +612,8 @@ const clinicalStories: ClinicalStory[] = [
     doctor: 'Dr. R. Malhotra, MDS (Implantology)',
     challenge: 'Lost high-ticket cases to hospital chains; patient fear caused 60%+ consultation drop-offs.',
     strategy: 'Targeted Google Search funnels with 3D CBCT guided surgery pages and 0% EMI financing.',
-    image: '/images/Practice Growth Benchmark.webp',
-    alt: 'Maxillofacial implant surgeon reviewing 3D CBCT digital scan with surgical guide',
+    image: '/images/Scaling Full-Arch Implants.webp',
+    alt: '3D clinical medical illustration of All-on-4 full arch dental implants with titanium fixtures',
     metrics: [
       { value: '28 Cases', label: 'Monthly Consults' },
       { value: '₹220', label: 'Qualified CPL' },
