@@ -1118,13 +1118,6 @@ export default function DentalMarketingPage() {
                       sizes="(max-width: 900px) 100vw, 680px"
                       priority
                     />
-                    <div className={styles.vaultImageGlassBar}>
-                      <span className={styles.vaultImageTagPill}>{activeStory.category}</span>
-                      <span className={styles.vaultImageLivePill}>
-                        <span className={styles.liveTelemetryLed} />
-                        4K Clinical Verification
-                      </span>
-                    </div>
                   </div>
 
                   {/* Skeuomorphic Growth Telemetry Box */}
