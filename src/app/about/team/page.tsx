@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     'SEO Specialists India',
     'Growth Experts Marketing Copilot',
     'Marketing Copilot Leadership',
-    'Sankarsan Nayak',
+    'Shankarsan Nayak',
   ],
   alternates: {
     canonical: 'https://marketingcopilot.in/about/team',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 
 const founders = [
   {
-    name: 'Sankarsan Nayak',
+    name: 'Shankarsan Nayak',
     role: 'Founder & CEO',
     dept: 'Executive Leadership',
     image: '/images/team/exec_1.png',

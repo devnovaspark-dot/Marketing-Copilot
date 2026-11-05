@@ -57,8 +57,8 @@ export const metadata: Metadata = {
     "Social Media Marketing",
     "Bhubaneswar"
   ],
-  authors: [{ name: "Sankarsan Nayak", url: "https://www.linkedin.com/in/shankarsan-nayak-74191a1b1/?isSelfProfile=true" }],
-  creator: "Sankarsan Nayak",
+  authors: [{ name: "Shankarsan Nayak", url: "https://www.linkedin.com/in/shankarsan-nayak-74191a1b1/?isSelfProfile=true" }],
+  creator: "Shankarsan Nayak",
   openGraph: {
     title: "Digital Marketing Company in India | Marketing Copilot",
     description: "Top-rated digital marketing agency in India. SEO, Google Ads, Meta Ads, web development and compounding revenue growth for businesses across India.",
@@ -127,7 +127,7 @@ const organizationSchema = {
       "email": "info@marketingcopilot.in",
       "founder": {
         "@type": "Person",
-        "name": "Sankarsan Nayak",
+        "name": "Shankarsan Nayak",
         "jobTitle": "Founder & CEO",
         "url": "https://marketingcopilot.in/about/team"
       },

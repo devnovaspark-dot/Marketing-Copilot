@@ -111,7 +111,7 @@ export default async function BlogPage() {
       readTime: '7 min read',
       date: formattedDate,
       image: imageUrl,
-      author: p.author?.name || 'Sankarsan Nayak',
+      author: p.author?.name || 'Shankarsan Nayak',
       authorRole: p.author?.role || 'Founder & CEO',
       authorImage: p.author?.image?.asset
         ? urlForImage(p.author.image)?.width(100).height(100).url()

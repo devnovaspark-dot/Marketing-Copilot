@@ -230,7 +230,7 @@ async function getArticle(slug: string) {
         imageAspectRatio: bannerDims?.aspectRatio,
         featuredImageUrl,
         imageAlt: sanityPost.bannerImage?.alt || headline,
-        author: sanityPost.author?.name || 'Sankarsan Nayak',
+        author: sanityPost.author?.name || 'Shankarsan Nayak',
         authorRole: sanityPost.author?.role || 'Founder & CEO',
         authorImage: authorImageUrl || '/images/team/exec_1.png',
         authorBio: sanityPost.author?.bio,
