@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Digital Marketing Agency for Dentists to Build Online Visibility and Grow Your Clinic',
+  title: 'Digital marketing agency for dentists in India | Marketing Copilot',
   description:
-    'Attract more patients, generate qualified enquiries, and increase dental consultations with a result-driven digital marketing agency for dentists. Specialized in SEO services for dentists in India, Google Ads for dentists, and dental clinic lead generation.',
+    'Attract more patients with digital marketing for dentists in India. Discover tailored SEO, paid ads, and social media services to grow your practice.',
   keywords: [
     'Digital marketing agency for dentists',
     'Digital Marketing for Dentists',
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
     canonical: 'https://marketingcopilot.in/industries/digital-marketing-agency-for-dentists',
   },
   openGraph: {
-    title: 'Digital Marketing Agency for Dentists | Marketing Copilot',
+    title: 'Digital marketing agency for dentists in India | Marketing Copilot',
     description:
-      'Premier digital marketing agency for dentists in India. High-intent patient acquisition, Google Maps 3-Pack dominance, and automated WhatsApp appointment funnels.',
+      'Attract more patients with digital marketing for dentists in India. Discover tailored SEO, paid ads, and social media services to grow your practice.',
     url: 'https://marketingcopilot.in/industries/digital-marketing-agency-for-dentists',
     siteName: 'Marketing Copilot',
     locale: 'en_IN',
@@ -48,9 +48,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Digital Marketing Agency for Dentists | Marketing Copilot',
+    title: 'Digital marketing agency for dentists in India | Marketing Copilot',
     description:
-      'Specialized digital marketing agency for dentists. Fill empty chair-time with high-value implant, aligner, and root canal patients.',
+      'Attract more patients with digital marketing for dentists in India. Discover tailored SEO, paid ads, and social media services to grow your practice.',
     images: ['https://marketingcopilot.in/images/social-share-og-banner.webp'],
   },
 };
@@ -79,7 +79,7 @@ export default function DentalIndustryLayout({
               name: 'India',
             },
             description:
-              'Attract more patients, generate qualified enquiries, and increase dental consultations with a result-driven digital marketing agency for dentists. SEO services for dentists in India, Google Ads for dentists, and dental clinic lead generation.',
+              'Attract more patients with digital marketing for dentists in India. Discover tailored SEO, paid ads, and social media services to grow your practice.',
           }),
         }}
       />
