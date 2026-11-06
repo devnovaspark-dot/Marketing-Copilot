@@ -371,7 +371,7 @@
   inset: 0;
   opacity: 0;
   transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
-  transform: scale(1);
+  transform: scale(1.02);
   pointer-events: none;
 }
 
@@ -383,7 +383,7 @@
 
 .slideImage {
   object-fit: cover;
-  object-position: center center;
+  object-position: center;
 }
 
 .slideOverlay {
@@ -1529,7 +1529,7 @@
   inset: 0;
   opacity: 0;
   transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
-  transform: scale(1);
+  transform: scale(1.02);
   pointer-events: none;
 }
 
@@ -1541,7 +1541,7 @@
 
 .slideImage {
   object-fit: cover;
-  object-position: center center;
+  object-position: center;
 }
 
 .slideOverlay {

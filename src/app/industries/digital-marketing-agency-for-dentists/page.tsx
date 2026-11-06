@@ -24,12 +24,28 @@ import {
 import styles from './page.module.css';
 
 // ══════════════════════════════════════════════════
-// DATA: HERO CLINICAL PHOTOGRAPHY
+// DATA: HERO CLINICAL PHOTOGRAPHY SLIDES (PRESERVED)
 // ══════════════════════════════════════════════════
-const dentalHeroImage = {
-  image: '/images/Hero Section.webp',
-  alt: 'Dentist examining smiling patient during clinical consultation in modern operatory suite',
-};
+const dentalHeroSlides = [
+  {
+    image: '/images/Hero Section.webp',
+    tag: 'ADVANCED CLINICAL OPERATORY',
+    caption: 'Sterilized Operatory Suites Engineered for High-Ticket Procedures',
+    alt: 'Modern dental operatory suite with high-tech dental chair and surgical lights',
+  },
+  {
+    image: '/images/Hero Section.webp',
+    tag: 'SMILE TRANSFORMATION STUDIO',
+    caption: 'Full Arch Implants & Digital Invisalign Clear Aligner Consultations',
+    alt: 'Dentist discussing digital smile makeover with smiling patient',
+  },
+  {
+    image: '/images/Hero Section.webp',
+    tag: '3D INTRAORAL SCANNING',
+    caption: 'Cutting-Edge Painless Diagnostics That Build Patient Trust',
+    alt: 'High tech dental diagnostic scan and computer imaging suite',
+  },
+];
 
 // ══════════════════════════════════════════════════
 // SECTION 02 DATA: 6 CORE SERVICES
@@ -95,8 +111,8 @@ const highValueTreatments = [
     desc: 'Attract adults and teens seeking discreet teeth straightening with high treatment compliance.',
     impactFocus: 'Elective Aesthetic Inflow',
     impactChair: 'High Compliance',
-    image: '/images/Invisalign & Clear Aligners.webp',
-    alt: 'Clear aligner tray and orthodontic tooth alignment model',
+    image: '/images/DM SOLUTION1.webp',
+    alt: 'Clear aligner 3D digital dental orthodontic scan',
     chips: ['3D Smile Previews', 'Instagram Ad Hooks', 'WhatsApp Booking'],
   },
   {
@@ -107,8 +123,8 @@ const highValueTreatments = [
     desc: 'Capture patients seeking permanent single tooth replacement, bridge restorations, or All-on-4 rehabilitation.',
     impactFocus: 'Surgical Chair Saturation',
     impactChair: 'Maximum Chair Yield',
-    image: '/images/Dental Implants & Full Mouth.webp',
-    alt: 'Surgical dental implant anatomical model with titanium screw in jawbone',
+    image: '/images/DM SOLUTION2.webp',
+    alt: 'Surgical dental implant operatory suite',
     chips: ['CBCT Guided Surgery', 'High-Intent Search', '0% EMI Guides'],
   },
   {
@@ -119,7 +135,7 @@ const highValueTreatments = [
     desc: 'Reach patients requiring durable ceramic and zirconia crowns that build predictable family retention.',
     impactFocus: 'Predictable Restorative Flow',
     impactChair: 'Family Retention',
-    image: '/images/Crowns & Restorative Dentistry.webp',
+    image: '/images/DM SOLUTION3.webp',
     alt: 'Ceramic zirconia dental crown restoration',
     chips: ['CAD/CAM Digital Scans', 'Zirconia Longevity', 'Preventive Recall Bot'],
   },
@@ -131,7 +147,7 @@ const highValueTreatments = [
     desc: 'Attract bridal and professional patients seeking fast-turnaround whitening and composite bonding.',
     impactFocus: 'Rapid Chair Turnover',
     impactChair: 'High Referral Power',
-    image: '/images/Cosmetic Dentistry & Whitening.webp',
+    image: '/images/DM SOLUTION4.webp',
     alt: 'In-office teeth whitening and cosmetic smile makeover',
     chips: ['Macro Before/After', 'Non-Invasive Prep', 'Event Packages'],
   },
@@ -143,7 +159,7 @@ const highValueTreatments = [
     desc: 'Capture emergency toothache searchers seeking gentle, single-sitting endodontic pain relief.',
     impactFocus: 'Emergency Local Capture',
     impactChair: 'Urgent Pain Relief',
-    image: '/images/Single-Sitting Rotary RCT.webp',
+    image: '/images/DM SOLUTION5.webp',
     alt: 'Advanced clinical microscope for rotary endodontics',
     chips: ['Emergency Click-to-Call', 'Maps Open Now', 'Pain-Free Rotary'],
   },
@@ -155,7 +171,7 @@ const highValueTreatments = [
     desc: 'Position your clinic as the premier destination for custom ceramic veneers and smile symmetry.',
     impactFocus: 'High Clinical Prestige',
     impactChair: 'Discerning Patients',
-    image: '/images/Smile Makeovers & Veneers.webp',
+    image: '/images/DM SOLUTION6.webp',
     alt: 'Aesthetic porcelain veneers and smile transformation',
     chips: ['Ultra-HD Photography', 'Ceramist Craft', 'Digital Smile Scans'],
   },
@@ -312,7 +328,7 @@ const caseStudies = [
     challenge: 'Losing high-ticket implant candidates to hospital chains with an exhausting 42% no-show rate.',
     strategy: 'Deployed negative-scrubbed Search Ads for surgical implants, local SEO, and WhatsApp 1-tap token booking.',
     image: '/images/Case Studies Performance Spotlight.webp',
-    alt: 'High-tech surgical operatory suite and consultation setup at Apex Dental & Implant Studio',
+    alt: 'Doctor discussing implant rehabilitation with patient at Apex Dental Studio',
     metrics: [
       { value: '+235%', label: 'Patient Bookings' },
       { value: '₹240', label: 'Cost Per Lead' },
@@ -337,8 +353,8 @@ const caseStudies = [
     doctor: 'Dr. A. Joshi, BDS (Aesthetic & Family Dentistry)',
     challenge: 'Invisible beyond 1 km; corporate chains monopolized Google Maps, suppressing family footfall.',
     strategy: 'Optimized Google Maps 3-Pack across 42 pin codes with geo-tagged operatory photos and automated 5-star WhatsApp reviews.',
-    image: '/images/SmileCraft Maps Clinic.webp',
-    alt: 'Doctor reviewing 3D CBCT reconstructive dental scans for local catchment patients',
+    image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80',
+    alt: 'Dr. SmileCraft clinic consultation operatory in Mumbai',
     metrics: [
       { value: 'Top 3', label: 'Rank in 42 Pin Codes' },
       { value: '+180%', label: 'Map Directions & Calls' },
@@ -363,8 +379,8 @@ const caseStudies = [
     doctor: 'Dr. S. Nambiar, MDS (Orthodontics & Dentofacial)',
     challenge: 'Wasted ad budget on ₹500 scaling shoppers; zero traction for premium ₹1.5L+ clear aligners.',
     strategy: 'Engineered 3D smile simulation Instagram funnels and dedicated consultation landers with 0% EMI financing guides.',
-    image: '/images/Elite Aligners Consultation.webp',
-    alt: 'Dentist and patient reviewing 3D digital clear aligner smile preview on clinical screen',
+    image: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=800&q=80',
+    alt: 'Patient reviewing 3D digital clear aligner smile preview at Elite Aligners',
     metrics: [
       { value: '68+', label: 'Monthly Aligner Consults' },
       { value: '4.8X', label: 'Verified ROAS' },
@@ -612,8 +628,8 @@ const clinicalStories: ClinicalStory[] = [
     doctor: 'Dr. R. Malhotra, MDS (Implantology)',
     challenge: 'Lost high-ticket cases to hospital chains; patient fear caused 60%+ consultation drop-offs.',
     strategy: 'Targeted Google Search funnels with 3D CBCT guided surgery pages and 0% EMI financing.',
-    image: '/images/Scaling Full-Arch Implants.webp',
-    alt: '3D clinical medical illustration of All-on-4 full arch dental implants with titanium fixtures',
+    image: '/images/Practice Growth Benchmark.webp',
+    alt: 'Maxillofacial implant surgeon reviewing 3D CBCT digital scan with surgical guide',
     metrics: [
       { value: '28 Cases', label: 'Monthly Consults' },
       { value: '₹220', label: 'Qualified CPL' },
@@ -717,11 +733,20 @@ const clinicalStories: ClinicalStory[] = [
 
 export default function DentalMarketingPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [currentSlide, setCurrentSlide] = useState<number>(0);
   const [activeStep, setActiveStep] = useState<number>(0);
   const [isProcessPaused, setIsProcessPaused] = useState<boolean>(false);
   const [activeCase, setActiveCase] = useState<number>(0);
   const [activeStoryIdx, setActiveStoryIdx] = useState<number>(0);
   const activeStory = clinicalStories[activeStoryIdx];
+
+  // Auto rotate hero clinical slides
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % dentalHeroSlides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
 
   // Auto rotate onboarding & scale process steps (2-second interval)
   useEffect(() => {
@@ -765,7 +790,7 @@ export default function DentalMarketingPage() {
               </h1>
 
               <p className={styles.heroSub}>
-                Attract more patients, generate qualified enquiries, and increase dental consultations with a result-driven digital marketing agency for dentists in India. We help dental clinics across India strengthen their online presence, reach patients actively searching for dental treatments, and turn digital visibility into consistent appointment opportunities.
+                Attract more patients, generate qualified enquiries, and increase dental consultations with a result-driven digital marketing agency for dentists. We help dental clinics strengthen their online presence, reach patients actively searching for dental treatments, and turn digital visibility into consistent appointment opportunities.
               </p>
 
               <div className={styles.heroActions}>
@@ -793,22 +818,65 @@ export default function DentalMarketingPage() {
                   <span className={styles.trustDot} />
                   <span>15,000+ Booked Consultations</span>
                 </span>
+                <span className={styles.trustSep}>•</span>
+                <span className={styles.trustItem}>
+                  <span className={styles.trustDot} />
+                  <span>100% HIPAA &amp; DCI Ethical</span>
+                </span>
               </div>
             </ScrollReveal>
 
-            {/* Right Visual Showcase: Clinical Photography */}
+            {/* Right Visual Showcase: Clinical Photography + Floating Badges */}
             <ScrollReveal delay={120}>
               <div className={styles.visual}>
                 <div className={styles.imageCard}>
+                  {/* Floating Performance Glass Badges */}
+                  <div className={styles.floatingBadgeTop}>
+                    <div className={styles.floatingBadgeIcon}>📈</div>
+                    <div className={styles.floatingBadgeText}>
+                      <span className={styles.floatingBadgeVal}>+240% Inquiries</span>
+                      <span className={styles.floatingBadgeSub}>High-Intent Inflow</span>
+                    </div>
+                  </div>
+
+                  <div className={styles.floatingBadgeBottom}>
+                    <div className={styles.floatingBadgeIcon}>🛡️</div>
+                    <div className={styles.floatingBadgeText}>
+                      <span className={styles.floatingBadgeVal}>91.5% Show-Up Rate</span>
+                      <span className={styles.floatingBadgeSub}>WhatsApp No-Show Shield</span>
+                    </div>
+                  </div>
+
                   <div className={styles.imageViewport}>
-                    <Image
-                      src={dentalHeroImage.image}
-                      alt={dentalHeroImage.alt}
-                      fill
-                      priority
-                      className={styles.slideImage}
-                      sizes="(max-width: 960px) 100vw, 560px"
-                    />
+                    {dentalHeroSlides.map((slide, idx) => (
+                      <div
+                        key={idx}
+                        className={`${styles.slideItem} ${idx === currentSlide ? styles.slideActive : ''}`}
+                      >
+                        <Image
+                          src={slide.image}
+                          alt={slide.alt}
+                          fill
+                          priority={idx === 0}
+                          className={styles.slideImage}
+                          sizes="(max-width: 960px) 100vw, 560px"
+                        />
+                        <div className={styles.slideOverlay} />
+                      </div>
+                    ))}
+
+                    {/* Slide Dots */}
+                    <div className={styles.dotsWrap}>
+                      {dentalHeroSlides.map((_, dotIdx) => (
+                        <button
+                          key={dotIdx}
+                          type="button"
+                          className={`${styles.dot} ${dotIdx === currentSlide ? styles.dotActive : ''}`}
+                          onClick={() => setCurrentSlide(dotIdx)}
+                          aria-label={`Go to slide ${dotIdx + 1}`}
+                        />
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -853,9 +921,9 @@ export default function DentalMarketingPage() {
             <div className={styles.sectionPill}>
               <span>DIGITAL MARKETING FOR DENTISTS</span>
             </div>
-            <h2 className={styles.sectionTitle}>Complete Digital Marketing Solutions to Grow Your Dental Practice in India</h2>
+            <h2 className={styles.sectionTitle}>Complete Digital Marketing Solutions to Grow Your Dental Practice</h2>
             <p className={styles.sectionSubtitle}>
-              As a dentist-focused, results-driven digital marketing agency in India, we offer 6 integrated marketing capabilities to help your clinic stay visible and reach high-intent patients. Also, get a good flow of qualified inquiries from a solid dental marketing approach.
+              As a dentist-focused, results-driven digital marketing agency, we offer 6 integrated marketing capabilities to help your clinic stay visible and reach high-intent patients. Also, get a good flow of qualified inquiries from a solid dental marketing approach.
             </p>
           </div>
 
@@ -907,10 +975,10 @@ export default function DentalMarketingPage() {
                 <span>360° DIGITAL GROWTH FOR DENTAL CLINICS</span>
               </div>
               <h3 className={styles.journeyTitle}>
-                How a Digital Marketing Agency for Dentists in India Builds a Consistent Patient Pipeline
+                How a Digital Marketing Agency for Dentists Builds a Consistent Patient Pipeline
               </h3>
               <p className={styles.journeySubtitle}>
-                Discover how Google Ads for dentists, local SEO, social media, and content marketing work together to attract high-intent patients across India and turn online searches into treatment enquiries.
+                Discover how Google Ads for dentists, local SEO, social media, and content marketing work together to attract high-intent patients and turn online searches into treatment enquiries.
               </p>
             </div>
 
@@ -1006,10 +1074,10 @@ export default function DentalMarketingPage() {
               <span>CLINICAL CREATIVE VAULT • LIVE CAMPAIGN ARTIFACTS</span>
             </div>
             <h2 className={styles.vaultTitle}>
-              Real Dental Marketing in India. Measurable Practice Growth.
+              Real Dental Marketing. Measurable Practice Growth.
             </h2>
             <p className={styles.vaultSubtitle}>
-              Explore authentic clinical acquisition funnels and live telemetry data that turn local patient searchers across India into confirmed operatory appointments.
+              Explore authentic clinical acquisition funnels and live telemetry data that turn local patient searchers into confirmed operatory appointments.
             </p>
           </div>
 
@@ -1113,6 +1181,13 @@ export default function DentalMarketingPage() {
                       sizes="(max-width: 900px) 100vw, 680px"
                       priority
                     />
+                    <div className={styles.vaultImageGlassBar}>
+                      <span className={styles.vaultImageTagPill}>{activeStory.category}</span>
+                      <span className={styles.vaultImageLivePill}>
+                        <span className={styles.liveTelemetryLed} />
+                        4K Clinical Verification
+                      </span>
+                    </div>
                   </div>
 
                   {/* Skeuomorphic Growth Telemetry Box */}
@@ -1165,7 +1240,7 @@ export default function DentalMarketingPage() {
             <div className={styles.sectionPill}>
               <span>THE DENTAL ADVANTAGE</span>
             </div>
-            <h2 className={styles.sectionTitle}>Why Dental Clinics in India Choose Marketing Copilot</h2>
+            <h2 className={styles.sectionTitle}>Why Dental Clinics Choose Marketing Copilot</h2>
             <p className={styles.sectionSubtitle}>
               We specialize exclusively in clinical dental growth, combining deep procedure understanding with proven digital acquisition systems.
             </p>
@@ -1435,9 +1510,9 @@ export default function DentalMarketingPage() {
             <div className={styles.sectionPill}>
               <span>DENTAL MARKETING PERFORMANCE & RESULTS</span>
             </div>
-            <h2 className={styles.sectionTitle}>See How a Digital Marketing Agency for Dentists in India Drives Practice Growth</h2>
+            <h2 className={styles.sectionTitle}>See How a Digital Marketing Agency for Dentists Drives Practice Growth</h2>
             <p className={styles.sectionSubtitle}>
-              Discover how strategic digital marketing for dentists in India improves online visibility, generates qualified patient leads, and helps dental clinics increase consultation bookings.
+              Discover how strategic digital marketing for dentists improves online visibility, generates qualified patient leads, and helps dental clinics increase consultation bookings.
             </p>
           </div>
 
@@ -1699,7 +1774,7 @@ export default function DentalMarketingPage() {
         eyebrow="CLINIC GROWTH PARTNER • OFFICE LOCATION & CONNECT"
         title={
           <>
-            Visit Our Headquarters in India or<br />
+            Visit Our Headquarters or<br />
             <span style={{ color: '#0B2093' }}>Connect With Our Dental Growth Team</span>
           </>
         }
@@ -1795,6 +1870,11 @@ export default function DentalMarketingPage() {
               <div className={styles.preFooterProofItem}>
                 <span className={styles.preFooterProofNum}>91.5%</span>
                 <span className={styles.preFooterProofLabel}>Chair Arrival Rate</span>
+              </div>
+              <span className={styles.preFooterProofDot} />
+              <div className={styles.preFooterProofItem}>
+                <span className={styles.preFooterProofNum}>100%</span>
+                <span className={styles.preFooterProofLabel}>DCI &amp; HIPAA Ethical</span>
               </div>
             </div>
           </div>
