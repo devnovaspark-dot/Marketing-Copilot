@@ -646,27 +646,6 @@ export default function FAQPage() {
         return;
       }
 
-      // 2. Direct client fallback to FormSubmit.co
-      const recipientEmail =
-        process.env.NEXT_PUBLIC_FORMSUBMIT_EMAIL || 'novasdmagency@gmail.com';
-
-      await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(recipientEmail)}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-        },
-        body: JSON.stringify({
-          'Full Name': payload.fullName,
-          'Phone / WhatsApp': payload.phone,
-          'Business Name': payload.businessName || 'Not specified',
-          'Question / Bottleneck': payload.question || 'No question details provided',
-          _subject: `New FAQ Growth Question — ${payload.fullName} (${payload.phone})`,
-          _template: 'table',
-          _captcha: 'false',
-        }),
-      });
-
       setIsSubmitted(true);
     } catch (err) {
       console.error('FAQ submission error:', err);

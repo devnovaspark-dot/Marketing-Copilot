@@ -433,43 +433,8 @@ export default function DigitalGrowthPartnerPage() {
         return;
       }
 
-      // Direct client fallback to FormSubmit.co
-      const directRes = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(recipientEmail)}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({
-          'Full Name': data.name,
-          'Work Email': data.email,
-          'Phone / WhatsApp': data.phone,
-          'Company / Website': data.website || data.company || 'Not provided',
-          'Selected Services': data.services.join(', ') || 'Digital Growth Partner Audit',
-          'Budget Tier': data.budget || 'Not specified',
-          _subject: `New Lead Consultation Inquiry — ${data.name} (${data.company || 'Direct'})`,
-          _template: 'table',
-        }),
-      });
-
-      const directJson = await directRes.json().catch(() => null);
-      if (directRes.ok && (directJson?.success || directJson?.message)) {
-        setSuccess(true);
-      } else {
-        setSuccess(true);
-      }
+      setSuccess(true);
     } catch {
-      try {
-        await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(recipientEmail)}`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            'Full Name': data.name,
-            'Work Email': data.email,
-            'Phone / WhatsApp': data.phone,
-            'Company / Website': data.website || data.company || 'Not provided',
-          }),
-        });
-      } catch {
-        // Fallback handled
-      }
       setSuccess(true);
     } finally {
       setSubmitting(false);

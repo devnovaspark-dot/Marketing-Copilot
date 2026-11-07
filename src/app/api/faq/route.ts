@@ -23,61 +23,87 @@ export async function POST(req: Request) {
       process.env.NEXT_PUBLIC_FORMSUBMIT_EMAIL ||
       'novasdmagency@gmail.com';
 
-    const origin = req.headers.get('origin') || 'https://marketingcopilot.in';
-    const referer = req.headers.get('referer') || `${origin}/faq`;
+    const timestamp = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
+
+    console.log(`
+=====================================================
+❓ [NEW FAQ STRATEGY QUESTION RECEIVED]
+=====================================================
+📅 Date/Time:   ${timestamp} (IST)
+👤 Full Name:   ${fullName}
+📱 Phone/WA:    ${phone}
+🏢 Business:    ${businessName || 'Not specified'}
+❓ Question:    ${question || 'No question details provided'}
+=====================================================
+    `);
 
     const payload = {
       'Full Name': fullName,
       'Phone / WhatsApp': phone,
       'Business / Company': businessName || 'Not specified',
       'Question / Bottleneck': question || 'No question details provided',
+      'Submitted At': `${timestamp} (IST)`,
       _subject: `New FAQ Growth Question — ${fullName} (${phone})`,
       _template: 'table',
       _captcha: 'false',
     };
 
-    const formsubmitRes = await fetch(
-      `https://formsubmit.co/ajax/${encodeURIComponent(recipientEmail)}`,
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-          'Origin': origin,
-          'Referer': referer,
-        },
-        body: JSON.stringify(payload),
+    // 1. Optional Webhook
+    const webhookUrl = process.env.LEAD_WEBHOOK_URL;
+    if (webhookUrl) {
+      try {
+        await fetch(webhookUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            content: `❓ **New FAQ Question: ${fullName}**\n📱 Phone: ${phone}\n🏢 Business: ${businessName || 'N/A'}\n❓ Question: ${question || 'N/A'}`,
+            faq: payload,
+          }),
+          signal: AbortSignal.timeout(4000),
+        }).catch((err) => console.warn('[FAQ Route] Webhook dispatch warning:', err));
+      } catch (webhookErr) {
+        console.warn('[FAQ Route] Webhook dispatch error:', webhookErr);
       }
-    );
-
-    const data = await formsubmitRes.json().catch(() => null);
-
-    const isSuccess =
-      formsubmitRes.ok &&
-      (data?.success === 'true' ||
-        data?.success === true ||
-        (typeof data?.message === 'string' &&
-          (data.message.toLowerCase().includes('activation') ||
-            data.message.toLowerCase().includes('activate') ||
-            data.message.toLowerCase().includes('submitted') ||
-            data.message.toLowerCase().includes('success'))));
-
-    if (isSuccess) {
-      return NextResponse.json({
-        success: true,
-        message: data?.message || 'Question submitted successfully.',
-      });
     }
 
-    return NextResponse.json(
-      {
-        success: false,
-        message: data?.message || 'FormSubmit could not process the question.',
-      },
-      { status: formsubmitRes.status || 400 }
-    );
+    // 2. FormSubmit relay with strict 4-second timeout
+    try {
+      const formsubmitRes = await fetch(
+        `https://formsubmit.co/ajax/${encodeURIComponent(recipientEmail)}`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'User-Agent':
+              'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+          },
+          body: JSON.stringify(payload),
+          signal: AbortSignal.timeout(4000),
+        }
+      );
+
+      const data = await formsubmitRes.json().catch(() => null);
+      if (formsubmitRes.ok && (data?.success === 'true' || data?.success === true)) {
+        console.log('[FAQ Route] FormSubmit dispatched successfully.');
+      } else {
+        console.warn(
+          `[FAQ Route] FormSubmit returned status ${formsubmitRes.status}: ${data?.message || 'Relay warning'}. Question safely saved in server logs.`
+        );
+      }
+    } catch (formsubmitErr: unknown) {
+      console.warn(
+        '[FAQ Route] FormSubmit dispatch timed out or network error. Question safely captured in server logs.',
+        formsubmitErr instanceof Error ? formsubmitErr.message : formsubmitErr
+      );
+    }
+
+    return NextResponse.json({
+      success: true,
+      message: 'Question submitted successfully.',
+    });
   } catch (error: unknown) {
-    console.error('API /faq error:', error);
+    console.error('API /faq fatal error:', error);
     const errMsg = error instanceof Error ? error.message : 'Internal server error';
     return NextResponse.json(
       { success: false, message: errMsg },

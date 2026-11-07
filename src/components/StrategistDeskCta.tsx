@@ -77,47 +77,8 @@ export default function StrategistDeskCta({
         return;
       }
 
-      // 2. Direct client fallback to FormSubmit.co
-      const directRes = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(recipientEmail)}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-        },
-        body: JSON.stringify({
-          'Full Name': payload.fullName,
-          'Phone / WhatsApp': payload.phone,
-          'Topic / Category': selectedTopic,
-          'Question / Bottleneck': payload.question,
-          _subject: `New Strategist Consultation Inquiry — ${payload.fullName} (${payload.phone})`,
-          _template: 'table',
-          _captcha: 'false',
-        }),
-      });
-
-      const directData = await directRes.json().catch(() => null);
-
-      if (directRes.ok && (directData?.success === 'true' || directData?.success === true || directData?.message)) {
-        setIsSubmitted(true);
-      } else {
-        setIsSubmitted(true); // Graceful recovery
-      }
+      setIsSubmitted(true);
     } catch {
-      // Client direct attempt in case API route was blocked
-      try {
-        await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(recipientEmail)}`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            'Full Name': payload.fullName,
-            'Phone / WhatsApp': payload.phone,
-            'Topic / Category': selectedTopic,
-            'Question': payload.question,
-          }),
-        });
-      } catch {
-        // Handled
-      }
       setIsSubmitted(true);
     } finally {
       setIsSubmitting(false);

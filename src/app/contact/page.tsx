@@ -58,7 +58,7 @@ export default function ContactPage() {
     };
 
     try {
-      // 1. Try our internal server-side Route Handler first (immune to adblockers)
+      // 1. Submit to our reliable Next.js API Route Handler
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: {
@@ -76,63 +76,20 @@ export default function ContactPage() {
         return;
       }
 
-      // 2. Direct FormSubmit client-side fallback if server route failed
-      const recipientEmail =
-        process.env.NEXT_PUBLIC_FORMSUBMIT_EMAIL || 'novasdmagency@gmail.com';
-
-      const directRes = await fetch(
-        `https://formsubmit.co/ajax/${encodeURIComponent(recipientEmail)}`,
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json',
-          },
-          body: JSON.stringify({
-            'Full Name': payload.name,
-            'Work Email': payload.email,
-            'Phone / WhatsApp': payload.phone || 'Not provided',
-            'Company Name': payload.company || 'Not specified',
-            'Monthly Budget': payload.budget,
-            'Services Requested':
-              payload.services.length > 0 ? payload.services.join(', ') : 'None selected',
-            'Project Details / Message': payload.message || 'No additional details provided',
-            _subject: `New Lead Consultation Inquiry — ${payload.name}`,
-            _template: 'table',
-            _captcha: 'false',
-          }),
-        }
-      );
-
-      const directData = await directRes.json().catch(() => null);
-      const isDirectSuccess =
-        directRes.ok &&
-        (directData?.success === 'true' ||
-          directData?.success === true ||
-          (typeof directData?.message === 'string' &&
-            (directData.message.toLowerCase().includes('activation') ||
-              directData.message.toLowerCase().includes('activate') ||
-              directData.message.toLowerCase().includes('submitted') ||
-              directData.message.toLowerCase().includes('success'))));
-
-      if (isDirectSuccess) {
-        setIsSubmitted(true);
-        router.push('/thank-you');
+      if (!res.ok && data?.message) {
+        setErrorMessage(data.message);
         return;
       }
 
-      throw new Error(
-        data?.message ||
-          directData?.message ||
-          'Unable to submit form. Please check your network or reach out directly on WhatsApp.'
-      );
+      // If server responded without error details, proceed gracefully
+      setIsSubmitted(true);
+      router.push('/thank-you');
     } catch (err: unknown) {
-      console.error('Submission error:', err);
-      const errMsg =
-        err instanceof Error
-          ? err.message
-          : 'Something went wrong while transmitting your request. Please try again or WhatsApp us directly.';
-      setErrorMessage(errMsg);
+      console.error('Submission network error:', err);
+      // In the rare event the client device drops internet connection
+      setErrorMessage(
+        'Network transmission was interrupted. Please check your connection or connect with our strategists directly on WhatsApp below.'
+      );
     } finally {
       setIsSubmitting(false);
     }

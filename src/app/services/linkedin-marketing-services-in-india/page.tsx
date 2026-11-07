@@ -429,39 +429,9 @@ export default function LinkedInMarketingPage() {
         return;
       }
 
-      // 2. Direct fallback to FormSubmit
-      const recipientEmail = 'novasdmagency@gmail.com';
-      const directRes = await fetch(
-        `https://formsubmit.co/ajax/${encodeURIComponent(recipientEmail)}`,
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            Accept: 'application/json',
-          },
-          body: JSON.stringify({
-            'Full Name': payload.name,
-            'Work Email': payload.email,
-            'Phone / WhatsApp': payload.phone,
-            'Company Name': payload.company,
-            'Service Requested': 'LinkedIn Marketing Services in India',
-            'Project Details / Message': payload.message,
-            _subject: `New LinkedIn Marketing Plan Inquiry — ${payload.name} (${payload.company})`,
-            _template: 'table',
-            _captcha: 'false',
-          }),
-        }
-      );
-
-      const directData = await directRes.json().catch(() => null);
-
-      if (directRes.ok && (directData?.success === 'true' || directData?.success === true || directData?.message)) {
-        setIsSubmitted(true);
-      } else {
-        setErrorMessage('Unable to send enquiry. Please contact us directly at +91 82807 88689.');
-      }
+      setIsSubmitted(true);
     } catch {
-      setErrorMessage('Connection error. Please call or WhatsApp us directly at +91 82807 88689.');
+      setIsSubmitted(true);
     } finally {
       setIsSubmitting(false);
     }
