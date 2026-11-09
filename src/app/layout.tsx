@@ -320,7 +320,7 @@ export default function RootLayout({
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-5V4M4RFK"
+            src="https://www.googletagmanager.com/ns.html?id=GTM-WWNH845X"
             height="0"
             width="0"
             style={{ display: 'none', visibility: 'hidden' }}
@@ -328,50 +328,22 @@ export default function RootLayout({
         </noscript>
         {/* End Google Tag Manager (noscript) */}
 
-        {/* Unified High-Performance Analytics & GTM Loader (Prevents TBT spikes on mobile) */}
+        {/* Google Tag Manager */}
         <Script
-          id="tracking-manager"
+          id="gtm-datalayer"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-4C849ZR6BL');
-
-              function loadTrackingScripts() {
-                if (window.__trackingLoaded) return;
-                window.__trackingLoaded = true;
-
-                // Load GTM
-                (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-                })(window,document,'script','dataLayer','GTM-5V4M4RFK');
-
-                // Load Google Analytics (gtag.js)
-                var ga = document.createElement('script');
-                ga.async = true;
-                ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-4C849ZR6BL';
-                document.head.appendChild(ga);
-              }
-
-              // Load instantly on first real user activity
-              ['touchstart', 'scroll', 'mousemove', 'click', 'keydown'].forEach(function(evt) {
-                window.addEventListener(evt, loadTrackingScripts, { once: true, passive: true });
-              });
-
-              // Idle fallback when no user activity occurs
-              if ('requestIdleCallback' in window) {
-                requestIdleCallback(function() {
-                  setTimeout(loadTrackingScripts, 3500);
-                });
-              } else {
-                setTimeout(loadTrackingScripts, 4000);
-              }
             `,
           }}
+        />
+        <Script
+          id="gtm-script"
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtm.js?id=GTM-WWNH845X"
         />
 
         <Header />
