@@ -304,6 +304,9 @@ export default function RootLayout({
       <head>
         <meta name="google-site-verification" content="79f0bLLJO5DmUzDFyrPHZ1vouQGfmYsHB5NZ594DHww" />
         <meta name="google-site-verification" content="5D3X40W6rfGnfD9IlLM8_VrqEc5qRHBROY1_WrByEBs" />
+        <link rel="preconnect" href="https://js-na2.hsforms.net" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://forms-na2.hsforms.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://js-na2.hsforms.net" />
         <link rel="describedby" href="/llms.txt" />
         <script
           type="application/ld+json"

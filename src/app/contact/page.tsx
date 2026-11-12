@@ -1,6 +1,7 @@
 'use client';
 import ScrollReveal from '@/components/ScrollReveal';
 import HubSpotLeadForm from '@/components/HubSpotLeadForm';
+import ContactGrowthCard from '@/components/ContactGrowthCard';
 import styles from './page.module.css';
 
 export default function ContactPage() {
@@ -146,33 +147,8 @@ export default function ContactPage() {
               </div>
               </div>
 
-              {/* Balanced Bottom SLA & Process Card */}
-              <div className={styles.nextStepsCard}>
-                <div className={styles.nextStepsHeader}>
-                  <span className={styles.nextStepsEyebrow}>WHAT HAPPENS NEXT</span>
-                  <span className={styles.nextStepsSla}>⚡ Avg. 4-Hr Response</span>
-                </div>
-                <div className={styles.nextStepsList}>
-                  <div className={styles.nextStepRow}>
-                    <span className={styles.nextStepNum}>01</span>
-                    <p className={styles.nextStepText}>
-                      <strong>Domain &amp; Funnel Audit</strong> — We review your ads, SEO, and website before our call.
-                    </p>
-                  </div>
-                  <div className={styles.nextStepRow}>
-                    <span className={styles.nextStepNum}>02</span>
-                    <p className={styles.nextStepText}>
-                      <strong>Custom 90-Day Roadmap</strong> — Channel mix &amp; budget projections tailored to your goals.
-                    </p>
-                  </div>
-                  <div className={styles.nextStepRow}>
-                    <span className={styles.nextStepNum}>03</span>
-                    <p className={styles.nextStepText}>
-                      <strong>1-on-1 Strategist Call</strong> — Direct founder/strategist session with zero sales pressure.
-                    </p>
-                  </div>
-                </div>
-              </div>
+              {/* Interactive AI-Styled Growth Blueprint Card */}
+              <ContactGrowthCard />
             </ScrollReveal>
           </div>
 

@@ -21,8 +21,9 @@ interface HubSpotLeadFormProps {
 
 /**
  * Reusable HubSpot v4 embedded form wrapper safe for Next.js client-side navigation.
- * Re-triggers HubSpot's embed script if the frame mounts after SPA transitions and
- * forwards submission events to GTM.
+ * Inserts the .hs-form-frame element dynamically into the viewport container so it
+ * sits at MutationObserver depth 0 (working around HubSpot's depth-5 observer limit
+ * during SPA route transitions), and forwards submission events to GTM.
  */
 export default function HubSpotLeadForm({
   id,
@@ -33,12 +34,21 @@ export default function HubSpotLeadForm({
   variant = 'embedded',
   className,
 }: HubSpotLeadFormProps) {
-  const frameRef = useRef<HTMLDivElement>(null);
+  const viewportRef = useRef<HTMLDivElement>(null);
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    const frameEl = frameRef.current;
-    if (!frameEl) return;
+    const viewportEl = viewportRef.current;
+    if (!viewportEl) return;
+
+    // Create and append .hs-form-frame dynamically so HubSpot's MutationObserver
+    // sees it directly at depth 0 even after Next.js SPA route transitions.
+    viewportEl.innerHTML = '';
+    const frameEl = document.createElement('div');
+    frameEl.className = `hs-form-frame ${styles.frame}`;
+    frameEl.setAttribute('data-region', region);
+    frameEl.setAttribute('data-form-id', formId);
+    frameEl.setAttribute('data-portal-id', portalId);
 
     const observer = new MutationObserver(() => {
       if (frameEl.childElementCount > 0) {
@@ -48,24 +58,16 @@ export default function HubSpotLeadForm({
     });
 
     observer.observe(frameEl, { childList: true, subtree: true });
+    viewportEl.appendChild(frameEl);
 
-    const ensureScriptHydrated = () => {
-      if (!frameEl) return;
-      if (frameEl.childElementCount > 0) {
-        setIsLoaded(true);
-        observer.disconnect();
-        return;
-      }
-
+    // Ensure HubSpot's embed script is present if it hasn't been injected yet.
+    if (!document.querySelector(`script[src*="${portalId}.js"]`)) {
       const script = document.createElement('script');
       script.src = HUBSPOT_EMBED_SCRIPT_SRC;
       script.defer = true;
       script.async = true;
       document.body.appendChild(script);
-    };
-
-    const firstTimer = window.setTimeout(ensureScriptHydrated, 250);
-    const retryTimer = window.setTimeout(ensureScriptHydrated, 1400);
+    }
 
     const handleHubSpotMessage = (event: MessageEvent) => {
       if (!event.data || typeof event.data !== 'object') return;
@@ -85,7 +87,6 @@ export default function HubSpotLeadForm({
         lead_type: 'hubspot_form',
       };
 
-      // Persist across HubSpot's /thank-you redirect and push immediately in case of inline state.
       try {
         window.sessionStorage.setItem(
           PENDING_LEAD_STORAGE_KEY,
@@ -100,12 +101,11 @@ export default function HubSpotLeadForm({
     window.addEventListener('message', handleHubSpotMessage);
 
     return () => {
-      window.clearTimeout(firstTimer);
-      window.clearTimeout(retryTimer);
       observer.disconnect();
       window.removeEventListener('message', handleHubSpotMessage);
+      frameEl.remove();
     };
-  }, [formId, formLocation]);
+  }, [formId, formLocation, portalId, region]);
 
   const variantClass = variant === 'card' ? styles.card : styles.embedded;
   const loadedClass = isLoaded ? styles.wrapperLoaded : '';
@@ -118,15 +118,7 @@ export default function HubSpotLeadForm({
           <span>Loading consultation form...</span>
         </div>
       )}
-      <div className={styles.cropViewport}>
-        <div
-          ref={frameRef}
-          className={`hs-form-frame ${styles.frame}`}
-          data-region={region}
-          data-form-id={formId}
-          data-portal-id={portalId}
-        />
-      </div>
+      <div ref={viewportRef} className={styles.cropViewport} />
     </div>
   );
 }
