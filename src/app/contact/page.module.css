@@ -1,12 +1,12 @@
 .page {
   background: radial-gradient(circle at 50% 15%, #FFFFFF 0%, #F8FAFC 50%, #EEF4FA 100%);
-  padding-top: calc(var(--nav-height, 74px) + 12px);
-  padding-bottom: 24px;
+  padding-top: calc(var(--nav-height, 74px) + 34px);
+  padding-bottom: 56px;
   position: relative;
   overflow: hidden;
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   box-sizing: border-box;
 }
 
@@ -43,9 +43,9 @@
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1.18fr;
-  gap: clamp(28px, 3.5vw, 48px);
-  align-items: center;
+  grid-template-columns: 1fr 1.12fr;
+  gap: clamp(28px, 3.8vw, 52px);
+  align-items: start;
   width: 100%;
 }
 
@@ -55,6 +55,14 @@
 .left {
   display: flex;
   flex-direction: column;
+  padding-top: 8px;
+}
+
+@media (min-width: 961px) {
+  .left {
+    position: sticky;
+    top: calc(var(--nav-height, 74px) + 28px);
+  }
 }
 
 .heroEyebrow {
@@ -308,7 +316,7 @@
   border: 1.5px solid rgba(226, 232, 240, 0.95);
   border-top: 1.5px solid #FFFFFF;
   border-radius: 26px;
-  padding: 28px 32px;
+  padding: 24px 28px 20px;
   box-shadow: 
     inset 0 2px 0 #FFFFFF,
     inset 0 -2px 3px rgba(15, 23, 42, 0.02),
@@ -318,7 +326,7 @@
 }
 
 .formHeader {
-  margin-bottom: 18px;
+  margin-bottom: 6px;
 }
 
 .formBadge {

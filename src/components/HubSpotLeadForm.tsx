@@ -108,22 +108,25 @@ export default function HubSpotLeadForm({
   }, [formId, formLocation]);
 
   const variantClass = variant === 'card' ? styles.card : styles.embedded;
+  const loadedClass = isLoaded ? styles.wrapperLoaded : '';
 
   return (
-    <div id={id} className={`${styles.wrapper} ${variantClass} ${className || ''}`}>
+    <div id={id} className={`${styles.wrapper} ${loadedClass} ${variantClass} ${className || ''}`}>
       {!isLoaded && (
         <div className={styles.loadingPlaceholder} aria-hidden="true">
           <span className={styles.spinner} />
           <span>Loading consultation form...</span>
         </div>
       )}
-      <div
-        ref={frameRef}
-        className={`hs-form-frame ${styles.frame}`}
-        data-region={region}
-        data-form-id={formId}
-        data-portal-id={portalId}
-      />
+      <div className={styles.cropViewport}>
+        <div
+          ref={frameRef}
+          className={`hs-form-frame ${styles.frame}`}
+          data-region={region}
+          data-form-id={formId}
+          data-portal-id={portalId}
+        />
+      </div>
     </div>
   );
 }

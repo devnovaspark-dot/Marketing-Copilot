@@ -3,7 +3,6 @@
 import { useState, useMemo, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import BeamButton from '@/components/BeamButton';
 import ScrollReveal from '@/components/ScrollReveal';
 import QuickConnectMapSection from '@/app/_components/QuickConnectMapSection';
 import CTASection from '../_components/CTASection';

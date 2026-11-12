@@ -167,9 +167,9 @@
 
 .heroGrid {
   display: grid;
-  grid-template-columns: 1.06fr 0.94fr;
-  gap: clamp(18px, 2.6vw, 34px);
-  align-items: center;
+  grid-template-columns: 1.04fr 0.96fr;
+  gap: clamp(20px, 2.8vw, 38px);
+  align-items: start;
   width: 100%;
 }
 
@@ -183,6 +183,7 @@
 .heroColLeft {
   display: flex;
   flex-direction: column;
+  padding-top: 8px;
 }
 
 .heroBadgeCluster {

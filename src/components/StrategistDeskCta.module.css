@@ -234,16 +234,17 @@
    RIGHT PANE: Form Intake Cockpit
    ══════════════════════════════════════════ */
 .formIntakePane {
-  padding: 38px 40px;
+  padding: 34px 36px 26px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 8px;
   background: linear-gradient(170deg, #FFFFFF 0%, #FAFCFF 45%, #F4F8FC 100%);
   position: relative;
 }
 
 .intakeHeader {
-  margin-bottom: 18px;
+  margin-bottom: 6px;
 }
 
 .eyebrow {
