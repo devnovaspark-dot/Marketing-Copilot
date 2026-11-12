@@ -43,9 +43,9 @@
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1.12fr;
-  gap: clamp(28px, 3.8vw, 52px);
-  align-items: start;
+  grid-template-columns: 1fr 1.06fr;
+  gap: clamp(28px, 3.5vw, 48px);
+  align-items: stretch;
   width: 100%;
 }
 
@@ -55,14 +55,13 @@
 .left {
   display: flex;
   flex-direction: column;
-  padding-top: 8px;
 }
 
-@media (min-width: 961px) {
-  .left {
-    position: sticky;
-    top: calc(var(--nav-height, 74px) + 28px);
-  }
+.fullHeightReveal {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .heroEyebrow {
@@ -250,20 +249,21 @@
 
 .socials {
   display: flex;
-  gap: 8px;
+  gap: 6px;
   flex-wrap: wrap;
+  margin-bottom: 18px;
 }
 
 .social {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  padding: 6px 14px;
+  gap: 5px;
+  padding: 5.5px 11px;
   border-radius: 9999px;
   background: linear-gradient(180deg, #FFFFFF 0%, #F6F8FA 100%);
   border: 1px solid #E2E8F0;
   color: #334155;
-  font-size: 0.78rem;
+  font-size: 0.74rem;
   font-weight: 600;
   text-decoration: none;
   transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
@@ -302,6 +302,90 @@
     0 1px 2px rgba(0, 0, 0, 0.02);
 }
 
+.nextStepsCard {
+  background: linear-gradient(170deg, #FFFFFF 0%, #F8FAFC 100%);
+  border: 1.5px solid rgba(226, 232, 240, 0.95);
+  border-top: 1.5px solid #FFFFFF;
+  border-radius: 20px;
+  padding: 18px 20px;
+  box-shadow:
+    inset 0 1.5px 0 #FFFFFF,
+    0 12px 30px -10px rgba(11, 32, 147, 0.08),
+    0 2px 8px rgba(15, 23, 42, 0.03);
+}
+
+.nextStepsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.85);
+}
+
+.nextStepsEyebrow {
+  font-family: var(--font-display);
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #0B2093;
+}
+
+.nextStepsSla {
+  display: inline-flex;
+  align-items: center;
+  padding: 2.5px 9px;
+  border-radius: 9999px;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  color: #047857;
+  font-size: 10.5px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.nextStepsList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nextStepRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.nextStepNum {
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  border-radius: 7px;
+  background: linear-gradient(135deg, rgba(11, 32, 147, 0.09) 0%, rgba(11, 32, 147, 0.04) 100%);
+  border: 1px solid rgba(11, 32, 147, 0.14);
+  color: #0B2093;
+  font-family: var(--font-display);
+  font-size: 10.5px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+.nextStepText {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.48;
+  color: #475569;
+}
+
+.nextStepText strong {
+  color: #0F172A;
+  font-weight: 700;
+}
+
 /* ══════════════════════════════════════════════════
    RIGHT FORM CARD — TACTILE SKEUOMORPHIC & CLEAN
    ══════════════════════════════════════════════════ */
@@ -316,17 +400,27 @@
   border: 1.5px solid rgba(226, 232, 240, 0.95);
   border-top: 1.5px solid #FFFFFF;
   border-radius: 26px;
-  padding: 24px 28px 20px;
+  padding: 22px 26px 18px;
   box-shadow: 
     inset 0 2px 0 #FFFFFF,
     inset 0 -2px 3px rgba(15, 23, 42, 0.02),
     0 20px 50px -10px rgba(11, 32, 147, 0.1),
     0 4px 16px rgba(15, 23, 42, 0.04);
   position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .formHeader {
-  margin-bottom: 6px;
+  margin-bottom: 4px;
+}
+
+.formFooterStrip {
+  margin-top: 10px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(226, 232, 240, 0.85);
 }
 
 .formBadge {
@@ -885,7 +979,11 @@
   }
   .grid {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 28px;
+  }
+  .fullHeightReveal,
+  .form {
+    height: auto;
   }
   .formRow {
     grid-template-columns: 1fr;
@@ -936,6 +1034,17 @@
   }
   .socials {
     gap: 6px;
+    margin-bottom: 14px;
+  }
+  .nextStepsCard {
+    padding: 14px 14px;
+    border-radius: 16px;
+  }
+  .nextStepsList {
+    gap: 8px;
+  }
+  .nextStepText {
+    font-size: 12px;
   }
   .social {
     padding: 5px 11px;

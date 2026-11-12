@@ -16,8 +16,9 @@ export default function ContactPage() {
               LEFT INFO PANE — MINIMALIST & PROFESSIONAL
              ══════════════════════════════════════════════════ */}
           <div className={styles.left}>
-            <ScrollReveal>
-              <div className={styles.heroEyebrow}>
+            <ScrollReveal className={styles.fullHeightReveal}>
+              <div>
+                <div className={styles.heroEyebrow}>
                 <span className={styles.heroEyebrowDot} />
                 <span>GET IN TOUCH &bull; BHUBANESWAR HQ &bull; SERVING BUSINESSES ACROSS INDIA</span>
               </div>
@@ -143,6 +144,35 @@ export default function ContactPage() {
                   <span>Twitter (X)</span>
                 </a>
               </div>
+              </div>
+
+              {/* Balanced Bottom SLA & Process Card */}
+              <div className={styles.nextStepsCard}>
+                <div className={styles.nextStepsHeader}>
+                  <span className={styles.nextStepsEyebrow}>WHAT HAPPENS NEXT</span>
+                  <span className={styles.nextStepsSla}>⚡ Avg. 4-Hr Response</span>
+                </div>
+                <div className={styles.nextStepsList}>
+                  <div className={styles.nextStepRow}>
+                    <span className={styles.nextStepNum}>01</span>
+                    <p className={styles.nextStepText}>
+                      <strong>Domain &amp; Funnel Audit</strong> — We review your ads, SEO, and website before our call.
+                    </p>
+                  </div>
+                  <div className={styles.nextStepRow}>
+                    <span className={styles.nextStepNum}>02</span>
+                    <p className={styles.nextStepText}>
+                      <strong>Custom 90-Day Roadmap</strong> — Channel mix &amp; budget projections tailored to your goals.
+                    </p>
+                  </div>
+                  <div className={styles.nextStepRow}>
+                    <span className={styles.nextStepNum}>03</span>
+                    <p className={styles.nextStepText}>
+                      <strong>1-on-1 Strategist Call</strong> — Direct founder/strategist session with zero sales pressure.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </ScrollReveal>
           </div>
 
@@ -150,18 +180,27 @@ export default function ContactPage() {
               RIGHT PANE: MINIMALIST & PROFESSIONAL FORM CARD
              ══════════════════════════════════════════════════ */}
           <div className={styles.right} id="hubspot-form">
-            <ScrollReveal delay={100}>
+            <ScrollReveal delay={100} className={styles.fullHeightReveal}>
               <div className={styles.form}>
-                <div className={styles.formHeader}>
-                  <div className={styles.formBadge}>
-                    <span className={styles.formBadgeDot} />
-                    <span>STRATEGY CONSULTATION</span>
+                <div>
+                  <div className={styles.formHeader}>
+                    <div className={styles.formBadge}>
+                      <span className={styles.formBadgeDot} />
+                      <span>STRATEGY CONSULTATION</span>
+                    </div>
+                    <h3 className={styles.formTitle}>Request a Consultation</h3>
+                    <p className={styles.formSubtitle}>Direct strategist response within 4 hours.</p>
                   </div>
-                  <h3 className={styles.formTitle}>Request a Consultation</h3>
-                  <p className={styles.formSubtitle}>Direct strategist response within 4 hours.</p>
+
+                  <HubSpotLeadForm formLocation="/contact" />
                 </div>
 
-                <HubSpotLeadForm formLocation="/contact" />
+                <div className={styles.formFooterStrip}>
+                  <div className={styles.formTrustNote}>
+                    <span className={styles.trustGreenDot} />
+                    <span>100% Confidential &bull; Response within 4 hrs &bull; No Spam</span>
+                  </div>
+                </div>
               </div>
             </ScrollReveal>
           </div>
