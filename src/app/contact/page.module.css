@@ -45,7 +45,7 @@
   display: grid;
   grid-template-columns: 1fr 1.06fr;
   gap: clamp(28px, 3.5vw, 48px);
-  align-items: start;
+  align-items: stretch;
   width: 100%;
 }
 
@@ -55,12 +55,20 @@
 .left {
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .fullHeightReveal {
+  height: 100%;
   display: flex;
   flex-direction: column;
   gap: 14px;
+}
+
+.growthCardSlot {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .heroEyebrow {
@@ -307,6 +315,7 @@
 .right {
   display: flex;
   flex-direction: column;
+  height: 100%;
   scroll-margin-top: 96px;
 }
 
@@ -322,6 +331,7 @@
     0 20px 50px -10px rgba(11, 32, 147, 0.1),
     0 4px 16px rgba(15, 23, 42, 0.04);
   position: relative;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -895,6 +905,8 @@
     grid-template-columns: 1fr;
     gap: 28px;
   }
+  .left,
+  .right,
   .fullHeightReveal,
   .form {
     height: auto;

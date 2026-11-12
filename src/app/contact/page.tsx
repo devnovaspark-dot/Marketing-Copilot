@@ -147,8 +147,10 @@ export default function ContactPage() {
               </div>
               </div>
 
-              {/* Interactive AI-Styled Growth Blueprint Card */}
-              <ContactGrowthCard />
+              {/* Interactive Growth Strategy Card */}
+              <div className={styles.growthCardSlot}>
+                <ContactGrowthCard />
+              </div>
             </ScrollReveal>
           </div>
 

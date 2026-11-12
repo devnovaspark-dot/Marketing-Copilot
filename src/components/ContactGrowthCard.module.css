@@ -2,7 +2,7 @@
   position: relative;
   overflow: hidden;
   border-radius: 20px;
-  padding: 16px 20px;
+  padding: 18px 20px;
   background: linear-gradient(135deg, #07142b 0%, #0d254e 52%, #1d3f96 100%);
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow:
@@ -13,8 +13,19 @@
   color: #ffffff;
   display: flex;
   flex-direction: column;
-  gap: 11px;
+  justify-content: space-between;
+  gap: 12px;
+  flex: 1;
+  height: 100%;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.topContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .card:hover {
