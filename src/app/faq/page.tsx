@@ -7,6 +7,7 @@ import BeamButton from '@/components/BeamButton';
 import ScrollReveal from '@/components/ScrollReveal';
 import QuickConnectMapSection from '@/app/_components/QuickConnectMapSection';
 import CTASection from '../_components/CTASection';
+import { trackLeadSubmission } from '@/lib/gtm';
 import styles from './page.module.css';
 
 const heroSlides = [
@@ -642,6 +643,11 @@ export default function FAQPage() {
       const data = await res.json().catch(() => null);
 
       if (res.ok && data?.success) {
+        trackLeadSubmission({
+          formName: 'faq_strategy_question',
+          formLocation: '/faq',
+          leadType: 'strategy_question',
+        });
         setIsSubmitted(true);
         return;
       }

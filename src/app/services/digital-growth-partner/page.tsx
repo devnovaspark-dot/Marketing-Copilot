@@ -16,6 +16,7 @@ import IndiaMap3D from '@/components/IndiaMap3D';
 import GrowthStackOrbit3D from '@/components/GrowthStackOrbit3D';
 import ProofShowcaseSection from '@/app/_components/ProofShowcaseSection';
 import StrategistDeskCta from '@/components/StrategistDeskCta';
+import { trackLeadSubmission } from '@/lib/gtm';
 import styles from './digital-growth-partner.module.css';
 
 interface LeadFormData {
@@ -429,6 +430,12 @@ export default function DigitalGrowthPartnerPage() {
       const json = await res.json().catch(() => null);
 
       if (res.ok && (json?.success || json?.message)) {
+        trackLeadSubmission({
+          formName: formType === 'hero' ? 'digital_growth_hero' : 'digital_growth_footer',
+          leadType: 'consultation',
+          service: data.services.join(', ') || 'Digital Growth Partner Audit',
+          budget: data.budget || 'Custom Growth Budget',
+        });
         setSuccess(true);
         return;
       }

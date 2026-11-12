@@ -1,12 +1,11 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import ScrollReveal from '@/components/ScrollReveal';
+import { navigateToThankYou, trackLeadSubmission } from '@/lib/gtm';
 import styles from './page.module.css';
 
 export default function ContactPage() {
-  const router = useRouter();
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -70,20 +69,26 @@ export default function ContactPage() {
 
       const data = await res.json().catch(() => null);
 
-      if (res.ok && data?.success) {
-        setIsSubmitted(true);
-        router.push('/thank-you');
-        return;
-      }
-
       if (!res.ok && data?.message) {
         setErrorMessage(data.message);
         return;
       }
 
-      // If server responded without error details, proceed gracefully
       setIsSubmitted(true);
-      router.push('/thank-you');
+      if (res.ok) {
+        trackLeadSubmission({
+          formName: 'contact_consultation',
+          formLocation: '/contact',
+          leadType: 'consultation',
+          service: form.services.join(', ') || 'General',
+          budget: form.budget,
+          redirectToThankYou: true,
+        });
+        return;
+      }
+
+      // If server responded without error details, proceed gracefully
+      navigateToThankYou();
     } catch (err: unknown) {
       console.error('Submission network error:', err);
       // In the rare event the client device drops internet connection

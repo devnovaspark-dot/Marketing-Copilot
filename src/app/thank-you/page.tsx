@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import BeamButton from '@/components/BeamButton';
+import { ThankYouConversionTracker } from '@/components/GtmTracker';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
 export default function ThankYouPage() {
   return (
     <main className={styles.container}>
+      <ThankYouConversionTracker />
       {/* Soft Ambient Radiant Glows */}
       <div className={styles.bgGlowEmerald} />
       <div className={styles.bgGlowGold} />

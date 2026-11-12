@@ -6,6 +6,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import BeamButton from '@/components/BeamButton';
 import QuickConnectMapSection from '@/app/_components/QuickConnectMapSection';
 import LinkedInCampaignSimulator from './_components/LinkedInCampaignSimulator';
+import { trackLeadSubmission } from '@/lib/gtm';
 import styles from './linkedin-marketing-page.module.css';
 
 // ══════════════════════════════════════════════════
@@ -424,6 +425,11 @@ export default function LinkedInMarketingPage() {
       const data = await res.json().catch(() => null);
 
       if (res.ok && data?.success) {
+        trackLeadSubmission({
+          formName: 'linkedin_marketing_plan',
+          leadType: 'consultation',
+          service: 'LinkedIn Marketing & B2B Lead Generation',
+        });
         setIsSubmitted(true);
         setIsSubmitting(false);
         return;

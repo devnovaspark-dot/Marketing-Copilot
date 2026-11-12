@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import ScrollReveal from '@/components/ScrollReveal';
+import { trackLeadSubmission } from '@/lib/gtm';
 import styles from './StrategistDeskCta.module.css';
 
 interface StrategistDeskCtaProps {
@@ -72,6 +73,11 @@ export default function StrategistDeskCta({
       const data = await res.json().catch(() => null);
 
       if (res.ok && data?.success) {
+        trackLeadSubmission({
+          formName: 'strategist_desk_cta',
+          leadType: 'strategy_question',
+          service: selectedTopic,
+        });
         setIsSubmitted(true);
         setIsSubmitting(false);
         return;
