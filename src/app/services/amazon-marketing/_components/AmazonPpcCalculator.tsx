@@ -2,6 +2,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import styles from './AmazonPpcCalculator.module.css';
 
 export default function AmazonPpcCalculator() {
@@ -112,9 +113,9 @@ export default function AmazonPpcCalculator() {
             </div>
           </div>
 
-          <a href="#audit-form" className={styles.ctaBtn}>
+          <Link href="/contact#hubspot-form" className={styles.ctaBtn}>
             Request Seller Central Growth Audit &rarr;
-          </a>
+          </Link>
         </div>
       </div>
     </div>

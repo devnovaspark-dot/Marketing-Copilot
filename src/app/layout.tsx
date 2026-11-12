@@ -349,6 +349,11 @@ export default function RootLayout({
         <Suspense fallback={null}>
           <GtmRouteTracker />
         </Suspense>
+        <Script
+          id="hubspot-forms-embed"
+          src="https://js-na2.hsforms.net/forms/embed/247976175.js"
+          strategy="afterInteractive"
+        />
 
         <Header />
         <main>{children}</main>

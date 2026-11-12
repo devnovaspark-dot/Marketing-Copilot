@@ -6,7 +6,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import BeamButton from '@/components/BeamButton';
 import QuickConnectMapSection from '@/app/_components/QuickConnectMapSection';
 import LinkedInCampaignSimulator from './_components/LinkedInCampaignSimulator';
-import { trackLeadSubmission } from '@/lib/gtm';
+import HubSpotLeadForm from '@/components/HubSpotLeadForm';
 import styles from './linkedin-marketing-page.module.css';
 
 // ══════════════════════════════════════════════════
@@ -376,71 +376,8 @@ const faqsList = [
 export default function LinkedInMarketingPage() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
-  // Enquiry Form State
-  const [form, setForm] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    company: '',
-    message: '',
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [errorMessage, setErrorMessage] = useState<string | null>(null);
-
   const toggleFaq = (index: number) => {
     setOpenFaqIndex((prev) => (prev === index ? null : index));
-  };
-
-  const handleFormSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!form.name.trim() || !form.email.trim() || !form.phone.trim()) {
-      setErrorMessage('Please fill in your name, work email, and phone number.');
-      return;
-    }
-
-    setIsSubmitting(true);
-    setErrorMessage(null);
-
-    const payload = {
-      name: form.name.trim(),
-      email: form.email.trim(),
-      phone: form.phone.trim(),
-      company: form.company.trim() || 'Not specified',
-      services: ['LinkedIn Marketing & B2B Lead Generation'],
-      message: form.message.trim() || 'Requested LinkedIn Marketing Plan from LinkedIn Service Page',
-    };
-
-    try {
-      // 1. Next.js API Route Handler
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify(payload),
-      });
-
-      const data = await res.json().catch(() => null);
-
-      if (res.ok && data?.success) {
-        trackLeadSubmission({
-          formName: 'linkedin_marketing_plan',
-          leadType: 'consultation',
-          service: 'LinkedIn Marketing & B2B Lead Generation',
-        });
-        setIsSubmitted(true);
-        setIsSubmitting(false);
-        return;
-      }
-
-      setIsSubmitted(true);
-    } catch {
-      setIsSubmitted(true);
-    } finally {
-      setIsSubmitting(false);
-    }
   };
 
   return (
@@ -1137,104 +1074,7 @@ export default function LinkedInMarketingPage() {
                   </p>
                 </div>
 
-                {isSubmitted ? (
-                  <div className={styles.formSuccessAlert}>
-                    <strong>✓ Your Plan Request Has Been Received!</strong>
-                    <p>
-                      Thank you for contacting Marketing Copilot. Our B2B growth strategists will review your business profile and reach out via phone/WhatsApp within 4 hours.
-                    </p>
-                  </div>
-                ) : (
-                  <form onSubmit={handleFormSubmit} className={styles.formGrid}>
-                    <div className={styles.formTwoCol}>
-                      <div className={styles.formFieldGroup}>
-                        <label className={styles.formFieldLabel}>
-                          Your Name <span className={styles.formRequiredStar}>*</span>
-                        </label>
-                        <input
-                          type="text"
-                          required
-                          placeholder="e.g. Rahul Sharma"
-                          value={form.name}
-                          onChange={(e) => setForm({ ...form, name: e.target.value })}
-                          className={styles.formFieldInput}
-                        />
-                      </div>
-
-                      <div className={styles.formFieldGroup}>
-                        <label className={styles.formFieldLabel}>
-                          Work Email <span className={styles.formRequiredStar}>*</span>
-                        </label>
-                        <input
-                          type="email"
-                          required
-                          placeholder="rahul@company.com"
-                          value={form.email}
-                          onChange={(e) => setForm({ ...form, email: e.target.value })}
-                          className={styles.formFieldInput}
-                        />
-                      </div>
-                    </div>
-
-                    <div className={styles.formTwoCol}>
-                      <div className={styles.formFieldGroup}>
-                        <label className={styles.formFieldLabel}>
-                          Phone / WhatsApp <span className={styles.formRequiredStar}>*</span>
-                        </label>
-                        <input
-                          type="tel"
-                          required
-                          placeholder="+91 98765 43210"
-                          value={form.phone}
-                          onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                          className={styles.formFieldInput}
-                        />
-                      </div>
-
-                      <div className={styles.formFieldGroup}>
-                        <label className={styles.formFieldLabel}>
-                          Company / Website
-                        </label>
-                        <input
-                          type="text"
-                          placeholder="e.g. Acme SaaS / acme.com"
-                          value={form.company}
-                          onChange={(e) => setForm({ ...form, company: e.target.value })}
-                          className={styles.formFieldInput}
-                        />
-                      </div>
-                    </div>
-
-                    <div className={styles.formFieldGroup}>
-                      <label className={styles.formFieldLabel}>
-                        Target Audience, Goals &amp; Monthly Budget
-                      </label>
-                      <textarea
-                        rows={3}
-                        placeholder="Tell us about your target customer roles, key objectives (e.g. Sales Navigator prospecting, LinkedIn Ads, or brand authority), and estimated budget."
-                        value={form.message}
-                        onChange={(e) => setForm({ ...form, message: e.target.value })}
-                        className={styles.formFieldTextarea}
-                      />
-                    </div>
-
-                    {errorMessage && (
-                      <div className={styles.formErrorAlert}>
-                        ⚠️ {errorMessage}
-                      </div>
-                    )}
-
-                    <div className={styles.formSubmitBtnWrapper}>
-                      <button
-                        type="submit"
-                        disabled={isSubmitting}
-                        className={styles.formSubmitButton}
-                      >
-                        {isSubmitting ? 'Submitting Your Request...' : 'Get Your LinkedIn Marketing Plan →'}
-                      </button>
-                    </div>
-                  </form>
-                )}
+                <HubSpotLeadForm formLocation="/services/linkedin-marketing-services-in-india" />
               </div>
             </ScrollReveal>
           </div>

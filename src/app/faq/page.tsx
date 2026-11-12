@@ -7,7 +7,7 @@ import BeamButton from '@/components/BeamButton';
 import ScrollReveal from '@/components/ScrollReveal';
 import QuickConnectMapSection from '@/app/_components/QuickConnectMapSection';
 import CTASection from '../_components/CTASection';
-import { trackLeadSubmission } from '@/lib/gtm';
+import HubSpotLeadForm from '@/components/HubSpotLeadForm';
 import styles from './page.module.css';
 
 const heroSlides = [
@@ -423,18 +423,8 @@ export default function FAQPage() {
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [showSuggestions, setShowSuggestions] = useState<boolean>(false);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const [selectedTopic, setSelectedTopic] = useState<string>('🎯 Google & Meta Ads');
   const searchContainerRef = useRef<HTMLDivElement>(null);
 
-  // Direct Inquiry Form State
-  const [formState, setFormState] = useState({
-    fullName: '',
-    businessName: '',
-    phone: '',
-    question: '',
-  });
-  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
-  const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const slideTimerRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -603,62 +593,10 @@ export default function FAQPage() {
     }
   };
 
-  const directToQuestionCard = (queryText?: string) => {
-    const q = (queryText !== undefined ? queryText : searchQuery).trim();
-    if (q && !formState.question) {
-      setFormState((prev) => ({
-        ...prev,
-        question: prev.question || q,
-      }));
-    }
-    const target = document.getElementById('still-have-questions');
+  const directToQuestionCard = () => {
+    const target = document.getElementById('ask-question');
     if (target) {
       target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
-  };
-
-  const handleFormSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!formState.fullName.trim() || !formState.phone.trim()) return;
-    setIsSubmitting(true);
-
-    const payload = {
-      fullName: formState.fullName.trim(),
-      phone: formState.phone.trim(),
-      businessName: formState.businessName?.trim() || '',
-      question: formState.question.trim(),
-    };
-
-    try {
-      // 1. Send via Next.js API route
-      const res = await fetch('/api/faq', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-        },
-        body: JSON.stringify(payload),
-      });
-
-      const data = await res.json().catch(() => null);
-
-      if (res.ok && data?.success) {
-        trackLeadSubmission({
-          formName: 'faq_strategy_question',
-          formLocation: '/faq',
-          leadType: 'strategy_question',
-        });
-        setIsSubmitted(true);
-        return;
-      }
-
-      setIsSubmitted(true);
-    } catch (err) {
-      console.error('FAQ submission error:', err);
-      // Still show submitted so the user receives confirmation
-      setIsSubmitted(true);
-    } finally {
-      setIsSubmitting(false);
     }
   };
 
@@ -834,7 +772,7 @@ export default function FAQPage() {
                               className={styles.noSuggestionsAction}
                               onClick={() => {
                                 setShowSuggestions(false);
-                                directToQuestionCard(searchQuery);
+                                directToQuestionCard();
                               }}
                             >
                               Ask Strategist in 1-Click &rarr;
@@ -1333,12 +1271,6 @@ export default function FAQPage() {
                     className={styles.dispatchRedirectBtn}
                     onClick={(e) => {
                       e.preventDefault();
-                      if (searchQuery.trim() && !formState.question) {
-                        setFormState((prev) => ({
-                          ...prev,
-                          question: prev.question || searchQuery.trim(),
-                        }));
-                      }
                       const el = document.getElementById('ask-question');
                       if (el) {
                         el.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -1454,148 +1386,7 @@ export default function FAQPage() {
                   </p>
                 </div>
 
-                {/* Topic Selector Chips */}
-                <div className={styles.topicSelectorWrap}>
-                  <div className={styles.topicChipsGrid}>
-                    {[
-                      '🎯 Google & Meta Ads',
-                      '📍 Local SEO 3-Pack',
-                      '⚡ Next.js Web Speed',
-                      '💰 Retainer & Pricing',
-                      '❓ Custom Question',
-                    ].map((topic) => (
-                      <button
-                        key={topic}
-                        type="button"
-                        className={`${styles.topicChip} ${selectedTopic === topic ? styles.topicChipActive : ''}`}
-                        onClick={() => setSelectedTopic(topic)}
-                      >
-                        {topic}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                {isSubmitted ? (
-                  <div className={styles.cockpitSuccessBox}>
-                    <div className={styles.successTicketTop}>
-                      <span className={styles.successBadge}>✓ INTAKE DISPATCHED TO STRATEGIST</span>
-                      <span className={styles.ticketId}>ID: MC-8492</span>
-                    </div>
-                    <h3 className={styles.successTitle}>Diagnostic Request Received</h3>
-                    <p className={styles.successText}>
-                      Thank you, <strong>{formState.fullName}</strong>. Your inquiry regarding <strong>{formState.businessName || 'your business'}</strong> under <strong>{selectedTopic}</strong> has been routed directly to Aarav Sharma&apos;s desk.
-                    </p>
-                    <div className={styles.successMetaStrip}>
-                      <span>📱 Callback / WhatsApp: <strong>+91 {formState.phone}</strong></span>
-                      <span>⏱ Turnaround: <strong>Within 4 Hours</strong></span>
-                    </div>
-                    <button
-                      type="button"
-                      className={styles.newQuestionBtn}
-                      onClick={() => {
-                        setIsSubmitted(false);
-                        setFormState({ fullName: '', businessName: '', phone: '', question: '' });
-                      }}
-                    >
-                      Submit Another Question →
-                    </button>
-                  </div>
-                ) : (
-                  <form
-                    onSubmit={handleFormSubmit}
-                    action={`https://formsubmit.co/${process.env.NEXT_PUBLIC_FORMSUBMIT_EMAIL || 'novasdmagency@gmail.com'}`}
-                    method="POST"
-                    className={styles.cockpitForm}
-                  >
-                    {/* Anti-spam Honeypot */}
-                    <input type="text" name="_honey" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
-                    <input type="hidden" name="_captcha" value="false" />
-                    <input type="hidden" name="_template" value="table" />
-
-                    <div className={styles.formFieldsGrid}>
-                      {/* Full Name */}
-                      <div className={styles.fieldGroup}>
-                        <label htmlFor="faq-name" className={styles.fieldLabel}>
-                          YOUR NAME <span className={styles.reqStar}>*</span>
-                        </label>
-                        <div className={styles.fieldInputWrap}>
-                          <span className={styles.fieldIcon}>👤</span>
-                          <input
-                            id="faq-name"
-                            name="fullName"
-                            type="text"
-                            required
-                            placeholder="e.g. Rajesh Mohapatra"
-                            value={formState.fullName}
-                            onChange={(e) => setFormState({ ...formState, fullName: e.target.value })}
-                            className={styles.cockpitInput}
-                          />
-                        </div>
-                      </div>
-
-                      {/* Phone / WhatsApp */}
-                      <div className={styles.fieldGroup}>
-                        <label htmlFor="faq-phone" className={styles.fieldLabel}>
-                          PHONE / WHATSAPP <span className={styles.reqStar}>*</span>
-                        </label>
-                        <div className={styles.fieldInputWrap}>
-                          <span className={styles.countryFlagPill}>🇮🇳 +91</span>
-                          <input
-                            id="faq-phone"
-                            name="phone"
-                            type="tel"
-                            required
-                            placeholder="98765 43210"
-                            value={formState.phone}
-                            onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
-                            className={styles.cockpitInput}
-                          />
-                        </div>
-                      </div>
-
-                      {/* Question / Bottleneck */}
-                      <div className={`${styles.fieldGroup} ${styles.fieldFullWidth}`}>
-                        <label htmlFor="faq-question" className={styles.fieldLabel}>
-                          YOUR QUESTION OR CHALLENGE <span className={styles.reqStar}>*</span>
-                        </label>
-                        <div className={styles.fieldTextareaWrap}>
-                          <textarea
-                            id="faq-question"
-                            name="question"
-                            required
-                            rows={3}
-                            placeholder="Ask any question about your ads, SEO, website, or marketing in India..."
-                            value={formState.question}
-                            onChange={(e) => setFormState({ ...formState, question: e.target.value })}
-                            className={styles.cockpitTextarea}
-                          />
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Action Bar */}
-                    <div className={styles.cockpitActionBar}>
-                      <button
-                        type="submit"
-                        disabled={isSubmitting}
-                        className={styles.cockpitSubmitBtn}
-                      >
-                        <span className={styles.submitBtnText}>
-                          {isSubmitting ? 'Transmitting...' : 'Send Question to Strategists →'}
-                        </span>
-                      </button>
-
-                      <div className={styles.trustMiniRow}>
-                        <span>🔒 100% Confidential</span>
-                        <span>&bull;</span>
-                        <span>⚡ 4-Hour Turnaround</span>
-                        <span>&bull;</span>
-                        <span>🚫 Zero Sales Pressure</span>
-                      </div>
-                    </div>
-                  </form>
-                )}
+                <HubSpotLeadForm formLocation="/faq" />
               </div>
             </div>
           </ScrollReveal>

@@ -1,9 +1,8 @@
 'use client';
 
-import { useState } from 'react';
 import Image from 'next/image';
 import ScrollReveal from '@/components/ScrollReveal';
-import { trackLeadSubmission } from '@/lib/gtm';
+import HubSpotLeadForm from '@/components/HubSpotLeadForm';
 import styles from './StrategistDeskCta.module.css';
 
 interface StrategistDeskCtaProps {
@@ -21,76 +20,6 @@ export default function StrategistDeskCta({
   subtitle = 'Submit your question below for a free, confidential strategic breakdown.',
   eyebrow = 'CONFIDENTIAL STRATEGY DISPATCH • NO PRESSURE',
 }: StrategistDeskCtaProps) {
-  const [selectedTopic, setSelectedTopic] = useState(defaultTopic);
-  const [formState, setFormState] = useState({
-    fullName: '',
-    phone: '',
-    businessName: '',
-    question: '',
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('');
-
-  const topics = [
-    '🎯 Google & Meta Ads',
-    '📍 Local SEO 3-Pack',
-    '⚡ Next.js Web Speed',
-    '💰 Retainer & Pricing',
-    '❓ Custom Question',
-  ];
-
-  const handleFormSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!formState.fullName.trim() || !formState.phone.trim() || !formState.question.trim()) {
-      setErrorMessage('Please provide your name, phone/WhatsApp number, and question.');
-      return;
-    }
-
-    setIsSubmitting(true);
-    setErrorMessage('');
-
-    const payload = {
-      fullName: formState.fullName.trim(),
-      phone: formState.phone.trim(),
-      businessName: formState.businessName?.trim() || selectedTopic,
-      question: `[Topic: ${selectedTopic}] ${formState.question.trim()}`,
-    };
-
-    const recipientEmail = 'novasdmagency@gmail.com';
-
-    try {
-      // 1. Primary: Next.js API Route (/api/faq)
-      const res = await fetch('/api/faq', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-        },
-        body: JSON.stringify(payload),
-      });
-
-      const data = await res.json().catch(() => null);
-
-      if (res.ok && data?.success) {
-        trackLeadSubmission({
-          formName: 'strategist_desk_cta',
-          leadType: 'strategy_question',
-          service: selectedTopic,
-        });
-        setIsSubmitted(true);
-        setIsSubmitting(false);
-        return;
-      }
-
-      setIsSubmitted(true);
-    } catch {
-      setIsSubmitted(true);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   return (
     <section className={styles.section} id={id}>
       <div className={styles.ambientGlowTop} />
@@ -148,7 +77,7 @@ export default function StrategistDeskCta({
               <div className={styles.deskWhatsappCallout}>
                 <a
                   href={`https://wa.me/918763570630?text=${encodeURIComponent(
-                    `Hi Aarav, I would like to get a strategic consultation regarding ${selectedTopic} for my business.`
+                    `Hi Aarav, I would like to get a strategic consultation regarding ${defaultTopic} for my business.`
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -160,206 +89,24 @@ export default function StrategistDeskCta({
               </div>
             </div>
 
-            {/* Right Pane: Interactive Strategy Ingestion Form */}
+            {/* Right Pane: HubSpot Lead Form */}
             <div className={styles.formIntakePane}>
-              {!isSubmitted ? (
-                <>
-                  <div>
-                    <div className={styles.intakeHeader}>
-                      <div className={styles.eyebrow}>
-                        <span className={styles.eyebrowDot} />
-                        {eyebrow}
-                      </div>
-                      <h2 className={styles.intakeTitle}>
-                        {title}
-                      </h2>
-                      <p className={styles.intakeSub}>
-                        {subtitle}
-                      </p>
-                    </div>
-
-                    {/* Topic Selector Chips */}
-                    <div className={styles.topicSelectorWrap}>
-                      <div className={styles.topicChipsGrid}>
-                        {topics.map((topic) => (
-                          <button
-                            key={topic}
-                            type="button"
-                            className={`${styles.topicChip} ${
-                              selectedTopic === topic ? styles.topicChipActive : ''
-                            }`}
-                            onClick={() => setSelectedTopic(topic)}
-                          >
-                            {topic}
-                          </button>
-                        ))}
-                      </div>
-                    </div>
+              <div>
+                <div className={styles.intakeHeader}>
+                  <div className={styles.eyebrow}>
+                    <span className={styles.eyebrowDot} />
+                    {eyebrow}
                   </div>
-
-                  <form onSubmit={handleFormSubmit} className={styles.cockpitForm}>
-                  <div className={styles.formFieldsGrid}>
-                    {/* Full Name */}
-                    <div className={styles.fieldGroup}>
-                      <label htmlFor="desk-name" className={styles.fieldLabel}>
-                        YOUR NAME <span className={styles.reqStar}>*</span>
-                      </label>
-                      <div className={styles.fieldInputWrap}>
-                        <span className={styles.fieldIcon}>👤</span>
-                        <input
-                          id="desk-name"
-                          name="fullName"
-                          type="text"
-                          required
-                          placeholder="e.g. Rajesh Mohapatra"
-                          value={formState.fullName}
-                          onChange={(e) => setFormState({ ...formState, fullName: e.target.value })}
-                          className={styles.cockpitInput}
-                        />
-                      </div>
-                    </div>
-
-                    {/* Phone / WhatsApp */}
-                    <div className={styles.fieldGroup}>
-                      <label htmlFor="desk-phone" className={styles.fieldLabel}>
-                        PHONE / WHATSAPP <span className={styles.reqStar}>*</span>
-                      </label>
-                      <div className={styles.fieldInputWrap}>
-                        <span className={styles.countryFlagPill}>IN +91</span>
-                        <input
-                          id="desk-phone"
-                          name="phone"
-                          type="tel"
-                          required
-                          placeholder="98765 43210"
-                          value={formState.phone}
-                          onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
-                          className={styles.cockpitInput}
-                        />
-                      </div>
-                    </div>
-
-                    {/* Question / Challenge */}
-                    <div className={`${styles.fieldGroup} ${styles.fieldFullWidth}`}>
-                      <label htmlFor="desk-question" className={styles.fieldLabel}>
-                        YOUR QUESTION OR CHALLENGE <span className={styles.reqStar}>*</span>
-                      </label>
-                      <div className={styles.fieldTextareaWrap}>
-                        <textarea
-                          id="desk-question"
-                          name="question"
-                          required
-                          rows={3}
-                          placeholder="Ask any question about your ads, SEO, website, or marketing in India..."
-                          value={formState.question}
-                          onChange={(e) => setFormState({ ...formState, question: e.target.value })}
-                          className={styles.cockpitTextarea}
-                        />
-                      </div>
-                    </div>
-                  </div>
-
-                  {errorMessage && (
-                    <div style={{ color: '#DC2626', fontSize: '12px', fontWeight: 700 }}>
-                      {errorMessage}
-                    </div>
-                  )}
-
-                  {/* Submit Button & Trust Strip (Navbar-style spinning beam animation, warm orange color) */}
-                  <div className={styles.cockpitActionBar}>
-                    <div className={styles.beamSubmitWrapper}>
-                      <div className={styles.beamAmbientGlow} />
-                      <div className={styles.beamConicSpin} />
-                      <button
-                        type="submit"
-                        disabled={isSubmitting}
-                        className={styles.beamSubmitBtn}
-                      >
-                        <span className={styles.btnShimmer} />
-                        <span className={styles.btnGloss} />
-                        <span className={styles.btnLabel}>
-                          {isSubmitting ? 'Transmitting to Desk...' : 'Send Question to Strategists'}
-                        </span>
-                        <span className={styles.btnArrow}>→</span>
-                      </button>
-                    </div>
-
-                    <div className={styles.trustMiniRow}>
-                      <span>🔒 100% Confidential</span>
-                      <span>&bull;</span>
-                      <span>⚡ 4-Hour Turnaround</span>
-                      <span>&bull;</span>
-                      <span>🚫 Zero Sales Pressure</span>
-                    </div>
-                  </div>
-                </form>
-              </>
-            ) : (
-              <div className={styles.thankYouCard}>
-                {/* Realistic Physics 3D Bouncing Emerald Checkmark */}
-                <div className={styles.checkStage}>
-                  <div className={styles.checkSphere}>
-                    <div className={styles.sphereGlossTop} />
-                    <div className={styles.sphereGlossCrescent} />
-                    <svg
-                      className={styles.checkIcon}
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="#FFFFFF"
-                      strokeWidth="3.6"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <polyline points="20 6 9 17 4 12" className={styles.checkStroke} />
-                    </svg>
-                  </div>
-                  {/* Dynamic Ground Contact Shadow */}
-                  <div className={styles.sphereShadow} />
-                </div>
-
-                {/* Minimalist Status Badge */}
-                <div className={styles.statusBadge}>
-                  <span className={styles.statusDot} />
-                  <span>INQUIRY DISPATCHED &bull; 4-HR SLA</span>
-                </div>
-
-                <h3 className={styles.thankYouTitle}>Let’s Get Growing</h3>
-
-                <p className={styles.thankYouSubtitle}>
-                  Request received. An expert growth strategist will connect with you within 4 hours.
-                </p>
-
-                <div className={styles.thankYouMetaStrip}>
-                  <span>⚡ Priority SLA: <strong>Within 4 Hours Guaranteed</strong></span>
-                </div>
-
-                {/* Action Buttons styled like Thank You Page */}
-                <div className={styles.thankYouActions}>
-                  <a
-                    href={`https://wa.me/918763570630?text=${encodeURIComponent(
-                      `Hi Aarav, I just submitted a growth inquiry for my business.`
-                    )}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.thankYouWaBtn}
-                  >
-                    <span className={styles.waDot} />
-                    <span>Fast-Track on WhatsApp ↗</span>
-                  </a>
-
-                  <button
-                    type="button"
-                    className={styles.thankYouResetBtn}
-                    onClick={() => {
-                      setIsSubmitted(false);
-                      setFormState({ fullName: '', phone: '', businessName: '', question: '' });
-                    }}
-                  >
-                    Ask Another Question →
-                  </button>
+                  <h2 className={styles.intakeTitle}>
+                    {title}
+                  </h2>
+                  <p className={styles.intakeSub}>
+                    {subtitle}
+                  </p>
                 </div>
               </div>
-            )}
+
+              <HubSpotLeadForm />
             </div>
           </div>
         </ScrollReveal>

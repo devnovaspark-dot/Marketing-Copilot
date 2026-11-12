@@ -4,7 +4,6 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import ScrollReveal from '@/components/ScrollReveal';
-import BeamButton from '@/components/BeamButton';
 import ReviewBadgesStrip from './ReviewBadgesStrip';
 import QuickConnectMapSection from '@/app/_components/QuickConnectMapSection';
 import BrandSpotlightSection from '@/app/_components/BrandSpotlightSection';
@@ -16,37 +15,8 @@ import IndiaMap3D from '@/components/IndiaMap3D';
 import GrowthStackOrbit3D from '@/components/GrowthStackOrbit3D';
 import ProofShowcaseSection from '@/app/_components/ProofShowcaseSection';
 import StrategistDeskCta from '@/components/StrategistDeskCta';
-import { trackLeadSubmission } from '@/lib/gtm';
+import HubSpotLeadForm from '@/components/HubSpotLeadForm';
 import styles from './digital-growth-partner.module.css';
-
-interface LeadFormData {
-  name: string;
-  company: string;
-  phone: string;
-  email: string;
-  website: string;
-  services: string[];
-  budget: string;
-  requirement: string;
-}
-
-const availableServices = [
-  'SEO',
-  'Google Ads',
-  'Meta Ads',
-  'Social Media',
-  'GEO / AEO',
-  'Web Development',
-  'CRO',
-];
-
-const budgetOptions = [
-  '₹25K - ₹50K',
-  '₹50K - ₹1L',
-  '₹1L - ₹3L',
-  '₹3L - ₹5L',
-  '₹5L+',
-];
 
 const clientLogos = [
   { name: 'Sabour', src: '/images/clients/Sabour-logo.png' },
@@ -327,126 +297,14 @@ const growthPartnerFaqs = [
 ];
 
 export default function DigitalGrowthPartnerPage() {
-  // Form 1 (Hero Deck) — Nothing pre-checked per user instruction
-  const [heroForm, setHeroForm] = useState<LeadFormData>({
-    name: '',
-    company: '',
-    phone: '',
-    email: '',
-    website: '',
-    services: [],
-    budget: '',
-    requirement: '',
-  });
-  const [heroSubmitting, setHeroSubmitting] = useState(false);
-  const [heroSuccess, setHeroSuccess] = useState(false);
-  const [heroError, setHeroError] = useState('');
-
-  // Form 2 (Final Deck) — Nothing pre-checked per user instruction
-  const [finalForm, setFinalForm] = useState<LeadFormData>({
-    name: '',
-    company: '',
-    phone: '',
-    email: '',
-    website: '',
-    services: [],
-    budget: '',
-    requirement: '',
-  });
-  const [finalSubmitting, setFinalSubmitting] = useState(false);
-  const [finalSuccess, setFinalSuccess] = useState(false);
-  const [finalError, setFinalError] = useState('');
-
-
   // Interactive Active Metro Hub State for Operations Command Center
   const [activeHub, setActiveHub] = useState<string>('bhubaneswar');
 
   // Interactive Capability State for End-to-End Growth Stack
   const [activeStackService, setActiveStackService] = useState<number>(0);
 
-
   // Interactive FAQ Accordion State (Closed by default so user chooses what to open)
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-
-  // Service toggle helper
-  const toggleService = (formType: 'hero' | 'final', service: string) => {
-    if (formType === 'hero') {
-      setHeroForm((prev) => {
-        const exists = prev.services.includes(service);
-        return {
-          ...prev,
-          services: exists
-            ? prev.services.filter((s) => s !== service)
-            : [...prev.services, service],
-        };
-      });
-    } else {
-      setFinalForm((prev) => {
-        const exists = prev.services.includes(service);
-        return {
-          ...prev,
-          services: exists
-            ? prev.services.filter((s) => s !== service)
-            : [...prev.services, service],
-        };
-      });
-    }
-  };
-
-  // Submit handler
-  const handleFormSubmit = async (e: React.FormEvent, formType: 'hero' | 'final') => {
-    e.preventDefault();
-    const data = formType === 'hero' ? heroForm : finalForm;
-    const setSubmitting = formType === 'hero' ? setHeroSubmitting : setFinalSubmitting;
-    const setSuccess = formType === 'hero' ? setHeroSuccess : setFinalSuccess;
-    const setError = formType === 'hero' ? setHeroError : setFinalError;
-
-    if (!data.name || !data.email || !data.phone) {
-      setError('Please provide your name, phone/WhatsApp, and work email.');
-      return;
-    }
-
-    setSubmitting(true);
-    setError('');
-
-    const recipientEmail = 'novasdmagency@gmail.com';
-
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: data.name,
-          company: data.company,
-          phone: data.phone,
-          email: data.email,
-          website: data.website,
-          services: data.services.length > 0 ? data.services : ['Digital Growth Partner Audit'],
-          budget: data.budget || 'Custom Growth Budget',
-          message: data.requirement || `Requested 360° Digital Growth Consultation (${formType === 'hero' ? 'Hero Form' : 'Bottom Form'})`,
-        }),
-      });
-
-      const json = await res.json().catch(() => null);
-
-      if (res.ok && (json?.success || json?.message)) {
-        trackLeadSubmission({
-          formName: formType === 'hero' ? 'digital_growth_hero' : 'digital_growth_footer',
-          leadType: 'consultation',
-          service: data.services.join(', ') || 'Digital Growth Partner Audit',
-          budget: data.budget || 'Custom Growth Budget',
-        });
-        setSuccess(true);
-        return;
-      }
-
-      setSuccess(true);
-    } catch {
-      setSuccess(true);
-    } finally {
-      setSubmitting(false);
-    }
-  };
 
   const selectedHubData = metroHubDetails[activeHub] || metroHubDetails.bhubaneswar;
 
@@ -520,215 +378,23 @@ export default function DigitalGrowthPartnerPage() {
             <ReviewBadgesStrip />
           </div>
 
-          {/* Right Column: Interactive Skeuomorphic Audit Console */}
+          {/* Right Column: Interactive HubSpot Audit Console */}
           <div className={styles.auditConsole}>
-            {heroSuccess ? (
-              <div className={styles.thankYouSuccessCard}>
-                {/* Realistic Physics 3D Bouncing Emerald Checkmark */}
-                <div className={styles.checkStage}>
-                  <div className={styles.checkSphere}>
-                    <div className={styles.sphereGlossTop} />
-                    <div className={styles.sphereGlossCrescent} />
-                    <svg
-                      className={styles.checkIcon}
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="#FFFFFF"
-                      strokeWidth="3.6"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <polyline points="20 6 9 17 4 12" className={styles.checkStroke} />
-                    </svg>
-                  </div>
-                  {/* Dynamic Ground Contact Shadow */}
-                  <div className={styles.sphereShadow} />
-                </div>
-
-                {/* Minimalist Status Badge */}
-                <div className={styles.statusBadge}>
-                  <span className={styles.statusDot} />
-                  <span>INQUIRY RECEIVED</span>
-                </div>
-
-                <h3 className={styles.thankYouHeadline}>Let’s Get Growing</h3>
-
-                <p className={styles.thankYouCopy}>
-                  Request received. An expert growth strategist will connect with you within 4 hours.
-                </p>
-
-                <a
-                  href={`https://wa.me/918280788689?text=Hi%20Marketing%20Copilot%2C%20I%20just%20submitted%20the%20growth%20consultation%20form%20for%20${encodeURIComponent(heroForm.company || 'my company')}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.thankYouWhatsAppBtn}
-                >
-                  <span className={styles.waDot} />
-                  <span>Fast-Track on WhatsApp ↗</span>
-                </a>
+            <div className={styles.consoleHeaderStrip}>
+              <div className={styles.consoleTitleGroup}>
+                <span className={styles.consolePulseDot} />
+                <span className={styles.consoleTitle}>Rapid Strategic Growth Audit</span>
               </div>
-            ) : (
-              <form onSubmit={(e) => handleFormSubmit(e, 'hero')}>
-                <div className={styles.consoleHeaderStrip}>
-                  <div className={styles.consoleTitleGroup}>
-                    <span className={styles.consolePulseDot} />
-                    <span className={styles.consoleTitle}>Rapid Strategic Growth Audit</span>
-                  </div>
-                  <span className={styles.consoleBadge}>SLA &lt; 2 Hrs</span>
-                </div>
+              <span className={styles.consoleBadge}>SLA &lt; 2 Hrs</span>
+            </div>
 
-                <div className={styles.inputGridDouble}>
-                  <div className={styles.fieldGroup}>
-                    <label className={styles.fieldLabel}>
-                      Name <span>*</span>
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={heroForm.name}
-                      onChange={(e) => setHeroForm({ ...heroForm, name: e.target.value })}
-                      className={styles.tactileField}
-                    />
-                  </div>
-                  <div className={styles.fieldGroup}>
-                    <label className={styles.fieldLabel}>Company</label>
-                    <input
-                      type="text"
-                      value={heroForm.company}
-                      onChange={(e) => setHeroForm({ ...heroForm, company: e.target.value })}
-                      className={styles.tactileField}
-                    />
-                  </div>
-                </div>
+            <HubSpotLeadForm formLocation="/services/digital-growth-partner" />
 
-                <div className={styles.inputGridDouble}>
-                  <div className={styles.fieldGroup}>
-                    <label className={styles.fieldLabel}>
-                      Phone / WhatsApp <span>*</span>
-                    </label>
-                    <input
-                      type="tel"
-                      required
-                      value={heroForm.phone}
-                      onChange={(e) => setHeroForm({ ...heroForm, phone: e.target.value })}
-                      className={styles.tactileField}
-                    />
-                  </div>
-                  <div className={styles.fieldGroup}>
-                    <label className={styles.fieldLabel}>
-                      Work Email <span>*</span>
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      value={heroForm.email}
-                      onChange={(e) => setHeroForm({ ...heroForm, email: e.target.value })}
-                      className={styles.tactileField}
-                    />
-                  </div>
-                </div>
-
-                <div className={styles.fieldGroup}>
-                  <label className={styles.fieldLabel}>
-                    Website URL <span className={styles.fieldLabelOpt}>(Optional)</span>
-                  </label>
-                  <input
-                    type="url"
-                    value={heroForm.website}
-                    onChange={(e) => setHeroForm({ ...heroForm, website: e.target.value })}
-                    className={styles.tactileField}
-                  />
-                </div>
-
-                {/* Service Pills — Initially unselected */}
-                <div className={styles.fieldGroup}>
-                  <label className={styles.fieldLabel}>
-                    Services You Need <span className={styles.fieldLabelOpt}>(Select any)</span>
-                  </label>
-                  <div className={styles.servicesChicletGrid}>
-                    {availableServices.map((svc) => {
-                      const selected = heroForm.services.includes(svc);
-                      return (
-                        <button
-                          type="button"
-                          key={svc}
-                          onClick={() => toggleService('hero', svc)}
-                          className={`${styles.servicePillBtn} ${
-                            selected ? styles.servicePillBtnActive : ''
-                          }`}
-                        >
-                          {svc} {selected ? '✓' : '+'}
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                {/* Budget Pills — Initially unselected */}
-                <div className={styles.fieldGroup}>
-                  <label className={styles.fieldLabel}>
-                    Planned Monthly Budget <span className={styles.fieldLabelOpt}>(Optional)</span>
-                  </label>
-                  <div className={styles.budgetPillGrid}>
-                    {budgetOptions.map((b) => (
-                      <button
-                        type="button"
-                        key={b}
-                        onClick={() =>
-                          setHeroForm({
-                            ...heroForm,
-                            budget: heroForm.budget === b ? '' : b,
-                          })
-                        }
-                        className={`${styles.budgetPillBtn} ${
-                          heroForm.budget === b ? styles.budgetPillBtnActive : ''
-                        }`}
-                      >
-                        {b} {heroForm.budget === b ? '✓' : ''}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Requirement */}
-                <div className={styles.fieldGroup}>
-                  <label className={styles.fieldLabel}>
-                    Requirement / Growth Bottleneck
-                  </label>
-                  <textarea
-                    rows={1}
-                    value={heroForm.requirement}
-                    onChange={(e) => setHeroForm({ ...heroForm, requirement: e.target.value })}
-                    className={styles.tactileTextarea}
-                    placeholder="E.g., High CAC, scaling to ₹50L/mo GMV..."
-                  />
-                </div>
-
-                {heroError && (
-                  <p style={{ color: '#DC2626', fontSize: '12px', fontWeight: 700, margin: '6px 0' }}>
-                    {heroError}
-                  </p>
-                )}
-
-                {/* BeamButton matching the navbar button style animation */}
-                <div style={{ marginTop: 8 }}>
-                  <BeamButton
-                    type="submit"
-                    disabled={heroSubmitting}
-                    fullWidth
-                    size="lg"
-                    arrow={true}
-                    label={heroSubmitting ? 'Evaluating Blueprint...' : 'Get My Free Consultation'}
-                  />
-                </div>
-
-                <div className={styles.consoleFooterGuarantees}>
-                  <span>🔒 100% Confidential</span>
-                  <span>⚡ 2-Hour Response</span>
-                  <span>🎯 Custom Roadmap</span>
-                </div>
-              </form>
-            )}
+            <div className={styles.consoleFooterGuarantees}>
+              <span>🔒 100% Confidential</span>
+              <span>⚡ 2-Hour Response</span>
+              <span>🎯 Custom Roadmap</span>
+            </div>
           </div>
         </div>
       </section>
@@ -1270,168 +936,27 @@ export default function DigitalGrowthPartnerPage() {
               </p>
             </div>
 
-            {finalSuccess ? (
-              <div className={styles.thankYouSuccessCard}>
-                {/* Realistic Physics 3D Bouncing Emerald Checkmark */}
-                <div className={styles.checkStage}>
-                  <div className={styles.checkSphere}>
-                    <div className={styles.sphereGlossTop} />
-                    <div className={styles.sphereGlossCrescent} />
-                    <svg
-                      className={styles.checkIcon}
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="#FFFFFF"
-                      strokeWidth="3.6"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <polyline points="20 6 9 17 4 12" className={styles.checkStroke} />
-                    </svg>
-                  </div>
-                  {/* Dynamic Ground Contact Shadow */}
-                  <div className={styles.sphereShadow} />
-                </div>
+            <HubSpotLeadForm formLocation="/services/digital-growth-partner" />
 
-                {/* Minimalist Status Badge */}
-                <div className={styles.statusBadge}>
-                  <span className={styles.statusDot} />
-                  <span>REQUEST RECEIVED</span>
-                </div>
+            <div className={styles.grandCompactTrust}>
+              <span>🔒 Strict NDA</span>
+              <span>•</span>
+              <span>⚡ 2-Hour Response SLA</span>
+              <span>•</span>
+              <span>💬 Direct Founder Call</span>
+            </div>
 
-                <h3 className={styles.thankYouHeadline}>Let’s Get Growing</h3>
-
-                <p className={styles.thankYouCopy}>
-                  Thank you, <strong>{finalForm.name}</strong>! Our senior growth team is analyzing your domain and will prepare your 90-day growth roadmap within <strong>2 hours</strong>.
-                </p>
-
-                <a
-                  href={`https://wa.me/918280788689?text=Hi%20Marketing%20Copilot%2C%20I%20just%20submitted%20the%20growth%20audit%20request%20for%20${encodeURIComponent(finalForm.company || 'my company')}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.thankYouWhatsAppBtn}
-                >
-                  <span className={styles.waDot} />
-                  <span>Fast-Track on WhatsApp ↗</span>
-                </a>
-              </div>
-            ) : (
-              <form onSubmit={(e) => handleFormSubmit(e, 'final')}>
-                <div className={styles.inputGridDouble}>
-                  <div className={styles.fieldGroup}>
-                    <label className={styles.fieldLabel}>
-                      Full Name <span>*</span>
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={finalForm.name}
-                      onChange={(e) => setFinalForm({ ...finalForm, name: e.target.value })}
-                      className={styles.tactileField}
-                    />
-                  </div>
-                  <div className={styles.fieldGroup}>
-                    <label className={styles.fieldLabel}>
-                      Work Email <span>*</span>
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      value={finalForm.email}
-                      onChange={(e) => setFinalForm({ ...finalForm, email: e.target.value })}
-                      className={styles.tactileField}
-                    />
-                  </div>
-                </div>
-
-                <div className={styles.inputGridDouble}>
-                  <div className={styles.fieldGroup}>
-                    <label className={styles.fieldLabel}>
-                      Phone / WhatsApp <span>*</span>
-                    </label>
-                    <input
-                      type="tel"
-                      required
-                      value={finalForm.phone}
-                      onChange={(e) => setFinalForm({ ...finalForm, phone: e.target.value })}
-                      className={styles.tactileField}
-                    />
-                  </div>
-                  <div className={styles.fieldGroup}>
-                    <label className={styles.fieldLabel}>
-                      Website or Company
-                    </label>
-                    <input
-                      type="text"
-                      value={finalForm.website}
-                      onChange={(e) => setFinalForm({ ...finalForm, website: e.target.value, company: e.target.value })}
-                      className={styles.tactileField}
-                    />
-                  </div>
-                </div>
-
-                {/* Primary Focus Areas (Compact Chiclets) */}
-                <div className={styles.fieldGroup}>
-                  <label className={styles.fieldLabel}>
-                    Primary Focus <span className={styles.fieldLabelOpt}>(Select any)</span>
-                  </label>
-                  <div className={styles.servicesChicletGrid}>
-                    {['⚡ SEO & Content', '🎯 Google Ads', '🚀 Meta Ads', '💻 Full-Funnel Growth'].map((svc) => {
-                      const selected = finalForm.services.includes(svc);
-                      return (
-                        <button
-                          type="button"
-                          key={svc}
-                          onClick={() => toggleService('final', svc)}
-                          className={`${styles.servicePillBtn} ${
-                            selected ? styles.servicePillBtnActive : ''
-                          }`}
-                        >
-                          {svc} {selected ? '✓' : '+'}
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                {finalError && (
-                  <p style={{ color: '#DC2626', fontSize: '12px', fontWeight: 700, margin: '8px 0' }}>
-                    {finalError}
-                  </p>
-                )}
-
-                {/* Submit Button */}
-                <div style={{ marginTop: 14 }}>
-                  <BeamButton
-                    type="submit"
-                    disabled={finalSubmitting}
-                    fullWidth
-                    size="lg"
-                    label={finalSubmitting ? 'Evaluating Blueprint...' : 'Get Free Consultation →'}
-                  />
-                </div>
-
-                <div className={styles.grandCompactTrust}>
-                  <span>🔒 Strict NDA</span>
-                  <span>•</span>
-                  <span>⚡ 2-Hour Response SLA</span>
-                  <span>•</span>
-                  <span>💬 Direct Founder Call</span>
-                </div>
-
-                <div className={styles.grandFooterBypass}>
-                  <span>Need an immediate audit?</span>
-                  <a
-                    href="https://wa.me/918280788689?text=Hi%20Marketing%20Copilot%2C%20I%20need%20an%20urgent%20growth%20audit%20consultation"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.grandFooterBypassLink}
-                  >
-                    WhatsApp directly at +91 82807 88689 →
-                  </a>
-                </div>
-              </form>
-            )}
+            <div className={styles.grandFooterBypass}>
+              <span>Need an immediate audit?</span>
+              <a
+                href="https://wa.me/918280788689?text=Hi%20Marketing%20Copilot%2C%20I%20need%20an%20urgent%20growth%20audit%20consultation"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.grandFooterBypassLink}
+              >
+                WhatsApp directly at +91 82807 88689 →
+              </a>
+            </div>
           </div>
         </div>
       </section>

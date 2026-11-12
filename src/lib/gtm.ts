@@ -9,7 +9,7 @@ export interface LeadSubmissionDetails {
   redirectToThankYou?: boolean;
 }
 
-const PENDING_LEAD_STORAGE_KEY = 'nova_pending_lead_event';
+export const PENDING_LEAD_STORAGE_KEY = 'nova_pending_lead_event';
 
 declare global {
   interface Window {
