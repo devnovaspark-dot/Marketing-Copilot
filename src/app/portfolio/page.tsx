@@ -7,6 +7,7 @@ import BeamButton from '@/components/BeamButton';
 import ScrollReveal from '@/components/ScrollReveal';
 import FAQSection from '@/app/_components/FAQSection';
 import QuickConnectMapSection from '@/app/_components/QuickConnectMapSection';
+import StrategistDeskCta from '@/components/StrategistDeskCta';
 import SmoothCounter from '@/components/SmoothCounter';
 import {
   spotlightProject,
@@ -1211,6 +1212,18 @@ export default function PortfolioPage() {
           FAQ SECTION (PLACED JUST ABOVE BOTTOM FOOTER CTA CARD)
           ───────────────────────────────────────────────────────────── */}
       <FAQSection />
+
+      {/* ─────────────────────────────────────────────────────────────
+          OPEN STRATEGY CONSULTATION FORM
+          ───────────────────────────────────────────────────────────── */}
+      <StrategistDeskCta
+        id="portfolio-consultation"
+        defaultTopic="💼 Case Studies & Revenue Scale"
+        eyebrow="CONFIDENTIAL STRATEGY DISPATCH • NO OBLIGATION"
+        title="Book a Free Consultation"
+        subtitle="Submit your details below for a free, confidential growth audit and 90-day execution blueprint."
+        formLocation="/portfolio"
+      />
 
       {/* ─────────────────────────────────────────────────────────────
           SECTION 12: BESPOKE BOTTOM CTA CARD (PUNCHY TEXT & GLOBAL BLUE)

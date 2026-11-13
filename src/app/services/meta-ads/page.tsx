@@ -6,6 +6,7 @@ import Link from 'next/link';
 import ScrollReveal from '@/components/ScrollReveal';
 import BeamButton from '@/components/BeamButton';
 import QuickConnectMapSection from '@/app/_components/QuickConnectMapSection';
+import StrategistDeskCta from '@/components/StrategistDeskCta';
 import styles from './meta-ads-page.module.css';
 
 // 3 Key Growth Pillars for "Build a Smarter Meta Ads Campaign"
@@ -724,6 +725,18 @@ export default function MetaAdsPage() {
           </div>
         </div>
       </section>
+
+      {/* ══════════════════════════════════════════════════
+          OPEN STRATEGY CONSULTATION FORM
+         ══════════════════════════════════════════════════ */}
+      <StrategistDeskCta
+        id="meta-ads-consultation"
+        defaultTopic="📱 Meta Ads & Social Scale"
+        eyebrow="CONFIDENTIAL STRATEGY DISPATCH • NO OBLIGATION"
+        title="Book a Free Consultation"
+        subtitle="Submit your details below for a free Meta Ads funnel review and creative strategy blueprint."
+        formLocation="/services/meta-ads"
+      />
 
       {/* ══════════════════════════════════════════════════
           9. LAST CARD ABOVE THE FOOTER

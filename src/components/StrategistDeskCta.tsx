@@ -11,6 +11,7 @@ interface StrategistDeskCtaProps {
   title?: string;
   subtitle?: string;
   eyebrow?: string;
+  formLocation?: string;
 }
 
 export default function StrategistDeskCta({
@@ -19,6 +20,7 @@ export default function StrategistDeskCta({
   title = 'Ask Our Strategists Directly.',
   subtitle = 'Submit your question below for a free, confidential strategic breakdown.',
   eyebrow = 'CONFIDENTIAL STRATEGY DISPATCH • NO PRESSURE',
+  formLocation,
 }: StrategistDeskCtaProps) {
   return (
     <section className={styles.section} id={id}>
@@ -106,7 +108,12 @@ export default function StrategistDeskCta({
                 </div>
               </div>
 
-              <HubSpotLeadForm />
+              <HubSpotLeadForm formLocation={formLocation} />
+
+              <div className={styles.trustMiniRow}>
+                <span className={styles.liveDot} style={{ width: 6, height: 6 }} />
+                <span>100% Confidential &bull; Response within 4 hrs &bull; No Spam</span>
+              </div>
             </div>
           </div>
         </ScrollReveal>

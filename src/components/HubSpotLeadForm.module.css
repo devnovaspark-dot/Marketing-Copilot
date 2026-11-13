@@ -1,7 +1,7 @@
 .wrapper {
   position: relative;
   width: 100%;
-  min-height: 520px;
+  min-height: 420px;
 }
 
 .wrapperLoaded {
@@ -20,7 +20,7 @@
   background: transparent;
 }
 
-/* Clips HubSpot's excess top whitespace and bottom free-tier branding footer */
+/* Clips HubSpot's excess top whitespace and bottom free-tier branding footer without clipping Submit */
 .cropViewport {
   width: 100%;
   overflow: hidden;
@@ -29,21 +29,21 @@
 
 .frame {
   width: 100%;
-  margin-top: -28px;
-  margin-bottom: -76px;
+  margin-top: -24px;
+  margin-bottom: -44px;
 }
 
 @media (max-width: 560px) {
   .frame {
-    margin-top: -20px;
-    margin-bottom: -90px;
+    margin-top: -18px;
+    margin-bottom: -46px;
   }
 }
 
 .loadingPlaceholder {
   position: absolute;
   inset: 0;
-  min-height: 520px;
+  min-height: 420px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -53,7 +53,7 @@
   border: 1px dashed rgba(148, 163, 184, 0.45);
   border-radius: 14px;
   color: #475569;
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 500;
   pointer-events: none;
   z-index: 2;

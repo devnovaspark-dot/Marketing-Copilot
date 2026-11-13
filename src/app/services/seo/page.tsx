@@ -7,6 +7,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import BeamButton from '@/components/BeamButton';
 import SERPSimulator from './_components/SERPSimulator';
 import QuickConnectMapSection from '@/app/_components/QuickConnectMapSection';
+import StrategistDeskCta from '@/components/StrategistDeskCta';
 import styles from './seo-page.module.css';
 
 // 12 Target Industries with tailored strategies
@@ -863,6 +864,18 @@ export default function SEOPage() {
           </div>
         </div>
       </section>
+
+      {/* ══════════════════════════════════════════════════
+          OPEN STRATEGY CONSULTATION FORM
+         ══════════════════════════════════════════════════ */}
+      <StrategistDeskCta
+        id="seo-consultation"
+        defaultTopic="🔍 Search Engine Optimization (SEO)"
+        eyebrow="CONFIDENTIAL ORGANIC SERP AUDIT • NO OBLIGATION"
+        title="Book a Free Consultation"
+        subtitle="Submit your details below for a free technical SEO audit and high-intent keyword roadmap."
+        formLocation="/services/seo"
+      />
 
       {/* ══════════════════════════════════════════════════
           10. CONVERSION SECTION (MAIN HOME PAGE STYLE)

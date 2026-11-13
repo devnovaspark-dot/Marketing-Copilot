@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import ScrollReveal from '@/components/ScrollReveal';
 import BeamButton from '@/components/BeamButton';
+import StrategistDeskCta from '@/components/StrategistDeskCta';
 
 // 12-Section Custom Components
 import GoogleAdsSearchSimulator from './_components/GoogleAdsSearchSimulator';
@@ -435,6 +436,18 @@ export default function GoogleAdsPage() {
           </div>
         </div>
       </section>
+
+      {/* ══════════════════════════════════════════════════
+          OPEN STRATEGY CONSULTATION FORM
+         ══════════════════════════════════════════════════ */}
+      <StrategistDeskCta
+        id="google-ads-consultation"
+        defaultTopic="🎯 Google Ads & PPC Search Scale"
+        eyebrow="CONFIDENTIAL PPC FORENSIC AUDIT • NO OBLIGATION"
+        title="Book a Free Consultation"
+        subtitle="Submit your details below for a free Google Ads account audit and high-converting keyword blueprint."
+        formLocation="/services/google-ads"
+      />
 
       {/* ══════════════════════════════════════════════════
           11. PRE-FOOTER CONVERSION CARD (SIGNATURE LIGHT SKEUOMORPHIC)

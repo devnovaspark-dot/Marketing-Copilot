@@ -6,6 +6,7 @@ import Link from 'next/link';
 import ScrollReveal from '@/components/ScrollReveal';
 import BeamButton from '@/components/BeamButton';
 import QuickConnectMapSection from '@/app/_components/QuickConnectMapSection';
+import StrategistDeskCta from '@/components/StrategistDeskCta';
 import styles from './web-dev-page.module.css';
 
 // 6 Core Web Development Services
@@ -600,6 +601,18 @@ export default function WebDevelopmentPage() {
           </div>
         </div>
       </section>
+
+      {/* ══════════════════════════════════════════════════
+          OPEN STRATEGY CONSULTATION FORM
+         ══════════════════════════════════════════════════ */}
+      <StrategistDeskCta
+        id="web-dev-consultation"
+        defaultTopic="💻 Next.js & Modern Web Architecture"
+        eyebrow="CONFIDENTIAL TECHNICAL REVIEW • NO OBLIGATION"
+        title="Book a Free Consultation"
+        subtitle="Submit your details below for a free technical estimation, UX breakdown, and speed architecture review."
+        formLocation="/services/web-development"
+      />
 
       {/* ══════════════════════════════════════════════════
           7. ABOVE FOOTER CARD (MAIN HOME PAGE STYLE CTA CARD)

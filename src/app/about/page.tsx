@@ -6,6 +6,7 @@ import Image from 'next/image';
 import ScrollReveal from '@/components/ScrollReveal';
 import BeamButton from '@/components/BeamButton';
 import QuickConnectMapSection from '@/app/_components/QuickConnectMapSection';
+import StrategistDeskCta from '@/components/StrategistDeskCta';
 import styles from './page.module.css';
 
 interface EpochMetric {
@@ -1721,6 +1722,18 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
+
+      {/* ══════════════════════════════════════════════════
+          OPEN STRATEGY CONSULTATION FORM
+         ══════════════════════════════════════════════════ */}
+      <StrategistDeskCta
+        id="about-consultation"
+        defaultTopic="🤝 Strategic Partnership & Agency Alignment"
+        eyebrow="CONFIDENTIAL STRATEGY DISPATCH • NO OBLIGATION"
+        title="Book a Free Consultation"
+        subtitle="Submit your details below for a free, confidential growth audit and 90-day execution blueprint."
+        formLocation="/about"
+      />
 
 {/* ══════════════════════════════════════════════════════
           SECTION 13: GRAND FINALE CTA COMMAND CARD

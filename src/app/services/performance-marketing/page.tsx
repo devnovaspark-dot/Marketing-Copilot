@@ -5,6 +5,7 @@ import Image from 'next/image';
 import ScrollReveal from '@/components/ScrollReveal';
 import BeamButton from '@/components/BeamButton';
 import QuickConnectMapSection from '@/app/_components/QuickConnectMapSection';
+import StrategistDeskCta from '@/components/StrategistDeskCta';
 import styles from './performance-marketing-page.module.css';
 
 // 4 Full-Funnel Stages
@@ -839,6 +840,18 @@ export default function PerformanceMarketingPage() {
           </div>
         </div>
       </section>
+
+      {/* ══════════════════════════════════════════════════
+          OPEN STRATEGY CONSULTATION FORM
+         ══════════════════════════════════════════════════ */}
+      <StrategistDeskCta
+        id="performance-marketing-consultation"
+        defaultTopic="🚀 Performance Marketing & Media Scale"
+        eyebrow="CONFIDENTIAL STRATEGY DISPATCH • NO OBLIGATION"
+        title="Book a Free Consultation"
+        subtitle="Submit your details below for a free, confidential growth audit and 90-day execution blueprint."
+        formLocation="/services/performance-marketing"
+      />
 
       {/* ══════════════════════════════════════════════════
           10. PRE-FOOTER CTA CARD (LIGHT SKEUOMORPHIC .homeCtaInnerBox)

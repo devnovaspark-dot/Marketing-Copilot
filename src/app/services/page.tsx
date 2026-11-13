@@ -6,6 +6,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import BeamButton from '@/components/BeamButton';
 import QuickConnectMapSection from '../_components/QuickConnectMapSection';
 import CTASection from '../_components/CTASection';
+import StrategistDeskCta from '@/components/StrategistDeskCta';
 import styles from './page.module.css';
 
 interface ServiceItem {
@@ -1481,8 +1482,17 @@ export default function ServicesPage() {
         </section>
 
         {/* ══════════════════════════════════════════════════
-            SECTION 10: MASTER SKEUOMORPHIC CONSULTATION CTA
+            SECTION 10: OPEN STRATEGY CONSULTATION FORM
            ══════════════════════════════════════════════════ */}
+        <StrategistDeskCta
+          id="services-consultation"
+          defaultTopic="🎯 Full-Funnel Digital Growth"
+          eyebrow="CONFIDENTIAL STRATEGY DISPATCH • NO OBLIGATION"
+          title="Book a Free Consultation"
+          subtitle="Submit your details below for a free, confidential growth audit and 90-day execution blueprint."
+          formLocation="/services"
+        />
+
         <CTASection />
       </div>
     </>

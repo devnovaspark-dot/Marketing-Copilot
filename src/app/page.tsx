@@ -5,6 +5,7 @@ import HeroSection from './_components/HeroSection';
 const ClientsSection = dynamic(() => import('./_components/ClientsSection'));
 
 const QuickConnectMapSection = dynamic(() => import('./_components/QuickConnectMapSection'));
+const StrategistDeskCta = dynamic(() => import('@/components/StrategistDeskCta'));
 const StoryVideoSection = dynamic(() => import('./_components/StoryVideoSection'));
 const MetricsSection = dynamic(() => import('./_components/MetricsSection'));
 const ProofShowcaseSection = dynamic(() => import('./_components/ProofShowcaseSection'));
@@ -70,12 +71,36 @@ export default function HomePage() {
       <HeroSection />
       <ClientsSection />
       <QuickConnectMapSection />
+      <StrategistDeskCta
+        id="home-cta-1"
+        defaultTopic="🎯 Growth Strategy & Performance Marketing"
+        eyebrow="CONFIDENTIAL STRATEGY DISPATCH • NO OBLIGATION"
+        title="Book a Free Consultation"
+        subtitle="Submit your details below for a free, confidential growth audit and 90-day execution blueprint."
+        formLocation="/"
+      />
       <BrandSpotlightSection />
       <div className="section-cv"><StoryVideoSection /></div>
       <div className="section-cv"><MetricsSection /></div>
+      <StrategistDeskCta
+        id="home-cta-2"
+        defaultTopic="🚀 Paid Ads & Search Scale"
+        eyebrow="DATA-BACKED EXECUTION • PROVEN PLAYBOOK"
+        title="Let’s Talk About Your Growth"
+        subtitle="Send us your business details for a free competitor teardown and growth roadmap."
+        formLocation="/"
+      />
       <div className="section-cv"><ProofShowcaseSection /></div>
       <div className="section-cv"><ServicesSection /></div>
       <div className="section-cv"><StrategySection /></div>
+      <StrategistDeskCta
+        id="home-cta-3"
+        defaultTopic="⚡ Full-Funnel Conversion & Scaling"
+        eyebrow="FOUNDER & STRATEGIST ON-DUTY • INDIA DESK"
+        title="Find Your Fastest Path to Growth"
+        subtitle="Get direct, actionable answers from our senior revenue architects on how to scale profitably."
+        formLocation="/"
+      />
       <div className="section-cv"><QuotesSection /></div>
       <div className="section-cv"><TeamPreview /></div>
       <div className="section-cv"><WhyChooseSection /></div>
