@@ -160,14 +160,48 @@ export default function ContactPage() {
           <div className={styles.right} id="hubspot-form">
             <ScrollReveal delay={100} className={styles.fullHeightReveal}>
               <div className={styles.form}>
+                {/* Form Top Specular Gradient Bar */}
+                <div className={styles.formTopAccentBar} />
+
                 <div>
                   <div className={styles.formHeader}>
-                    <div className={styles.formBadge}>
-                      <span className={styles.formBadgeDot} />
-                      <span>STRATEGY CONSULTATION</span>
+                    <div className={styles.formTopRow}>
+                      <div className={styles.formBadge}>
+                        <span className={styles.formBadgeDot} />
+                        <span>🇮🇳 STRATEGY CONSULTATION</span>
+                      </div>
+
+                      {/* Senior Advisory Verification Badge with Avatars */}
+                      <div className={styles.strategistAvatarsPill}>
+                        <div className={styles.avatarCluster}>
+                          <span className={styles.avatarMini} title="Senior Strategist NS">NS</span>
+                          <span className={styles.avatarMini} title="Performance Lead MC">MC</span>
+                          <span className={styles.avatarMini} title="Growth Architect UR">UR</span>
+                        </div>
+                        <span className={styles.advisorText}>Active Growth Desk</span>
+                      </div>
                     </div>
-                    <h3 className={styles.formTitle}>Request a Consultation</h3>
-                    <p className={styles.formSubtitle}>Direct strategist response within 4 hours.</p>
+
+                    <h3 className={styles.formTitle}>Book Your Free Consultation</h3>
+                    <p className={styles.formSubtitle}>Submit your details below. Connect directly with our senior Indian growth strategists within 4 hours.</p>
+
+                    {/* Micro Indian Trust & Rating Bar */}
+                    <div className={styles.formTrustBar}>
+                      <div className={styles.trustItem}>
+                        <span className={styles.trustFlag}>🇮🇳</span>
+                        <span>Pan-India Advisory</span>
+                      </div>
+                      <div className={styles.trustDivider}>•</div>
+                      <div className={styles.trustItem}>
+                        <span className={styles.stars}>★★★★★</span>
+                        <span>4.9/5 (100+ Reviews)</span>
+                      </div>
+                      <div className={styles.trustDivider}>•</div>
+                      <div className={styles.trustItem}>
+                        <span className={styles.clockIcon}>⚡</span>
+                        <span>4-Hr Response</span>
+                      </div>
+                    </div>
                   </div>
 
                   <HubSpotLeadForm formLocation="/contact" />
@@ -176,7 +210,7 @@ export default function ContactPage() {
                 <div className={styles.formFooterStrip}>
                   <div className={styles.formTrustNote}>
                     <span className={styles.trustGreenDot} />
-                    <span>100% Confidential &bull; Response within 4 hrs &bull; No Spam</span>
+                    <span>🇮🇳 100% Confidential NDA &bull; 4-Hr Guaranteed Callback &bull; Zero Spam</span>
                   </div>
                 </div>
               </div>

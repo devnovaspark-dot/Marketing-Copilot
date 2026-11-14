@@ -3,7 +3,7 @@
   padding: 8px 0 12px;
   background: linear-gradient(180deg, #F8FAFC 0%, #EFF6FF 50%, #F8FAFC 100%);
   overflow: hidden;
-  scroll-margin-top: 96px;
+  scroll-margin-top: 120px;
 }
 
 .ambientGlowTop {
@@ -368,13 +368,33 @@
    RIGHT PANE: SKEUOMORPHIC LEAD INTAKE CARD
 ══════════════════════════════════════════════════ */
 .blueprintIntakePane {
+  position: relative;
   padding: 8px 10px 4px;
-  background: #FFFFFF;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 55%, #F1F5F9 100%);
   display: flex;
   flex-direction: column;
+  border-left: 1px solid rgba(11, 32, 147, 0.1);
+  box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.9);
+}
+
+.formTopAccentBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #F59E0B 0%, #38BDF8 50%, #10B981 100%);
 }
 
 .intakeHeader {
+  margin-bottom: 2px;
+}
+
+.intakeTopRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
   margin-bottom: 2px;
 }
 
@@ -391,7 +411,6 @@
   padding: 1px 5px;
   border-radius: 4px;
   border: 1px solid rgba(245, 158, 11, 0.3);
-  margin-bottom: 2px;
 }
 
 .eyebrowDot {
@@ -399,6 +418,51 @@
   height: 4px;
   border-radius: 50%;
   background: #F59E0B;
+}
+
+.strategistAvatarsPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 1px 5px;
+  background: rgba(11, 32, 147, 0.05);
+  border: 1px solid rgba(11, 32, 147, 0.12);
+  border-radius: 9999px;
+}
+
+.avatarCluster {
+  display: flex;
+  align-items: center;
+}
+
+.avatarMini {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: 1px solid #FFFFFF;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5.5px;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-left: -3px;
+  background: #0B2093;
+}
+
+.avatarMini:first-child {
+  margin-left: 0;
+  background: #0284C7;
+}
+
+.avatarMini:last-child {
+  background: #D97706;
+}
+
+.advisorText {
+  font-size: 7px;
+  font-weight: 700;
+  color: #0B2093;
 }
 
 .intakeTitle {
@@ -412,10 +476,50 @@
 }
 
 .intakeSub {
-  font-size: 9px;
+  font-size: 8.5px;
   color: #475569;
   line-height: 1.25;
-  margin: 0 0 3px;
+  margin: 0 0 2px;
+}
+
+.formTrustBar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 5px;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 4px;
+  font-size: 7.5px;
+  font-weight: 700;
+  color: #334155;
+  margin-bottom: 2px;
+}
+
+.trustItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 2.5px;
+}
+
+.trustFlag {
+  font-size: 8.5px;
+}
+
+.trustDivider {
+  color: #CBD5E1;
+  font-size: 6px;
+}
+
+.stars {
+  color: #F59E0B;
+  letter-spacing: -0.05em;
+  font-size: 7px;
+}
+
+.clockIcon {
+  color: #0284C7;
+  font-size: 7.5px;
 }
 
 /* Tactile Recessed Trust Badge */

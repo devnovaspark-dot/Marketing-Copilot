@@ -118,13 +118,47 @@ export default function ExecutiveRevenueBlueprint({
 
             {/* Right Pane: Compact Skeuomorphic Lead Intake Card */}
             <div className={styles.blueprintIntakePane}>
+              {/* Form Top Specular Gradient Bar */}
+              <div className={styles.formTopAccentBar} />
+
               <div className={styles.intakeHeader}>
-                <div className={styles.eyebrow}>
-                  <span className={styles.eyebrowDot} />
-                  <span>{eyebrow}</span>
+                <div className={styles.intakeTopRow}>
+                  <div className={styles.eyebrow}>
+                    <span className={styles.eyebrowDot} />
+                    <span>{eyebrow}</span>
+                  </div>
+
+                  {/* Senior Advisory Verification Badge with Avatars */}
+                  <div className={styles.strategistAvatarsPill}>
+                    <div className={styles.avatarCluster}>
+                      <span className={styles.avatarMini} title="Senior Strategist NS">NS</span>
+                      <span className={styles.avatarMini} title="Performance Lead MC">MC</span>
+                      <span className={styles.avatarMini} title="Growth Architect UR">UR</span>
+                    </div>
+                    <span className={styles.advisorText}>Partner Desk</span>
+                  </div>
                 </div>
+
                 <h2 className={styles.intakeTitle}>{title}</h2>
                 <p className={styles.intakeSub}>{subtitle}</p>
+
+                {/* Micro Indian Trust & Rating Bar */}
+                <div className={styles.formTrustBar}>
+                  <div className={styles.trustItem}>
+                    <span className={styles.trustFlag}>🇮🇳</span>
+                    <span>Executive Advisory</span>
+                  </div>
+                  <div className={styles.trustDivider}>•</div>
+                  <div className={styles.trustItem}>
+                    <span className={styles.stars}>★★★★★</span>
+                    <span>Confidential NDA</span>
+                  </div>
+                  <div className={styles.trustDivider}>•</div>
+                  <div className={styles.trustItem}>
+                    <span className={styles.clockIcon}>⚡</span>
+                    <span>Senior Partners</span>
+                  </div>
+                </div>
               </div>
 
               <HubSpotLeadForm id="blueprint-exec-form" formLocation={formLocation} />
