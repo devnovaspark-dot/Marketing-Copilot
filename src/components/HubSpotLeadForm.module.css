@@ -39,7 +39,7 @@
   transform: scale(0.91);
   transform-origin: top center;
   margin-top: -26px;
-  margin-bottom: -96px;
+  margin-bottom: -126px;
 }
 
 @media (max-width: 640px) {
@@ -49,7 +49,7 @@
     transform: scale(0.82);
     transform-origin: top center;
     margin-top: -20px;
-    margin-bottom: -150px;
+    margin-bottom: -198px;
   }
 }
 
@@ -60,7 +60,7 @@
     transform: scale(0.79);
     transform-origin: top center;
     margin-top: -18px;
-    margin-bottom: -156px;
+    margin-bottom: -208px;
   }
 }
 
