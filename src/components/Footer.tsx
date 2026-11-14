@@ -266,7 +266,7 @@ export default function Footer() {
                 <span className={styles.mapPulseDot} />
                 <span>INNOVATION STUDIO &bull; BHUBANESWAR HQ</span>
               </div>
-              <h4 className={styles.mapTitle}>Visit Our Headquarters &amp; Strategy War-Room</h4>
+              <h4 className={styles.mapTitle}>Visit Our Indian Headquarters</h4>
               <p className={styles.mapAddress}>
                 Mallick Complex, Unit 3, Kharvela Nagar, Bhubaneswar, Odisha 751001
               </p>
