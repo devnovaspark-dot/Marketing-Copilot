@@ -248,6 +248,17 @@ export default function PerformanceMarketingPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
+          OPEN STRATEGY CONSULTATION FORM (JUST BELOW HERO)
+         ══════════════════════════════════════════════════ */}
+      <PerformanceAuditTerminal
+        id="performance-marketing-consultation"
+        eyebrow="🇮🇳 PERFORMANCE MARKETING LAB • ₹0 AUDIT"
+        title="Book Your Free Performance & Ad Audit"
+        subtitle="Submit your details below. Our senior Indian performance team will inspect your ad accounts to stop budget leaks and scale profitable CAC."
+        formLocation="/services/performance-marketing"
+      />
+
+      {/* ══════════════════════════════════════════════════
           3. FULL-FUNNEL PERFORMANCE MARKETING STRATEGY
          ══════════════════════════════════════════════════ */}
       <section className={styles.funnelSection} id="funnel-strategy">

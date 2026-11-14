@@ -751,6 +751,17 @@ export default function ServicesPage() {
         </section>
 
         {/* ══════════════════════════════════════════════════
+            OPEN STRATEGY CONSULTATION FORM (JUST BELOW HERO)
+           ══════════════════════════════════════════════════ */}
+        <StrategistGrowthCockpit
+          id="services-consultation"
+          eyebrow="🇮🇳 MULTI-CHANNEL STRATEGY • 1-ON-1 DESK"
+          title="Book Your Free Consultation"
+          subtitle="Submit your details below. Get an actionable growth roadmap tailored for your business in India from our senior strategists."
+          formLocation="/services"
+        />
+
+        {/* ══════════════════════════════════════════════════
             SECTION 2: WHAT WE DO — INTEGRATED GROWTH PRACTICES
             (Premium Split-View Interactive Showcase)
            ══════════════════════════════════════════════════ */}
@@ -1475,16 +1486,7 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        {/* ══════════════════════════════════════════════════
-            SECTION 10: OPEN STRATEGY CONSULTATION FORM
-           ══════════════════════════════════════════════════ */}
-        <StrategistGrowthCockpit
-          id="services-consultation"
-          eyebrow="MULTI-CHANNEL STRATEGY • 1-ON-1 DESK"
-          title="Book Your Free Multi-Channel Growth Consultation"
-          subtitle="Submit your details below for a free, confidential growth audit and 90-day execution blueprint."
-          formLocation="/services"
-        />
+
 
         <CTASection />
       </div>

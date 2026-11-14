@@ -7,6 +7,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import CTASection from '@/app/_components/CTASection';
 import BlogSidebarCta from '@/components/BlogSidebarCta';
 import BeamButton from '@/components/BeamButton';
+import StrategistGrowthCockpit from '@/components/StrategistGrowthCockpit';
 import styles from './page.module.css';
 
 export interface Article {
@@ -159,6 +160,17 @@ export default function BlogClient({ articles = [] }: { articles: Article[] }) {
             </div>
           </div>
         </section>
+
+        {/* ================================================================= */}
+        {/* OPEN STRATEGY CONSULTATION FORM (JUST BELOW HERO)                 */}
+        {/* ================================================================= */}
+        <StrategistGrowthCockpit
+          id="blog-consultation"
+          eyebrow="🇮🇳 GROWTH INTELLIGENCE • 1-ON-1 STRATEGY"
+          title="Book Your Free Consultation"
+          subtitle="Submit your details below. Get an actionable growth roadmap tailored for your business in India from our senior strategists."
+          formLocation="/blog"
+        />
 
         {/* ================================================================= */}
         {/* 2. Filter Bar with Working Dropdown & Skeuomorphic Controls       */}

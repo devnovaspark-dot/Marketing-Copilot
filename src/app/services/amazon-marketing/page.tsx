@@ -5,6 +5,7 @@ import Image from 'next/image';
 import ScrollReveal from '@/components/ScrollReveal';
 import BeamButton from '@/components/BeamButton';
 
+import StrategistGrowthCockpit from '@/components/StrategistGrowthCockpit';
 import styles from './amazon-marketing-page.module.css';
 
 // 4 Pillars of Why Choose Marketing Copilot
@@ -194,6 +195,17 @@ export default function AmazonMarketingPage() {
           </div>
         </div>
       </section>
+
+      {/* ══════════════════════════════════════════════════
+          OPEN STRATEGY CONSULTATION FORM (JUST BELOW HERO)
+         ══════════════════════════════════════════════════ */}
+      <StrategistGrowthCockpit
+        id="amazon-marketing-consultation"
+        eyebrow="🇮🇳 AMAZON PPC & E-COMMERCE SCALE • 1-ON-1 DESK"
+        title="Book Your Free Consultation"
+        subtitle="Submit your details below. Get an actionable growth roadmap tailored for your business in India from our senior strategists."
+        formLocation="/services/amazon-marketing"
+      />
 
       {/* ══════════════════════════════════════════════════
           3. HOW AMAZON PPC SUPPORTS ECOMMERCE GROWTH

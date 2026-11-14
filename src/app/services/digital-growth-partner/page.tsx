@@ -153,6 +153,17 @@ export default function DigitalGrowthPartnerPage() {
       </section>
 
       {/* ═════════════════════════════════════════════════════════════════
+          OPEN STRATEGY CONSULTATION FORM (JUST BELOW HERO)
+         ═════════════════════════════════════════════════════════════════ */}
+      <StrategistGrowthCockpit
+        id="desk-cta-1"
+        eyebrow="🇮🇳 DIGITAL GROWTH PARTNER • 1-ON-1 STRATEGY"
+        title="Book Your Free Consultation"
+        subtitle="Connect directly with our senior Indian growth strategists to audit acquisition channels and map high-margin expansion."
+        formLocation="/services/digital-growth-partner"
+      />
+
+      {/* ═════════════════════════════════════════════════════════════════
           SLIDING BRAND ICONS MARQUEE (COLORFUL & VIBRANT AS LIKE HOME PAGE)
       ═════════════════════════════════════════════ */}
       <section className={styles.slidingBrandSection}>
@@ -318,16 +329,7 @@ export default function DigitalGrowthPartnerPage() {
         </div>
       </section>
 
-      {/* ═════════════════════════════════════════════════════════════════
-          CTA CARD REPEAT #1 (After Section 3)
-      ═════════════════════════════════════════════ */}
-      <StrategistGrowthCockpit
-        id="desk-cta-1"
-        eyebrow="DIGITAL GROWTH PARTNER • 1-ON-1 STRATEGY"
-        title="Book Your Free Growth Partnership Session"
-        subtitle="Connect directly with our senior growth strategists to audit acquisition channels and map high-margin expansion."
-        formLocation="/services/digital-growth-partner"
-      />
+
 
       {/* ═════════════════════════════════════════════════════════════════
           49 LIVE PROOF TELEMETRY DASHBOARDS

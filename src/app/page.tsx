@@ -70,13 +70,13 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <ClientsSection />
       <StrategistGrowthCockpit
         id="home-strategy-cockpit"
-        title="Book Your Free Growth Strategy Session"
-        subtitle="Submit your details below for a free, confidential growth audit and 90-day execution blueprint tailored to your brand."
+        title="Book Your Free Consultation"
+        subtitle="Submit your details below. Get an actionable growth roadmap tailored for your business in India from our senior strategists."
         formLocation="/"
       />
+      <ClientsSection />
       <BrandSpotlightSection />
       <div className="section-cv"><StoryVideoSection /></div>
       <div className="section-cv"><MetricsSection /></div>

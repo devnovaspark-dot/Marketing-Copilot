@@ -252,6 +252,17 @@ export default function WebDevelopmentPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
+          OPEN STRATEGY CONSULTATION FORM (JUST BELOW HERO)
+         ══════════════════════════════════════════════════ */}
+      <ExecutiveRevenueBlueprint
+        id="web-dev-consultation"
+        eyebrow="🇮🇳 WEB PLATFORM ADVISORY • 90-DAY SCALE"
+        title="Book Your Free Web Platform Consultation"
+        subtitle="Connect with our lead web architects. Plan a lightning-fast web platform engineered for high conversion rates and scalability across India."
+        formLocation="/services/web-development"
+      />
+
+      {/* ══════════════════════════════════════════════════
           3. SMART WEB SOLUTIONS FOR GROWING BRANDS (6 SERVICES)
          ══════════════════════════════════════════════════ */}
       <section id="services" className={styles.servicesSection}>

@@ -445,6 +445,17 @@ export default function LinkedInMarketingPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
+          OPEN STRATEGY CONSULTATION FORM (JUST BELOW HERO)
+         ══════════════════════════════════════════════════ */}
+      <ExecutiveRevenueBlueprint
+        id="enquiry-section"
+        eyebrow="🇮🇳 B2B LINKEDIN ADVISORY • 90-DAY SCALE"
+        title="Book Your Free B2B LinkedIn Consultation"
+        subtitle="Connect directly with our senior Indian growth partners. Build a predictable outbound pipeline and high-converting thought leadership roadmap."
+        formLocation="/services/linkedin-marketing-services-in-india"
+      />
+
+      {/* ══════════════════════════════════════════════════
           SECTION 2: LINKEDIN SALES NAVIGATOR SERVICES
          ══════════════════════════════════════════════════ */}
       <section className={styles.salesNavSection} id="sales-navigator-services">

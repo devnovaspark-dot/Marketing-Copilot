@@ -34,21 +34,21 @@ export default function DigitalMarketingBhubaneswarPage() {
   return (
     <>
       <HeroSection />
-      <ClientsSection />
       <StrategistGrowthCockpit
         id="desk-cta-in-1"
-        eyebrow="BHUBANESWAR HQ • PAN-INDIA STRATEGY"
-        title="Book Your Free Growth Strategy Session"
-        subtitle="Connect directly with our senior growth strategists for a free audit and 90-day execution roadmap."
+        eyebrow="🇮🇳 BHUBANESWAR HQ • PAN-INDIA STRATEGY"
+        title="Book Your Free Consultation"
+        subtitle="Connect directly with our senior Indian growth strategists for a free audit and 90-day execution roadmap."
         formLocation="/digital-marketing-company-in-bhubaneswar"
       />
+      <ClientsSection />
       <StoryVideoSection />
       <MetricsSection />
       <ServicesSection />
       <PerformanceAuditTerminal
         id="desk-cta-in-2"
-        eyebrow="PERFORMANCE LAB • ₹0 AUDIT"
-        title="Claim Your Free Channel & Ad Spend Audit"
+        eyebrow="🇮🇳 PERFORMANCE LAB • ₹0 AUDIT"
+        title="Book Your Free Channel & Ad Spend Audit"
         subtitle="Submit your details below. Our performance team will analyze your ad accounts and search channels to stop budget waste."
         formLocation="/digital-marketing-company-in-bhubaneswar"
       />
@@ -57,8 +57,8 @@ export default function DigitalMarketingBhubaneswarPage() {
       <TeamPreview />
       <ExecutiveRevenueBlueprint
         id="desk-cta-in-3"
-        eyebrow="FOUNDER & CXO ADVISORY • 90-DAY SCALE"
-        title="Request Your Free 90-Day Revenue Blueprint"
+        eyebrow="🇮🇳 FOUNDER & CXO ADVISORY • 90-DAY SCALE"
+        title="Book Your Free 90-Day Revenue Blueprint"
         subtitle="Get a milestone-driven scaling engine engineered for your market with direct senior partner alignment."
         formLocation="/digital-marketing-company-in-bhubaneswar"
       />

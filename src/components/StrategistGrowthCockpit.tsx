@@ -16,10 +16,10 @@ interface StrategistGrowthCockpitProps {
 
 export default function StrategistGrowthCockpit({
   id = 'growth-strategy-cockpit',
-  defaultTopic = '🎯 Growth Strategy & Performance Marketing',
-  title = 'Book Your Free Strategy Consultation',
-  subtitle = 'Submit your details below for a confidential growth blueprint tailored to your brand.',
-  eyebrow = 'CONFIDENTIAL STRATEGY DISPATCH • NO OBLIGATION',
+  defaultTopic = '🎯 Business Growth & Performance Marketing',
+  title = 'Book Your Free Consultation',
+  subtitle = 'Submit your details below. Get an actionable growth roadmap tailored for your business in India from our senior strategists.',
+  eyebrow = '🇮🇳 100% FREE STRATEGY CONSULTATION • NO OBLIGATION',
   formLocation = '/',
 }: StrategistGrowthCockpitProps) {
   return (
@@ -33,60 +33,87 @@ export default function StrategistGrowthCockpit({
 
             {/* Left Pane: Skeuomorphic Navy Blue Growth Console */}
             <div className={styles.strategistDeskPane}>
-              <div>
-                <div className={styles.deskHardwareBar}>
-                  <div className={styles.liveStatusPill}>
-                    <span className={styles.liveDot} />
-                    <span>STRATEGY DESK &bull; INDIA HQ</span>
-                  </div>
-                  <div className={styles.hardwareScrew} title="Console Hardware Accent" />
+              {/* Header Status Bar */}
+              <div className={styles.deskHardwareBar}>
+                <div className={styles.liveStatusPill}>
+                  <span className={styles.liveDot} />
+                  <span>🇮🇳 STRATEGY DESK &bull; BHUBANESWAR HQ</span>
                 </div>
+                <div className={styles.hardwareScrew} title="Console Hardware Accent" />
+              </div>
 
-                <div className={styles.deskHeader}>
-                  <h3 className={styles.deskTitle}>
-                    Talk Directly With a Growth Strategist
-                  </h3>
-                  <p className={styles.deskSub}>
-                    A confidential 1-on-1 strategy session to audit acquisition channels and map high-ROAS growth.
-                  </p>
-                </div>
+              <div className={styles.deskHeader}>
+                <h3 className={styles.deskTitle}>
+                  Connect With India&apos;s Top Growth Strategists
+                </h3>
+                <p className={styles.deskSub}>
+                  Confidential 1-on-1 strategy call to audit your acquisition channels, SEO &amp; ads for Indian markets.
+                </p>
+              </div>
 
-                {/* Full Visible Agency Photo Showcase — 100% Clean, Zero Text Overlaid */}
-                <div className={styles.visualImageCard}>
-                  <Image
-                    src="/images/Modern Marketing Copilot Office Reception.webp"
-                    alt="Marketing Copilot Innovation Studio Reception"
-                    fill
-                    className={styles.panelImg}
-                    priority={false}
-                  />
-                </div>
-
-                {/* Tactile Hardware Micro-Tiles */}
-                <div className={styles.tactileTileList}>
-                  <div className={styles.tactileTile}>
-                    <span className={styles.tileIcon}>⚡</span>
-                    <span className={styles.tileText}>4-Hour Direct Turnaround</span>
-                  </div>
-                  <div className={styles.tactileTile}>
-                    <span className={styles.tileIcon}>🔒</span>
-                    <span className={styles.tileText}>100% Confidential NDA Protected</span>
-                  </div>
+              {/* Full Visible Agency Photo Showcase with Location Pill */}
+              <div className={styles.visualImageCard}>
+                <Image
+                  src="/images/Modern Marketing Copilot Office Reception.webp"
+                  alt="Marketing Copilot Innovation Studio Reception"
+                  fill
+                  className={styles.panelImg}
+                  priority={false}
+                />
+                <div className={styles.imageOverlayPill}>
+                  <span className={styles.imageOverlayDot} />
+                  <span>📍 Bhubaneswar Studio &bull; Pan-India Advisory</span>
                 </div>
               </div>
 
-              {/* 3D Illuminated Tactile WhatsApp Push Switch */}
-              <div className={styles.deskWhatsappCallout}>
+              {/* Key Indian Growth Metrics Tray */}
+              <div className={styles.metricsTray}>
+                <div className={styles.metricCell}>
+                  <span className={styles.metricNum}>100+</span>
+                  <span className={styles.metricLbl}>Brands Scaled</span>
+                </div>
+                <div className={styles.metricCell}>
+                  <span className={styles.metricNum}>₹15+ Cr</span>
+                  <span className={styles.metricLbl}>Revenue Impact</span>
+                </div>
+                <div className={styles.metricCell}>
+                  <span className={styles.metricNum}>4-Hour</span>
+                  <span className={styles.metricLbl}>Direct Callback</span>
+                </div>
+              </div>
+
+              {/* Tactile Hardware Micro-Tiles */}
+              <div className={styles.tactileTileList}>
+                <div className={styles.tactileTile}>
+                  <span className={styles.tileIcon}>🇮🇳</span>
+                  <span className={styles.tileText}>Pan-India Localized Search &amp; Paid Media</span>
+                </div>
+                <div className={styles.tactileTile}>
+                  <span className={styles.tileIcon}>⚡</span>
+                  <span className={styles.tileText}>100% Free 30-Min Growth Audit &amp; Blueprint</span>
+                </div>
+                <div className={styles.tactileTile}>
+                  <span className={styles.tileIcon}>🔒</span>
+                  <span className={styles.tileText}>Confidential Non-Disclosure (NDA) Protected</span>
+                </div>
+              </div>
+
+              {/* Direct Actions: Call + WhatsApp */}
+              <div className={styles.deskActions}>
+                <a href="tel:+918280788689" className={styles.hotlineLink} title="Direct call with senior strategist">
+                  <span>📞 Call Senior Desk: <strong>+91 82807 88689</strong> ↗</span>
+                </a>
+
                 <a
-                  href={`https://wa.me/918763570630?text=${encodeURIComponent(
-                    `Hi Aarav, I would like to book a free growth strategy consultation regarding ${defaultTopic} for my business.`
+                  href={`https://wa.me/918280788689?text=${encodeURIComponent(
+                    `Hi Marketing Copilot, I would like to book a free growth consultation regarding ${defaultTopic} for my business.`
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.deskWhatsappBtn}
                 >
                   <span className={styles.btnGlowIndicator} />
-                  <span>💬 Chat on WhatsApp (Avg. 18m) ↗</span>
+                  <span>💬 Chat on WhatsApp with Strategist (Avg. 15m) ↗</span>
                 </a>
               </div>
             </div>
@@ -106,7 +133,7 @@ export default function StrategistGrowthCockpit({
 
               <div className={styles.trustBadgeBar}>
                 <span className={styles.lockIcon}>🛡️</span>
-                <span>100% Confidential NDA &bull; 4-Hour Turnaround &bull; Zero Spam</span>
+                <span>🇮🇳 Serving Pan-India &bull; 100% Confidential NDA &bull; 4-Hr Turnaround</span>
               </div>
             </div>
           </div>

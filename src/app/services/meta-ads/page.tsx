@@ -262,6 +262,17 @@ export default function MetaAdsPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
+          OPEN STRATEGY CONSULTATION FORM (JUST BELOW HERO)
+         ══════════════════════════════════════════════════ */}
+      <PerformanceAuditTerminal
+        id="meta-ads-consultation"
+        eyebrow="🇮🇳 META ADS & ROAS AUDIT • ₹0 BENCHMARK"
+        title="Book Your Free Performance & Ad Audit"
+        subtitle="Submit your details below. Our senior Indian performance team will inspect your Instagram & Facebook campaigns to stop budget waste and scale ROAS."
+        formLocation="/services/meta-ads"
+      />
+
+      {/* ══════════════════════════════════════════════════
           3. TURN META ADS INTO BUSINESS GROWTH
          ══════════════════════════════════════════════════ */}
       <section id="overview" className={styles.smartCampaignSection}>

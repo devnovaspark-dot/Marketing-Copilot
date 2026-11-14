@@ -853,6 +853,17 @@ export default function FAQPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════════════
+          OPEN STRATEGY CONSULTATION FORM (JUST BELOW HERO)
+         ══════════════════════════════════════════════════════════ */}
+      <StrategistGrowthCockpit
+        id="ask-question"
+        eyebrow="🇮🇳 100% FREE STRATEGY CONSULTATION • NO OBLIGATION"
+        title="Book Your Free Consultation"
+        subtitle="Submit your details below. Get an actionable growth roadmap tailored for your business in India from our senior strategists."
+        formLocation="/faq"
+      />
+
+      {/* ══════════════════════════════════════════════════════════
           SECTION 2: STORYTELLING ARCHITECTURE (WITHOUT ANY CARD)
          ══════════════════════════════════════════════════════════ */}
       <section className={styles.storySection}>
@@ -1298,16 +1309,7 @@ export default function FAQPage() {
         </div>
       </section>
 
-      {/* ══════════════════════════════════════════════════════════
-          SECTION 4: DUAL-PANE EXECUTIVE STRATEGIST DISPATCH COCKPIT
-         ══════════════════════════════════════════════════════════ */}
-      <StrategistGrowthCockpit
-        id="ask-question"
-        eyebrow="CONFIDENTIAL STRATEGY DISPATCH • NO PRESSURE"
-        title="Ask Our Growth Strategists Directly"
-        subtitle="Submit your question below for a free, confidential strategic breakdown."
-        formLocation="/faq"
-      />
+
 
       {/* Global Bottom CTA */}
       <CTASection />

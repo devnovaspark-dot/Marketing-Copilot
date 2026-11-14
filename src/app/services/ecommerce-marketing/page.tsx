@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import ScrollReveal from '@/components/ScrollReveal';
 import BeamButton from '@/components/BeamButton';
+import StrategistGrowthCockpit from '@/components/StrategistGrowthCockpit';
 
 import styles from './ecommerce-page.module.css';
 
@@ -191,6 +192,17 @@ export default function EcommerceMarketingPage() {
           </div>
         </div>
       </section>
+
+      {/* ══════════════════════════════════════════════════
+          OPEN STRATEGY CONSULTATION FORM (JUST BELOW HERO)
+         ══════════════════════════════════════════════════ */}
+      <StrategistGrowthCockpit
+        id="ecommerce-marketing-consultation"
+        eyebrow="🇮🇳 E-COMMERCE & D2C SCALE • 1-ON-1 STRATEGY"
+        title="Book Your Free Consultation"
+        subtitle="Submit your details below. Get an actionable growth roadmap tailored for your business in India from our senior strategists."
+        formLocation="/services/ecommerce-marketing"
+      />
 
       {/* ══════════════════════════════════════════════════
           3. WHAT MAKES ECOMMERCE MARKETING DIFFERENT?

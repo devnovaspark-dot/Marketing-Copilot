@@ -12,6 +12,7 @@ import BrandPricingPowerCalculator from './_components/BrandPricingPowerCalculat
 import BrandComparisonMatrix from './_components/BrandComparisonMatrix';
 import BrandIdentityRoadmap from './_components/BrandIdentityRoadmap';
 
+import StrategistGrowthCockpit from '@/components/StrategistGrowthCockpit';
 import styles from './creative-branding-page.module.css';
 
 const brandingArsenal = [
@@ -174,6 +175,17 @@ export default function CreativeBrandingPage() {
           </div>
         </div>
       </section>
+
+      {/* ══════════════════════════════════════════════════
+          OPEN STRATEGY CONSULTATION FORM (JUST BELOW HERO)
+         ══════════════════════════════════════════════════ */}
+      <StrategistGrowthCockpit
+        id="creative-branding-consultation"
+        eyebrow="🇮🇳 CREATIVE BRANDING & IDENTITY • 1-ON-1 DESK"
+        title="Book Your Free Consultation"
+        subtitle="Submit your details below. Get an actionable growth roadmap tailored for your business in India from our senior strategists."
+        formLocation="/services/creative-branding"
+      />
 
       {/* ══════════════════════════════════════════════════
           2. INTERACTIVE BRAND IDENTITY VISUALIZER

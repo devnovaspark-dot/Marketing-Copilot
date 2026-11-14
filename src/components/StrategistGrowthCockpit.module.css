@@ -19,12 +19,12 @@
 }
 
 /* ══════════════════════════════════════════════════
-   SKEUOMORPHIC 3D MAIN CONSOLE CHASSIS (COMPACT 780PX)
+   SKEUOMORPHIC 3D MAIN CONSOLE CHASSIS (COMPACT 720PX)
 ══════════════════════════════════════════════════ */
 .dispatchCockpit {
   position: relative;
   display: grid;
-  grid-template-columns: 0.90fr 1.15fr;
+  grid-template-columns: 0.95fr 1.15fr;
   background: #FFFFFF;
   border: 1px solid rgba(11, 32, 147, 0.22);
   border-radius: 15px;
@@ -34,7 +34,7 @@
     0 22px 48px -12px rgba(7, 21, 75, 0.2),
     0 2px 8px rgba(15, 23, 42, 0.05);
   overflow: hidden;
-  max-width: 680px;
+  max-width: 720px;
   margin: 0 auto;
 }
 
@@ -55,12 +55,12 @@
 ══════════════════════════════════════════════════ */
 .strategistDeskPane {
   background: linear-gradient(165deg, #0B227E 0%, #07154B 50%, #030B2A 100%);
-  padding: 10px 12px 8px;
+  padding: 10px 12px 10px;
   color: #FFFFFF;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 10px;
+  justify-content: flex-start;
+  gap: 6px;
   position: relative;
   box-shadow: 
     inset 1px 1.5px 0 rgba(255, 255, 255, 0.22),
@@ -84,7 +84,7 @@
   font-family: var(--font-display, sans-serif);
   font-size: 8.5px;
   font-weight: 800;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   color: #A7F3D0;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.3);
 }
@@ -132,36 +132,41 @@
 }
 
 .deskHeader {
-  margin-top: 2px;
+  margin-top: 1px;
 }
 
 .deskTitle {
   font-family: var(--font-display, sans-serif);
-  font-size: 13px; font-weight: 800; color: #FFFFFF; margin: 0 0 1px;
+  font-size: 12.5px;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin: 0 0 1px;
   letter-spacing: -0.015em;
-  line-height: 1.25;
+  line-height: 1.22;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .deskSub {
-  font-size: 9px; color: #CBD5E1; line-height: 1.25;
+  font-size: 8.5px;
+  color: #CBD5E1;
+  line-height: 1.25;
   margin: 0;
 }
 
 /* ══════════════════════════════════════════════════
-   FULL VISIBLE SHOWCASE IMAGE (ZERO TEXT OVERLAID)
+   FULL VISIBLE SHOWCASE IMAGE WITH OVERLAY BADGE
 ══════════════════════════════════════════════════ */
 .visualImageCard {
   position: relative;
   width: 100%;
-  height: 80px;
-  border-radius: 9px;
+  height: 90px;
+  border-radius: 8px;
   overflow: hidden;
   border: 1.5px solid rgba(255, 255, 255, 0.28);
-  margin-top: 5px;
+  margin-top: 2px;
   box-shadow: 
     inset 0 1.5px 2px rgba(255, 255, 255, 0.35),
-    0 8px 18px rgba(0, 0, 0, 0.4);
+    0 6px 14px rgba(0, 0, 0, 0.35);
 }
 
 .panelImg {
@@ -174,46 +179,139 @@
   transform: scale(1.035);
 }
 
+.imageOverlayPill {
+  position: absolute;
+  bottom: 4px;
+  left: 5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 1.5px 6px;
+  background: rgba(7, 21, 75, 0.88);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  font-size: 7.5px;
+  font-weight: 700;
+  color: #F8FAFC;
+  letter-spacing: 0.02em;
+}
+
+.imageOverlayDot {
+  width: 3.5px;
+  height: 3.5px;
+  border-radius: 50%;
+  background: #10B981;
+}
+
+/* ══════════════════════════════════════════════════
+   INDIAN GROWTH METRICS TRAY
+══════════════════════════════════════════════════ */
+.metricsTray {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  margin-top: 1px;
+}
+
+.metricCell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 3px 2px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 5px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.metricNum {
+  font-family: var(--font-display, sans-serif);
+  font-size: 10.5px;
+  font-weight: 800;
+  color: #FBBF24;
+  line-height: 1.1;
+}
+
+.metricLbl {
+  font-size: 7px;
+  color: #CBD5E1;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-top: 1px;
+}
+
 /* ══════════════════════════════════════════════════
    TACTILE RECESSED HARDWARE MICRO-TILES
 ══════════════════════════════════════════════════ */
 .tactileTileList {
   display: flex;
   flex-direction: column;
-  gap: 5px;
-  margin-top: 5px;
+  gap: 3.5px;
+  margin-top: 1px;
 }
 
 .tactileTile {
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 3px 6px;
+  gap: 5px;
+  padding: 2.5px 6px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.09) 0%, rgba(255, 255, 255, 0.03) 100%);
   border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 6px;
+  border-radius: 5px;
   box-shadow: 
-    inset 0 1px 0 rgba(255, 255, 255, 0.22),
-    0 2px 4px rgba(0, 0, 0, 0.25);
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .tileIcon {
-  font-size: 11px;
+  font-size: 10px;
   line-height: 1;
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5));
 }
 
 .tileText {
-  font-size: 9px; font-weight: 700; color: #E2E8F0;
+  font-size: 8.5px;
+  font-weight: 700;
+  color: #E2E8F0;
   letter-spacing: -0.01em;
 }
 
 /* ══════════════════════════════════════════════════
-   3D ILLUMINATED TACTILE WHATSAPP PUSH SWITCH
+   DIRECT ACTIONS (CALL & WHATSAPP)
 ══════════════════════════════════════════════════ */
-.deskWhatsappCallout {
+.deskActions {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5px;
   margin-top: auto;
   padding-top: 2px;
+}
+
+.hotlineLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3.5px 6px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #E2E8F0;
+  font-size: 8.5px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.hotlineLink:hover {
+  background: rgba(255, 255, 255, 0.14);
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.hotlineLink strong {
+  color: #FBBF24;
+  margin-left: 2px;
 }
 
 .deskWhatsappBtn {
@@ -221,16 +319,16 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 5px;
   width: 100%;
-  padding: 7px 10px;
+  padding: 5.5px 8px;
   background: linear-gradient(180deg, #10B981 0%, #059669 60%, #047857 100%);
   border: 1px solid #34D399;
-  border-radius: 7px;
+  border-radius: 6px;
   color: #FFFFFF;
   text-decoration: none;
   font-family: var(--font-display, sans-serif);
-  font-size: 10.5px;
+  font-size: 9.5px;
   font-weight: 800;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
   box-shadow: 
@@ -258,63 +356,66 @@
 }
 
 .btnGlowIndicator {
-  width: 5px;
-  height: 5px;
+  width: 4.5px;
+  height: 4.5px;
   border-radius: 50%;
   background: #A7F3D0;
-  box-shadow: 0 0 6px #A7F3D0;
+  box-shadow: 0 0 6px #FFFFFF;
+  animation: pulseLive 1.8s infinite ease-in-out;
 }
 
 /* ══════════════════════════════════════════════════
-   RIGHT PANE: COMPACT SKEUOMORPHIC INTAKE CARD
+   RIGHT PANE: SKEUOMORPHIC LEAD INTAKE CARD
 ══════════════════════════════════════════════════ */
 .formIntakePane {
-  padding: 8px 12px 4px;
+  padding: 8px 10px 4px;
+  background: #FFFFFF;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  background: linear-gradient(180deg, #FFFFFF 0%, #F9FAFB 100%);
 }
 
 .intakeHeader {
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  padding: 2px 7px;
-  border-radius: 999px;
-  background: #EFF6FF;
-  border: 1px solid #DBEAFE;
   font-family: var(--font-display, sans-serif);
-  font-size: 8.5px;
+  font-size: 7.5px;
   font-weight: 800;
-  letter-spacing: 0.08em;
-  color: #0B2093;
-  margin-bottom: 3px;
-  box-shadow: inset 0 1px 0 #FFFFFF;
+  letter-spacing: 0.06em;
+  color: #B45309;
+  background: #FFFBEB;
+  padding: 1px 5px;
+  border-radius: 4px;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  margin-bottom: 2px;
 }
 
 .eyebrowDot {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #0B2093;
+  background: #F59E0B;
 }
 
 .intakeTitle {
   font-family: var(--font-display, sans-serif);
-  font-size: 13px; font-weight: 800; color: #0F172A; margin: 0 0 1px;
-  letter-spacing: -0.015em;
-  line-height: 1.25;
+  font-size: 14.5px;
+  font-weight: 800;
+  color: #0A1020;
+  margin: 0 0 1px;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
 }
 
 .intakeSub {
-  font-size: 9px; color: #64748B;
-  line-height: 1.35;
-  margin: 0;
+  font-size: 9px;
+  color: #475569;
+  line-height: 1.25;
+  margin: 0 0 3px;
 }
 
 /* Tactile Recessed Trust Badge */
@@ -323,7 +424,12 @@
   align-items: center;
   justify-content: center;
   gap: 5px;
-  margin-top: 2px; padding: 1.5px 5px; border-radius: 6px; background: #F1F5F9; border: 1px solid #E2E8F0; font-size: 8px;
+  margin-top: 2px;
+  padding: 2px 6px;
+  border-radius: 6px;
+  background: #F1F5F9;
+  border: 1px solid #E2E8F0;
+  font-size: 8px;
   color: #475569;
   font-weight: 700;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.04);
@@ -345,7 +451,7 @@
   }
 
   .visualImageCard {
-    height: 100px;
+    height: 110px;
   }
 
   .formIntakePane {
@@ -353,10 +459,10 @@
   }
 
   .intakeTitle {
-    font-size: 13.5px;
+    font-size: 14px;
   }
 
   .intakeSub {
-    font-size: 8.5px;
+    font-size: 9px;
   }
 }

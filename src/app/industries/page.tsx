@@ -10,6 +10,7 @@ import {
   industryCatalog,
   IndustryItem,
 } from './data';
+import StrategistGrowthCockpit from '@/components/StrategistGrowthCockpit';
 import styles from './page.module.css';
 
 const heroSlides = [
@@ -401,6 +402,17 @@ export default function IndustriesPage() {
           </div>
         </div>
       </section>
+
+      {/* ══════════════════════════════════════════════════════════
+          OPEN STRATEGY CONSULTATION FORM (JUST BELOW HERO)
+         ══════════════════════════════════════════════════════════ */}
+      <StrategistGrowthCockpit
+        id="industries-consultation"
+        eyebrow="🇮🇳 INDUSTRY SPECIALIZED STRATEGY • 1-ON-1 DESK"
+        title="Book Your Free Consultation"
+        subtitle="Submit your details below. Get an actionable growth roadmap tailored for your business in India from our senior strategists."
+        formLocation="/industries"
+      />
 
       {/* ══════════════════════════════════════════════════════════
           SECTION 2: SECTOR SHOWCASE (4 VISIBLE + SEE MORE)

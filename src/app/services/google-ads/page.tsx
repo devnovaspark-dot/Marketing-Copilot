@@ -165,6 +165,17 @@ export default function GoogleAdsPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
+          OPEN STRATEGY CONSULTATION FORM (JUST BELOW HERO)
+         ══════════════════════════════════════════════════ */}
+      <PerformanceAuditTerminal
+        id="google-ads-consultation"
+        eyebrow="🇮🇳 GOOGLE ADS AUDIT • ₹0 BENCHMARK"
+        title="Book Your Free Performance & Ad Audit"
+        subtitle="Submit your website and campaign details. Our senior Indian performance team will pinpoint wasted budget and negative keyword leaks."
+        formLocation="/services/google-ads"
+      />
+
+      {/* ══════════════════════════════════════════════════
           2. INTERACTIVE GOOGLE SEARCH SIMULATOR
          ══════════════════════════════════════════════════ */}
       <GoogleAdsSearchSimulator />

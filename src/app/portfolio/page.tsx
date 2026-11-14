@@ -271,6 +271,17 @@ export default function PortfolioPage() {
         </div>
       </section>
 
+      {/* ─────────────────────────────────────────────────────────────
+          OPEN STRATEGY CONSULTATION FORM (JUST BELOW HERO)
+          ───────────────────────────────────────────────────────────── */}
+      <StrategistGrowthCockpit
+        id="portfolio-consultation"
+        eyebrow="🇮🇳 PROVEN SCALE • 1-ON-1 STRATEGY"
+        title="Book Your Free Consultation"
+        subtitle="Submit your details below. Get an actionable growth roadmap tailored for your business in India from our senior strategists."
+        formLocation="/portfolio"
+      />
+
 
       {/* ─────────────────────────────────────────────────────────────
           SECTION 3: FEATURED COMMERCIAL MILESTONE (COMPACT SKEUOMORPHIC CARD)
@@ -1207,16 +1218,7 @@ export default function PortfolioPage() {
           ───────────────────────────────────────────────────────────── */}
       <FAQSection />
 
-      {/* ─────────────────────────────────────────────────────────────
-          OPEN STRATEGY CONSULTATION FORM
-          ───────────────────────────────────────────────────────────── */}
-      <StrategistGrowthCockpit
-        id="portfolio-consultation"
-        eyebrow="PROVEN SCALE • 1-ON-1 STRATEGY"
-        title="Book a Free Consultation to Scale Like These Brands"
-        subtitle="Submit your details below for a free, confidential growth audit and 90-day execution blueprint tailored to your industry."
-        formLocation="/portfolio"
-      />
+
 
       {/* ─────────────────────────────────────────────────────────────
           SECTION 12: BESPOKE BOTTOM CTA CARD (PUNCHY TEXT & GLOBAL BLUE)

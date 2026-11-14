@@ -379,6 +379,17 @@ export default function SEOPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
+          OPEN STRATEGY CONSULTATION FORM (JUST BELOW HERO)
+         ══════════════════════════════════════════════════ */}
+      <ExecutiveRevenueBlueprint
+        id="seo-consultation"
+        eyebrow="🇮🇳 ORGANIC SEARCH ADVISORY • 90-DAY SCALE"
+        title="Book Your Free Organic Search Revenue Blueprint"
+        subtitle="Connect directly with our senior Indian SEO architects. Get an actionable 90-day search roadmap engineered to rank #1 and drive high-intent leads."
+        formLocation="/services/seo"
+      />
+
+      {/* ══════════════════════════════════════════════════
           IN-SECTION STICKY NAVBAR STRIP WITH BEAM CTA
          ══════════════════════════════════════════════════ */}
       <nav className={styles.sectionNavRibbon} aria-label="SEO Service Navigation">

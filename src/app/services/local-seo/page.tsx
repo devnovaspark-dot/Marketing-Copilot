@@ -12,6 +12,7 @@ import LocalSeoRevenueCalculator from './_components/LocalSeoRevenueCalculator';
 import LocalSeoComparisonMatrix from './_components/LocalSeoComparisonMatrix';
 import LocalSeoSprintRoadmap from './_components/LocalSeoSprintRoadmap';
 
+import StrategistGrowthCockpit from '@/components/StrategistGrowthCockpit';
 import styles from './local-seo-page.module.css';
 
 const localSeoArsenal = [
@@ -162,6 +163,17 @@ export default function LocalSeoPage() {
           </div>
         </div>
       </section>
+
+      {/* ══════════════════════════════════════════════════
+          OPEN STRATEGY CONSULTATION FORM (JUST BELOW HERO)
+         ══════════════════════════════════════════════════ */}
+      <StrategistGrowthCockpit
+        id="local-seo-consultation"
+        eyebrow="🇮🇳 LOCAL SEO & GOOGLE MAPS • 1-ON-1 DESK"
+        title="Book Your Free Consultation"
+        subtitle="Submit your details below. Get an actionable growth roadmap tailored for your business in India from our senior strategists."
+        formLocation="/services/local-seo"
+      />
 
       {/* ══════════════════════════════════════════════════
           2. INTERACTIVE 5X5 GEO-GRID MAP TRACKER

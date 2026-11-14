@@ -826,6 +826,17 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* ══════════════════════════════════════════════════
+          OPEN STRATEGY CONSULTATION FORM (JUST BELOW HERO)
+         ══════════════════════════════════════════════════ */}
+      <StrategistGrowthCockpit
+        id="about-consultation"
+        eyebrow="🇮🇳 FOUNDER ADVISORY • 1-ON-1 STRATEGY"
+        title="Book Your Free Consultation with Our Leadership"
+        subtitle="A confidential 1-on-1 strategy session to audit acquisition channels, margin architecture, and map high-ROAS growth across India."
+        formLocation="/about"
+      />
+
       {/* ══════════════════════════════════════════════════════
           SECTION 2: MEET US · EXECUTIVE ARCHITECTS & LEADERSHIP TEAM
           (Positioned directly below the hero section for immediate human connection & trust)
@@ -1717,16 +1728,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-      {/* ══════════════════════════════════════════════════
-          OPEN STRATEGY CONSULTATION FORM
-         ══════════════════════════════════════════════════ */}
-      <StrategistGrowthCockpit
-        id="about-consultation"
-        eyebrow="FOUNDER ADVISORY • 1-ON-1 STRATEGY"
-        title="Book Your Free Consultation with Our Leadership"
-        subtitle="A confidential 1-on-1 strategy session to audit acquisition channels, margin architecture, and map high-ROAS growth."
-        formLocation="/about"
-      />
+
 
 {/* ══════════════════════════════════════════════════════
           SECTION 13: GRAND FINALE CTA COMMAND CARD

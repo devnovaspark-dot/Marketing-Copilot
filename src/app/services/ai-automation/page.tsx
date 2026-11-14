@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import BeamButton from '@/components/BeamButton';
+import StrategistGrowthCockpit from '@/components/StrategistGrowthCockpit';
 import styles from './ai-automation-page.module.css';
 
 import AiAgentWorkflowSimulator from './_components/AiAgentWorkflowSimulator';
@@ -180,6 +181,17 @@ export default function AiAutomationPage() {
           </div>
         </div>
       </section>
+
+      {/* ══════════════════════════════════════════════════
+          OPEN STRATEGY CONSULTATION FORM (JUST BELOW HERO)
+         ══════════════════════════════════════════════════ */}
+      <StrategistGrowthCockpit
+        id="ai-automation-consultation"
+        eyebrow="🇮🇳 AI & AUTOMATION ADVISORY • 1-ON-1 DESK"
+        title="Book Your Free Consultation"
+        subtitle="Submit your details below. Get an actionable growth roadmap tailored for your business in India from our senior strategists."
+        formLocation="/services/ai-automation"
+      />
 
       {/* ══════════════════════════════════════════════════
          SECTION 3: INTERACTIVE AGENT WORKFLOW SIMULATOR
