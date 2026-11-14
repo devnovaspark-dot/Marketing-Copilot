@@ -1,0 +1,290 @@
+.section {
+  position: relative;
+  padding: 36px 0 48px;
+  background: linear-gradient(180deg, #F9FAFB 0%, #F3F4F6 50%, #F9FAFB 100%);
+  overflow: hidden;
+}
+
+.ambientGlowTop {
+  position: absolute;
+  top: -100px;
+  right: 15%;
+  width: 680px;
+  height: 280px;
+  background: radial-gradient(circle, rgba(234, 88, 12, 0.08) 0%, rgba(217, 119, 6, 0.02) 60%, transparent 80%);
+  filter: blur(70px);
+  pointer-events: none;
+}
+
+.executiveFrame {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  background: #FFFFFF;
+  border: 1px solid rgba(234, 88, 12, 0.22);
+  border-radius: 20px;
+  box-shadow: 
+    0 18px 48px -10px rgba(15, 23, 42, 0.1),
+    0 2px 10px rgba(15, 23, 42, 0.04);
+  overflow: hidden;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* ══════════════════════════════════════════════════
+   LEFT PANE: CHARCOAL SLATE & WARM COPPER EXECUTIVE BRIEF (NO BLUE)
+══════════════════════════════════════════════════ */
+.advisoryPane {
+  background: linear-gradient(165deg, #111827 0%, #1F2937 60%, #161E2E 100%);
+  padding: 28px 26px;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 18px;
+  position: relative;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.executiveBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 11px;
+  background: rgba(234, 88, 12, 0.14);
+  border: 1px solid rgba(234, 88, 12, 0.38);
+  border-radius: 999px;
+  font-family: var(--font-display, sans-serif);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #FDBA74;
+}
+
+.copperDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #EA580C;
+  box-shadow: 0 0 6px #EA580C;
+  animation: copperPulse 2s infinite ease-in-out;
+}
+
+@keyframes copperPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.35);
+    opacity: 0.65;
+  }
+}
+
+.advisoryHeader {
+  margin-top: 10px;
+}
+
+.advisoryTitle {
+  font-family: var(--font-display, sans-serif);
+  font-size: 20px;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin: 0 0 6px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.titleAccentCopper {
+  color: #FB923C;
+  background: linear-gradient(135deg, #FED7AA 0%, #EA580C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.advisoryLead {
+  font-size: 12px;
+  color: #94A3B8;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ══════════════════════════════════════════════════
+   VISUAL GRAPHIC: 90-DAY MILESTONE ROADMAP (SVG)
+══════════════════════════════════════════════════ */
+.roadmapGraphicWrap {
+  margin-top: 12px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(234, 88, 12, 0.22);
+  border-radius: 12px;
+}
+
+.roadmapHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.roadmapLabel {
+  font-family: var(--font-display, sans-serif);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #94A3B8;
+  text-transform: uppercase;
+}
+
+.roadmapMetric {
+  font-family: var(--font-display, sans-serif);
+  font-size: 11px;
+  font-weight: 800;
+  color: #FB923C;
+}
+
+.roadmapSvg {
+  width: 100%;
+  height: 60px;
+  display: block;
+}
+
+/* 3 Strategic Pillars */
+.blueprintPillarsList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.blueprintItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 8px;
+}
+
+.blueprintIcon {
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.blueprintTitle {
+  font-family: var(--font-display, sans-serif);
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #F8FAFC;
+}
+
+.hotlineCallout {
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hotlineLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #FDBA74;
+  text-decoration: none;
+  font-family: var(--font-display, sans-serif);
+  font-size: 11.5px;
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+
+.hotlineLink:hover {
+  color: #FFFFFF;
+}
+
+/* ══════════════════════════════════════════════════
+   RIGHT PANE: EXECUTIVE BLUEPRINT INTAKE CARD
+══════════════════════════════════════════════════ */
+.blueprintIntakePane {
+  padding: 26px 28px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: #FFFFFF;
+}
+
+.intakeHeader {
+  margin-bottom: 10px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: #FFF7ED;
+  border: 1px solid #FFEDD5;
+  font-family: var(--font-display, sans-serif);
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #C2410C;
+  margin-bottom: 8px;
+}
+
+.eyebrowDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #EA580C;
+}
+
+.intakeTitle {
+  font-family: var(--font-display, sans-serif);
+  font-size: 20px;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0 0 4px;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+}
+
+.intakeSub {
+  font-size: 12px;
+  color: #64748B;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.trustMiniRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #F1F5F9;
+  font-size: 11px;
+  color: #64748B;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .executiveFrame {
+    grid-template-columns: 1fr;
+  }
+
+  .advisoryPane {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 22px 20px;
+  }
+
+  .blueprintIntakePane {
+    padding: 22px 18px;
+  }
+
+  .advisoryTitle,
+  .intakeTitle {
+    font-size: 19px;
+  }
+}

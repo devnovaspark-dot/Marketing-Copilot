@@ -4,7 +4,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import ScrollReveal from '@/components/ScrollReveal';
 import BeamButton from '@/components/BeamButton';
-import QuickConnectMapSection from '../_components/QuickConnectMapSection';
 import CTASection from '../_components/CTASection';
 import StrategistDeskCta from '@/components/StrategistDeskCta';
 import styles from './page.module.css';
@@ -875,11 +874,6 @@ export default function ServicesPage() {
             )}
           </div>
         </section>
-
-        {/* ══════════════════════════════════════════════════
-            SECTION 3: BHUBANESWAR STUDIO & PROXIMITY MAP (POSITION #3)
-           ══════════════════════════════════════════════════ */}
-        <QuickConnectMapSection />
 
         {/* ══════════════════════════════════════════════════
             SECTION 4: BATTLE-TESTED SPRINT FRAMEWORK (CIRCULAR SPRINT ENGINE)

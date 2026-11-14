@@ -5,7 +5,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import ScrollReveal from '@/components/ScrollReveal';
 import BeamButton from '@/components/BeamButton';
-import QuickConnectMapSection from '@/app/_components/QuickConnectMapSection';
 import StrategistDeskCta from '@/components/StrategistDeskCta';
 import styles from './meta-ads-page.module.css';
 
@@ -261,12 +260,6 @@ export default function MetaAdsPage() {
           </div>
         </div>
       </section>
-
-      {/* ══════════════════════════════════════════════════
-          2. DRIVING BUSINESS GROWTH WITH DIGITAL MARKETING IN INDIA
-          (Positioned directly below the hero section as requested)
-         ══════════════════════════════════════════════════ */}
-      <QuickConnectMapSection />
 
       {/* ══════════════════════════════════════════════════
           3. TURN META ADS INTO BUSINESS GROWTH

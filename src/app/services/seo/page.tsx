@@ -6,7 +6,6 @@ import Link from 'next/link';
 import ScrollReveal from '@/components/ScrollReveal';
 import BeamButton from '@/components/BeamButton';
 import SERPSimulator from './_components/SERPSimulator';
-import QuickConnectMapSection from '@/app/_components/QuickConnectMapSection';
 import StrategistDeskCta from '@/components/StrategistDeskCta';
 import styles from './seo-page.module.css';
 
@@ -410,12 +409,6 @@ export default function SEOPage() {
           </div>
         </div>
       </nav>
-
-      {/* ══════════════════════════════════════════════════
-          2. DRIVING BUSINESS GROWTH WITH DIGITAL MARKETING IN INDIA
-          (Replaces the image down the hero as requested)
-         ══════════════════════════════════════════════════ */}
-      <QuickConnectMapSection />
 
       {/* ══════════════════════════════════════════════════
           3. INDUSTRIES SECTION (SKEUOMORPHIC CARDS)

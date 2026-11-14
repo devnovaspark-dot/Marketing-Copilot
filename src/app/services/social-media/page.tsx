@@ -4,7 +4,6 @@ import { useState } from 'react';
 import Image from 'next/image';
 import ScrollReveal from '@/components/ScrollReveal';
 import BeamButton from '@/components/BeamButton';
-import QuickConnectMapSection from '@/app/_components/QuickConnectMapSection';
 import SocialReelsStudioSimulator from './_components/SocialReelsStudioSimulator';
 import styles from './social-media-page.module.css';
 
@@ -218,11 +217,6 @@ export default function SocialMediaPage() {
           </div>
         </div>
       </section>
-
-      {/* ══════════════════════════════════════════════════
-          2. REGIONAL MAP SECTION (DIRECTLY BELOW HERO)
-         ══════════════════════════════════════════════════ */}
-      <QuickConnectMapSection />
 
       {/* ══════════════════════════════════════════════════
           3. CORE SERVICES: STRATEGY, CONTENT, ADS & MANAGEMENT

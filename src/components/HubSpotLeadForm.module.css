@@ -1,7 +1,7 @@
 .wrapper {
   position: relative;
   width: 100%;
-  min-height: 420px;
+  min-height: 380px;
 }
 
 .wrapperLoaded {
@@ -10,60 +10,65 @@
 
 .card {
   background: #ffffff;
-  border: 1px solid rgba(15, 23, 42, 0.1);
-  border-radius: 20px;
-  padding: 24px;
-  box-shadow: 0 18px 48px -12px rgba(15, 23, 42, 0.12);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 12px 36px -10px rgba(15, 23, 42, 0.08);
 }
 
 .embedded {
   background: transparent;
 }
 
-/* Clips HubSpot's excess top whitespace and bottom free-tier branding footer without clipping Submit */
+/* 
+  Clips HubSpot's excess top padding and precisely crops the bottom 
+  HubSpot branding footer ("Create your own free form with HubSpot")
+  while keeping the orange Submit button 100% visible with clean clearance.
+*/
 .cropViewport {
   width: 100%;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 10px;
+  position: relative;
 }
 
 .frame {
   width: 100%;
   margin-top: -24px;
-  margin-bottom: -44px;
+  margin-bottom: -32px;
 }
 
 @media (max-width: 560px) {
   .frame {
     margin-top: -18px;
-    margin-bottom: -46px;
+    margin-bottom: -34px;
   }
 }
 
 .loadingPlaceholder {
   position: absolute;
   inset: 0;
-  min-height: 420px;
+  min-height: 380px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background: rgba(248, 250, 252, 0.9);
-  border: 1px dashed rgba(148, 163, 184, 0.45);
-  border-radius: 14px;
+  background: rgba(248, 250, 252, 0.95);
+  border: 1px dashed rgba(148, 163, 184, 0.4);
+  border-radius: 12px;
   color: #475569;
-  font-size: 13.5px;
-  font-weight: 500;
+  font-size: 13px;
+  font-weight: 600;
   pointer-events: none;
   z-index: 2;
 }
 
 .spinner {
-  width: 24px;
-  height: 24px;
-  border: 2.5px solid rgba(11, 32, 147, 0.18);
-  border-top-color: #0b2093;
+  width: 22px;
+  height: 22px;
+  border: 2.5px solid rgba(15, 23, 42, 0.15);
+  border-top-color: #0F172A;
   border-radius: 50%;
   animation: spin 0.75s linear infinite;
 }

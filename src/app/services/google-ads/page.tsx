@@ -8,7 +8,6 @@ import StrategistDeskCta from '@/components/StrategistDeskCta';
 
 // 12-Section Custom Components
 import GoogleAdsSearchSimulator from './_components/GoogleAdsSearchSimulator';
-import QuickConnectMapSection from '@/app/_components/QuickConnectMapSection';
 import GoogleAdsWorkstation from './_components/GoogleAdsWorkstation';
 import GoogleAdsPpcCalculator from './_components/GoogleAdsPpcCalculator';
 import GoogleAdsComparisonMatrix from './_components/GoogleAdsComparisonMatrix';
@@ -169,11 +168,6 @@ export default function GoogleAdsPage() {
           2. INTERACTIVE GOOGLE SEARCH SIMULATOR
          ══════════════════════════════════════════════════ */}
       <GoogleAdsSearchSimulator />
-
-      {/* ══════════════════════════════════════════════════
-          3. REGIONAL BHUBANESWAR GEO-REACH FOOTPRINT
-         ══════════════════════════════════════════════════ */}
-      <QuickConnectMapSection />
 
       {/* ══════════════════════════════════════════════════
           4. ARCHITECTURE WORKSTATION

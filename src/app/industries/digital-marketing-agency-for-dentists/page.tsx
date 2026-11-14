@@ -5,7 +5,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import BeamButton from '@/components/BeamButton';
 import ScrollReveal from '@/components/ScrollReveal';
-import QuickConnectMapSection from '@/app/_components/QuickConnectMapSection';
 import {
   Icon3DTooth,
   Icon3DMapPin,
@@ -1764,22 +1763,6 @@ export default function DentalMarketingPage() {
           </div>
         </div>
       </section>
-
-      {/* ══════════════════════════════════════════════════ */}
-      {/* SECTION A: ADDRESS & LOCATION                      */}
-      {/* Placed Before FAQ as Requested                     */}
-      {/* ══════════════════════════════════════════════════ */}
-      <QuickConnectMapSection
-        id="location"
-        eyebrow="CLINIC GROWTH PARTNER • OFFICE LOCATION & CONNECT"
-        title={
-          <>
-            Visit Our Headquarters or<br />
-            <span style={{ color: '#0B2093' }}>Connect With Our Dental Growth Team</span>
-          </>
-        }
-        subtitle="Serving dental clinics, multi-specialty practices, and implant centers across India. Connect with our dental marketing strategists to review your local catchment area and discuss practice growth."
-      />
 
       {/* ══════════════════════════════════════════════════ */}
       {/* SECTION B: FREQUENTLY ASKED QUESTIONS (FAQ)        */}

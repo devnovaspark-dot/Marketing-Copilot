@@ -7,7 +7,6 @@ import BeamButton from '@/components/BeamButton';
 
 // 12-Section Custom Components
 import LocalSeoGridSimulator from './_components/LocalSeoGridSimulator';
-import QuickConnectMapSection from '@/app/_components/QuickConnectMapSection';
 import LocalSeoWorkstation from './_components/LocalSeoWorkstation';
 import LocalSeoRevenueCalculator from './_components/LocalSeoRevenueCalculator';
 import LocalSeoComparisonMatrix from './_components/LocalSeoComparisonMatrix';
@@ -223,11 +222,6 @@ export default function LocalSeoPage() {
           </div>
         </div>
       </section>
-
-      {/* ══════════════════════════════════════════════════
-          3. REGIONAL BHUBANESWAR GEO-REACH FOOTPRINT
-         ══════════════════════════════════════════════════ */}
-      <QuickConnectMapSection />
 
       {/* ══════════════════════════════════════════════════
           4. ARCHITECTURE WORKSTATION

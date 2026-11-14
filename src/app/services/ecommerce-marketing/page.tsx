@@ -5,9 +5,6 @@ import Image from 'next/image';
 import ScrollReveal from '@/components/ScrollReveal';
 import BeamButton from '@/components/BeamButton';
 
-// Supporting Components
-import QuickConnectMapSection from '@/app/_components/QuickConnectMapSection';
-
 import styles from './ecommerce-page.module.css';
 
 // 5 Core Ecommerce Marketing Services
@@ -194,11 +191,6 @@ export default function EcommerceMarketingPage() {
           </div>
         </div>
       </section>
-
-      {/* ══════════════════════════════════════════════════
-          2. REGIONAL MAP SECTION (PLACED JUST BELOW HERO)
-         ══════════════════════════════════════════════════ */}
-      <QuickConnectMapSection />
 
       {/* ══════════════════════════════════════════════════
           3. WHAT MAKES ECOMMERCE MARKETING DIFFERENT?

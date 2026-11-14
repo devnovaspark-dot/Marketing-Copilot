@@ -436,7 +436,7 @@ export default function Header() {
                         }}
                         tabIndex={servicesOpen ? 0 : -1}
                       >
-                        <span>Grow Your Business With Us</span>
+                        <span>Book Your Free Consultation</span>
                         <span>→</span>
                       </Link>
 
@@ -894,7 +894,7 @@ export default function Header() {
             <div className={styles.mobileCTA}>
               <BeamButton
                 href="/contact"
-                label="Grow Your Business With Us"
+                label="Book Your Free Consultation"
                 size="sm"
                 fullWidth
                 onClick={() => setMenuOpen(false)}

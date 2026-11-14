@@ -6,7 +6,6 @@ import Image from 'next/image';
 import BeamButton from '@/components/BeamButton';
 import ScrollReveal from '@/components/ScrollReveal';
 import FAQSection from '@/app/_components/FAQSection';
-import QuickConnectMapSection from '@/app/_components/QuickConnectMapSection';
 import StrategistDeskCta from '@/components/StrategistDeskCta';
 import SmoothCounter from '@/components/SmoothCounter';
 import {
@@ -369,11 +368,6 @@ export default function PortfolioPage() {
           </ScrollReveal>
         </div>
       </section>
-
-      {/* ─────────────────────────────────────────────────────────────
-          DRIVING BUSINESS GROWTH WITH DIGITAL MARKETING IN INDIA
-          ───────────────────────────────────────────────────────────── */}
-      <QuickConnectMapSection />
 
       {/* ─────────────────────────────────────────────────────────────
           SECTION 4: AUTO-SLIDING CASE STUDIES SHOWCASE
@@ -1262,7 +1256,7 @@ export default function PortfolioPage() {
 
             {/* Centered Action Buttons */}
             <div className={styles.ctaCenteredActions}>
-              <BeamButton href="/contact" label="Grow Your Business With Us" size="lg" />
+              <BeamButton href="/contact" label="Book Your Free Consultation" size="lg" />
               <a
                 href="https://wa.me/918260709689?text=Hi%20Marketing%20Copilot,%20I%20would%20like%20to%20audit%20my%20business%20growth."
                 target="_blank"

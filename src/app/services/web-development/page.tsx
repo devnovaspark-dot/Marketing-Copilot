@@ -5,7 +5,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import ScrollReveal from '@/components/ScrollReveal';
 import BeamButton from '@/components/BeamButton';
-import QuickConnectMapSection from '@/app/_components/QuickConnectMapSection';
 import StrategistDeskCta from '@/components/StrategistDeskCta';
 import styles from './web-dev-page.module.css';
 
@@ -251,12 +250,6 @@ export default function WebDevelopmentPage() {
           </div>
         </div>
       </section>
-
-      {/* ══════════════════════════════════════════════════
-          2. MAP SECTION DIRECTLY BELOW HERO
-          (Driving Business Growth With Digital Marketing in India)
-         ══════════════════════════════════════════════════ */}
-      <QuickConnectMapSection />
 
       {/* ══════════════════════════════════════════════════
           3. SMART WEB SOLUTIONS FOR GROWING BRANDS (6 SERVICES)

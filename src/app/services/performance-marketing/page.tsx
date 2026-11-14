@@ -4,7 +4,6 @@ import { useState } from 'react';
 import Image from 'next/image';
 import ScrollReveal from '@/components/ScrollReveal';
 import BeamButton from '@/components/BeamButton';
-import QuickConnectMapSection from '@/app/_components/QuickConnectMapSection';
 import StrategistDeskCta from '@/components/StrategistDeskCta';
 import styles from './performance-marketing-page.module.css';
 
@@ -247,11 +246,6 @@ export default function PerformanceMarketingPage() {
           </div>
         </div>
       </section>
-
-      {/* ══════════════════════════════════════════════════
-          2. REGIONAL MAP SECTION (DIRECTLY BELOW HERO)
-         ══════════════════════════════════════════════════ */}
-      <QuickConnectMapSection />
 
       {/* ══════════════════════════════════════════════════
           3. FULL-FUNNEL PERFORMANCE MARKETING STRATEGY

@@ -7,7 +7,6 @@ import BeamButton from '@/components/BeamButton';
 
 // 12-Section Custom Components
 import BrandIdentityStudioSimulator from './_components/BrandIdentityStudioSimulator';
-import QuickConnectMapSection from '@/app/_components/QuickConnectMapSection';
 import BrandIdentityWorkstation from './_components/BrandIdentityWorkstation';
 import BrandPricingPowerCalculator from './_components/BrandPricingPowerCalculator';
 import BrandComparisonMatrix from './_components/BrandComparisonMatrix';
@@ -180,11 +179,6 @@ export default function CreativeBrandingPage() {
           2. INTERACTIVE BRAND IDENTITY VISUALIZER
          ══════════════════════════════════════════════════ */}
       <BrandIdentityStudioSimulator />
-
-      {/* ══════════════════════════════════════════════════
-          3. REGIONAL BHUBANESWAR GEO-REACH FOOTPRINT
-         ══════════════════════════════════════════════════ */}
-      <QuickConnectMapSection />
 
       {/* ══════════════════════════════════════════════════
           4. ARCHITECTURE WORKSTATION

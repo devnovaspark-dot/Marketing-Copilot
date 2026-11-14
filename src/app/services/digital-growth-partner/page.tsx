@@ -4,7 +4,6 @@ import { useState } from 'react';
 import Image from 'next/image';
 import ScrollReveal from '@/components/ScrollReveal';
 import ReviewBadgesStrip from './ReviewBadgesStrip';
-import QuickConnectMapSection from '@/app/_components/QuickConnectMapSection';
 import BrandSpotlightSection from '@/app/_components/BrandSpotlightSection';
 import StrategySection from '@/app/_components/StrategySection';
 import TeamPreview from '@/app/_components/TeamPreview';
@@ -325,27 +324,6 @@ export default function DigitalGrowthPartnerPage() {
         defaultTopic="🎯 Google & Meta Ads"
         title="Ask Our Strategists Directly."
         subtitle="Submit your question below for a free, confidential strategic breakdown."
-      />
-
-      {/* ═════════════════════════════════════════════════════════════════
-          INTERACTIVE CONNECT & STRATEGIC ASSESSMENT CTA SECTION
-          (Placed directly above 49 LIVE PROOF TELEMETRY DASHBOARDS per user instruction)
-      ═════════════════════════════════════════════ */}
-      <QuickConnectMapSection
-        id="direct-connect"
-        eyebrow="GROWTH SYSTEMS · PREDICTABLE REVENUE"
-        title={
-          <>
-            Smart Digital Marketing for<br />
-            <span style={{
-              background: 'linear-gradient(135deg, #FFB800 0%, #EA580C 50%, #B45309 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              display: 'inline-block'
-            }}>Growing Businesses</span>
-          </>
-        }
-        subtitle="We are a digital marketing agency, in India. We combine SEO, paid ads, content marketing, social media and conversion engineering. Our goal is to create growth systems. These systems help attract customers who're ready to buy. They also improve conversion rates. Allow brands to grow in a steady predictable way."
       />
 
       {/* ═════════════════════════════════════════════════════════════════

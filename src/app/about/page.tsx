@@ -5,7 +5,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import ScrollReveal from '@/components/ScrollReveal';
 import BeamButton from '@/components/BeamButton';
-import QuickConnectMapSection from '@/app/_components/QuickConnectMapSection';
 import StrategistDeskCta from '@/components/StrategistDeskCta';
 import styles from './page.module.css';
 
@@ -939,11 +938,6 @@ export default function AboutPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════════
-          SECTION 3: HOME MAP SECTION (YOUR TRUSTED DIGITAL MARKETING COMPANY IN BHUBANESWAR)
-         ══════════════════════════════════════════════════════ */}
-      <QuickConnectMapSection id="war-room-section" />
-
-      {/* ══════════════════════════════════════════════════════
           SECTION 4: THE FOUNDING STORY (LIVING DOCUMENTARY TIMELINE)
          ══════════════════════════════════════════════════════ */}
       <section className={styles.documentaryStorySection} id="founding-story" ref={storySectionRef}>
@@ -1118,7 +1112,7 @@ export default function AboutPage() {
 
           <div className={styles.transCtaRight}>
             <div className={styles.transCtaButtons}>
-              <BeamButton href="/contact" label="Grow Your Business With Us" size="md" />
+              <BeamButton href="/contact" label="Book Your Free Consultation" size="md" />
               <BeamButton href="#principles-section" label="Our Marketing Principles" size="md" variant="outline" />
             </div>
             <div className={styles.transCtaTrust}>
@@ -1272,7 +1266,7 @@ export default function AboutPage() {
               </div>
 
               <div className={styles.evalCtaRight}>
-                <BeamButton href="/contact" label="Grow Your Business With Us" size="md" />
+                <BeamButton href="/contact" label="Book Your Free Consultation" size="md" />
                 <div className={styles.evalCtaTrust}>
                   <span>✓ 100% Free</span>
                   <span>•</span>
@@ -1762,7 +1756,7 @@ export default function AboutPage() {
           </p>
 
           <div className={styles.finaleActions}>
-            <BeamButton href="/contact" label="Grow Your Business With Us" size="lg" />
+            <BeamButton href="/contact" label="Book Your Free Consultation" size="lg" />
             <BeamButton href="/portfolio" label="View Client Case Studies" size="lg" variant="outline" />
           </div>
         </div>

@@ -677,3 +677,346 @@
     font-size: 10px;
   }
 }
+
+/* ══════════════════════════════════════════════════
+   LUXURY ARCHITECTURAL STUDIO & 3D INTERACTIVE MAP STRIP
+══════════════════════════════════════════════════ */
+.compactMapStrip {
+  margin-top: 40px;
+  padding: 24px 28px;
+  background: linear-gradient(150deg, #0F172A 0%, #090E1A 60%, #0A0D16 100%);
+  border: 1.5px solid rgba(255, 255, 255, 0.14);
+  border-radius: 20px;
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 20px 48px rgba(0, 0, 0, 0.55),
+    0 2px 10px rgba(0, 0, 0, 0.3);
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 28px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.compactMapStrip::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(245, 158, 11, 0.45) 50%, transparent 100%);
+}
+
+.mapInfoPane {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1;
+}
+
+.mapBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+  padding: 4px 11px;
+  border-radius: 999px;
+  background: rgba(16, 185, 129, 0.14);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  font-family: var(--font-display, sans-serif);
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  color: #6EE7B7;
+}
+
+.mapPulseDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 6px #10B981;
+  animation: mapPulse 2s infinite ease-in-out;
+}
+
+@keyframes mapPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.35);
+    opacity: 0.65;
+  }
+}
+
+.mapTitle {
+  font-family: var(--font-display, sans-serif);
+  font-size: 18px;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin: 0;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+.mapAddress {
+  font-size: 12.5px;
+  color: #CBD5E1;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.mapFeaturePills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.featurePill {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 9px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #94A3B8;
+}
+
+.mapActions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.mapDirectionsBtn {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+  color: #FFFFFF;
+  font-family: var(--font-display, sans-serif);
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.38);
+  transition: all 0.2s ease;
+}
+
+.mapDirectionsBtn:hover {
+  transform: translateY(-1.5px);
+  box-shadow: 0 6px 18px rgba(16, 185, 129, 0.5);
+  background: linear-gradient(135deg, #34D399 0%, #059669 100%);
+}
+
+.mapCallBtn {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #FFFFFF;
+  font-family: var(--font-display, sans-serif);
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.mapCallBtn:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-1px);
+}
+
+/* ══════════════════════════════════════════════════
+   VIEWPORT ENCLOSURE & 3D ANIMATED PIN
+══════════════════════════════════════════════════ */
+.mapViewportWrap {
+  width: 100%;
+  height: 220px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 10px 28px rgba(0, 0, 0, 0.5),
+    inset 0 0 16px rgba(0, 0, 0, 0.3);
+  position: relative;
+  background: #090E1A;
+}
+
+.mapIframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+  filter: contrast(1.05) saturate(1.1);
+}
+
+/* ══════════════════════════════════════════════════
+   3D PERSISTENT RED LOCATION BEACON PIN
+══════════════════════════════════════════════════ */
+.centerPinOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 90px;
+}
+
+.radarWaveOuter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  transform: translate(-50%, 12px) rotateX(60deg);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(239, 68, 68, 0.45) 0%, rgba(220, 38, 38, 0.12) 60%, transparent 80%);
+  border: 1.5px solid rgba(239, 68, 68, 0.7);
+  animation: footerRadarPing 2.4s cubic-bezier(0.2, 0.8, 0.4, 1) infinite;
+  pointer-events: none;
+}
+
+.radarWaveInner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 36px;
+  height: 36px;
+  transform: translate(-50%, 12px) rotateX(60deg);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(239, 68, 68, 0.55) 0%, transparent 70%);
+  border: 1.5px solid rgba(239, 68, 68, 0.85);
+  animation: footerRadarPing 2.4s cubic-bezier(0.2, 0.8, 0.4, 1) infinite 0.6s;
+  pointer-events: none;
+}
+
+@keyframes footerRadarPing {
+  0% {
+    transform: translate(-50%, 12px) rotateX(60deg) scale(0.3);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, 12px) rotateX(60deg) scale(1.6);
+    opacity: 0;
+  }
+}
+
+.pinGroundShadow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 12px);
+  width: 22px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.45);
+  filter: blur(2px);
+  animation: footerShadowBreathe 2.4s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes footerShadowBreathe {
+  0% {
+    transform: translate(-50%, 12px) scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(-50%, 12px) scale(0.65);
+    opacity: 0.2;
+  }
+}
+
+.pin3dAnchor {
+  pointer-events: auto;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-20px);
+  text-decoration: none;
+}
+
+.pin3dFloatingBody {
+  animation: footerPinLevitate 2.4s ease-in-out infinite alternate;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), filter 0.25s ease;
+  filter: drop-shadow(0 6px 14px rgba(220, 38, 38, 0.45));
+}
+
+.pin3dAnchor:hover .pin3dFloatingBody {
+  transform: scale(1.15) translateY(-5px);
+  filter: drop-shadow(0 10px 22px rgba(220, 38, 38, 0.65)) drop-shadow(0 0 14px rgba(239, 68, 68, 0.8));
+}
+
+@keyframes footerPinLevitate {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-8px);
+  }
+}
+
+.pinSvg {
+  display: block;
+}
+
+.pinHudBadge {
+  position: absolute;
+  bottom: calc(100% + 4px);
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 8px;
+  background: rgba(15, 23, 42, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  backdrop-filter: blur(8px);
+  font-family: var(--font-display, sans-serif);
+  font-size: 9px;
+  font-weight: 700;
+  color: #FFFFFF;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+}
+
+.hudDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 5px #10B981;
+}
+
+@media (max-width: 900px) {
+  .compactMapStrip {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .mapViewportWrap {
+    height: 180px;
+  }
+}

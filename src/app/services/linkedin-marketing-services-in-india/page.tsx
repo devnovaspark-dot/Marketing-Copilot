@@ -4,7 +4,6 @@ import { useState } from 'react';
 import Image from 'next/image';
 import ScrollReveal from '@/components/ScrollReveal';
 import BeamButton from '@/components/BeamButton';
-import QuickConnectMapSection from '@/app/_components/QuickConnectMapSection';
 import LinkedInCampaignSimulator from './_components/LinkedInCampaignSimulator';
 import HubSpotLeadForm from '@/components/HubSpotLeadForm';
 import styles from './linkedin-marketing-page.module.css';
@@ -444,11 +443,6 @@ export default function LinkedInMarketingPage() {
           </div>
         </div>
       </section>
-
-      {/* ══════════════════════════════════════════════════
-          REGIONAL ASSURANCE MAP STRIP
-         ══════════════════════════════════════════════════ */}
-      <QuickConnectMapSection />
 
       {/* ══════════════════════════════════════════════════
           SECTION 2: LINKEDIN SALES NAVIGATOR SERVICES

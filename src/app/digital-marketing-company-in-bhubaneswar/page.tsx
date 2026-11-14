@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import HeroSection from '../_components/HeroSection';
 import ClientsSection from '../_components/ClientsSection';
 import StoryVideoSection from '../_components/StoryVideoSection';
-import QuickConnectMapSection from '../_components/QuickConnectMapSection';
 import MetricsSection from '../_components/MetricsSection';
 import ServicesSection from '../_components/ServicesSection';
 import StrategySection from '../_components/StrategySection';
@@ -34,7 +33,6 @@ export default function DigitalMarketingBhubaneswarPage() {
     <>
       <HeroSection />
       <ClientsSection />
-      <QuickConnectMapSection />
       <StrategistDeskCta
         id="desk-cta-in-1"
         defaultTopic="🎯 Google & Meta Ads"

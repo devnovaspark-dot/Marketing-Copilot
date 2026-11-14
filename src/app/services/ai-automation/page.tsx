@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import BeamButton from '@/components/BeamButton';
-import QuickConnectMapSection from '@/app/_components/QuickConnectMapSection';
 import styles from './ai-automation-page.module.css';
 
 import AiAgentWorkflowSimulator from './_components/AiAgentWorkflowSimulator';
@@ -181,11 +180,6 @@ export default function AiAutomationPage() {
           </div>
         </div>
       </section>
-
-      {/* ══════════════════════════════════════════════════
-         SECTION 2: MAP SECTION (DIRECTLY BELOW HERO)
-      ══════════════════════════════════════════════════ */}
-      <QuickConnectMapSection />
 
       {/* ══════════════════════════════════════════════════
          SECTION 3: INTERACTIVE AGENT WORKFLOW SIMULATOR

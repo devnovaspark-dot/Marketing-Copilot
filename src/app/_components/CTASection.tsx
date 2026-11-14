@@ -20,7 +20,7 @@ export default function CTASection() {
               Let’s talk about your growth. Send us your question for a free, confidential growth assessment and 90-day execution blueprint tailored to your industry.
             </p>
             <div className={styles.actions}>
-              <BeamButton href="/contact" label="Find Your Fastest Path to Growth →" size="lg" />
+              <BeamButton href="/contact" label="Book Your Free Consultation →" size="lg" />
               <BeamButton href="/portfolio" label="Explore Verified Case Studies" size="lg" variant="outline" />
             </div>
           </ScrollReveal>

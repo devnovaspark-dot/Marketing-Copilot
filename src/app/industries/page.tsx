@@ -6,7 +6,6 @@ import Image from 'next/image';
 import BeamButton from '@/components/BeamButton';
 import ScrollReveal from '@/components/ScrollReveal';
 import SmoothCounter from '@/components/SmoothCounter';
-import QuickConnectMapSection from '@/app/_components/QuickConnectMapSection';
 import {
   industryCatalog,
   IndustryItem,
@@ -537,11 +536,6 @@ export default function IndustriesPage() {
           )}
         </div>
       </section>
-
-      {/* ══════════════════════════════════════════════════════════
-          SECTION 3: DRIVING BUSINESS GROWTH WITH DIGITAL MARKETING IN INDIA
-         ══════════════════════════════════════════════════════════ */}
-      <QuickConnectMapSection />
 
       {/* ══════════════════════════════════════════════════════════
           SECTION 4: INTERACTIVE SECTOR REVENUE & ROI SIMULATOR

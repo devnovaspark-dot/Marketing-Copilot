@@ -5,9 +5,6 @@ import Image from 'next/image';
 import ScrollReveal from '@/components/ScrollReveal';
 import BeamButton from '@/components/BeamButton';
 
-// Interactive Components & Regional Connect
-import QuickConnectMapSection from '@/app/_components/QuickConnectMapSection';
-
 import styles from './amazon-marketing-page.module.css';
 
 // 4 Pillars of Why Choose Marketing Copilot
@@ -197,11 +194,6 @@ export default function AmazonMarketingPage() {
           </div>
         </div>
       </section>
-
-      {/* ══════════════════════════════════════════════════
-          2. REGIONAL MAP SECTION (PLACED JUST BELOW HERO)
-         ══════════════════════════════════════════════════ */}
-      <QuickConnectMapSection />
 
       {/* ══════════════════════════════════════════════════
           3. HOW AMAZON PPC SUPPORTS ECOMMERCE GROWTH

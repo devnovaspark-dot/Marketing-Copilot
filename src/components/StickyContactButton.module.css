@@ -1,0 +1,181 @@
+.stickyWrapper {
+  position: fixed;
+  right: 0;
+  top: 48%;
+  transform: translateY(-50%);
+  z-index: 9990;
+  pointer-events: auto;
+}
+
+.verticalStickyTab {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 38px;
+  padding: 14px 6px 14px 7px;
+  background: linear-gradient(180deg, #18181B 0%, #0F172A 50%, #111827 100%);
+  border: 1.5px solid rgba(245, 158, 11, 0.4);
+  border-right: none;
+  border-radius: 12px 0 0 12px;
+  color: #FFFFFF;
+  text-decoration: none;
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 0 12px rgba(245, 158, 11, 0.08),
+    -6px 12px 28px rgba(0, 0, 0, 0.5),
+    0 2px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+  overflow: visible;
+}
+
+.ambientGlow {
+  position: absolute;
+  inset: -2px;
+  border-radius: 12px 0 0 12px;
+  background: radial-gradient(circle at 10% 50%, rgba(245, 158, 11, 0.35) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.verticalStickyTab:hover {
+  transform: translateX(-6px);
+  background: linear-gradient(180deg, #27272A 0%, #1E293B 50%, #1F2937 100%);
+  border-color: rgba(245, 158, 11, 0.85);
+  box-shadow: 
+    inset 0 1px 0 #FFFFFF,
+    -8px 16px 36px rgba(0, 0, 0, 0.65),
+    0 0 20px rgba(245, 158, 11, 0.45);
+}
+
+.verticalStickyTab:hover .ambientGlow {
+  opacity: 1;
+}
+
+.verticalStickyTab:active {
+  transform: translateX(-3px);
+}
+
+/* ══════════════════════════════════════════════════
+   TOP: PULSE DOT & CALENDAR ICON
+══════════════════════════════════════════════════ */
+.tabTop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  z-index: 1;
+}
+
+.livePulseDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 8px #10B981;
+  animation: stickyPulse 2s infinite ease-in-out;
+}
+
+@keyframes stickyPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.65;
+  }
+}
+
+.calendarIcon {
+  color: #F59E0B;
+  transition: transform 0.2s ease;
+}
+
+.verticalStickyTab:hover .calendarIcon {
+  transform: scale(1.15);
+  color: #FBBF24;
+}
+
+/* ══════════════════════════════════════════════════
+   VERTICAL TEXT STACKING
+══════════════════════════════════════════════════ */
+.tabTextWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  padding: 6px 0;
+}
+
+.tabText {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: var(--font-display, sans-serif);
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: #E2E8F0;
+  white-space: nowrap;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.highlightFree {
+  color: #FBBF24;
+  font-weight: 900;
+  text-shadow: 0 0 8px rgba(245, 158, 11, 0.4);
+}
+
+.verticalStickyTab:hover .tabText {
+  color: #FFFFFF;
+}
+
+/* ══════════════════════════════════════════════════
+   BOTTOM: ARROW
+══════════════════════════════════════════════════ */
+.tabBottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.arrowIcon {
+  font-size: 13px;
+  color: #F59E0B;
+  transition: transform 0.25s ease, color 0.2s ease;
+}
+
+.verticalStickyTab:hover .arrowIcon {
+  transform: translateX(-2px) scale(1.2);
+  color: #FBBF24;
+}
+
+@media (max-width: 640px) {
+  .stickyWrapper {
+    top: 38%;
+  }
+
+  .verticalStickyTab {
+    width: 32px;
+    padding: 10px 4px 10px 5px;
+    gap: 8px;
+  }
+
+  .tabText {
+    font-size: 9px;
+    letter-spacing: 0.12em;
+  }
+
+  .calendarIcon {
+    width: 11px;
+    height: 11px;
+  }
+}

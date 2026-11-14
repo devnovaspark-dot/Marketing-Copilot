@@ -6,6 +6,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppFloatingButton from "@/components/WhatsAppFloatingButton";
+import StickyContactButton from "@/components/StickyContactButton";
 import { GtmRouteTracker } from "@/components/GtmTracker";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -365,6 +366,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <WhatsAppFloatingButton />
+        <StickyContactButton />
       </body>
     </html>
   );

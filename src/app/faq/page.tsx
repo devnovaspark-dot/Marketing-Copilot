@@ -4,7 +4,6 @@ import { useState, useMemo, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import ScrollReveal from '@/components/ScrollReveal';
-import QuickConnectMapSection from '@/app/_components/QuickConnectMapSection';
 import CTASection from '../_components/CTASection';
 import HubSpotLeadForm from '@/components/HubSpotLeadForm';
 import styles from './page.module.css';
@@ -852,11 +851,6 @@ export default function FAQPage() {
           </div>
         </div>
       </section>
-
-      {/* ══════════════════════════════════════════════════════════
-          DRIVING BUSINESS GROWTH WITH DIGITAL MARKETING IN INDIA
-         ══════════════════════════════════════════════════════════ */}
-      <QuickConnectMapSection headingTag="h2" />
 
       {/* ══════════════════════════════════════════════════════════
           SECTION 2: STORYTELLING ARCHITECTURE (WITHOUT ANY CARD)
