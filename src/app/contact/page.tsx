@@ -2,7 +2,6 @@
 import ScrollReveal from '@/components/ScrollReveal';
 import HubSpotLeadForm from '@/components/HubSpotLeadForm';
 import ContactGrowthCard from '@/components/ContactGrowthCard';
-import QuickConnectMapSection from '@/app/_components/QuickConnectMapSection';
 import styles from './page.module.css';
 
 export default function ContactPage() {
@@ -185,9 +184,6 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
-
-      {/* Full Interactive Studio Map & Direct Connect Section */}
-      <QuickConnectMapSection id="contact-map" />
     </div>
   );
 }

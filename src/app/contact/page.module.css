@@ -1,12 +1,13 @@
 .page {
   background: radial-gradient(circle at 50% 15%, #FFFFFF 0%, #F8FAFC 50%, #EEF4FA 100%);
   padding-top: calc(var(--nav-height, 74px) + 34px);
-  padding-bottom: 56px;
+  padding-bottom: 64px;
   position: relative;
   overflow: hidden;
-  min-height: 100vh;
+  min-height: calc(100vh - var(--nav-height, 74px));
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
   box-sizing: border-box;
 }
 

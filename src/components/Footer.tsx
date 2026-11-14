@@ -260,109 +260,107 @@ export default function Footer() {
           {/* ══════════════════════════════════════════════════
               LUXURY ARCHITECTURAL STUDIO & 3D INTERACTIVE MAP STRIP
              ══════════════════════════════════════════════════ */}
-          {pathname !== '/contact' && (
-            <div className={styles.compactMapStrip}>
-              <div className={styles.mapInfoPane}>
-                <div className={styles.mapBadge}>
-                  <span className={styles.mapPulseDot} />
-                  <span>INNOVATION STUDIO &bull; BHUBANESWAR HQ</span>
-                </div>
-                <h4 className={styles.mapTitle}>Visit Our Headquarters &amp; Strategy War-Room</h4>
-                <p className={styles.mapAddress}>
-                  Mallick Complex, Unit 3, Kharvela Nagar, Bhubaneswar, Odisha 751001
-                </p>
+          <div className={styles.compactMapStrip}>
+            <div className={styles.mapInfoPane}>
+              <div className={styles.mapBadge}>
+                <span className={styles.mapPulseDot} />
+                <span>INNOVATION STUDIO &bull; BHUBANESWAR HQ</span>
+              </div>
+              <h4 className={styles.mapTitle}>Visit Our Headquarters &amp; Strategy War-Room</h4>
+              <p className={styles.mapAddress}>
+                Mallick Complex, Unit 3, Kharvela Nagar, Bhubaneswar, Odisha 751001
+              </p>
 
-                <div className={styles.mapFeaturePills}>
-                  <span className={styles.featurePill}>🏢 In-Person Strategy Sessions</span>
-                  <span className={styles.featurePill}>⚡ Mon – Sat · 9:30 AM – 7:30 PM</span>
-                </div>
-
-                <div className={styles.mapActions}>
-                  <a
-                    href="https://www.google.com/maps/search/?api=1&query=Mallick+Complex,+Unit+3,+Kharvela+Nagar,+Bhubaneswar,+Odisha+751001"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.mapDirectionsBtn}
-                  >
-                    <span>Open in Google Maps ↗</span>
-                  </a>
-                  <a href="tel:+918280788689" className={styles.mapCallBtn}>
-                    <span>📞 +91 82807 88689</span>
-                  </a>
-                </div>
+              <div className={styles.mapFeaturePills}>
+                <span className={styles.featurePill}>🏢 In-Person Strategy Sessions</span>
+                <span className={styles.featurePill}>⚡ Mon – Sat · 9:30 AM – 7:30 PM</span>
               </div>
 
-              <div className={styles.mapViewportWrap}>
-                <iframe
-                  title="Marketing Copilot Studio Location Map"
-                  src="https://maps.google.com/maps?q=Mallick+Complex,+Unit+3,+Kharvela+Nagar,+Bhubaneswar,+Odisha+751001&t=&z=16&ie=UTF8&iwloc=&output=embed"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen={true}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className={styles.mapIframe}
-                />
-
-                {/* Persistent Animated 3D Red Location Beacon Pin */}
-                <div className={styles.centerPinOverlay}>
-                  <div className={styles.radarWaveOuter} />
-                  <div className={styles.radarWaveInner} />
-                  <div className={styles.pinGroundShadow} />
-
-                  <a
-                    href="https://www.google.com/maps/search/?api=1&query=Mallick+Complex,+Unit+3,+Kharvela+Nagar,+Bhubaneswar,+Odisha+751001"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.pin3dAnchor}
-                    title="Marketing Copilot Studio — Click to open in Google Maps"
-                    aria-label="Open Marketing Copilot Studio location on Google Maps"
-                  >
-                    <div className={styles.pin3dFloatingBody}>
-                      <svg width="40" height="50" viewBox="0 0 44 54" fill="none" className={styles.pinSvg}>
-                        <defs>
-                          <linearGradient id="footerRed3dGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stopColor="#FF4D4D" />
-                            <stop offset="35%" stopColor="#EF4444" />
-                            <stop offset="70%" stopColor="#DC2626" />
-                            <stop offset="100%" stopColor="#991B1B" />
-                          </linearGradient>
-                          <linearGradient id="footerPinGloss" x1="20%" y1="0%" x2="50%" y2="80%">
-                            <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.7" />
-                            <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0" />
-                          </linearGradient>
-                          <radialGradient id="footerCenterBulb" cx="40%" cy="35%" r="60%">
-                            <stop offset="0%" stopColor="#FFFFFF" />
-                            <stop offset="40%" stopColor="#FEF2F2" />
-                            <stop offset="80%" stopColor="#F87171" />
-                            <stop offset="100%" stopColor="#DC2626" />
-                          </radialGradient>
-                        </defs>
-                        <path
-                          d="M22 2C10.954 2 2 10.954 2 22C2 33.5 18.5 50.2 21.1 52.8C21.6 53.3 22.4 53.3 22.9 52.8C25.5 50.2 42 33.5 42 22C42 10.954 33.046 2 22 2Z"
-                          fill="url(#footerRed3dGrad)"
-                          stroke="#FFFFFF"
-                          strokeWidth="2.5"
-                        />
-                        <path
-                          d="M10 16C12 9 18 5 26 5C27.5 5 24 9 20 12C16 15 11 20 10 16Z"
-                          fill="url(#footerPinGloss)"
-                        />
-                        <circle cx="22" cy="22" r="8.5" fill="url(#footerCenterBulb)" stroke="#FFFFFF" strokeWidth="2.2" />
-                        <circle cx="20.5" cy="19.5" r="2.5" fill="#FFFFFF" fillOpacity="0.9" />
-                      </svg>
-                    </div>
-
-                    <div className={styles.pinHudBadge}>
-                      <span className={styles.hudDot} />
-                      <span>Marketing Copilot Studio</span>
-                    </div>
-                  </a>
-                </div>
+              <div className={styles.mapActions}>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Mallick+Complex,+Unit+3,+Kharvela+Nagar,+Bhubaneswar,+Odisha+751001"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.mapDirectionsBtn}
+                >
+                  <span>Open in Google Maps ↗</span>
+                </a>
+                <a href="tel:+918280788689" className={styles.mapCallBtn}>
+                  <span>📞 +91 82807 88689</span>
+                </a>
               </div>
             </div>
-          )}
+
+            <div className={styles.mapViewportWrap}>
+              <iframe
+                title="Marketing Copilot Studio Location Map"
+                src="https://maps.google.com/maps?q=Mallick+Complex,+Unit+3,+Kharvela+Nagar,+Bhubaneswar,+Odisha+751001&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className={styles.mapIframe}
+              />
+
+              {/* Persistent Animated 3D Red Location Beacon Pin */}
+              <div className={styles.centerPinOverlay}>
+                <div className={styles.radarWaveOuter} />
+                <div className={styles.radarWaveInner} />
+                <div className={styles.pinGroundShadow} />
+
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Mallick+Complex,+Unit+3,+Kharvela+Nagar,+Bhubaneswar,+Odisha+751001"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.pin3dAnchor}
+                  title="Marketing Copilot Studio — Click to open in Google Maps"
+                  aria-label="Open Marketing Copilot Studio location on Google Maps"
+                >
+                  <div className={styles.pin3dFloatingBody}>
+                    <svg width="40" height="50" viewBox="0 0 44 54" fill="none" className={styles.pinSvg}>
+                      <defs>
+                        <linearGradient id="footerRed3dGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stopColor="#FF4D4D" />
+                          <stop offset="35%" stopColor="#EF4444" />
+                          <stop offset="70%" stopColor="#DC2626" />
+                          <stop offset="100%" stopColor="#991B1B" />
+                        </linearGradient>
+                        <linearGradient id="footerPinGloss" x1="20%" y1="0%" x2="50%" y2="80%">
+                          <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.7" />
+                          <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0" />
+                        </linearGradient>
+                        <radialGradient id="footerCenterBulb" cx="40%" cy="35%" r="60%">
+                          <stop offset="0%" stopColor="#FFFFFF" />
+                          <stop offset="40%" stopColor="#FEF2F2" />
+                          <stop offset="80%" stopColor="#F87171" />
+                          <stop offset="100%" stopColor="#DC2626" />
+                        </radialGradient>
+                      </defs>
+                      <path
+                        d="M22 2C10.954 2 2 10.954 2 22C2 33.5 18.5 50.2 21.1 52.8C21.6 53.3 22.4 53.3 22.9 52.8C25.5 50.2 42 33.5 42 22C42 10.954 33.046 2 22 2Z"
+                        fill="url(#footerRed3dGrad)"
+                        stroke="#FFFFFF"
+                        strokeWidth="2.5"
+                      />
+                      <path
+                        d="M10 16C12 9 18 5 26 5C27.5 5 24 9 20 12C16 15 11 20 10 16Z"
+                        fill="url(#footerPinGloss)"
+                      />
+                      <circle cx="22" cy="22" r="8.5" fill="url(#footerCenterBulb)" stroke="#FFFFFF" strokeWidth="2.2" />
+                      <circle cx="20.5" cy="19.5" r="2.5" fill="#FFFFFF" fillOpacity="0.9" />
+                    </svg>
+                  </div>
+
+                  <div className={styles.pinHudBadge}>
+                    <span className={styles.hudDot} />
+                    <span>Marketing Copilot Studio</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
