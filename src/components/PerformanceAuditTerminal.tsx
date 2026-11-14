@@ -49,11 +49,11 @@ export default function PerformanceAuditTerminal({
                   </p>
                 </div>
 
-                {/* Skeuomorphic 3D Glass Dashboard Card */}
+                {/* Engaging Visual: Real Live Telemetry & ROAS Analytics */}
                 <div className={styles.visualImageCard}>
                   <Image
-                    src="/images/dashboard_hero.jpg"
-                    alt="Ad Account Performance & Growth Analytics"
+                    src="/images/Dashboard Telemetry_.jpg"
+                    alt="Multi-Channel Ad Telemetry & ROAS Analytics"
                     fill
                     className={styles.panelImg}
                     priority={false}
@@ -64,7 +64,7 @@ export default function PerformanceAuditTerminal({
                   <div className={styles.imgOverlayPill}>
                     <div className={styles.dashboardMeta}>
                       <span className={styles.dashboardPillDot} />
-                      <span className={styles.dashboardName}>Live Ad Account Diagnostics</span>
+                      <span className={styles.dashboardName}>Live Ad Telemetry &bull; Multi-Channel</span>
                     </div>
                     <span className={styles.verifiedPartner}>Premier Partner</span>
                   </div>

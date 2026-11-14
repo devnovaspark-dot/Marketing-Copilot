@@ -51,11 +51,11 @@ export default function StrategistGrowthCockpit({
                   </p>
                 </div>
 
-                {/* Skeuomorphic 3D Glass Photo Card */}
+                {/* Engaging Visual: Modern Innovation Studio Reception */}
                 <div className={styles.visualImageCard}>
                   <Image
-                    src="/images/ceo_aarav.jpg"
-                    alt="Aarav Sharma - Principal Revenue Architect"
+                    src="/images/Modern Marketing Copilot Office Reception.webp"
+                    alt="Marketing Copilot Innovation Studio Reception"
                     fill
                     className={styles.panelImg}
                     priority={false}
@@ -64,21 +64,11 @@ export default function StrategistGrowthCockpit({
                   <div className={styles.glassSheen} />
                   
                   <div className={styles.imgOverlayPill}>
-                    <div className={styles.strategistBrief}>
-                      <div className={styles.avatarMini}>
-                        <Image
-                          src="/images/ceo_aarav.jpg"
-                          alt="Aarav Sharma"
-                          fill
-                          className={styles.avatarMiniImg}
-                        />
-                      </div>
-                      <div className={styles.strategistMeta}>
-                        <span className={styles.strategistName}>Aarav Sharma</span>
-                        <span className={styles.strategistRole}>Principal Revenue Architect</span>
-                      </div>
+                    <div className={styles.studioMeta}>
+                      <span className={styles.studioIcon}>🏢</span>
+                      <span className={styles.studioName}>Innovation Studio &bull; Bhubaneswar HQ</span>
                     </div>
-                    <span className={styles.verifiedCheck}>✓ Verified</span>
+                    <span className={styles.verifiedCheck}>✓ Verified HQ</span>
                   </div>
                 </div>
 

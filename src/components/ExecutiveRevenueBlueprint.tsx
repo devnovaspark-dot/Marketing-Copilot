@@ -49,11 +49,11 @@ export default function ExecutiveRevenueBlueprint({
                   </p>
                 </div>
 
-                {/* Skeuomorphic 3D Glass Workspace Card */}
+                {/* Engaging Visual: Senior Growth Strategy War Room */}
                 <div className={styles.visualImageCard}>
                   <Image
-                    src="/images/team_office.jpg"
-                    alt="Senior Growth Architecture Team"
+                    src="/images/SEO strategy_team.jpg"
+                    alt="Senior Growth Strategy War Room & Execution Team"
                     fill
                     className={styles.panelImg}
                     priority={false}
@@ -64,7 +64,7 @@ export default function ExecutiveRevenueBlueprint({
                   <div className={styles.imgOverlayPill}>
                     <div className={styles.workspaceMeta}>
                       <span className={styles.workspaceDot} />
-                      <span className={styles.workspaceName}>Senior Revenue Principals</span>
+                      <span className={styles.workspaceName}>Senior Revenue Principals &bull; War Room</span>
                     </div>
                     <span className={styles.executiveLevel}>CXO Advisory</span>
                   </div>
