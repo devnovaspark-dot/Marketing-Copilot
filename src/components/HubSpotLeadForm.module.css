@@ -39,13 +39,28 @@
   transform: scale(0.91);
   transform-origin: top center;
   margin-top: -26px;
-  margin-bottom: -92px;
+  margin-bottom: -96px;
 }
 
-@media (max-width: 560px) {
+@media (max-width: 640px) {
   .frame {
+    width: 122%;
+    margin-left: -11%;
+    transform: scale(0.82);
+    transform-origin: top center;
+    margin-top: -20px;
+    margin-bottom: -150px;
+  }
+}
+
+@media (max-width: 400px) {
+  .frame {
+    width: 126%;
+    margin-left: -13%;
+    transform: scale(0.79);
+    transform-origin: top center;
     margin-top: -18px;
-    margin-bottom: -78px;
+    margin-bottom: -156px;
   }
 }
 

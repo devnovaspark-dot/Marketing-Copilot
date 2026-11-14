@@ -50,14 +50,17 @@ export default function HubSpotLeadForm({
     frameEl.setAttribute('data-form-id', formId);
     frameEl.setAttribute('data-portal-id', portalId);
 
+    const hideBranding = () => {
+      const brandingEls = frameEl.querySelectorAll('a[href*="hubspot.com"], [class*="branding"], [class*="hs-form-footer"], [data-hs-branding], [class*="viral"]');
+      brandingEls.forEach(el => {
+        (el as HTMLElement).style.setProperty('display', 'none', 'important');
+      });
+    };
+
     const observer = new MutationObserver(() => {
       if (frameEl.childElementCount > 0) {
         setIsLoaded(true);
-        const brandingEls = frameEl.querySelectorAll('a[href*="hubspot.com"], [class*="branding"], [class*="hs-form-footer"], [data-hs-branding]');
-        brandingEls.forEach(el => {
-          (el as HTMLElement).style.setProperty('display', 'none', 'important');
-        });
-        observer.disconnect();
+        hideBranding();
       }
     });
 
