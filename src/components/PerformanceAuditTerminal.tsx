@@ -49,7 +49,7 @@ export default function PerformanceAuditTerminal({
                   </p>
                 </div>
 
-                {/* Engaging Visual: Real Live Telemetry & ROAS Analytics */}
+                {/* Full Visible Dashboard Showcase — 100% Clean, Zero Text Overlaid */}
                 <div className={styles.visualImageCard}>
                   <Image
                     src="/images/Dashboard Telemetry_.jpg"
@@ -58,16 +58,6 @@ export default function PerformanceAuditTerminal({
                     className={styles.panelImg}
                     priority={false}
                   />
-                  {/* Diagonal Glass Sheen Reflection */}
-                  <div className={styles.glassSheen} />
-
-                  <div className={styles.imgOverlayPill}>
-                    <div className={styles.dashboardMeta}>
-                      <span className={styles.dashboardPillDot} />
-                      <span className={styles.dashboardName}>Live Ad Telemetry &bull; Multi-Channel</span>
-                    </div>
-                    <span className={styles.verifiedPartner}>Premier Partner</span>
-                  </div>
                 </div>
 
                 {/* Tactile Hardware Micro-Tiles */}

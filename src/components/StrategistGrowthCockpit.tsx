@@ -51,7 +51,7 @@ export default function StrategistGrowthCockpit({
                   </p>
                 </div>
 
-                {/* Engaging Visual: Modern Innovation Studio Reception */}
+                {/* Full Visible Agency Photo Showcase — 100% Clean, Zero Text Overlaid */}
                 <div className={styles.visualImageCard}>
                   <Image
                     src="/images/Modern Marketing Copilot Office Reception.webp"
@@ -60,16 +60,6 @@ export default function StrategistGrowthCockpit({
                     className={styles.panelImg}
                     priority={false}
                   />
-                  {/* Diagonal Glass Sheen Reflection */}
-                  <div className={styles.glassSheen} />
-                  
-                  <div className={styles.imgOverlayPill}>
-                    <div className={styles.studioMeta}>
-                      <span className={styles.studioIcon}>🏢</span>
-                      <span className={styles.studioName}>Innovation Studio &bull; Bhubaneswar HQ</span>
-                    </div>
-                    <span className={styles.verifiedCheck}>✓ Verified HQ</span>
-                  </div>
                 </div>
 
                 {/* Tactile Hardware Micro-Tiles */}

@@ -19,7 +19,13 @@ export default function StickyContactButton() {
         className={styles.skeuomorphicTab}
         title="Book Your Free Consultation with Marketing Copilot"
       >
+        {/* Top 3D Specular Bevel Line */}
         <div className={styles.tabBevelLight} />
+
+        {/* Continuous Tactile Light Beam Shimmer */}
+        <div className={styles.shimmerLightBeam} />
+
+        {/* Pure Text - No Icons, No Arrows */}
         <span className={styles.tabText}>
           BOOK <span className={styles.goldText}>FREE</span> CONSULTATION
         </span>
