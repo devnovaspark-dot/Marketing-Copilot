@@ -325,18 +325,26 @@
   border: 1.5px solid rgba(226, 232, 240, 0.95);
   border-top: 1.5px solid #FFFFFF;
   border-radius: 26px;
-  padding: 16px 20px 14px;
+  padding: 18px 22px 16px;
   box-shadow: 
     inset 0 2px 0 #FFFFFF,
     inset 0 -2px 3px rgba(15, 23, 42, 0.02),
     0 20px 50px -10px rgba(11, 32, 147, 0.1),
     0 4px 16px rgba(15, 23, 42, 0.04);
   position: relative;
+  height: 100%;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  gap: 6px;
+  justify-content: space-between;
   overflow: hidden;
+}
+
+.formFooterStrip {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid rgba(226, 232, 240, 0.85);
+  width: 100%;
 }
 
 .formTopAccentBar {
