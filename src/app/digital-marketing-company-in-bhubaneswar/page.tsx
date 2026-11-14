@@ -12,7 +12,9 @@ import RealGrowthSection from '../_components/RealGrowthSection';
 import FAQSection from '../_components/FAQSection';
 import CTASection from '../_components/CTASection';
 
-import StrategistDeskCta from '@/components/StrategistDeskCta';
+import StrategistGrowthCockpit from '@/components/StrategistGrowthCockpit';
+import PerformanceAuditTerminal from '@/components/PerformanceAuditTerminal';
+import ExecutiveRevenueBlueprint from '@/components/ExecutiveRevenueBlueprint';
 
 export const metadata: Metadata = {
   title: 'Digital Marketing Company in India | Marketing Copilot',
@@ -33,29 +35,32 @@ export default function DigitalMarketingBhubaneswarPage() {
     <>
       <HeroSection />
       <ClientsSection />
-      <StrategistDeskCta
+      <StrategistGrowthCockpit
         id="desk-cta-in-1"
-        defaultTopic="🎯 Google & Meta Ads"
-        title="Ask Our Strategists Directly."
-        subtitle="Submit your question below for a free, confidential strategic breakdown."
+        eyebrow="BHUBANESWAR HQ • PAN-INDIA STRATEGY"
+        title="Book Your Free Growth Strategy Session"
+        subtitle="Connect directly with our senior growth strategists for a free audit and 90-day execution roadmap."
+        formLocation="/digital-marketing-company-in-bhubaneswar"
       />
       <StoryVideoSection />
       <MetricsSection />
       <ServicesSection />
-      <StrategistDeskCta
+      <PerformanceAuditTerminal
         id="desk-cta-in-2"
-        defaultTopic="📍 Local SEO 3-Pack"
-        title="Let’s Talk About Your Growth."
-        subtitle="Send us your question for a free, confidential growth assessment."
+        eyebrow="PERFORMANCE LAB • ₹0 AUDIT"
+        title="Claim Your Free Channel & Ad Spend Audit"
+        subtitle="Submit your details below. Our performance team will analyze your ad accounts and search channels to stop budget waste."
+        formLocation="/digital-marketing-company-in-bhubaneswar"
       />
       <StrategySection />
       <QuotesSection />
       <TeamPreview />
-      <StrategistDeskCta
+      <ExecutiveRevenueBlueprint
         id="desk-cta-in-3"
-        defaultTopic="⚡ Next.js Web Speed"
-        title="Let’s Find Your Fastest Path to Growth."
-        subtitle="Get direct answers from our senior revenue architects on how to scale profitably."
+        eyebrow="FOUNDER & CXO ADVISORY • 90-DAY SCALE"
+        title="Request Your Free 90-Day Revenue Blueprint"
+        subtitle="Get a milestone-driven scaling engine engineered for your market with direct senior partner alignment."
+        formLocation="/digital-marketing-company-in-bhubaneswar"
       />
       <WhyChooseSection />
       <RealGrowthSection />

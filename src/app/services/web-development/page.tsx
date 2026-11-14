@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import ScrollReveal from '@/components/ScrollReveal';
 import BeamButton from '@/components/BeamButton';
-import StrategistDeskCta from '@/components/StrategistDeskCta';
+import ExecutiveRevenueBlueprint from '@/components/ExecutiveRevenueBlueprint';
 import styles from './web-dev-page.module.css';
 
 // 6 Core Web Development Services
@@ -598,12 +598,11 @@ export default function WebDevelopmentPage() {
       {/* ══════════════════════════════════════════════════
           OPEN STRATEGY CONSULTATION FORM
          ══════════════════════════════════════════════════ */}
-      <StrategistDeskCta
+      <ExecutiveRevenueBlueprint
         id="web-dev-consultation"
-        defaultTopic="💻 Next.js & Modern Web Architecture"
-        eyebrow="CONFIDENTIAL TECHNICAL REVIEW • NO OBLIGATION"
-        title="Book a Free Consultation"
-        subtitle="Submit your details below for a free technical estimation, UX breakdown, and speed architecture review."
+        eyebrow="TECH ARCHITECTURE • HIGH-PERFORMANCE PLATFORMS"
+        title="Request Your Web Platform & Conversion Blueprint"
+        subtitle="Collaborate with our senior technical architects. Get a 90-day website roadmap engineered for sub-second speed and maximum lead conversion."
         formLocation="/services/web-development"
       />
 

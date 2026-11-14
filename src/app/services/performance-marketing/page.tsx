@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import ScrollReveal from '@/components/ScrollReveal';
 import BeamButton from '@/components/BeamButton';
-import StrategistDeskCta from '@/components/StrategistDeskCta';
+import PerformanceAuditTerminal from '@/components/PerformanceAuditTerminal';
 import styles from './performance-marketing-page.module.css';
 
 // 4 Full-Funnel Stages
@@ -838,12 +838,11 @@ export default function PerformanceMarketingPage() {
       {/* ══════════════════════════════════════════════════
           OPEN STRATEGY CONSULTATION FORM
          ══════════════════════════════════════════════════ */}
-      <StrategistDeskCta
+      <PerformanceAuditTerminal
         id="performance-marketing-consultation"
-        defaultTopic="🚀 Performance Marketing & Media Scale"
-        eyebrow="CONFIDENTIAL STRATEGY DISPATCH • NO OBLIGATION"
-        title="Book a Free Consultation"
-        subtitle="Submit your details below for a free, confidential growth audit and 90-day execution blueprint."
+        eyebrow="FULL-FUNNEL AUDIT LAB • ₹0 BENCHMARK"
+        title="Claim Your Free Performance Marketing & CAC Audit"
+        subtitle="Submit your details below. Our performance team will analyze your acquisition channels, blended CAC, and unit economics to find leaks."
         formLocation="/services/performance-marketing"
       />
 

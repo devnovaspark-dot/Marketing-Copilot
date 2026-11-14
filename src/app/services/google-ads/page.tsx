@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import ScrollReveal from '@/components/ScrollReveal';
 import BeamButton from '@/components/BeamButton';
-import StrategistDeskCta from '@/components/StrategistDeskCta';
+import PerformanceAuditTerminal from '@/components/PerformanceAuditTerminal';
 
 // 12-Section Custom Components
 import GoogleAdsSearchSimulator from './_components/GoogleAdsSearchSimulator';
@@ -434,12 +434,11 @@ export default function GoogleAdsPage() {
       {/* ══════════════════════════════════════════════════
           OPEN STRATEGY CONSULTATION FORM
          ══════════════════════════════════════════════════ */}
-      <StrategistDeskCta
+      <PerformanceAuditTerminal
         id="google-ads-consultation"
-        defaultTopic="🎯 Google Ads & PPC Search Scale"
-        eyebrow="CONFIDENTIAL PPC FORENSIC AUDIT • NO OBLIGATION"
-        title="Book a Free Consultation"
-        subtitle="Submit your details below for a free Google Ads account audit and high-converting keyword blueprint."
+        eyebrow="GOOGLE ADS FORENSIC LAB • ₹0 AUDIT"
+        title="Claim Your Free Google Ads Performance Audit"
+        subtitle="Submit your details below. Our PPC media specialists will audit your search terms, Quality Scores, and ad spend to stop budget bleed."
         formLocation="/services/google-ads"
       />
 

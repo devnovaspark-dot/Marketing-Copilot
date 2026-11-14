@@ -5,7 +5,7 @@ import Image from 'next/image';
 import ScrollReveal from '@/components/ScrollReveal';
 import BeamButton from '@/components/BeamButton';
 import LinkedInCampaignSimulator from './_components/LinkedInCampaignSimulator';
-import HubSpotLeadForm from '@/components/HubSpotLeadForm';
+import ExecutiveRevenueBlueprint from '@/components/ExecutiveRevenueBlueprint';
 import styles from './linkedin-marketing-page.module.css';
 
 // ══════════════════════════════════════════════════
@@ -963,117 +963,13 @@ export default function LinkedInMarketingPage() {
           SECTION 9: READY TO TURN LINKEDIN INTO A B2B GROWTH CHANNEL?
           (Enquiry Form & Verified Business Contact Details)
          ══════════════════════════════════════════════════ */}
-      <section className={styles.enquirySectionWrapper} id="enquiry-section">
-        <div className="container">
-          <ScrollReveal className={styles.enquiryHeaderCenter}>
-            <div className={styles.eyebrowBadge}>
-              <span className={styles.eyebrowDot} />
-              <span>Direct Commercial Access</span>
-            </div>
-            <h2 className={styles.sectionTitle}>
-              Ready to Turn LinkedIn Into a{' '}
-              <span className="accent-gradient">B2B Growth Channel?</span>
-            </h2>
-            <p className={styles.sectionDesc}>
-              Briefly invite businesses to discuss their audience, lead-generation objectives, and marketing budget with our team to create a targeted LinkedIn strategy that accelerates your sales pipeline.
-            </p>
-          </ScrollReveal>
-
-          <div className={styles.enquiryGrid}>
-            {/* Left Column: Verified Business Contact Details */}
-            <ScrollReveal delay={0.05} className={styles.enquiryColReveal}>
-              <div className={styles.contactInfoCard}>
-                <div>
-                  <div className={styles.contactCardTop}>
-                    <div className={styles.verifiedPill}>
-                      <span>✓</span>
-                      <span>Verified Business Details</span>
-                    </div>
-                    <h3 className={styles.contactCardHeading}>
-                      Talk to Our LinkedIn Team
-                    </h3>
-                    <p className={styles.contactCardSub}>
-                      Connect directly with our senior B2B strategists. We answer inquiries within 4 business hours.
-                    </p>
-                  </div>
-
-                  <div className={styles.contactDetailsList}>
-                    {/* Phone */}
-                    <div className={styles.contactItemRow}>
-                      <span className={styles.contactItemIcon}>📞</span>
-                      <div className={styles.contactItemContent}>
-                        <span className={styles.contactItemLabel}>Direct Phone &amp; Strategy Line</span>
-                        <a href="tel:+918280788689" className={styles.contactItemLink}>
-                          +91 82807 88689
-                        </a>
-                      </div>
-                    </div>
-
-                    {/* Email */}
-                    <div className={styles.contactItemRow}>
-                      <span className={styles.contactItemIcon}>✉️</span>
-                      <div className={styles.contactItemContent}>
-                        <span className={styles.contactItemLabel}>Official Email</span>
-                        <a href="mailto:info@marketingcopilot.in" className={styles.contactItemLink}>
-                          info@marketingcopilot.in
-                        </a>
-                      </div>
-                    </div>
-
-                    {/* WhatsApp */}
-                    <div className={styles.contactItemRow}>
-                      <span className={styles.contactItemIcon}>💬</span>
-                      <div className={styles.contactItemContent}>
-                        <span className={styles.contactItemLabel}>WhatsApp Quick Connect</span>
-                        <a
-                          href="https://wa.me/918280788689?text=Hi%20Marketing%20Copilot%2C%20I%20would%20like%20to%20discuss%20LinkedIn%20Marketing%20Services%20for%20my%20business."
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={styles.contactItemLink}
-                        >
-                          Chat on WhatsApp (+91 82807 88689)
-                        </a>
-                      </div>
-                    </div>
-
-                    {/* Office Address */}
-                    <div className={styles.contactItemRow}>
-                      <span className={styles.contactItemIcon}>📍</span>
-                      <div className={styles.contactItemContent}>
-                        <span className={styles.contactItemLabel}>Office Headquarters</span>
-                        <span className={styles.contactItemText}>
-                          Mallick Complex, Unit 3, Kharvela Nagar, Bhubaneswar, Odisha 751001, India
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className={styles.contactAssuranceNote}>
-                  <span>🔒</span>
-                  <span>Confidentiality guaranteed. Zero spam or cold pitches.</span>
-                </div>
-              </div>
-            </ScrollReveal>
-
-            {/* Right Column: Simple Enquiry Form */}
-            <ScrollReveal delay={0.1} className={styles.enquiryColReveal}>
-              <div className={styles.enquiryFormCard}>
-                <div className={styles.formHeader}>
-                  <h3 className={styles.formHeaderTitle}>
-                    Get Your LinkedIn Marketing Plan
-                  </h3>
-                  <p className={styles.formHeaderSub}>
-                    Fill in your details below and our team will analyze your target market and send a customized proposal.
-                  </p>
-                </div>
-
-                <HubSpotLeadForm formLocation="/services/linkedin-marketing-services-in-india" />
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
+      <ExecutiveRevenueBlueprint
+        id="enquiry-section"
+        eyebrow="B2B ACCOUNT STRATEGY • 90-DAY PIPELINE"
+        title="Request Your B2B LinkedIn Marketing Blueprint"
+        subtitle="Connect directly with our senior B2B growth architects. Get a customized LinkedIn demand generation roadmap for high-value contracts."
+        formLocation="/services/linkedin-marketing-services-in-india"
+      />
     </div>
   );
 }

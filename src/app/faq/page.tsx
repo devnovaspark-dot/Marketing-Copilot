@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import ScrollReveal from '@/components/ScrollReveal';
 import CTASection from '../_components/CTASection';
-import HubSpotLeadForm from '@/components/HubSpotLeadForm';
+import StrategistGrowthCockpit from '@/components/StrategistGrowthCockpit';
 import styles from './page.module.css';
 
 const heroSlides = [
@@ -1301,90 +1301,13 @@ export default function FAQPage() {
       {/* ══════════════════════════════════════════════════════════
           SECTION 4: DUAL-PANE EXECUTIVE STRATEGIST DISPATCH COCKPIT
          ══════════════════════════════════════════════════════════ */}
-      <section className={styles.directFormSection} id="ask-question">
-        <div className="container">
-          <ScrollReveal>
-            <div className={styles.dispatchCockpit}>
-              {/* Left Pane: Strategist Desk & Trust Deck */}
-              <div className={styles.strategistDeskPane}>
-                <div className={styles.strategistDeskHeader}>
-                  <span className={styles.liveStatusPill}>
-                    <span className={styles.liveDot} />
-                    STRATEGIST ON-DUTY &bull; INDIA DESK
-                  </span>
-                </div>
-
-                {/* Strategist Profile Card */}
-                <div className={styles.strategistProfileCard}>
-                  <div className={styles.strategistAvatarWrap}>
-                    <Image
-                      src="/images/ceo_aarav.jpg"
-                      alt="Aarav Sharma - Principal Revenue Architect"
-                      fill
-                      className={styles.strategistAvatarImg}
-                    />
-                    <span className={styles.verifiedCheckBadge}>✓</span>
-                  </div>
-                  <div className={styles.strategistMeta}>
-                    <h3 className={styles.strategistName}>Aarav Sharma</h3>
-                    <span className={styles.strategistRole}>Principal Revenue Architect</span>
-                    <span className={styles.strategistCorridor}>📍 Bhubaneswar HQ · Serving Businesses Across India</span>
-                  </div>
-                </div>
-
-                {/* Minimal Tactical Value Badges */}
-                <div className={styles.strategistPillarsList}>
-                  <div className={styles.pillarItem}>
-                    <span className={styles.pillarIcon}>⚡</span>
-                    <span className={styles.pillarText}>4-Hour Direct Turnaround</span>
-                  </div>
-                  <div className={styles.pillarItem}>
-                    <span className={styles.pillarIcon}>🔒</span>
-                    <span className={styles.pillarText}>100% Confidential NDA</span>
-                  </div>
-                  <div className={styles.pillarItem}>
-                    <span className={styles.pillarIcon}>📊</span>
-                    <span className={styles.pillarText}>Free Pan-India Competitor Audit</span>
-                  </div>
-                </div>
-
-                {/* Direct WhatsApp Callout */}
-                <div className={styles.deskWhatsappCallout}>
-                  <a
-                    href={`https://wa.me/918763570630?text=${encodeURIComponent(
-                      'Hi Aarav, I have a strategic digital marketing question regarding my business in India.'
-                    )}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.deskWhatsappBtn}
-                  >
-                    <span className={styles.whatsappIcon}>💬</span>
-                    <span>Chat on WhatsApp (Avg. 18m) ↗</span>
-                  </a>
-                </div>
-              </div>
-
-              {/* Right Pane: Interactive Strategy Ingestion Form */}
-              <div className={styles.formIntakePane}>
-                <div className={styles.intakeHeader}>
-                  <div className="eyebrow" style={{ marginBottom: 6 }}>
-                    <span className="eyebrow-dot" />
-                    CONFIDENTIAL STRATEGY DISPATCH &bull; NO PRESSURE
-                  </div>
-                  <h2 className={styles.intakeTitle}>
-                    Ask Our Strategists Directly.
-                  </h2>
-                  <p className={styles.intakeSub}>
-                    Submit your question below for a free, confidential strategic breakdown.
-                  </p>
-                </div>
-
-                <HubSpotLeadForm formLocation="/faq" />
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+      <StrategistGrowthCockpit
+        id="ask-question"
+        eyebrow="CONFIDENTIAL STRATEGY DISPATCH • NO PRESSURE"
+        title="Ask Our Growth Strategists Directly"
+        subtitle="Submit your question below for a free, confidential strategic breakdown."
+        formLocation="/faq"
+      />
 
       {/* Global Bottom CTA */}
       <CTASection />

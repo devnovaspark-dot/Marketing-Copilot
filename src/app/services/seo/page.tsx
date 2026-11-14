@@ -6,7 +6,7 @@ import Link from 'next/link';
 import ScrollReveal from '@/components/ScrollReveal';
 import BeamButton from '@/components/BeamButton';
 import SERPSimulator from './_components/SERPSimulator';
-import StrategistDeskCta from '@/components/StrategistDeskCta';
+import ExecutiveRevenueBlueprint from '@/components/ExecutiveRevenueBlueprint';
 import styles from './seo-page.module.css';
 
 // 12 Target Industries with tailored strategies
@@ -861,12 +861,11 @@ export default function SEOPage() {
       {/* ══════════════════════════════════════════════════
           OPEN STRATEGY CONSULTATION FORM
          ══════════════════════════════════════════════════ */}
-      <StrategistDeskCta
+      <ExecutiveRevenueBlueprint
         id="seo-consultation"
-        defaultTopic="🔍 Search Engine Optimization (SEO)"
-        eyebrow="CONFIDENTIAL ORGANIC SERP AUDIT • NO OBLIGATION"
-        title="Book a Free Consultation"
-        subtitle="Submit your details below for a free technical SEO audit and high-intent keyword roadmap."
+        eyebrow="ORGANIC SEARCH ADVISORY • 90-DAY SCALE"
+        title="Request Your Free Organic Search Revenue Blueprint"
+        subtitle="Connect directly with our senior SEO architects. Get an actionable 90-day search roadmap engineered to rank #1 and drive high-intent leads."
         formLocation="/services/seo"
       />
 

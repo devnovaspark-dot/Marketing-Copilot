@@ -5,7 +5,7 @@ import Image from 'next/image';
 import ScrollReveal from '@/components/ScrollReveal';
 import BeamButton from '@/components/BeamButton';
 import CTASection from '../_components/CTASection';
-import StrategistDeskCta from '@/components/StrategistDeskCta';
+import StrategistGrowthCockpit from '@/components/StrategistGrowthCockpit';
 import styles from './page.module.css';
 
 interface ServiceItem {
@@ -1478,11 +1478,10 @@ export default function ServicesPage() {
         {/* ══════════════════════════════════════════════════
             SECTION 10: OPEN STRATEGY CONSULTATION FORM
            ══════════════════════════════════════════════════ */}
-        <StrategistDeskCta
+        <StrategistGrowthCockpit
           id="services-consultation"
-          defaultTopic="🎯 Full-Funnel Digital Growth"
-          eyebrow="CONFIDENTIAL STRATEGY DISPATCH • NO OBLIGATION"
-          title="Book a Free Consultation"
+          eyebrow="MULTI-CHANNEL STRATEGY • 1-ON-1 DESK"
+          title="Book Your Free Multi-Channel Growth Consultation"
           subtitle="Submit your details below for a free, confidential growth audit and 90-day execution blueprint."
           formLocation="/services"
         />

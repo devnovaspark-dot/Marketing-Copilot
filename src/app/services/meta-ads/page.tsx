@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import ScrollReveal from '@/components/ScrollReveal';
 import BeamButton from '@/components/BeamButton';
-import StrategistDeskCta from '@/components/StrategistDeskCta';
+import PerformanceAuditTerminal from '@/components/PerformanceAuditTerminal';
 import styles from './meta-ads-page.module.css';
 
 // 3 Key Growth Pillars for "Build a Smarter Meta Ads Campaign"
@@ -722,12 +722,11 @@ export default function MetaAdsPage() {
       {/* ══════════════════════════════════════════════════
           OPEN STRATEGY CONSULTATION FORM
          ══════════════════════════════════════════════════ */}
-      <StrategistDeskCta
+      <PerformanceAuditTerminal
         id="meta-ads-consultation"
-        defaultTopic="📱 Meta Ads & Social Scale"
-        eyebrow="CONFIDENTIAL STRATEGY DISPATCH • NO OBLIGATION"
-        title="Book a Free Consultation"
-        subtitle="Submit your details below for a free Meta Ads funnel review and creative strategy blueprint."
+        eyebrow="META ADS LAB • ₹0 AUDIT"
+        title="Claim Your Free Meta Ads & Creative Fatigue Audit"
+        subtitle="Submit your details below. We inspect your Meta Ads Manager, CAPI tracking, creative decay, and targeting overlap to scale ROAS."
         formLocation="/services/meta-ads"
       />
 

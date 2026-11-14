@@ -6,7 +6,7 @@ import Image from 'next/image';
 import BeamButton from '@/components/BeamButton';
 import ScrollReveal from '@/components/ScrollReveal';
 import FAQSection from '@/app/_components/FAQSection';
-import StrategistDeskCta from '@/components/StrategistDeskCta';
+import StrategistGrowthCockpit from '@/components/StrategistGrowthCockpit';
 import SmoothCounter from '@/components/SmoothCounter';
 import {
   spotlightProject,
@@ -1210,12 +1210,11 @@ export default function PortfolioPage() {
       {/* ─────────────────────────────────────────────────────────────
           OPEN STRATEGY CONSULTATION FORM
           ───────────────────────────────────────────────────────────── */}
-      <StrategistDeskCta
+      <StrategistGrowthCockpit
         id="portfolio-consultation"
-        defaultTopic="💼 Case Studies & Revenue Scale"
-        eyebrow="CONFIDENTIAL STRATEGY DISPATCH • NO OBLIGATION"
-        title="Book a Free Consultation"
-        subtitle="Submit your details below for a free, confidential growth audit and 90-day execution blueprint."
+        eyebrow="PROVEN SCALE • 1-ON-1 STRATEGY"
+        title="Book a Free Consultation to Scale Like These Brands"
+        subtitle="Submit your details below for a free, confidential growth audit and 90-day execution blueprint tailored to your industry."
         formLocation="/portfolio"
       />
 

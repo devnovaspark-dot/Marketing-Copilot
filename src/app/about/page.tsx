@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import ScrollReveal from '@/components/ScrollReveal';
 import BeamButton from '@/components/BeamButton';
-import StrategistDeskCta from '@/components/StrategistDeskCta';
+import StrategistGrowthCockpit from '@/components/StrategistGrowthCockpit';
 import styles from './page.module.css';
 
 interface EpochMetric {
@@ -1720,12 +1720,11 @@ export default function AboutPage() {
       {/* ══════════════════════════════════════════════════
           OPEN STRATEGY CONSULTATION FORM
          ══════════════════════════════════════════════════ */}
-      <StrategistDeskCta
+      <StrategistGrowthCockpit
         id="about-consultation"
-        defaultTopic="🤝 Strategic Partnership & Agency Alignment"
-        eyebrow="CONFIDENTIAL STRATEGY DISPATCH • NO OBLIGATION"
-        title="Book a Free Consultation"
-        subtitle="Submit your details below for a free, confidential growth audit and 90-day execution blueprint."
+        eyebrow="FOUNDER ADVISORY • 1-ON-1 STRATEGY"
+        title="Book Your Free Consultation with Our Leadership"
+        subtitle="A confidential 1-on-1 strategy session to audit acquisition channels, margin architecture, and map high-ROAS growth."
         formLocation="/about"
       />
 
