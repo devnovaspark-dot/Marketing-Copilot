@@ -53,6 +53,10 @@ export default function HubSpotLeadForm({
     const observer = new MutationObserver(() => {
       if (frameEl.childElementCount > 0) {
         setIsLoaded(true);
+        const brandingEls = frameEl.querySelectorAll('a[href*="hubspot.com"], [class*="branding"], [class*="hs-form-footer"], [data-hs-branding]');
+        brandingEls.forEach(el => {
+          (el as HTMLElement).style.setProperty('display', 'none', 'important');
+        });
         observer.disconnect();
       }
     });
