@@ -1,7 +1,7 @@
 .wrapper {
   position: relative;
   width: 100%;
-  min-height: 380px;
+  min-height: 360px;
 }
 
 .wrapperLoaded {
@@ -11,9 +11,9 @@
 .card {
   background: #ffffff;
   border: 1px solid rgba(15, 23, 42, 0.08);
-  border-radius: 16px;
-  padding: 20px;
-  box-shadow: 0 12px 36px -10px rgba(15, 23, 42, 0.08);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.06);
 }
 
 .embedded {
@@ -21,27 +21,27 @@
 }
 
 /* 
-  Clips HubSpot's excess top padding and precisely crops the bottom 
-  HubSpot branding footer ("Create your own free form with HubSpot")
+  Clips HubSpot's excess top whitespace and precisely crops the bottom 
+  HubSpot branding footer ("Create your own free forms to generate leads from HubSpot")
   while keeping the orange Submit button 100% visible with clean clearance.
 */
 .cropViewport {
   width: 100%;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 8px;
   position: relative;
 }
 
 .frame {
   width: 100%;
   margin-top: -24px;
-  margin-bottom: -32px;
+  margin-bottom: -50px;
 }
 
 @media (max-width: 560px) {
   .frame {
     margin-top: -18px;
-    margin-bottom: -34px;
+    margin-bottom: -52px;
   }
 }
 

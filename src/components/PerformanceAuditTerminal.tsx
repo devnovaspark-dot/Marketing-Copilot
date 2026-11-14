@@ -42,13 +42,13 @@ export default function PerformanceAuditTerminal({
                   </p>
                 </div>
 
-                {/* VISUAL GRAPHIC: Ad Spend Waste Telemetry SVG */}
+                {/* VISUAL GRAPHIC: Minimalist Ad Spend Waste Telemetry SVG */}
                 <div className={styles.wasteGraphicWrap}>
                   <div className={styles.wasteHeader}>
                     <span className={styles.wasteLabel}>Ad Account Diagnostic Meter</span>
                     <span className={styles.wasteMetric}>38% Avg Wasted Spend Found</span>
                   </div>
-                  <svg className={styles.wasteSvg} viewBox="0 0 340 60" fill="none" preserveAspectRatio="none">
+                  <svg className={styles.wasteSvg} viewBox="0 0 320 52" fill="none" preserveAspectRatio="none">
                     <defs>
                       <linearGradient id="amberBarGrad" x1="0%" y1="0%" x2="100%" y2="0%">
                         <stop offset="0%" stopColor="#EF4444" />
@@ -56,17 +56,14 @@ export default function PerformanceAuditTerminal({
                         <stop offset="100%" stopColor="#10B981" />
                       </linearGradient>
                     </defs>
-                    {/* Background Track */}
-                    <rect x="10" y="24" width="320" height="12" rx="6" fill="rgba(255,255,255,0.08)" />
-                    {/* Active Gradient Range */}
-                    <rect x="10" y="24" width="220" height="12" rx="6" fill="url(#amberBarGrad)" />
-                    {/* Benchmark Pins */}
-                    <circle cx="95" cy="30" r="5" fill="#EF4444" stroke="#1A1B22" strokeWidth="2" />
-                    <circle cx="230" cy="30" r="5" fill="#10B981" stroke="#1A1B22" strokeWidth="2" />
-                    <text x="12" y="15" fill="#EF4444" fontSize="8.5" fontWeight="700">Wasted Negative Spend</text>
-                    <text x="195" y="15" fill="#10B981" fontSize="8.5" fontWeight="700">Optimized Target ROAS</text>
-                    <text x="75" y="52" fill="#94A3B8" fontSize="8" fontWeight="600">Current Leak</text>
-                    <text x="210" y="52" fill="#34D399" fontSize="8" fontWeight="600">+180% Lift Target</text>
+                    <rect x="8" y="20" width="304" height="10" rx="5" fill="rgba(255,255,255,0.08)" />
+                    <rect x="8" y="20" width="200" height="10" rx="5" fill="url(#amberBarGrad)" />
+                    <circle cx="85" cy="25" r="4.5" fill="#EF4444" stroke="#191A20" strokeWidth="1.5" />
+                    <circle cx="208" cy="25" r="4.5" fill="#10B981" stroke="#191A20" strokeWidth="1.5" />
+                    <text x="10" y="13" fill="#EF4444" fontSize="7.5" fontWeight="700">Wasted Negative Spend</text>
+                    <text x="175" y="13" fill="#10B981" fontSize="7.5" fontWeight="700">Optimized Target ROAS</text>
+                    <text x="65" y="44" fill="#94A3B8" fontSize="7" fontWeight="600">Current Leak</text>
+                    <text x="190" y="44" fill="#34D399" fontSize="7" fontWeight="600">+180% Lift Target</text>
                   </svg>
                 </div>
 

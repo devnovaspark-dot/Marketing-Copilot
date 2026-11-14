@@ -42,34 +42,30 @@ export default function ExecutiveRevenueBlueprint({
                   </p>
                 </div>
 
-                {/* VISUAL GRAPHIC: 90-Day Milestone Scale Roadmap (SVG) */}
+                {/* VISUAL GRAPHIC: Minimalist 90-Day Milestone Scale Roadmap (SVG) */}
                 <div className={styles.roadmapGraphicWrap}>
                   <div className={styles.roadmapHeader}>
                     <span className={styles.roadmapLabel}>90-Day Execution Roadmap</span>
                     <span className={styles.roadmapMetric}>Quarterly Scale Plan</span>
                   </div>
-                  <svg className={styles.roadmapSvg} viewBox="0 0 340 60" fill="none" preserveAspectRatio="none">
-                    {/* Horizontal Connector Line */}
-                    <line x1="30" y1="24" x2="310" y2="24" stroke="rgba(255,255,255,0.14)" strokeWidth="2" strokeDasharray="4 4" />
-                    <line x1="30" y1="24" x2="160" y2="24" stroke="#EA580C" strokeWidth="2.5" />
+                  <svg className={styles.roadmapSvg} viewBox="0 0 320 52" fill="none" preserveAspectRatio="none">
+                    <line x1="28" y1="20" x2="292" y2="20" stroke="rgba(255,255,255,0.12)" strokeWidth="1.8" strokeDasharray="3 3" />
+                    <line x1="28" y1="20" x2="150" y2="20" stroke="#EA580C" strokeWidth="2.2" />
 
-                    {/* Milestone 1 */}
-                    <circle cx="30" cy="24" r="8" fill="#EA580C" stroke="#FFFFFF" strokeWidth="2" />
-                    <text x="30" y="27" fill="#FFFFFF" fontSize="8" fontWeight="800" textAnchor="middle">1</text>
-                    <text x="30" y="46" fill="#FDBA74" fontSize="8" fontWeight="700" textAnchor="middle">Days 1–30</text>
-                    <text x="30" y="55" fill="#94A3B8" fontSize="7" textAnchor="middle">CAC &amp; Unit Audit</text>
+                    <circle cx="28" cy="20" r="6.5" fill="#EA580C" stroke="#FFFFFF" strokeWidth="1.5" />
+                    <text x="28" y="23" fill="#FFFFFF" fontSize="7" fontWeight="800" textAnchor="middle">1</text>
+                    <text x="28" y="38" fill="#FDBA74" fontSize="7" fontWeight="700" textAnchor="middle">Days 1–30</text>
+                    <text x="28" y="47" fill="#94A3B8" fontSize="6.5" textAnchor="middle">CAC Audit</text>
 
-                    {/* Milestone 2 */}
-                    <circle cx="170" cy="24" r="8" fill="#F97316" stroke="#FFFFFF" strokeWidth="2" />
-                    <text x="170" y="27" fill="#FFFFFF" fontSize="8" fontWeight="800" textAnchor="middle">2</text>
-                    <text x="170" y="46" fill="#FDBA74" fontSize="8" fontWeight="700" textAnchor="middle">Days 31–60</text>
-                    <text x="170" y="55" fill="#94A3B8" fontSize="7" textAnchor="middle">Funnel Launch</text>
+                    <circle cx="150" cy="20" r="6.5" fill="#F97316" stroke="#FFFFFF" strokeWidth="1.5" />
+                    <text x="150" y="23" fill="#FFFFFF" fontSize="7" fontWeight="800" textAnchor="middle">2</text>
+                    <text x="150" y="38" fill="#FDBA74" fontSize="7" fontWeight="700" textAnchor="middle">Days 31–60</text>
+                    <text x="150" y="47" fill="#94A3B8" fontSize="6.5" textAnchor="middle">Funnel Launch</text>
 
-                    {/* Milestone 3 */}
-                    <circle cx="310" cy="24" r="8" fill="#1F2937" stroke="#EA580C" strokeWidth="2" />
-                    <text x="310" y="27" fill="#EA580C" fontSize="8" fontWeight="800" textAnchor="middle">3</text>
-                    <text x="310" y="46" fill="#FDBA74" fontSize="8" fontWeight="700" textAnchor="middle">Days 61–90</text>
-                    <text x="310" y="55" fill="#94A3B8" fontSize="7" textAnchor="middle">Scale Engine</text>
+                    <circle cx="292" cy="20" r="6.5" fill="#1F2937" stroke="#EA580C" strokeWidth="1.5" />
+                    <text x="292" y="23" fill="#EA580C" fontSize="7" fontWeight="800" textAnchor="middle">3</text>
+                    <text x="292" y="38" fill="#FDBA74" fontSize="7" fontWeight="700" textAnchor="middle">Days 61–90</text>
+                    <text x="292" y="47" fill="#94A3B8" fontSize="6.5" textAnchor="middle">Scale Engine</text>
                   </svg>
                 </div>
 
@@ -93,8 +89,7 @@ export default function ExecutiveRevenueBlueprint({
               {/* Direct Partner Hotline */}
               <div className={styles.hotlineCallout}>
                 <a href="tel:+918280788689" className={styles.hotlineLink}>
-                  <span>📞 Senior Partner Line: +91 82807 88689</span>
-                  <span>↗</span>
+                  <span>📞 Senior Partner Line: +91 82807 88689 ↗</span>
                 </a>
               </div>
             </div>

@@ -45,13 +45,13 @@ export default function StrategistGrowthCockpit({
                   </p>
                 </div>
 
-                {/* VISUAL GRAPHIC: Growth Velocity SVG Funnel */}
+                {/* VISUAL GRAPHIC: Minimalist Growth Velocity SVG Funnel */}
                 <div className={styles.growthGraphicWrap}>
                   <div className={styles.graphicHeader}>
                     <span className={styles.graphicLabel}>Acquisition Velocity</span>
                     <span className={styles.graphicMetric}>Target: +3.8x ROAS</span>
                   </div>
-                  <svg className={styles.funnelSvg} viewBox="0 0 340 70" fill="none" preserveAspectRatio="none">
+                  <svg className={styles.funnelSvg} viewBox="0 0 320 60" fill="none" preserveAspectRatio="none">
                     <defs>
                       <linearGradient id="emeraldPathGrad" x1="0%" y1="0%" x2="100%" y2="0%">
                         <stop offset="0%" stopColor="#10B981" stopOpacity="0.2" />
@@ -59,29 +59,28 @@ export default function StrategistGrowthCockpit({
                         <stop offset="100%" stopColor="#34D399" stopOpacity="1" />
                       </linearGradient>
                       <linearGradient id="emeraldAreaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" stopColor="#10B981" stopOpacity="0.25" />
+                        <stop offset="0%" stopColor="#10B981" stopOpacity="0.2" />
                         <stop offset="100%" stopColor="#10B981" stopOpacity="0.0" />
                       </linearGradient>
                     </defs>
                     <path
-                      d="M10 55 Q 80 48, 140 38 T 260 20 T 330 8 L 330 65 L 10 65 Z"
+                      d="M10 48 Q 75 42, 130 32 T 240 16 T 310 6 L 310 56 L 10 56 Z"
                       fill="url(#emeraldAreaGrad)"
                     />
                     <path
-                      d="M10 55 Q 80 48, 140 38 T 260 20 T 330 8"
+                      d="M10 48 Q 75 42, 130 32 T 240 16 T 310 6"
                       stroke="url(#emeraldPathGrad)"
-                      strokeWidth="2.5"
+                      strokeWidth="2.2"
                       strokeLinecap="round"
                     />
-                    {/* Data Points */}
-                    <circle cx="10" cy="55" r="3.5" fill="#10B981" />
-                    <circle cx="140" cy="38" r="3.5" fill="#10B981" />
-                    <circle cx="260" cy="20" r="3.5" fill="#34D399" />
-                    <circle cx="330" cy="8" r="4.5" fill="#6EE7B7" stroke="#121820" strokeWidth="2" />
-                    <text x="12" y="48" fill="#94A3B8" fontSize="8" fontWeight="600">Audit</text>
-                    <text x="135" y="30" fill="#94A3B8" fontSize="8" fontWeight="600">CAC Fix</text>
-                    <text x="245" y="14" fill="#94A3B8" fontSize="8" fontWeight="600">Omnichannel</text>
-                    <text x="295" y="24" fill="#34D399" fontSize="9" fontWeight="800">Scale</text>
+                    <circle cx="10" cy="48" r="3" fill="#10B981" />
+                    <circle cx="130" cy="32" r="3" fill="#10B981" />
+                    <circle cx="240" cy="16" r="3" fill="#34D399" />
+                    <circle cx="310" cy="6" r="4" fill="#6EE7B7" stroke="#13171F" strokeWidth="1.5" />
+                    <text x="12" y="42" fill="#94A3B8" fontSize="7.5" fontWeight="600">Audit</text>
+                    <text x="125" y="25" fill="#94A3B8" fontSize="7.5" fontWeight="600">CAC Fix</text>
+                    <text x="225" y="11" fill="#94A3B8" fontSize="7.5" fontWeight="600">Omnichannel</text>
+                    <text x="275" y="20" fill="#34D399" fontSize="8" fontWeight="800">Scale ↗</text>
                   </svg>
                 </div>
 

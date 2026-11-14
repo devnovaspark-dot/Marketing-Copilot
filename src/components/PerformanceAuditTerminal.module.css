@@ -1,9 +1,10 @@
 .section {
   position: relative;
-  padding: 36px 0 48px;
-  background: linear-gradient(180deg, #121214 0%, #18191E 50%, #121214 100%);
+  padding: 30px 0 42px;
+  background: linear-gradient(180deg, #121214 0%, #17181D 50%, #121214 100%);
   overflow: hidden;
   color: #F8FAFC;
+  scroll-margin-top: 90px;
 }
 
 .ambientGlowCenter {
@@ -11,64 +12,64 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 720px;
-  height: 320px;
-  background: radial-gradient(circle, rgba(245, 158, 11, 0.08) 0%, rgba(217, 119, 6, 0.02) 50%, transparent 75%);
-  filter: blur(80px);
+  width: 600px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.07) 0%, transparent 70%);
+  filter: blur(60px);
   pointer-events: none;
 }
 
 .terminalFrame {
   display: grid;
-  grid-template-columns: 1fr 1.25fr;
-  background: #1A1B22;
-  border: 1px solid rgba(245, 158, 11, 0.28);
-  border-radius: 20px;
+  grid-template-columns: 0.95fr 1.25fr;
+  background: #191A20;
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  border-radius: 16px;
   box-shadow: 
-    0 18px 48px -10px rgba(0, 0, 0, 0.65),
-    0 0 24px rgba(245, 158, 11, 0.1),
+    0 14px 40px -10px rgba(0, 0, 0, 0.6),
+    0 0 18px rgba(245, 158, 11, 0.08),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
   overflow: hidden;
-  max-width: 960px;
+  max-width: 870px;
   margin: 0 auto;
 }
 
 /* ══════════════════════════════════════════════════
-   LEFT PANE: CARBON & AMBER PERFORMANCE LAB (NO BLUE)
+   LEFT PANE: MINIMALIST CARBON & AMBER PERFORMANCE LAB (NO BLUE)
 ══════════════════════════════════════════════════ */
 .diagnosticsPane {
-  background: linear-gradient(165deg, #14151B 0%, #1C1E26 100%);
-  padding: 28px 26px;
+  background: linear-gradient(165deg, #13141A 0%, #1B1D25 100%);
+  padding: 24px 22px;
   color: #FFFFFF;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 18px;
+  gap: 14px;
   position: relative;
-  border-right: 1px solid rgba(245, 158, 11, 0.18);
+  border-right: 1px solid rgba(245, 158, 11, 0.15);
 }
 
 .amberBadge {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 4px 11px;
+  padding: 3px 9px;
   background: rgba(245, 158, 11, 0.14);
   border: 1px solid rgba(245, 158, 11, 0.38);
   border-radius: 999px;
   font-family: var(--font-display, sans-serif);
-  font-size: 10px;
+  font-size: 9.5px;
   font-weight: 800;
   letter-spacing: 0.08em;
   color: #FBBF24;
 }
 
 .amberFlameDot {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
   background: #F59E0B;
-  box-shadow: 0 0 6px #F59E0B;
+  box-shadow: 0 0 5px #F59E0B;
   animation: amberPulse 2s infinite ease-in-out;
 }
 
@@ -84,15 +85,15 @@
 }
 
 .diagnosticsHeader {
-  margin-top: 10px;
+  margin-top: 6px;
 }
 
 .diagnosticsTitle {
   font-family: var(--font-display, sans-serif);
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 800;
   color: #FFFFFF;
-  margin: 0 0 6px;
+  margin: 0 0 4px;
   line-height: 1.25;
   letter-spacing: -0.01em;
 }
@@ -105,9 +106,9 @@
 }
 
 .diagnosticsLead {
-  font-size: 12px;
+  font-size: 11.5px;
   color: #94A3B8;
-  line-height: 1.5;
+  line-height: 1.45;
   margin: 0;
 }
 
@@ -115,23 +116,23 @@
    VISUAL GRAPHIC: AD SPEND WASTE METER (SVG)
 ══════════════════════════════════════════════════ */
 .wasteGraphicWrap {
-  margin-top: 12px;
-  padding: 12px 14px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(245, 158, 11, 0.22);
-  border-radius: 12px;
+  margin-top: 8px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  border-radius: 10px;
 }
 
 .wasteHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .wasteLabel {
   font-family: var(--font-display, sans-serif);
-  font-size: 10px;
+  font-size: 9.5px;
   font-weight: 800;
   letter-spacing: 0.06em;
   color: #94A3B8;
@@ -140,65 +141,65 @@
 
 .wasteMetric {
   font-family: var(--font-display, sans-serif);
-  font-size: 11px;
+  font-size: 10.5px;
   font-weight: 800;
   color: #F59E0B;
 }
 
 .wasteSvg {
   width: 100%;
-  height: 60px;
+  height: 52px;
   display: block;
 }
 
-/* Audit Highlights List */
+/* Minimalist Checklist */
 .auditChecklist {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin-top: 10px;
+  gap: 6px;
+  margin-top: 6px;
 }
 
 .checkItem {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 8px 10px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: 8px;
+  gap: 8px;
+  padding: 6px 8px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
 }
 
 .checkIcon {
-  font-size: 13px;
+  font-size: 12px;
   flex-shrink: 0;
 }
 
 .checkTitle {
   font-family: var(--font-display, sans-serif);
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: 700;
   color: #F8FAFC;
 }
 
 .proofMetricsBar {
   margin-top: auto;
-  padding-top: 10px;
+  padding-top: 8px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 7px;
 }
 
 .proofIcon {
-  font-size: 15px;
+  font-size: 14px;
   flex-shrink: 0;
 }
 
 .proofText {
-  font-size: 11px;
+  font-size: 10.5px;
   color: #CBD5E1;
-  line-height: 1.4;
+  line-height: 1.35;
 }
 
 .proofHighlight {
@@ -207,11 +208,11 @@
 }
 
 /* ══════════════════════════════════════════════════
-   RIGHT PANE: SLEEK AUDIT INTAKE CARD
+   RIGHT PANE: MINIMALIST AUDIT INTAKE CARD
 ══════════════════════════════════════════════════ */
 .auditIntakePane {
   background: #FFFFFF;
-  padding: 26px 28px 22px;
+  padding: 22px 24px 18px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -219,23 +220,23 @@
 }
 
 .intakeHeader {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  padding: 3px 9px;
+  padding: 2.5px 8px;
   border-radius: 999px;
   background: #FEF3C7;
   border: 1px solid #FDE68A;
   font-family: var(--font-display, sans-serif);
-  font-size: 9.5px;
+  font-size: 9px;
   font-weight: 800;
   letter-spacing: 0.08em;
   color: #B45309;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .eyebrowDot {
@@ -247,18 +248,18 @@
 
 .intakeTitle {
   font-family: var(--font-display, sans-serif);
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 800;
   color: #0F172A;
-  margin: 0 0 4px;
+  margin: 0 0 3px;
   letter-spacing: -0.015em;
   line-height: 1.25;
 }
 
 .intakeSub {
-  font-size: 12px;
+  font-size: 11.5px;
   color: #64748B;
-  line-height: 1.45;
+  line-height: 1.4;
   margin: 0;
 }
 
@@ -267,15 +268,15 @@
   align-items: center;
   justify-content: center;
   gap: 6px;
-  margin-top: 10px;
-  padding-top: 10px;
+  margin-top: 8px;
+  padding-top: 8px;
   border-top: 1px solid #F1F5F9;
-  font-size: 11px;
+  font-size: 10.5px;
   color: #64748B;
   font-weight: 600;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 860px) {
   .terminalFrame {
     grid-template-columns: 1fr;
   }
@@ -283,15 +284,15 @@
   .diagnosticsPane {
     border-right: none;
     border-bottom: 1px solid rgba(245, 158, 11, 0.18);
-    padding: 22px 20px;
+    padding: 18px 16px;
   }
 
   .auditIntakePane {
-    padding: 22px 18px;
+    padding: 18px 16px;
   }
 
   .diagnosticsTitle,
   .intakeTitle {
-    font-size: 19px;
+    font-size: 17px;
   }
 }
