@@ -28,12 +28,18 @@ export default function StrategistGrowthCockpit({
       <div className="container">
         <ScrollReveal>
           <div className={styles.dispatchCockpit}>
-            {/* Left Pane: Signature Navy Blue Growth Strategist Desk */}
+            {/* Top Metallic Bevel Streamer */}
+            <div className={styles.consoleTopBevel} />
+
+            {/* Left Pane: Skeuomorphic Navy Blue Growth Console */}
             <div className={styles.strategistDeskPane}>
               <div>
-                <div className={styles.liveStatusPill}>
-                  <span className={styles.liveDot} />
-                  <span>STRATEGIST ON-DUTY &bull; INDIA DESK</span>
+                <div className={styles.deskHardwareBar}>
+                  <div className={styles.liveStatusPill}>
+                    <span className={styles.liveDot} />
+                    <span>STRATEGY DESK &bull; INDIA HQ</span>
+                  </div>
+                  <div className={styles.hardwareScrew} title="Console Hardware Accent" />
                 </div>
 
                 <div className={styles.deskHeader}>
@@ -41,11 +47,11 @@ export default function StrategistGrowthCockpit({
                     Talk Directly With a Growth Strategist
                   </h3>
                   <p className={styles.deskSub}>
-                    A confidential 1-on-1 strategy session to audit your acquisition channels and map high-ROAS growth.
+                    A confidential 1-on-1 strategy session to audit acquisition channels and map high-ROAS growth.
                   </p>
                 </div>
 
-                {/* Real Photography Asset Card: Executive Strategist */}
+                {/* Skeuomorphic 3D Glass Photo Card */}
                 <div className={styles.visualImageCard}>
                   <Image
                     src="/images/ceo_aarav.jpg"
@@ -54,6 +60,9 @@ export default function StrategistGrowthCockpit({
                     className={styles.panelImg}
                     priority={false}
                   />
+                  {/* Diagonal Glass Sheen Reflection */}
+                  <div className={styles.glassSheen} />
+                  
                   <div className={styles.imgOverlayPill}>
                     <div className={styles.strategistBrief}>
                       <div className={styles.avatarMini}>
@@ -73,20 +82,20 @@ export default function StrategistGrowthCockpit({
                   </div>
                 </div>
 
-                {/* Minimalist 2-Bullet Highlights */}
-                <div className={styles.quickBullets}>
-                  <div className={styles.bulletItem}>
-                    <span className={styles.bulletCheck}>✓</span>
-                    <span>4-Hour Direct Turnaround</span>
+                {/* Tactile Hardware Micro-Tiles */}
+                <div className={styles.tactileTileList}>
+                  <div className={styles.tactileTile}>
+                    <span className={styles.tileIcon}>⚡</span>
+                    <span className={styles.tileText}>4-Hour Direct Turnaround</span>
                   </div>
-                  <div className={styles.bulletItem}>
-                    <span className={styles.bulletCheck}>✓</span>
-                    <span>100% Confidential NDA Protected</span>
+                  <div className={styles.tactileTile}>
+                    <span className={styles.tileIcon}>🔒</span>
+                    <span className={styles.tileText}>100% Confidential NDA Protected</span>
                   </div>
                 </div>
               </div>
 
-              {/* Direct WhatsApp Quick Chat */}
+              {/* 3D Illuminated Tactile WhatsApp Push Switch */}
               <div className={styles.deskWhatsappCallout}>
                 <a
                   href={`https://wa.me/918763570630?text=${encodeURIComponent(
@@ -96,12 +105,13 @@ export default function StrategistGrowthCockpit({
                   rel="noopener noreferrer"
                   className={styles.deskWhatsappBtn}
                 >
+                  <span className={styles.btnGlowIndicator} />
                   <span>💬 Chat on WhatsApp (Avg. 18m) ↗</span>
                 </a>
               </div>
             </div>
 
-            {/* Right Pane: Compact HubSpot Lead Form */}
+            {/* Right Pane: Compact Skeuomorphic Lead Intake Card */}
             <div className={styles.formIntakePane}>
               <div className={styles.intakeHeader}>
                 <div className={styles.eyebrow}>
@@ -114,9 +124,9 @@ export default function StrategistGrowthCockpit({
 
               <HubSpotLeadForm id="growth-cockpit-form" formLocation={formLocation} />
 
-              <div className={styles.trustMiniRow}>
-                <span className={styles.liveDot} style={{ width: 5, height: 5 }} />
-                <span>100% Confidential NDA &bull; 4-Hour Turnaround &bull; No Spam</span>
+              <div className={styles.trustBadgeBar}>
+                <span className={styles.lockIcon}>🛡️</span>
+                <span>100% Confidential NDA &bull; 4-Hour Turnaround &bull; Zero Spam</span>
               </div>
             </div>
           </div>

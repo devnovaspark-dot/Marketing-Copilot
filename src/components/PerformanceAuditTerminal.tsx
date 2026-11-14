@@ -26,12 +26,18 @@ export default function PerformanceAuditTerminal({
       <div className="container">
         <ScrollReveal>
           <div className={styles.terminalFrame}>
-            {/* Left Pane: Signature Navy Blue Performance Lab */}
+            {/* Top Metallic Bevel Streamer */}
+            <div className={styles.consoleTopBevel} />
+
+            {/* Left Pane: Skeuomorphic Navy Blue Performance Lab */}
             <div className={styles.diagnosticsPane}>
               <div>
-                <div className={styles.amberBadge}>
-                  <span className={styles.amberFlameDot} />
-                  <span>PERFORMANCE AUDIT LAB &bull; ₹0 BENCHMARK</span>
+                <div className={styles.deskHardwareBar}>
+                  <div className={styles.amberBadge}>
+                    <span className={styles.amberFlameDot} />
+                    <span>PERFORMANCE LAB &bull; ₹0 BENCHMARK</span>
+                  </div>
+                  <div className={styles.hardwareScrew} title="Hardware Terminal Accent" />
                 </div>
 
                 <div className={styles.diagnosticsHeader}>
@@ -39,11 +45,11 @@ export default function PerformanceAuditTerminal({
                     Find Where You&apos;re Bleeding Ad Spend
                   </h3>
                   <p className={styles.diagnosticsLead}>
-                    We inspect your Google &amp; Meta ad accounts to pinpoint wasted budget, negative keywords, and conversion leaks.
+                    We inspect your Google &amp; Meta ad accounts to pinpoint wasted budget, negative keywords, and leaks.
                   </p>
                 </div>
 
-                {/* Real Photography Asset Card: Growth Analytics Dashboard */}
+                {/* Skeuomorphic 3D Glass Dashboard Card */}
                 <div className={styles.visualImageCard}>
                   <Image
                     src="/images/dashboard_hero.jpg"
@@ -52,6 +58,9 @@ export default function PerformanceAuditTerminal({
                     className={styles.panelImg}
                     priority={false}
                   />
+                  {/* Diagonal Glass Sheen Reflection */}
+                  <div className={styles.glassSheen} />
+
                   <div className={styles.imgOverlayPill}>
                     <div className={styles.dashboardMeta}>
                       <span className={styles.dashboardPillDot} />
@@ -61,29 +70,29 @@ export default function PerformanceAuditTerminal({
                   </div>
                 </div>
 
-                {/* Minimalist 2-Bullet Highlights */}
-                <div className={styles.quickBullets}>
-                  <div className={styles.bulletItem}>
-                    <span className={styles.bulletCheck}>✓</span>
-                    <span>Wasted Ad Spend &amp; Keyword Teardown</span>
+                {/* Tactile Hardware Micro-Tiles */}
+                <div className={styles.tactileTileList}>
+                  <div className={styles.tactileTile}>
+                    <span className={styles.tileIcon}>📉</span>
+                    <span className={styles.tileText}>Negative Keyword &amp; Placement Waste</span>
                   </div>
-                  <div className={styles.bulletItem}>
-                    <span className={styles.bulletCheck}>✓</span>
-                    <span>Actionable 5-Page Audit Deck</span>
+                  <div className={styles.tactileTile}>
+                    <span className={styles.tileIcon}>📊</span>
+                    <span className={styles.tileText}>Actionable 5-Page Audit Deck</span>
                   </div>
                 </div>
               </div>
 
-              {/* Proof Banner */}
+              {/* 3D Tactile Proof Banner */}
               <div className={styles.proofMetricsBar}>
                 <span className={styles.proofIcon}>🛡️</span>
                 <span className={styles.proofText}>
-                  Audited across <strong className={styles.proofHighlight}>₹15+ Cr</strong> client spend. Google &amp; Meta certified.
+                  Audited across <strong className={styles.proofHighlight}>₹15+ Cr</strong> client spend. Certified Partner.
                 </span>
               </div>
             </div>
 
-            {/* Right Pane: Compact HubSpot Lead Form */}
+            {/* Right Pane: Compact Skeuomorphic Lead Intake Card */}
             <div className={styles.auditIntakePane}>
               <div className={styles.intakeHeader}>
                 <div className={styles.eyebrow}>
@@ -96,9 +105,9 @@ export default function PerformanceAuditTerminal({
 
               <HubSpotLeadForm id="terminal-audit-form" formLocation={formLocation} />
 
-              <div className={styles.trustMiniRow}>
-                <span className={styles.amberFlameDot} style={{ width: 5, height: 5 }} />
-                <span>⚡ No Password Required &bull; Delivered in 24 Hours &bull; 100% Free</span>
+              <div className={styles.trustBadgeBar}>
+                <span className={styles.lockIcon}>⚡</span>
+                <span>No Password Required &bull; Delivered in 24 Hours &bull; 100% Free</span>
               </div>
             </div>
           </div>

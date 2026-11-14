@@ -26,12 +26,18 @@ export default function ExecutiveRevenueBlueprint({
       <div className="container">
         <ScrollReveal>
           <div className={styles.executiveFrame}>
-            {/* Left Pane: Signature Navy Blue Executive Advisory */}
+            {/* Top Metallic Bevel Streamer */}
+            <div className={styles.consoleTopBevel} />
+
+            {/* Left Pane: Skeuomorphic Navy Blue Executive Advisory */}
             <div className={styles.advisoryPane}>
               <div>
-                <div className={styles.executiveBadge}>
-                  <span className={styles.copperDot} />
-                  <span>EXECUTIVE DESK &bull; INDIA ADVISORY</span>
+                <div className={styles.deskHardwareBar}>
+                  <div className={styles.executiveBadge}>
+                    <span className={styles.copperDot} />
+                    <span>EXECUTIVE DESK &bull; INDIA ADVISORY</span>
+                  </div>
+                  <div className={styles.hardwareScrew} title="Hardware Console Accent" />
                 </div>
 
                 <div className={styles.advisoryHeader}>
@@ -39,11 +45,11 @@ export default function ExecutiveRevenueBlueprint({
                     Scale to a Predictable Revenue Engine
                   </h3>
                   <p className={styles.advisoryLead}>
-                    A milestone-driven growth roadmap tailored for founders and CMOs seeking profitable unit economics and compounding scale.
+                    A milestone-driven growth roadmap tailored for founders and CMOs seeking profitable unit economics.
                   </p>
                 </div>
 
-                {/* Real Photography Asset Card: Senior Growth Workspace */}
+                {/* Skeuomorphic 3D Glass Workspace Card */}
                 <div className={styles.visualImageCard}>
                   <Image
                     src="/images/team_office.jpg"
@@ -52,6 +58,9 @@ export default function ExecutiveRevenueBlueprint({
                     className={styles.panelImg}
                     priority={false}
                   />
+                  {/* Diagonal Glass Sheen Reflection */}
+                  <div className={styles.glassSheen} />
+
                   <div className={styles.imgOverlayPill}>
                     <div className={styles.workspaceMeta}>
                       <span className={styles.workspaceDot} />
@@ -61,28 +70,29 @@ export default function ExecutiveRevenueBlueprint({
                   </div>
                 </div>
 
-                {/* Minimalist 2-Bullet Highlights */}
-                <div className={styles.quickBullets}>
-                  <div className={styles.bulletItem}>
-                    <span className={styles.bulletCheck}>✓</span>
-                    <span>Full-Funnel CAC &amp; Margin Architecture</span>
+                {/* Tactile Hardware Micro-Tiles */}
+                <div className={styles.tactileTileList}>
+                  <div className={styles.tactileTile}>
+                    <span className={styles.tileIcon}>🏛️</span>
+                    <span className={styles.tileText}>Full-Funnel CAC &amp; Margin Architecture</span>
                   </div>
-                  <div className={styles.bulletItem}>
-                    <span className={styles.bulletCheck}>✓</span>
-                    <span>Direct Senior Partner Alignment (No Junior Reps)</span>
+                  <div className={styles.tactileTile}>
+                    <span className={styles.tileIcon}>🤝</span>
+                    <span className={styles.tileText}>Direct Senior Partner Alignment</span>
                   </div>
                 </div>
               </div>
 
-              {/* Direct Partner Hotline */}
+              {/* 3D Tactile Senior Partner Hotline Switch */}
               <div className={styles.hotlineCallout}>
                 <a href="tel:+918280788689" className={styles.hotlineLink}>
+                  <span className={styles.hotlineGlow} />
                   <span>📞 Call Senior Partner: +91 82807 88689 ↗</span>
                 </a>
               </div>
             </div>
 
-            {/* Right Pane: Compact HubSpot Lead Form */}
+            {/* Right Pane: Compact Skeuomorphic Lead Intake Card */}
             <div className={styles.blueprintIntakePane}>
               <div className={styles.intakeHeader}>
                 <div className={styles.eyebrow}>
@@ -95,8 +105,8 @@ export default function ExecutiveRevenueBlueprint({
 
               <HubSpotLeadForm id="blueprint-exec-form" formLocation={formLocation} />
 
-              <div className={styles.trustMiniRow}>
-                <span className={styles.copperDot} style={{ width: 5, height: 5 }} />
+              <div className={styles.trustBadgeBar}>
+                <span className={styles.lockIcon}>📋</span>
                 <span>Enterprise NDA Guaranteed &bull; 1-on-1 Senior Partner Review</span>
               </div>
             </div>
