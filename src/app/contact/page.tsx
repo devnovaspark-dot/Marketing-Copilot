@@ -1,5 +1,4 @@
 'use client';
-import Image from 'next/image';
 import ScrollReveal from '@/components/ScrollReveal';
 import HubSpotLeadForm from '@/components/HubSpotLeadForm';
 import ContactGrowthCard from '@/components/ContactGrowthCard';
@@ -202,21 +201,6 @@ export default function ContactPage() {
                         <span className={styles.clockIcon}>⚡</span>
                         <span>4-Hr Response</span>
                       </div>
-                    </div>
-                  </div>
-
-                  {/* Innovation Studio & Strategy War-Room Visual Showcase */}
-                  <div className={styles.formVisualCard}>
-                    <Image
-                      src="/images/Modern Marketing Copilot Office Reception.webp"
-                      alt="Marketing Copilot Innovation Studio Bhubaneswar"
-                      fill
-                      className={styles.formVisualImg}
-                      priority={false}
-                    />
-                    <div className={styles.formVisualOverlay}>
-                      <span className={styles.visualPulseDot} />
-                      <span>🏢 Innovation Studio &bull; Bhubaneswar HQ</span>
                     </div>
                   </div>
 

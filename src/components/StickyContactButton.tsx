@@ -7,26 +7,26 @@ import styles from './StickyContactButton.module.css';
 export default function StickyContactButton() {
   const pathname = usePathname();
 
-  // Hide on studio and contact page (since user is already on contact form)
-  if (pathname?.startsWith('/studio') || pathname === '/contact') {
+  // Hide on studio
+  if (pathname?.startsWith('/studio')) {
     return null;
   }
 
   const handleTabClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    // Check if current page contains an on-page consultation form
-    const formSection = document.querySelector<HTMLElement>(
-      '#home-performance-audit, #about-consultation, #growth-strategy-cockpit, #performance-audit-terminal, #executive-revenue-blueprint, [id*="consultation"], [id*="cockpit"], [id*="blueprint"], [id*="audit-terminal"]'
-    );
-    if (formSection) {
-      e.preventDefault();
-      formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // If already on the home page, smoothly scroll to the performance audit consultation section
+    if (pathname === '/') {
+      const target = document.querySelector<HTMLElement>('#home-performance-audit');
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }
   };
 
   return (
     <aside className={styles.stickyWrapper} aria-label="Book Free Consultation sticky button">
       <Link
-        href="/contact"
+        href="/#home-performance-audit"
         onClick={handleTabClick}
         className={styles.skeuomorphicTab}
         title="Book Your Free Consultation with Marketing Copilot"
