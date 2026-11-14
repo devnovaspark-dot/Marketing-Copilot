@@ -4,7 +4,6 @@ import HeroSection from './_components/HeroSection';
 
 const ClientsSection = dynamic(() => import('./_components/ClientsSection'));
 
-const StrategistGrowthCockpit = dynamic(() => import('@/components/StrategistGrowthCockpit'));
 const PerformanceAuditTerminal = dynamic(() => import('@/components/PerformanceAuditTerminal'));
 const ExecutiveRevenueBlueprint = dynamic(() => import('@/components/ExecutiveRevenueBlueprint'));
 const StoryVideoSection = dynamic(() => import('./_components/StoryVideoSection'));
@@ -70,12 +69,6 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <StrategistGrowthCockpit
-        id="home-strategy-cockpit"
-        title="Book a Free Growth Strategy Consultation"
-        subtitle="Submit your details below. Get an actionable growth roadmap tailored for your business in India from our senior strategists."
-        formLocation="/"
-      />
       <ClientsSection />
       <BrandSpotlightSection />
       <div className="section-cv"><StoryVideoSection /></div>
