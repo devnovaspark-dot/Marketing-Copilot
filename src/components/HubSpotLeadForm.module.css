@@ -34,9 +34,12 @@
 }
 
 .frame {
-  width: 100%;
-  margin-top: -24px;
-  margin-bottom: -78px;
+  width: 104%;
+  margin-left: -2%;
+  transform: scale(0.96);
+  transform-origin: top center;
+  margin-top: -26px;
+  margin-bottom: -84px;
 }
 
 @media (max-width: 560px) {
