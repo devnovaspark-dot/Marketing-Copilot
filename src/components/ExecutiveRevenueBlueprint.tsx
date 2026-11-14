@@ -80,19 +80,50 @@ export default function ExecutiveRevenueBlueprint({
                 </div>
               </div>
 
-              {/* Tactile Hardware Micro-Tiles */}
-              <div className={styles.tactileTileList}>
-                <div className={styles.tactileTile}>
-                  <span className={styles.tileIcon}>🇮🇳</span>
-                  <span className={styles.tileText}>Full-Funnel CAC, Margin &amp; LTV Architecture</span>
+              {/* Secondary Visual Showcase: Modern Studio & Architecture */}
+              <div className={styles.secondaryVisualCard}>
+                <Image
+                  src="/images/Modern Marketing Copilot Office Reception.webp"
+                  alt="Marketing Copilot Bhubaneswar Studio & Revenue Architecture Facility"
+                  fill
+                  className={styles.panelImg}
+                  priority={false}
+                />
+                <div className={styles.secondaryOverlayPill}>
+                  <span className={styles.secondaryOverlayDot} />
+                  <span>📐 Bhubaneswar HQ &bull; Revenue Architecture</span>
                 </div>
-                <div className={styles.tactileTile}>
-                  <span className={styles.tileIcon}>📈</span>
-                  <span className={styles.tileText}>90-Day Execution Roadmap for Indian Markets</span>
+              </div>
+
+              {/* Executive 90-Day Blueprint Deliverables Matrix */}
+              <div className={styles.deliverablesMatrix}>
+                <div className={styles.deliverableRow}>
+                  <span className={styles.deliverableIcon}>💼</span>
+                  <div className={styles.deliverableTextCol}>
+                    <span className={styles.deliverableTitle}>Margin &amp; EBITDA Architecture</span>
+                    <span className={styles.deliverableDesc}>Align customer acquisition cost with contribution margins and cash flow</span>
+                  </div>
                 </div>
-                <div className={styles.tactileTile}>
-                  <span className={styles.tileIcon}>🤝</span>
-                  <span className={styles.tileText}>Direct Senior Partner Alignment &bull; Strict NDA</span>
+                <div className={styles.deliverableRow}>
+                  <span className={styles.deliverableIcon}>📊</span>
+                  <div className={styles.deliverableTextCol}>
+                    <span className={styles.deliverableTitle}>Unified Full-Funnel Telemetry</span>
+                    <span className={styles.deliverableDesc}>Consolidate Google, Meta, LinkedIn &amp; SEO into single blended CAC</span>
+                  </div>
+                </div>
+                <div className={styles.deliverableRow}>
+                  <span className={styles.deliverableIcon}>🎯</span>
+                  <div className={styles.deliverableTextCol}>
+                    <span className={styles.deliverableTitle}>Quarterly Scale Milestones</span>
+                    <span className={styles.deliverableDesc}>30-60-90 day execution benchmarks tailored for Indian market dynamics</span>
+                  </div>
+                </div>
+                <div className={styles.deliverableRow}>
+                  <span className={styles.deliverableIcon}>🤝</span>
+                  <div className={styles.deliverableTextCol}>
+                    <span className={styles.deliverableTitle}>Direct Partner Strategic Alignment</span>
+                    <span className={styles.deliverableDesc}>Confidential 1-on-1 with founders &amp; partners under strict mutual NDA</span>
+                  </div>
                 </div>
               </div>
 

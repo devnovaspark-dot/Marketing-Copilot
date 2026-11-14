@@ -80,19 +80,50 @@ export default function PerformanceAuditTerminal({
                 </div>
               </div>
 
-              {/* Tactile Hardware Micro-Tiles */}
-              <div className={styles.tactileTileList}>
-                <div className={styles.tactileTile}>
-                  <span className={styles.tileIcon}>🇮🇳</span>
-                  <span className={styles.tileText}>Google Ads &amp; Meta Ads Pan-India Audit</span>
+              {/* Secondary Visual Showcase: Strategy War-Room Deep Audit */}
+              <div className={styles.secondaryVisualCard}>
+                <Image
+                  src="/images/SEO strategy_team.jpg"
+                  alt="Senior Performance Marketing War-Room & Ad Account Audit Team"
+                  fill
+                  className={styles.panelImg}
+                  priority={false}
+                />
+                <div className={styles.secondaryOverlayPill}>
+                  <span className={styles.secondaryOverlayDot} />
+                  <span>🎯 Senior War-Room &bull; Ad Account Deep Audit</span>
                 </div>
-                <div className={styles.tactileTile}>
-                  <span className={styles.tileIcon}>📉</span>
-                  <span className={styles.tileText}>Negative Keyword &amp; Placement Waste Shield</span>
+              </div>
+
+              {/* What We Inspect in 24 Hours: Indian Performance Audit Deliverables */}
+              <div className={styles.deliverablesMatrix}>
+                <div className={styles.deliverableRow}>
+                  <span className={styles.deliverableIcon}>🎯</span>
+                  <div className={styles.deliverableTextCol}>
+                    <span className={styles.deliverableTitle}>Negative Keyword &amp; Waste Shield</span>
+                    <span className={styles.deliverableDesc}>Eliminate irrelevant search clicks wasting your daily budget</span>
+                  </div>
                 </div>
-                <div className={styles.tactileTile}>
-                  <span className={styles.tileIcon}>⚡</span>
-                  <span className={styles.tileText}>₹0 Cost &bull; Zero Password or Access Needed</span>
+                <div className={styles.deliverableRow}>
+                  <span className={styles.deliverableIcon}>⚡</span>
+                  <div className={styles.deliverableTextCol}>
+                    <span className={styles.deliverableTitle}>ROAS &amp; Attribution Verification</span>
+                    <span className={styles.deliverableDesc}>GA4, Meta CAPI &amp; Pixel leakage diagnostics</span>
+                  </div>
+                </div>
+                <div className={styles.deliverableRow}>
+                  <span className={styles.deliverableIcon}>📉</span>
+                  <div className={styles.deliverableTextCol}>
+                    <span className={styles.deliverableTitle}>Creative Fatigue &amp; Ad Rank Uplift</span>
+                    <span className={styles.deliverableDesc}>Improve Quality Score to lower Indian CPC by 20-35%</span>
+                  </div>
+                </div>
+                <div className={styles.deliverableRow}>
+                  <span className={styles.deliverableIcon}>📋</span>
+                  <div className={styles.deliverableTextCol}>
+                    <span className={styles.deliverableTitle}>24-Hr Video Walkthrough + PDF</span>
+                    <span className={styles.deliverableDesc}>Actionable Loom audit report delivered by senior leads</span>
+                  </div>
                 </div>
               </div>
 

@@ -82,19 +82,50 @@ export default function StrategistGrowthCockpit({
                 </div>
               </div>
 
-              {/* Tactile Hardware Micro-Tiles */}
-              <div className={styles.tactileTileList}>
-                <div className={styles.tactileTile}>
-                  <span className={styles.tileIcon}>🇮🇳</span>
-                  <span className={styles.tileText}>Pan-India Localized Search &amp; Paid Media</span>
+              {/* Secondary Visual Showcase: Strategy Team & War-Room */}
+              <div className={styles.secondaryVisualCard}>
+                <Image
+                  src="/images/team_office.jpg"
+                  alt="Marketing Copilot Senior Strategy Council & Executive Advisory"
+                  fill
+                  className={styles.panelImg}
+                  priority={false}
+                />
+                <div className={styles.secondaryOverlayPill}>
+                  <span className={styles.secondaryOverlayDot} />
+                  <span>👥 Senior Strategy Council &bull; 1-on-1 Advisory</span>
                 </div>
-                <div className={styles.tactileTile}>
-                  <span className={styles.tileIcon}>⚡</span>
-                  <span className={styles.tileText}>100% Free 30-Min Growth Audit &amp; Blueprint</span>
+              </div>
+
+              {/* What You Receive: 30-Minute Growth Strategy Blueprint */}
+              <div className={styles.deliverablesMatrix}>
+                <div className={styles.deliverableRow}>
+                  <span className={styles.deliverableIcon}>📈</span>
+                  <div className={styles.deliverableTextCol}>
+                    <span className={styles.deliverableTitle}>90-Day Scaling Roadmap</span>
+                    <span className={styles.deliverableDesc}>Targeted channel-by-channel execution plan for Indian markets</span>
+                  </div>
                 </div>
-                <div className={styles.tactileTile}>
-                  <span className={styles.tileIcon}>🔒</span>
-                  <span className={styles.tileText}>Confidential Non-Disclosure (NDA) Protected</span>
+                <div className={styles.deliverableRow}>
+                  <span className={styles.deliverableIcon}>🔍</span>
+                  <div className={styles.deliverableTextCol}>
+                    <span className={styles.deliverableTitle}>Full-Funnel CAC Optimization</span>
+                    <span className={styles.deliverableDesc}>Cut customer acquisition costs by 30-50% with high-intent CRO</span>
+                  </div>
+                </div>
+                <div className={styles.deliverableRow}>
+                  <span className={styles.deliverableIcon}>🚀</span>
+                  <div className={styles.deliverableTextCol}>
+                    <span className={styles.deliverableTitle}>Organic &amp; Paid Media Synergy</span>
+                    <span className={styles.deliverableDesc}>Rank #1 on Google search while multiplying paid Meta ROAS</span>
+                  </div>
+                </div>
+                <div className={styles.deliverableRow}>
+                  <span className={styles.deliverableIcon}>🔒</span>
+                  <div className={styles.deliverableTextCol}>
+                    <span className={styles.deliverableTitle}>100% Confidential NDA Protected</span>
+                    <span className={styles.deliverableDesc}>Mutual non-disclosure with senior strategist callback in 4 hours</span>
+                  </div>
                 </div>
               </div>
 
