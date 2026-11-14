@@ -756,7 +756,7 @@ export default function ServicesPage() {
         <StrategistGrowthCockpit
           id="services-consultation"
           eyebrow="🇮🇳 MULTI-CHANNEL STRATEGY • 1-ON-1 DESK"
-          title="Book Your Free Consultation"
+          title="Book a Free Full-Funnel Marketing Consultation"
           subtitle="Submit your details below. Get an actionable growth roadmap tailored for your business in India from our senior strategists."
           formLocation="/services"
         />

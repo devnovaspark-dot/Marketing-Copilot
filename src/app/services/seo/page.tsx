@@ -384,7 +384,7 @@ export default function SEOPage() {
       <ExecutiveRevenueBlueprint
         id="seo-consultation"
         eyebrow="🇮🇳 ORGANIC SEARCH ADVISORY • 90-DAY SCALE"
-        title="Book Your Free Organic Search Revenue Blueprint"
+        title="Book a Free Organic Search Revenue Blueprint"
         subtitle="Connect directly with our senior Indian SEO architects. Get an actionable 90-day search roadmap engineered to rank #1 and drive high-intent leads."
         formLocation="/services/seo"
       />
@@ -875,7 +875,7 @@ export default function SEOPage() {
       <ExecutiveRevenueBlueprint
         id="seo-consultation"
         eyebrow="ORGANIC SEARCH ADVISORY • 90-DAY SCALE"
-        title="Request Your Free Organic Search Revenue Blueprint"
+        title="Book a Free 90-Day Organic Search Blueprint"
         subtitle="Connect directly with our senior SEO architects. Get an actionable 90-day search roadmap engineered to rank #1 and drive high-intent leads."
         formLocation="/services/seo"
       />

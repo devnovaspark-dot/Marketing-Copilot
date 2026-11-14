@@ -17,7 +17,7 @@ interface StrategistGrowthCockpitProps {
 export default function StrategistGrowthCockpit({
   id = 'growth-strategy-cockpit',
   defaultTopic = '🎯 Business Growth & Performance Marketing',
-  title = 'Book Your Free Consultation',
+  title = 'Book a Free Growth Strategy Consultation',
   subtitle = 'Submit your details below. Get an actionable growth roadmap tailored for your business in India from our senior strategists.',
   eyebrow = '🇮🇳 100% FREE STRATEGY CONSULTATION • NO OBLIGATION',
   formLocation = '/',

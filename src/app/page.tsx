@@ -72,7 +72,7 @@ export default function HomePage() {
       <HeroSection />
       <StrategistGrowthCockpit
         id="home-strategy-cockpit"
-        title="Book Your Free Consultation"
+        title="Book a Free Growth Strategy Consultation"
         subtitle="Submit your details below. Get an actionable growth roadmap tailored for your business in India from our senior strategists."
         formLocation="/"
       />
@@ -82,7 +82,7 @@ export default function HomePage() {
       <div className="section-cv"><MetricsSection /></div>
       <PerformanceAuditTerminal
         id="home-performance-audit"
-        title="Claim Your Free Performance & Ad Audit"
+        title="Book a Free Performance & Growth Audit"
         subtitle="Submit your details below. Our performance team will analyze your ad accounts and search visibility to find where you are leaking revenue."
         formLocation="/"
       />
@@ -91,7 +91,7 @@ export default function HomePage() {
       <div className="section-cv"><StrategySection /></div>
       <ExecutiveRevenueBlueprint
         id="home-executive-blueprint"
-        title="Request Your Free 90-Day Revenue Blueprint"
+        title="Book a Free 90-Day Revenue Blueprint"
         subtitle="Connect directly with our senior growth partners. Get a predictable scaling roadmap engineered for your market."
         formLocation="/"
       />

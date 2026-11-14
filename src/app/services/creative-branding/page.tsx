@@ -182,7 +182,7 @@ export default function CreativeBrandingPage() {
       <StrategistGrowthCockpit
         id="creative-branding-consultation"
         eyebrow="🇮🇳 CREATIVE BRANDING & IDENTITY • 1-ON-1 DESK"
-        title="Book Your Free Consultation"
+        title="Book a Free Brand Identity & Design Consultation"
         subtitle="Submit your details below. Get an actionable growth roadmap tailored for your business in India from our senior strategists."
         formLocation="/services/creative-branding"
       />

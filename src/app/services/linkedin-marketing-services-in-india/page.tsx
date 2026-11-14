@@ -450,7 +450,7 @@ export default function LinkedInMarketingPage() {
       <ExecutiveRevenueBlueprint
         id="enquiry-section"
         eyebrow="🇮🇳 B2B LINKEDIN ADVISORY • 90-DAY SCALE"
-        title="Book Your Free B2B LinkedIn Consultation"
+        title="Book a Free B2B LinkedIn Lead Strategy"
         subtitle="Connect directly with our senior Indian growth partners. Build a predictable outbound pipeline and high-converting thought leadership roadmap."
         formLocation="/services/linkedin-marketing-services-in-india"
       />
@@ -977,7 +977,7 @@ export default function LinkedInMarketingPage() {
       <ExecutiveRevenueBlueprint
         id="enquiry-section"
         eyebrow="B2B ACCOUNT STRATEGY • 90-DAY PIPELINE"
-        title="Request Your B2B LinkedIn Marketing Blueprint"
+        title="Book a Free B2B LinkedIn Marketing Blueprint"
         subtitle="Connect directly with our senior B2B growth architects. Get a customized LinkedIn demand generation roadmap for high-value contracts."
         formLocation="/services/linkedin-marketing-services-in-india"
       />

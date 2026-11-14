@@ -832,7 +832,7 @@ export default function AboutPage() {
       <StrategistGrowthCockpit
         id="about-consultation"
         eyebrow="🇮🇳 FOUNDER ADVISORY • 1-ON-1 STRATEGY"
-        title="Book Your Free Consultation with Our Leadership"
+        title="Book a Free Executive Leadership Consultation"
         subtitle="A confidential 1-on-1 strategy session to audit acquisition channels, margin architecture, and map high-ROAS growth across India."
         formLocation="/about"
       />

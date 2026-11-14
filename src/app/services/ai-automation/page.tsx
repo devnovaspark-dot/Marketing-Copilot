@@ -188,7 +188,7 @@ export default function AiAutomationPage() {
       <StrategistGrowthCockpit
         id="ai-automation-consultation"
         eyebrow="🇮🇳 AI & AUTOMATION ADVISORY • 1-ON-1 DESK"
-        title="Book Your Free Consultation"
+        title="Book a Free AI & Marketing Automation Consultation"
         subtitle="Submit your details below. Get an actionable growth roadmap tailored for your business in India from our senior strategists."
         formLocation="/services/ai-automation"
       />

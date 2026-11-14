@@ -182,7 +182,7 @@ export default function ContactPage() {
                       </div>
                     </div>
 
-                    <h3 className={styles.formTitle}>Book Your Free Consultation</h3>
+                    <h3 className={styles.formTitle}>Book a Free Strategic Consultation</h3>
                     <p className={styles.formSubtitle}>Submit your details below. Connect directly with our senior Indian growth strategists within 4 hours.</p>
 
                     {/* Micro Indian Trust & Rating Bar */}

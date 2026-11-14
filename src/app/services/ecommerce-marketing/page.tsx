@@ -199,7 +199,7 @@ export default function EcommerceMarketingPage() {
       <StrategistGrowthCockpit
         id="ecommerce-marketing-consultation"
         eyebrow="🇮🇳 E-COMMERCE & D2C SCALE • 1-ON-1 STRATEGY"
-        title="Book Your Free Consultation"
+        title="Book a Free E-Commerce Scaling Audit"
         subtitle="Submit your details below. Get an actionable growth roadmap tailored for your business in India from our senior strategists."
         formLocation="/services/ecommerce-marketing"
       />

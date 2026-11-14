@@ -170,7 +170,7 @@ export default function LocalSeoPage() {
       <StrategistGrowthCockpit
         id="local-seo-consultation"
         eyebrow="🇮🇳 LOCAL SEO & GOOGLE MAPS • 1-ON-1 DESK"
-        title="Book Your Free Consultation"
+        title="Book a Free Local SEO & Maps Grid Audit"
         subtitle="Submit your details below. Get an actionable growth roadmap tailored for your business in India from our senior strategists."
         formLocation="/services/local-seo"
       />

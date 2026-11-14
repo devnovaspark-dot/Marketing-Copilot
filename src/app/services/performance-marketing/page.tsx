@@ -253,7 +253,7 @@ export default function PerformanceMarketingPage() {
       <PerformanceAuditTerminal
         id="performance-marketing-consultation"
         eyebrow="🇮🇳 PERFORMANCE MARKETING LAB • ₹0 AUDIT"
-        title="Book Your Free Performance & Ad Audit"
+        title="Book a Free Full-Funnel Performance Marketing Audit"
         subtitle="Submit your details below. Our senior Indian performance team will inspect your ad accounts to stop budget leaks and scale profitable CAC."
         formLocation="/services/performance-marketing"
       />
@@ -852,7 +852,7 @@ export default function PerformanceMarketingPage() {
       <PerformanceAuditTerminal
         id="performance-marketing-consultation"
         eyebrow="FULL-FUNNEL AUDIT LAB • ₹0 BENCHMARK"
-        title="Claim Your Free Performance Marketing & CAC Audit"
+        title="Book a Free Performance Marketing & CAC Audit"
         subtitle="Submit your details below. Our performance team will analyze your acquisition channels, blended CAC, and unit economics to find leaks."
         formLocation="/services/performance-marketing"
       />

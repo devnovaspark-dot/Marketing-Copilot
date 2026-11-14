@@ -267,7 +267,7 @@ export default function MetaAdsPage() {
       <PerformanceAuditTerminal
         id="meta-ads-consultation"
         eyebrow="🇮🇳 META ADS & ROAS AUDIT • ₹0 BENCHMARK"
-        title="Book Your Free Performance & Ad Audit"
+        title="Book a Free Meta & Instagram Ads Scale Audit"
         subtitle="Submit your details below. Our senior Indian performance team will inspect your Instagram & Facebook campaigns to stop budget waste and scale ROAS."
         formLocation="/services/meta-ads"
       />
@@ -736,7 +736,7 @@ export default function MetaAdsPage() {
       <PerformanceAuditTerminal
         id="meta-ads-consultation"
         eyebrow="META ADS LAB • ₹0 AUDIT"
-        title="Claim Your Free Meta Ads & Creative Fatigue Audit"
+        title="Book a Free Meta Ads & Creative Fatigue Audit"
         subtitle="Submit your details below. We inspect your Meta Ads Manager, CAPI tracking, creative decay, and targeting overlap to scale ROAS."
         formLocation="/services/meta-ads"
       />

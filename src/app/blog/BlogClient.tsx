@@ -167,7 +167,7 @@ export default function BlogClient({ articles = [] }: { articles: Article[] }) {
         <StrategistGrowthCockpit
           id="blog-consultation"
           eyebrow="🇮🇳 GROWTH INTELLIGENCE • 1-ON-1 STRATEGY"
-          title="Book Your Free Consultation"
+          title="Book a Free Content & Digital Growth Consultation"
           subtitle="Submit your details below. Get an actionable growth roadmap tailored for your business in India from our senior strategists."
           formLocation="/blog"
         />

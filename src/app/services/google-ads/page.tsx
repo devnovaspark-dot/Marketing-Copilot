@@ -170,7 +170,7 @@ export default function GoogleAdsPage() {
       <PerformanceAuditTerminal
         id="google-ads-consultation"
         eyebrow="🇮🇳 GOOGLE ADS AUDIT • ₹0 BENCHMARK"
-        title="Book Your Free Performance & Ad Audit"
+        title="Book a Free High-Intent Google Ads Audit"
         subtitle="Submit your website and campaign details. Our senior Indian performance team will pinpoint wasted budget and negative keyword leaks."
         formLocation="/services/google-ads"
       />
@@ -448,7 +448,7 @@ export default function GoogleAdsPage() {
       <PerformanceAuditTerminal
         id="google-ads-consultation"
         eyebrow="GOOGLE ADS FORENSIC LAB • ₹0 AUDIT"
-        title="Claim Your Free Google Ads Performance Audit"
+        title="Book a Free Google Ads Performance Audit"
         subtitle="Submit your details below. Our PPC media specialists will audit your search terms, Quality Scores, and ad spend to stop budget bleed."
         formLocation="/services/google-ads"
       />

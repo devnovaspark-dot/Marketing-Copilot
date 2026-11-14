@@ -158,7 +158,7 @@ export default function DigitalGrowthPartnerPage() {
       <StrategistGrowthCockpit
         id="desk-cta-1"
         eyebrow="🇮🇳 DIGITAL GROWTH PARTNER • 1-ON-1 STRATEGY"
-        title="Book Your Free Consultation"
+        title="Book a Free Digital Growth Partner Consultation"
         subtitle="Connect directly with our senior Indian growth strategists to audit acquisition channels and map high-margin expansion."
         formLocation="/services/digital-growth-partner"
       />
@@ -354,7 +354,7 @@ export default function DigitalGrowthPartnerPage() {
       <PerformanceAuditTerminal
         id="desk-cta-2"
         eyebrow="PERFORMANCE AUDIT LAB • ₹0 BENCHMARK"
-        title="Claim Your Free Omnichannel Performance Audit"
+        title="Book a Free Omnichannel Performance Audit"
         subtitle="Submit your details below. Our media team will analyze your ad spend, attribution, and CAC to unlock higher ROAS."
         formLocation="/services/digital-growth-partner"
       />
@@ -373,7 +373,7 @@ export default function DigitalGrowthPartnerPage() {
       <ExecutiveRevenueBlueprint
         id="desk-cta-3"
         eyebrow="EXECUTIVE REVENUE BLUEPRINT • 90-DAY SCALE"
-        title="Request Your 90-Day Compounding Growth Blueprint"
+        title="Book a Free 90-Day Compounding Growth Blueprint"
         subtitle="Collaborate directly with our growth principals. Formulate a milestone-driven scaling roadmap engineered for your market."
         formLocation="/services/digital-growth-partner"
       />

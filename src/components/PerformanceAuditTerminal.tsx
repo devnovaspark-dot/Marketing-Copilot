@@ -15,7 +15,7 @@ interface PerformanceAuditTerminalProps {
 
 export default function PerformanceAuditTerminal({
   id = 'performance-audit-terminal',
-  title = 'Book Your Free Performance & Ad Audit',
+  title = 'Book a Free Performance & Growth Audit',
   subtitle = 'Submit your website details below. Our senior Indian performance team will analyze your ad accounts and search visibility to find where you are leaking revenue.',
   eyebrow = '🇮🇳 DATA-BACKED AUDIT • ₹0 BENCHMARK',
   formLocation = '/',

@@ -15,7 +15,7 @@ interface ExecutiveRevenueBlueprintProps {
 
 export default function ExecutiveRevenueBlueprint({
   id = 'executive-revenue-blueprint',
-  title = 'Book Your Free 90-Day Revenue Blueprint',
+  title = 'Book a Free 90-Day Revenue Blueprint',
   subtitle = 'Connect directly with our senior Indian growth partners. Formulate a predictable scaling roadmap tailored for your market.',
   eyebrow = '🇮🇳 FOUNDER & CXO ADVISORY • 90-DAY SCALE',
   formLocation = '/',
