@@ -36,6 +36,7 @@ export default function HubSpotLeadForm({
 }: HubSpotLeadFormProps) {
   const viewportRef = useRef<HTMLDivElement>(null);
   const [isLoaded, setIsLoaded] = useState(false);
+  const lastSubmitTimeRef = useRef<number>(0);
 
   useEffect(() => {
     const viewportEl = viewportRef.current;
@@ -76,22 +77,27 @@ export default function HubSpotLeadForm({
       document.body.appendChild(script);
     }
 
-    const handleHubSpotMessage = (event: MessageEvent) => {
-      if (!event.data || typeof event.data !== 'object') return;
-      const payload = event.data as Record<string, unknown>;
-      const isHubSpotSubmit =
-        (payload.type === 'hsFormCallback' &&
-          (payload.eventName === 'onFormSubmit' || payload.eventName === 'onFormSubmitted')) ||
-        payload.type === 'hs-form-submitted';
+    /**
+     * Unified conversion dispatcher with debounce deduplication to prevent double-firing
+     * if both HubSpot v4 CustomEvent and window postMessage dispatch for the same submission.
+     */
+    const fireLeadConversion = (source: string, extraData?: Record<string, unknown>) => {
+      const now = Date.now();
+      if (now - lastSubmitTimeRef.current < 2500) return;
+      lastSubmitTimeRef.current = now;
 
-      if (!isHubSpotSubmit) return;
-
+      const locationPath = formLocation || (typeof window !== 'undefined' ? window.location.pathname : '');
       const leadPayload = {
         event: 'generate_lead',
+        event_category: 'form',
+        event_action: 'submit',
+        event_label: locationPath,
         form_name: 'hubspot_lead_form',
         form_id: formId,
-        form_location: formLocation || window.location.pathname,
+        form_location: locationPath,
         lead_type: 'hubspot_form',
+        submission_source: source,
+        ...extraData,
       };
 
       try {
@@ -102,13 +108,55 @@ export default function HubSpotLeadForm({
       } catch {
         // Ignore storage errors in restricted browsing modes.
       }
+
       pushToDataLayer(leadPayload);
+    };
+
+    // 1. HubSpot Forms v4 DOM CustomEvent listener (dispatched on document/container)
+    const handleCustomEventSuccess = (event: Event) => {
+      const customEv = event as CustomEvent;
+      const detail = (customEv.detail || {}) as Record<string, unknown>;
+      // If a formId is specified in event detail, verify it matches or accept generic
+      if (detail.formId && detail.formId !== formId) return;
+      fireLeadConversion('hubspot_v4_customevent', detail);
+    };
+
+    document.addEventListener('hs-form-event:on-submission:success', handleCustomEventSuccess);
+    document.addEventListener('hs-form-event:on-submission', handleCustomEventSuccess);
+    frameEl.addEventListener('hs-form-event:on-submission:success', handleCustomEventSuccess);
+
+    // 2. Window postMessage listener (supports both JSON objects & serialized strings for v2/v3/v4 fallbacks)
+    const handleHubSpotMessage = (event: MessageEvent) => {
+      let data = event.data;
+      if (typeof data === 'string') {
+        try {
+          data = JSON.parse(data);
+        } catch {
+          // Plain non-JSON string, ignore
+        }
+      }
+      if (!data || typeof data !== 'object') return;
+      const payload = data as Record<string, unknown>;
+
+      const isHubSpotSubmit =
+        (payload.type === 'hsFormCallback' &&
+          (payload.eventName === 'onFormSubmit' || payload.eventName === 'onFormSubmitted')) ||
+        payload.type === 'hs-form-submitted' ||
+        payload.type === 'hs-form-event:on-submission:success' ||
+        payload.type === 'SEND_FORM_SUBMISSION_SUCCESS' ||
+        payload.type === 'CTA_FORM_SUBMITTED' ||
+        (typeof payload.type === 'string' && payload.type.includes('SUBMISSION_SUCCESS'));
+
+      if (!isHubSpotSubmit) return;
+      fireLeadConversion('hubspot_postmessage', payload);
     };
 
     window.addEventListener('message', handleHubSpotMessage);
 
     return () => {
       observer.disconnect();
+      document.removeEventListener('hs-form-event:on-submission:success', handleCustomEventSuccess);
+      document.removeEventListener('hs-form-event:on-submission', handleCustomEventSuccess);
       window.removeEventListener('message', handleHubSpotMessage);
       frameEl.remove();
     };

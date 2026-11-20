@@ -14,6 +14,11 @@ export function pushToDataLayer(payload: Record<string, unknown>): void {
   if (typeof window === 'undefined') return;
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push(payload);
+
+  if (typeof window.gtag === 'function') {
+    const eventName = typeof payload.event === 'string' ? payload.event : 'generate_lead';
+    window.gtag('event', eventName, payload);
+  }
 }
 
 /** Flush any pending lead conversion event once after landing on /thank-you. */
