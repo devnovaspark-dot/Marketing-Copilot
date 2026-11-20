@@ -551,13 +551,7 @@
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.5s ease-in-out;
-}
-
-/* Ensure the first slide is immediately visible with zero transition delay for optimal LCP */
-.slideItem:first-child {
-  opacity: 1;
-  z-index: 1;
-  transition: none !important;
+  background: #0B132B;
 }
 
 .slideActive {
@@ -569,6 +563,7 @@
 .slideImage {
   object-fit: cover;
   object-position: center 25%;
+  color: transparent;
 }
 
 .slideOverlay {
