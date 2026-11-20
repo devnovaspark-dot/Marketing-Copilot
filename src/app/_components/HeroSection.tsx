@@ -20,7 +20,7 @@ const heroSlides = [
   },
   {
     id: 'slide-3',
-    src: '/images/slide 3_new.png',
+    src: '/images/marketingcopilothero.jpeg',
     alt: 'Creative marketing professionals planning growth strategies and digital solutions',
     caption: 'Creative & Performance Marketing',
   },
